@@ -1,0 +1,46 @@
+#footer {
+	margin-top: 50px;
+
+	#copyright {
+		margin: 10px 0;
+		text-align: center;
+	}
+
+	.social {
+		background-color: $background-color;
+		padding: 10px 0;
+	}
+	
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		li {
+			margin-right: 2%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			svg {
+				height: 25px;
+
+				path,
+				circle {
+					transition: .3s ease fill;
+				}
+			}
+
+			a {
+				&:hover,
+				&:focus {
+					svg path,
+					svg circle {
+						fill: $ponctual-color;
+					}
+				}
+			}
+		}
+	}
+}

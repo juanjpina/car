@@ -1,0 +1,69 @@
+@include animateLogo('1', -3.5%, 50%);
+@include animateLogo('2', 5%, 70%);
+@include animateLogo('3', -3%, 30%);
+
+@keyframes bubbleBounce1 {
+	0% { 
+		transform: translate(0, 0);
+	}
+
+	30% { 
+		transform: translate(1%, 3%);
+	}
+
+	55% { 
+		transform: translate(3%, 6%);
+	}
+
+	85% { 
+		transform: translate(2%, 3%);
+	}
+
+	100% { 
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes bubbleBounce2 {
+	0% { 
+		transform: translate(0, 0);
+	}
+
+	35% { 
+		transform: translate(1%, 4%);
+	}
+
+	65% { 
+		transform: translate(2%, 3%);
+	}
+
+	80% { 
+		transform: translate(3%, 2%);
+	}
+
+	100% { 
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes bubbleBounce3 {
+	0% { 
+		transform: translate(0, 0);
+	}
+
+	35% { 
+		transform: translate(1%, -4%);
+	}
+
+	65% { 
+		transform: translate(-2%, -3%);
+	}
+
+	80% { 
+		transform: translate(1%, -2%);
+	}
+
+	100% { 
+		transform: translate(0, 0);
+	}
+}

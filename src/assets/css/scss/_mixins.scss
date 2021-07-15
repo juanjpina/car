@@ -1,0 +1,25 @@
+@mixin animateLogo($name, $position, $frameMiddle) {
+	@keyframes popBounce#{$name} {
+		0% { 
+			transform: translateY(0);
+		}
+	
+		#{$frameMiddle} { 
+			transform: translateY($position);
+		}
+	
+		100% { 
+			transform: translateY(0);
+		}
+	}
+}
+
+@mixin fontSize($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@function calculateRem($size) {
+	$size: $size / 16px;
+	@return #{$size}rem;
+}

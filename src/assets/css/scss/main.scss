@@ -1,0 +1,20 @@
+// Colors
+$primary-color: #24c0ad;
+$ponctual-color: #ff6b6b;
+$background-color: #d94625;
+$default-color: #0d1018;
+$body-color: #ebebeb;
+// Fonts
+$default-font: 'latolight',
+sans-serif;
+$bold-font: 'latoblack',
+sans-serif;
+@import 'reset';
+@import 'fonts';
+@import 'mixins';
+@import 'animate';
+@import 'default';
+@import 'header';
+@import 'footer';
+@import 'home';
+@import '_loginHeader';
