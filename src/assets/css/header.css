@@ -22,11 +22,12 @@ body {
 }
 
 
-/********** login *****************************/
+/********** login ***** newLogin ************************/
 
 .menu-login,
 .login,
 .submit,
+.nsubmit,
 .compte {
     display: flex;
     align-items: center;
@@ -47,12 +48,19 @@ body {
 }
 
 .mail {
+    margin-top: 0px;
+}
+
+.div-password {
     padding-top: 50px;
-    margin-bottom: 66px;
 }
 
 .submit {
-    margin-top: 80px;
+    padding-top: 20px;
+}
+
+.nsubmit {
+    margin-top: 0px
 }
 
 .compte {
@@ -71,8 +79,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.email {
-    margin-top: 0;
+.div {
+    margin-top: 30px;
+}
+
+.nsubmit {
+    margin-top: 50px;
 }
 
 .parrafo-compte {
