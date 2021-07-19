@@ -1,7 +1,9 @@
 <?php
+
 namespace App;
 
-class Validate {
+class Validate
+{
 
 	/**
 	 * Check empty data
@@ -15,7 +17,7 @@ class Validate {
 			return $message;
 		}
 	}
-	
+
 
 	/**
 	 * Check email format
@@ -24,6 +26,7 @@ class Validate {
 	 */
 	public function checkEmail(string $email)
 	{
+
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			return 'Merci de renseigner une adresse email valide.';
 		}

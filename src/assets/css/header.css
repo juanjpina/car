@@ -47,6 +47,14 @@ body {
     filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
 }
 
+.menu-login .new {
+    height: 550px;
+}
+
+.pseudo {
+    margin-bottom: 20px;
+}
+
 .mail {
     margin-top: 0px;
 }
@@ -88,7 +96,11 @@ body {
 }
 
 .parrafo-compte {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+}
+
+.pa {
+    margin-bottom: 29px;
 }
 
 .parrafo-mot {
@@ -101,12 +113,36 @@ a {
     text-decoration: none;
 }
 
-.button {
+.button,
+.button_admin {
     width: 240px;
     height: 35px;
     border-radius: 15px;
     background-color: #083540;
     border-color: transparent;
+    color: #f2f2f2;
+}
+
+.button_admin {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    font-size: 1em;
+    align-items: center;
+}
+
+.button_admin a {
+    color: #f2f2f2;
+    padding-left: 10px;
+}
+
+.button_admin img {
+    margin-left: 20px;
+}
+
+.li_button {
+    display: flex;
+    justify-content: right;
 }
 
 .button p,
@@ -121,4 +157,13 @@ a {
 .menu-login .message {
     padding-top: 2px;
     font-weight: bold;
+}
+
+.admin ul {
+    margin-left: 7.29%;
+    width: 100%;
+}
+
+.admin li {
+    display: inline-block;
 }

@@ -3,27 +3,34 @@
 etienne@mail.com
 mdp
 <div class="menu-login">
-    <div class="login">
+    <div class="new login">
         <form action="" method="post">
-            <p class="parrafo-compte">Vous pouvez s'inscrire ici</p>
+            <p class="parrafo-compte pa">Vous pouvez s'inscrire ici</p>
+            <div class="pseudo">
+                <?php $error = checkField('pseudo', 'Votre pseudo est vide.'); ?>
+                <input type="text" class="email<?= $error['class']; ?>" id="pseudo" placeholder="Pseudo" name="pseudo" value="<?= valueField('pseudo'); ?>">
+                <p class="message"> <?= $error['message']; ?> </p>
+            </div>
             <div class="mail">
-                <?php $error = checkField('login', 'Votre email est vide.'); ?>
-                <input type="email" class="email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
+                <?php $error = checkField('email', 'Votre email est vide.'); ?>
+                <input type="email" class="email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="email">
                 <p class="message"> <?= $error['message']; ?> </p>
             </div>
 
             <div class="div">
                 <p class="parrafo-compte">Mot de passe</p>
                 <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
-                <input type="password" class="password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value='Mot de passe'>
-                <?= $error['message']; ?>
+                <input type="password" class="password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value="<?= valueField('password'); ?>">
+                <p> <?= $error['message']; ?></p>
             </div>
 
             <div class="div">
                 <p class="parrafo-compte">Confirmez votre mot de passe</p>
-                <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
-                <input type="password" class="password<?= $error['class']; ?>" id="ConfirmerPassword" placeholder="Confirmer le mot de passe" name="ConfirmerPassword" value='Mot de passe'>
-                <?= $error['message']; ?>
+                <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.');
+                $resul = egalPass('password', 'confirmerPassword') ?>
+                <input type="password" class="password<?= $error['class']; ?>" id="confirmerPassword" placeholder="Confirmer le mot de passe" name="confirmerPassword" value="<?= valueField('confirmerPassword'); ?>">
+                <p> <?= $error['message']; ?></p>
+                <p> <?= $resul['message']; ?></p>
             </div>
 
             <div class="nsubmit">

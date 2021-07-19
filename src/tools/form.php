@@ -41,6 +41,28 @@ function checkField(string $fieldName, string $message): array
 }
 
 
+function egalPass(string $pass, string $cpass): array
+{
+
+
+	$resul = ['message' => ''];
+
+	if (!empty($_POST[$pass]) && !empty($_POST[$cpass])) {
+
+		if (strcmp($pass, $cpass) !== 0) {
+			$resul = [
+				'message' => 'Les mots de pass sont different'
+			];
+		}
+	}
+	return $resul;
+}
+
+
+
+
+
+
 function valueField(string $fieldName)
 {
 	if (!empty($_POST[$fieldName])) :
