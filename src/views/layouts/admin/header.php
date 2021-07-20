@@ -16,31 +16,34 @@
 
 <body>
 	<header class="header ">
+		<div>
+			<p>Bonjour <?= $_SESSION['auth']['email']; ?></p>
+		</div>
+
 		<div class="admin">
-			<div>
-				Bonjour <?= $_SESSION['auth']['email']; ?>
-
+			<div class="logo">
+				<a href="">RDVoiture</a>
 			</div>
-			<ul>
-				<li>
-					<div class="logo">
-						<a href="">RDVoiture</a>
-					</div>
-				</li>
-				<li class="li_button">
-					<div class="button_admin">
-						<img src="../../../assets/images/des.png" height="30px" width="30px" alt="">
-						<a href="">Mon compte</a>
-					</div>
-				</li>
-				<li class="li_button">
-					<div class="button_admin">
-						<img src="../../../assets/images/des.png" height="30px" width="30px" alt="">
-						<a href="">Deconection</a>
 
-					</div>
-				</li>
-			</ul>
+			<div class="navegation">
+				<ul class="nave">
+					<li class="li_button">
+						<div class="bonjour">
+						</div>
+						<div class="button_admin">
+							<img src="../../../assets/images/des.png" height="30px" width="30px" alt="">
+							<a href="">Mon compte</a>
+						</div>
+					</li>
+					<li class="li_button">
+						<div class="button_admin">
+							<img src="../../../assets/images/des.png" height="30px" width="30px" alt="">
+							<a href="">Deconection</a>
+
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 
 

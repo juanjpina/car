@@ -1,6 +1,6 @@
 <?php
 // Home
-$router->map('GET', '/admin', 'pages/admin_index', 'homeAdmin');
+$router->map('GET|POST', '/admin', 'pages/admin_index', 'admin');
 
 // Movies
 //$router->map('GET|POST', '/admin/movies/add', 'movies/admin_add', 'addMovie');

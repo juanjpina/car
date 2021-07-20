@@ -20,7 +20,7 @@ function login(PDO $db, AltoRouter $router)
 					'id_user'	   => $result->id_user,
 
 				];
-				header('Location: ' . $router->generate('homeAdmin'));
+				header('Location: ' . $router->generate('admin'));
 				die();
 			}
 		}
