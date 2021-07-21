@@ -1,29 +1,17 @@
-<?php get_header('Accueil', 'admin') ?>
+<?php get_header('Accueil', 'admin'); ?>
 
 
 
-<div class="accueil" style="height: 400px;">
-	<p>6
+<div class="accueil">
+	<div class="texto">
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-		FGF
+		<div class="continuer">
+			<a href="<?= $router->generate('addfraUser'); ?>">Vous pouvez continuer, merci</a>
+		</div>
+	</div>
 
-		DFG
-
-		DGD
-
-		DFGDF
-
-		DFGDD
-		GDFG
-
-		DFGDFDFGDFG
-
-
-		DFGDFGDFGDFG
-
-
-		Bonjour </p>
 </div>
 
 
-<?php get_footer('admin') ?>
+<?php get_footer('admin'); ?>

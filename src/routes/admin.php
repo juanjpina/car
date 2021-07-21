@@ -18,3 +18,5 @@ $router->map('GET', '/admin/users/', 'users/admin_indexUser', 'indexUsers');
 $router->map('GET', '/admin/users/delete/[i:id]', 'users/admin_deleteUser', 'deleteUsers');
 $router->map('GET|POST', '/admin/users/edit/[i:id]', 'users/admin_editUser', 'updateUsers');
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'addUsers');
+
+$router->map('GET|POST', '/admin/user/', 'user/admin_fraUser', 'addfraUser');
