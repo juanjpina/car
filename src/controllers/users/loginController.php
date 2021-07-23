@@ -20,8 +20,9 @@ function login(PDO $db, AltoRouter $router)
 					'id_user'	   => $result->id_user,
 
 				];
-				header('Location: ' . $router->generate('admin'));
-				die();
+				session_start();
+				header('Location: ' . $router->generate('homeadmin'));
+				//die();
 			}
 		}
 
@@ -35,7 +36,7 @@ function login(PDO $db, AltoRouter $router)
 function redirectAdmin(AltoRouter $router)
 {
 	if (!empty($_SESSION['auth'])) {
-		header('Location: ' . $router->generate('admin'));
+		header('Location: ' . $router->generate('homeadmin'));
 		die();
 	}
 }

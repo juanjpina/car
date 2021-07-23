@@ -6,7 +6,7 @@ function addUser(PDO $db)
 		$sql = 'INSERT INTO users (email, password) VALUES (:email, :password)';
 		$data = [
 			'email' 	=> $_POST['email'],
-			'password'  => password_hash($_POST['pass'], PASSWORD_DEFAULT),
+			'password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
 		];
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
 	<title><?= $title; ?></title>
 	<link rel="stylesheet" href="src/assets/css/main.css">
 </head>
+
 <body>
 	<header id="header">
 		<div class="wrapper">
@@ -15,5 +17,4 @@
 			</div>
 		</div>
 	</header>
-	<div class="wrapper">
-	
+	<main class="wrapper">

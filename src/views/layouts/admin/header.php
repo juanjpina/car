@@ -10,19 +10,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="src/assets/css/reset.css">
+	<link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
 
-	<link href="src/assets/css/header.css" rel="stylesheet">
+	<link href="/proyectocar/car/src/assets/css/style.css" rel="stylesheet">
+	<link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
 </head>
 
 <body>
-	<header class="header ">
-		<div>
-			<p>Bonjour <?= $_SESSION['auth']['email']; ?></p>
-		</div>
+	<header class="header">
+		<?php $_SESSION['auth']['email']; ?>
 		<div class="admin">
 			<div class="logo">
-				<a href="">RDVoiture</a>
+				<a href="#">RDVoiture</a>
 			</div>
 			<div class="navegation">
 				<ul class="nave">
@@ -30,19 +29,60 @@
 						<div class="bonjour">
 						</div>
 						<div class="button_admin">
-
+							<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
 							<a href="">Mon compte</a>
 						</div>
 					</li>
-					<li class="li_button">
+					<li class=" li_button">
 						<div class="button_admin">
-
-							<a href="">Deconection</a>
+							<img src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
+							<a href="#">Deconection</a>
 						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</header>
-	<main class="form-signin">
+	<main class="">
+
+		<div class="sidebar">
+			<ul class="list">
+				<li>
+					<div class="row alert">
+						<img src="/proyectocar/car/src/assets/images/alerts.png" width="50" height="50" alt="">
+
+						<p>Rappel</p>
+					</div>
+				</li>
+				<li>
+					<div class="row invoice">
+						<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+						<p>Factures</p>
+					</div>
+				</li>
+				<li>
+					<div class="row statistic">
+						<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
+						<p>Statistique</p>
+					</div>
+				</li>
+				<li>
+					<div class="row history">
+						<img src="/proyectocar/car/src/assets/images/history2.png" width="50" height="50" alt="">
+						<p>Historique</p>
+					</div>
+
+				</li>
+
+			</ul>
+			<div>
+
+			</div>
+
+
+		</div>
+
+
+
+
 		<?= alertDisplay(); ?>

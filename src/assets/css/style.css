@@ -2,17 +2,6 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-:root {
-    --main-color-invoice: #8c641b;
-    --main-color-alert: #d9bd30;
-    --main-color-statistic: #bf9926;
-    --main-color-history: #d94625;
-    --main-color-header: #d94625;
-    --main-color-shadow: #b4b2ba;
-    --maim-color-texto: #f2f2f2;
-    --main-color-button-header: #083540;
-}
-
 
 /***************** HEADER *********************/
 
@@ -20,16 +9,11 @@ body {
     /* display: flex; */
     width: 100%;
     height: 100px;
-    background-color: var(--main-color-header);
+    background-color: #d94625;
     max-width: 1920px;
     /* position: fixed; */
-    box-shadow: 2px 5px 15px -2px var(--main-color-shadow);
-    filter: drop-shadow(2px 5px 15px -2px var(--main-color-shadow));
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
 }
 
 .logo {
@@ -133,37 +117,38 @@ a {
     width: 240px;
     height: 35px;
     border-radius: 15px;
-    background-color: var(--main-color-button-header);
+    background-color: #083540;
     border-color: transparent;
-    color: var(--maim-color-texto);
+    color: #f2f2f2;
 }
 
 .button_admin {
+    /* display: flex; */
     width: 200px;
     height: 40px;
     font-size: 1em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 28px;
+    /* align-items: center; */
 }
 
 .button_admin a {
     color: #f2f2f2;
+    padding-left: 10px;
+}
+
+.button_admin img {
+    margin-left: 20px;
 }
 
 .li_button {
-    /* display: flex;
-    justify-content: right; */
+    display: flex;
+    justify-content: right;
 }
 
 .button p,
 .creercompte p {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    /* margin: 0; */
+    margin: 0;
     font-weight: bold;
     color: #f2f2f2;
 }
@@ -178,10 +163,13 @@ a {
 
 .admin {
     display: flex;
+    flex: auto;
+    /* align-items: center; */
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    /* align-content: center; */
+    /* justify-content: space-around; */
+    /* align-items: flex-start; */
 }
 
 .navegation {
@@ -199,11 +187,11 @@ a {
 }
 
 .li_button {
-    /* display: flex;
+    display: flex;
     /* justify-content: center; */
-    /* flex: auto; */
+    flex: auto;
     /* margin-right: 10px; */
-    /* align-items: center; */
+    align-items: center;
 }
 
 .accueil {
@@ -257,18 +245,11 @@ a {
 main {
     display: flex;
     flex-flow: row;
-    height: 700px;
 }
 
 .sidebar {
-    display: fixed;
     width: 40%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: left;
-    padding-left: 40px;
 }
 
 .sidebar .row {
@@ -286,11 +267,10 @@ main {
     text-transform: uppercase;
     color: #f2f2f2;
     font-weight: bold;
-    margin-bottom: 30px;
 }
 
 .alert {
-    background-color: var(--main-color-alert);
+    background-color: #d9bd30;
 }
 
 .invoice {
@@ -298,9 +278,9 @@ main {
 }
 
 .statistic {
-    background-color: var(--main-color-statistic);
+    background-color: #bf9926;
 }
 
 .history {
-    background-color: var(--main-color-history);
+    background-color: #d94625;
 }

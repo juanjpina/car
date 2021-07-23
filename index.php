@@ -13,6 +13,7 @@ require 'src/class/Autoloader.php';
 
 // Load class
 use App\Autoloader;
+
 Autoloader::register();
 
 // Load AltoRouter

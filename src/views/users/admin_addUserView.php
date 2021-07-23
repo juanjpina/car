@@ -1,4 +1,4 @@
-<?php get_header('Ajouter un utilisateur', 'admin'); ?>
+<?php get_header('Ajouter un utilisateur', 'login'); ?>
 
 <h1 class="mb-4">Ajouter un utilisateur</h1>
 
@@ -9,11 +9,11 @@
 	</div>
 	<div class="mb-3">
 		<label for="viewer" class="form-label">Password</label>
-		<input type="password" class="form-control" id="viewer" name="pass">
+		<input type="password" class="form-control" id="viewer" name="password">
 	</div>
 	<div>
 		<button type="submit" class="btn btn-success">Sauvegarder</button>
 	</div>
 </form>
 
-<?php get_footer('admin'); ?>
+<?php get_footer('login'); ?>
