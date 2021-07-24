@@ -1,4 +1,4 @@
-<?php get_header('Alerts add', 'admin'); ?>
+<?php get_header('Alerts edit', 'admin'); ?>
 
 
 <div class="alerts">
@@ -7,12 +7,13 @@
         <form action="">
 
             <div class="select column">
-                <h3>Ajouter un Rappel</h3>
+                <h3>Rappel editar</h3>
             </div>
             <div class="data row">
-                <a href="#">
+                <a href="<?= $router->generate('addalerts'); ?>">
                     <div class="conf row">
-
+                        <p>Ajoter un rappel</p>
+                        <img src="/proyectocar/car/src/assets/images/add.png" width="25" height="25" alt="">
                     </div>
                 </a>
 

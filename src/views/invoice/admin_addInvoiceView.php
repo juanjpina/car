@@ -2,7 +2,7 @@
 
 
 <div class="invoice">
-    <div class="contained column">
+    <div class="contained">
 
         <form action="">
 

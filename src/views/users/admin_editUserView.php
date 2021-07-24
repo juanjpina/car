@@ -1,1 +1,1 @@
-<?php get_header('fa', 'admin');
+<?php get_header('fa', 'compte');

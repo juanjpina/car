@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
 
-	<link href="/proyectocar/car/src/assets/css/invoice.css" rel="stylesheet">
+
 	<link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
 </head>
 
@@ -26,17 +26,20 @@
 			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
-
-						<div class="button_admin">
-							<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
-							<a href="">Mon compte</a>
-						</div>
+						<a href="<?= $router->generate('editUsers') ?>">
+							<div class="button_admin">
+								<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
+								<p>Mon compte</p>
+							</div>
+						</a>
 					</li>
-					<li class=" li_button">
-						<div class="button_admin">
-							<img src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
-							<a href="<?= $router->generate('logout') ?>">Deconection</a>
-						</div>
+					<li class="li_button">
+						<a href="<?= $router->generate('logout') ?>">
+							<div class="button_admin">
+								<img src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
+								<p>Deconection</p>
+							</div>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -50,29 +53,36 @@
 		<div class="sidebar">
 			<ul class="list">
 				<li>
-					<div class="row alert">
-						<img src="/proyectocar/car/src/assets/images/alerts.png" width="50" height="50" alt="">
-
-						<p>Rappel</p>
-					</div>
+					<a href="<?= $router->generate('editalerts'); ?>">
+						<div class="row b-alert">
+							<img src="/proyectocar/car/src/assets/images/alerts.png" width="50" height="50" alt="">
+							<p>Rappel</p>
+						</div>
+					</a>
 				</li>
 				<li>
-					<div class="row invoice">
-						<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
-						<p>Factures</p>
-					</div>
+					<a href="<?= $router->generate('addInvoice'); ?>">
+						<div class="row b-invoice">
+							<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+							<p>Factures</p>
+						</div>
+					</a>
 				</li>
 				<li>
-					<div class="row statistic">
-						<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
-						<p>Statistique</p>
-					</div>
+					<a href="<?= $router->generate('addstatistics'); ?>">
+						<div class="row b-statistic">
+							<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
+							<p>Statistique</p>
+						</div>
+					</a>
 				</li>
 				<li>
-					<div class="row history">
-						<img src="/proyectocar/car/src/assets/images/history2.png" width="50" height="50" alt="">
-						<p>Historique</p>
-					</div>
+					<a href="<?= $router->generate('addhistory'); ?>">
+						<div class="row b-history">
+							<img src="/proyectocar/car/src/assets/images/history2.png" width="50" height="50" alt="">
+							<p>Historique</p>
+						</div>
+					</a>
 
 				</li>
 

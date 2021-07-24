@@ -17,10 +17,24 @@ $router->map('GET', '/admin', 'pages/admin_index', 'homeadmin');
 //$router->map('GET', '/admin/users/', 'users/admin_indexUser', 'indexUsers');
 //$router->map('GET', '/admin/users/delete/[i:id]', 'users/admin_deleteUser', 'deleteUsers');
 //$router->map('GET|POST', '/admin/users/edit/[i:id]', 'users/admin_editUser', 'updateUsers');
-//$router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'addUsers');
 
-$router->map('GET|POST', '/admin/users/', 'users/admin_fraUser', 'addfrauser');
+
+$router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
+
+$router->map('GET|POST', '/admin/users/editinvoice', 'users/admin_editStatisticsUser', 'editstatistics');
+
+
+
+
+
+
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
+
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');
+$router->map('GET|POST', '/admin/statistics/listed', 'statistics/admin_listedStatistics', 'listedstatistics');
+
 $router->map('GET|POST', '/admin/history/', 'history/admin_addHistory', 'addhistory');
-$router->map('GET|POST', '/admin/alerts/', 'alertes/admin_addAlerts', 'addalerts');
+$router->map('GET|POST', '/admin/history/listed', 'history/admin_listedHistory', 'listedhistory');
+
+$router->map('GET|POST', '/admin/alerts/', 'alerts/admin_addAlerts', 'addalerts');
+$router->map('GET|POST', '/admin/alerts/edit', 'alerts/admin_editAlerts', 'editalerts');
