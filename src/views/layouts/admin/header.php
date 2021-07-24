@@ -41,7 +41,7 @@
 				</ul>
 			</div>
 			<div class="bonjour">
-				<p> Bonjour, <?= $_SESSION['auth']['email']; ?></p>
+				<p> Bonjour, <?= $_SESSION['auth']['nickname']; ?></p>
 			</div>
 		</div>
 	</header>

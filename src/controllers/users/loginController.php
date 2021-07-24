@@ -16,9 +16,9 @@ function login(PDO $db, AltoRouter $router)
 
 			if ($result && password_verify($_POST['password'], $result->password)) {
 				$_SESSION['auth'] = [
+					'nickname' => $result->nickname,
 					'email' => $result->email,
-					'id_user'	   => $result->id_user,
-
+					'id_user'	=> $result->id_user,
 				];
 				session_start();
 				header('Location: ' . $router->generate('homeadmin'));
@@ -45,7 +45,7 @@ function redirectAdmin(AltoRouter $router)
 
 function honeyPot(AltoRouter $router)
 {
-	if (!empty($_POST['username'])) {
+	if (!empty($_POST['auth'])) {
 		alert('Vous êtes connecté', 'success');
 		header('Location: ' . $router->generate('login'));
 		die;

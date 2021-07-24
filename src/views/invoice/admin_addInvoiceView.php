@@ -1,16 +1,51 @@
 <?php get_header('invoice add', 'admin'); ?>
-<p> Bonjour <?= $_SESSION['auth']['email']; ?>
+
 
 <div class="invoice">
-    <div class="contained">
+    <div class="contained column">
+
+        <form action="">
+
+            <div class="select column">
+                <h3>Facture</h3>
+                <select name="select">
+                    <option value="value1">Value 1</option>
+                    <option value="value2" selected>Value 2</option>
+                    <option value="value3">Value 3</option>
+                </select>
 
 
+            </div>
+            <div class="data row">
+                <div class="date column">
+                    <label for="date">Date</label>
+                    <input type="date" name="date">
+                </div>
+                <div class="km column">
+                    <label for="km">Km</label>
+                    <input type="number" name="km">
+                </div>
+                <div class="amount column">
+                    <label for="montant">Montant facture</label>
+                    <input type="number" name="amout">
 
+                </div>
+            </div>
+            <div class="confirmation">
+                <div class="column">
+                    <h5>Ajoutez une facture</h5>
+                    <a href="#">
+                        <div class="conf column">
+                            <p>Confirmer</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </form>
 
     </div>
-
-
-
 </div>
 
 
