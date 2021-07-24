@@ -12,22 +12,21 @@
 
 	<link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
 
-	<link href="/proyectocar/car/src/assets/css/style.css" rel="stylesheet">
+	<link href="/proyectocar/car/src/assets/css/invoice.css" rel="stylesheet">
 	<link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
 </head>
 
 <body>
 	<header class="header">
-		<?php $_SESSION['auth']['email']; ?>
 		<div class="admin">
 			<div class="logo">
 				<a href="#">RDVoiture</a>
 			</div>
+
 			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
-						<div class="bonjour">
-						</div>
+
 						<div class="button_admin">
 							<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
 							<a href="">Mon compte</a>
@@ -36,10 +35,13 @@
 					<li class=" li_button">
 						<div class="button_admin">
 							<img src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
-							<a href="#">Deconection</a>
+							<a href="<?= $router->generate('logout') ?>">Deconection</a>
 						</div>
 					</li>
 				</ul>
+			</div>
+			<div class="bonjour">
+				<p> Bonjour, <?= $_SESSION['auth']['email']; ?></p>
 			</div>
 		</div>
 	</header>

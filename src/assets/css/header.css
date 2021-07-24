@@ -1,4 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    font-size: 16px;
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -17,27 +26,31 @@ body {
 /***************** HEADER *********************/
 
 .header {
-    /* display: flex; */
     width: 100%;
     height: 100px;
     background-color: var(--main-color-header);
-    max-width: 1920px;
     /* position: fixed; */
     box-shadow: 2px 5px 15px -2px var(--main-color-shadow);
     filter: drop-shadow(2px 5px 15px -2px var(--main-color-shadow));
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
 }
 
 .logo {
-    margin-left: 7.29%;
+    width: 60%;
+    padding-left: 7.29%;
+    /* align-self: center; */
+}
+
+a {
+    text-decoration: none;
 }
 
 
-/********** login ***** newLogin ************************/
+/***************** LOGIN  ******** NEW LOGIN ************************/
 
 .menu-login,
 .login,
@@ -124,8 +137,53 @@ body {
     color: black;
 }
 
-a {
-    text-decoration: none;
+.button p,
+.creercompte p {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    /* margin: 0; */
+    font-weight: bold;
+    color: #f2f2f2;
+}
+
+.menu-login .message {
+    padding-top: 2px;
+    font-weight: bold;
+}
+
+
+/**********************  NAV ADMIN  *****************************/
+
+.admin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.navegation {
+    width: 40%;
+    padding-left: 5%;
+    align-self: flex-end;
+    padding-top: 10px;
+    /* flex: auto; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* margin-left: auto; */
+    /* padding-right: 20px; */
+}
+
+.bonjour {
+    padding-bottom: 3px;
+    width: 100%;
+}
+
+.bonjour p {
+    text-align: right;
+    padding-right: 22%;
+    color: #f2f2f2;
 }
 
 .button,
@@ -145,51 +203,20 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin-right: 28px;
+    /* padding-left: auto; */
+    /* padding-right: auto; */
 }
 
 .button_admin a {
     color: #f2f2f2;
-}
-
-.li_button {
-    /* display: flex;
-    justify-content: right; */
-}
-
-.button p,
-.creercompte p {
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    /* margin: 0; */
-    font-weight: bold;
-    color: #f2f2f2;
-}
-
-.menu-login .message {
-    padding-top: 2px;
-    font-weight: bold;
-}
-
-
-/**********************nav admin***********/
-
-.admin {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.navegation {
-    /* flex: auto; */
-    /* flex-direction: row; */
-    /* flex-wrap: wrap; */
-    margin-left: auto;
     padding-right: 20px;
+}
+
+.button_admin img {
+    margin-left: 20px;
 }
 
 .navegation ul {
@@ -198,13 +225,8 @@ a {
     align-items: center;
 }
 
-.li_button {
-    /* display: flex;
-    /* justify-content: center; */
-    /* flex: auto; */
-    /* margin-right: 10px; */
-    /* align-items: center; */
-}
+
+/**********************************************/
 
 .accueil {
     display: flex;
@@ -252,7 +274,7 @@ a {
 }
 
 
-/*********** sidebar ************************/
+/***************************** SIDEBAR *********************************/
 
 main {
     display: flex;
@@ -304,3 +326,6 @@ main {
 .history {
     background-color: var(--main-color-history);
 }
+
+
+/*-----------------------INVOICE------------------*/
