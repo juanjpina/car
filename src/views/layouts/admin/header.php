@@ -11,8 +11,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
-
-
 	<link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
 </head>
 
@@ -26,7 +24,7 @@
 			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
-						<a href="<?= $router->generate('editUsers') ?>">
+						<a href="<?= $router->generate('editUser') ?>">
 							<div class="button_admin">
 								<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
 								<p>Mon compte</p>
