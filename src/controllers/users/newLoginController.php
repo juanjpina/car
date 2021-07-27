@@ -22,8 +22,18 @@ use App\Validate;
 //     }
 // }
 
-
-
+function searchEmail(PDO $db)
+{
+    $sql = 'SELECT email FROM user where email= ?';
+    $request = $db->prepare($sql);
+    $request->execute([$_POST['email']]);
+    $data = $request->fetch();
+    if ($data) {
+        // echo '<script type="text/javascript">alert("existe");</script>';
+        // dump('data', $data);
+        return "Votre email il existe déjà !!";
+    }
+}
 
 function addUser(PDO $db)
 {
@@ -34,7 +44,7 @@ function addUser(PDO $db)
         $cpass = $_POST['confirmerPassword'];
 
         if (strcmp($pass, $cpass) !== 0) {
-
+            echo '<script type="text/javascript">alert("hola");</script>';
             //return $resul = "Les mots de pass sont different";
             header('Location: /newLoginView.php');
         } else {
@@ -49,10 +59,11 @@ function addUser(PDO $db)
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
 
-                dump($result);
+                // dump($result);
             }
         }
     }
 }
+
 addUser($db);
 //egalpass($db);

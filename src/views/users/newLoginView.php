@@ -12,9 +12,12 @@ mdp
                 <p class="message"> <?= $error['message']; ?> </p>
             </div>
             <div class="mail">
+                <?php $duplo = searchEmail($db) ?>
                 <?php $error = checkField('email', 'Votre email est vide.'); ?>
                 <input type="email" class="email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="email">
                 <p class="message"> <?= $error['message']; ?> </p>
+                <p class="message"> <?= $duplo; ?> </p>
+
             </div>
 
             <div class="div">
@@ -28,7 +31,7 @@ mdp
                 <p class="parrafo-compte">Confirmez votre mot de passe</p>
                 <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.');
                 $resul = egalPass('password', 'confirmerPassword') ?>
-                <input type="password" class="password<?= $error['class']; ?>" id="confirmerPassword" placeholder="Confirmer le mot de passe" name="confirmerPassword" value="<?= valueField('confirmerPassword'); ?>">
+                <input type="password" class="password<?= $error['class']; ?>" id="confirmerPassword" placeholder="Confirmer le mot de passe" name="confirmerPassword" value="">
                 <p> <?= $error['message']; ?></p>
                 <p> <?= $resul['message']; ?></p>
             </div>
