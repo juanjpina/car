@@ -32,7 +32,7 @@ mdp
 
 	</div>
 	<div class="compte">
-		<a class="creercompte" href="">
+		<a class="creercompte" href="<?= $router->generate('newlogin'); ?>">
 			<p>Créer une compte</p>
 		</a>
 

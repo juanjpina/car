@@ -1,4 +1,5 @@
 <?php
+//redirectAdmin($router);
 
 use App\Validate;
 
@@ -22,21 +23,39 @@ use App\Validate;
 //     }
 // }
 
-function searchEmail(PDO $db)
+function searchEmail(PDO $db, AltoRouter $router)
 {
-    $sql = 'SELECT email FROM user where email= ?';
-    $request = $db->prepare($sql);
-    $request->execute([$_POST['email']]);
-    $data = $request->fetch();
-    if ($data) {
+
+    if (!empty($_POST['email'])) {
+        dump(11);
+
+        $data = array(
+
+            ':email' => $_POST['email']
+        );
+
+
+        $sql = 'SELECT email FROM user where email= :email ';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        // $request->execute(array($_POST['email']));
+        // $request->execute(array_values($data));
+        $data = $request->fetch(PDO::FETCH_ASSOC);
+
+        if ($data['email'] == $_POST['email']) {
+            return "Votre email il existe déjà !!";
+        } else {
+            addUser($db, $router);
+        }
         // echo '<script type="text/javascript">alert("existe");</script>';
         // dump('data', $data);
-        return "Votre email il existe déjà !!";
+        $request->closeCursor();
     }
 }
 
-function addUser(PDO $db)
+function addUser(PDO $db, AltoRouter $router)
 {
+
 
 
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
@@ -50,20 +69,21 @@ function addUser(PDO $db)
         } else {
 
             if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
-                $sql = 'INSERT INTO user (email, password, nickname) VALUES (:email, :password, :nickname)';
+                $sql = 'INSERT INTO user (email, password, nickname, id_car) VALUES (:email, :password, :nickname, :id_car)';
                 $data = [
-                    'email'     => $_POST['email'],
-                    'password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                    'nickname'  => $_POST['pseudo']
+                    ':email'     => $_POST['email'],
+                    ':password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                    ':nickname'  => $_POST['pseudo'],
+                    ':id_car'  => 0
                 ];
                 $request = $db->prepare($sql);
-                $result = $request->execute($data);
+                $request->execute($data);
 
                 // dump($result);
             }
         }
+        header('Location: ' . $router->generate('homeadmin'));
     }
 }
-
-addUser($db);
-//egalpass($db);
+// searchEmail($db, $router);
+AddUser($db, $router);

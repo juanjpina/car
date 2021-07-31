@@ -4,35 +4,38 @@
         <div class="select column">
             <h3>Modifier les données de votre véhicule</h3>
         </div>
-        <form action="">
-
+        <form action="" method="post">
             <div class="column">
                 <ul>
                     <li>
                         <div class="periode column">
                             <select name="select">
-                                <?php foreach ($types as $type) { ?>
-                                    <option><?= $type['text']; ?></option>
+                                <?php foreach ($cars as $car) { ?>
+                                    <option value=''><?= $car['trademark']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                     </li>
-
-
+                    <li>
+                        <div class="periode column">
+                            <select name="select">
+                                <?php foreach ($types as $type) { ?>
+                                    <option value='<?= $type['function']; ?>'><?= $type['type_data']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </li>
                     <div class="row">
                         <li>
-
                             <div class="column">
                                 <label for="date">Date</label>
-                                <input type="date">
-
+                                <input type="date" name='date'>
                             </div>
                         </li>
                         <li>
-
                             <div class="column">
                                 <label for="km">Km</label>
-                                <input type="number">
+                                <input type="number" name='km'>
                             </div>
                         </li>
                     </div>
