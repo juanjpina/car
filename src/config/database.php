@@ -9,8 +9,7 @@ try {
 	if (DEBUG) :
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	endif;
-}
-catch (Exception $e) {
+} catch (Exception $e) {
 	if (DEBUG) :
 		$message = utf8_encode($e->getMessage());
 		echo $message;

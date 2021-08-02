@@ -19,17 +19,40 @@ $types = listType($db);
  */
 function listCar(PDO $db)
 {
-    dump($_SESSION['auth']['id_user']);
     $data = array(
         ':id_user' => $_SESSION['auth']['id_user']
     );
-    $sql = 'SELECT trademark FROM car where id_user = :id_user';
+    $sql = 'SELECT * FROM car where id_user = :id_user';
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        return   array(
+            ['trademark' => 'Ajouter un véhicule']
+        );
+    }
 }
 $cars = listCar($db);
+
+
+/**
+ * si existe datos en la base de datos los inyecta. y si no cero.
+ */
+function xxx()
+{
+}
+
+
+
+
+
+
+
+
+
+
 
 /**
  * guarda en DB los datos del coche
@@ -44,7 +67,7 @@ function insert_DB(PDO $db)
 
             case '1':
                 $data = [
-                    ':id_car' => $_SESSION
+                    ':id_user' => $_SESSION['auth']['id_user'],
                     ':date'  => $_POST['date'],
                     ':km' =>  $_POST['km']
                 ];

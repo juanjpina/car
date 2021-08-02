@@ -21,8 +21,9 @@ $router->map('GET', '/admin', 'pages/admin_index', 'homeadmin');
 
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
 
-$router->map('GET|POST', '/admin/users/addCar', 'users/admin_addInvoiceCar', 'addinvoicecar');
+$router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar', 'addinvoicecar');
 $router->map('GET|POST', '/admin/users/editsta', 'users/admin_editStatisticsCar', 'editstacar');
+$router->map('GET|POST', '/admin/users/addnewcar', 'users/admin_addCar', 'addnewcar');
 
 
 

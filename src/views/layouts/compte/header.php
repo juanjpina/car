@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>header</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
-
-
     <link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
+    <script>
+        function click() {
+            var a = document.getElementById('select_car').value;
+            alert(a);
+        }
+    </script>
 </head>
 
 <body>
@@ -52,6 +54,15 @@
     <main class="">
         <div class="sidebar">
             <ul class="list">
+                <li>
+                    <a href="<?= $router->generate('addnewcar'); ?>">
+                        <div class="row b-alert">
+                            <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">
+                            <p>Ajouter un véhicule</p>
+                        </div>
+                    </a>
+
+                </li>
                 <li>
                     <a href="<?= $router->generate('editUser'); ?>">
                         <div class="row b-alert">

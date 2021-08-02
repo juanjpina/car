@@ -67,7 +67,8 @@ function getMovieById(PDO $db, int $id)
 }
 
 
-function formatBytes($size, $precision = 2) {
+function formatBytes($size, $precision = 2)
+{
 	$base     = log($size, 1024);
 	$suffixes = ['', 'Ko', 'Mo', 'Go', 'To'];
 
@@ -81,4 +82,27 @@ function getCateById(PDO $db, int $id)
 	$request = $db->prepare($sql);
 	$request->execute($data);
 	return $request->fetch();
+}
+
+/**
+ * busca en la tabla de types y devuelve el resultado de las columnas en base al id_user.
+ */
+function searchDb(PDO $db, $table, $id_user)
+{
+
+	// $data = ['$id_user' => $_SESSION['auth']['id_user']];
+	// $sql = 'SELECT id_car FROM user WHERE id_user = :id_user';
+	// $request = $db->prepare($sql);
+	// $request->execute($data);
+
+	// 	$data=>id_car
+
+
+	// // $data = ['$id' => $id];
+	// $sql = 'SELECT * FROM $table WHERE id_car = :id';
+	// $request = $db->prepare($sql);
+	// $request->execute($data);
+	// return $request->fetch();
+
+
 }

@@ -1,4 +1,6 @@
-	</main>
-	</body>
+</main>
+</script>
 
-	</html>
+</body>
+
+</html>

@@ -35,6 +35,7 @@ if ($match) :
 	}
 	require 'src/controllers/' . $match['target'] . 'Controller.php'; // Load Controller
 	require 'src/views/' . $match['target'] . 'View.php'; // Load View
+
 else :
 	header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 	require 'src/404.php';
