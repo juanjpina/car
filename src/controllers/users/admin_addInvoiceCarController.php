@@ -33,6 +33,9 @@ function listCar(PDO $db)
             ['trademark' => 'Ajouter un véhicule']
         );
     }
+
+    //recuperamos el id car para enviarselo a la fuccion que inyecte los datos del coche
+    // xxx($db, $result['id_car']);
 }
 $cars = listCar($db);
 
@@ -40,16 +43,131 @@ $cars = listCar($db);
 /**
  * si existe datos en la base de datos los inyecta. y si no cero.
  */
-function xxx()
+function dbTiming(PDO $db)
 {
+    if (!empty($_POST['select'])) {
+        $data = array(
+            ':id_car' => $_POST['select']
+        );
+        $sql = 'SELECT * FROM timingbelt where id_car = :id_car';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            return   array(
+                [
+                    'date' => '01/01/1970',
+                    'km' => '000'
+                ]
+            );
+        }
+    }
 }
+$timing = dbTiming($db);
 
+/**
+ * si existe datos en la base de datos los inyecta. y si no cero.
+ */
+function dbBuy(PDO $db)
+{
+    if (!empty($_POST['select'])) {
+        $data = array(
+            ':id_car' => $_POST['select']
+        );
+        $sql = 'SELECT * FROM buy where id_car = :id_car';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            return   array(
+                [
+                    'date' => '01/01/1970',
+                    'km' => '000'
+                ]
+            );
+        }
+    }
+}
+$buy = dbBuy($db);
 
+/**
+ * si existe datos en la base de datos los inyecta. y si no cero.
+ */
+function dbFirst(PDO $db)
+{
+    if (!empty($_POST['select'])) {
+        $data = array(
+            ':id_car' => $_POST['select']
+        );
+        $sql = 'SELECT * FROM firstregistration where id_car = :id_car';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            return   array(
+                [
+                    'date' => '01/01/1970',
+                    'km' => '000'
+                ]
+            );
+        }
+    }
+}
+$first = dbFirst($db);
 
+function dbTechnical(PDO $db)
+{
+    if (!empty($_POST['select'])) {
+        $data = array(
+            ':id_car' => $_POST['select']
+        );
+        $sql = 'SELECT * FROM technicalcontrol where id_car = :id_car';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            return   array(
+                [
+                    'date' => '01/01/1970',
+                    'km' => '000'
+                ]
+            );
+        }
+    }
+}
+$technical = dbTechnical($db);
 
-
-
-
+function dbOil(PDO $db)
+{
+    if (!empty($_POST['select'])) {
+        $data = array(
+            ':id_car' => $_POST['select']
+        );
+        $sql = 'SELECT * FROM oilchanges where id_car = :id_car';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            return   array(
+                [
+                    'date' => '01/01/1970',
+                    'km' => '000'
+                ]
+            );
+        }
+    }
+}
+$oil = dbOil($db);
 
 
 

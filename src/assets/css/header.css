@@ -533,3 +533,11 @@ main {
     flex-wrap: wrap;
     align-items: center;
 }
+
+.car .contained {
+    height: 700px;
+}
+
+.as {
+    width: 100%;
+}
