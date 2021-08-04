@@ -15,62 +15,103 @@
                                 <?php } ?>
                             </select>
                         </div>
+
                     </li>
                     <li>
                         <div class="column ">
-                            <button type="submit">Confirmer</button>
+                            <button type="submit">Ajoutez votre véhicule</button>
                         </div>
                     </li>
                 </ul>
+                <div>
+                    <?php foreach ($trademark as $trade) { ?>
+                        <p>Vous avez choise le véhicule <?= $trade['trademark'] ?></p>
+                    <?php } ?>
+                </div>
             </div>
         </form>
         <div class="column">
             <form action="" method="post">
                 <ul>
                     <div class=" column">
-                        <!-- <select name="select"> -->
                         <?php for ($i = 0; $i < count($types); $i++) { ?>
-                            
                             <li>
                                 <p form='<?= $types[$i]['function']; ?>'><?= $types[$i]['type_data']; ?></p>
-                            
                                 <div class="row">
-                            
-                                 <?php if (($types[$i]['function']) == 1) { 
-                                        $var = 2;
-                                 }elseif( ($types[$i]['function']) == 2 ){
-
-                                         }
-                                        }
-                                         ?>
-                            
-                                    <?php foreach ($buy as $x) { ?>
-                            
-                                        <div class="column">
-                                                <label for="date">Date</label>
-                                                <input type="date" name='date<?= $i + 1; ?> ' value="<?= $x['date']     ?>">
-                                        </div>
-                                        <div class="column">
-                                                <label for="km">Km</label>
-                                                <input type="number" name='km<?= $i + 1; ?>' value="<?= $x['km']     ?>">
-                                        </div>
-                                    <?php } ?>   
-                                      
-                                                    
-
-                                 <?php } ?>
-                                      
+                                    <?php switch ($types[$i]['function']) {
+                                        case (1):
+                                            foreach ($buy as $b) { ?>
+                                                <div class="column">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name='date<?= $i + 1; ?> ' value="<?= $b['date']     ?>">
+                                                </div>
+                                                <div class="column">
+                                                    <label for="km">Km</label>
+                                                    <input type="number" name='km<?= $i + 1; ?>' value="<?= $b['km']     ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php break; ?>
+                                            <?php
+                                        case (2):
+                                            foreach ($oil as $o) { ?>
+                                                <div class="column">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name='date<?= $i + 1; ?> ' value="<?= $o['date']     ?>">
+                                                </div>
+                                                <div class="column">
+                                                    <label for="km">Km</label>
+                                                    <input type="number" name='km<?= $i + 1; ?>' value="<?= $o['km']     ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php break; ?>
+                                            <?php
+                                        case (3):
+                                            foreach ($timing as $t) { ?>
+                                                <div class="column">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name='date<?= $i + 1; ?> ' value="<?= $t['date']     ?>">
+                                                </div>
+                                                <div class="column">
+                                                    <label for="km">Km</label>
+                                                    <input type="number" name='km<?= $i + 1; ?>' value="<?= $t['km']     ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php break; ?>
+                                            <?php
+                                        case (4):
+                                            foreach ($technical as $te) { ?>
+                                                <div class="column">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name='date<?= $i + 1; ?> ' value="<?= $te['date']     ?>">
+                                                </div>
+                                                <div class="column">
+                                                    <label for="km">Km</label>
+                                                    <input type="number" name='km<?= $i + 1; ?>' value="<?= $te['km']     ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php break; ?>
+                                            <?php
+                                        case (5):
+                                            foreach ($first as $f) { ?>
+                                                <div class="column">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" name='date<?= $i + 1; ?> ' value="<?= $f['date']     ?>">
+                                                </div>
+                                                <div class="column">
+                                                    <label for="km">Km</label>
+                                                    <input type="number" name='km<?= $i + 1; ?>' value="<?= $f['km']     ?>">
+                                                </div>
+                                            <?php } ?>
+                                            <?php break; ?>
+                                    <?php } //switch 
+                                    ?>
+                                <?php } ?>
                                 </div>
-                            
                             </li>
-                    <?php } ?>
-            
-            
                     </div>
-                    <!-- </select> -->
                     <li>
                         <div class="column">
-                            <button type="submit">Confirmer</button>
+                            <button type="submit">Confirmez les données</button>
                         </div>
                     </li>
                 </ul>

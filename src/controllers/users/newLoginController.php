@@ -80,9 +80,9 @@ function addUser(PDO $db, AltoRouter $router)
                 $request->execute($data);
 
                 // dump($result);
+                header('Location: ' . $router->generate('homeadmin'));
             }
         }
-        header('Location: ' . $router->generate('homeadmin'));
     }
 }
 // searchEmail($db, $router);
