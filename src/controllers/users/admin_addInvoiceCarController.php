@@ -21,8 +21,10 @@ if (!$result) {
     //     $select = $_POST['select'];
     // }
 
-
-    function getTrademark(PDO $db)
+    /**
+     * rellena el select
+     */
+    function getCar(PDO $db)
     {
         $data = array(
             ':id_user' => $_SESSION['auth']['id_user']
@@ -44,12 +46,48 @@ if (!$result) {
         // }
 
     }
-    $cars = getTrademark($db);
+    $cars = getCar($db);
 
+    /**
+     * rellena el parrafo por defecto con el primeto de los coches y despues con la eleccion
+     */
+    function getTrademark(PDO $db)
+    {
+        if (!empty($_POST['select'])) {
+            $data = array(
+                ':id_car' => $_POST['select']
+            );
+            $sql = 'SELECT * FROM car where id_car = :id_car LIMIT 1';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+
+            // $data = array(
+            //     ':id_user' => $_SESSION['auth']['id_user']
+            // );
+            // $sql = 'SELECT * FROM car where id_user = :id_user LIMIT 1 ';
+            // $request = $db->prepare($sql);
+            // $request->execute($data);
+            // $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } else {
+            $data = array(
+                ':id_user' => $_SESSION['auth']['id_user']
+            );
+            $sql = 'SELECT * FROM car where id_user = :id_user LIMIT 1';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }
+    }
+    $trademark = getTrademark($db);
     $global_car = getTrademark($db);
-    $global_car = $result[0]['id_car'];
+    $global_car = $global_car[0]['id_car'];
 
-    // dump($global_car);
+    dump('result', $result);
+
+    dump('global', $global_car);
 
 
     /**
@@ -64,9 +102,6 @@ if (!$result) {
         return $result;
     }
     $types = listType($db);
-
-
-
 
 
     /**
@@ -117,9 +152,8 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
-            }
+            return $result;
+
             // } else {
             //     return   array(
             //         [
@@ -247,21 +281,24 @@ if (!$result) {
         }
     }
     $oil = dbOil($db);
-    // dump($_POST['select']);
+
+
+
+
 
     /**
      * guarda en DB los datos del coche
      */
-    function insert_DB(PDO $db)
+    function insert_DB(PDO $db, $globalCar)
     {
-        // dump('var');
+        dump('globalcar', $globalCar);
         // dump('select', $_POST['select']);
-        if (!empty($_POST['km1']) && !empty($_POST['date1']) && !empty($_POST['select'])) {
+        if (!empty($_POST['km1']) && !empty($_POST['date1']) && !empty($globalCar)) {
             // dump('date', $_POST['date1']);
             // dump('km', $_POST['km1']);
 
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $globalCar
             );
             $sql = 'SELECT * FROM buy where id_car = :id_car';
             $request = $db->prepare($sql);
@@ -271,7 +308,7 @@ if (!$result) {
             if (!$result) {
                 $sql = 'INSERT INTO buy (id_car, km, date) VALUES (:id_car, :km, :date)';
                 $data = [
-                    ':id_car' => $_POST['select'],
+                    ':id_car' => $globalCar,
                     ':km'  => $_POST['km1'],
                     ':date' => $_POST['date1'],
                 ];
@@ -281,7 +318,7 @@ if (!$result) {
                 $data = [
                     ':date'  => $_POST['date1'],
                     ':km' =>  $_POST['km1'],
-                    ':id_car' => $_POST['select']
+                    ':id_car' => $globalCar
                 ];
                 $sql = 'UPDATE buy SET date= :date, km= :km WHERE id_car= :id_car';
 
@@ -292,8 +329,11 @@ if (!$result) {
         }
     } //fin
 
+    insert_DB($db, $globalCar);
 
-    insert_DB($db);
+
+
+
     function insert_xx(PDO $db, $date, $km, $dataBase)
     {
         dump("{$dataBase}");

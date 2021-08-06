@@ -1,174 +1,24 @@
-#header {
-	margin-bottom: 50px;
-	background-color: $background-color;
+@import'color';
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: $color-header;
+    /* position: fixed; */
+    box-shadow: 2px 5px 15px -2px $color-shadow;
+    filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
 
-	a {
-		color: #fff;
-	}
+.logo {
+    width: 60%;
+    padding-left: 7.18%;
+    /* align-self: center; */
+}
 
-	.wrapper {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	#logo {
-		svg {
-			width: 65px;
-
-			path,
-			rect,
-			circle {
-				fill: #fff;
-				transition: .3s ease fill;
-			}
-
-			circle {
-				fill: none;
-				stroke: #fff;
-				stroke-miterlimit: 10;
-				transition: .3s ease stroke;
-			}
-
-			rect,
-			circle {
-				&.pop-1 {
-					animation: popBounce1 3s infinite;
-				}
-
-				&.pop-2 {
-					animation: popBounce2 3s infinite;
-				}
-
-				&.pop-3 {
-					animation: popBounce3 3s infinite;
-				}
-
-				&.bubble-1 {
-					animation: bubbleBounce1 3s infinite;
-				}
-
-				&.bubble-2 {
-					animation: bubbleBounce2 3s infinite;
-				}
-
-				&.bubble-3 {
-					animation: bubbleBounce3 3s infinite;
-				}
-			}
-		}
-
-		a {
-			&:hover,
-			&:focus {
-				svg path,
-				svg rect {
-					fill: $ponctual-color;
-					
-					&.glass {
-						fill: $primary-color;
-					}
-				}
-
-				svg circle {
-					stroke: $primary-color;
-				}
-			}
-		}
-	}
-
-	nav {
-		width: 60%;
-	}
-
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-
-		li {
-			margin-right: 5%;
-
-			&:last-child {
-				margin-right: 0;
-			}
-
-			a {
-				position: relative;
-				display: block;
-				padding: 40px 0;
-				@include fontSize(18px);
-
-				&::before {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 50%;
-					transform: translateX(-50%);
-					width: 0;
-					height: 3px;
-					background-color: #fff;
-					transition: .3s ease width, transform .3s ease;
-				}
-
-				&:hover,
-				&:focus,
-				&.active {
-					&::before {
-						width: 100%;
-					}
-				}
-
-				&.active {
-					font-family: $bold-font;
-				}
-			}
-		}
-	}
-
-	form {
-		position: relative;
-
-		input {
-			width: 100%;
-			padding: 10px 35px 10px 15px;
-			border: none;
-			outline: none;
-			background-color: transparent;
-			background-color: $body-color;
-			border-bottom: transparent 2px solid;
-			transition: .3s ease border-color;
-
-			&:focus {
-				border-color: $primary-color;
-			}
-		}
-
-		button {
-			position: absolute;
-			top: 8px;
-			right: 5px;
-			cursor: pointer;
-			outline: none;
-			background-color: transparent;
-
-			svg {
-				width: 20px;
-
-				path {
-					fill: $default-color;
-					transition: .3s ease fill;
-				}
-			}
-			
-			&:hover,
-			&:focus {
-				svg path {
-					fill: $primary-color;
-				}
-			}
-		}
-	}
+a {
+    text-decoration: none;
 }

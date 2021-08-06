@@ -1,7 +1,5 @@
 <?php get_header('Se connecter', 'login') ?>
 
-etienne@mail.com
-mdp
 <div class="menu-login">
 	<div class="login">
 		<form action="" method="post">

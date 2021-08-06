@@ -17,21 +17,21 @@
                         </div>
 
                     </li>
-                    <!-- <li>
+                    <li>
                         <div class="column ">
                             <button type="submit">Ajoutez votre véhicule</button>
                         </div>
-                    </li> -->
+                    </li>
                 </ul>
                 <div>
-                    <!-- <?php foreach ($trademark as $trade) { ?>
+                    <?php foreach ($trademark as $trade) { ?>
                         <p>Vous avez choise le véhicule <?= $trade['trademark'] ?></p>
-                    <?php } ?> -->
+                    <?php } ?>
                 </div>
             </div>
-            <!-- </form> -->
-            <div class="column">
-                <!-- <form action="" method="post"> -->
+        </form>
+        <div class="column">
+            <form action="" method="post">
                 <ul>
                     <div class=" column">
                         <?php for ($i = 0; $i < count($types); $i++) { ?>
@@ -115,7 +115,7 @@
                         </div>
                     </li>
                 </ul>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 </div>
