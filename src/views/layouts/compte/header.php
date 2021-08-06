@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css">
-    <link href="/proyectocar/car/src/assets/css/header.css" rel="stylesheet">
+    <link href="/proyectocar/car/src/assets/css/main.css" rel="stylesheet">
     <script>
         function click() {
             var a = document.getElementById('select_car').value;

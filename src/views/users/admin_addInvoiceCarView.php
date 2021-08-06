@@ -46,7 +46,7 @@
                                                     <input type="date" name='date<?= $i + 1 ?>' value="<?= $b['date'] ?>">
                                                 </div>
                                                 <div class="column">
-                                                    <label for="km">Km</label>
+                                                    <label for="km<?= $i + 1 ?>">Km</label>
                                                     <input type="number" name='km<?= $i + 1 ?>' value="<?= $b['km'] ?>">
                                                 </div>
                                             <?php } ?>
@@ -55,8 +55,8 @@
                                         case (2):
                                             foreach ($oil as $o) { ?>
                                                 <div class="column">
-                                                    <label for="date">Date</label>
-                                                    <input type="date" name='date<?= $i + 1 ?> ' value="<?= $o['date'] ?>">
+                                                    <label for="date<?= $i + 1 ?>">Date</label>
+                                                    <input type="date" name='date<?= $i + 1 ?>' value="<?= $o['date'] ?>">
                                                 </div>
                                                 <div class="column">
                                                     <label for="km">Km</label>
@@ -68,12 +68,12 @@
                                         case (3):
                                             foreach ($timing as $t) { ?>
                                                 <div class="column">
-                                                    <label for="date">Date</label>
-                                                    <input type="date" name='date<?= $i + 1 ?> ' value="<?= $t['date']     ?>">
+                                                    <label for="date<?= $i + 1 ?>">Date</label>
+                                                    <input type="date" name='date<?= $i + 1 ?>' value="<?= $t['date'] ?>">
                                                 </div>
                                                 <div class="column">
-                                                    <label for="km">Km</label>
-                                                    <input type="number" name='km<?= $i + 1 ?>' value="<?= $t['km']     ?>">
+                                                    <label for="km<?= $i + 1 ?>">Km</label>
+                                                    <input type="number" name='km<?= $i + 1 ?>' value="<?= $t['km'] ?>">
                                                 </div>
                                             <?php } ?>
                                             <?php break; ?>
@@ -103,7 +103,9 @@
                                                 </div>
                                             <?php } ?>
                                             <?php break; ?>
-                                    <?php } //switch 
+                                    <?php
+                                        default;
+                                    } //switch 
                                     ?>
                                 </div>
                             </li>

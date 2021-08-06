@@ -1,25 +1,15 @@
-@mixin animateLogo($name, $position, $frameMiddle) {
-	@keyframes popBounce#{$name} {
-		0% { 
-			transform: translateY(0);
-		}
-	
-		#{$frameMiddle} { 
-			transform: translateY($position);
-		}
-	
-		100% { 
-			transform: translateY(0);
-		}
-	}
+@mixin column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-@mixin fontSize($size) {
-	font-size: $size;
-	font-size: calculateRem($size);
-}
-
-@function calculateRem($size) {
-	$size: $size / 16px;
-	@return #{$size}rem;
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }

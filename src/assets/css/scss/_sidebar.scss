@@ -1,0 +1,55 @@
+    @import 'color';
+    main {
+        display: flex;
+        flex-flow: row;
+        height: 700px;
+    }
+    
+    .sidebar {
+        display: fixed;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: left;
+        padding-left: 7.18%;
+        .row {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 103px;
+            height: 95px;
+            border-radius: 15px;
+            font-size: 1erm;
+            box-shadow: 2px 5px 15px -2px $color-shadow;
+            filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+            text-transform: uppercase;
+            color: $color-texto;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    }
+    
+    .list a {
+        width: 123px;
+        display: block;
+    }
+    
+    .b-alert {
+        background-color: $color-alert;
+    }
+    
+    .b-invoice {
+        background-color: $color-invoice;
+    }
+    
+    .b-statistic {
+        background-color: $color-statistic;
+    }
+    
+    .b-history {
+        background-color: $color-history;
+    }
