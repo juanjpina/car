@@ -25,8 +25,8 @@
                 </ul>
                 <div>
                     <?php foreach ($trademark as $trade) { ?>
-                        <p class="trademark">Vous avez choise le véhicule <?php echo $trade['trademark'] ?></p>
-                    <?php } ?>
+                        <p class="trademark">Vous avez choisie le véhicule <?= $trade['trademark']; ?></p>
+                    <?php }; ?>
                 </div>
             </div>
         </form>
