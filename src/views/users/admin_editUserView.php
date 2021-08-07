@@ -1,17 +1,17 @@
 <?php get_header('edit data user', 'compte'); ?>
 <div class="user">
-    <div class="contained">
+    <div class="">
         <div class="column">
-            <h3>Modifier votre données</h3>
+            <h3 class="h3Car">Modifier votre données</h3>
         </div>
         <form action="" method="post">
 
-            <div class="column form">
+            <div class="column ">
 
                 <div class="column">
                     <?php $error = checkField('nickname', 'Votre pseudo est vide.'); ?>
                     <label for="nickname">Pseudo</label>
-                    <input type="text" name="nickname" value="<?= searchEmail($db) ?>">
+                    <input class='input' type="text" name="nickname" value="<?= searchEmail($db) ?>">
                     <p class="message"> <?= $error['message']; ?> </p>
                 </div>
 

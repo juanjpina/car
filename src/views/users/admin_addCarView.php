@@ -1,27 +1,26 @@
 <?php
 get_header('Add New Car', 'compte'); ?>
 
-<h1 class="mb-4">Ajouter un nouveau véhicule</h1>
-<ul>
-    <li>
-
+<div class="addCar column">
+    <h1 class="h1Title">Ajouter un nouveau véhicule</h1>
+    <ul>
         <form action="" method="post">
-            <div class="mb-3">
-                <label for="trademark" class="form-label">La marque de votre véhicule</label>
-                <input type="text" class="form-control" id="trademark" name="trademark">
-            </div>
-    </li>
+            <li>
+                <div class="column">
+                    <label for="trademark" class="formLabel">La marque de votre véhicule</label>
+                    <input type="text" class="input inputTrade" id="trademark" name="trademark">
 
-    <li>
-        <div>
-            <button type="submit" class="btn btn-success">Sauvegarder</button>
-        </div>
-    </li>
+            </li>
+            <li>
+                <div class="column">
+                    <button type="submit" class="button">Sauvegarder</button>
+                </div>
+            </li>
+        </form>
+    </ul>
+</div>
 
-    </form>
-
-</ul>
-
+</div>
 
 
 
