@@ -542,4 +542,46 @@ main {
   padding-bottom: 20px;
 }
 
+.trademark {
+  font-size: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.invoiceCar {
+  width: 60%;
+  height: 750px;
+}
+
+.invoiceCar .containedCar {
+  background-color: #d9bd30;
+  width: 60%;
+  height: 450px;
+  margin-top: 0;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.invoiceCar .containedCar {
+  height: 700px;
+}
+
 /*# sourceMappingURL=main.css.map */

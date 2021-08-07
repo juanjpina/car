@@ -1,14 +1,14 @@
 <?php get_header('InvoiceCar', 'compte') ?>
-<div class="car">
-    <div class="contained column">
-        <div class="select column">
+<div class="invoiceCar">
+    <div class="containedCar column">
+        <div class="column">
             <h3>Modifier les données de votre véhicule</h3>
         </div>
         <form action="" method="post">
             <div class="column">
                 <ul>
                     <li>
-                        <div class="columns">
+                        <div class="column">
                             <select name="select" id="select_car" onchange="click()">
                                 <?php foreach ($cars as $car) { ?>
                                     <option value='<?= $car['id_car']; ?>'><?= $car['trademark']; ?></option>
@@ -33,7 +33,7 @@
         <div class="column">
             <form action="" method="post">
                 <ul>
-                    <div class=" column">
+                    <div class="column">
                         <?php for ($i = 0; $i < count($types); $i++) { ?>
                             <li>
                                 <p form='<?= $types[$i]['function']; ?>'><?= $types[$i]['type_data']; ?></p>

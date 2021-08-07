@@ -1,9 +1,12 @@
 // Colors
-$primary-color: #24c0ad;
-$ponctual-color: #ff6b6b;
-$background-color: #d94625;
-$default-color: #0d1018;
-$body-color: #ebebeb;
+$color-invoice: #8c641b;
+$color-alert: #d9bd30;
+$color-statistic: #bf9926;
+$color-history: #d94625;
+$color-header: #d94625;
+$color-shadow: #b4b2ba;
+$color-texto: #f2f2f2;
+$color-button-header: #083540;
 // Fonts
 $default-font: 'latolight',
 sans-serif;
@@ -27,3 +30,4 @@ sans-serif;
 @import 'history';
 @import 'compteUser';
 @import 'compteSetting';
+@import 'addInvoiceCar';

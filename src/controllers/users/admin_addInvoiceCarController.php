@@ -65,7 +65,7 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            dump('trad', $result);
+            // dump('trad', $result);
             return $result;
         }
     }
