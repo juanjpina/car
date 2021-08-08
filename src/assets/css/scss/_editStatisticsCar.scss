@@ -1,0 +1,26 @@
+@import 'fonts';
+.userStatistics {
+    width: 40%;
+    height: 350px;
+    background-color: $color-alert;
+    margin-top: 150px;
+    border-radius: 28px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+    // flex-wrap: wrap;
+    // align-items: center;
+}
+
+.liStatis {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonStatis {
+    margin-top: 50px;
+}
+
+.as {
+    margin-top: 20px;
+}

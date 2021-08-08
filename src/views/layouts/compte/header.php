@@ -55,6 +55,15 @@
         <div class="sidebar">
             <ul class="list">
                 <li>
+                    <a href="<?= $router->generate('addInvoice'); ?>">
+                        <div class="row b-alert">
+                            <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">
+                            <p>Home</p>
+                        </div>
+                    </a>
+
+                </li>
+                <li>
                     <a href="<?= $router->generate('addnewcar'); ?>">
                         <div class="row b-alert">
                             <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">

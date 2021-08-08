@@ -64,6 +64,10 @@ table {
   font-weight: normal;
   font-style: normal;
 }
+.h1Title {
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -331,7 +335,6 @@ a {
 main {
   display: flex;
   flex-flow: row;
-  height: 700px;
 }
 
 .sidebar {
@@ -627,11 +630,63 @@ main {
   margin-bottom: 25px;
 }
 
-.user {
+.statistics {
+  width: 60%;
+  height: 350px;
+}
+
+.statistics .contained {
+  background-color: #bf9926;
+  width: 60%;
+  height: 350px;
+  margin-top: 100px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.date {
+  margin: 0 15px 0 15px;
+}
+
+@font-face {
+  font-family: "latoblack";
+  src: url("../fonts/lato-black-webfont.woff2") format("woff2"), url("../fonts/lato-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "latolight";
+  src: url("../fonts/lato-light-webfont.woff2") format("woff2"), url("../fonts/lato-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.h1Title {
+  font-weight: bold;
+}
+
+.userStatistics {
+  width: 40%;
+  height: 350px;
   background-color: #d9bd30;
   margin-top: 150px;
   border-radius: 28px;
-  width: 40%;
+}
+
+.liStatis {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buttonStatis {
+  margin-top: 50px;
+}
+
+.as {
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
