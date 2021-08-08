@@ -52,12 +52,12 @@
     </header>
 
     <main class="">
-        <div class="sidebar">
+        <div class="sidebarCompte">
             <ul class="list">
                 <li>
                     <a href="<?= $router->generate('addInvoice'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">
+                            <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
                             <p>Home</p>
                         </div>
                     </a>
@@ -66,7 +66,7 @@
                 <li>
                     <a href="<?= $router->generate('addnewcar'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">
+                            <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
                             <p>Ajouter un véhicule</p>
                         </div>
                     </a>
@@ -75,15 +75,15 @@
                 <li>
                     <a href="<?= $router->generate('editUser'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/man.png" width="50" height="50" alt="">
-                            <p>Données</p>
+                            <img src="/proyectocar/car/src/assets/images/man.png" width="30" height="30" alt="">
+                            <p>Pseudo, Mot de passe</p>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="<?= $router->generate('addinvoicecar'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+                            <img src="/proyectocar/car/src/assets/images/facture3.png" width="30" height="30" alt="">
                             <p>Données</p>
                         </div>
                     </a>
@@ -91,16 +91,16 @@
                 <li>
                     <a href="<?= $router->generate('editstacar'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
-                            <p>Données</p>
+                            <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
+                            <p>Paramètres</p>
                         </div>
                     </a>
                 </li>
                 <li>
                     <a href="<?= $router->generate('addinvoicecar'); ?>">
                         <div class="row b-alert">
-                            <img src="/proyectocar/car/src/assets/images/car.png" width="50" height="50" alt="">
-                            <p>Données</p>
+                            <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
+                            <p>Infotmation du véhicule</p>
                         </div>
                     </a>
 

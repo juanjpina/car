@@ -1,5 +1,13 @@
 @import 'color';
 .user {
-    width: 60%;
-    height: 350px;
+    width: 30%;
+    height: 450px;
+    background-color: $color-alert;
+    margin-top: 200px;
+    border-radius: 28px;
+    padding-top: 40px;
+}
+
+.form {
+    margin-top: 20px;
 }

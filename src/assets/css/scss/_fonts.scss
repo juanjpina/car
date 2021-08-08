@@ -1,20 +1,10 @@
 @font-face {
-    font-family: 'latoblack';
-    src: url('../fonts/lato-black-webfont.woff2') format('woff2'), url('../fonts/lato-black-webfont.woff') format('woff');
+    font-family: 'montserrat';
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'latolight';
-    src: url('../fonts/lato-light-webfont.woff2') format('woff2'), url('../fonts/lato-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-// <link rel="preconnect" href="https://fonts.googleapis.com">
-// 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-// 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 .h1Title {
     font-weight: bold;
 }
