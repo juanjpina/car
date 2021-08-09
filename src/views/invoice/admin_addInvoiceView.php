@@ -1,52 +1,68 @@
 <?php get_header('invoice add', 'admin'); ?>
 
 
-<div class="invoice">
-    <div class="contained">
 
-        <form action="">
-
-            <div class="select column">
-                <h3>Facture</h3>
-                <select name="select">
-                    <?php foreach ($result as $resul) { ?>
-                        <option value="value1"><?= $resul ?> </option>
-
-                    <?php } ?>
-                </select>
-
-            </div>
-            <div class="data row">
-                <div class="date column">
-                    <label for="date">Date</label>
-                    <input type="date" name="date">
-                </div>
-                <div class="km column">
-                    <label for="km">Km</label>
-                    <input type="number" name="km">
-                </div>
-                <div class="amount column">
-                    <label for="montant">Montant facture</label>
-                    <input type="number" name="amout">
-
-                </div>
-            </div>
-            <div class="confirmation">
-                <div class="column">
-                    <h5>Ajoutez une facture</h5>
-                    <a href="#">
-                        <div class="conf column">
-                            <p>Confirmer</p>
+<div class="addInvoice column">
+    <div class="column">
+        <h1 class='title'>Ajouter une facture</h1>
+    </div>
+    <div class="column">
+        <form action="" method="post">
+            <ul>
+                <li>
+                    <div class="select column">
+                        <h3>Votre véhicule</h3>
+                        <select name="trademark" class="input">
+                            <?php foreach ($trademark as $trade) { ?>
+                                <option value="<?= $trade['id_car']; ?>"><?= $trade['trademark']; ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="select column">
+                        <h3>Facture</h3>
+                        <select name="invoice" class="input">
+                            <?php foreach ($invoice as $invo) { ?>
+                                <option value=""><?= $invo['type'] ?> </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="date column">
+                            <label for="date">Date</label>
+                            <input type="date" class='input' name="date">
                         </div>
-                    </a>
+                        <div class="km column">
+                            <label for="km">Km</label>
+                            <input type="number" class="input" name="km">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="amount column">
+                        <label for="total">Montant facture</label>
+                        <input type="number" class="input" name="total">
+                    </div>
+                </li>
+                <li>
+                <li>
+                    <div class="column">
+                        <label for="text">Comment</label>
+                        <input type="text" class="input" name="text">
+                    </div>
+                </li>
+                <div class="column buttonSubmit">
+                    <button type="submit" class="button">Sauvegarder</button>
                 </div>
-
-            </div>
-
+                </li>
+            </ul>
         </form>
-
     </div>
 </div>
+
 
 
 

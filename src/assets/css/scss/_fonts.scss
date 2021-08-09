@@ -1,10 +1,14 @@
 @font-face {
     font-family: 'montserrat';
-    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype'),
 }
 
-.h1Title {
-    font-weight: bold;
+@font-face {
+    font-family: 'montserratExtra';
+    src: url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+.title {
+    font-family: 'montserratExtra';
+    text-transform: uppercase;
 }

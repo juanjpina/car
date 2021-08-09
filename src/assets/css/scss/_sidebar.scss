@@ -1,155 +1,151 @@
-    //     justify-content: space-between;
-    //     align-items: flex-end;
-    //     height: 100%;
-    // }
-    // .bonjour {
-    //     padding-bottom: 3px;
-    //     width: 100%;
-    // }
-    // .bonjour p {
-    //     text-align: left;
-    //     padding-left: 65%;
-    //     color: $color-texto;
-    // }
-    // .button,
-    // .button_admin {
-    //     width: 240px;
-    //     height: 35px;
-    //     border-radius: 15px;
-    //     background-color: $color-button-header;
-    //     border-color: transparent;
-    //     color: $color-texto;
-    // }
-    // .button_admin {
-    //     width: 200px;
-    //     height: 40px;
-    //     font-size: 1em;
-    //     display: flex;
-    //     flex-direction: row;
-    //     flex-wrap: wrap;
-    //     justify-content: space-evenly;
-    //     align-items: center;
-    //     margin-right: 28px;
-    //     /* padding-left: auto; */
-    //     /* padding-right: auto; */
-    // }
-    // .button_admin a {
-    //     color: $color-texto;
-    //     padding-right: 20px;
-    // }
-    // .button_admin img {
-    //     margin-left: 20px;
-    // }
-    // .navegation ul {
-    //     display: flex;
-    //     /* justify-content: flex-end; */
-    //     align-items: center;
-    // }
-    // .li_button a {
-    //     display: block;
-    //     width: 200px;
-    //     margin-right: 20px;
-    // }
-    // .b-alert {
-    // }
-    // .b-invoice {
-    //     background-color: $color-invoice;
-    // }
-    // .b-statistic {
-    //     background-color: $color-statistic;
-    // }
-    // .b-history {
-    //     background-color: $color-history;
-    // }
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    .sidebarCompte {
-        margin-left: 7%;
-        padding-top: 200px;
-        width: 20%;
-        li {
-            margin-top: 10px;
+        // Colors
+        // $color-invoice: #8c641b;
+        // $color-alert: #d9bd30;
+        // $color-statistic: #bf9926;
+        // $color-history: #d94625;
+        // $color-header: #d94625;
+        // $color-shadow: #b4b2ba;
+        // $color-texto: #f2f2f2;
+        // $color-button-header: #083540;
+        // // Fonts
+        // $default-font: 'montserrat',
+        // sans-serif;
+        // input {
+        //     font-family: 'montserrat';
+        //     color: black;
+        //     text-align: center
+        // }
+        // select {
+        //     font-family: 'montserrat';
+        //     color: black;
+        //     text-align: center;
+        // }
+        // main {
+        //     width: 100%;
+        //     display: flex;
+        //     flex-direction: row;
+        //     flex-wrap: wrap;
+        //     justify-content: start;
+        // }
+        // @import 'reset';
+        // @import 'fonts';
+        // @import 'mixins';
+        // @import 'default';
+        // @import 'header';
+        // @import 'footer';
+        // @import 'home';
+        // @import '_loginHeader';
+        // @import 'color';
+        // @import 'login';
+        // @import 'pageReception';
+        // @import 'sidebar';
+        // @import 'alert';
+        // @import 'invoice';
+        // @import 'statistics';
+        // @import 'history';
+        // @import 'compteUser';
+        // @import 'compteSetting';
+        // @import 'addInvoiceCar';
+        // @import 'addCar';
+        // @import 'editUser';
+        // @import 'editStatisticsCar';
+        // @import 'addInvoice';
+        //     background-color: $color-invoice;
+        // }
+        // .b-statistic {
+        //     background-color: $color-statistic;
+        // }
+        // .b-history {
+        //     background-color: $color-history;
+        // }
+        // main {
+        //     width: 100%;
+        //     display: flex;
+        //     flex-direction: row;
+        //     flex-wrap: wrap;
+        //     justify-content: start;
+        // }
+        .sidebarCompte {
+            margin-left: 7%;
+            padding-top: 200px;
+            width: 20%;
+            li {
+                margin-top: 10px;
+                .b-alert {
+                    @include shadow;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    color: $color-texto;
+                    border-radius: 15px;
+                    padding: 20px;
+                    width: 100%;
+                    background-color: $color-alert;
+                    img {
+                        margin-left: 10px;
+                    }
+                    p {
+                        margin-left: 15px;
+                        text-align: left;
+                    }
+                    &:hover {
+                        background-color: $color-alert;
+                        opacity: 0.5;
+                        transition: all 600ms ease;
+                    }
+                    &:active {
+                        background-color: $color-history;
+                        color: $color-history;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        
+        .sidebarAdmin {
+            margin-left: 7%;
+            padding-top: 150px;
+            width: 20%;
+            li {
+                margin-top: 40px;
+                width: 40%;
+                .border {
+                    @include shadow;
+                    // display: flex;
+                    // flex-direction: column;
+                    justify-content: stretch; // align-items: center;
+                    // flex-wrap: wrap;
+                    color: $color-texto;
+                    border-radius: 15px;
+                    padding: 20px;
+                    width: 100%;
+                    img {
+                        margin-bottom: 5px;
+                    }
+                    &:hover {
+                        background-color: $color-alert;
+                        opacity: 0.5;
+                        transition: all 600ms ease;
+                    }
+                    &:active {
+                        background-color: $color-history;
+                        color: $color-history;
+                        opacity: 1;
+                    }
+                }
+            }
             .b-alert {
-                @include shadow;
-                display: flex;
-                flex-direction: row;
-                justify-content: start;
-                align-items: center;
-                flex-wrap: wrap;
-                color: $color-texto;
-                border-radius: 15px;
-                padding: 20px;
-                width: 100%;
                 background-color: $color-alert;
-                img {
-                    margin-left: 10px;
-                }
-                p {
-                    margin-left: 15px;
-                    text-align: left;
-                }
-                &:hover {
-                    background-color: $color-alert;
-                    opacity: 0.5;
-                    transition: all 600ms ease;
-                }
-                &:active {
-                    background-color: $color-history;
-                    color: $color-history;
-                    opacity: 1;
-                }
+            }
+            .b-invoice {
+                background-color: $color-invoice;
+            }
+            .b-statistic {
+                background-color: $color-statistic;
+            }
+            .b-history {
+                background-color: $color-history;
             }
         }
-    }
-    
-    .sidebarAdmin {
-        margin-left: 7%;
-        padding-top: 150px;
-        width: 20%;
-        li {
-            margin-top: 40px;
-            width: 40%;
-            .border {
-                @include shadow;
-                // display: flex;
-                // flex-direction: column;
-                justify-content: stretch; // align-items: center;
-                // flex-wrap: wrap;
-                color: $color-texto;
-                border-radius: 15px;
-                padding: 20px;
-                width: 100%;
-                img {
-                    margin-bottom: 5px;
-                }
-                &:hover {
-                    background-color: $color-alert;
-                    opacity: 0.5;
-                    transition: all 600ms ease;
-                }
-                &:active {
-                    background-color: $color-history;
-                    color: $color-history;
-                    opacity: 1;
-                }
-            }
-        }
-        .b-alert {
-            background-color: $color-alert;
-        }
-        .b-invoice {
-            background-color: $color-invoice;
-        }
-        .b-statistic {
-            background-color: $color-statistic;
-        }
-        .b-history {
-            background-color: $color-history;
-        }
-    }

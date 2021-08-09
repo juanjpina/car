@@ -22,8 +22,7 @@ if (!empty($_POST['trademark'])) {
         $id_car = $result2[$i]['id_car'];
     }
 
-    dump($id_car);
-    dump((int)($id_car));
+
     $data = [
         ':id_car' => (int)$id_car,
         ':date' => '2000-05-01',

@@ -20,7 +20,6 @@
 			<div class="logo">
 				<a href="#">RDVoiture</a>
 			</div>
-
 			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
@@ -47,7 +46,6 @@
 		</div>
 	</header>
 	<main class="">
-
 		<div class="sidebarAdmin">
 			<ul class="list">
 				<li>
@@ -81,18 +79,7 @@
 							<p>Historique</p>
 						</div>
 					</a>
-
 				</li>
-
 			</ul>
-			<div>
-
-			</div>
-
-
 		</div>
-
-
-
-
 		<?= alertDisplay(); ?>

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * in id-user
+ * @param id-user
  * 
- * return get id_car
+ * @return get id_car
  * 
  */
 function getCar(PDO $db)
@@ -20,9 +20,9 @@ function getCar(PDO $db)
 
 
 /**
- * in: id_car / id_user
+ * @param id_car / id_user
  * 
- * return: array data base car (trademark). 
+ * @return: array data base car (trademark). 
  */
 function getTrademark(PDO $db)
 {
@@ -49,10 +49,12 @@ function getTrademark(PDO $db)
 		return $result;
 	}
 }
+
+
 /**
- * in: id_car / data base.
+ * @param: id_car / data base.
  * 
- * return: array data base, 
+ * @return: array data base, 
  * 
  */
 function dbSelect(PDO $db, $id_car, $database)
@@ -83,7 +85,19 @@ function dbSelect(PDO $db, $id_car, $database)
 	}
 }
 
-
+/**
+ * @param data base
+ * 
+ * @return array data base.
+ */
+function getSelect(PDO $db, $database)
+{
+	$sql      = "SELECT * FROM $database";
+	$request = $db->prepare($sql);
+	$request->execute();
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
 
 
 
