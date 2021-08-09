@@ -1,5 +1,109 @@
 <?php
 
+/**
+ * in id-user
+ * 
+ * return get id_car
+ * 
+ */
+function getCar(PDO $db)
+{
+	$data = array(
+		':id_user' => $_SESSION['auth']['id_user']
+	);
+	$sql = 'SELECT * FROM car where id_user = :id_user ';
+	$request = $db->prepare($sql);
+	$request->execute($data);
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
+
+
+/**
+ * in: id_car / id_user
+ * 
+ * return: array data base car (trademark). 
+ */
+function getTrademark(PDO $db)
+{
+	if (!empty($_POST['select'])) {
+		$data = array(
+			':id_car' => $_POST['select']
+		);
+		$sql = 'SELECT trademark FROM car where id_car = :id_car';
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		// dump('trad', $result);
+		return $result;
+	} else {
+		// dump($_SESSION['auth']['id_user']);
+		$data = array(
+			':id_user' => $_SESSION['auth']['id_user']
+		);
+		$sql = 'SELECT trademark FROM car where id_user = :id_user';
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		// dump('trad', $result);
+		return $result;
+	}
+}
+/**
+ * in: id_car / data base.
+ * 
+ * return: array data base, 
+ * 
+ */
+function dbSelect(PDO $db, $id_car, $database)
+{
+	if (!empty($_POST['select'])) {
+		$data = array(
+			':id_car' => $_POST['select']
+		);
+		$sql = "SELECT * FROM $database where (id_car = :id_car)";
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		if ($result) {
+			return $result;
+		}
+	} else {
+		$data = array(
+			':id_car' => $id_car
+		);
+		$sql = "SELECT * FROM $database where (id_car = :id_car)";
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		// dump('timi', $result);
+		if ($result) {
+			return $result;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function checkAdmin(AltoRouter $router, string $path)
 {
 	$existAdmin = strpos($path, 'admin_');
