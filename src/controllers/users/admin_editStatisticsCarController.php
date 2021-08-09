@@ -10,24 +10,23 @@ $result = $request->fetchAll(PDO::FETCH_ASSOC);
 if (!$result) {
     header('Location: ' . $router->generate('addnewcar'));
 } else {
-
     $id_car = $result[0]['id_car'];
-
     if (!empty($_POST['select'])) {
-
         $id_car = $_POST['select'];
     }
-
-
+    //functions ------------------------
     $cars = getCar($db);
-
     $trademark = getTrademark($db);
-
     $setting = dbSelect($db, $id_car, "setting");
 
+    /**
+     * in:$_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car
+     * 
+     * return: update data base.
+     * 
+     */
     function dbUpdate(PDO $db, $dateTiming, $kmTiming, $kmOil, $dataBase, $id_car)
     {
-        // dump((int)$id_car);
         $data = [
             ':timingbeltDate'  => (int)$dateTiming,
             ':timingbeltKm' =>  (int)$kmTiming,

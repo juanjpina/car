@@ -1,16 +1,17 @@
 @import 'fonts';
 .userStatistics {
     width: 40%;
-    height: 350px;
+    height: 578;
     background-color: $color-alert;
     margin-top: 250px;
     border-radius: 28px;
+    @include shadow;
     // display: flex;
     // flex-direction: column;
     // justify-content: space-around;
     // flex-wrap: wrap;
     // align-items: center;
-    margin-right: 260px;
+    margin-right: 300px;
     .button {
         @include shadow;
         &:hover {

@@ -28,47 +28,47 @@ if (!$result) {
     /**
      * rellena el select
      */
-    function getCar(PDO $db)
-    {
-        $data = array(
-            ':id_user' => $_SESSION['auth']['id_user']
-        );
-        $sql = 'SELECT * FROM car where id_user = :id_user ';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    }
+    // function getCar(PDO $db)
+    // {
+    //     $data = array(
+    //         ':id_user' => $_SESSION['auth']['id_user']
+    //     );
+    //     $sql = 'SELECT * FROM car where id_user = :id_user ';
+    //     $request = $db->prepare($sql);
+    //     $request->execute($data);
+    //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    //     return $result;
+    // }
     $cars = getCar($db);
 
     /**
      * rellena el parrafo por defecto con el primeto de los coches
      */
-    function getTrademark(PDO $db)
-    {
-        if (!empty($_POST['select'])) {
-            $data = array(
-                ':id_car' => $_POST['select']
-            );
-            $sql = 'SELECT trademark FROM car where id_car = :id_car';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('trad', $result);
-            return $result;
-        } else {
-            // dump($_SESSION['auth']['id_user']);
-            $data = array(
-                ':id_user' => $_SESSION['auth']['id_user']
-            );
-            $sql = 'SELECT trademark FROM car where id_user = :id_user';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('trad', $result);
-            return $result;
-        }
-    }
+    // function getTrademark(PDO $db)
+    // {
+    //     if (!empty($_POST['select'])) {
+    //         $data = array(
+    //             ':id_car' => $_POST['select']
+    //         );
+    //         $sql = 'SELECT trademark FROM car where id_car = :id_car';
+    //         $request = $db->prepare($sql);
+    //         $request->execute($data);
+    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    //         // dump('trad', $result);
+    //         return $result;
+    //     } else {
+    //         // dump($_SESSION['auth']['id_user']);
+    //         $data = array(
+    //             ':id_user' => $_SESSION['auth']['id_user']
+    //         );
+    //         $sql = 'SELECT trademark FROM car where id_user = :id_user';
+    //         $request = $db->prepare($sql);
+    //         $request->execute($data);
+    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    //         // dump('trad', $result);
+    //         return $result;
+    //     }
+    // }
     $trademark = getTrademark($db);
 
     // function getGlobalCar(PDO $db)

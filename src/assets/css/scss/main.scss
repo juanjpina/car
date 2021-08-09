@@ -1,34 +1,46 @@
-// Colors
-$color-invoice: #8c641b;
-$color-alert: #d9bd30;
-$color-statistic: #bf9926;
-$color-history: #d94625;
-$color-header: #d94625;
-$color-shadow: #b4b2ba;
-$color-texto: #f2f2f2;
-$color-button-header: #083540;
-// Fonts
-$default-font: 'montserrat',
-sans-serif;
-@import 'reset';
-@import 'fonts';
-@import 'mixins';
-@import 'default';
-@import 'header';
-@import 'footer';
-@import 'home';
-@import '_loginHeader';
-@import 'color';
-@import 'login';
-@import 'pageReception';
-@import 'sidebar';
-@import 'alert';
-@import 'invoice';
-@import 'statistics';
-@import 'history';
-@import 'compteUser';
-@import 'compteSetting';
-@import 'addInvoiceCar';
-@import 'addCar';
-@import 'editUser';
-@import 'editStatisticsCar';
+        // Colors
+        $color-invoice: #8c641b;
+        $color-alert: #d9bd30;
+        $color-statistic: #bf9926;
+        $color-history: #d94625;
+        $color-header: #d94625;
+        $color-shadow: #b4b2ba;
+        $color-texto: #f2f2f2;
+        $color-button-header: #083540;
+        // Fonts
+        $default-font: 'montserrat',
+        sans-serif;
+        input {
+            font-family: 'montserrat';
+            color: black;
+            text-align: center
+        }
+        
+        select {
+            font-family: 'montserrat';
+            color: black;
+            text-align: center;
+        }
+        
+        @import 'reset';
+        @import 'fonts';
+        @import 'mixins';
+        @import 'default';
+        @import 'header';
+        @import 'footer';
+        @import 'home';
+        @import '_loginHeader';
+        @import 'color';
+        @import 'login';
+        @import 'pageReception';
+        @import 'sidebar';
+        @import 'alert';
+        @import 'invoice';
+        @import 'statistics';
+        @import 'history';
+        @import 'compteUser';
+        @import 'compteSetting';
+        @import 'addInvoiceCar';
+        @import 'addCar';
+        @import 'editUser';
+        @import 'editStatisticsCar';

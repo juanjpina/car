@@ -1,3 +1,15 @@
+input {
+  font-family: "montserrat";
+  color: black;
+  text-align: center;
+}
+
+select {
+  font-family: "montserrat";
+  color: black;
+  text-align: center;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -551,8 +563,9 @@ main {
 }
 
 .invoiceCar {
+  margin-right: -70px;
   width: 60%;
-  margin-top: 120px;
+  margin-top: 146px;
 }
 .invoiceCar .containedCar {
   background-color: #d9bd30;
@@ -593,11 +606,12 @@ main {
 }
 
 .addCar {
-  margin-top: 150px;
+  margin-top: 250px;
   border-radius: 28px;
   background-color: #d9bd30;
   width: 30%;
   height: 300px;
+  margin-right: 370px;
 }
 
 .h1Title {
@@ -616,9 +630,10 @@ main {
   width: 30%;
   height: 450px;
   background-color: #d9bd30;
-  margin-top: 200px;
+  margin-top: 250px;
   border-radius: 28px;
   padding-top: 40px;
+  margin-right: 370px;
 }
 
 .form {
@@ -637,11 +652,13 @@ main {
 
 .userStatistics {
   width: 40%;
-  height: 350px;
+  height: 578;
   background-color: #d9bd30;
   margin-top: 250px;
   border-radius: 28px;
-  margin-right: 260px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  margin-right: 300px;
 }
 .userStatistics .button {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
