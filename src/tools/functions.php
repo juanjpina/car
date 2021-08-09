@@ -30,7 +30,7 @@ function getTrademark(PDO $db)
 		$data = array(
 			':id_car' => $_POST['select']
 		);
-		$sql = 'SELECT trademark FROM car where id_car = :id_car';
+		$sql = 'SELECT * FROM car where id_car = :id_car';
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ function getTrademark(PDO $db)
 		$data = array(
 			':id_user' => $_SESSION['auth']['id_user']
 		);
-		$sql = 'SELECT trademark FROM car where id_user = :id_user';
+		$sql = 'SELECT * FROM car where id_user = :id_user';
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);

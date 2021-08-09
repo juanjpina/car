@@ -47,8 +47,4 @@ if (!empty($_POST['trademark'])) {
     $sql = 'INSERT INTO timingbelt (id_car, date, km) VALUES (:id_car, :date, :km)';
     $request = $db->prepare($sql);
     $result = $request->execute($data);
-
-    $sql = 'INSERT INTO setting (id_car, oilchanges, timingbletDate, timingbeltKm) VALUES (:id_car, oilchanges=15000, timingbeltKm=80000, timingbletDate=4)';
-    $request = $db->prepare($sql);
-    $result = $request->execute($data);
 }

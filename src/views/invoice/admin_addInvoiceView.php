@@ -24,7 +24,7 @@
                         <h3>Facture</h3>
                         <select name="invoice" class="input">
                             <?php foreach ($invoice as $invo) { ?>
-                                <option value=""><?= $invo['type'] ?> </option>
+                                <option value="<?= $invo['id_type'] ?>"><?= $invo['type'] ?> </option>
                             <?php } ?>
                         </select>
                     </div>
@@ -50,8 +50,8 @@
                 <li>
                 <li>
                     <div class="column">
-                        <label for="text">Comment</label>
-                        <input type="text" class="input" name="text">
+                        <label for="comment">Comment</label>
+                        <input type="text" class="input" name="comment">
                     </div>
                 </li>
                 <div class="column buttonSubmit">

@@ -2,26 +2,77 @@
 
 $trademark = getTrademark($db);
 
-$invoice = getSelect($db, 'type_invoice');
-
-
-
-
-function insert(PDO $db)
-{
-
-    if (
-        !empty($_POST['trademark']) && !empty($_POST['invoice']) && !empty($_POST['date']) && !empty($_POST['km']) && !empty($_POST['montant'])
-        && !empty($_POST['total']) && !empty($_POST['text'])
-    ) {
-
-        $data = [
-            ':id_car' => (int)$id_car,
-            ':date' => '2000-05-01',
-            ':km' => 0
-        ];
-        $sql = 'INSERT INTO buy (id_car, date, km) VALUES (:id_car, :date, :km)';
-        $request = $db->prepare($sql);
-        $result = $request->execute($data);
-    }
+if ($_SESSION['auth']) {
+    $invoice = getSelect($db, 'type_invoice');
 }
+
+
+if (
+    !empty($_POST['trademark']) && !empty($_POST['invoice'])
+    && !empty($_POST['date']) && !empty($_POST['km']) && !empty($_POST['total'])
+) {
+
+    $id_car = $_POST['trademark'];
+    $invoice = $_POST['invoice'];
+    $date = $_POST['date'];
+    $km = $_POST['km'];
+    $total = $_POST['total'];
+    $comment = $_POST['comment'];
+    // dump($id_car);
+    // dump($invoice);
+    // dump($date);
+    // dump($km);
+    // dump($total);
+    // dump($comment);
+
+
+
+
+    switch ((int)$invoice) {
+        case 1:
+            //invtoll
+            insert($db, 'invtoll', $id_car, $date, $km, $total, $comment);
+            break;
+        case 2:
+            //ibvfuel
+            insert($db, 'invfuel', $id_car, $date, $km, $total, $comment);
+            break;
+        case 3:
+            insert($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
+            //invtechnicalcontrol
+            break;
+        case 4:
+            insert($db, 'invtiming', $id_car, $date, $km, $total, $comment);
+            //invtiming
+            break;
+        case 5:
+            insert($db, 'invoil', $id_car, $date, $km, $total, $comment);
+            //invoil
+            break;
+        case 6:
+            insert($db, 'invinsurance', $id_car, $date, $km, $total, $comment);
+            //invinsurance
+            break;
+        case 7:
+            insert($db, 'invpneu', $id_car, $date, $km, $total, $comment);
+            //invpneu
+            break;
+        default;
+            $router->generate('addInvoice');
+    };
+};
+
+
+function insert(PDO $db, $database, $id_car, $date, $km, $total, $comment)
+{
+    $data = [
+        ':id_car' => (int)$id_car,
+        ':date' => $date,
+        ':km' => (int)$km,
+        ':total' => (int)$total,
+        ':comment' => $comment
+    ];
+    $sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
+    $request = $db->prepare($sql);
+    $result = $request->execute($data);
+};
