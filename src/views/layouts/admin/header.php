@@ -52,7 +52,7 @@
 			<ul class="list">
 				<li>
 					<a href="<?= $router->generate('editalerts'); ?>">
-						<div class="row b-alert">
+						<div class="column b-alert border">
 							<img src="/proyectocar/car/src/assets/images/alerts.png" width="50" height="50" alt="">
 							<p>Rappel</p>
 						</div>
@@ -60,7 +60,7 @@
 				</li>
 				<li>
 					<a href="<?= $router->generate('addInvoice'); ?>">
-						<div class="row b-invoice">
+						<div class="column b-invoice border">
 							<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
 							<p>Factures</p>
 						</div>
@@ -68,7 +68,7 @@
 				</li>
 				<li>
 					<a href="<?= $router->generate('addstatistics'); ?>">
-						<div class="row b-statistic">
+						<div class="column b-statistic border">
 							<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
 							<p>Statistique</p>
 						</div>
@@ -76,7 +76,7 @@
 				</li>
 				<li>
 					<a href="<?= $router->generate('addhistory'); ?>">
-						<div class="row b-history">
+						<div class="column b-history border">
 							<img src="/proyectocar/car/src/assets/images/history2.png" width="50" height="50" alt="">
 							<p>Historique</p>
 						</div>

@@ -381,6 +381,50 @@ main {
   opacity: 1;
 }
 
+.sidebarAdmin {
+  margin-left: 7%;
+  padding-top: 150px;
+  width: 20%;
+}
+.sidebarAdmin li {
+  margin-top: 40px;
+  width: 40%;
+}
+.sidebarAdmin li .border {
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  justify-content: stretch;
+  color: #f2f2f2;
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+}
+.sidebarAdmin li .border img {
+  margin-bottom: 5px;
+}
+.sidebarAdmin li .border:hover {
+  background-color: #d9bd30;
+  opacity: 0.5;
+  transition: all 600ms ease;
+}
+.sidebarAdmin li .border:active {
+  background-color: #d94625;
+  color: #d94625;
+  opacity: 1;
+}
+.sidebarAdmin .b-alert {
+  background-color: #d9bd30;
+}
+.sidebarAdmin .b-invoice {
+  background-color: #8c641b;
+}
+.sidebarAdmin .b-statistic {
+  background-color: #bf9926;
+}
+.sidebarAdmin .b-history {
+  background-color: #d94625;
+}
+
 .alerts {
   width: 60%;
   height: 350px;
