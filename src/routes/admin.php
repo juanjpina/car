@@ -25,13 +25,11 @@ $router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar
 $router->map('GET|POST', '/admin/users/editsta', 'users/admin_editStatisticsCar', 'editstacar');
 $router->map('GET|POST', '/admin/users/addnewcar', 'users/admin_addCar', 'addnewcar');
 
-
-
-
-
-
+//*************     invoice *****************/
+$router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');
 $router->map('GET|POST', '/admin/invoice/invoicemenu', 'invoice/admin_addInvoiceMenu', 'addInvoiceMenu');
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
+
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');
 $router->map('GET|POST', '/admin/statistics/listed', 'statistics/admin_listedStatistics', 'listedstatistics');

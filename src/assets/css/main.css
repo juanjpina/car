@@ -738,11 +738,45 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 200px;
+  margin-top: 0px;
+  margin-left: 100px;
 }
 .menuInvoice .boton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 200px;
+  width: 200px;
+  margin: 0 30px;
   background-color: #8c641b;
+  justify-content: center;
   border-radius: 15px;
+}
+.menuInvoice p {
+  text-align: center;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  line-height: 1.2;
+  letter-spacing: 1.2px;
+  margin-top: 30px;
+}
+
+.trademark {
+  font-size: 16px;
+}
+
+.editInvoice {
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  width: 40%;
+  margin-left: 130px;
+  margin-top: 200px;
+  background-color: #8c641b;
+  border-radius: 28px;
+  justify-content: center;
+  height: 800px;
 }
 
 /*# sourceMappingURL=main.css.map */

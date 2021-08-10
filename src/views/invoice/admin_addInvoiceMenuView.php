@@ -3,25 +3,27 @@
 
 <div class='menuInvoice'>
     <ul>
-        <li class='boton'>
-            <a href="<?= $router->generate('addInvoice'); ?>">
-                <div>
-                    <p>Ajouter les factures</p>
+        <div class='row'>
 
-                </div>
-            </a>
+            <li>
+                <a href="<?= $router->generate('addInvoice'); ?>">
+                    <div class='column boton'>
+                        <img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+                        <p>Ajouter les factures</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="<?= $router->generate('editInvoice'); ?>">
+                    <div class='column boton'>
 
+                        <img src="/proyectocar/car/src/assets/images/edit.png" width="50" height="50" alt="">
+                        <p>Modifier ou annuler les factures</p>
+                    </div>
+                </a>
 
-        </li>
-        <li class='boton'>
-            <a href="<?= $router->generate('editalerts'); ?>">
-                <div>
-
-                    <p>Modifier ou annuler les factures</p>
-                </div>
-            </a>
-
-        </li>
+            </li>
+        </div>
 
     </ul>
 
