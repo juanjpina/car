@@ -1,15 +1,10 @@
 <?php
-
 $trademark = getTrademark($db);
-
-if ($_SESSION['auth']) {
-    $invoice = getSelect($db, 'type_invoice');
-}
-
+$invoice = getSelect($db, 'type_invoice');
 
 if (
     !empty($_POST['trademark']) && !empty($_POST['invoice'])
-    && !empty($_POST['date']) && !empty($_POST['km']) && !empty($_POST['total'])
+    && !empty($_POST['date'])  && !empty($_POST['total'])
 ) {
 
     $id_car = $_POST['trademark'];
@@ -25,54 +20,56 @@ if (
     // dump($total);
     // dump($comment);
 
-
-
-
     switch ((int)$invoice) {
         case 1:
+            // dump($id_car);
+            // dump($invoice);
+            // dump($date);
+            // dump($km);
+            // dump($total);
+            // dump($comment);
             //invtoll
-            insert($db, 'invtoll', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtoll', $id_car, $date, $km, $total, $comment);
             break;
         case 2:
             //ibvfuel
-            insert($db, 'invfuel', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invfuel', $id_car, $date, $km, $total, $comment);
             break;
         case 3:
-            insert($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
             //invtechnicalcontrol
             break;
         case 4:
-            insert($db, 'invtiming', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment);
             //invtiming
             break;
         case 5:
-            insert($db, 'invoil', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment);
             //invoil
             break;
         case 6:
-            insert($db, 'invinsurance', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invinsurance', $id_car, $date, $km, $total, $comment);
             //invinsurance
             break;
         case 7:
-            insert($db, 'invpneu', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invpneu', $id_car, $date, $km, $total, $comment);
             //invpneu
             break;
         default;
-            $router->generate('addInvoice');
     };
+    header('Refresh:' . 0.2);
 };
 
-
-function insert(PDO $db, $database, $id_car, $date, $km, $total, $comment)
-{
-    $data = [
-        ':id_car' => (int)$id_car,
-        ':date' => $date,
-        ':km' => (int)$km,
-        ':total' => (int)$total,
-        ':comment' => $comment
-    ];
-    $sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
-    $request = $db->prepare($sql);
-    $result = $request->execute($data);
-};
+// function insert(PDO $db, $database, $id_car, $date, $km, $total, $comment)
+// {
+//     $data = [
+//         ':id_car' => (int)$id_car,
+//         ':date' => $date,
+//         ':km' => (int)$km,
+//         ':total' => (int)$total,
+//         ':comment' => $comment
+//     ];
+//     $sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
+//     $request = $db->prepare($sql);
+//     $result = $request->execute($data);
+// };

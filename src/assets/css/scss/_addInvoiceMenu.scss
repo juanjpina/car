@@ -1,0 +1,8 @@
+.menuInvoice {
+    @include row;
+    margin-top: 200px;
+    .boton {
+        background-color: $color-invoice;
+        border-radius: 15px;
+    }
+}

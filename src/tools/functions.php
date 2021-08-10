@@ -99,6 +99,37 @@ function getSelect(PDO $db, $database)
 	return $result;
 }
 
+/**
+ * @param database, id_car, $date, $km, $total, $comment
+ * 
+ * @return add database
+ */
+function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment)
+{
+	$data = [
+		':id_car' => (int)$id_car,
+		':date' => $date,
+		':km' => (int)$km,
+		':total' => (int)$total,
+		':comment' => $comment
+	];
+	$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
+	$request = $db->prepare($sql);
+	$result = $request->execute($data);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

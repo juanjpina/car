@@ -30,6 +30,7 @@ $router->map('GET|POST', '/admin/users/addnewcar', 'users/admin_addCar', 'addnew
 
 
 
+$router->map('GET|POST', '/admin/invoice/invoicemenu', 'invoice/admin_addInvoiceMenu', 'addInvoiceMenu');
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');

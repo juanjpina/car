@@ -57,7 +57,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="<?= $router->generate('addInvoice'); ?>">
+					<a href="<?= $router->generate('addInvoiceMenu'); ?>">
 						<div class="column b-invoice border">
 							<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
 							<p>Factures</p>

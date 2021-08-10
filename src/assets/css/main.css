@@ -732,4 +732,17 @@ a {
   margin: 40px 0;
 }
 
+.menuInvoice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 200px;
+}
+.menuInvoice .boton {
+  background-color: #8c641b;
+  border-radius: 15px;
+}
+
 /*# sourceMappingURL=main.css.map */
