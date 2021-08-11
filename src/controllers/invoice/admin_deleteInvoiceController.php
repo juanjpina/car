@@ -1,12 +1,13 @@
 <?php
 // dump($_GET['id']);
-// dump($_GET['delete']);
+dump($_GET['db']);
+dump($_GET['id']);
 
 function delete(PDO $db, AltoRouter $router): void
 {
-    if (!empty($_GET['delete'])) {
+    if (!empty($_GET['db']) && !empty($_GET['id']) ) {
         $data = ['id' => $_GET['id']];
-        $sql = 'DELETE FROM invtoll WHERE id = :id';
+        $sql = 'DELETE FROM $_GET['db'] WHERE id = :id';
         $request = $db->prepare($sql);
         $request->execute($data);
 
@@ -16,4 +17,9 @@ function delete(PDO $db, AltoRouter $router): void
         die;
     }
 }
-delete($db, $router);
+
+
+if (!empty($_GET['db']) && !empty($_GET['id'])) {
+
+    delete($db, $router);
+}

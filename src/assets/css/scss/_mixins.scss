@@ -18,3 +18,11 @@
     filter: drop-shadow(2px 5px 15px -2px $color-shadow);
     box-shadow: 2px 5px 15px -2px $color-shadow;
 }
+
+@mixin select {
+    width: 50%;
+    height: 30px;
+    font-family: 'montserrat';
+    border-radius: 15px;
+    margin-top: 5px;
+}

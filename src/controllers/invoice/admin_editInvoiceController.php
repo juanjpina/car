@@ -1,6 +1,10 @@
 <?php
-$trademark = getTrademark($db);
-$typeInvoice = getSelect($db, 'type_invoice');
+$trademark = getTrademark($db); //db car
+$typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
+
+dump($_POST['trademark']);
+dump($_POST['typeInvoice']);
+
 /**
  * me da la lista de factuas de un tipo de factura
  */
@@ -9,28 +13,25 @@ function selectInvoice(PDO $db, $database)
     // dump($_POST['trademark']);
     // dump($_POST['invoice']);
     if (!empty($_POST['trademark']) && !empty($_POST['typeInvoice'])) {
-        switch ($_POST['typeInvoice']) {
-            case 1: {
-                    // dump($_POST['trademark']);
-                    // dump($_POST['invoice']);
-                    $data = array(
-                        'id_car' => (int)$_POST['trademark'],
-                    );
-                    $sql = "SELECT * FROM invtoll WHERE id_car= :id_car";
-                    $request = $db->prepare($sql);
-                    $request->execute($data);
-                    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-                    if ($result) {
-                        return $result;
-                    }
-                    break;
-                }
-            default;
-        };
+
+
+        // dump($_POST['trademark']);
+        // dump($_POST['invoice']);
+        $data = array(
+            'id_car' => (int)$_POST['trademark'],
+        );
+        $sql = "SELECT * FROM $database WHERE id_car= :id_car";
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        }
     } else {
         return
             array(
                 [
+                    'id' => '',
                     'date' => '',
                     'km' => '',
                     'total' => '',
@@ -39,7 +40,25 @@ function selectInvoice(PDO $db, $database)
             );
     }
 };
-$selectInvoice = selectInvoice($db, 'dd');
+
+// dump($invo['typeInvoice']);
+
+if (!empty($_POST['typeInvoice'])) {
+
+    $selectInvoice = selectInvoice($db, $_POST['typeInvoice']);
+} else {
+
+    $selectInvoice
+        = array(
+            [
+                'id' => '',
+                'date' => '',
+                'km' => '',
+                'total' => '',
+                'comment' => ''
+            ]
+        );
+}
 
 /**
  * detalle de la factura de nuevo con el id de la factura
