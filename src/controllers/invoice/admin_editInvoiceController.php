@@ -2,11 +2,6 @@
 
 $trade = getTrademark($db); //db car
 $trademark = getTrademark($db); //db car
-
-
-
-
-
 $typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
 
 // dump($_POST['trademark']);

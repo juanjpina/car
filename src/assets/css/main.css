@@ -788,4 +788,22 @@ a {
   justify-content: space-around;
 }
 
+.modifiInvoici {
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  width: 66%;
+  height: 100%;
+  margin-right: 7px;
+  margin-top: 200px;
+  background-color: #8c641b;
+  border-radius: 28px;
+  justify-content: center;
+}
+.modifiInvoici .subModifi {
+  margin: 20px 0px;
+}
+.modifiInvoici li {
+  margin: 30px 0px;
+}
+
 /*# sourceMappingURL=main.css.map */

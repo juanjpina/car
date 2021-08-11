@@ -31,6 +31,7 @@ $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoic
 $router->map('GET|POST', '/admin/invoice/invoicemenu', 'invoice/admin_addInvoiceMenu', 'addInvoiceMenu');
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
 $router->map('GET|POST', '/admin/invoice/delete/[:id]/[:db]', 'invoice/admin_deleteInvoice', 'deleteInvoice');
+$router->map('GET|POST', '/admin/invoice/modify/[:id]/[:db]', 'invoice/admin_modifyInvoice', 'modifyInvoice');
 
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');

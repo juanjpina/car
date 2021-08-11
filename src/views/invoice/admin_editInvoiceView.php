@@ -59,7 +59,13 @@
                                     <td><?= $invoice['total']; ?></td>
                                     <td><?= $invoice['comment']; ?></td>
                                     <?php if ($invoice['id'] != '') { ?>
-                                        <td class='icon'><a href="#"><img src="/proyectocar/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
+                                        <td class='icon'><a href="<?= $router->generate(
+                                                                        'modifyInvoice',
+                                                                        [
+                                                                            'id' => $invoice['id'],
+                                                                            'db' => $_POST['typeInvoice']
+                                                                        ]
+                                                                    ); ?>"><img src="/proyectocar/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
                                         <td class='icon'><a href="<?= $router->generate(
                                                                         'deleteInvoice',
                                                                         [
