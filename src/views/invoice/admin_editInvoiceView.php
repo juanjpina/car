@@ -32,19 +32,44 @@
                     </div>
                 </li>
         </form>
-        <form action="" method="post">
+        <form action="" method="get">
             <li>
                 <div class="column">
-                    <h3>Liste du Factures</h3>
-                    <select name="invoice" class="input">
-                        <?php foreach ($selectInvoice as $inv) { ?>
-                            <option value="<?= $inv['id_toll'] ?>"><?= 'date: ' . $inv['date']  . '  km: ' . $inv['km'] ?> </option>
-                        <?php } ?>
-                    </select>
+                    <h3>Liste des Factures</h3>
+
                 </div>
+                <table>
+                    <thead>
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Km</th>
+                            <th>Total</th>
+                            <th>Comment</th>
+                        </tr>
+
+                    </thead>
+                    <?php foreach ($selectInvoice as $invoice) { ?>
+                        <tr>
+                            <td><?= $invoice['date']; ?></td>
+                            <td><?= $invoice['km']; ?></td>
+                            <td><?= $invoice['total']; ?></td>
+                            <td><?= $invoice['comment']; ?></td>
+                            <td class='icon'><a href="#"><img src="/proyectocar/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
+                            <td class='icon'><a href="<?= $router->generate('deleteInvoice', ['id' => $invoice['id']]); ?>"><img src="/proyectocar/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
+                            <!-- ['id' => $_GET['id']] -->
+                        </tr>
+
+                    <?php }; ?>
+                </table>
+
             </li>
-            <?php foreach ($getInvoice as $invoice) { ?>
-                <li>
+
+
+
+
+
+            <!-- <li>
                     <div class="row">
                         <div class="date column">
                             <label for="date">Date</label>
@@ -68,12 +93,11 @@
                         <label for="comment">Comment</label>
                         <input type="text" class="input" name="comment" value="<?= $invoice['comment']; ?>">
                     </div>
-                </li>
-            <?php }; ?>
-            <div class="column buttonSubmit">
+                </li> -->
+            <!-- <div class="column buttonSubmit">
                 <button type="submit" class="button">Sauvegarder</button>
             </div>
-            </li>
+            </li> -->
             </ul>
         </form>
     </div>

@@ -20,12 +20,24 @@ function selectInvoice(PDO $db, $database)
                     $request = $db->prepare($sql);
                     $request->execute($data);
                     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-                    return $result;
+                    if ($result) {
+                        return $result;
+                    }
                     break;
                 }
             default;
         };
-    };
+    } else {
+        return
+            array(
+                [
+                    'date' => '',
+                    'km' => '',
+                    'total' => '',
+                    'comment' => ''
+                ]
+            );
+    }
 };
 $selectInvoice = selectInvoice($db, 'dd');
 
@@ -34,18 +46,18 @@ $selectInvoice = selectInvoice($db, 'dd');
  */
 
 
-function getInvoice(PDO $db)
-{
+// function getInvoice(PDO $db)
+// {
 
-    if (!empty($_POST['typeInvoice'])) {
-        $data = array(
-            'id_toll' => (int)$_POST['typeInvoice'],
-        );
-        $sql = "SELECT * FROM invtoll WHERE id_toll= :id_toll";
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
-    };
-};
-$getInvoice = getInvoice($db, 'a');
+//     if (!empty($_POST['id_toll'])) {
+//         $data = array(
+//             'id_toll' => (int)$_POST['id_toll'],
+//         );
+//         $sql = "SELECT * FROM invtoll WHERE id_toll= :id_toll";
+//         $request = $db->prepare($sql);
+//         $request->execute($data);
+//         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+//         return $result;
+//     };
+// };
+// $getInvoice = getInvoice($db, 'a');

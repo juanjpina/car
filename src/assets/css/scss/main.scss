@@ -30,6 +30,18 @@
             justify-content: start;
         }
         
+        .button {
+            width: 240px;
+            height: 35px;
+            border-radius: 15px;
+            background-color: $color-button-header;
+            border-color: transparent;
+            color: $color-texto;
+            text-transform: uppercase;
+            filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+            box-shadow: 2px 5px 15px -2px $color-shadow;
+        }
+        
         @import 'reset';
         @import 'fonts';
         @import 'mixins';
@@ -55,3 +67,4 @@
         @import 'addInvoice';
         @import 'addInvoiceMenu';
         @import 'editInvoice';
+        @import 'deleteInvoice';

@@ -1,6 +1,7 @@
 <?php
 // Home
 $router->map('GET', '/admin', 'pages/admin_index', 'homeadmin');
+$router->map('GET', '/admin/white', 'pages/admin_pagesWhite', 'whiteadmin');
 //$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
 
 // Movies
@@ -29,6 +30,7 @@ $router->map('GET|POST', '/admin/users/addnewcar', 'users/admin_addCar', 'addnew
 $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');
 $router->map('GET|POST', '/admin/invoice/invoicemenu', 'invoice/admin_addInvoiceMenu', 'addInvoiceMenu');
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
+$router->map('GET|POST', '/admin/invoice/delete/[i:id]', 'invoice/admin_deleteInvoice', 'deleteInvoice');
 
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');

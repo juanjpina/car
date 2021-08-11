@@ -1,108 +1,40 @@
-@import 'color';
-.menu-login,
-.login,
-.submit,
-.nsubmit,
-.compte {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.login,
-.compte {
-    background-color: $color-statistic;
-    height: 450px;
-    width: 574px;
-    border-radius: 28px;
-    box-shadow: 2px 5px 15px -2px $color-shadow;
-    filter: drop-shadow(2px 5px 15px -2px $color-shadow);
-}
-
-.menu-login .new {
-    height: 550px;
-}
-
-.pseudo {
-    margin-bottom: 20px;
-}
-
-.mail {
-    margin-top: 0px;
-}
-
-.div-password {
-    padding-top: 50px;
-}
-
-.submit {
-    padding-top: 20px;
-}
-
-.nsubmit {
-    margin-top: 0px
-}
-
-.compte {
-    height: 106px;
-    margin-top: 20px;
-    opacity: 0.6;
-}
-
-.email,
-.password {
-    width: 300px;
-    height: 46px;
-    border-radius: 15px;
-    border-color: transparent;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.div {
-    margin-top: 30px;
-}
-
-.nsubmit {
-    margin-top: 50px;
-}
-
-.parrafo-compte {
-    margin-bottom: 5px;
-}
-
-.pa {
-    margin-bottom: 29px;
-}
-
-.parrafo-mot {
-    margin-top: 1px;
-    text-align: right;
-    color: black;
-}
-
-.button p,
-.creercompte p {
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    /* margin: 0; */
-    font-weight: bold;
-    color: #f2f2f2;
-}
-
-.menu-login .message {
-    padding-top: 2px;
-    font-weight: bold;
-}
-
-.button {
-    width: 240px;
-    height: 35px;
-    border-radius: 15px;
-    background-color: $color-button-header;
-    border-color: transparent;
-    color: $color-texto;
-}
+        .nsubmit {
+            margin-top: 50px;
+        }
+        
+        .parrafo-compte {
+            margin-bottom: 5px;
+        }
+        
+        .pa {
+            margin-bottom: 29px;
+        }
+        
+        .parrafo-mot {
+            margin-top: 1px;
+            text-align: right;
+            color: black;
+        }
+        
+        .button p,
+        .creercompte p {
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            /* margin: 0; */
+            font-weight: bold;
+            color: #f2f2f2;
+        }
+        
+        .menu-login .message {
+            padding-top: 2px;
+            font-weight: bold;
+        }
+        
+        // .button {
+        //     width: 240px;
+        //     height: 35px;
+        //     border-radius: 15px;
+        //     background-color: $color-button-header;
+        //     border-color: transparent;
+        //     color: $color-texto;
+        // }
