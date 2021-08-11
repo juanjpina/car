@@ -1,9 +1,16 @@
 <?php
+
+$trade = getTrademark($db); //db car
 $trademark = getTrademark($db); //db car
+
+
+
+
+
 $typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
 
-dump($_POST['trademark']);
-dump($_POST['typeInvoice']);
+// dump($_POST['trademark']);
+// dump($_POST['typeInvoice']);
 
 /**
  * me da la lista de factuas de un tipo de factura
@@ -31,7 +38,7 @@ function selectInvoice(PDO $db, $database)
         return
             array(
                 [
-                    'id' => '',
+                    'id' => '0',
                     'date' => '',
                     'km' => '',
                     'total' => '',

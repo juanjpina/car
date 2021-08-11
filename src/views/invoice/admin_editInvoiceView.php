@@ -58,17 +58,22 @@
                                     <td><?= $invoice['km']; ?></td>
                                     <td><?= $invoice['total']; ?></td>
                                     <td><?= $invoice['comment']; ?></td>
-                                    <td class='icon'><a href="#"><img src="/proyectocar/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
-                                    <td class='icon'><a href="<?= $router->generate(
-                                                                    'deleteInvoice',
-                                                                    [
-                                                                        'id' => $_POST['trademark'],
-                                                                        'db' => $_POST['typeInvoice']
-                                                                    ]
-                                                                ); ?>"><img src="/proyectocar/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
-                                    <!-- ['id' => $_GET['id']] -->
+                                    <?php if ($invoice['id'] != '') { ?>
+                                        <td class='icon'><a href="#"><img src="/proyectocar/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
+                                        <td class='icon'><a href="<?= $router->generate(
+                                                                        'deleteInvoice',
+                                                                        [
+                                                                            'id' => $_POST['trademark'],
+                                                                            'db' => $_POST['typeInvoice']
+                                                                        ]
+                                                                    ); ?>"><img src="/proyectocar/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
                                 </tr>
-                            <?php }; ?>
+                            <?php } else { ?>
+                                <td class='icon'><a href="#"></a></td>
+                                <td class='icon'><a href="#"></a></td>
+                                </tr>
+                            <?php   } ?>
+                        <?php }; ?>
                         </table>
                     </li>
                     </ul>

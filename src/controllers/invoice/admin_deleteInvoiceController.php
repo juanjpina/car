@@ -1,13 +1,14 @@
 <?php
 // dump($_GET['id']);
-dump($_GET['db']);
-dump($_GET['id']);
+// dump($_GET['db']);
+// dump($_GET['id']);
 
 function delete(PDO $db, AltoRouter $router): void
 {
-    if (!empty($_GET['db']) && !empty($_GET['id']) ) {
+    if (!empty($_GET['db']) && !empty($_GET['id'])) {
         $data = ['id' => $_GET['id']];
-        $sql = 'DELETE FROM $_GET['db'] WHERE id = :id';
+        $database = $_GET['db'];
+        $sql = "DELETE FROM $database WHERE id = :id";
         $request = $db->prepare($sql);
         $request->execute($data);
 
@@ -22,4 +23,4 @@ function delete(PDO $db, AltoRouter $router): void
 if (!empty($_GET['db']) && !empty($_GET['id'])) {
 
     delete($db, $router);
-}
+};
