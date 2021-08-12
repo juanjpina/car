@@ -11,10 +11,10 @@
                     </li>
                     <li class='column'>
                         <label for="km">Km</label>
-                        <input class='input' type="number" name='number' value="<?= $get['km'] ?>">
+                        <input class='input' type="number" name='km' value="<?= $get['km'] ?>">
                     </li>
                     <li class='column'>
-                        <label for="total">Date</label>
+                        <label for="total">Total</label>
                         <input class='input' type="number" name='total' value="<?= $get['total'] ?>">
                     </li>
                     <li class='column'>

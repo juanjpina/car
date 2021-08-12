@@ -1,12 +1,8 @@
 <?php
 
-
-
-
-$_GET['id'];
-$_GET['db'];
-
-
+/**
+ * update form a data base
+ */
 function invoiceUpdate(PDO $db)
 {
     if (!empty($_POST['date']) && !empty($_POST['total']) && !empty($_POST['km'])) {
@@ -24,12 +20,14 @@ function invoiceUpdate(PDO $db)
         $request = $db->prepare($sql);
         $result = $request->execute($data);
         // echo '<script> alert("ok") </script>';
-
     }
 }
+invoiceUpdate($db);
 
+/**
+ * filled with a select
+ */
 if (!empty($_GET['id']) && !empty($_GET['db'])) {
 
     $getInvoice = getInvoice($db, $_GET['id'], $_GET['db']);
 }
-dump($getInvoice);

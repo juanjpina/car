@@ -44,34 +44,19 @@ function searchEmail(PDO $db)
     }
 }
 
-
-
-
-
-
-
-
-
 function editUser(PDO $db)
 {
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
-
         if (strcmp($pass, $cpass) !== 0) {
-
-
             //return $resul = "Les mots de pass sont different";
             header('Location: /newLoginView.php');
         } else {
-
             $data = [
-
                 'nickname'  => $_POST['nickname'],
                 'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
             ];
-
-
             if (!empty($_SESSION['auth']['id_user'])) {
                 $sql = 'UPDATE user SET password=:password, nickname=:nickname  WHERE id_user=:id_user';
                 $data['id_user'] = $_SESSION['auth']['id_user'];

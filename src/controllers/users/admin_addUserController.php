@@ -10,8 +10,11 @@ function addUser(PDO $db)
 		];
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);
-
-		dump($result);
 	}
 }
 addUser($db);
+
+
+if ($d) {
+} elseif ($f) {
+}
