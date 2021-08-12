@@ -1,34 +1,39 @@
 <?php
 $invoice = getSelect($db, 'type_invoice');
 
-
-function xx(AltoRouter $router)
+/**
+ * get listed invoice
+ * @param 
+ * @return array data base
+ */
+function getListed(AltoRouter $router)
 {
     if (!empty($_POST['ok'])) {
         $string = strcmp($_POST['period'], '0');
         if ($string == 0) {
 
             if (!empty($_POST['dateStart']) && (!empty($_POST['dateEnd']))) {
-                dump('mal error');
-            } else {
-
-                dump(0);
                 $data = array(
                     'invoice' => $_POST['invoice'],
-                    'period' => '',
+                    'period' => '0',
                     'dateStart' => $_POST['dateStart'],
                     'dateEnd' => $_POST['dateEnd']
                 );
-                // return  header('Location: ' . $router->generate('listedhistory', $data));
+                return  header('Location: ' . $router->generate('listedhistory', $data));
+                // return  $router->generate('listedhistory', $data);
+            } else {
+                header('Refresh:' . 0.2);
+                die();
             }
         } else {
             $data = array(
                 'invoice' => $_POST['invoice'],
                 'period' => $_POST['period'],
-                'dateStart' => '',
-                'dateEnd' => ''
+                'dateStart' => '0',
+                'dateEnd' => '0'
             );
-            // return  header('Location: ' . $router->generate('listedhistory', $data));
+            // return  $router->generate('listedhistory', $data);
+            return  header('Location: ' . $router->generate('listedhistory', $data));
         }
     } else {
         $data = array(
@@ -40,5 +45,4 @@ function xx(AltoRouter $router)
     }
     return $data;
 }
-
-xx($router);
+getListed($router);

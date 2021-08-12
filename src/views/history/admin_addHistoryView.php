@@ -37,8 +37,6 @@
                 </li>
                 <li>
                     <div class="column">
-                        <?php $data = xx($router); ?>
-                        <?php dump($data);  ?>
                         <input type='hidden' name="ok" value="ok">
                         <button class='button' type="submit">Sauvegarder</button>
                     </div>
