@@ -8,15 +8,14 @@
 
 $string = strcmp($_GET['period'], '0');
 if ($string == 0) {
-
     $invoice = get($db, $_GET['invoice']);
 } else {
-
     $invoice = getPeriod($db, 'dfd');
 }
-
-
-
+/**
+ * @return invoice title
+ */
+$typeInvoice = getInvoiceTitel($db, $_GET['invoice'], 'type_invoice');
 
 
 /**
@@ -56,6 +55,11 @@ ORDER BY date ASC";
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 };
+
+
+
+
+
 
 
 

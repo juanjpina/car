@@ -36,6 +36,21 @@ function getInvoice(PDO $db, $id, $database)
 }
 
 
+/**
+ * @param id, data base
+ * @return array data base
+ */
+function getInvoiceTitel(PDO $db, $invoice, $database)
+{
+	$data = array(
+		':invoice' => $invoice
+	);
+	$sql = "SELECT type FROM $database where invoice = :invoice";
+	$request = $db->prepare($sql);
+	$request->execute($data);
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
 
 
 
