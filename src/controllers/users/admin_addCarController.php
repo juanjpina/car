@@ -25,7 +25,7 @@ if (!empty($_POST['trademark'])) {
 
     $data = [
         ':id_car' => (int)$id_car,
-        ':date' => '2000-05-01',
+        ':date' => date('Y-m-d H:i:s'),
         ':km' => 0
     ];
     $sql = 'INSERT INTO buy (id_car, date, km) VALUES (:id_car, :date, :km)';
@@ -45,6 +45,20 @@ if (!empty($_POST['trademark'])) {
     $result = $request->execute($data);
 
     $sql = 'INSERT INTO timingbelt (id_car, date, km) VALUES (:id_car, :date, :km)';
+    $request = $db->prepare($sql);
+    $result = $request->execute($data);
+
+    $data = [
+        ':id_car' => (int)$id_car
+    ];
+    $sql = 'INSERT INTO alert (id_car, timingkm, timingdate, controldate) VALUES (:id_car, 0 , now(),  now())';
+    $request = $db->prepare($sql);
+    $result = $request->execute($data);
+
+    $data = [
+        ':id_car' => (int)$id_car
+    ];
+    $sql = 'INSERT INTO setting (id_car, oilchanges, timingbeltDate, timingbeltKm) VALUES (:id_car, 15000 , 4,  80000)';
     $request = $db->prepare($sql);
     $result = $request->execute($data);
 }
