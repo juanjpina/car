@@ -338,7 +338,6 @@ a {
   width: 100%;
 }
 .sidebarAdmin li {
-  display: block;
   margin-top: 40px;
   width: 40%;
 }
@@ -554,7 +553,6 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .row {
@@ -566,16 +564,18 @@ a {
 }
 
 .invoiceCar {
-  margin-right: -70px;
-  width: 60%;
-  margin-top: 146px;
+  width: 59%;
+  height: 100%;
+  margin-top: 200px;
+  background-color: #d9bd30;
+  border-radius: 28px;
+  margin-right: 7%;
+  margin-left: 7%;
 }
 .invoiceCar .containedCar {
-  background-color: #d9bd30;
-  width: 60%;
-  margin-top: 30px;
-  border-radius: 28px;
-  height: 800px;
+  width: 100%;
+  margin: 40px 0px;
+  height: 100%;
 }
 
 .input {

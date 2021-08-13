@@ -11,60 +11,8 @@
     width: 54%;
     height: 100%;
     margin-right: 19%;
-} //     font-family: 'montserrat';
-//     color: black;
-//     text-align: center
-// }
-// select {
-//     font-family: 'montserrat';
-//     color: black;
-//     text-align: center;
-// }
-// main {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: start;
-// }
-// @import 'reset';
-// @import 'fonts';
-// @import 'mixins';
-// @import 'default';
-// @import 'header';
-// @import 'footer';
-// @import 'home';
-// @import '_loginHeader';
-// @import 'color';
-// @import 'login';
-// @import 'pageReception';
-// @import 'sidebar';
-// @import 'alert';
-// @import 'invoice';
-// @import 'statistics';
-// @import 'history';
-// @import 'compteUser';
-// @import 'compteSetting';
-// @import 'addInvoiceCar';
-// @import 'addCar';
-// @import 'editUser';
-// @import 'editStatisticsCar';
-// @import 'addInvoice';
-//     background-color: $color-invoice;
-// }
-// .b-statistic {
-//     background-color: $color-statistic;
-// }
-// .b-history {
-//     background-color: $color-history;
-// }
-// main {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: start;
-// }
+}
+
 .sidebarCompte {
     margin-left: 7%;
     padding-top: 200px;
@@ -112,7 +60,7 @@
         width: 100%;
     }
     li {
-        display: block;
+        // display: block;
         margin-top: 40px;
         width: 40%;
         .border {

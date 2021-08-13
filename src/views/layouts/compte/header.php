@@ -10,12 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css"> -->
     <link href="/proyectocar/car/src/assets/css/main.css" rel="stylesheet">
-    <script>
-        function click() {
-            var a = document.getElementById('select_car').value;
-            alert(a);
-        }
-    </script>
 </head>
 
 <body>
@@ -24,7 +18,6 @@
             <div class="logo">
                 <a href="#">RDVoiture</a>
             </div>
-
             <div class="navegation">
                 <ul class="nave">
                     <li class="li_button">
@@ -50,7 +43,6 @@
             </div>
         </div>
     </header>
-
     <main class="">
         <div class="sidebarCompte">
             <ul>
@@ -79,10 +71,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= $router->generate('addinvoicecar'); ?>">
+                    <a href="<?= $router->generate('maintenance'); ?>">
                         <div class="b-alert">
-                            <img src="/proyectocar/car/src/assets/images/facture3.png" width="30" height="30" alt="">
-                            <p>Données</p>
+                            <img src="/proyectocar/car/src/assets/images/motor2.png" width="50" height="37" alt="">
+                            <p>Entretien</p>
                         </div>
                     </a>
                 </li>
