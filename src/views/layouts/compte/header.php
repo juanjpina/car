@@ -47,7 +47,7 @@
         <div class="sidebarCompte">
             <ul>
                 <li>
-                    <a href="<?= $router->generate('addInvoice'); ?>">
+                    <a href="<?= $router->generate('whiteadmin'); ?>">
                         <div class="b-alert">
                             <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
                             <p>Home</p>
