@@ -2,45 +2,49 @@
 <div class="alerts">
     <div class="contained column">
 
-
-        <div class="">
+        <div>
             <h1 class='title'>Rappel editar</h1>
         </div>
-        <ul>
+        <ul class='column'>
             <form action="" method="post">
-                <li>
-                    <select name='car'>
+                <li class='column'>
+                    <select name='car' class='select' id='car'>
                         <?php foreach ($cars as $car) { ?>
                             <option value="<?= $car['id_car'] ?>"><?= $car['trademark']; ?></option>
                         <?php } ?>
                     </select>
                 </li>
-
-
                 <li>
-                    <button type="submit" class='button'>Sauvergarder</button>
+                    <button type="submit" class='button'>Lister</button>
                 </li>
-
-
             </form>
+
+            <?php if (!empty($alerts)) { ?>
+                <li>
+                    <table>
+                        <tr>
+                            <th colspan="2">Courroie de distribution</th>
+                            <th colspan="1">Contrôle Technique</th>
+                        </tr>
+                        <tr>
+                            <th>KM</th>
+                            <th>Date</th>
+                            <th>Date</th>
+                        </tr>
+                        <?php foreach ($alerts as $alert) { ?>
+                            <tr>
+                                <td><?= $alert['timingkm']; ?></td>
+                                <td><?= $alert['timingdate']; ?></td>
+                                <td><?= $alert['controldate']; ?></td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </li>
+            <?php } ?>
         </ul>
-        <img src="/proyectocar/car/src/assets/images/add.png" width="25" height="25" alt="">
-
-
-
+        <!-- <img src="/proyectocar/car/src/assets/images/add.png" width="25" height="25" alt=""> -->
     </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 <?php get_footer('admin'); ?>
