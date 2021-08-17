@@ -6,6 +6,16 @@
             <form action="" method="post">
                 <li>
                     <div class="column ">
+                        <h3>Véhicules</h3>
+                        <select name="car" class='select invoice'>
+                            <?php foreach ($cars as $car) { ?>
+                                <option value="<?= $car['id_car'] ?>"><?= $car['trademark'] ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="column ">
                         <h3>Facture</h3>
                         <select name="invoice" class='select invoice'>
                             <?php foreach ($invoice as $invo) { ?>

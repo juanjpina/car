@@ -12,6 +12,16 @@
 
 	<!-- <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css"> -->
 	<link href="/proyectocar/car/src/assets/css/main.css" rel="stylesheet">
+	<script>
+		console.log(45);
+
+		var t = document.getElementsByClassName('par').innerHTML.length;
+
+		if (typeof t !== 'null') {
+			alert(t);
+			alert(0);
+		}
+	</script>
 </head>
 
 <body>
@@ -23,7 +33,7 @@
 			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
-						<a href="<?= $router->generate('editUser') ?>">
+						<a href="<?= $router->generate('editUser') ?>" id="as">
 							<div class="button_admin">
 								<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
 								<p>Mon compte</p>
@@ -41,7 +51,7 @@
 				</ul>
 			</div>
 			<div class="bonjour">
-				<p> Bonjour, <?= $_SESSION['auth']['nickname']; ?></p>
+				<p class="par"> Bonjour, <?= $_SESSION['auth']['nickname']; ?></p>
 			</div>
 		</div>
 	</header>

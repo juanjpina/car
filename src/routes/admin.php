@@ -36,10 +36,10 @@ $router->map('GET|POST', '/admin/invoice/modify/[:id]/[:db]', 'invoice/admin_mod
 
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');
-$router->map('GET|POST', '/admin/statistics/listed', 'statistics/admin_listedStatistics', 'listedstatistics');
+$router->map('GET|POST', '/admin/statistics/listed/[:invoice]/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'statistics/admin_listedStatistics', 'listedstatistics');
 
 $router->map('GET|POST', '/admin/history/', 'history/admin_addHistory', 'addhistory');
-$router->map('GET|POST', '/admin/history/listed/[:invoice]/[:period]/[:dateStart]/[:dateEnd]', 'history/admin_listedHistory', 'listedhistory');
+$router->map('GET|POST', '/admin/history/listed/[:invoice]/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'history/admin_listedHistory', 'listedhistory');
 
 $router->map('GET|POST', '/admin/alerts/', 'alerts/admin_addAlerts', 'addalerts');
 $router->map('GET|POST', '/admin/alerts/edit', 'alerts/admin_editAlerts', 'editalerts');

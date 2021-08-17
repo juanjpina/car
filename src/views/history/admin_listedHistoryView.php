@@ -22,6 +22,11 @@
                                 <td><?= $invo['comment']; ?></td>
                             </tr>
                         <?php } ?>
+                        <tr>
+
+                            <th colspan="2">Montant total</th>
+                            <td><?= $totalPeriod[0]['SUM(total)']; ?></td>
+                        </tr>
                     </table>
                 </div>
             </div>

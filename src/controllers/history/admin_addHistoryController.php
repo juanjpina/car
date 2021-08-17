@@ -1,5 +1,6 @@
 <?php
 $invoice = getSelect($db, 'type_invoice');
+$cars = getCar($db);
 
 /**
  * get listed invoice
@@ -17,7 +18,8 @@ function getListed(AltoRouter $router)
                     'invoice' => $_POST['invoice'],
                     'period' => '0',
                     'dateStart' => $_POST['dateStart'],
-                    'dateEnd' => $_POST['dateEnd']
+                    'dateEnd' => $_POST['dateEnd'],
+                    'id' => $_POST['car']
                 );
                 return  header('Location: ' . $router->generate('listedhistory', $data));
                 // return  $router->generate('listedhistory', $data);
@@ -30,7 +32,8 @@ function getListed(AltoRouter $router)
                 'invoice' => $_POST['invoice'],
                 'period' => $_POST['period'],
                 'dateStart' => '0',
-                'dateEnd' => '0'
+                'dateEnd' => '0',
+                'id' => $_POST['car']
             );
             // return  $router->generate('listedhistory', $data);
             return  header('Location: ' . $router->generate('listedhistory', $data));
@@ -40,7 +43,8 @@ function getListed(AltoRouter $router)
             'invoice' => '5',
             'period' => '5',
             'dateStart' => '5',
-            'dateEnd' => '5'
+            'dateEnd' => '5',
+            'id' => '5'
         );
     }
     return $data;
