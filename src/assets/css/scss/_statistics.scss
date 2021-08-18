@@ -7,7 +7,7 @@
     background-color: $color-statistic;
     @include shadow;
     .contained {
-        width: 100%;
+        width: 90%;
         height: 100%;
         margin: 30px;
     }
@@ -30,6 +30,22 @@
     .dates {
         margin-right: 10%;
         justify-content: space-around;
+    }
+    table {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    td,
+    th {
+        text-align: center;
+        padding-left: 20px;
+    }
+    th {
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+    h1 {
+        margin-bottom: 20px;
     }
 }
 

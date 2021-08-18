@@ -15,7 +15,7 @@ function getListe(AltoRouter $router)
 
             if (!empty($_POST['dateStart']) && (!empty($_POST['dateEnd']))) {
                 $data = array(
-                    'invoice' => $_POST['invoice'],
+                    // 'invoice' => $_POST['invoice'],
                     'period' => '0',
                     'dateStart' => $_POST['dateStart'],
                     'dateEnd' => $_POST['dateEnd'],
@@ -29,7 +29,7 @@ function getListe(AltoRouter $router)
             }
         } else {
             $data = array(
-                'invoice' => $_POST['invoice'],
+                // 'invoice' => $_POST['invoice'],
                 'period' => $_POST['period'],
                 'dateStart' => '0',
                 'dateEnd' => '0',
@@ -40,7 +40,7 @@ function getListe(AltoRouter $router)
         }
     } else {
         $data = array(
-            'invoice' => '5',
+            // 'invoice' => '5',
             'period' => '5',
             'dateStart' => '5',
             'dateEnd' => '5',

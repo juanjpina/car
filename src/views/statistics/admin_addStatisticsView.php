@@ -16,7 +16,7 @@
                     </div>
                 </li>
                 <div class="column">
-                    <li>
+                    <!-- <li>
                         <div class="column">
                             <select name="invoice" class='select'>
                                 <?php foreach ($invoices as $invoice) { ?>
@@ -24,26 +24,29 @@
                                 <?php  } ?>
                             </select>
                         </div>
-                    </li>
+                    </li> -->
                     <li>
                         <div class='row dates'>
                             <div class="column period">
                                 <h3>Périodes</h3>
                                 <select name="period" class='select'>
                                     <option value="0">Périodes</option>
+                                    <option value="1">Un dernier mois</option>
                                     <option value="3">Trois dernier mois</option>
-                                    <option value="6">six dernier mois</option>
-                                    <option value="12">C'est dernier année</option>
+                                    <option value="6">Six dernier mois</option>
+                                    <option value="9">Neuf dernier mois</option>
+                                    <option value="12">Douce dernier mois</option>
+                                    <option value="24">Veint-quatre dernier mois</option>
                                 </select>
                             </div>
-                            <div class="column">
+                            <!-- <div class="column">
                                 <label for="date-start">Date début</label>
                                 <input type="date" name="date-start">
                             </div>
                             <div class="column">
                                 <label for="montant">Date fin</label>
                                 <input type="date" name="date-end">
-                            </div>
+                            </div> -->
                         </div>
                 </div>
                 </li>

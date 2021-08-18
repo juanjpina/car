@@ -486,7 +486,7 @@ a {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .statistics .contained {
-  width: 100%;
+  width: 90%;
   height: 100%;
   margin: 30px;
 }
@@ -514,6 +514,22 @@ a {
 .statistics .dates {
   margin-right: 10%;
   justify-content: space-around;
+}
+.statistics table {
+  width: 100%;
+  margin: 10px 0px;
+}
+.statistics td,
+.statistics th {
+  text-align: center;
+  padding-left: 20px;
+}
+.statistics th {
+  vertical-align: bottom;
+  padding-bottom: 10px;
+}
+.statistics h1 {
+  margin-bottom: 20px;
 }
 
 .date {
