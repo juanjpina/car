@@ -75,7 +75,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="<?= $router->generate('addstatistics'); ?>">
+					<a href="<?= $router->generate('menustatistics'); ?>">
 						<div class="column b-statistic border">
 							<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
 							<p>Statistique</p>

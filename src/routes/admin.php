@@ -37,6 +37,12 @@ $router->map('GET|POST', '/admin/invoice/modify/[:id]/[:db]', 'invoice/admin_mod
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');
 $router->map('GET|POST', '/admin/statistics/listed/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'statistics/admin_listedStatistics', 'listedstatistics');
+$router->map('GET|POST', '/admin/statistics/menu/', 'statistics/admin_menuStatistics', 'menustatistics');
+$router->map('GET|POST', '/admin/statistics/total/[:car]/[:an]', 'statistics/admin_totalStatistics', 'totalstatistics');
+$router->map('GET|POST', '/admin/statistics/menutotal/', 'statistics/admin_menuTotalesStatistics', 'menutotalstatistics');
+
+
+
 
 $router->map('GET|POST', '/admin/history/', 'history/admin_addHistory', 'addhistory');
 $router->map('GET|POST', '/admin/history/listed/[:invoice]/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'history/admin_listedHistory', 'listedhistory');

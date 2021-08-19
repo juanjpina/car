@@ -114,58 +114,58 @@ ORDER BY date ASC";
 
 
 
-$totales = [
-    1 => 0,
-    2 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-    9 => 0,
-    10 => 0,
-    11 => 0,
-    12 => 0
-];
+// $totales = [
+//     1 => 0,
+//     2 => 0,
+//     3 => 0,
+//     4 => 0,
+//     5 => 0,
+//     6 => 0,
+//     7 => 0,
+//     8 => 0,
+//     9 => 0,
+//     10 => 0,
+//     11 => 0,
+//     12 => 0
+// ];
 
-$invoice = [
-    1 =>    'invtoll',
-    2 =>    'invfuel',
-    3 =>    'invoil',
-    4 =>    'invtiming',
-    5 =>    'invinsurance',
-    6 =>    'invpneu',
-    7 =>    'invtechnical'
-];
-dump($invoice[1]);
-/**
- * sumA TOTALES POR MES Y Ano
- */
-function x(PDO $db, $totales, $invoice)
-{
-    $as = 0;
+// $invoice = [
+//     1 =>    'invtoll',
+//     2 =>    'invfuel',
+//     3 =>    'invoil',
+//     4 =>    'invtiming',
+//     5 =>    'invinsurance',
+//     6 =>    'invpneu',
+//     7 =>    'invtechnical'
+// ];
+// dump($invoice[1]);
+// /**
+//  * sumA TOTALES POR MES Y Ano
+//  */
+// function x(PDO $db, $totales, $invoice)
+// {
+//     $as = 0;
 
-    for ($j = 1; $j <= 7; $j++) {
-        for ($i = 1; $i <= 12; $i++) {
-            $data = [
-                'id_car' => $_GET['id']
-            ];
-            $sql = "SELECT sum(total) as total FROM $invoice[$j] WHERE id_car = :id_car
-and month(date) = $i and year(date)=2021";
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            $as += (int)$result[0]['total'];
-            $totales[$i] += (int)$result[0]['total'];
-        }
-    }
-    return $totales;
-}
+//     for ($j = 1; $j <= 7; $j++) {
+//         for ($i = 1; $i <= 12; $i++) {
+//             $data = [
+//                 'id_car' => $_GET['id']
+//             ];
+//             $sql = "SELECT sum(total) as total FROM $invoice[$j] WHERE id_car = :id_car
+// and month(date) = $i and year(date)=2018";
+//             $request = $db->prepare($sql);
+//             $request->execute($data);
+//             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+//             $as += (int)$result[0]['total'];
+//             $totales[$i] += (int)$result[0]['total'];
+//         }
+//     }
+//     return $totales;
+// }
 
-$ass = x($db, $totales, $invoice);
+// $ass = x($db, $totales, $invoice);
 
-dump($ass);
+// dump($ass);
 
 
 
