@@ -17,7 +17,7 @@
                 </p>
             </div>
         </a>
-        <a href="<?= $router->generate('addInvoiceMenu'); ?>">
+        <a href="<?= $router->generate('menugraphics'); ?>">
             <div class='graphic'>
                 <p class='title'>
                     Graphiques

@@ -8,7 +8,7 @@ $cars =  getCar($db);
 if (!empty($_POST['ok'])) {
 
     $data = array(
-        'an' => $_POST['an'],
+        'year' => $_POST['year'],
         'car' => $_POST['car']
     );
     return  header('Location: ' . $router->generate('totalstatistics', $data));

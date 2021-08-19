@@ -14,14 +14,20 @@
                         </select>
                     </div>
                 </li>
-                <div class="column">
+                <div class="row">
                     <li>
                         <div class="column">
-                            <label for="year">L'année</label>
-                            <input type="number" name="year">
+                            <label for="startYear">De l'année</label>
+                            <input type="number" name="startYear">
                         </div>
+                    </li>
+                    <li>
+                        <div class="column">
+                            <label for="endYear">À l'année</label>
+                            <input type="number" name="endYear">
+                        </div>
+                    </li>
                 </div>
-                </li>
                 <li>
                     <div class="column">
                         <input type='hidden' name="ok" value="ok">

@@ -37,7 +37,7 @@ function total(PDO $db, $totales, $invoice)
         for ($i = 1; $i <= 12; $i++) {
             $data = [
                 'id_car' => $_GET['car'],
-                'yea' => $_GET['an']
+                'yea' => $_GET['year']
             ];
             $sql = "SELECT sum(total) as total FROM $invoice[$j] WHERE id_car = :id_car
     and month(date) = $i and year(date)= :yea";

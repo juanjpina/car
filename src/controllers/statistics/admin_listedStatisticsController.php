@@ -21,27 +21,6 @@ dump($invtoll);
 $total =  (int)$invtoll[0]['SUM(total)'] + (int) $invfuel[0]['SUM(total)'] + (int) $invinsurance[0]['SUM(total)'] + (int) $invoil[0]['SUM(total)'] + (int) $invpneu[0]['SUM(total)'] + (int) $invtechnical[0]['SUM(total)'] +
     (int)$invtiming[0]['SUM(total)'];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // /**
 //  * @return invoice title
 //  */

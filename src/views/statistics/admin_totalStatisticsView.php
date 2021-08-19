@@ -5,7 +5,7 @@
 
     <div class='container'>
 
-        <h1 class='title'> Resulta par moi d'an <?= $_GET['an'] ?></h1>
+        <h1 class='title'> Resulta par moi de l'année <?= $_GET['year'] ?></h1>
         <table>
             <tr>
                 <th>Janvier</th>
