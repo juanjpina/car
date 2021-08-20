@@ -12,16 +12,17 @@
 
 	<!-- <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css"> -->
 	<link href="/proyectocar/car/src/assets/css/main.css" rel="stylesheet">
-	<script>
+	<script language="Javascript">
 		console.log(45);
 
-		var t = document.getElementsByClassName('par').innerHTML.length;
+		var t = document.getElementsById('nom');
+		t.addEventListerner('click', alerta());
 
-		if (typeof t !== 'null') {
-			alert(t);
-			alert(0);
+		function alerta() {
+			alert('Mi primer Script');
 		}
 	</script>
+	<link type="text/css" rel="stylesheet" href="/proyectocar/car/src/assets/css/css.php" />
 </head>
 
 <body>

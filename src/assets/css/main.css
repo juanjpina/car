@@ -614,6 +614,20 @@ a {
   text-align: center;
 }
 
+.listedGraphics {
+  margin-top: 200px;
+  width: 66%;
+  background-color: #bf9926;
+}
+.listedGraphics .container {
+  width: 80%;
+  height: 400px;
+}
+.listedGraphics .graphic {
+  width: 400px;
+  height: 400px;
+}
+
 .history {
   width: 66%;
   height: 100%;

@@ -121,3 +121,17 @@
         text-align: center;
     }
 }
+
+.listedGraphics {
+    margin-top: 200px;
+    width: 66%;
+    background-color: $color-statistic;
+    .container {
+        width: 80%;
+        height: 400px;
+    }
+    .graphic {
+        width: 400px;
+        height: 400px;
+    }
+}
