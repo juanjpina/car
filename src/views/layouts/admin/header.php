@@ -22,7 +22,7 @@
 			alert('Mi primer Script');
 		}
 	</script>
-	<link type="text/css" rel="stylesheet" href="/proyectocar/car/src/assets/css/css.php" />
+	<!-- <link type="text/css" rel="stylesheet" href="/proyectocar/car/src/assets/css/css.php" /> -->
 </head>
 
 <body>

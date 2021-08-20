@@ -54,5 +54,9 @@ if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'
 
 
 
-// dump('end', $endYear);
+
+
+
+
+dump('end', $endYear);
 // dump('start', $startYear);
