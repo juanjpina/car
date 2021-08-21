@@ -50,27 +50,19 @@ if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'
 
     $endYear = total($db, $_GET['endYear'], $totales, $invoice);
     // $endYear = total($db, $_GET['startYear'], $totales, $invoice);
+    $totalEndYear = (array_sum($endYear));
+
+
+    $invtol = ((100 * $endYear[1]) / $totalEndYear);
+
+    $intvoll = round(((100 * $endYear[1]) / $totalEndYear), 2, PHP_ROUND_HALF_UP);
+
+
+
+    $invfuel = round(((100 * $endYear[2]) / $totalEndYear), 2, PHP_ROUND_HALF_UP);
+    $invoil = (100 * $endYear[3]) / $totalEndYear;
+    $invtiming = (100 * $endYear[4]) / $totalEndYear;
+    $invinsurance = (100 * $endYear[5]) / $totalEndYear;
+    $invpneu = (100 * $endYear[6]) / $totalEndYear;
+    $invtechnical = (100 * $endYear[7]) / $totalEndYear;
 }
-
-
-// function sum($endYear)
-// {
-
-//     foreach ($endYear as $end) {
-
-//         // $total = +$end;
-//     }
-//     // dump($total);
-// }
-$totalEndYear = (array_sum($endYear));
-dump($totalEndYear);
-
-
-
-
-
-
-
-
-dump('end', $endYear);
-// dump('start', $startYear);

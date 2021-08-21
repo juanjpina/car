@@ -587,7 +587,7 @@ a {
 
 .totalStatistics {
   width: 66%;
-  height: 400px;
+  height: 100%;
   margin-top: 200px;
   border-radius: 28px;
   background-color: #bf9926;
@@ -598,8 +598,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  height: 100%;
+  width: 100%;
   margin: 30px;
 }
 .totalStatistics table {
@@ -616,49 +615,86 @@ a {
 
 .listedGraphics {
   margin-top: 200px;
+  height: 100%;
   width: 66%;
   background-color: #bf9926;
+  border-radius: 28px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .listedGraphics .container {
-  width: 80%;
-  height: 400px;
+  width: 100%;
+  margin-bottom: 100px;
 }
 .listedGraphics .container .graphic {
-  width: 400px;
-  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 100px;
 }
-.listedGraphics .container .as li {
+.listedGraphics .container .graphic .invtoll {
+  background-color: #fc2323;
+}
+.listedGraphics .container .graphic .invfuel {
+  background-color: #6bf7ff;
+}
+.listedGraphics .container .graphic .invoil {
+  background-color: #fc4517;
+}
+.listedGraphics .container .graphic .invtiming {
+  background-color: #46ff7b;
+}
+.listedGraphics .container .graphic .invinsurance {
+  background-color: #4f0afc;
+}
+.listedGraphics .container .graphic .invpneu {
+  background-color: #fced30;
+}
+.listedGraphics .container .graphic .invtechincal {
+  background-color: #fc6b0a;
+}
+.listedGraphics .list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+.listedGraphics .list li {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
-.listedGraphics .container .as p {
-  color: blanchedalmond;
+.listedGraphics .list p {
+  color: #f2f2f2;
+  margin-right: 10px;
 }
-.listedGraphics .container .as span {
+.listedGraphics .list span {
   width: 15px;
   height: 15px;
   border-radius: 15%;
+  margin-right: 5px;
 }
-.listedGraphics .container .as .invtoll {
+.listedGraphics .list .invtoll {
   background-color: #fc2323;
 }
-.listedGraphics .container .as .invfuel {
+.listedGraphics .list .invfuel {
   background-color: #6bf7ff;
 }
-.listedGraphics .container .as .invoil {
+.listedGraphics .list .invoil {
   background-color: #fc4517;
 }
-.listedGraphics .container .as .invtiming {
+.listedGraphics .list .invtiming {
   background-color: #46ff7b;
 }
-.listedGraphics .container .as .invinsurance {
+.listedGraphics .list .invinsurance {
   background-color: #4f0afc;
 }
-.listedGraphics .container .as .invpneu {
+.listedGraphics .list .invpneu {
   background-color: #fced30;
 }
-.listedGraphics .container .as .invtechincal {
+.listedGraphics .list .invtechincal {
   background-color: #fc6b0a;
 }
 
