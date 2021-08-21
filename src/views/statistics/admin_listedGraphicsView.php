@@ -2,13 +2,53 @@
 
 <div class='listedGraphics'>
     <div class='container'>
-        <?php $invtoll = $endYear[1] / 360; ?>
-        <?php $invfuel = $endYear[2] / 360; ?>
-        <?php $invoil = $endYear[3] / 360; ?>
-        <?php $invtiming = $endYear[4] / 360; ?>
-        <?php $invpneu = $endYear[5] / 360; ?>
-        <div class='graphic' style='background-image:conic-gradient( #fc2323 <?= $invtoll ?>deg, #6bf7ff <?= $invfuel ?>deg,  #fc4517 <?= $invoil ?>deg, #46ff7b <?= $invtiming ?>deg), #4f0afc <?= $invpneu ?>deg ;   border-radius:50%;'>
+        <?php $invtoll = $endYear[1] * 100 / $totalEndYear ?>
+        <?php $invfuel = $endYear[2] * 100 / $totalEndYear; ?>
+        <?php $invoil = $endYear[3] * 100 / $totalEndYear; ?>
+        <?php $invtiming = $endYear[4] * 100 / $totalEndYear; ?>
+        <?php $invinsurance = $endYear[5] * 100 / $totalEndYear; ?>
+        <?php $invpneu = $endYear[6] * 100 / $totalEndYear; ?>
+        <?php $invtechnical = $endYear[7] * 100 / $totalEndYear; ?>
+        <div class='graphic' style='background-image:conic-gradient( #fc2323 <?= $invtoll ?>%, #6bf7ff <?= $invtoll ?>% <?= $invfuel ?>%,  #fc4517 <?= $invfuel ?>% <?= $invoil ?>%, #46ff7b <?= $invoil ?>% <?= $invtiming ?>%, #4f0afc <?= $invtiming ?>% <?= $invinsurance ?>%, #fced30 <?= $invinsurance ?>% <?= $invpneu ?>% , #fc6b0a <?= $invpneu ?>% <?= $invtechnical ?>%); border-radius:50%;'>
         </div>
+
+        <div class='as'>
+
+            <ul>
+                <li>
+                    <span class="invtoll"></span>
+                    <p> Peaje</p> <?= $invtoll ?>
+                </li>
+                <li>
+                    <span class="invfuel"></span>
+                    <p> Combustible</p> <?= $invfuel ?>
+                </li>
+                <li>
+                    <span class="invoil"></span>
+                    <p>Vidance</p> <?= $invoil ?>
+                </li>
+                <li>
+                    <span class="invtiming"></span>
+                    <p> Courroie de distribution</p> <?= $invtiming ?>
+                </li>
+                <li>
+                    <span class="invinsurance"></span>
+                    <p> Assurance</p> <?= $invinsurance ?>
+                </li>
+                <li>
+                    <span class="invpneu"></span>
+                    <p> Pneu</p> <?= $invpneu ?>
+                </li>
+                <li>
+                    <span class="invtechincal"></span>
+                    <p> Controle techinical</p> <?= $invtechnical ?>
+                </li>
+            </ul>
+        </div>
+
+
+
+
     </div>
 </div>
 <?php get_footer('admin') ?>

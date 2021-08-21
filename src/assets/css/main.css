@@ -623,9 +623,43 @@ a {
   width: 80%;
   height: 400px;
 }
-.listedGraphics .graphic {
+.listedGraphics .container .graphic {
   width: 400px;
   height: 400px;
+}
+.listedGraphics .container .as li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.listedGraphics .container .as p {
+  color: blanchedalmond;
+}
+.listedGraphics .container .as span {
+  width: 15px;
+  height: 15px;
+  border-radius: 15%;
+}
+.listedGraphics .container .as .invtoll {
+  background-color: #fc2323;
+}
+.listedGraphics .container .as .invfuel {
+  background-color: #6bf7ff;
+}
+.listedGraphics .container .as .invoil {
+  background-color: #fc4517;
+}
+.listedGraphics .container .as .invtiming {
+  background-color: #46ff7b;
+}
+.listedGraphics .container .as .invinsurance {
+  background-color: #4f0afc;
+}
+.listedGraphics .container .as .invpneu {
+  background-color: #fced30;
+}
+.listedGraphics .container .as .invtechincal {
+  background-color: #fc6b0a;
 }
 
 .history {

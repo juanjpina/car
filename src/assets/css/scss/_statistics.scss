@@ -129,9 +129,45 @@
     .container {
         width: 80%;
         height: 400px;
-    }
-    .graphic {
-        width: 400px;
-        height: 400px;
+        .graphic {
+            width: 400px;
+            height: 400px;
+        }
+        .as {
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+            p {
+                color: blanchedalmond;
+            }
+            span {
+                width: 15px;
+                height: 15px;
+                border-radius: 15%;
+            }
+            .invtoll {
+                background-color: #fc2323;
+            }
+            .invfuel {
+                background-color: #6bf7ff;
+            }
+            .invoil {
+                background-color: #fc4517;
+            }
+            .invtiming {
+                background-color: #46ff7b;
+            }
+            .invinsurance {
+                background-color: #4f0afc;
+            }
+            .invpneu {
+                background-color: #fced30;
+            }
+            .invtechincal {
+                background-color: #fc6b0a;
+            }
+        }
     }
 }

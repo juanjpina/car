@@ -40,7 +40,7 @@ function total(PDO $db, $startYear, $totales, $invoice)
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
         // $as += (int)$result[0]['total'];
-        $totales[$j] += (int)$result[0]['total'];
+        $totales[$j] = (int)$result[0]['total'];
     }
     // }
     return $totales;
@@ -49,8 +49,22 @@ function total(PDO $db, $startYear, $totales, $invoice)
 if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'])) {
 
     $endYear = total($db, $_GET['endYear'], $totales, $invoice);
-    $startYear = total($db, $_GET['startYear'], $totales, $invoice);
+    // $endYear = total($db, $_GET['startYear'], $totales, $invoice);
 }
+
+
+// function sum($endYear)
+// {
+
+//     foreach ($endYear as $end) {
+
+//         // $total = +$end;
+//     }
+//     // dump($total);
+// }
+$totalEndYear = (array_sum($endYear));
+dump($totalEndYear);
+
 
 
 
