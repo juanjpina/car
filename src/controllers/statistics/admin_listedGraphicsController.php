@@ -49,20 +49,28 @@ function total(PDO $db, $startYear, $totales, $invoice)
 if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'])) {
 
     $endYear = total($db, $_GET['endYear'], $totales, $invoice);
-    // $endYear = total($db, $_GET['startYear'], $totales, $invoice);
+    $startYear = total($db, $_GET['startYear'], $totales, $invoice);
     $totalEndYear = (array_sum($endYear));
+    $totalStartYear = (array_sum($endYear));
+    $endY = $_GET['endYear'];
+    $startY = $_GET['startYear'];
 
+    // dump($endYear);
+    // dump(($startYear));
+    $invtollEnd = (100 * $endYear[1]) / $totalEndYear;
+    $invfuelEnd = (100 * $endYear[2]) / $totalEndYear;
+    $invoilEnd = (100 * $endYear[3]) / $totalEndYear;
+    $invtimingEnd = (100 * $endYear[4]) / $totalEndYear;
+    $invinsuranceEnd = (100 * $endYear[5]) / $totalEndYear;
+    $invpneuEnd = (100 * $endYear[6]) / $totalEndYear;
+    $invtechnicalEnd = (100 * $endYear[7]) / $totalEndYear;
 
-    $invtol = ((100 * $endYear[1]) / $totalEndYear);
-
-    $intvoll = round(((100 * $endYear[1]) / $totalEndYear), 2, PHP_ROUND_HALF_UP);
-
-
-
-    $invfuel = round(((100 * $endYear[2]) / $totalEndYear), 2, PHP_ROUND_HALF_UP);
-    $invoil = (100 * $endYear[3]) / $totalEndYear;
-    $invtiming = (100 * $endYear[4]) / $totalEndYear;
-    $invinsurance = (100 * $endYear[5]) / $totalEndYear;
-    $invpneu = (100 * $endYear[6]) / $totalEndYear;
-    $invtechnical = (100 * $endYear[7]) / $totalEndYear;
+    $invtollStart = ((100 * $startYear[1]) / $totalStartYear);
+    $invfuelStart = (100 * $startYear[2]) / $totalStartYear;
+    $invoilStart = (100 * $startYear[3]) / $totalStartYear;
+    $invtimingStart = (100 * $startYear[4]) / $totalStartYear;
+    $invinsuranceStart = (100 * $startYear[5]) / $totalStartYear;
+    $invpneuStart = (100 * $startYear[6]) / $totalStartYear;
+    $invtechnicalStart = (100 * $startYear[7]) / $totalStartYear;
 }
+// dump($invtechnicalEnd);

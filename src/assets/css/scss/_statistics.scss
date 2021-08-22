@@ -130,44 +130,54 @@
     @include shadow;
     .container {
         width: 100%;
-        margin-bottom: 100px;
-        .graphic {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-end;
-            // flex-wrap: wrap;
-            // width: 100%;
-            margin-top: 100px;
-            .invtoll {
-                background-color: #fc2323;
-            }
-            .invfuel {
-                background-color: #6bf7ff;
-            }
-            .invoil {
-                background-color: #fc4517;
-            }
-            .invtiming {
-                background-color: #46ff7b;
-            }
-            .invinsurance {
-                background-color: #4f0afc;
-            }
-            .invpneu {
-                background-color: #fced30;
-            }
-            .invtechincal {
-                background-color: #fc6b0a;
+        .graph {
+            width: 100%;
+            justify-content: space-around;
+            .graphic {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-end;
+                // flex-wrap: wrap;
+                // width: 100%;
+                margin-top: 200px;
+                .invtoll {
+                    background-color: #fc2323;
+                }
+                .invfuel {
+                    background-color: #6bf7ff;
+                }
+                .invoil {
+                    background-color: #fc4517;
+                }
+                .invtiming {
+                    background-color: #46ff7b;
+                }
+                .invinsurance {
+                    background-color: #4f0afc;
+                }
+                .invpneu {
+                    background-color: #fced30;
+                }
+                .invtechnical {
+                    background-color: #fc6b0a;
+                }
             }
         }
+    }
+    .yearEnd {
+        color: $color-texto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px 0;
     }
     .list {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-end;
-        margin-bottom: 100px;
+        margin: 100px 0;
         // flex-wrap: wrap;
         // width: 100%;
         li {
@@ -203,7 +213,7 @@
         .invpneu {
             background-color: #fced30;
         }
-        .invtechincal {
+        .invtechnical {
             background-color: #fc6b0a;
         }
     }

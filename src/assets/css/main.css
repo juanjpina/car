@@ -624,42 +624,52 @@ a {
 }
 .listedGraphics .container {
   width: 100%;
-  margin-bottom: 100px;
 }
-.listedGraphics .container .graphic {
+.listedGraphics .container .graph {
+  width: 100%;
+  justify-content: space-around;
+}
+.listedGraphics .container .graph .graphic {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 100px;
+  margin-top: 200px;
 }
-.listedGraphics .container .graphic .invtoll {
+.listedGraphics .container .graph .graphic .invtoll {
   background-color: #fc2323;
 }
-.listedGraphics .container .graphic .invfuel {
+.listedGraphics .container .graph .graphic .invfuel {
   background-color: #6bf7ff;
 }
-.listedGraphics .container .graphic .invoil {
+.listedGraphics .container .graph .graphic .invoil {
   background-color: #fc4517;
 }
-.listedGraphics .container .graphic .invtiming {
+.listedGraphics .container .graph .graphic .invtiming {
   background-color: #46ff7b;
 }
-.listedGraphics .container .graphic .invinsurance {
+.listedGraphics .container .graph .graphic .invinsurance {
   background-color: #4f0afc;
 }
-.listedGraphics .container .graphic .invpneu {
+.listedGraphics .container .graph .graphic .invpneu {
   background-color: #fced30;
 }
-.listedGraphics .container .graphic .invtechincal {
+.listedGraphics .container .graph .graphic .invtechnical {
   background-color: #fc6b0a;
+}
+.listedGraphics .yearEnd {
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 .listedGraphics .list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 100px;
+  margin: 100px 0;
 }
 .listedGraphics .list li {
   display: flex;
@@ -694,7 +704,7 @@ a {
 .listedGraphics .list .invpneu {
   background-color: #fced30;
 }
-.listedGraphics .list .invtechincal {
+.listedGraphics .list .invtechnical {
   background-color: #fc6b0a;
 }
 
