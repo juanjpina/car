@@ -65,7 +65,7 @@ function getTrademark(PDO $db)
 		$data = array(
 			':id_car' => $_POST['select']
 		);
-		$sql = 'SELECT * FROM car where id_car = :id_car';
+		$sql = 'SELECT * FROM car where id_car = :id_car LIMIT 1';
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -76,7 +76,7 @@ function getTrademark(PDO $db)
 		$data = array(
 			':id_user' => $_SESSION['auth']['id_user']
 		);
-		$sql = 'SELECT * FROM car where id_user = :id_user';
+		$sql = 'SELECT * FROM car where id_user = :id_user LIMIT 1';
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -241,38 +241,38 @@ function noAccess(AltoRouter $router, $check): void
 }
 
 
-function getMovieById(PDO $db, int $id)
-{
-	$data = ['id' => $id];
-	$sql = 'SELECT title FROM movies WHERE id = :id';
-	$request = $db->prepare($sql);
-	$request->execute($data);
-	return $request->fetch();
-}
+// function getMovieById(PDO $db, int $id)
+// {
+// 	$data = ['id' => $id];
+// 	$sql = 'SELECT title FROM movies WHERE id = :id';
+// 	$request = $db->prepare($sql);
+// 	$request->execute($data);
+// 	return $request->fetch();
+// }
 
 
-function formatBytes($size, $precision = 2)
-{
-	$base     = log($size, 1024);
-	$suffixes = ['', 'Ko', 'Mo', 'Go', 'To'];
+// function formatBytes($size, $precision = 2)
+// {
+// 	$base     = log($size, 1024);
+// 	$suffixes = ['', 'Ko', 'Mo', 'Go', 'To'];
 
-	return round(pow(1024, $base - floor($base)), $precision) . ' ' . $suffixes[floor($base)];
-}
+// 	return round(pow(1024, $base - floor($base)), $precision) . ' ' . $suffixes[floor($base)];
+// }
 
-function getCateById(PDO $db, int $id)
-{
-	$data = ['id' => $id];
-	$sql = 'SELECT categorie FROM categories WHERE id = :id';
-	$request = $db->prepare($sql);
-	$request->execute($data);
-	return $request->fetch();
-}
+// function getCateById(PDO $db, int $id)
+// {
+// 	$data = ['id' => $id];
+// 	$sql = 'SELECT categorie FROM categories WHERE id = :id';
+// 	$request = $db->prepare($sql);
+// 	$request->execute($data);
+// 	return $request->fetch();
+// }
 
 /**
  * busca en la tabla de types y devuelve el resultado de las columnas en base al id_user.
  */
-function searchDb(PDO $db, $table, $id_user)
-{
+// function searchDb(PDO $db, $table, $id_user)
+// {
 
 	// $data = ['$id_user' => $_SESSION['auth']['id_user']];
 	// $sql = 'SELECT id_car FROM user WHERE id_user = :id_user';
@@ -289,4 +289,4 @@ function searchDb(PDO $db, $table, $id_user)
 	// return $request->fetch();
 
 
-}
+// }

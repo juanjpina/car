@@ -6,9 +6,10 @@
         <form action="" method="post">
             <li>
                 <div class="column">
+                    <?php $error = checkField('trademark', 'Votre marque est vide.'); ?>
                     <label for="trademark" class="formLabel">La marque de votre véhicule</label>
                     <input type="text" class="input inputTrade" id="trademark" name="trademark">
-
+                    <?= $error['message']; ?>
             </li>
             <li>
                 <div class="column">
