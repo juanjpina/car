@@ -2,7 +2,7 @@
 <div class="user">
     <div class="">
         <div class="column">
-            <h3 class="h3Car textEdit">Modifier votre données</h3>
+            <h1 class="title">Modifier votre données</h1>
         </div>
         <form action="" method="post">
             <ul>
@@ -20,7 +20,7 @@
                             <div class="column form">
                                 <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
                                 <label for="password">Mot de pass</label>
-                                <input type="password" class="password<?= $error['class']; ?>" name="password" value="<?= valueField('password'); ?>">
+                                <input type="password" class="input password<?= $error['class']; ?>" name="password" value="<?= valueField('password'); ?>">
                                 <p class="message"> <?= $error['message']; ?> </p>
                             </div>
                         </li>
@@ -29,7 +29,7 @@
                                 <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.'); ?>
                                 <?php $resul = egalPass('password', 'confirmerPassword') ?>
                                 <label for="password">Confirmez votre mot de pass</label>
-                                <input type="password" class="password<?= $error['class']; ?>" name="confirmerPassword" value="">
+                                <input type="password" class="input password<?= $error['class']; ?>" name="confirmerPassword" value="">
                                 <p class="message"> <?= $error['message']; ?> </p>
                                 <p class="message"> <?= $resul['message']; ?></p>
                             </div>

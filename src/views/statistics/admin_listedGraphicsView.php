@@ -3,7 +3,7 @@
 <div class='listedGraphics'>
     <div class='container column'>
 
-
+        <h1 class="title">Resulta de la comparative</h1>
 
 
         <div class="graph row">

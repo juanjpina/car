@@ -1,8 +1,7 @@
-<?php
-get_header('Add New Car', 'compte'); ?>
+<?php get_header('Add New Car', 'compte'); ?>
 
 <div class="addCar column">
-    <h1 class="h1Title">Ajouter un nouveau véhicule</h1>
+    <h1 class="title">Ajouter un nouveau véhicule</h1>
     <ul>
         <form action="" method="post">
             <li>

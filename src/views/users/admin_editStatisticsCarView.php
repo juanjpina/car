@@ -1,9 +1,8 @@
 <?php get_header('edit statistics', 'compte'); ?>
-
 <div class="userStatistics column">
     <div class="column">
-        <div class="column as">
-            <h1 class='h1Title'>Modifier votre données</h1>
+        <div class="column">
+            <h1 class='title'>Modifier votre données</h1>
         </div>
         <form action="" method="post">
             <ul>
@@ -68,5 +67,5 @@
         </form>
     </div>
 </div>
-</div>
+
 <?php get_footer('compte'); ?>

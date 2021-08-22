@@ -1,5 +1,5 @@
 <?php get_header('invoice add', 'admin'); ?>
-<div class="addInvoice column">
+<div class="addInvoice">
     <div class="column">
         <h1 class='title'>Ajouter une facture</h1>
     </div>

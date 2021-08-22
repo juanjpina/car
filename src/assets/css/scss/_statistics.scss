@@ -130,6 +130,9 @@
     @include shadow;
     .container {
         width: 100%;
+        .title {
+            margin-top: 20px;
+        }
         .graph {
             width: 100%;
             justify-content: space-around;
