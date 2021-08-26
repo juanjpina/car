@@ -1,13 +1,23 @@
-        .nsubmit {
-            margin-top: 50px;
+.menu-login {
+    margin-top: 100px;
+    width: 100%;
+    height:100%;
+    .login{
+        background-color: $color-alert;
+        border-radius: 28px;
+        @include shadow;
+        margin:30px 0;
+        // width: 100%;
+        // height: 100%;
+        form{
+            padding: 70px 100px;
+            width: 100%;
         }
-        
+        li{
+            margin: 40px 0;
+        }
         .parrafo-compte {
             margin-bottom: 5px;
-        }
-        
-        .pa {
-            margin-bottom: 29px;
         }
         
         .parrafo-mot {
@@ -15,26 +25,46 @@
             text-align: right;
             color: black;
         }
-        
-        .button p,
-        .creercompte p {
-            text-transform: uppercase;
-            font-family: 'Montserrat', sans-serif;
-            /* margin: 0; */
-            font-weight: bold;
-            color: #f2f2f2;
-        }
-        
-        .menu-login .message {
-            padding-top: 2px;
-            font-weight: bold;
-        }
-        
-        // .button {
-        //     width: 240px;
-        //     height: 35px;
-        //     border-radius: 15px;
-        //     background-color: $color-button-header;
-        //     border-color: transparent;
-        //     color: $color-texto;
-        // }
+        button{display: block;}
+    }
+    
+    .compte{
+        background-color: rgba(217,189,48,0.5);
+        border-radius: 28px;
+        @include shadow;
+        margin: 10px 0;
+        padding: 30px;
+}
+}
+
+// .nsubmit {
+//     margin-top: 50px;
+// }
+
+
+// .pa {
+//     margin-bottom: 29px;
+// }
+
+// .button p,
+// .creercompte p {
+//     text-transform: uppercase;
+//     font-family: 'Montserrat', sans-serif;
+//     /* margin: 0; */
+//     font-weight: bold;
+//     color: #f2f2f2;
+// }
+
+.menu-login .message {
+    padding-top: 2px;
+    font-weight: bold;
+}
+
+// .button {
+//     width: 240px;
+//     height: 35px;
+//     border-radius: 15px;
+//     background-color: $color-button-header;
+//     border-color: transparent;
+//     color: $color-texto;
+// }

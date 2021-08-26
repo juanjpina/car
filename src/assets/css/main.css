@@ -17,15 +17,18 @@ main {
 }
 
 .button {
-  width: 240px;
-  height: 35px;
-  border-radius: 15px;
   background-color: #083540;
   border-color: transparent;
-  color: #f2f2f2;
-  text-transform: uppercase;
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  border-radius: 15px;
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+  color: #f2f2f2;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  height: 35px;
+  text-transform: uppercase;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -206,31 +209,43 @@ a {
   margin-right: 20px;
 }
 
-.nsubmit {
-  margin-top: 50px;
+.menu-login {
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
 }
-
-.parrafo-compte {
+.menu-login .login {
+  background-color: #d9bd30;
+  border-radius: 28px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  margin: 30px 0;
+}
+.menu-login .login form {
+  padding: 70px 100px;
+  width: 100%;
+}
+.menu-login .login li {
+  margin: 40px 0;
+}
+.menu-login .login .parrafo-compte {
   margin-bottom: 5px;
 }
-
-.pa {
-  margin-bottom: 29px;
-}
-
-.parrafo-mot {
+.menu-login .login .parrafo-mot {
   margin-top: 1px;
   text-align: right;
   color: black;
 }
-
-.button p,
-.creercompte p {
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  /* margin: 0; */
-  font-weight: bold;
-  color: #f2f2f2;
+.menu-login .login button {
+  display: block;
+}
+.menu-login .compte {
+  background-color: rgba(217, 189, 48, 0.5);
+  border-radius: 28px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  margin: 10px 0;
+  padding: 30px;
 }
 
 .menu-login .message {
