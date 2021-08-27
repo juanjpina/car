@@ -27,3 +27,18 @@
     margin-top: 5px;
     text-align: center;
 }
+
+@mixin activeBlue{
+    &:active{
+        filter: drop-shadow(2px 5px 15px -2px #18a8cc);
+        box-shadow: $color-shadow 0px 22px 70px 4px;
+    }    
+}
+
+@mixin hoverBlue{
+    &:hover{
+        background-color: #18a8cc;
+        opacity: 0.8;
+        transition: all 600ms ease;
+    }
+}

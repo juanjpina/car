@@ -20,9 +20,9 @@ function login(PDO $db, AltoRouter $router)
 					'email' => $result->email,
 					'id_user'	=> $result->id_user,
 				];
-				session_start();
+
 				header('Location: ' . $router->generate('homeadmin'));
-				//die();
+				die();
 			}
 		}
 
@@ -31,6 +31,7 @@ function login(PDO $db, AltoRouter $router)
 		}
 	}
 }
+
 
 
 function redirectAdmin(AltoRouter $router)
@@ -46,7 +47,7 @@ function redirectAdmin(AltoRouter $router)
 function honeyPot(AltoRouter $router)
 {
 	if (!empty($_POST['auth'])) {
-		alert('Vous êtes connecté', 'success');
+		dump('Vous êtes connecté', 'success');
 		header('Location: ' . $router->generate('login'));
 		die;
 	}

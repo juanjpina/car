@@ -3,7 +3,8 @@ logout($router);
 
 function logout(AltoRouter $router)
 {
-	unset($_SESSION['auth']);
+	session_destroy();
+	// unset($_SESSION['auth']);
 	header('Location: ' . $router->generate('home'));
 	die;
 }

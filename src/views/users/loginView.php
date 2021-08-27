@@ -27,19 +27,19 @@
 					</div>
 				</li>
 				<li>
-					<a href="#" class="column">
-						<div class="button">
-							<intut class="" type="submit">Se connecter</intut>
-						</div>
-					</a>
+
+					<div class="">
+						<button class="button submit" type="submit">Se connecter</button>
+					</div>
+
 				</li>
 			</ul>
 		</form>
 
 	</div>
-	<a class="creercompte" href="<?= $router->generate('newlogin'); ?>">
-		<div class="compte">
-			<p>Créer une compte</p>
+	<a class="compte button" href="<?= $router->generate('newlogin'); ?>">
+		<div class="">
+			<p>Créer un compte</p>
 		</div>
 	</a>
 
