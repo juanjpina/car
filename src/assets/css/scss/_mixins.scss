@@ -42,3 +42,19 @@
         transition: all 600ms ease;
     }
 }
+
+@mixin activeSidebar{
+    &:active{
+        background-color: $color-history;
+        color: $color-history;
+        opacity: 1;
+    }
+}
+
+@mixin hoverSidebar{
+    &:hover{
+        background-color: $color-alert;
+        opacity: 0.5;
+        transition: all 600ms ease;    
+    }
+}
