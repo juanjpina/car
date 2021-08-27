@@ -11,7 +11,16 @@
         justify-content: center;
         border-radius: 15px;
         @include shadow;
-        
+        &:hover {
+                background-color: $color-alert;
+                opacity: 0.5;
+                transition: all 600ms ease;
+            }
+            &:active {
+                background-color: $color-history;
+                color: $color-history;
+                opacity: 1;
+            }
     }
     p {
         text-align: center;

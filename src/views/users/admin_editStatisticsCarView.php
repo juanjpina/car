@@ -36,7 +36,7 @@
                     <li class="liStatis">
                         <p>Quand il faut changer la courrois de distribution</p>
                         <div class="row">
-                            <div class="column">
+                            <div class="column right">
                                 <label for="dateTiming">Années</label>
                                 <input type="number" class="input" name="dateTiming" value="<?= $set['timingbeltDate'] ?>">
                             </div>
