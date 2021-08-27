@@ -3,11 +3,11 @@
     <div class="column">
         <h1 class='title'>Ajouter une facture</h1>
     </div>
-    <div class="column">
+    <div class="">
         <form action="" method="post">
             <ul>
                 <li>
-                    <div class="select column">
+                    <div class="column">
                         <h3>Votre véhicule</h3>
                         <select name="trademark" class="input">
                             <?php foreach ($trademark as $trade) { ?>
@@ -17,7 +17,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="select column">
+                    <div class="column">
                         <h3>Facture</h3>
                         <select name="invoice" class="input">
                             <?php foreach ($invoice as $invo) { ?>
@@ -28,18 +28,18 @@
                 </li>
                 <li>
                     <div class="row">
-                        <div class="date column">
+                        <div class="column date">
                             <label for="date">Date</label>
                             <input type="date" class='input' name="date">
                         </div>
-                        <div class="km column">
+                        <div class="column">
                             <label for="km">Km</label>
                             <input type="number" class="input" name="km">
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="amount column">
+                    <div class="column">
                         <label for="total">Montant facture</label>
                         <input type="number" class="input" name="total">
                     </div>

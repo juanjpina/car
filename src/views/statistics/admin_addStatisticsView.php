@@ -15,9 +15,9 @@
                         </select>
                     </div>
                 </li>
-                <div class="column">
-                    <li>
-                        <div class='row dates'>
+                <li>
+                    <div class="column">
+                        <div class=''>
                             <div class="column period">
                                 <h3>Périodes</h3>
                                 <select name="period" class='select'>
@@ -31,7 +31,7 @@
                                 </select>
                             </div>
                         </div>
-                </div>
+                    </div>
                 </li>
                 <li>
                     <div class="column">

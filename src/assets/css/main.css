@@ -574,7 +574,7 @@ a {
   width: 80%;
 }
 .statistics .period {
-  width: 25%;
+  width: 100%;
 }
 .statistics .dates {
   margin-right: 10%;
@@ -1002,7 +1002,7 @@ a {
   border-radius: 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -1010,6 +1010,13 @@ a {
 }
 .addInvoice li {
   margin: 40px 0;
+}
+.addInvoice .date {
+  margin: 0;
+  margin-right: 15px;
+}
+.addInvoice .title {
+  padding-bottom: 0px;
 }
 
 .menuInvoice {
