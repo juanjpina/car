@@ -1,15 +1,15 @@
 <?php get_header('InvoiceCar', 'compte') ?>
-<div class="invoiceCar">
+<div class="invoiceCar column">
     <div class="containedCar column">
-        <div class="column textTitle">
-            <h3 class='h3Car'>Le dernier entretien de votre véhicule</h3>
+        <div class="column">
+            <h1 class='title'>Le dernier entretien de votre véhicule</h1>
         </div>
         <form action="" method="post">
-            <div class="column">
+            <div class="column selectCar">
                 <ul>
                     <li>
                         <div class="column">
-                            <select name="select" class='input selectCar' id="select_car" onchange="click()">
+                            <select name="select" class='select' id="select_car" onchange="click()">
                                 <?php foreach ($cars as $car) { ?>
                                     <option value='<?= $car['id_car']; ?>'><?= $car['trademark']; ?></option>
                                 <?php } ?>
@@ -34,11 +34,8 @@
             <form action="" method="post">
                 <ul>
                     <div class="column">
-
                         <li>
-
                             <div class="column">
-
                                 <div class='column'>
                                     <p class='textTitleInput'>Vidanges</p>
                                     <?php foreach ($oil as $o) { ?>
@@ -55,10 +52,8 @@
                                     <?php } ?>
                                 </div>
                                 <div class='column'>
-
                                     <p class='textTitleInput'>Courroie de distribution</p>
                                     <?php foreach ($timing as $t) { ?>
-
                                         <div class='row'>
                                             <div class="column inputSpace">
                                                 <label for="date3">Date</label>
@@ -71,9 +66,7 @@
                                         </div>
                                 </div>
                             <?php } ?>
-
                             <div class='column'>
-
                                 <p class='textTitleInput'>Contrôle techinique</p>
                                 <?php foreach ($technical as $te) { ?>
                                     <div class='row'>
@@ -87,13 +80,9 @@
                                         </div>
                                     </div>
                                 <?php } ?>
-
-
-
                             </div>
                             </div>
                         </li>
-
                     </div>
                     <li>
                         <div class="column buttonSubmit">

@@ -1,14 +1,14 @@
-@import 'fonts';
+@import "fonts";
 .userStatistics {
-    width: 40%;
+    width: 59%;
     height: 100%;
     background-color: $color-alert;
     margin-top: 200px;
     border-radius: 28px;
-    margin-right: 7px;
-    margin-left: 180px;
+    margin-right: 0px;
+    margin-left: 100px;
     @include shadow;
-   
+
     .button {
         @include shadow;
         &:hover {
@@ -22,16 +22,14 @@
     .liStatis {
         margin-top: 20px;
         margin-bottom: 20px;
-        
     }
     .buttonStatis {
         margin-top: 50px;
     }
-    .right{
+    .right {
         margin-right: 20px;
-
     }
-    li{
+    li {
         margin-bottom: 40px;
     }
 }

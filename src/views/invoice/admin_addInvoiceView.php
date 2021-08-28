@@ -9,7 +9,7 @@
                 <li>
                     <div class="column">
                         <h3>Votre véhicule</h3>
-                        <select name="trademark" class="input">
+                        <select name="trademark" class="select">
                             <?php foreach ($trademark as $trade) { ?>
                                 <option value="<?= $trade['id_car']; ?>"><?= $trade['trademark']; ?> </option>
                             <?php } ?>
@@ -19,7 +19,7 @@
                 <li>
                     <div class="column">
                         <h3>Facture</h3>
-                        <select name="invoice" class="input">
+                        <select name="invoice" class="select">
                             <?php foreach ($invoice as $invo) { ?>
                                 <option value="<?= $invo['id_type'] ?>"><?= $invo['type'] ?> </option>
                             <?php } ?>

@@ -1,42 +1,42 @@
-        .history {
-            width: 66%;
-            height: 100%;
-            margin-right: 7%;
-            margin-top: 200px;
-            border-radius: 28px;
-            background-color: $color-history;
-            // flex-direction: column;
-            // justify-content: space-between;
-            // display: flex;
-            // flex-wrap: wrap;
-            // align-items: center;
-            .contained {
-                margin: 20px 0px;
-                width: 90%;
-                height: 80%;
-            }
-            select {
-                @include select;
-            }
-            ul {
-                width: 100%;
-            }
-            li {
-                margin: 40px 0px;
-            }
-            .space {
-                margin-left: 40px;
-            }
-            .data {
-                width: 100%;
-            }
-            .invoice {
-                width: 30%;
-            }
-            .se {
-                width: 100%;
-            }
-            .row {
-                justify-content: space-between;
-            }
-        }
+.history {
+    width: 66%;
+    height: 100%;
+    margin-right: 7%;
+    margin-top: 200px;
+    border-radius: 28px;
+    background-color: $color-history;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
+    .contained {
+        margin: 20px 0px;
+        width: 90%;
+        height: 80%;
+    }
+    select {
+        @include select;
+    }
+    ul {
+        width: 100%;
+    }
+    li {
+        margin: 40px 0px;
+    }
+    .space {
+        margin-left: 40px;
+    }
+    .data {
+        width: 100%;
+    }
+    .invoice {
+        width: 30%;
+    }
+    .se {
+        width: 100%;
+    }
+    .row {
+        justify-content: space-between;
+    }
+}

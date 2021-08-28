@@ -3,7 +3,7 @@
     <div class="contained column">
         <h1 class='title'>Statistique</h1>
         <form action="" method="post">
-            <ul>
+            <ul class="column">
                 <li>
                     <div class="column">
                         <h3>Véhicule</h3>
@@ -14,17 +14,17 @@
                         </select>
                     </div>
                 </li>
-                <div class="row">
+                <div class="column width">
                     <li>
                         <div class="column">
                             <label for="startYear">De l'année</label>
-                            <input type="number" name="startYear">
+                            <input type="number" name="startYear" class="input">
                         </div>
                     </li>
                     <li>
                         <div class="column">
                             <label for="endYear">À l'année</label>
-                            <input type="number" name="endYear">
+                            <input type="number" name="endYear" class="input">
                         </div>
                     </li>
                 </div>

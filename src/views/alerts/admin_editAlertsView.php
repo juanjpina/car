@@ -1,49 +1,49 @@
 <?php get_header('Alerts edit', 'admin'); ?>
-<div class="alerts">
-    <div class="contained column">
+<div class="alerts column">
+    <!-- <div class="contained column"> -->
 
-        <div>
-            <h1 class='title'>Rappel editar</h1>
-        </div>
-        <ul class='column'>
-            <form action="" method="post">
-                <li class='column'>
-                    <select name='car' class='select' id='car'>
-                        <?php foreach ($cars as $car) { ?>
-                            <option value="<?= $car['id_car'] ?>"><?= $car['trademark']; ?></option>
-                        <?php } ?>
-                    </select>
-                </li>
-                <li>
-                    <button type="submit" class='button'>Lister</button>
-                </li>
-            </form>
-
-            <?php if (!empty($alerts)) { ?>
-                <li>
-                    <table>
-                        <tr>
-                            <th colspan="2">Courroie de distribution</th>
-                            <th colspan="1">Contrôle Technique</th>
-                        </tr>
-                        <tr>
-                            <th>KM</th>
-                            <th>Date</th>
-                            <th>Date</th>
-                        </tr>
-                        <?php foreach ($alerts as $alert) { ?>
-                            <tr>
-                                <td><?= $alert['timingkm']; ?></td>
-                                <td><?= $alert['timingdate']; ?></td>
-                                <td><?= $alert['controldate']; ?></td>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                </li>
-            <?php } ?>
-        </ul>
-        <!-- <img src="/proyectocar/car/src/assets/images/add.png" width="25" height="25" alt=""> -->
+    <div>
+        <h1 class='title'>Rappel editar</h1>
     </div>
+    <ul class='column'>
+        <form action="" method="post">
+            <li class='column'>
+                <select name='car' class='select' id='car'>
+                    <?php foreach ($cars as $car) { ?>
+                        <option value="<?= $car['id_car'] ?>"><?= $car['trademark']; ?></option>
+                    <?php } ?>
+                </select>
+            </li>
+            <li>
+                <button type="submit" class='button'>Lister</button>
+            </li>
+        </form>
+
+        <?php if (!empty($alerts)) { ?>
+            <li>
+                <table>
+                    <tr>
+                        <th colspan="2">Courroie de distribution</th>
+                        <th colspan="1">Contrôle Technique</th>
+                    </tr>
+                    <tr>
+                        <th>KM</th>
+                        <th>Date</th>
+                        <th>Date</th>
+                    </tr>
+                    <?php foreach ($alerts as $alert) { ?>
+                        <tr>
+                            <td><?= $alert['timingkm']; ?></td>
+                            <td><?= $alert['timingdate']; ?></td>
+                            <td><?= $alert['controldate']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </li>
+        <?php } ?>
+    </ul>
+    <!-- <img src="/proyectocar/car/src/assets/images/add.png" width="25" height="25" alt=""> -->
+    <!-- </div> -->
 </div>
 
 

@@ -1,5 +1,5 @@
 <?php get_header('menu totales', 'admin') ?>
-<div class="statistics">
+<div class="statistics column">
     <div class="contained column">
         <h1 class='title'>Statistique</h1>
         <form action="" method="post">
@@ -14,13 +14,13 @@
                         </select>
                     </div>
                 </li>
-                <div class="column">
-                    <li>
+                <li>
+                    <div class="column">
                         <div class="column">
                             <label for="year">L'année</label>
-                            <input type="number" name="year">
+                            <input type="number" name="year" class="input">
                         </div>
-                </div>
+                    </div>
                 </li>
                 <li>
                     <div class="column">

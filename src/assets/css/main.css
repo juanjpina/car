@@ -1,10 +1,34 @@
 input {
-  font-family: "montserrat";
+  border-radius: 15px;
   color: black;
+  font-family: "montserrat";
+  height: 30px;
   text-align: center;
+  width: 100%;
 }
 
-select {
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.select {
+  width: 50%;
+  height: 30px;
+  font-family: "montserrat";
+  border-radius: 15px;
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -14,6 +38,11 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
+}
+
+.trademark {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .button {
@@ -447,25 +476,21 @@ a {
 }
 
 .alerts {
-  width: 66%;
-  height: 100%;
-  margin-top: 200px;
-  margin-right: 7%;
-  border-radius: 28px;
   background-color: #d9bd30;
+  border-radius: 28px;
+  height: 100%;
+  margin-right: 7%;
+  margin-top: 200px;
+  padding: 50px 0;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.alerts .contained {
-  width: 100%;
-  height: 100%;
-  margin: 30px 0px;
-}
-.alerts .contained .button:active {
+.alerts .button:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
   box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
-.alerts .contained .button:hover {
+.alerts .button:hover {
   background-color: #18a8cc;
   opacity: 0.8;
   transition: all 600ms ease;
@@ -517,10 +542,6 @@ a {
   width: 100%;
 }
 
-.select {
-  height: 100px;
-}
-
 .data {
   height: 150px;
 }
@@ -545,53 +566,25 @@ a {
   text-transform: uppercase;
 }
 
-.contained input {
-  border-radius: 15px;
-  height: 40px;
-}
-
 .km {
   margin: 0 15px 0 15px;
 }
 
 .statistics {
-  width: 66%;
+  background-color: #bf9926;
+  border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  border-radius: 28px;
-  background-color: #bf9926;
+  width: 66%;
+  padding: 50px 0;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.statistics .contained {
-  width: 90%;
-  height: 100%;
-  margin: 30px;
-}
-.statistics .select {
-  width: 50%;
-  height: 30px;
-  font-family: "montserrat";
-  border-radius: 15px;
-  margin-top: 5px;
-  text-align: center;
+.statistics .width {
+  width: 20%;
 }
 .statistics li {
-  margin: 30px 0px;
-  width: 100%;
-}
-.statistics ul {
-  width: 100%;
-}
-.statistics form {
-  width: 80%;
-}
-.statistics .period {
-  width: 100%;
-}
-.statistics .dates {
-  margin-right: 10%;
-  justify-content: space-around;
+  margin: 40px 0px;
 }
 .statistics table {
   width: 100%;
@@ -618,10 +611,6 @@ a {
   margin-top: 200px;
   width: 66%;
   height: 500px;
-  background-color: #bf9926;
-  border-radius: 28px;
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .menuStatistics .container {
   display: flex;
@@ -640,7 +629,7 @@ a {
   justify-content: center;
   width: 200px;
   height: 200px;
-  border: 5px solid black;
+  border: 15px;
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -854,26 +843,6 @@ a {
   padding-bottom: 20px;
 }
 
-.trademark {
-  font-size: 16px;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .invoiceCar {
   width: 59%;
   height: 100%;
@@ -884,39 +853,38 @@ a {
   margin-left: 7%;
 }
 .invoiceCar .containedCar {
-  width: 100%;
-  margin: 40px 0px;
   height: 100%;
-}
-
-.input {
-  border-radius: 15px;
+  margin: 40px 0px;
   width: 100%;
-  height: 30px;
 }
-
-.selectCar {
-  margin-bottom: 20px;
+.invoiceCar .containedCar .buttonSubmit {
+  margin-top: 50px;
 }
-
-.textTitleInput {
+.invoiceCar .containedCar .inputSpace {
+  margin-right: 20px;
+}
+.invoiceCar .containedCar .submit {
+  margin-top: 50px;
+}
+.invoiceCar .containedCar li {
+  margin-bottom: 50px;
+}
+.invoiceCar .containedCar .date {
+  margin-right: 20px;
+}
+.invoiceCar .containedCar .selectCar {
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.invoiceCar .containedCar .selectCar .select {
+  width: 100%;
+}
+.invoiceCar .textTitleInput {
   margin-top: 20px;
   margin-bottom: 5px;
   text-align: center;
   font-weight: bold;
-}
-
-.h3Car {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.inputSpace {
-  margin-right: 81px;
-}
-
-.buttonSubmit {
-  margin-top: 20px;
 }
 
 .addCar {
@@ -973,13 +941,13 @@ a {
 }
 
 .userStatistics {
-  width: 40%;
+  width: 59%;
   height: 100%;
   background-color: #d9bd30;
   margin-top: 200px;
   border-radius: 28px;
-  margin-right: 7px;
-  margin-left: 180px;
+  margin-right: 0px;
+  margin-left: 100px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1008,16 +976,17 @@ a {
 }
 
 .addInvoice {
-  width: 66%;
+  align-items: center;
   background-color: #8c641b;
-  height: 750px;
-  margin-top: 200px;
   border-radius: 28px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin-top: 200px;
+  padding: 50px 0;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1027,9 +996,6 @@ a {
 .addInvoice .date {
   margin: 0;
   margin-right: 15px;
-}
-.addInvoice .title {
-  padding-bottom: 0px;
 }
 
 .menuInvoice {
@@ -1076,41 +1042,19 @@ a {
 }
 
 .editInvoice {
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: 2px 5px 15px -2px #b4b2ba;
-  width: 66%;
-  height: 100%;
-  margin-right: 7px;
-  margin-top: 200px;
   background-color: #8c641b;
   border-radius: 28px;
+  height: 100%;
   justify-content: center;
-}
-.editInvoice .subEdit {
-  width: 90%;
-  margin: 20px 0px;
-}
-.editInvoice .title {
-  margin: 30px 0px;
-}
-.editInvoice .trademark {
-  width: 100%;
-  margin: 30px 0px;
-}
-.editInvoice .select {
-  width: 50%;
-  height: 30px;
-  font-family: "montserrat";
-  border-radius: 15px;
-  margin-top: 5px;
-  text-align: center;
+  margin-right: 7px;
+  margin-top: 200px;
+  padding: 50px 0;
+  width: 66%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .editInvoice li {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  margin: 40px 0;
 }
 .editInvoice .table {
   margin-top: 50px;

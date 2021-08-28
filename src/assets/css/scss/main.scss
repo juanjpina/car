@@ -10,12 +10,35 @@ $color-button-header: #083540;
 // Fonts
 $default-font: "montserrat", sans-serif;
 input {
-    font-family: "montserrat";
+    border-radius: 15px;
     color: black;
+    font-family: "montserrat";
+    height: 30px;
     text-align: center;
+    width: 100%;
 }
 
-select {
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select {
+    width: 50%;
+    height: 30px;
+    font-family: "montserrat";
+    border-radius: 15px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -26,7 +49,10 @@ main {
     flex-wrap: wrap;
     justify-content: start;
 }
-
+.trademark {
+    font-size: 16px;
+    font-weight: bold;
+}
 .button {
     background-color: $color-button-header;
     border-color: transparent;

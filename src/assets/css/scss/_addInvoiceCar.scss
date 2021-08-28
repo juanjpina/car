@@ -1,16 +1,4 @@
-@import'color';
-.trademark {
-    font-size: 16px;
-}
-
-.column {
-    @include column;
-    // justify-content: space-evenly;
-}
-
-.row {
-    @include row;
-}
+@import "color";
 
 .invoiceCar {
     width: 59%;
@@ -21,44 +9,58 @@
     margin-right: 7%;
     margin-left: 7%;
     .containedCar {
-        width: 100%;
-        margin: 40px 0px;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // flex-wrap: wrap;
-        // align-items: center;
         height: 100%;
+        margin: 40px 0px;
+        width: 100%;
+        // .trademark {
+        //     font-size: 16px;
+        //     font-weight: bold;
+        // }
+        .buttonSubmit {
+            margin-top: 50px;
+        }
+        .inputSpace {
+            margin-right: 20px;
+        }
+        .submit {
+            margin-top: 50px;
+        }
+        li {
+            margin-bottom: 50px;
+        }
+        .date {
+            margin-right: 20px;
+        }
+        // .info {
+        //     margin-bottom: 20px;
+        // }
+        .selectCar {
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            .select {
+                width: 100%;
+            }
+        }
+    }
+
+    .textTitleInput {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: bold;
     }
 }
 
-.input {
-    // background-color: $color-button-header;
-    border-radius: 15px;
-    width: 100%;
-    height: 30px;
-}
+// .h3Car {
+//     font-weight: bold;
+//     font-size: 1.2em;
+// }
 
-.selectCar {
-    margin-bottom: 20px;
-}
+// .inputSpace {
+//     margin-right: 81px;
+// }
 
-.textTitleInput {
-    margin-top: 20px;
-    margin-bottom: 5px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.h3Car {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.inputSpace {
-    margin-right: 81px;
-}
-
-.buttonSubmit {
-    margin-top: 20px;
-}
+// .buttonSubmit {
+//     margin-top: 20px;
+// }

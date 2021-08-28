@@ -8,7 +8,7 @@
             <ul>
                 <li class="liStatis">
                     <div class="column">
-                        <select name="select" class='input selectCar' id="select_car" onchange="click()">
+                        <select name="select" class='select' id="select_car" onchange="click()">
                             <?php foreach ($cars as $car) { ?>
                                 <option value='<?= $car['id_car']; ?>'><?= $car['trademark']; ?></option>
                             <?php } ?>

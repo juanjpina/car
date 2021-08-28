@@ -1,4 +1,4 @@
-@import 'color';
+@import "color";
 .car {
     width: 60%;
     height: 450px;
@@ -25,10 +25,6 @@
     width: 100%;
 }
 
-.select {
-    height: 100px;
-}
-
 .data {
     height: 150px;
 }
@@ -53,10 +49,10 @@
     text-transform: uppercase;
 }
 
-.contained input {
-    border-radius: 15px;
-    height: 40px;
-}
+// .contained input {
+//     border-radius: 15px;
+//     height: 40px;
+// }
 
 .km {
     margin: 0 15px 0 15px;
