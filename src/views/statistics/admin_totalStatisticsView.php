@@ -1,11 +1,7 @@
 <?php get_header('total statistics', 'admin') ?>
-
-
 <div class='totalStatistics'>
-
     <div class='container'>
-
-        <h1 class='title'> Resulta par moi de l'année <?= $_GET['year'] ?></h1>
+        <h1 class='title'>Resulta par moi de l'année<?= $_GET['year'] ?></h1>
         <table>
             <tr>
                 <th>Janvier</th>
@@ -26,34 +22,7 @@
                     <td><?= $total ?></td>
                 <?php } ?>
             </tr>
-
-
         </table>
-
-
-
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php get_footer('admin') ?>

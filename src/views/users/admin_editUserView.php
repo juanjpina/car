@@ -2,7 +2,7 @@
 <div class="user">
     <div class="">
         <div class="column">
-            <h1 class="title">Modifier votre données</h1>
+            <h1 class="title">Modifier vos données</h1>
         </div>
         <form action="" method="post">
             <ul>

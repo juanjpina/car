@@ -45,7 +45,7 @@
 						<a href="<?= $router->generate('logout') ?>">
 							<div class="button_admin">
 								<img src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
-								<p>Deconection</p>
+								<p>Déconnexion</p>
 							</div>
 						</a>
 					</li>

@@ -63,14 +63,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= $router->generate('editUser'); ?>">
-                        <div class="b-alert">
-                            <img src="/proyectocar/car/src/assets/images/man.png" width="30" height="30" alt="">
-                            <p>Pseudo, Mot de passe</p>
-                        </div>
-                    </a>
-                </li>
-                <li>
                     <a href="<?= $router->generate('maintenance'); ?>">
                         <div class="b-alert">
                             <img src="/proyectocar/car/src/assets/images/motor2.png" width="50" height="37" alt="">
@@ -95,6 +87,14 @@
                     </a>
                 </li>
                 <!-- <div> -->
+                <li>
+                    <a href="<?= $router->generate('editUser'); ?>">
+                        <div class="b-alert">
+                            <img src="/proyectocar/car/src/assets/images/man.png" width="30" height="30" alt="">
+                            <p>Pseudo, Mot de passe</p>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- </div> -->

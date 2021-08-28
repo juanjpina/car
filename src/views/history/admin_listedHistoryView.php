@@ -3,7 +3,7 @@
     <div class="contained">
         <form action="">
             <div class="column">
-                <h3>Liste Facture <?= $typeInvoice[0]['type'] ?></h3>
+                <h1 class="title">Liste Facture <?= $typeInvoice[0]['type'] ?></h1>
                 <div class='table'>
                     <table>
                         <thead>

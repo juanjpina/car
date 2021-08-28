@@ -40,6 +40,19 @@ main {
   transition: all 600ms ease;
 }
 
+table th {
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-decoration: underline 0.2em;
+  text-align: center;
+}
+table td {
+  text-align: center;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -664,18 +677,18 @@ a {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 30px;
+  margin: 30px 0px;
 }
-.totalStatistics table {
+.totalStatistics .container table {
+  width: 90%;
   margin-top: 50px;
 }
-.totalStatistics th {
-  padding: 0px 10px 10px 10px;
-  text-align: center;
-  text-decoration: underline 1.5px;
+.totalStatistics .container th {
+  font-size: 0.8em;
+  padding: 0px 5px 10px 5px;
 }
-.totalStatistics td {
-  text-align: center;
+.totalStatistics .container td {
+  font-size: 16px;
 }
 
 .listedGraphics {
@@ -702,7 +715,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 .listedGraphics .container .graph .graphic .invtoll {
   background-color: #fc2323;
@@ -1173,8 +1186,6 @@ a {
   width: 120px;
   height: 0px;
   padding: 10px 15px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */
