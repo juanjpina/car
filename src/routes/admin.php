@@ -23,9 +23,6 @@ $router->map('GET|POST', '/admin/pages/white', 'pages/admin_pageWhite', 'whitead
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
 
 $router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar', 'addinvoicecar');
-$router->map('GET|POST', '/admin/users/editsta', 'users/admin_editStatisticsCar', 'editstacar');
-$router->map('GET|POST', '/admin/users/addnewcar', 'users/admin_addCar', 'addnewcar');
-$router->map('GET|POST', '/admin/users/maintenance', 'users/admin_maintenance', 'maintenance');
 
 //*************     invoice *****************/
 $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');
@@ -51,3 +48,12 @@ $router->map('GET|POST', '/admin/history/listed/[:invoice]/[:period]/[:dateStart
 
 $router->map('GET|POST', '/admin/alerts/', 'alerts/admin_addAlerts', 'addalerts');
 $router->map('GET|POST', '/admin/alerts/edit', 'alerts/admin_editAlerts', 'editalerts');
+
+
+
+
+$router->map('GET|POST', '/admin/setting/menu', 'setting/admin_settingMenu', 'settingmenu');
+
+$router->map('GET|POST', '/admin/setting/addnewcar', 'setting/admin_addCar', 'addnewcar');
+$router->map('GET|POST', '/admin/setting/maintenance', 'setting/admin_maintenance', 'maintenance');
+$router->map('GET|POST', '/admin/setting/editsta', 'setting/admin_editStatisticsCar', 'editstacar');

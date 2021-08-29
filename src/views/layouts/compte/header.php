@@ -39,7 +39,13 @@
                 </ul>
             </div>
             <div class="bonjour">
-                <p> Bonjour, <?= $_SESSION['auth']['nickname']; ?></p>
+                <p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname'];
+                                                    if (isset($_SESSION['car']['trademark'])) {
+                                                        echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
+                                                    } else {
+                                                        echo '';
+                                                    }; ?>
+                </p>
             </div>
         </div>
     </header>
@@ -54,7 +60,7 @@
                         </div>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="<?= $router->generate('addnewcar'); ?>">
                         <div class="b-alert">
                             <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
@@ -69,15 +75,15 @@
                             <p>Entretien</p>
                         </div>
                     </a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a href="<?= $router->generate('editstacar'); ?>">
                         <div class="b-alert">
                             <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
                             <p>Paramètres</p>
                         </div>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="<?= $router->generate('addinvoicecar'); ?>">
                         <div class="b-alert">
@@ -95,6 +101,16 @@
                         </div>
                     </a>
                 </li>
+
+
+
+
+
+
+
+
+
+
             </ul>
         </div>
         <!-- </div> -->

@@ -430,14 +430,14 @@ a {
 
 .sidebarAdmin {
   margin-left: 7%;
-  padding-top: 150px;
+  margin-top: 120px;
   width: 20%;
 }
 .sidebarAdmin ul {
   width: 100%;
 }
 .sidebarAdmin li {
-  margin-top: 40px;
+  margin-top: 20px;
   width: 40%;
 }
 .sidebarAdmin li .border {
@@ -473,6 +473,9 @@ a {
 }
 .sidebarAdmin .b-history {
   background-color: #d94625;
+}
+.sidebarAdmin .b-setting {
+  background-color: #083540;
 }
 
 .alerts {

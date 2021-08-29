@@ -86,13 +86,13 @@ class Validate
 	}
 
 
-	public function checkFileSize(string $fieldName, int $maxSize)
-	{
-		if ($_FILES[$fieldName]['size'] > $maxSize) {
-			$convert = formatBytes($maxSize);
-			return 'Merci de charger un fichier ne dépassant pas cette taille : ' . $convert;
-		}
-	}
+	// public function checkFileSize(string $fieldName, int $maxSize)
+	// {
+	// 	if ($_FILES[$fieldName]['size'] > $maxSize) {
+	// 		$convert = formatBytes($maxSize);
+	// 		return 'Merci de charger un fichier ne dépassant pas cette taille : ' . $convert;
+	// 	}
+	// }
 
 
 	public function checkFileFormat(string $fieldName, array $format)

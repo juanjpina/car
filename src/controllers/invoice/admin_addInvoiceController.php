@@ -14,22 +14,9 @@ if (
     $km = $_POST['km'];
     $total = $_POST['total'];
     $comment = $_POST['comment'];
-    // dump($id_car);
-    // dump($invoice);
-    // dump($date);
-    // dump($km);
-    // dump($total);
-    // dump($comment);
 
     switch ((int)$invoice) {
         case 1:
-            // dump($id_car);
-            // dump($invoice);
-            // dump($date);
-            // dump($km);
-            // dump($total);
-            // dump($comment);
-            //invtoll
             insertInvoice($db, 'invtoll', $id_car, $date, $km, $total, $comment);
             break;
         case 2:
@@ -60,17 +47,3 @@ if (
     };
     header('Refresh:' . 0.2);
 };
-
-// function insert(PDO $db, $database, $id_car, $date, $km, $total, $comment)
-// {
-//     $data = [
-//         ':id_car' => (int)$id_car,
-//         ':date' => $date,
-//         ':km' => (int)$km,
-//         ':total' => (int)$total,
-//         ':comment' => $comment
-//     ];
-//     $sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
-//     $request = $db->prepare($sql);
-//     $result = $request->execute($data);
-// };
