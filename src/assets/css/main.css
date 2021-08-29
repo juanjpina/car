@@ -1132,4 +1132,14 @@ a {
   padding: 10px 15px;
 }
 
+.white-car {
+  margin-top: 200px;
+  width: 59%;
+  background-color: #d9bd30;
+  border-radius: 28px;
+}
+.white-car li {
+  margin-bottom: 40px;
+}
+
 /*# sourceMappingURL=main.css.map */

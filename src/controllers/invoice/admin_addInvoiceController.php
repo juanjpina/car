@@ -1,6 +1,7 @@
 <?php
 $trademark = getTrademark($db);
 $invoice = getSelect($db, 'type_invoice');
+dump($_SESSION['car']['trademark']);
 
 if (
     !empty($_POST['trademark']) && !empty($_POST['invoice'])

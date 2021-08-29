@@ -12,7 +12,7 @@
 
 	<!-- <link rel="stylesheet" href="/proyectocar/car/src/assets/css/reset.css"> -->
 	<link href="/proyectocar/car/src/assets/css/main.css" rel="stylesheet">
-	<script language="Javascript">
+	<!-- <script language="Javascript">
 		console.log(45);
 
 		var t = document.getElementsById('nom');
@@ -21,7 +21,7 @@
 		function alerta() {
 			alert('Mi primer Script');
 		}
-	</script>
+	</script> -->
 	<!-- <link type="text/css" rel="stylesheet" href="/proyectocar/car/src/assets/css/css.php" /> -->
 </head>
 
@@ -52,7 +52,7 @@
 				</ul>
 			</div>
 			<div class="bonjour">
-				<p class="par"> Bonjour, <?= $_SESSION['auth']['nickname']; ?></p>
+				<p class="par"> Bonjour, <?= $_SESSION['auth']['nickname']; ?> Votre véhicule <?= $_SESSION['car']['trademark']; ?></p>
 			</div>
 		</div>
 	</header>

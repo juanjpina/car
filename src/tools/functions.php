@@ -35,6 +35,22 @@ function getInvoice(PDO $db, $id, $database)
 	return $result;
 }
 
+/**
+ * @param id, data base
+ * @return array data base
+ */
+function getCarId(PDO $db, $id, $database)
+{
+	$data = array(
+		':id_car' => $id
+	);
+	$sql = "SELECT * FROM $database where id_car = :id_car";
+	$request = $db->prepare($sql);
+	$request->execute($data);
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
+
 
 /**
  * @param id, data base
