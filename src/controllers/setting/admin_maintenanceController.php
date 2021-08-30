@@ -3,7 +3,7 @@
 /**
  * Get of user car of the data base
  */
-$id_car;
+$id_car = $_SESSION['car']['id_car'];
 $data = array(
     ':id_user' => $_SESSION['auth']['id_user']
 );
@@ -17,9 +17,9 @@ if (!$result) {
 
     $id_car = $result[0]['id_car'];
 
-    if (!empty($_POST['select'])) {
+    if (!empty($id_car)) {
 
-        $id_car = $_POST['select'];
+        $id_car = $id_car;
     }
 
 
@@ -35,9 +35,9 @@ if (!$result) {
      */
     function dbTiming(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -54,7 +54,6 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('timi', $result);
             if ($result) {
                 return $result;
             }
@@ -67,9 +66,9 @@ if (!$result) {
      */
     function dbBuy(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM buy where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -86,7 +85,6 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('timi', $result);
             if ($result) {
                 return $result;
             }
@@ -100,9 +98,9 @@ if (!$result) {
      */
     function dbFirst(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM firstregistration where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -119,7 +117,6 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('timi', $result);
             if ($result) {
                 return $result;
             }
@@ -133,9 +130,9 @@ if (!$result) {
      */
     function dbTechnical(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -152,7 +149,6 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('timi', $result);
             if ($result) {
                 return $result;
             }
@@ -166,9 +162,9 @@ if (!$result) {
      */
     function dbOil(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -185,7 +181,6 @@ if (!$result) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            // dump('timi', $result);
             if ($result) {
                 return $result;
             }
@@ -196,7 +191,6 @@ if (!$result) {
 
     function insert_xx(PDO $db, $date, $km, $dataBase, $id_car)
     {
-        // dump((int)$id_car);
         $data = [
             ':date'  => $date,
             ':km' =>  (int)$km,
