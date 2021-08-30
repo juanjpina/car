@@ -7,16 +7,16 @@
     </div>
     <ul class='column'>
         <form action="" method="post">
-            <li class='column'>
+            <!-- <li class='column'>
                 <select name='car' class='select' id='car'>
                     <?php foreach ($cars as $car) { ?>
                         <option value="<?= $car['id_car'] ?>"><?= $car['trademark']; ?></option>
                     <?php } ?>
                 </select>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <button type="submit" class='button'>Lister</button>
-            </li>
+            </li> -->
         </form>
 
         <?php if (!empty($alerts)) { ?>

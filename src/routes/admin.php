@@ -1,7 +1,6 @@
 <?php
 // Home
 $router->map('GET|POST', '/admin', 'pages/admin_index', 'homeadmin');
-$router->map('GET|POST', '/admin/pages/white', 'pages/admin_pageWhite', 'whiteadmin');
 //$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
 
 // Movies
@@ -57,3 +56,5 @@ $router->map('GET|POST', '/admin/setting/menu', 'setting/admin_settingMenu', 'se
 $router->map('GET|POST', '/admin/setting/addnewcar', 'setting/admin_addCar', 'addnewcar');
 $router->map('GET|POST', '/admin/setting/maintenance', 'setting/admin_maintenance', 'maintenance');
 $router->map('GET|POST', '/admin/setting/editsta', 'setting/admin_editStatisticsCar', 'editstacar');
+
+$router->map('GET|POST', '/admin/setting/white', 'setting/admin_pageWhite', 'whiteadmin');

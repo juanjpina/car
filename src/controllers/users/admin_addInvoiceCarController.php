@@ -3,7 +3,7 @@
 /**
  * Get of user car of the data base
  */
-$id_car;
+$id_car = $_SESSION['car']['id_car'];
 $data = array(
     ':id_user' => $_SESSION['auth']['id_user']
 );
@@ -17,9 +17,9 @@ if (!$result) {
 
     $id_car = $result[0]['id_car'];
 
-    if (!empty($_POST['select'])) {
+    if (!empty($id_car)) {
 
-        $id_car = $_POST['select'];
+        $id_car = $id_car;
     }
 
 
@@ -134,7 +134,7 @@ if (!$result) {
     {
         if (!empty($_POST['select'])) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -166,7 +166,7 @@ if (!$result) {
     {
         if (!empty($_POST['select'])) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM buy where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -233,7 +233,7 @@ if (!$result) {
     {
         if (!empty($_POST['select'])) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM firstregistration where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -266,7 +266,7 @@ if (!$result) {
     {
         if (!empty($_POST['select'])) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car)';
             $request = $db->prepare($sql);
@@ -297,9 +297,9 @@ if (!$result) {
      */
     function dbOil(PDO $db, $id_car)
     {
-        if (!empty($_POST['select'])) {
+        if (!empty($id_car)) {
             $data = array(
-                ':id_car' => $_POST['select']
+                ':id_car' => $id_car
             );
             $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
             $request = $db->prepare($sql);

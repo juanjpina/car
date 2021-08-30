@@ -1,5 +1,5 @@
 <?php
-$id_car;
+$id_car = $_SESSION['car']['id_car'];
 $data = array(
     ':id_user' => $_SESSION['auth']['id_user']
 );
@@ -12,7 +12,7 @@ if (!$result) {
 } else {
     $id_car = $result[0]['id_car'];
     if (!empty($_POST['select'])) {
-        $id_car = $_POST['select'];
+        $id_car = $id_car;
     }
     //functions ------------------------
     $cars = getCar($db);

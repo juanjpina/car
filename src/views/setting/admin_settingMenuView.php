@@ -25,6 +25,14 @@
                 </div>
             </a>
         </li>
+        <li>
+            <a href="<?= $router->generate('whiteadmin'); ?>">
+                <div class="b-alert">
+                    <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
+                    <p>Cahnger du voiture</p>
+                </div>
+            </a>
+        </li>
     </ul>
 </div>
 <?php get_footer('admin');

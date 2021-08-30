@@ -4,7 +4,7 @@
         <h1 class='title'>Historique du factures</h1>
         <ul>
             <form action="" method="post">
-                <li>
+                <!-- <li>
                     <div class="column ">
                         <h3>Véhicules</h3>
                         <select name="car" class='select invoice'>
@@ -13,7 +13,7 @@
                             <?php } ?>
                         </select>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <div class="column ">
                         <h3>Facture</h3>

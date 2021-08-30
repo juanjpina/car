@@ -6,7 +6,7 @@
     <div class="">
         <form action="" method="post">
             <ul>
-                <li>
+                <!-- <li>
                     <div class="column">
                         <h3>Votre véhicule</h3>
                         <select name="trademark" class="select">
@@ -15,7 +15,7 @@
                             <?php } ?>
                         </select>
                     </div>
-                </li>
+                </li> -->
                 <li>
                     <div class="column">
                         <h3>Facture</h3>

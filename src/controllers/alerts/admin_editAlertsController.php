@@ -5,12 +5,13 @@
  */
 $cars = getCar($db);
 
-function gettimmingBelt(PDO $db)
-{
-    if (!empty($_POST['car'])) {
+$id_car = (int)$_SESSION['car']['id_car'];
 
+function gettimmingBelt(PDO $db, $id_car)
+{
+    if (isset($id_car)) {
         $data = array(
-            ':id_car' => $_POST['car']
+            ':id_car' => $id_car
         );
         $sql = 'SELECT date, km FROM timingbelt where id_car = :id_car';
         $request = $db->prepare($sql);
@@ -18,7 +19,7 @@ function gettimmingBelt(PDO $db)
         $timingbelt = $request->fetchAll(PDO::FETCH_ASSOC);
 
         $data = array(
-            ':id_car' => $_POST['car']
+            ':id_car' => $id_car
         );
         $sql = 'SELECT timingbeltDate, timingbeltKm FROM setting where id_car = :id_car';
         $request = $db->prepare($sql);
@@ -26,7 +27,7 @@ function gettimmingBelt(PDO $db)
         $setting = $request->fetchAll(PDO::FETCH_ASSOC);
 
         $data = array(
-            ':id_car' => $_POST['car']
+            ':id_car' => $id_car
         );
         $sql = 'SELECT date FROM technicalcontrol where id_car = :id_car';
         $request = $db->prepare($sql);
@@ -43,7 +44,7 @@ function gettimmingBelt(PDO $db)
                     $date = $timing['date'];
                     $dateControl = $tech['date'];
                     $data = [
-                        ':id_car' => (int)$_POST['car'],
+                        ':id_car' => (int)$id_car,
                         ':timingKm' => $total,
                         ':date' => $date,
                         ':dateSet' => $dateSet,
@@ -61,13 +62,13 @@ function gettimmingBelt(PDO $db)
         }
     }
 };
-gettimmingBelt($db);
-function getAlerts(PDO $db)
+gettimmingBelt($db, $id_car);
+function getAlerts(PDO $db, $id_car)
 {
-    if (!empty($_POST['car'])) {
+    if (!empty($id_car)) {
 
         $data = array(
-            ':id_car' => $_POST['car']
+            ':id_car' => $id_car,
         );
         $sql = "SELECT * FROM alert where id_car = :id_car";
         $request = $db->prepare($sql);
@@ -76,4 +77,4 @@ function getAlerts(PDO $db)
         return $result;
     }
 };
-$alerts = getAlerts($db);
+$alerts = getAlerts($db, $id_car);

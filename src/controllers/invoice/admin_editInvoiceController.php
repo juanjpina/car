@@ -1,25 +1,22 @@
 <?php
-// $trade = getTrademark($db); //db car
 $trademark = getCar($db); //db car
 $typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
-
-// dump($_POST['trademark']);
-// dump($_POST['typeInvoice']);
+$id_car = $_SESSION['car']['id_car'];
 
 /**
  * me da la lista de factuas de un tipo de factura
  */
-function selectInvoice(PDO $db, $database)
+function selectInvoice(PDO $db, $database, $id_car)
 {
     if (!empty($_POST['submit'])) {
 
-        if (!empty($_POST['trademark']) && !empty($_POST['typeInvoice'])) {
+        if (!empty($id_car) && !empty($_POST['typeInvoice'])) {
 
 
             // dump($_POST['trademark']);
             // dump($_POST['invoice']);
             $data = array(
-                'id_car' => (int)$_POST['trademark'],
+                'id_car' => (int)$id_car,
             );
             $sql = "SELECT * FROM $database WHERE id_car= :id_car";
             $request = $db->prepare($sql);
@@ -47,7 +44,7 @@ function selectInvoice(PDO $db, $database)
 
 if (!empty($_POST['typeInvoice'])) {
 
-    $selectInvoice = selectInvoice($db, $_POST['typeInvoice']);
+    $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car);
 } else {
 
     $selectInvoice

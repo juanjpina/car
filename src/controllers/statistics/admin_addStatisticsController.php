@@ -2,12 +2,14 @@
 
 $cars = getCar($db);
 $invoices = getSelect($db, 'type_invoice');
+
+$id_car = $_SESSION['car']['id_car'];
 /**
  * get listed invoice
  * @param 
  * @return array data base
  */
-function getListe(AltoRouter $router)
+function getListe(AltoRouter $router, $id_car)
 {
     if (!empty($_POST['ok'])) {
         $string = strcmp($_POST['period'], '0');
@@ -19,7 +21,7 @@ function getListe(AltoRouter $router)
                     'period' => '0',
                     'dateStart' => $_POST['dateStart'],
                     'dateEnd' => $_POST['dateEnd'],
-                    'id' => $_POST['car']
+                    'id' => $id_car,
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
                 // return  $router->generate('listedhistory', $data);
@@ -33,7 +35,7 @@ function getListe(AltoRouter $router)
                 'period' => $_POST['period'],
                 'dateStart' => '0',
                 'dateEnd' => '0',
-                'id' => $_POST['car']
+                'id' => $id_car
             );
             // return  $router->generate('listedhistory', $data);
             return  header('Location: ' . $router->generate('listedstatistics', $data));
@@ -49,4 +51,4 @@ function getListe(AltoRouter $router)
     }
     return $data;
 }
-getListe($router);
+getListe($router, $id_car);

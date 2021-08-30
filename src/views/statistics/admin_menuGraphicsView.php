@@ -4,7 +4,7 @@
         <h1 class='title'>Statistique</h1>
         <form action="" method="post">
             <ul class="column">
-                <li>
+                <!-- <li>
                     <div class="column">
                         <h3>Véhicule</h3>
                         <select name="car" class='select'>
@@ -13,7 +13,7 @@
                             <?php } ?>
                         </select>
                     </div>
-                </li>
+                </li> -->
                 <div class="column width">
                     <li>
                         <div class="column">

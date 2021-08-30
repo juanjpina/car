@@ -6,7 +6,7 @@
         </div>
         <form action="" method="post">
             <ul>
-                <li class="liStatis">
+                <!-- <li class="liStatis">
                     <div class="column">
                         <select name="select" class='select' id="select_car" onchange="click()">
                             <?php foreach ($cars as $car) { ?>
@@ -14,8 +14,8 @@
                             <?php } ?>
                         </select>
                     </div>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <div class="column selectCar">
                         <button type="submit" class="button">Ajoutez votre véhicule</button>
                     </div>
@@ -26,7 +26,7 @@
                             <p class="trademark">Vous avez choisie le véhicule <?= $trade['trademark']; ?></p>
                         <?php }; ?>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </form>
 

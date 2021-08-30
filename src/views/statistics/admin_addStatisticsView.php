@@ -5,7 +5,7 @@
     <h1 class='title'>Statistique</h1>
     <form action="" method="post">
         <ul>
-            <li>
+            <!-- <li>
                 <div class="column">
                     <h3>Véhicule</h3>
                     <select name="car" class='select'>
@@ -14,7 +14,7 @@
                         <?php } ?>
                     </select>
                 </div>
-            </li>
+            </li> -->
             <li>
                 <div class="column">
                     <div class="column period">
