@@ -69,7 +69,6 @@ function getInvoiceTitel(PDO $db, $invoice, $database)
 }
 
 
-
 /**
  * @param id_car / id_user
  * 
@@ -136,6 +135,7 @@ function dbSelect(PDO $db, $id_car, $database)
 	}
 }
 
+
 /**
  * @param data base
  * 
@@ -149,6 +149,7 @@ function getSelect(PDO $db, $database)
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
 	return $result;
 }
+
 
 /**
  * @param database, id_car, $date, $km, $total, $comment
@@ -170,8 +171,20 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 };
 
 
-
-
+/**
+ * update form a data base
+ */
+function maintenanceUpdate(PDO $db, $invoice, $date, $km, $id_car)
+{
+	$data = [
+		':id_car' => $id_car,
+		':date'  => $date,
+		':km' =>  (int)$km,
+	];
+	$sql = "UPDATE $invoice SET date= :date, km= :km WHERE id_car= :id_car";
+	$request = $db->prepare($sql);
+	$result = $request->execute($data);
+}
 
 
 

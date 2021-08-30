@@ -1,13 +1,11 @@
 <?php
-$trademark = getTrademark($db);
+// $trademark = getTrademark($db);
 $invoice = getSelect($db, 'type_invoice');
-dump($_SESSION['car']['id_car']);
 $id_car = $_SESSION['car']['id_car'];
 if (
     !empty($id_car) && !empty($_POST['invoice'])
     && !empty($_POST['date'])  && !empty($_POST['total'])
 ) {
-
     $id_car = $id_car;
     $invoice = $_POST['invoice'];
     $date = $_POST['date'];
@@ -25,14 +23,18 @@ if (
             break;
         case 3:
             insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
+            maintenanceUpdate($db, 'technical', $date, $km, $id_car);
             //invtechnicalcontrol
             break;
         case 4:
             insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment);
+            maintenanceUpdate($db, 'timing', $date, $km, $id_car);
             //invtiming
             break;
         case 5:
             insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment);
+            maintenanceUpdate($db, 'voil', $date, $km, $id_car);
+
             //invoil
             break;
         case 6:
