@@ -1,4 +1,4 @@
-<?php get_header('InvoiceCar', 'compte') ?>
+<?php get_header('InvoiceCar', 'admin') ?>
 <div class="invoiceCar column">
     <div class="containedCar column">
         <div class="column">

@@ -1,4 +1,4 @@
-<?php get_header('edit statistics', 'compte'); ?>
+<?php get_header('edit statistics', 'admin'); ?>
 <div class="userStatistics column">
     <div class="column">
         <div class="column">
@@ -68,4 +68,4 @@
     </div>
 </div>
 
-<?php get_footer('compte'); ?>
+<?php get_footer('admin'); ?>

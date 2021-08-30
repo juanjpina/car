@@ -1,5 +1,6 @@
 <?php get_header('white', 'admin'); ?>
 <div class='white-car column'>
+    <h1 class="title">Elegit tu cohce</h1>
     <form action="" method="post" class="column">
         <ul class="">
             <li>

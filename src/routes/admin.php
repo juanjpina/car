@@ -1,6 +1,6 @@
 <?php
 // Home
-$router->map('GET', '/admin', 'pages/admin_index', 'homeadmin');
+$router->map('GET|POST', '/admin', 'pages/admin_index', 'homeadmin');
 $router->map('GET|POST', '/admin/pages/white', 'pages/admin_pageWhite', 'whiteadmin');
 //$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
 

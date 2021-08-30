@@ -1,5 +1,4 @@
-<?php get_header('Add New Car', 'compte'); ?>
-
+<?php get_header('Add New Car', 'admin'); ?>
 <div class="addCar column">
     <h1 class="title">Ajouter un nouveau véhicule</h1>
     <ul>
@@ -10,6 +9,7 @@
                     <label for="trademark" class="formLabel">La marque de votre véhicule</label>
                     <input type="text" class="input" id="trademark" name="trademark">
                     <?= $error['message']; ?>
+                </div>
             </li>
             <li>
                 <div class="column">
@@ -19,20 +19,4 @@
         </form>
     </ul>
 </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php get_footer('compte'); ?>
+<?php get_footer('admin'); ?>

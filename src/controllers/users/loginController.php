@@ -18,7 +18,7 @@ function login(PDO $db, AltoRouter $router)
 					'email' => $result->email,
 					'id_user'	=> $result->id_user,
 				];
-				header('Location: ' . $router->generate('homeadmin'));
+				header('Location: ' . $router->generate('whiteadmin'));
 				die();
 			}
 		}

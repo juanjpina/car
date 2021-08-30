@@ -8,4 +8,5 @@ if (!empty($_POST['cars-ok'])) {
     ];
     header('Location: ' . $router->generate('homeadmin'));
     die();
-}
+} else {
+};
