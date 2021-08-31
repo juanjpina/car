@@ -22,18 +22,17 @@ if (
             insertInvoice($db, 'invfuel', $id_car, $date, $km, $total, $comment);
             break;
         case 3:
-            insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
-            maintenanceUpdate($db, 'technical', $date, $km, $id_car);
+            $res = insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
             //invtechnicalcontrol
             break;
         case 4:
             insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment);
-            maintenanceUpdate($db, 'timing', $date, $km, $id_car);
+            maintenanceUpdate($db, 'timingbelt', $date, $km, $id_car);
             //invtiming
             break;
         case 5:
             insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment);
-            maintenanceUpdate($db, 'voil', $date, $km, $id_car);
+            maintenanceUpdate($db, 'oilchanges', $date, $km, $id_car);
 
             //invoil
             break;
@@ -47,5 +46,5 @@ if (
             break;
         default;
     };
-    header('Refresh:' . 0.2);
+    // header('Refresh:' . 0.2);
 };

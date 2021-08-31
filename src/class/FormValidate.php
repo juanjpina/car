@@ -1,8 +1,10 @@
 <?php
+
 use App\Validate;
 
-class FormValidate {
-	
+class FormValidate
+{
+
 	private $requireFields = [];
 
 	private $errorTemplateMessage = 'invalid-feedback';
@@ -34,28 +36,26 @@ class FormValidate {
 
 			foreach ($this->requireFields as $key => $field) {
 				if (!empty($field['type']) && $field['type'] === 'file') {
-					$fileMessage = $this->checkFileValidate($field, $key);
-					if ($fileMessage) {
-						$messagesError[$key] = $fileMessage;
-					}
-				} 
-				else if (!empty($field['rules'])) {
+					// $fileMessage = $this->checkFileValidate($field, $key);
+					// if ($fileMessage) {
+					// 	$messagesError[$key] = $fileMessage;
+					// }
+				} else if (!empty($field['rules'])) {
 					if (
 						in_array('checkEmpty', $field['rules']) && empty($_POST[$key]) ||
 						!empty($_POST[$key])
 					) {
 						foreach ($field['rules'] as $rule) {
-							if ($rule === 'checkEmpty' && !empty($field['message'])) {dump($field['message']);
+							if ($rule === 'checkEmpty' && !empty($field['message'])) {
+								dump($field['message']);
 								$messagesError[$key] = $validate->$rule($_POST[$key], $field['message']);
-							}
-							else {
+							} else {
 								$messagesError[$key] = $validate->$rule($_POST[$key]);
 							}
 
 							if ($messagesError[$key]) {
 								break;
-							}
-							else {
+							} else {
 								unset($messagesError[$key]);
 							}
 						}
@@ -69,37 +69,36 @@ class FormValidate {
 			if ($messagesError) {
 				$this->existError = true;
 				return true;
-			}
-			else {
+			} else {
 				return false;
 			}
 		}
 	}
 
 
-	private function checkFileValidate($rules, $fieldName)
-	{
-		if (!empty($_FILES[$fieldName]['name'])) {
-			$validate = new Validate();
-			$result = '';
-	
-			if ($_FILES[$fieldName]['error'] === UPLOAD_ERR_OK) {
-				// Check format file
-				if (!empty($rules['format'])) {
-					$result .= $validate->checkFileFormat($fieldName, $rules['format']);
-				}
-		
-				if (!empty($rules['maxSize'])) {
-					$result .= $validate->checkFileSize($fieldName, $rules['maxSize']);
-				}
-			}
-			else {
-				$result = 'Fichier invalide.';
-			}
-	
-			return $result;
-		}
-	}
+	// private function checkFileValidate($rules, $fieldName)
+	// {
+	// 	if (!empty($_FILES[$fieldName]['name'])) {
+	// 		$validate = new Validate();
+	// 		$result = '';
+
+	// 		if ($_FILES[$fieldName]['error'] === UPLOAD_ERR_OK) {
+	// 			// Check format file
+	// 			if (!empty($rules['format'])) {
+	// 				$result .= $validate->checkFileFormat($fieldName, $rules['format']);
+	// 			}
+
+	// 			if (!empty($rules['maxSize'])) {
+	// 				$result .= $validate->checkFileSize($fieldName, $rules['maxSize']);
+	// 			}
+	// 		}
+	// 		else {
+	// 			$result = 'Fichier invalide.';
+	// 		}
+
+	// 		return $result;
+	// 	}
+	// }
 
 
 	/**

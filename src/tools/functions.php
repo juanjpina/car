@@ -181,7 +181,7 @@ function maintenanceUpdate(PDO $db, $invoice, $date, $km, $id_car)
 		':date'  => $date,
 		':km' =>  (int)$km,
 	];
-	$sql = "UPDATE $invoice SET date= :date, km= :km WHERE id_car= :id_car";
+	$sql = "INSERT INTO $invoice (id_car, date, km) VALUES (:id_car, :date, :km) ";
 	$request = $db->prepare($sql);
 	$result = $request->execute($data);
 }

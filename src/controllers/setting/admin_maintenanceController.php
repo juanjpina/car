@@ -16,11 +16,7 @@
 if (!isset($_SESSION['car']['id_car'])) {
     header('Location: ' . $router->generate('addnewcar'));
 } else {
-
     $id_car = $_SESSION['car']['id_car'];
-    // $cars = getCar($db);
-
-    // $trademark = getTrademark($db);
 
     $types = getSelect($db, 'type_data');
 
@@ -30,11 +26,10 @@ if (!isset($_SESSION['car']['id_car'])) {
      */
     function dbTiming(PDO $db, $id_car)
     {
-
         $data = array(
             ':id_car' => $id_car
         );
-        $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car)';
+        $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car) ORDER by date DESC LIMIT 1';
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -55,7 +50,6 @@ if (!isset($_SESSION['car']['id_car'])) {
 
     }
     $timing = dbTiming($db, $id_car);
-    dump($timing);
     /**
      * Get buy car of the data base
      */
@@ -129,27 +123,28 @@ if (!isset($_SESSION['car']['id_car'])) {
             $data = array(
                 ':id_car' => $id_car
             );
-            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date ASC LIMIT 1 ';
+            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date DESC LIMIT 1 ';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             if ($result) {
                 return $result;
             }
-        } else {
-            $data = array(
-                ':id_car' => $id_car
-            );
-            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date ASC LIMIT 1';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
-            }
+            // } else {
+            //     $data = array(
+            //         ':id_car' => $id_car
+            //     );
+            //     $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date DESC LIMIT 1';
+            //     $request = $db->prepare($sql);
+            //     $request->execute($data);
+            //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            //     if ($result) {
+            //         return $result;
+            //     }
         }
     }
     $technical = dbTechnical($db, $id_car);
+    // dump($technical);
 
 
     /**
@@ -161,24 +156,24 @@ if (!isset($_SESSION['car']['id_car'])) {
             $data = array(
                 ':id_car' => $id_car
             );
-            $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
+            $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car) ORDER by date DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             if ($result) {
                 return $result;
             }
-        } else {
-            $data = array(
-                ':id_car' => $id_car
-            );
-            $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
-            }
+            // } else {
+            //     $data = array(
+            //         ':id_car' => $id_car
+            //     );
+            //     $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
+            //     $request = $db->prepare($sql);
+            //     $request->execute($data);
+            //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            //     if ($result) {
+            //         return $result;
+            //     }
         }
     }
     $oil = dbOil($db, $id_car);
