@@ -2,7 +2,7 @@
 <div class="invoiceCar">
     <div class="containedCar column">
         <div class="column">
-            <h1 class='title'>Modifier les données de votre véhicule</h1>
+            <h1 class='title'>Les premières données du véhicule</h1>
         </div>
         <form action="" method="post">
             <ul>
@@ -38,7 +38,7 @@
                     <li>
                         <div class="column info">
                             <?php foreach ($buy as $b) { ?>
-                                <p class='textTitleInput'>Information d'achat</p>
+                                <p class='textTitleInput'>Information au moment de l'achat</p>
                                 <div class='row'>
                                     <div class="column date">
                                         <label for="date1 ">Date</label>
@@ -53,7 +53,7 @@
                         </div>
                         <div class='column'>
                             <?php foreach ($first as $f) { ?>
-                                <p class='textTitleInput'>Premier inmatriculation</p>
+                                <p class='textTitleInput'>La première immatriculation</p>
                                 <div class='row'>
                                     <div class="column date">
                                         <label for="date5">Date</label>

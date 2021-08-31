@@ -1,7 +1,8 @@
 <?php get_header('history add', 'admin'); ?>
 <div class="history column">
     <div class="contained column ">
-        <h1 class='title'>Historique du factures</h1>
+        <h1 class='title'>Historique des frais</h1>
+        <h6>Selon le type de frais sélectionnez une période ou date pour accéder aux données</h6>
         <ul>
             <form action="" method="post">
                 <!-- <li>
@@ -16,7 +17,7 @@
                 </li> -->
                 <li>
                     <div class="column ">
-                        <h3>Facture</h3>
+                        <h3>Frais</h3>
                         <select name="invoice" class='select invoice'>
                             <?php foreach ($invoice as $invo) { ?>
                                 <option value="<?= $invo['invoice'] ?>"><?= $invo['type'] ?></option>
@@ -36,13 +37,13 @@
                             </select>
                         </div>
                         <div class="column space">
-                            <label for="dateStart">Date début</label>
-                            <input type="date" class='input se ' name="dateStart">
-                        </div> <!-- funcin con mensaje echo -->
-                        <div class="column space">
-                            <label for="dateEnd">Date fin</label>
+                            <label for="dateEnd">De la date</label>
                             <input type="date" class='input se' name="dateEnd">
                         </div>
+                        <div class="column space">
+                            <label for="dateStart">À la Date</label>
+                            <input type="date" class='input se ' name="dateStart">
+                        </div> <!-- funcin con mensaje echo -->
                     </div>
                 </li>
                 <li>

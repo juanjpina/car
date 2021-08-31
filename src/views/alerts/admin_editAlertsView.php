@@ -2,8 +2,9 @@
 <div class="alerts column">
     <!-- <div class="contained column"> -->
 
-    <div>
-        <h1 class='title'>Rappel editar</h1>
+    <div class="column">
+        <h1 class='title'>Rappel</h1>
+        <h6>Voici les dates d'entretien du véhicule pour les prochaines modifications</h6>
     </div>
     <ul class='column'>
         <form action="" method="post">
@@ -34,8 +35,8 @@
                     <?php foreach ($alerts as $alert) { ?>
                         <tr>
                             <td><?= $alert['timingkm']; ?></td>
-                            <td><?= $alert['timingdate']; ?></td>
-                            <td><?= $alert['controldate']; ?></td>
+                            <td><?= date("d-m-Y", strtotime($alert['timingdate'])) ?></td>
+                            <td><?= date("d-m-Y", strtotime($alert['controldate'])) ?></td>
                         </tr>
                     <?php } ?>
                 </table>

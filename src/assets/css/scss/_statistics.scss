@@ -133,11 +133,15 @@
         .graph {
             width: 100%;
             justify-content: space-around;
+            align-items: baseline;
             .graphic {
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: flex-end;
+
                 // flex-wrap: wrap;
                 // width: 100%;
                 margin-top: 150px;
@@ -175,7 +179,7 @@
     .list {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: flex-end;
         margin: 100px 0;
         // flex-wrap: wrap;

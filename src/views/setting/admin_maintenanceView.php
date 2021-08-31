@@ -1,7 +1,8 @@
 <?php get_header('InvoiceCar', 'admin') ?>
 <div class="invoiceCar column">
-    <div>
+    <div class="column">
         <h1 class='title'>Le dernier entretien de votre véhicule</h1>
+        <h6>Voici les dernières modifications du véhicule</h6>
     </div>
     <div class="column">
         <!-- <form action="" method="post"> -->
@@ -13,7 +14,7 @@
                         <div class='row'>
                             <div class="column inputSpace">
                                 <label for="date2">Date</label>
-                                <p><?= $o['date']; ?></p>
+                                <p><?= date("d-m-Y", strtotime($o['date'])); ?></p>
                             </div>
                             <div class="column">
                                 <label for="km2">Km</label>
@@ -30,7 +31,7 @@
                         <div class='row'>
                             <div class="column inputSpace">
                                 <label for="date3">Date</label>
-                                <p><?= $t['date']; ?></p>
+                                <p><?= date("d-m-Y", strtotime($t['date'])); ?></p>
                             </div>
                             <div class="column">
                                 <label for="km3">Km</label>
@@ -47,7 +48,7 @@
                         <div class='row'>
                             <div class="column inputSpace">
                                 <label for="date4">Date</label>
-                                <p><?= $te['date']; ?></p>
+                                <p><?= date("d-m-Y", strtotime($te['date'])); ?></p>
                             </div>
                             <div class="column">
                                 <label for="km4">Km</label>

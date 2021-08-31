@@ -3,6 +3,7 @@
 <div class="statistics column">
     <!-- <div class="contained column"> -->
     <h1 class='title'>Statistique</h1>
+    <h6>Sélectionnez une période pour accéder aux données des frais</h6>
     <form action="" method="post">
         <ul>
             <!-- <li>

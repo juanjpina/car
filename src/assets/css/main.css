@@ -698,8 +698,11 @@ a {
 .listedGraphics .container .graph {
   width: 100%;
   justify-content: space-around;
+  align-items: baseline;
 }
 .listedGraphics .container .graph .graphic {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -737,7 +740,7 @@ a {
 .listedGraphics .list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-end;
   margin: 100px 0;
 }
@@ -1125,6 +1128,12 @@ a {
 }
 .white-car li {
   margin-bottom: 40px;
+}
+.white-car .select {
+  width: 100%;
+}
+.white-car form {
+  margin-top: 200px;
 }
 
 .menuSetting {

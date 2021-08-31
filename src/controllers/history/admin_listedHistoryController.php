@@ -1,5 +1,5 @@
 <?php
-
+setlocale(LC_TIME, "spanish");
 $string = strcmp($_GET['period'], '0');
 if ($string == 0) {
     $invoice = get($db, $_GET['invoice']);
@@ -28,12 +28,13 @@ function get(PDO $db, $database)
         'dateEnd' => $_GET['dateEnd'],
         'id_car' => $_GET['id']
     ];
-    $sql = "SELECT * FROM $database WHERE id_car = :id_car AND  date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
+    $sql = "SELECT * FROM $database WHERE id_car = :id_car AND date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 };
+
 
 
 /**

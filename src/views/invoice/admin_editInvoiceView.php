@@ -3,7 +3,8 @@
     <!-- <div class='subEdit'> -->
 
     <div class="column">
-        <h1 class='title'>Modifier ou annuler les factures</h1>
+        <h1 class='title'>Modifier ou annuler les frais</h1>
+        <h6>Vous pouvez modifier ou annuler les données sauvegardées précédemment</h6>
     </div>
     <div class="">
         <form action="" method="post" class=''>
@@ -54,7 +55,7 @@
                             </thead>
                             <?php foreach ($selectInvoice as $invoice) { ?>
                                 <tr>
-                                    <td><?= $invoice['date']; ?></td>
+                                    <td><?= date("d-m-Y", strtotime($invoice['date'])); ?></td>
                                     <td><?= $invoice['km']; ?></td>
                                     <td><?= $invoice['total']; ?></td>
                                     <td><?= $invoice['comment']; ?></td>

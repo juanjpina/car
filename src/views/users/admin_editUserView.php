@@ -19,7 +19,7 @@
                         <li>
                             <div class="column form">
                                 <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
-                                <label for="password">Mot de pass</label>
+                                <label for="password">Mot de passe</label>
                                 <input type="password" class="input password<?= $error['class']; ?>" name="password" value="<?= valueField('password'); ?>">
                                 <p class="message"> <?= $error['message']; ?> </p>
                             </div>
@@ -28,7 +28,7 @@
                             <div class="column form">
                                 <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.'); ?>
                                 <?php $resul = egalPass('password', 'confirmerPassword') ?>
-                                <label for="password">Confirmez votre mot de pass</label>
+                                <label for="password">Confirmez votre mot de passe</label>
                                 <input type="password" class="input password<?= $error['class']; ?>" name="confirmerPassword" value="">
                                 <p class="message"> <?= $error['message']; ?> </p>
                                 <p class="message"> <?= $resul['message']; ?></p>

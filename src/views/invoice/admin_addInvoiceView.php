@@ -1,7 +1,8 @@
 <?php get_header('invoice add', 'admin'); ?>
 <div class="addInvoice">
     <div class="column">
-        <h1 class='title'>Ajouter une facture</h1>
+        <h1 class='title'>Ajouter les frais</h1>
+        <h6>Vous pouvez ajouter les coûts selon les différentes consommations</h6>
     </div>
     <div class="">
         <form action="" method="post">

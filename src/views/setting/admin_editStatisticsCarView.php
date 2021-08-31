@@ -2,7 +2,8 @@
 <div class="userStatistics column">
     <div class="column">
         <div class="column">
-            <h1 class='title'>Modifier votre données</h1>
+            <h1 class='title'>Prévision des modifications</h1>
+            <h6>Choisissez une année ou kilométrage pour la prochaine modification</h6>
         </div>
         <form action="" method="post">
             <ul>
@@ -34,7 +35,7 @@
             <ul>
                 <?php foreach ($setting as $set) { ?>
                     <li class="liStatis">
-                        <p>Quand il faut changer la courrois de distribution</p>
+                        <p>La courroie de distribution</p>
                         <div class="row">
                             <div class="column right">
                                 <label for="dateTiming">Années</label>
@@ -49,7 +50,7 @@
                     <li class="liStatis">
                         <div class="column">
                             <div class="column">
-                                <p>Quand il faut faire la vidange</p>
+                                <p>La vidange</p>
                             </div>
                             <div class="column">
                                 <label for="kmOil">Km</label>

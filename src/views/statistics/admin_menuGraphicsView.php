@@ -1,6 +1,7 @@
 <?php get_header('menu totales', 'admin') ?>
 <div class="statistics column">
     <h1 class='title'>Statistique</h1>
+    <h3>Sélectionnez deux années différentes pour accéder aux graphiques comparatifs</h3>
     <form action="" method="post">
         <ul>
             <li>

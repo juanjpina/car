@@ -1,6 +1,7 @@
 <?php get_header('menu totales', 'admin') ?>
 <div class="statistics column">
     <h1 class='title'>Statistique</h1>
+    <h6>Sélectionnez une année pour acceder à la totalité des frais</h6>
     <form action="" method="post">
         <ul>
             <li>

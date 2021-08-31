@@ -27,41 +27,82 @@
             </div>
         </div>
     </div>
+
     <div class="yearEnd">
         <span>Année <?= $startY ?></span>
         <span>Année <?= $endY ?></span>
     </div>
-    <div class='list'>
+
+    <div class='list row'>
         <ul>
             <li>
                 <span class="invtoll"></span>
-                <p> Peaje</p> <?= $endYear[1] . '€' ?>
+                <p> Peaje</p> <?= $startYear[1] . '€' ?>
             </li>
             <li>
                 <span class="invfuel"></span>
-                <p> Combustible</p> <?= $endYear[2] . '€' ?>
+                <p> Combustible</p> <?= $startYear[2] . '€' ?>
             </li>
             <li>
                 <span class="invoil"></span>
-                <p>Vidance</p> <?= $endYear[3] . '€' ?>
+                <p>Vidance</p> <?= $startYear[3] . '€' ?>
             </li>
             <li>
                 <span class="invtiming"></span>
-                <p> Courroie de distribution</p> <?= $endYear[4] . '€' ?>
+                <p> Courroie de distribution</p> <?= $startYear[4] . '€' ?>
             </li>
             <li>
                 <span class="invinsurance"></span>
-                <p> Assurance</p> <?= $endYear[5] . '€' ?>
+                <p> Assurance</p> <?= $startYear[5] . '€' ?>
             </li>
             <li>
                 <span class="invpneu"></span>
-                <p> Pneu</p> <?= $endYear[6] . '€' ?>
+                <p> Pneu</p> <?= $startYear[6] . '€' ?>
             </li>
             <li>
                 <span class="invtechnical"></span>
-                <p> Controle techinical</p> <?= $endYear[7] . '€' ?>
+                <p> Controle techinical</p> <?= $startYear[7] . '€' ?>
             </li>
         </ul>
+        <div>
+            <ul>
+                <li>
+                    <span class="invtoll"></span>
+                    <p> Peaje</p> <?= $endYear[1] . '€' ?>
+                </li>
+                <li>
+                    <span class="invfuel"></span>
+                    <p> Combustible</p> <?= $endYear[2] . '€' ?>
+                </li>
+                <li>
+                    <span class="invoil"></span>
+                    <p>Vidance</p> <?= $endYear[3] . '€' ?>
+                </li>
+                <li>
+                    <span class="invtiming"></span>
+                    <p> Courroie de distribution</p> <?= $endYear[4] . '€' ?>
+                </li>
+                <li>
+                    <span class="invinsurance"></span>
+                    <p> Assurance</p> <?= $endYear[5] . '€' ?>
+                </li>
+                <li>
+                    <span class="invpneu"></span>
+                    <p> Pneu</p> <?= $endYear[6] . '€' ?>
+                </li>
+                <li>
+                    <span class="invtechnical"></span>
+                    <p> Controle techinical</p> <?= $endYear[7] . '€' ?>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
     </div>
 
 
