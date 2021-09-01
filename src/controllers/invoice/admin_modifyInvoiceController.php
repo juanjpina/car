@@ -13,7 +13,7 @@ function invoiceUpdate(PDO $db)
             ':date'  => $_POST['date'],
             ':km' =>  (int)$_POST['km'],
             ':total' =>  (int)$_POST['total'],
-            ':comment' => (int)$_POST['COMMENT']
+            ':comment' => !empty($_POST['COMMENT']) ? $_POST['COMMENT'] : ' ',
         ];
         $sql = "UPDATE $dataBase SET date= :date, km= :km, total = :total, comment = :comment 
           WHERE id= :id";

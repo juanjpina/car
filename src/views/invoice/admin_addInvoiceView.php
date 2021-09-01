@@ -19,7 +19,7 @@
                 </li> -->
                 <li>
                     <div class="column">
-                        <h3>Facture</h3>
+                        <h3>Frais</h3>
                         <select name="invoice" class="select">
                             <?php foreach ($invoice as $invo) { ?>
                                 <option value="<?= $invo['id_type'] ?>"><?= $invo['type'] ?> </option>
@@ -41,7 +41,7 @@
                 </li>
                 <li>
                     <div class="column">
-                        <label for="total">Montant facture</label>
+                        <label for="total">Montant frais</label>
                         <input type="number" class="input" name="total">
                     </div>
                 </li>

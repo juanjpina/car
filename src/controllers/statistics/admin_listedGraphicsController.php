@@ -55,22 +55,22 @@ if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'
     $endY = $_GET['endYear'];
     $startY = $_GET['startYear'];
 
-    // dump($endYear);
-    // dump(($startYear));
-    $invtollEnd = (100 * $endYear[1]) / $totalEndYear;
-    $invfuelEnd = (100 * $endYear[2]) / $totalEndYear;
-    $invoilEnd = (100 * $endYear[3]) / $totalEndYear;
-    $invtimingEnd = (100 * $endYear[4]) / $totalEndYear;
-    $invinsuranceEnd = (100 * $endYear[5]) / $totalEndYear;
-    $invpneuEnd = (100 * $endYear[6]) / $totalEndYear;
-    $invtechnicalEnd = (100 * $endYear[7]) / $totalEndYear;
+    $value = 500;
 
-    $invtollStart = ((100 * $startYear[1]) / $totalStartYear);
-    $invfuelStart = (100 * $startYear[2]) / $totalStartYear;
-    $invoilStart = (100 * $startYear[3]) / $totalStartYear;
-    $invtimingStart = (100 * $startYear[4]) / $totalStartYear;
-    $invinsuranceStart = (100 * $startYear[5]) / $totalStartYear;
-    $invpneuStart = (100 * $startYear[6]) / $totalStartYear;
-    $invtechnicalStart = (100 * $startYear[7]) / $totalStartYear;
+    $invtollEnd = ($value * $endYear[1]) / $totalEndYear;
+    $invfuelEnd = ($value * $endYear[2]) / $totalEndYear;
+    $invoilEnd = ($value * $endYear[3]) / $totalEndYear;
+    $invtimingEnd = ($value * $endYear[4]) / $totalEndYear;
+    $invinsuranceEnd = ($value * $endYear[5]) / $totalEndYear;
+    $invpneuEnd = ($value * $endYear[6]) / $totalEndYear;
+    $invtechnicalEnd = ($value * $endYear[7]) / $totalEndYear;
+
+    $invtollStart = (($value * $startYear[1]) / $totalStartYear);
+    $invfuelStart = ($value * $startYear[2]) / $totalStartYear;
+    $invoilStart = ($value * $startYear[3]) / $totalStartYear;
+    $invtimingStart = ($value * $startYear[4]) / $totalStartYear;
+    $invinsuranceStart = ($value * $startYear[5]) / $totalStartYear;
+    $invpneuStart = ($value * $startYear[6]) / $totalStartYear;
+    $invtechnicalStart = ($value * $startYear[7]) / $totalStartYear;
 }
 // dump($invtechnicalEnd);

@@ -186,7 +186,17 @@ function maintenanceUpdate(PDO $db, $invoice, $date, $km, $id_car)
 	$result = $request->execute($data);
 }
 
-
+/**
+ * returns the last car in the data base.
+ */
+function getLastCar(PDO $db)
+{
+	$sql = "SELECT * FROM car ORDER BY id_car DESC LIMIT 1";
+	$request = $db->prepare($sql);
+	$request->execute();
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
 
 
 

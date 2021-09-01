@@ -6,6 +6,7 @@ if (!empty($_POST['trademark'])) {
         ':trademark' => $_POST['trademark'],
 
     ];
+
     $sql = 'INSERT INTO car (id_user, trademark) VALUES (:id_user, :trademark)';
     $request1 = $db->prepare($sql);
     $result1 = $request1->execute($data);
@@ -61,4 +62,14 @@ if (!empty($_POST['trademark'])) {
     $sql = 'INSERT INTO setting (id_car, oilchanges, timingbeltDate, timingbeltKm) VALUES (:id_car, 15000 , 4,  80000)';
     $request = $db->prepare($sql);
     $result = $request->execute($data);
+
+    //el ultimo anadido a car
+
+    $result = getLastCar($db);
+    $_SESSION['car'] = [
+        'id_car' => (int)$result[0]['id_car'],
+        'trademark' => $result[0]['trademark'],
+    ];
+    header('Location: ' . $router->generate('homeadmin'));
+    die();
 }

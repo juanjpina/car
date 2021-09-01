@@ -123,7 +123,7 @@ if (!isset($_SESSION['car']['id_car'])) {
             $data = array(
                 ':id_car' => $id_car
             );
-            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date DESC LIMIT 1 ';
+            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER BY date DESC LIMIT 1 ';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);

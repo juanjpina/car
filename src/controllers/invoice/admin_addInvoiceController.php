@@ -23,6 +23,7 @@ if (
             break;
         case 3:
             $res = insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
+            maintenanceUpdate($db, 'technicalcontrol', $date, $km, $id_car);
             //invtechnicalcontrol
             break;
         case 4:
@@ -46,5 +47,5 @@ if (
             break;
         default;
     };
-    // header('Refresh:' . 0.2);
+    header('Refresh:' . 0.2);
 };
