@@ -1,15 +1,15 @@
 .menuSetting {
-    background-color: $color-button-header;
+    // background-color: $color-button-header;
     border-radius: 28px;
     margin-top: 200px;
     width: 66%;
-    @include shadow;
+    // @include shadow;
 
     li {
-        margin: 0 50px;
+        margin: 0 25px;
         .b-alert {
             align-items: center;
-            background-color: $color-alert;
+            background-color: $color-button-header;
             border-radius: 15px;
             color: $color-texto;
             display: flex;

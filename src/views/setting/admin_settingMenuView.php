@@ -29,7 +29,15 @@
             <a href="<?= $router->generate('whiteadmin'); ?>">
                 <div class="b-alert">
                     <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
-                    <p>Cahnger du voiture</p>
+                    <p>Sélectionner un véhicule</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="<?= $router->generate('fuel'); ?>">
+                <div class="b-alert">
+                    <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
+                    <p>Carburant</p>
                 </div>
             </a>
         </li>

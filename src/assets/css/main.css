@@ -1137,19 +1137,16 @@ a {
 }
 
 .menuSetting {
-  background-color: #083540;
   border-radius: 28px;
   margin-top: 200px;
   width: 66%;
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .menuSetting li {
-  margin: 0 50px;
+  margin: 0 25px;
 }
 .menuSetting li .b-alert {
   align-items: center;
-  background-color: #d9bd30;
+  background-color: #083540;
   border-radius: 15px;
   color: #f2f2f2;
   display: flex;
@@ -1173,6 +1170,11 @@ a {
   background-color: #d94625;
   color: #d94625;
   opacity: 1;
+}
+
+.fuel {
+  margin-top: 200px;
+  width: 66%;
 }
 
 /*# sourceMappingURL=main.css.map */

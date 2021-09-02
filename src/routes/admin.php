@@ -57,3 +57,4 @@ $router->map('GET|POST', '/admin/setting/addnewcar', 'setting/admin_addCar', 'ad
 $router->map('GET|POST', '/admin/setting/maintenance', 'setting/admin_maintenance', 'maintenance');
 $router->map('GET|POST', '/admin/setting/editsta', 'setting/admin_editStatisticsCar', 'editstacar');
 $router->map('GET|POST', '/admin/setting/white', 'setting/admin_pageWhite', 'whiteadmin');
+$router->map('GET|POST', '/admin/setting/fuel', 'setting/admin_fuel', 'fuel');
