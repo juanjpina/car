@@ -24,7 +24,13 @@
                 </p>
             </div>
         </a>
-
+        <a href="<?= $router->generate('fuelstatistics'); ?>">
+            <div class='graphic'>
+                <p class='title'>
+                    Carburant
+                </p>
+            </div>
+        </a>
     </div>
 
 </div>

@@ -627,8 +627,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   border: 15px;
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -779,6 +779,13 @@ a {
 }
 .listedGraphics .list .invtechnical {
   background-color: #fc6b0a;
+}
+
+.fuelStatistics {
+  background-color: #bf9926;
+  margin-top: 200px;
+  width: 66%;
+  border-radius: 28px;
 }
 
 .history {
@@ -1173,8 +1180,16 @@ a {
 }
 
 .fuel {
+  background-color: #083540;
+  border-radius: 28px;
+  color: #f2f2f2;
   margin-top: 200px;
   width: 66%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.fuel li {
+  margin: 40px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

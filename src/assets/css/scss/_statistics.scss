@@ -69,8 +69,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 200px;
-            height: 200px;
+            width: 120px;
+            height: 120px;
             border: 15px;
             border-radius: 28px;
             @include shadow;
@@ -221,4 +221,11 @@
             background-color: #fc6b0a;
         }
     }
+}
+
+.fuelStatistics {
+    background-color: $color-statistic;
+    margin-top: 200px;
+    width: 66%;
+    border-radius: 28px;
 }

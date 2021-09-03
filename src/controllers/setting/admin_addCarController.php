@@ -63,6 +63,16 @@ if (!empty($_POST['trademark'])) {
     $request = $db->prepare($sql);
     $result = $request->execute($data);
 
+    $data = [
+        ':id_car' => (int)$id_car
+    ];
+    $sql = 'INSERT INTO fuel (id_car, km, date) VALUES (:id_car, 0, date)';
+    $request = $db->prepare($sql);
+    $result = $request->execute($data);
+
+
+
+
     //el ultimo anadido a car
 
     $result = getLastCar($db);

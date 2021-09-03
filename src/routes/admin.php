@@ -38,6 +38,7 @@ $router->map('GET|POST', '/admin/statistics/total/[:car]/[:year]', 'statistics/a
 $router->map('GET|POST', '/admin/statistics/menutotal/', 'statistics/admin_menuTotalesStatistics', 'menutotalstatistics');
 $router->map('GET|POST', '/admin/statistics/menugraphics/', 'statistics/admin_menuGraphics', 'menugraphics');
 $router->map('GET|POST', '/admin/statistics/graphics/[:car]/[:startYear]/[:endYear]', 'statistics/admin_listedGraphics', 'listedgraphics');
+$router->map('GET|POST', '/admin/statistics/fuel', 'statistics/admin_fuelStatistics', 'fuelstatistics');
 
 
 

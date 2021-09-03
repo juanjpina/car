@@ -1,4 +1,11 @@
 .fuel {
+    background-color: $color-button-header;
+    border-radius: 28px;
+    color: $color-texto;
     margin-top: 200px;
     width: 66%;
+    @include shadow;
+    li {
+        margin: 40px 0;
+    }
 }
