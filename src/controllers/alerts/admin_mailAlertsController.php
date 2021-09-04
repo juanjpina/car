@@ -21,7 +21,7 @@ dump($reponse);
 
 
 /**
- * mail timming-belt (1 month)
+ * send an email to warn of the expiration of timming-belt (1 month)
  */
 foreach ($reponse as $mail) {
     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
@@ -33,7 +33,7 @@ foreach ($reponse as $mail) {
 
 
 /**
- * mail technical control
+ * send an email to warn of the expiration of technical control
  */
 foreach ($reponse as $mail) {
     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
@@ -43,6 +43,25 @@ foreach ($reponse as $mail) {
     dump($mail);
 }
 
+$km = 1000;
 
+$sql = "SELECT km FROM invfuel WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invtechnical WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invinsurance WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invoil WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invpneu WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invtiming WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km UNION SELECT km FROM invtoll WHERE id_car=:id_car AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=:id_car)-$km ORDER BY km DESC LIMIT 1";
 
-$sql = "SELECT km FROM invfuel WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76)UNION SELECT km FROM invtechnical WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invinsurance WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invoil WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invpneu WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invtiming WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invtoll WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76)";
+$data = [
+    ':id_car' => $_SESSION['car']['id_car'],
+];
+$request = $db->prepare($sql);
+$request->execute($data);
+$timingBelt = $request->fetchAll(PDO::FETCH_ASSOC);
+
+dump($result);
+/**
+ * send an email to warn of the expiration of km-timing-belt
+ */
+foreach ($timingBelt as $mail) {
+    $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez change la courrioe de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+    $sunjet = 'Courroi de distribution';
+    // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+    $mail = $mail['email'] . $sunject . $text_mail . $headers;
+    dump($mail);
+}
