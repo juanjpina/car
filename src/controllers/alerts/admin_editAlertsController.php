@@ -7,6 +7,10 @@
 
 $id_car = (int)$_SESSION['car']['id_car'];
 
+/**
+ * get information database.
+ * update database alert. 
+ */
 function gettimmingBelt(PDO $db, $id_car)
 {
     if (isset($id_car)) {

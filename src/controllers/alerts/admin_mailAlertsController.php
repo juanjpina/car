@@ -42,3 +42,7 @@ foreach ($reponse as $mail) {
     $mail = $mail['email'] . $sunject . $text_mail . $headers;
     dump($mail);
 }
+
+
+
+$sql = "SELECT km FROM invfuel WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76)UNION SELECT km FROM invtechnical WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invinsurance WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invoil WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invpneu WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invtiming WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76) UNION SELECT km FROM invtoll WHERE id_car=76 AND km>(SELECT alert.timingkm FROM alert WHERE alert.id_car=76)";
