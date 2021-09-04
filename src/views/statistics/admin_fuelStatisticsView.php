@@ -4,7 +4,22 @@
         <h1 class="title">Carburant</h1>
     </div>
     <div>
+        <table>
+            <tr>
+                <th>Debut du Kilometrage</th>
+                <th>Total du kilometrage</th>
+                <th>Total euros</th>
+                <th>Coste par kilometre</th>
+            </tr>
+            <tr>
+                <td><?= $kmStart ?></td>
+                <td><?= $kmTotal ?></td>
+                <td><?= $totalCost ?></td>
+                <td><?= $resultCost ?></td>
+            </tr>
 
+
+        </table>
 
 
     </div>
