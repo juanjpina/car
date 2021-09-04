@@ -10,12 +10,13 @@ if (!empty($_SESSION['car']['id_car'])) {
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    dump($result);
+    // dump($result);
 
     $kmStart = (int)$result[0]['km'];
     $kmTotal = (int)$result[0]['totalkm'];
-    $totalCost = (int)$result[0]['totalkm'];
+
+    $totalCost = (int)$result[0]['totalcost'];
 
     $resultKm = $kmTotal - $kmStart;
-    $resultCost = $resultKm / $totalCost;
+    $resultCost = round($resultKm / $totalCost, 2);
 }

@@ -787,6 +787,12 @@ a {
   width: 66%;
   border-radius: 28px;
 }
+.fuelStatistics .table table {
+  width: 50%;
+}
+.fuelStatistics .table table th {
+  padding: 0.5em 0.5em;
+}
 
 .history {
   width: 66%;

@@ -3,7 +3,7 @@
 /**
  * select car
  */
-$cars = getCar($db);
+// $cars = getCar($db);
 
 $id_car = (int)$_SESSION['car']['id_car'];
 

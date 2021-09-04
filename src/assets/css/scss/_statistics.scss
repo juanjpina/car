@@ -228,4 +228,17 @@
     margin-top: 200px;
     width: 66%;
     border-radius: 28px;
+    .table {
+        table {
+            width: 50%;
+            tr {
+                // width: 30%;
+            }
+            th {
+                padding: 0.5em 0.5em;
+
+                // width: 10%;
+            }
+        }
+    }
 }
