@@ -44,6 +44,6 @@ if (!isset($_SESSION['car']['id_car'])) {
     } //fin
     if (!empty($_POST['dateTiming']) && !empty($_POST['kmTiming']) && !empty($_POST['kmOil'])) {
         dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car);
+        header("Refresh: 0.2");
     }
-    header("Refresh: 0.2");
 }
