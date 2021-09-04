@@ -26,17 +26,20 @@
                     <tr>
                         <th colspan="2">Courroie de distribution</th>
                         <th colspan="1">Contrôle Technique</th>
+                        <th colspan="1">Vidange</th>
                     </tr>
                     <tr>
                         <th>KM</th>
                         <th>Date</th>
                         <th>Date</th>
+                        <th>KM</th>
                     </tr>
                     <?php foreach ($alerts as $alert) { ?>
                         <tr>
                             <td><?= $alert['timingkm']; ?></td>
                             <td><?= date("d-m-Y", strtotime($alert['timingdate'])) ?></td>
                             <td><?= date("d-m-Y", strtotime($alert['controldate'])) ?></td>
+                            <td><?= $alert['oilchangeskm']; ?></td>
                         </tr>
                     <?php } ?>
                 </table>

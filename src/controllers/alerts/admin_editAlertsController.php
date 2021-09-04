@@ -25,7 +25,7 @@ function gettimmingBelt(PDO $db, $id_car)
         $data = array(
             ':id_car' => $id_car
         );
-        $sql = 'SELECT timingbeltDate, timingbeltKm FROM setting where id_car = :id_car';
+        $sql = 'SELECT timingbeltDate, timingbeltKm, oilchanges FROM setting where id_car = :id_car';
         $request = $db->prepare($sql);
         $request->execute($data);
         $setting = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -37,6 +37,15 @@ function gettimmingBelt(PDO $db, $id_car)
         $request = $db->prepare($sql);
         $request->execute($data);
         $technical = $request->fetchAll(PDO::FETCH_ASSOC);
+
+        $data = array(
+            ':id_car' => $id_car
+        );
+        $sql = 'SELECT km FROM oilchanges where id_car = :id_car ORDER BY date DESC LIMIT 1';
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $oilchangeskm = $request->fetchAll(PDO::FETCH_ASSOC);
+
 
         foreach ($technical as $tech) {
             foreach ($timingbelt as $timing) {
@@ -53,8 +62,9 @@ function gettimmingBelt(PDO $db, $id_car)
                         ':date' => $date,
                         ':dateSet' => $dateSet,
                         ':dateControl' => $dateControl,
+                        ':oilchangeskm' => (int)$oilchangeskm[0]['km'] + (int)$setting[0]['oilchanges'],
                     ];
-                    $sql = "UPDATE alert SET timingKm = :timingKm, timingdate = DATE_ADD( :date, INTERVAL :dateSet YEAR), controldate= DATE_ADD( :dateControl, INTERVAL 4 YEAR)  WHERE id_car = :id_car";
+                    $sql = "UPDATE alert SET timingKm = :timingKm, timingdate = DATE_ADD( :date, INTERVAL :dateSet YEAR), controldate= DATE_ADD( :dateControl, INTERVAL 4 YEAR), oilchangeskm= :oilchangeskm  WHERE id_car = :id_car";
                     $request = $db->prepare($sql);
                     $result = $request->execute($data);
                     if (!$result) {
@@ -67,10 +77,14 @@ function gettimmingBelt(PDO $db, $id_car)
     }
 };
 gettimmingBelt($db, $id_car);
+
+
+/**
+ * takes the data to present in the view. 
+ */
 function getAlerts(PDO $db, $id_car)
 {
     if (!empty($id_car)) {
-
         $data = array(
             ':id_car' => $id_car,
         );
