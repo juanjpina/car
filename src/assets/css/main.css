@@ -1198,4 +1198,16 @@ a {
   margin: 40px 0;
 }
 
+.pswforget {
+  background-color: #d9bd30;
+  border-radius: 28px;
+  margin-top: 200px;
+  width: 66%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.pswforget li {
+  margin-bottom: 40px;
+}
+
 /*# sourceMappingURL=main.css.map */

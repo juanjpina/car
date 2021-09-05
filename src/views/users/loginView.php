@@ -17,7 +17,7 @@
 					<div class="div-password">
 						<?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
 						<input type="password" class=" input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value='Mot de passe'>
-						<a href="">
+						<a href="<?= $router->generate('pswforget'); ?>">
 							<p class="parrafo-mot">Mot de passe oublié?</p>
 						</a>
 						<?= $error['message']; ?>

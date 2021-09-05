@@ -1,8 +1,9 @@
 <?php
 // Home
 $router->map('GET|POST', '/admin', 'pages/admin_index', 'homeadmin');
-//$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
 
+
+//$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
 // Movies
 //$router->map('GET|POST', '/admin/movies/add', 'movies/admin_add', 'addMovie');
 //$router->map('GET', '/admin/movies', 'movies/admin_index', 'indexMovie');
@@ -18,10 +19,9 @@ $router->map('GET|POST', '/admin', 'pages/admin_index', 'homeadmin');
 //$router->map('GET', '/admin/users/delete/[i:id]', 'users/admin_deleteUser', 'deleteUsers');
 //$router->map('GET|POST', '/admin/users/edit/[i:id]', 'users/admin_editUser', 'updateUsers');
 
-
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
-
 $router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar', 'addinvoicecar');
+$router->map('GET|POST', '/admin/users/pswforget', 'users/admin_pswForget', 'pswforget');
 
 //*************     invoice *****************/
 $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');
@@ -29,7 +29,6 @@ $router->map('GET|POST', '/admin/invoice/invoicemenu', 'invoice/admin_addInvoice
 $router->map('GET|POST', '/admin/invoice/', 'invoice/admin_addInvoice', 'addInvoice');
 $router->map('GET|POST', '/admin/invoice/delete/[:id]/[:db]', 'invoice/admin_deleteInvoice', 'deleteInvoice');
 $router->map('GET|POST', '/admin/invoice/modify/[:id]/[:db]', 'invoice/admin_modifyInvoice', 'modifyInvoice');
-
 
 $router->map('GET|POST', '/admin/statistics/', 'statistics/admin_addStatistics', 'addstatistics');
 $router->map('GET|POST', '/admin/statistics/listed/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'statistics/admin_listedStatistics', 'listedstatistics');
@@ -40,18 +39,12 @@ $router->map('GET|POST', '/admin/statistics/menugraphics/', 'statistics/admin_me
 $router->map('GET|POST', '/admin/statistics/graphics/[:car]/[:startYear]/[:endYear]', 'statistics/admin_listedGraphics', 'listedgraphics');
 $router->map('GET|POST', '/admin/statistics/fuel', 'statistics/admin_fuelStatistics', 'fuelstatistics');
 
-
-
-
 $router->map('GET|POST', '/admin/history/', 'history/admin_addHistory', 'addhistory');
 $router->map('GET|POST', '/admin/history/listed/[:invoice]/[:period]/[:dateStart]/[:dateEnd]/[:id]', 'history/admin_listedHistory', 'listedhistory');
 
 $router->map('GET|POST', '/admin/alerts/', 'alerts/admin_addAlerts', 'addalerts');
 $router->map('GET|POST', '/admin/alerts/edit', 'alerts/admin_editAlerts', 'editalerts');
 $router->map('GET|POST', '/admin/alerts/mail', 'alerts/admin_mailAlerts', 'mailalerts');
-
-
-
 
 $router->map('GET|POST', '/admin/setting/menu', 'setting/admin_settingMenu', 'settingmenu');
 $router->map('GET|POST', '/admin/setting/addnewcar', 'setting/admin_addCar', 'addnewcar');
