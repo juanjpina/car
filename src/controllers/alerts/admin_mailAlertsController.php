@@ -21,7 +21,7 @@ if ($reponseA) {
         $sunjet = 'Courroie de distribution';
         // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mail);
+        // dump($mail);
     }
 }
 
@@ -39,7 +39,7 @@ if ($reponseB) {
         $sunjet = 'Contrôle technique';
         // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mail);
+        // dump($mail);
     }
 }
 
@@ -57,23 +57,22 @@ $request->execute($data);
 $reponseC = $request->fetchAll(PDO::FETCH_ASSOC);
 if ($reponseC) {
 
-$user=getSelect($db, 'user');
-
-
-hay que hacer un select en user y car para recuerar para rellernar el email.
-
-    // dump($result);
-    foreach ($reponse as $mail) {
+    $data = [
+        ':id_car' => $_SESSION['car']['id_car'],
+    ];
+    $sql = "SELECT user.email, user.nickname, car.trademark FROM user, car WHERE car.id_car = :id_car AND user.id_user=car.id_user";
+    $request = $db->prepare($sql);
+    $request->execute($data);
+    $reponseC = $request->fetchAll(PDO::FETCH_ASSOC);
+    // dump($reponseC);
+    foreach ($reponseC as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez change la courrioe de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
-        $sunjet = 'Courroi de distribution';
+        $sunjet = 'Courroie de distribution';
         // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mail);
+        // dump($mail);
     }
 }
-
-
-
 
 $km = 1000;
 
@@ -84,6 +83,21 @@ $data = [
 ];
 $request = $db->prepare($sql);
 $request->execute($data);
-$oilchangeskm = $request->fetchAll(PDO::FETCH_ASSOC);
-
-dump($oilchangeskm);
+$reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
+if ($reponseD) {
+    $data = [
+        ':id_car' => $_SESSION['car']['id_car'],
+    ];
+    $sql = "SELECT user.email, user.nickname, car.trademark FROM user, car WHERE car.id_car = :id_car AND user.id_user=car.id_user";
+    $request = $db->prepare($sql);
+    $request->execute($data);
+    $reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
+    // dump($reponseC);
+    foreach ($reponseD as $mail) {
+        $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+        $sunjet = 'Vidange';
+        // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+        $mail = $mail['email'] . $sunjet . $text_mail . $headers;
+        dump($mail);
+    }
+}
