@@ -10,12 +10,13 @@
                 <div>
                     <li class="column">
                         <label for="mail">e-mail</label>
-                        <input type="email" name='mail' value='' placeholder="example@example.com">
+                        <input type="email" name='mail' placeholder="example@example.com">
                     </li>
                 </div>
                 <div class="column">
                     <li>
-                        <button class="button submit" type="submit">Sauvegarder</button>
+
+                        <button class="button" type="submit">Sauvegarder</button>
                     </li>
                 </div>
 
