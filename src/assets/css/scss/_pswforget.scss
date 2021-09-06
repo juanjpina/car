@@ -1,10 +1,17 @@
 .pswforget {
     background-color: $color-alert;
     border-radius: 28px;
-    margin-top: 200px;
-    width: 66%;
+    // margin-top: 200px;
+    margin: 200px 250px 0 250px;
+    width: 100%;
     @include shadow;
-    li {
-        margin-bottom: 40px;
+    .container {
+        padding: 50px 0px;
+        // margin-right: auto;
+        // margin-left: auto;
+
+        li {
+            margin-bottom: 40px;
+        }
     }
 }
