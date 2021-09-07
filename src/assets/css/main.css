@@ -1213,4 +1213,12 @@ a {
   margin-bottom: 40px;
 }
 
+.form-signin {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /*# sourceMappingURL=main.css.map */
