@@ -21,7 +21,7 @@ if (!empty($_POST['ok'])) {
     //Mostramos la contraseña generada
     // echo 'Password generado: ' . $password;
 
-    // dump($password);
+    dump($password);
 
     $data = [
         ':password' => password_hash($password, PASSWORD_DEFAULT),

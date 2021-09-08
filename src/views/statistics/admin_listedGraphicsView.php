@@ -4,108 +4,77 @@
     <div class='container column'>
 
         <h1 class="title">Resulta de la comparative</h1>
-
-
-        <div class="graph row">
-            <div class="graphic">
-                <div class="invtoll" style="width:50px; height:<?= $invtollStart ?>px"></div>
-                <div class="invfuel" style="width:50px; height:<?= $invfuelStart ?>px"></div>
-                <div class="invoil" style="width:50px; height:<?= $invoilStart ?>px"></div>
-                <div class="invtiming" style="width:50px; height:<?= $invtimingStart ?>px"></div>
-                <div class="invinsurance" style="width:50px; height:<?= $invinsuranceStart ?>px"></div>
-                <div class="invpneu" style="width:50px; height:<?= $invpneuStart ?>px"></div>
-                <div class="invtechnical" style="width:50px; height:<?= $invtechnicalStart ?>px"></div>
-            </div>
-            <div class="graphic">
-                <div class="invtoll" style="width:50px; height:<?= $invtollEnd ?>px"></div>
-                <div class="invfuel" style="width:50px; height:<?= $invfuelEnd ?>px"></div>
-                <div class="invoil" style="width:50px; height:<?= $invoilEnd ?>px"></div>
-                <div class="invtiming" style="width:50px; height:<?= $invtimingEnd ?>px"></div>
-                <div class="invinsurance" style="width:50px; height:<?= $invinsuranceEnd ?>px"></div>
-                <div class="invpneu" style="width:50px; height:<?= $invpneuEnd ?>px"></div>
-                <div class="invtechnical" style="width:50px; height:<?= $invtechnicalEnd ?>px"></div>
-            </div>
-        </div>
     </div>
 
     <div class="yearEnd">
         <span>Année <?= $startY ?></span>
         <span>Année <?= $endY ?></span>
     </div>
+    <div class="row">
 
-    <div class='list row'>
-        <ul>
-            <li>
-                <span class="invtoll"></span>
-                <p> Peaje</p> <?= $startYear[1] . '€' ?>
-            </li>
-            <li>
-                <span class="invfuel"></span>
-                <p> Combustible</p> <?= $startYear[2] . '€' ?>
-            </li>
-            <li>
-                <span class="invoil"></span>
-                <p>Vidance</p> <?= $startYear[3] . '€' ?>
-            </li>
-            <li>
-                <span class="invtiming"></span>
-                <p> Courroie de distribution</p> <?= $startYear[4] . '€' ?>
-            </li>
-            <li>
-                <span class="invinsurance"></span>
-                <p> Assurance</p> <?= $startYear[5] . '€' ?>
-            </li>
-            <li>
-                <span class="invpneu"></span>
-                <p> Pneu</p> <?= $startYear[6] . '€' ?>
-            </li>
-            <li>
-                <span class="invtechnical"></span>
-                <p> Controle techinical</p> <?= $startYear[7] . '€' ?>
-            </li>
-        </ul>
-        <div>
-            <ul>
-                <li>
-                    <span class="invtoll"></span>
-                    <p> Peaje</p> <?= $endYear[1] . '€' ?>
-                </li>
-                <li>
-                    <span class="invfuel"></span>
-                    <p> Combustible</p> <?= $endYear[2] . '€' ?>
-                </li>
-                <li>
-                    <span class="invoil"></span>
-                    <p>Vidance</p> <?= $endYear[3] . '€' ?>
-                </li>
-                <li>
-                    <span class="invtiming"></span>
-                    <p> Courroie de distribution</p> <?= $endYear[4] . '€' ?>
-                </li>
-                <li>
-                    <span class="invinsurance"></span>
-                    <p> Assurance</p> <?= $endYear[5] . '€' ?>
-                </li>
-                <li>
-                    <span class="invpneu"></span>
-                    <p> Pneu</p> <?= $endYear[6] . '€' ?>
-                </li>
-                <li>
-                    <span class="invtechnical"></span>
-                    <p> Controle techinical</p> <?= $endYear[7] . '€' ?>
-                </li>
-            </ul>
+        <div class='start'>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load("current", {
+                    packages: ["corechart"]
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Hours per Day'],
+                        ['Peaje', <?= $invtollStart ?>],
+                        ['Carburant', <?= $invfuelStart ?>],
+                        ['Vidance', <?= $invoilStart ?>],
+                        ['Courroie de distribution', <?= $invtimingStart ?>],
+                        ['Assurance', <?= $invinsuranceStart ?>],
+                        ['Pneu', <?= $invpneuStart ?>],
+                        ['Contrôle techinical', <?= $invtechnicalStart ?>],
+                    ]);
+                    var options = {
+                        title: 'My Daily Activities<?= $startY ?>',
+                        pieHole: 0.4,
+                        backgroundColor: '#bf9926'
+                    };
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                    chart.draw(data, options);
+                }
+            </script>
+            <div id="donutchart" style="width: 500px; height: 300px;"></div>
         </div>
 
+        <div class='end'>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load("current", {
+                    packages: ["corechart"]
+                });
+                google.charts.setOnLoadCallback(drawChart);
 
-
-
-
-
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Hours per Day'],
+                        ['Peaje', <?= $invtollEnd ?>],
+                        ['Carburant', <?= $invfuelEnd ?>],
+                        ['Vidance', <?= $invoilEnd ?>],
+                        ['Courroie de distribution', <?= $invtimingEnd ?>],
+                        ['Assurance', <?= $invinsuranceEnd ?>],
+                        ['Pneu', <?= $invpneuEnd ?>],
+                        ['Contrôle techinical', <?= $invtechnicalEnd ?>],
+                    ]);
+                    var options = {
+                        title: 'My Daily Activities<?= $endY ?>',
+                        pieHole: 0.4,
+                        backgroundColor: '#bf9926'
+                    };
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
+                    chart.draw(data, options);
+                }
+            </script>
+            <div id="donutchart2" style="width: 500px; height: 300px;"></div>
+        </div>
 
     </div>
-
-
 
 
 </div>

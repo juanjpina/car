@@ -1,5 +1,5 @@
-<!-- <?php get_header('home', 'login'); ?> -->
-<style>
+<?php get_header('home', 'index'); ?>
+<!-- <style>
     .card-box {
         width: 200px;
         height: 250px;
@@ -46,11 +46,9 @@
     .containerMain {
         margin-top: 10em;
     }
-</style>
+</style> -->
 <div class="wraper">
-
     <div class="containerMain">
-
         <div class="container">
             <div class="card-box">
                 <div class="card">
@@ -144,4 +142,4 @@
 
 
 
-<?php get_footer('login'); ?>
+<?php get_footer('index'); ?>

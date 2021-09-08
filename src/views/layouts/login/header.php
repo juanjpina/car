@@ -19,6 +19,17 @@
 		<div class="logo">
 			<a href="">RDVoiture</a>
 		</div>
+		<div class="conextion">
+			<ul>
+				<li>
+					<div></div>
+				</li>
+				<li>
+					<div></div>
+				</li>
+
+			</ul>
+		</div>
 
 
 	</header>
