@@ -25,6 +25,10 @@
             transform: rotateY(180deg);
         }
 
+        img {
+            border-radius: 15px;
+        }
+
         .card {
             transform-style: preserve-3d;
             transition: all 1s linear;
