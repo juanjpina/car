@@ -43,22 +43,21 @@ function checkField(string $fieldName, string $message): array
 
 function egalPass(string $pass, string $cpass): array
 {
-
-
 	$resul = ['message' => ''];
-
-	if (!empty($_POST[$pass]) && !empty($_POST[$cpass])) {
-
-		if (strcmp($pass, $cpass) !== 0) {
-			$resul = [
-				'message' => 'Les mots de pass sont different'
-			];
+	if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
+		$pass = $_POST['password'];
+		$cpass = $_POST['confirmerPassword'];
+		if (!empty($pass) && !empty($cpass)) {
+			if (strcmp($pass, $cpass) !== 0) {
+				// dump(strcmp($pass, $cpass));
+				$resul = [
+					'message' => 'Les mots de pass sont different'
+				];
+			}
 		}
 	}
 	return $resul;
 }
-
-
 
 
 

@@ -44,14 +44,16 @@ function searchEmail(PDO $db)
     }
 }
 
-function editUser(PDO $db)
+function editUser(PDO $db, AltoRouter $router)
 {
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
         if (strcmp($pass, $cpass) !== 0) {
-            //return $resul = "Les mots de pass sont different";
-            header('Location: /newLoginView.php');
+            // dump('if1', strcmp($pass, $cpass));
+
+            return $resul = "Les mots de pass sont different";
+            header('Location: ' . $router->generate('editUser'));
         } else {
             $data = [
                 'nickname'  => $_POST['nickname'],
@@ -62,9 +64,17 @@ function editUser(PDO $db)
                 $data['id_user'] = $_SESSION['auth']['id_user'];
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                if ($result) {
+                    //pagina de ok
+
+                }
             }
 
-            // $request = prepare($sql);
+
+
+
+
+
             // if ($request->execute($data)) {
             // 	$idRedirect = (empty($_POST['id'])) ? db->lastInsertId() : $_POST['id'];
 
@@ -79,5 +89,7 @@ function editUser(PDO $db)
             // }
         }
     }
+
+    // $request = prepare($sql);
 }
-editUser($db);
+editUser($db, $router);

@@ -49,7 +49,7 @@
             </div>
         </div>
     </header>
-    <main class="">
+    <main>
         <div class="sidebarCompte">
             <ul>
                 <li>

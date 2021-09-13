@@ -37,7 +37,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .trademark {
@@ -432,6 +432,7 @@ a {
   margin-left: 7%;
   margin-top: 120px;
   width: 20%;
+  float: left;
 }
 .sidebarAdmin ul {
   width: 100%;
@@ -873,7 +874,7 @@ a {
   margin-right: 7%;
   margin-left: 7%;
   padding: 40px 0;
-  width: 59%;
+  width: 66%;
 }
 .invoiceCar .inputSpace {
   margin-right: 20px;
@@ -1006,13 +1007,8 @@ a {
 }
 
 .menuInvoice {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   margin-top: 0px;
-  margin-left: 100px;
+  width: 66%;
 }
 .menuInvoice .boton {
   display: flex;

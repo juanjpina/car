@@ -59,7 +59,7 @@
 			</div>
 		</div>
 	</header>
-	<main class="">
+	<main>
 		<div class="sidebarAdmin">
 			<ul class="list">
 				<li>
@@ -126,13 +126,6 @@
 						</div>
 					</a>
 				</li> -->
-
-
-
-
-
-
-
 			</ul>
 		</div>
 		<!-- <?= alertDisplay(); ?> -->

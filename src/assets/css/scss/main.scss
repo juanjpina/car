@@ -47,7 +47,9 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+
+    // position: relative;
 }
 .trademark {
     font-size: 16px;
