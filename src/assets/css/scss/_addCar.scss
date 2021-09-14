@@ -1,22 +1,22 @@
 .addCar {
-    margin-top: 200px;
+    background-color: $color-button-header;
     border-radius: 28px;
-    background-color: $color-alert;
-    margin-right: 7%;
-    margin-left: 7%;
-    width: 59%;
+    color: $color-texto;
     height: 100%;
+    // margin-right: 7%;
     margin-top: 200px;
+    // margin-left: 7%;
+    width: 66%;
     .formLabel {
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
     }
     .inputTrade {
-        margin-bottom: 25px;
+        // margin-bottom: 25px;
     }
     li {
         margin: 40px 0;
     }
     .title {
-        margin-top: 30px;
+        // margin-top: 30px;
     }
 }

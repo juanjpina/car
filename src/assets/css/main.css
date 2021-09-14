@@ -148,6 +148,7 @@ table {
   font-family: "montserratExtra";
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  padding: 1.1em 0em;
 }
 
 * {
@@ -580,9 +581,11 @@ a {
   height: 100%;
   margin-top: 200px;
   width: 66%;
-  padding: 50px 0;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.statistics .contained {
+  margin-bottom: 20px;
 }
 .statistics li {
   margin: 40px 0px;
@@ -789,10 +792,15 @@ a {
 }
 
 .fuelStatistics {
+  align-items: center;
   background-color: #bf9926;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
   margin-top: 200px;
   width: 66%;
-  border-radius: 28px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .fuelStatistics .table table {
   width: 50%;
@@ -802,46 +810,37 @@ a {
 }
 
 .history {
-  width: 66%;
-  height: 100%;
-  margin-right: 7%;
-  margin-top: 200px;
-  border-radius: 28px;
   background-color: #d94625;
-}
-.history .contained {
-  margin: 20px 0px;
-  width: 90%;
-  height: 80%;
-}
-.history select {
-  width: 50%;
-  height: 30px;
-  font-family: "montserrat";
-  border-radius: 15px;
-  margin-top: 5px;
-  text-align: center;
+  border-radius: 28px;
+  height: 100%;
+  margin-top: 200px;
+  width: 66%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .history ul {
   width: 100%;
 }
 .history li {
-  margin: 40px 0px;
+  padding: 10px 20px;
 }
 .history .space {
-  margin-left: 40px;
+  margin: 0px 1.5em;
 }
 .history .data {
   width: 100%;
 }
 .history .invoice {
-  width: 30%;
+  margin-top: 20px;
 }
 .history .se {
   width: 100%;
 }
 .history .row {
-  justify-content: space-between;
+  justify-content: center;
+}
+.history button {
+  margin-bottom: 1.5em;
 }
 
 .user {
@@ -867,14 +866,14 @@ a {
 }
 
 .invoiceCar {
-  background-color: #d9bd30;
+  background-color: #083540;
   border-radius: 28px;
+  color: #f2f2f2;
   height: 100%;
   margin-top: 200px;
-  margin-right: 7%;
-  margin-left: 7%;
-  padding: 40px 0;
   width: 66%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .invoiceCar .inputSpace {
   margin-right: 20px;
@@ -885,9 +884,6 @@ a {
 .invoiceCar .date {
   margin-right: 20px;
 }
-.invoiceCar .button {
-  margin-top: 20px;
-}
 .invoiceCar .textTitleInput {
   margin-top: 20px;
   margin-bottom: 5px;
@@ -896,28 +892,16 @@ a {
 }
 
 .addCar {
-  margin-top: 200px;
+  background-color: #083540;
   border-radius: 28px;
-  background-color: #d9bd30;
-  margin-right: 7%;
-  margin-left: 7%;
-  width: 59%;
+  color: #f2f2f2;
   height: 100%;
   margin-top: 200px;
-}
-.addCar .formLabel {
-  margin-bottom: 10px;
-}
-.addCar .inputTrade {
-  margin-bottom: 25px;
+  width: 66%;
 }
 .addCar li {
   margin: 40px 0;
 }
-.addCar .title {
-  margin-top: 30px;
-}
-
 .user {
   width: 59%;
   height: 450px;
@@ -946,16 +930,16 @@ a {
   font-family: "montserratExtra";
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  padding: 1.1em 0em;
 }
 
 .userStatistics {
-  width: 59%;
-  height: 100%;
-  background-color: #d9bd30;
-  margin-top: 200px;
+  background-color: #083540;
   border-radius: 28px;
-  margin-right: 0px;
-  margin-left: 100px;
+  color: #f2f2f2;
+  height: 100%;
+  margin-top: 200px;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -966,21 +950,11 @@ a {
 .userStatistics .button:hover {
   color: #d94625;
 }
-.userStatistics .title {
-  margin-top: 30px;
-}
-.userStatistics .liStatis {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.userStatistics .buttonStatis {
-  margin-top: 50px;
-}
 .userStatistics .right {
   margin-right: 20px;
 }
 .userStatistics li {
-  margin-bottom: 40px;
+  margin: 40px;
 }
 
 .addInvoice {
@@ -1007,8 +981,12 @@ a {
 }
 
 .menuInvoice {
-  margin-top: 0px;
+  margin-top: 300px;
   width: 66%;
+}
+.menuInvoice .row {
+  justify-content: center;
+  align-items: center;
 }
 .menuInvoice .boton {
   display: flex;
@@ -1112,20 +1090,18 @@ a {
 }
 
 .listedHistory {
-  width: 66%;
-  height: 100%;
-  margin-right: 7%;
-  margin-top: 200px;
-  border-radius: 28px;
   background-color: #d94625;
+  border-radius: 28px;
+  height: 100%;
+  margin-top: 200px;
+  width: 66%;
 }
 .listedHistory .contained {
-  margin: 20px 0px;
-  width: 90%;
   height: 100%;
+  margin-bottom: 1.5em;
+  width: 100%;
 }
 .listedHistory .contained .table {
-  margin-top: 50px;
   height: 100%;
 }
 .listedHistory .contained td,
@@ -1136,21 +1112,19 @@ a {
 }
 
 .white-car {
-  margin-top: 200px;
-  width: 59%;
-  background-color: #d9bd30;
+  background-color: #083540;
   border-radius: 28px;
+  color: #f2f2f2;
+  height: 100%;
+  margin-top: 200px;
+  width: 66%;
 }
 .white-car li {
-  margin-bottom: 40px;
+  margin: 40px 0px;
 }
 .white-car .select {
   width: 100%;
 }
-.white-car form {
-  margin-top: 200px;
-}
-
 .menuSetting {
   border-radius: 28px;
   margin-top: 200px;
@@ -1192,6 +1166,7 @@ a {
   border-radius: 28px;
   color: #f2f2f2;
   margin-top: 200px;
+  height: 100%;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;

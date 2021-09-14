@@ -1,8 +1,14 @@
 .menuInvoice {
     // @include row;
-    margin-top: 0px;
+    margin-top: 300px;
     // margin-left: 100px;
     width: 66%;
+
+    .row {
+        justify-content: center;
+        align-items: center;
+    }
+
     .boton {
         @include column;
         height: 200px;

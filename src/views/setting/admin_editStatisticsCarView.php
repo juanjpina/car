@@ -1,40 +1,17 @@
 <?php get_header('edit statistics', 'admin'); ?>
-<div class="userStatistics column">
-    <div class="column">
-        <div class="column">
-            <h1 class='title'>Prévision des modifications</h1>
-            <h6>Choisissez une année ou kilométrage pour la prochaine modification</h6>
-        </div>
-        <form action="" method="post">
-            <ul>
-                <!-- <li class="liStatis">
-                    <div class="column">
-                        <select name="select" class='select' id="select_car" onchange="click()">
-                            <?php foreach ($cars as $car) { ?>
-                                <option value='<?= $car['id_car']; ?>'><?= $car['trademark']; ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </li> -->
-                <!-- <li>
-                    <div class="column selectCar">
-                        <button type="submit" class="button">Ajoutez votre véhicule</button>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <?php foreach ($trademark as $trade) { ?>
-                            <p class="trademark">Vous avez choisie le véhicule <?= $trade['trademark']; ?></p>
-                        <?php }; ?>
-                    </div>
-                </li> -->
-            </ul>
-        </form>
+<div class="userStatistics">
 
+    <div class="column">
+        <h1 class='title'>Prévision des modifications</h1>
+        <h6>Choisissez une année ou kilométrage pour la prochaine modification</h6>
+    </div>
+
+
+    <div class="column">
         <form action="" method="post">
             <ul>
                 <?php foreach ($setting as $set) { ?>
-                    <li class="liStatis">
+                    <li class="liStatis column">
                         <p>La courroie de distribution</p>
                         <div class="row">
                             <div class="column right">

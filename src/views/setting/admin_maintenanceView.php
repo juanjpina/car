@@ -1,11 +1,10 @@
 <?php get_header('InvoiceCar', 'admin') ?>
-<div class="invoiceCar column">
+<div class="invoiceCar">
     <div class="column">
         <h1 class='title'>Le dernier entretien de votre véhicule</h1>
         <h6>Voici les dernières modifications du véhicule</h6>
     </div>
     <div class="column">
-        <!-- <form action="" method="post"> -->
         <ul>
             <li>
                 <div class='column'>
@@ -58,13 +57,7 @@
                     <?php } ?>
                 </div>
             </li>
-            <!-- <li>
-                    <div class="column">
-                        <button type="submit" class="button">Confirmez les données</button>
-                    </div>
-                </li> -->
         </ul>
-        <!-- </form> -->
     </div>
 </div>
 <?php get_footer('admin'); ?>

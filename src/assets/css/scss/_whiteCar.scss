@@ -1,15 +1,17 @@
 .white-car {
-    margin-top: 200px;
-    width: 59%;
-    background-color: $color-alert;
+    background-color: $color-button-header;
     border-radius: 28px;
+    color: $color-texto;
+    height: 100%;
+    margin-top: 200px;
+    width: 66%;
     li {
-        margin-bottom: 40px;
+        margin: 40px 0px;
     }
     .select {
         width: 100%;
     }
     form {
-        margin-top: 200px;
+        // margin-top: 200px;
     }
 }

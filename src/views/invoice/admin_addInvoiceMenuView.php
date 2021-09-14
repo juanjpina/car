@@ -1,4 +1,4 @@
-<?php get_header('invoice add', 'admin'); ?>
+<?php get_header('invoice menu', 'admin'); ?>
 <div class='menuInvoice'>
     <ul>
         <div class='row'>

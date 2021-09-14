@@ -4,10 +4,14 @@
     border-radius: 28px;
     height: 100%;
     margin-top: 200px;
+
     width: 66%;
-    padding: 50px 0;
+    // padding: 50px 0;
     @include shadow;
 
+    .contained {
+        margin-bottom: 20px;
+    }
     li {
         margin: 40px 0px;
     }
@@ -232,10 +236,14 @@
 }
 
 .fuelStatistics {
+    align-items: center;
     background-color: $color-statistic;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
     margin-top: 200px;
     width: 66%;
-    border-radius: 28px;
+    @include shadow;
     .table {
         table {
             width: 50%;

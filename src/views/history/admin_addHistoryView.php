@@ -1,24 +1,16 @@
 <?php get_header('history add', 'admin'); ?>
-<div class="history column">
-    <div class="contained column ">
+<div class="history">
+    <div class="column ">
         <h1 class='title'>Historique des frais</h1>
         <h6>Selon le type de frais sélectionnez une période ou date pour accéder aux données</h6>
+    </div>
+    <div class="column">
         <ul>
             <form action="" method="post">
-                <!-- <li>
-                    <div class="column ">
-                        <h3>Véhicules</h3>
-                        <select name="car" class='select invoice'>
-                            <?php foreach ($cars as $car) { ?>
-                                <option value="<?= $car['id_car'] ?>"><?= $car['trademark'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </li> -->
                 <li>
-                    <div class="column ">
+                    <div class="column invoice">
                         <h3>Frais</h3>
-                        <select name="invoice" class='select invoice'>
+                        <select name="invoice" class='select'>
                             <?php foreach ($invoice as $invo) { ?>
                                 <option value="<?= $invo['invoice'] ?>"><?= $invo['type'] ?></option>
                             <?php } ?>
@@ -56,4 +48,5 @@
         </ul>
     </div>
 </div>
+
 <?php get_footer('admin'); ?>

@@ -5,28 +5,28 @@
 
         <a href="<?= $router->generate('addstatistics'); ?>">
             <div class='period'>
-                <p class='title'>
+                <p class=''>
                     Périodes
                 </p>
             </div>
         </a>
         <a href="<?= $router->generate('menutotalstatistics'); ?>">
             <div class='total'>
-                <p class='title'>
+                <p class=''>
                     Totales
                 </p>
             </div>
         </a>
         <a href="<?= $router->generate('menugraphics'); ?>">
             <div class='graphic'>
-                <p class='title'>
+                <p class=''>
                     Graphiques
                 </p>
             </div>
         </a>
         <a href="<?= $router->generate('fuelstatistics'); ?>">
             <div class='graphic'>
-                <p class='title'>
+                <p class=''>
                     Carburant
                 </p>
             </div>

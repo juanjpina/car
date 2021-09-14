@@ -1,6 +1,6 @@
 <?php
-$fuel = getSelect($db, 'fuel');
-
+// $fuel = getSelect($db, 'fuel');
+$fuel = getCarId($db, $_SESSION['car']['id_car'], 'fuel');
 if (!empty($_SESSION['car']['id_car']) && !empty($_POST['km'])) {
 
     $id_car = $_SESSION['car']['id_car'];
