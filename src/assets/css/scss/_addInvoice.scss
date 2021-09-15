@@ -1,14 +1,15 @@
 .addInvoice {
-    align-items: center;
+    // align-items: center;
     background-color: $color-invoice;
     border-radius: 28px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: wrap;
     height: 100%;
-    justify-content: center;
+    padding-bottom: 30px;
+    // justify-content: center;
     margin-top: 200px;
-    padding: 50px 0;
+    // padding: 50px 0;
     width: 66%;
     @include shadow;
     li {

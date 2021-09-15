@@ -1,24 +1,15 @@
 <?php get_header('invoice add', 'admin'); ?>
-<div class="editInvoice column">
+<div class="editInvoice">
     <!-- <div class='subEdit'> -->
 
     <div class="column">
         <h1 class='title'>Modifier ou annuler les frais</h1>
         <h6>Vous pouvez modifier ou annuler les données sauvegardées précédemment</h6>
     </div>
-    <div class="">
+    <div class="column">
         <form action="" method="post" class=''>
             <ul>
-                <!-- <li>
-                    <div class="column">
-                        <h3>Votre véhicule</h3>
-                        <select name="trademark" class="select">
-                            <?php foreach ($trademark as $trade) { ?>
-                                <option value="<?= $trade['id_car']; ?>"><?= $trade['trademark']; ?> </option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </li> -->
+
                 <li>
                     <div class="column">
                         <h3>Facture</h3>

@@ -3,13 +3,13 @@
 <div class='listedGraphics'>
     <div class='container column'>
 
-        <h1 class="title">Resulta de la comparative</h1>
+        <h1 class="title">Résultat de la comparaison</h1>
     </div>
 
-    <div class="yearEnd">
+    <!-- <div class="yearEnd">
         <span>Année <?= $startY ?></span>
         <span>Année <?= $endY ?></span>
-    </div>
+    </div> -->
     <div class="row">
 
         <div class='start'>
@@ -32,7 +32,7 @@
                         ['Contrôle techinical', <?= $invtechnicalStart ?>],
                     ]);
                     var options = {
-                        title: 'My Daily Activities<?= $startY ?>',
+                        title: 'Année<?= $startY ?>',
                         pieHole: 0.4,
                         backgroundColor: '#bf9926'
                     };
@@ -63,7 +63,7 @@
                         ['Contrôle techinical', <?= $invtechnicalEnd ?>],
                     ]);
                     var options = {
-                        title: 'My Daily Activities<?= $endY ?>',
+                        title: 'Année<?= $endY ?>',
                         pieHole: 0.4,
                         backgroundColor: '#bf9926'
                     };

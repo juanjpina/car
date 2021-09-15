@@ -36,7 +36,7 @@
         <li>
             <a href="<?= $router->generate('fuel'); ?>">
                 <div class="b-alert">
-                    <img src="/proyectocar/car/src/assets/images/statistic.png" width="30" height="30" alt="">
+                    <img src="/proyectocar/car/src/assets/images/carburant.png" width="40" height="40" alt="">
                     <p>Carburant</p>
                 </div>
             </a>

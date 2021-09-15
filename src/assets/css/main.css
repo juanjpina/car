@@ -792,13 +792,12 @@ a {
 }
 
 .fuelStatistics {
-  align-items: center;
   background-color: #bf9926;
   border-radius: 28px;
-  display: flex;
-  flex-direction: column;
   margin-top: 200px;
+  padding-bottom: 30px;
   width: 66%;
+  height: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -843,35 +842,14 @@ a {
   margin-bottom: 1.5em;
 }
 
-.user {
-  width: 60%;
-  height: 450px;
-}
-
-.user .contained {
-  background-color: var(--main-color-alert);
-  width: 60%;
-  height: 450px;
-  margin-top: 100px;
-  border-radius: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.user .column {
-  padding-bottom: 20px;
-}
-
 .invoiceCar {
-  background-color: #083540;
+  background-color: #d9bd30;
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
   margin-top: 200px;
-  width: 66%;
+  margin-left: 7%;
+  width: 59%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -903,19 +881,17 @@ a {
   margin: 40px 0;
 }
 .user {
-  width: 59%;
-  height: 450px;
   background-color: #d9bd30;
-  margin-top: 200px;
   border-radius: 28px;
-  margin-right: 7%;
+  height: 100%;
+  margin-top: 200px;
   margin-left: 7%;
+  width: 59%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .user .form {
   margin-top: 20px;
-}
-.user .title {
-  margin-top: 30px;
 }
 
 @font-face {
@@ -958,16 +934,11 @@ a {
 }
 
 .addInvoice {
-  align-items: center;
   background-color: #8c641b;
   border-radius: 28px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   height: 100%;
-  justify-content: center;
+  padding-bottom: 30px;
   margin-top: 200px;
-  padding: 50px 0;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -994,8 +965,8 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 200px;
-  width: 200px;
+  height: 120px;
+  width: 120px;
   margin: 0 30px;
   background-color: #8c641b;
   justify-content: center;
@@ -1015,21 +986,17 @@ a {
 }
 .menuInvoice p {
   text-align: center;
-  text-transform: uppercase;
   color: #f2f2f2;
   line-height: 1.2;
   letter-spacing: 1.2px;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .editInvoice {
   background-color: #8c641b;
   border-radius: 28px;
   height: 100%;
-  justify-content: center;
-  margin-right: 7px;
   margin-top: 200px;
-  padding: 50px 0;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;

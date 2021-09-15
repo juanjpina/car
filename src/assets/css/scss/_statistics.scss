@@ -236,13 +236,15 @@
 }
 
 .fuelStatistics {
-    align-items: center;
+    // align-items: center;
     background-color: $color-statistic;
     border-radius: 28px;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     margin-top: 200px;
+    padding-bottom: 30px;
     width: 66%;
+    height: 100%;
     @include shadow;
     .table {
         table {

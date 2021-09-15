@@ -14,8 +14,8 @@
     <link rel="stylesheet" href=" src/assets/css/main.css">
     <style>
         .card-box {
-            width: 200px;
-            height: 250px;
+            width: 150px;
+            height: 200px;
             position: relative;
             perspective: 1000px;
             margin-right: 2em;

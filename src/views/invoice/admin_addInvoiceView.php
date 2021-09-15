@@ -4,19 +4,9 @@
         <h1 class='title'>Ajouter les frais</h1>
         <h6>Vous pouvez ajouter les coûts selon les différentes consommations</h6>
     </div>
-    <div class="">
+    <div class="column">
         <form action="" method="post">
             <ul>
-                <!-- <li>
-                    <div class="column">
-                        <h3>Votre véhicule</h3>
-                        <select name="trademark" class="select">
-                            <?php foreach ($trademark as $trade) { ?>
-                                <option value="<?= $trade['id_car']; ?>"><?= $trade['trademark']; ?> </option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                </li> -->
                 <li>
                     <div class="column">
                         <h3>Frais</h3>

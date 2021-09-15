@@ -1,28 +1,24 @@
 @import "color";
 
 .invoiceCar {
-    background-color: $color-button-header;
+    background-color: $color-alert;
     border-radius: 28px;
     color: $color-texto;
     height: 100%;
     margin-top: 200px;
     // margin-right: 7%;
-    // margin-left: 7%;
+    margin-left: 7%;
     // padding: 40px 0;
-    width: 66%;
+    width: 59%;
     @include shadow;
     .inputSpace {
         margin-right: 20px;
     }
-
     li {
         margin: 25px 0;
     }
     .date {
         margin-right: 20px;
-    }
-    .button {
-        // margin-top: 20px;
     }
     .textTitleInput {
         margin-top: 20px;
@@ -31,16 +27,3 @@
         font-weight: bold;
     }
 }
-
-// .h3Car {
-//     font-weight: bold;
-//     font-size: 1.2em;
-// }
-
-// .inputSpace {
-//     margin-right: 81px;
-// }
-
-// .buttonSubmit {
-//     margin-top: 20px;
-// }

@@ -19,11 +19,6 @@
                 <td><?= $totalCost ?></td>
                 <td><?= $resultCost ?></td>
             </tr>
-
-
         </table>
-
-
     </div>
-
 </div>
