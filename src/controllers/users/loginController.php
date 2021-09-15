@@ -18,7 +18,7 @@ function login(PDO $db, AltoRouter $router)
 					'email' => $result->email,
 					'id_user'	=> $result->id_user,
 				];
-				header('Location: ' . $router->generate('whiteadmin'));
+				header('Location: ' . $router->generate('selectcar'));
 				die();
 			}
 		}
@@ -32,7 +32,7 @@ function login(PDO $db, AltoRouter $router)
 function redirectAdmin(AltoRouter $router)
 {
 	if (!empty($_SESSION['auth'])) {
-		header('Location: ' . $router->generate('homeadmin'));
+		header('Location: ' . $router->generate('reception'));
 		die();
 	}
 }

@@ -1,6 +1,7 @@
 <?php
 // Home
-$router->map('GET|POST', '/admin', 'pages/admin_index', 'homeadmin');
+$router->map('GET|POST', '/reception', 'pages/admin_reception', 'reception');
+$router->map('GET', '/white', 'pages/admin_white', 'white');
 
 
 //$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');
@@ -49,5 +50,5 @@ $router->map('GET|POST', '/admin/setting/menu', 'setting/admin_settingMenu', 'se
 $router->map('GET|POST', '/admin/setting/addnewcar', 'setting/admin_addCar', 'addnewcar');
 $router->map('GET|POST', '/admin/setting/maintenance', 'setting/admin_maintenance', 'maintenance');
 $router->map('GET|POST', '/admin/setting/editsta', 'setting/admin_editStatisticsCar', 'editstacar');
-$router->map('GET|POST', '/admin/setting/white', 'setting/admin_pageWhite', 'whiteadmin');
+$router->map('GET|POST', '/admin/setting/selectcar', 'setting/admin_selectCar', 'selectcar');
 $router->map('GET|POST', '/admin/setting/fuel', 'setting/admin_fuel', 'fuel');

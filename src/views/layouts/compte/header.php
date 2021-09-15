@@ -53,7 +53,7 @@
         <div class="sidebarCompte">
             <ul>
                 <li>
-                    <a href="<?= $router->generate('whiteadmin'); ?>">
+                    <a href="<?= $router->generate('white'); ?>">
                         <div class="b-alert">
                             <img src="/proyectocar/car/src/assets/images/car.png" width="30" height="30" alt="">
                             <p>Accueil</p>

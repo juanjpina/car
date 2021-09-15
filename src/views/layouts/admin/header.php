@@ -71,18 +71,18 @@
 					</a>
 				</li>
 				<li>
-					<a href="<?= $router->generate('addInvoiceMenu'); ?>">
-						<div class="column b-invoice border">
-							<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
-							<p>Frais</p>
-						</div>
-					</a>
-				</li>
-				<li>
 					<a href="<?= $router->generate('menustatistics'); ?>">
 						<div class="column b-statistic border">
 							<img src="/proyectocar/car/src/assets/images/statistic.png" width="50" height="50" alt="">
 							<p>Statistique</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="<?= $router->generate('addInvoiceMenu'); ?>">
+						<div class="column b-invoice border">
+							<img src="/proyectocar/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+							<p>Frais</p>
 						</div>
 					</a>
 				</li>

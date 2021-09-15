@@ -52,7 +52,7 @@ if (!empty($_POST['trademark'])) {
     $data = [
         ':id_car' => (int)$id_car
     ];
-    $sql = 'INSERT INTO alert (id_car, timingkm, timingdate, controldate) VALUES (:id_car, 0 , now(),  now())';
+    $sql = 'INSERT INTO alert (id_car, timingkm, timingdate, controldate,oilchangeskm) VALUES (:id_car, 0 , now(),  now(),0)';
     $request = $db->prepare($sql);
     $result = $request->execute($data);
 
@@ -80,6 +80,6 @@ if (!empty($_POST['trademark'])) {
         'id_car' => (int)$result[0]['id_car'],
         'trademark' => $result[0]['trademark'],
     ];
-    header('Location: ' . $router->generate('homeadmin'));
+    header('Location: ' . $router->generate('white'));
     die();
 }

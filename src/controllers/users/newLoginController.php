@@ -50,7 +50,7 @@ function addUser(PDO $db, AltoRouter $router)
                         'email' => $_POST['email'],
                         'id_user'    => $id_user,
                     ];
-                    header('Location: ' . $router->generate('homeadmin'));
+                    header('Location: ' . $router->generate('reception'));
                     die();
                 };
             }
