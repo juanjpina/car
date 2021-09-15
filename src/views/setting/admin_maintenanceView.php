@@ -1,5 +1,5 @@
 <?php get_header('InvoiceCar', 'admin') ?>
-<div class="invoiceCar">
+<div class="maintenance">
     <div class="column">
         <h1 class='title'>Le dernier entretien de votre véhicule</h1>
         <h6>Voici les dernières modifications du véhicule</h6>

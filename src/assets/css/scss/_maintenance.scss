@@ -1,0 +1,29 @@
+@import "color";
+
+.maintenance {
+    background-color: $color-button-header;
+    border-radius: 28px;
+    color: $color-texto;
+    height: 100%;
+    margin-top: 200px;
+    // margin-right: 7%;
+    // margin-left: 7%;
+    // padding: 40px 0;
+    width: 66%;
+    @include shadow;
+    .inputSpace {
+        margin-right: 20px;
+    }
+    li {
+        margin: 25px 0;
+    }
+    .date {
+        margin-right: 20px;
+    }
+    .textTitleInput {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+}

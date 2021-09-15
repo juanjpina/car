@@ -1,5 +1,5 @@
 <?php get_header('menu setting', 'admin'); ?>
-<div class='menuSetting column'>
+<div class='menuSetting'>
     <ul class="row">
         <li>
             <a href="<?= $router->generate('addnewcar'); ?>">

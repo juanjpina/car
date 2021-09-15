@@ -1,7 +1,7 @@
 <?php get_header('menu statiscics', 'admin') ?>
 <div class='menuStatistics'>
 
-    <div class='container'>
+    <div class='container row'>
 
         <a href="<?= $router->generate('addstatistics'); ?>">
             <div class='period'>
