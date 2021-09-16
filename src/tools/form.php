@@ -59,6 +59,17 @@ function egalPass(string $pass, string $cpass): array
 	return $resul;
 }
 
+function checkEmail(string $email): array
+{
+	$resul = ['message' => ''];
+	if (!empty($_POST[$email]) && isset($_POST[$email])) {
+		if (!filter_var($_POST[$email], FILTER_VALIDATE_EMAIL)) {
+
+			$resul = ['message' => 'Merci de renseigner une adresse email valide.'];
+		}
+	}
+	return $resul;
+}
 
 
 

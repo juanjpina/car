@@ -84,24 +84,4 @@ class Validate
 			return 'Merci de renseigner un nombre entier et supérieur à zéro.';
 		endif;
 	}
-
-
-	// public function checkFileSize(string $fieldName, int $maxSize)
-	// {
-	// 	if ($_FILES[$fieldName]['size'] > $maxSize) {
-	// 		$convert = formatBytes($maxSize);
-	// 		return 'Merci de charger un fichier ne dépassant pas cette taille : ' . $convert;
-	// 	}
-	// }
-
-
-	public function checkFileFormat(string $fieldName, array $format)
-	{
-		$currentExt = pathinfo($_FILES[$fieldName]['name'], PATHINFO_EXTENSION);
-		$currentExt = strtolower($currentExt);
-		if (!in_array($currentExt, $format)) {
-			$exts = implode(', ', $format);
-			return 'Merci de charger un fichier avec l\'une de ces extensions : ' . $exts . '.';
-		}
-	}
 }

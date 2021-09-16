@@ -1,79 +1,69 @@
 .menu-login {
     margin-top: 100px;
     width: 100%;
-    height:100%;
-    .login, .newLogin{
+    height: 100%;
+    .login,
+    .newLogin {
         background-color: $color-alert;
         border-radius: 28px;
         @include shadow;
-        margin:30px 0;
+        margin: 30px 0;
         // width: 100%;
         // height: 100%;
-        form{
+        form {
             padding: 70px 100px;
             width: 100%;
         }
-        li{
+        li {
             margin: 40px 0;
         }
         .parrafo-compte {
             margin-bottom: 5px;
         }
-        
+
         .parrafo-mot {
             margin-top: 1px;
             text-align: right;
             color: black;
         }
-        button{display: block;}
-        .submit{
+        button {
+            display: block;
+        }
+        .submit {
             @include activeBlue;
             @include hoverBlue;
         }
     }
-    .newLogin{
-        width:40%;
-        form{
+    .newLogin {
+        width: 40%;
+        form {
             padding: 44px 100px;
         }
-        .nsubmit{
+        .nsubmit {
             padding-top: 50px;
-            
         }
     }
 }
-    .compte{
-        background-color: rgba(217,189,48,0.5);
-        border-radius: 28px;
-        @include shadow;
-        width: 28%;
-        margin: 10px 20px;
-        padding: 30px 20px;
-        
-        &:hover{
-            background-color: rgba(217,189,48);
-             transition: all 600ms ease;
+.compte {
+    background-color: rgba(217, 189, 48);
+    border-radius: 28px;
+    @include shadow;
+    width: 28%;
+    margin: 10px 20px;
+    padding: 30px 20px;
 
-        }   
-
-        &:active{
-             filter: drop-shadow(2px 5px 15px -2px $color-shadow);
-            box-shadow: $color-shadow 0px 22px 70px 4px;    
-        }
+    &:hover {
+        background-color: rgba(217, 189, 48, 0.5);
+        transition: all 600ms ease;
     }
 
-
+    &:active {
+        filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+        box-shadow: $color-shadow 0px 22px 70px 4px;
+    }
+}
 
 .menu-login .message {
     padding-top: 2px;
     font-weight: bold;
 }
-
-// .button {
-//     width: 240px;
-//     height: 35px;
-//     border-radius: 15px;
-//     background-color: $color-button-header;
-//     border-color: transparent;
-//     color: $color-texto;
-// }

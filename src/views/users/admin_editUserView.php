@@ -10,10 +10,21 @@
                     <div class="column">
                         <?php $error = checkField('nickname', 'Votre pseudo est vide.'); ?>
                         <label for="nickname">Pseudo</label>
-                        <input class='input' type="text" name="nickname" placeholder="<?= searchEmail($db) ?>" value="">
-                        <p class="message"> <?= $error['message']; ?> </p>
+                        <?php foreach ($result as $res) { ?>
+                            <input class='input' type="text" name="nickname" placeholder="<?= $res['nickname'] ?>" value="">
+                            <p class="message"> <?= $error['message']; ?> </p>
                     </div>
                 </li>
+                <li>
+                    <div class="column">
+                        <label for="email">Votre email</label>
+                        <input type="email" name='email' value='' placeholder="<?= $res['email'] ?>">
+                    </div>
+                <?php } ?>
+                </li>
+
+
+
                 <div class="column">
                     <li>
                         <div class="column form">

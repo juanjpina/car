@@ -266,36 +266,44 @@ a {
   width: 100%;
   height: 100%;
 }
-.menu-login .login, .menu-login .newLogin {
+.menu-login .login,
+.menu-login .newLogin {
   background-color: #d9bd30;
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   margin: 30px 0;
 }
-.menu-login .login form, .menu-login .newLogin form {
+.menu-login .login form,
+.menu-login .newLogin form {
   padding: 70px 100px;
   width: 100%;
 }
-.menu-login .login li, .menu-login .newLogin li {
+.menu-login .login li,
+.menu-login .newLogin li {
   margin: 40px 0;
 }
-.menu-login .login .parrafo-compte, .menu-login .newLogin .parrafo-compte {
+.menu-login .login .parrafo-compte,
+.menu-login .newLogin .parrafo-compte {
   margin-bottom: 5px;
 }
-.menu-login .login .parrafo-mot, .menu-login .newLogin .parrafo-mot {
+.menu-login .login .parrafo-mot,
+.menu-login .newLogin .parrafo-mot {
   margin-top: 1px;
   text-align: right;
   color: black;
 }
-.menu-login .login button, .menu-login .newLogin button {
+.menu-login .login button,
+.menu-login .newLogin button {
   display: block;
 }
-.menu-login .login .submit:active, .menu-login .newLogin .submit:active {
+.menu-login .login .submit:active,
+.menu-login .newLogin .submit:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
   box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
-.menu-login .login .submit:hover, .menu-login .newLogin .submit:hover {
+.menu-login .login .submit:hover,
+.menu-login .newLogin .submit:hover {
   background-color: #18a8cc;
   opacity: 0.8;
   transition: all 600ms ease;
@@ -311,7 +319,7 @@ a {
 }
 
 .compte {
-  background-color: rgba(217, 189, 48, 0.5);
+  background-color: #d9bd30;
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -320,7 +328,7 @@ a {
   padding: 30px 20px;
 }
 .compte:hover {
-  background-color: #d9bd30;
+  background-color: rgba(217, 189, 48, 0.5);
   transition: all 600ms ease;
 }
 .compte:active {

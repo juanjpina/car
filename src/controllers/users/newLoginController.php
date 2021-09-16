@@ -1,4 +1,5 @@
 <?php
+
 AddUser($db, $router);
 function searchEmail(PDO $db, AltoRouter $router)
 {
