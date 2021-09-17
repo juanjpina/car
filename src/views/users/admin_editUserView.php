@@ -8,19 +8,21 @@
             <ul>
                 <li>
                     <div class="column">
-                        <?php $error = checkField('nickname', 'Votre pseudo est vide.'); ?>
+
                         <label for="nickname">Pseudo</label>
-                        <?php foreach ($result as $res) { ?>
-                            <input class='input' type="text" name="nickname" placeholder="<?= $res['nickname'] ?>" value="">
-                            <p class="message"> <?= $error['message']; ?> </p>
+                        <?php foreach ($result as $x) { ?>
+                            <input class='input' type="text" name="nickname" value="<?= $x['nickname'] ?>">
+
                     </div>
                 </li>
                 <li>
                     <div class="column">
+                        <?php $mail = checkEmail('email'); ?>
                         <label for="email">Votre email</label>
-                        <input type="email" name='email' value='' placeholder="<?= $res['email'] ?>">
+                        <input type="email" name="email" value="<?= $x['email'] ?>">
+                        <p class="message"> <?= $mail['message']; ?> </p>
+                    <?php } ?>
                     </div>
-                <?php } ?>
                 </li>
 
 
@@ -28,10 +30,10 @@
                 <div class="column">
                     <li>
                         <div class="column form">
-                            <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
+
                             <label for="password">Mot de passe</label>
                             <input type="password" class="input password<?= $error['class']; ?>" name="password" value="">
-                            <p class="message"> <?= $error['message']; ?> </p>
+
                         </div>
                     </li>
                     <li>

@@ -892,6 +892,9 @@ a {
 .user .form {
   margin-top: 20px;
 }
+.user li {
+  padding-bottom: 10px;
+}
 
 @font-face {
   font-family: "montserrat";
