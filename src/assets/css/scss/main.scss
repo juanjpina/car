@@ -9,6 +9,9 @@ $color-texto: #f2f2f2;
 $color-button-header: #083540;
 // Fonts
 $default-font: "montserrat", sans-serif;
+a {
+    text-decoration: none;
+}
 input {
     border-radius: 15px;
     color: black;

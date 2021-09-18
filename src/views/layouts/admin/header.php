@@ -28,22 +28,13 @@
 			<div class="logo">
 				<a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
 			</div>
-			<div class="navegation ">
+			<div class="navegation">
 				<ul class="nave">
 					<li class="li_button">
 						<a href="<?= $router->generate('editUser') ?>" id="as">
 							<div class="button_admin">
 								<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
 								<p>Mon compte</p>
-								<div class="bonjour">
-									<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname'];
-																		if (isset($_SESSION['car']['trademark'])) {
-																			echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
-																		} else {
-																			echo '';
-																		}; ?>
-									</p>
-								</div>
 							</div>
 						</a>
 					</li>
@@ -56,6 +47,16 @@
 						</a>
 					</li>
 				</ul>
+				<div class="bonjour">
+					<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname'];
+														if (isset($_SESSION['car']['trademark'])) {
+															echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
+														} else {
+															echo '';
+														}; ?>
+					</p>
+				</div>
+
 			</div>
 		</div>
 	</header>

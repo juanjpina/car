@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 input {
   border-radius: 15px;
   color: black;
@@ -192,19 +196,30 @@ body {
   /* margin-left: auto; */
   padding-right: 50px;
 }
-.header .bonjour p {
-  text-align: left;
-  color: #f2f2f2;
-  padding-top: 20px;
-}
-.header .button,
-.header .button_admin {
-  width: 240px;
-  height: 35px;
-  border-radius: 15px;
+.header .navegation .nave .li_button .button_admin {
+  align-items: center;
   background-color: #083540;
-  border-color: transparent;
   color: #f2f2f2;
+  border-color: transparent;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1em;
+  justify-content: space-evenly;
+  height: 40px;
+  margin-right: 28px;
+  width: 200px;
+}
+.header .bonjour {
+  width: 100%;
+}
+.header .bonjour p {
+  width: 100%;
+  text-align: left;
+  padding-left: 0px;
+  color: #f2f2f2;
+  padding-top: 15px;
 }
 .header .button_admin {
   width: 200px;
