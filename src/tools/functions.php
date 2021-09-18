@@ -20,6 +20,25 @@ function getCar(PDO $db)
 
 
 /**
+ * @param id_user
+ * @return array 
+ */
+function getUser(PDO $db, $id_user)
+{
+	$data = array(
+		'id_user' => $id_user
+	);
+	$sql = 'SELECT * FROM user WHERE id_user= :id_user';
+	$request = $db->prepare($sql);
+	$request->execute($data);
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	return $result;
+}
+
+
+
+
+/**
  * @param id, data base
  * @return array data base
  */

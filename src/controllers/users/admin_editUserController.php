@@ -18,35 +18,78 @@ function searchEmail(PDO $db)
 
 function editUser(PDO $db, AltoRouter $router)
 {
-    if (!empty($_POST['password']) || !empty($_POST['confirmerPassword']) || !empty($_POST['nickname']) || !empty($_POST['email'])) {
-        $pass = $_POST['password'];
-        $cpass = $_POST['confirmerPassword'];
-        if (strcmp($pass, $cpass) !== 0) {
 
-
-            return $resul = "Les mots de pass sont different";
-            header('Location: ' . $router->generate('editUser'));
-        } else {
+    if (!empty($_POST['ok'])) {
+        // dump($_POST['ok']);
+        if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
+            $pass = $_POST['password'];
+            $cpass = $_POST['confirmerPassword'];
+            if (strcmp($pass, $cpass) !== 0) {
+                // header('Location: ' . $router->generate('editUser'));
+                return $res = 'les mot de passe sont diferent';
+            }
             $data = [
                 'id_user' => $_SESSION['auth']['id_user'],
-                'email' => $_POST['email'],
-                'nickname'  => $_POST['nickname'],
                 'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
             ];
-            if (!empty($_SESSION['auth']['id_user'])) {
-                $sql = 'UPDATE user SET password=:password, nickname=:nickname, email= :email  WHERE id_user=:id_user';
-                // $data['id_user'] = $_SESSION['auth']['id_user'];
-                $request = $db->prepare($sql);
-                $result = $request->execute($data);
-                if ($result) {
-                    //pagina de ok
-
-                }
-            }
+            $sql = 'UPDATE user SET password=:password WHERE id_user=:id_user';
+            $request = $db->prepare($sql);
+            $result = $request->execute($data);
+        } else if (!empty($_POST['nickname'])) {
+            $email = $_SESSION['auth']['email'];
+            $id_user = $_SESSION['auth']['id_user'];
+            $_SESSION['auth'] = [
+                'nickname' => $_POST['nickname'],
+                'email' => $email,
+                'id_user'    => $id_user,
+            ];
+            // dump($_SESSION['auth']);
+            $data = [
+                'id_user' => $_SESSION['auth']['id_user'],
+                'nickname'  => $_POST['nickname'],
+            ];
+            $sql = 'UPDATE user SET nickname=:nickname WHERE id_user=:id_user';
+            $request = $db->prepare($sql);
+            $result = $request->execute($data);
+        } else if (!empty($_POST['email'])) {
+            $data = [
+                'id_user' => $_SESSION['auth']['id_user'],
+                'email'  => $_POST['email'],
+            ];
+            $sql = 'UPDATE user SET email=:email WHERE id_user=:id_user';
+            $request = $db->prepare($sql);
+            $result = $request->execute($data);
         }
     }
+    // if (!empty($_POST['password']) || !empty($_POST['confirmerPassword']) || !empty($_POST['nickname']) || !empty($_POST['email'])) {
+    //     $pass = $_POST['password'];
+    //     $cpass = $_POST['confirmerPassword'];
+    //     if (strcmp($pass, $cpass) !== 0) {
 
-    // $request = prepare($sql);
+
+    //         return $resul = "Les mots de pass sont different";
+    //         header('Location: ' . $router->generate('editUser'));
+    //     } else {
+    //         $data = [
+    //             'id_user' => $_SESSION['auth']['id_user'],
+    //             'email' => $_POST['email'],
+    //             'nickname'  => $_POST['nickname'],
+    //             'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
+    //         ];
+    //         if (!empty($_SESSION['auth']['id_user'])) {
+    //             $sql = 'UPDATE user SET password=:password, nickname=:nickname, email= :email  WHERE id_user=:id_user';
+    //             // $data['id_user'] = $_SESSION['auth']['id_user'];
+    //             $request = $db->prepare($sql);
+    //             $result = $request->execute($data);
+    //             if ($result) {
+    //                 //pagina de ok
+
+    //             }
+    //         }
+    //     }
+    // }
+
+
 }
-editUser($db, $router);
+$res = editUser($db, $router);
 $result = searchEmail($db);

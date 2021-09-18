@@ -49,6 +49,7 @@
 				</ul>
 			</div>
 			<div class="bonjour">
+
 				<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname'];
 													if (isset($_SESSION['car']['trademark'])) {
 														echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
@@ -56,6 +57,7 @@
 														echo '';
 													}; ?>
 				</p>
+
 			</div>
 		</div>
 	</header>
