@@ -5,7 +5,7 @@
  */
 // $cars = getCar($db);
 
-$id_car = (int)$_SESSION['car']['id_car'];
+$id_car = getSessionCar($db, $router);
 
 /**
  * get information database.

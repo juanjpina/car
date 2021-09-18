@@ -172,6 +172,7 @@ body {
   position: fixed;
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  text-decoration: none;
 }
 .header .logo {
   padding-left: 7.18%;
@@ -180,21 +181,24 @@ body {
 .header a {
   text-decoration: none;
 }
+.header .row {
+  align-items: start;
+}
 .header .navegation {
+  margin-top: 25px;
   /* flex: auto; */
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
   /* margin-left: auto; */
-  /* padding-right: 20px; */
+  padding-right: 50px;
 }
 .header .bonjour p {
   text-align: left;
-  padding-left: 65%;
   color: #f2f2f2;
+  padding-top: 20px;
 }
-
-.button,
-.button_admin {
+.header .button,
+.header .button_admin {
   width: 240px;
   height: 35px;
   border-radius: 15px;
@@ -202,8 +206,7 @@ body {
   border-color: transparent;
   color: #f2f2f2;
 }
-
-.button_admin {
+.header .button_admin {
   width: 200px;
   height: 40px;
   font-size: 1em;
@@ -216,21 +219,19 @@ body {
   /* padding-left: auto; */
   /* padding-right: auto; */
 }
-
-.button_admin img {
+.header .button_admin img {
   margin-left: 20px;
 }
-
-.navegation ul {
+.header .navegation ul {
   display: flex;
   /* justify-content: flex-end; */
   align-items: center;
 }
-
-.li_button a {
+.header .li_button a {
   display: block;
   width: 200px;
   margin-right: 20px;
+  text-decoration: none;
 }
 
 .menu-login {

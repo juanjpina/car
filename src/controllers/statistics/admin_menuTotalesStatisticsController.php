@@ -4,7 +4,7 @@ $cars =  getCar($db);
 
 //enviar a totales
 
-$id_car = $_SESSION['car']['id_car'];
+$id_car = getSessionCar($db, $router);
 if (!empty($_POST['ok'])) {
 
     $data = array(

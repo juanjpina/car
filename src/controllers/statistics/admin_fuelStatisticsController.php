@@ -1,6 +1,10 @@
 <?php
 
-if (!empty($_SESSION['car']['id_car'])) {
+$id_car = getSessionCar($db, $router);
+
+
+
+if (!empty($id_car)) {
     $data = [
         ':id_car' => $_SESSION['car']['id_car'],
     ];

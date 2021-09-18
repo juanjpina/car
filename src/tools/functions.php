@@ -18,6 +18,25 @@ function getCar(PDO $db)
 	return $result;
 }
 
+/**
+ * Check if the car session is open, if you do not send to select a car or to create it
+ * @return id_car
+ */
+function getSessionCar(PDO $db, AltoRouter $router)
+{
+	if (!empty($_SESSION['car']['id_car'])) {
+		$value = (int)$_SESSION['car']['id_car'];
+	} else if (getCar($db)) {
+		header('Location: ' . $router->generate('selectcar'));
+		die();
+	} else {
+		header('Location: ' . $router->generate('addnewcar'));
+		die();
+	}
+	return $value;
+};
+
+
 
 /**
  * @param id_user

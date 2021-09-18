@@ -1,7 +1,7 @@
 <?php
 // $trademark = getTrademark($db);
 $invoice = getSelect($db, 'type_invoice');
-$id_car = $_SESSION['car']['id_car'];
+$id_car = getSessionCar($db, $router);
 if (
     !empty($id_car) && !empty($_POST['invoice'])
     && !empty($_POST['date'])  && !empty($_POST['total'])
