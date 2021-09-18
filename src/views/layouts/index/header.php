@@ -21,6 +21,19 @@
             margin-right: 2em;
         }
 
+        @media only screen and (max-width:485px) {
+            .card-box {
+                width: 100px;
+                height: 150px;
+                margin-right: 1em;
+            }
+
+            img {
+                width: 100px;
+                height: 150px;
+            }
+        }
+
         .card-box:hover .card {
             transform: rotateY(180deg);
         }
@@ -67,20 +80,23 @@
 </head>
 
 <body>
-    <header class="header row">
-        <div class="logo">
-            <a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
-        </div>
-        <div class="conextion">
-            <ul>
-                <li><a href="<?= $router->generate('login') ?>">
-                        <div class="button_admin">
-                            <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
-                            <p>Se connecter</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+    <header class="header">
+        <div class="row">
+            <div class="logo">
+                <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+            </div>
+            <div class="navegation">
+                <ul class="nave">
+                    <li class="li_button">
+                        <a href="<?= $router->generate('login') ?>" id="as">
+                            <div class="button_admin">
+                                <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                <p>Se connecter</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <main class="form-signin">

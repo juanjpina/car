@@ -180,7 +180,13 @@ body {
 }
 .header .logo {
   padding-left: 7.18%;
-  /* align-self: center; */
+}
+@media only screen and (max-width: 485px) {
+  .header .logo img {
+    width: 100px;
+    height: 50px;
+    margin-top: 30px;
+  }
 }
 .header a {
   text-decoration: none;
@@ -188,15 +194,25 @@ body {
 .header .row {
   align-items: start;
 }
-.header .navegation {
+@media only screen and (max-width: 485px) {
+  .header .row {
+    align-items: stretch;
+    justify-content: start;
+  }
+}
+.header .row .admin {
+  background-color: black;
+}
+.header .row .navegation {
   margin-top: 25px;
-  /* flex: auto; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* margin-left: auto; */
   padding-right: 50px;
 }
-.header .navegation .nave .li_button .button_admin {
+@media only screen and (max-width: 485px) {
+  .header .row .navegation {
+    margin-left: 100px;
+  }
+}
+.header .row .navegation .nave .button_admin {
   align-items: center;
   background-color: #083540;
   color: #f2f2f2;
@@ -210,6 +226,21 @@ body {
   height: 40px;
   margin-right: 28px;
   width: 200px;
+}
+@media only screen and (max-width: 485px) {
+  .header .row .navegation .nave .button_admin {
+    height: 30px;
+    width: 150px;
+    justify-content: start;
+    margin-left: 20px;
+  }
+  .header .row .navegation .nave .button_admin img {
+    width: 25px;
+    height: 25px;
+  }
+  .header .row .navegation .nave .button_admin p {
+    font-size: 14px;
+  }
 }
 .header .bonjour {
   width: 100%;
@@ -231,8 +262,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
   margin-right: 28px;
-  /* padding-left: auto; */
-  /* padding-right: auto; */
 }
 .header .button_admin img {
   margin-left: 20px;
@@ -254,6 +283,37 @@ body {
   width: 100%;
   height: 100%;
 }
+@media only screen and (max-width: 485px) {
+  .menu-login {
+    margin-top: 125px;
+  }
+}
+.menu-login .new {
+  width: 100%;
+}
+.menu-login .new .compte {
+  background-color: #d9bd30;
+  border-radius: 28px;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  width: 45%;
+}
+@media only screen and (max-width: 485px) {
+  .menu-login .new .compte {
+    width: 80%;
+  }
+}
+.menu-login .new .compte:hover {
+  background-color: rgba(217, 189, 48, 0.5);
+  transition: all 600ms ease;
+}
+.menu-login .new .compte:active {
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: #b4b2ba 0px 22px 70px 4px;
+}
+.menu-login .new button {
+  display: block;
+}
 .menu-login .login,
 .menu-login .newLogin {
   background-color: #d9bd30;
@@ -262,10 +322,22 @@ body {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   margin: 30px 0;
 }
+@media only screen and (max-width: 485px) {
+  .menu-login .login,
+.menu-login .newLogin {
+    width: 85%;
+  }
+}
 .menu-login .login form,
 .menu-login .newLogin form {
   padding: 70px 100px;
   width: 100%;
+}
+@media only screen and (max-width: 485px) {
+  .menu-login .login form,
+.menu-login .newLogin form {
+    padding: 0px 20px;
+  }
 }
 .menu-login .login li,
 .menu-login .newLogin li {
@@ -304,24 +376,6 @@ body {
 }
 .menu-login .newLogin .nsubmit {
   padding-top: 50px;
-}
-
-.compte {
-  background-color: #d9bd30;
-  border-radius: 28px;
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: 2px 5px 15px -2px #b4b2ba;
-  width: 28%;
-  margin: 10px 20px;
-  padding: 30px 20px;
-}
-.compte:hover {
-  background-color: rgba(217, 189, 48, 0.5);
-  transition: all 600ms ease;
-}
-.compte:active {
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
 
 .menu-login .message {
@@ -1145,32 +1199,6 @@ body {
 }
 .pswforget .container li {
   margin-bottom: 40px;
-}
-
-.form-signin {
-  justify-content: center;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.form-signin .wraper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.form-signin .wraper .containerMain {
-  margin-top: 10em;
-}
-.form-signin .wraper .containerMain .container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-top: 1.2em;
-}
-
-.header .conextion {
-  margin-right: 5em;
 }
 
 .maintenance {

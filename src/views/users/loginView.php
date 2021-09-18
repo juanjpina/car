@@ -8,7 +8,7 @@
 					<div class="mail column">
 						<label for='login'>Votre e-mail</label>
 						<?php $error = checkField('login', 'Votre email est vide.'); ?>
-						<input type="email" class=" input email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
+						<input type="email" class="input email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
 
 						<p class="message"> <?= $error['message']; ?> </p>
 					</div>
@@ -22,7 +22,7 @@
 					</div>
 				</li>
 				<li>
-					<div class="">
+					<div class="column">
 						<button class="button submit" type="submit">Se connecter</button>
 					</div>
 				</li>
@@ -32,15 +32,16 @@
 							<p class="parrafo-mot">Mot de passe oublié?</p>
 						</a>
 					</div>
-
 				</li>
 			</ul>
 		</form>
 	</div>
-	<a class="compte button" href="<?= $router->generate('newlogin'); ?>">
-		<div class="">
-			<p>Créer un compte</p>
-		</div>
-	</a>
+	<div class="column new">
+		<a class="compte button" href="<?= $router->generate('newlogin'); ?>">
+			<div class="">
+				<p>Créer un compte</p>
+			</div>
+		</a>
+	</div>
 </div>
 <?php get_footer('login') ?>
