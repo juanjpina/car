@@ -17,7 +17,7 @@
 <body>
 	<header class="header">
 		<div class="logo">
-			<a href="">RDVoiture</a>
+			<a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
 		</div>
 		<div class="conextion">
 			<ul>
@@ -27,14 +27,8 @@
 				<li>
 					<div></div>
 				</li>
-
 			</ul>
 		</div>
-
-
 	</header>
-
-
-
 	<main class="form-signin">
 		<?= alertDisplay(); ?>

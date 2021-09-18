@@ -16,7 +16,7 @@
     <header class="header">
         <div class="admin">
             <div class="logo">
-                <a href="#">RDVoiture</a>
+                <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
             </div>
             <div class="navegation">
                 <ul class="nave">

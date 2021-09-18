@@ -69,7 +69,7 @@
 <body>
     <header class="header row">
         <div class="logo">
-            <a href="">RDVoiture</a>
+            <a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
         </div>
         <div class="conextion">
             <ul>
@@ -80,15 +80,8 @@
                         </div>
                     </a>
                 </li>
-
-
             </ul>
         </div>
-
-
     </header>
-
-
-
     <main class="form-signin">
         <?= alertDisplay(); ?>
