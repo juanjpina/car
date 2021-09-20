@@ -1,8 +1,8 @@
 <?php get_header('S_inscrire', 'login') ?>
 <div class="menu-login column ">
-    <div class="newLogin column">
-        <ul>
-            <form action="" method="post">
+    <div class="newLogin">
+        <form action="" method="post">
+            <ul>
                 <li>
                     <!-- <p class="parrafo-compte pa">Vous pouvez s'inscrire ici</p> -->
                     <div class="pseudo column">
@@ -44,15 +44,15 @@
                         <p> <?= $error['message']; ?></p>
                     </div>
                 </li>
-                <li class='nsubmit'>
+                <li class='nsubmit column'>
                     <div class="">
                         <button class="button submit" type="submit">
                             <p>S'inscrire</p>
                         </button>
                     </div>
                 </li>
-            </form>
-        </ul>
+            </ul>
+        </form>
     </div>
 </div>
 <?php get_footer('login'); ?>

@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Se connecter</title>
-
+    <title>Agenda voiture</title>
+    <meta name="description" content="Agenda voiture">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
-    <!-- <link rel="stylesheet" href="src/assets/css/reset.css"> -->
     <link rel="stylesheet" href=" src/assets/css/main.css">
     <style>
         .card-box {
@@ -21,7 +19,7 @@
             margin-right: 2em;
         }
 
-        @media only screen and (max-width:485px) {
+        @media only screen and (max-width:768px) {
             .card-box {
                 width: 100px;
                 height: 150px;
@@ -56,48 +54,35 @@
             transform: rotateY(180deg);
         }
 
-        /* .container {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			padding-top: 1.2em;
-		}
+        .containerMain {
+            margin-top: 10em;
+        }
 
-		.wraper {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		p {
-			text-align: center;
-		}
-
-		.containerMain {
-			margin-top: 10em;
-		} */
+        */
     </style>
 </head>
 
 <body>
     <header class="header">
-        <div class="row">
-            <div class="logo">
-                <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+        <nav>
+            <div class="row">
+                <div class="logo">
+                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+                </div>
+                <div class="navegation">
+                    <ul class="nave">
+                        <li class="li_button">
+                            <a href="<?= $router->generate('login') ?>" id="as">
+                                <div class="button_admin">
+                                    <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                    <p>Se connecter</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="navegation">
-                <ul class="nave">
-                    <li class="li_button">
-                        <a href="<?= $router->generate('login') ?>" id="as">
-                            <div class="button_admin">
-                                <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
-                                <p>Se connecter</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </nav>
     </header>
     <main class="form-signin">
         <?= alertDisplay(); ?>

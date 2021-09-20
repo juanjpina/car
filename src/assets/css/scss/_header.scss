@@ -9,7 +9,7 @@
     text-decoration: none;
     .logo {
         padding-left: 7.18%;
-        @media only screen and (max-width: 485px) {
+        @media only screen and (max-width: 768px) {
             img {
                 width: 100px;
                 height: 50px;
@@ -22,7 +22,7 @@
     }
     .row {
         align-items: start;
-        @media only screen and (max-width: 485px) {
+        @media only screen and (max-width: 768px) {
             align-items: stretch;
             justify-content: start;
         }
@@ -33,14 +33,16 @@
         .navegation {
             margin-top: 25px;
             padding-right: 50px;
-            @media only screen and (max-width: 485px) {
+            @media only screen and (max-width: 768px) {
                 // margin-top: 0px;
-                margin-left: 100px;
+                padding-right: 0px;
+                margin-top: 0px;
+                margin-left: 50px;
             }
 
             .nave {
                 .li_button {
-                    @media only screen and (max-width: 485px) {
+                    @media only screen and (max-width: 768px) {
                         // margin-left: 50px;
                     }
                 }
@@ -58,21 +60,23 @@
                     height: 40px;
                     margin-right: 28px;
                     width: 200px;
-                    @media only screen and (max-width: 485px) {
-                        height: 30px;
-                        width: 150px;
-
-                        // justify-content: center;
+                    @media only screen and (max-width: 768px) {
                         img {
-                            width: 25px;
-                            height: 25px;
+                            width: 15px;
+                            height: 15px;
+                            margin-left: 15px;
                         }
-                        justify-content: start;
 
                         p {
-                            font-size: 14px;
+                            font-size: 10px;
                         }
-                        margin-left: 20px;
+                        height: 20px;
+                        justify-content: start;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        width: 110px;
+
+                        // justify-content: center;
                     }
                 }
             }
@@ -87,6 +91,9 @@
             padding-left: 0px;
             color: $color-texto;
             padding-top: 15px;
+            @media only screen and (max-width: 768px) {
+                font-size: 7px;
+            }
         }
     }
     .button_admin {
@@ -113,5 +120,10 @@
         width: 200px;
         margin-right: 20px;
         text-decoration: none;
+        @media only screen and (max-width: 768px) {
+        }
+        margin-top: 20px;
+        margin-right: 0px;
+        width: 110px;
     }
 }

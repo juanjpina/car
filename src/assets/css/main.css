@@ -181,7 +181,7 @@ body {
 .header .logo {
   padding-left: 7.18%;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .header .logo img {
     width: 100px;
     height: 50px;
@@ -194,7 +194,7 @@ body {
 .header .row {
   align-items: start;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .header .row {
     align-items: stretch;
     justify-content: start;
@@ -207,9 +207,11 @@ body {
   margin-top: 25px;
   padding-right: 50px;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .header .row .navegation {
-    margin-left: 100px;
+    padding-right: 0px;
+    margin-top: 0px;
+    margin-left: 50px;
   }
 }
 .header .row .navegation .nave .button_admin {
@@ -227,19 +229,21 @@ body {
   margin-right: 28px;
   width: 200px;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .header .row .navegation .nave .button_admin {
-    height: 30px;
-    width: 150px;
+    height: 20px;
     justify-content: start;
-    margin-left: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 110px;
   }
   .header .row .navegation .nave .button_admin img {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
   }
   .header .row .navegation .nave .button_admin p {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 .header .bonjour {
@@ -251,6 +255,11 @@ body {
   padding-left: 0px;
   color: #f2f2f2;
   padding-top: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .header .bonjour p {
+    font-size: 7px;
+  }
 }
 .header .button_admin {
   width: 200px;
@@ -276,14 +285,16 @@ body {
   width: 200px;
   margin-right: 20px;
   text-decoration: none;
+  margin-top: 20px;
+  margin-right: 0px;
+  width: 110px;
 }
-
 .menu-login {
   margin-top: 100px;
   width: 100%;
   height: 100%;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .menu-login {
     margin-top: 125px;
   }
@@ -298,7 +309,7 @@ body {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   width: 45%;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .menu-login .new .compte {
     width: 80%;
   }
@@ -322,7 +333,7 @@ body {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   margin: 30px 0;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .menu-login .login,
 .menu-login .newLogin {
     width: 85%;
@@ -333,7 +344,7 @@ body {
   padding: 70px 100px;
   width: 100%;
 }
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 768px) {
   .menu-login .login form,
 .menu-login .newLogin form {
     padding: 0px 20px;
@@ -367,15 +378,6 @@ body {
   background-color: #18a8cc;
   opacity: 0.8;
   transition: all 600ms ease;
-}
-.menu-login .newLogin {
-  width: 40%;
-}
-.menu-login .newLogin form {
-  padding: 44px 100px;
-}
-.menu-login .newLogin .nsubmit {
-  padding-top: 50px;
 }
 
 .menu-login .message {
@@ -482,7 +484,7 @@ body {
 .sidebarAdmin {
   margin-left: 7%;
   margin-top: 120px;
-  width: 20%;
+  width: 100%;
   float: left;
 }
 .sidebarAdmin ul {
@@ -490,7 +492,7 @@ body {
 }
 .sidebarAdmin li {
   margin-top: 20px;
-  width: 40%;
+  width: 100%;
 }
 .sidebarAdmin li .border {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -513,6 +515,19 @@ body {
   background-color: #d94625;
   color: #d94625;
   opacity: 1;
+}
+@media only screen and (max-width: 768px) {
+  .sidebarAdmin li .border {
+    width: 100%;
+    height: 75px;
+    font-size: 10px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .sidebarAdmin li .border img {
+    width: 25px;
+    height: 25px;
+  }
 }
 .sidebarAdmin .b-alert {
   background-color: #d9bd30;
@@ -1199,6 +1214,32 @@ body {
 }
 .pswforget .container li {
   margin-bottom: 40px;
+}
+
+.form-signin {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.form-signin .wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-signin .wraper .containerMain {
+  margin-top: 10em;
+}
+.form-signin .wraper .containerMain .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1.2em;
+}
+
+.header .conextion {
+  margin-right: 5em;
 }
 
 .maintenance {
