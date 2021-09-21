@@ -41,7 +41,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 
 .trademark {
@@ -212,6 +212,16 @@ body {
     padding-right: 0px;
     margin-top: 0px;
     margin-left: 50px;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header .row .navegation .nave {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 .header .row .navegation .nave .button_admin {
@@ -233,8 +243,6 @@ body {
   .header .row .navegation .nave .button_admin {
     height: 20px;
     justify-content: start;
-    margin-left: 0px;
-    margin-right: 0px;
     width: 110px;
   }
   .header .row .navegation .nave .button_admin img {
@@ -242,8 +250,13 @@ body {
     height: 15px;
     margin-left: 15px;
   }
+  .header .row .navegation .nave .button_admin .disconnection {
+    width: 12px;
+    height: 15px;
+  }
   .header .row .navegation .nave .button_admin p {
     font-size: 10px;
+    margin-left: 8px;
   }
 }
 .header .bonjour {
@@ -258,7 +271,9 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .header .bonjour p {
+    padding-top: 2px;
     font-size: 7px;
+    padding-left: 39px;
   }
 }
 .header .button_admin {
@@ -285,10 +300,15 @@ body {
   width: 200px;
   margin-right: 20px;
   text-decoration: none;
-  margin-top: 20px;
-  margin-right: 0px;
-  width: 110px;
 }
+@media only screen and (max-width: 768px) {
+  .header .li_button a {
+    margin-top: 20px;
+    margin-right: 0px;
+    width: 110px;
+  }
+}
+
 .menu-login {
   margin-top: 100px;
   width: 100%;
@@ -494,6 +514,13 @@ body {
   margin-top: 20px;
   width: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .sidebarAdmin li .column .column {
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
 .sidebarAdmin li .border {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -519,14 +546,16 @@ body {
 @media only screen and (max-width: 768px) {
   .sidebarAdmin li .border {
     width: 100%;
-    height: 75px;
-    font-size: 10px;
-    justify-content: space-around;
-    align-items: center;
+    height: 70px;
+    padding: 10px 0px 0px 0px;
+    margin-top: 0px;
   }
   .sidebarAdmin li .border img {
     width: 25px;
     height: 25px;
+  }
+  .sidebarAdmin li .border p {
+    font-size: 0.8em;
   }
 }
 .sidebarAdmin .b-alert {
@@ -555,6 +584,17 @@ body {
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media only screen and (max-width: 768px) {
+  .alerts {
+    font-size: 0.5em;
+    margin-left: 7%;
+    padding: 20px 0px;
+  }
+  .alerts h6 {
+    text-align: center;
+    padding: 0px 20px;
+  }
 }
 .alerts .button:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
@@ -679,6 +719,16 @@ body {
 .menuStatistics {
   margin-top: 400px;
   width: 66%;
+}
+@media only screen and (max-width: 768px) {
+  .menuStatistics {
+    margin-top: 200px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .menuStatistics .container a {
+    margin: 5px;
+  }
 }
 .menuStatistics .container .period,
 .menuStatistics .container .total,

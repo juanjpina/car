@@ -62,6 +62,16 @@
         width: 100%;
     }
     li {
+        .column {
+            @media only screen and (max-width: 768px) {
+                .column {
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
         // display: block;
         margin-top: 20px;
         width: 100%;
@@ -91,15 +101,19 @@
 
             @media only screen and (max-width: 768px) {
                 width: 100%;
-                height: 75px;
+                height: 70px;
+                padding: 10px 0px 0px 0px;
+                margin-top: 0px;
+
                 img {
                     width: 25px;
                     height: 25px;
                 }
-                font-size: 10px;
+
+                p {
+                    font-size: 0.8em;
+                }
                 // justify-conte    nt: center;
-                justify-content: space-around;
-                align-items: center;
             }
         }
     }

@@ -38,9 +38,18 @@
                 padding-right: 0px;
                 margin-top: 0px;
                 margin-left: 50px;
+                width: 50%;
             }
 
             .nave {
+                @media only screen and (max-width: 768px) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+
                 .li_button {
                     @media only screen and (max-width: 768px) {
                         // margin-left: 50px;
@@ -66,14 +75,17 @@
                             height: 15px;
                             margin-left: 15px;
                         }
+                        .disconnection {
+                            width: 12px;
+                            height: 15px;
+                        }
 
                         p {
                             font-size: 10px;
+                            margin-left: 8px;
                         }
                         height: 20px;
                         justify-content: start;
-                        margin-left: 0px;
-                        margin-right: 0px;
                         width: 110px;
 
                         // justify-content: center;
@@ -92,7 +104,9 @@
             color: $color-texto;
             padding-top: 15px;
             @media only screen and (max-width: 768px) {
+                padding-top: 2px;
                 font-size: 7px;
+                padding-left: 39px;
             }
         }
     }
@@ -121,9 +135,9 @@
         margin-right: 20px;
         text-decoration: none;
         @media only screen and (max-width: 768px) {
+            margin-top: 20px;
+            margin-right: 0px;
+            width: 110px;
         }
-        margin-top: 20px;
-        margin-right: 0px;
-        width: 110px;
     }
 }
