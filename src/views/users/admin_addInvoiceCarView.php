@@ -9,39 +9,40 @@
                 <div class="column">
                     <li>
                         <div class="column info">
-                            <?php foreach ($buy as $b) { ?>
+                            <?php foreach ($getCars as $car) { ?>
                                 <p class='textTitleInput'>Information au moment de l'achat</p>
                                 <div class='row'>
                                     <div class="column date">
-                                        <label for="date1 ">Date</label>
-                                        <input type="date" class='input' name='date1' value="<?= $b['date'];  ?>">
+                                        <label for="buydate ">Date</label>
+                                        <input type="date" class='input' name='buydate' value="<?= $car['buyDate'];  ?>">
                                     </div>
                                     <div class="column">
-                                        <label for="km1">Km</label>
-                                        <input type="number" class='input' name='km1' placeholder='<?= $b['km']; ?>' value="">
+                                        <label for="buykm">Km</label>
+                                        <input type="number" class='input' name='buykm' placeholder='<?= $car['buykm']; ?>' value="">
                                     </div>
                                 </div>
-                            <?php } ?>
+
                         </div>
                         <div class='column'>
-                            <?php foreach ($first as $f) { ?>
-                                <p class='textTitleInput'>La première immatriculation</p>
-                                <div class='row'>
-                                    <div class="column date">
-                                        <label for="date5">Date</label>
-                                        <input type="date" class='input' name='date5' value="<?= $f['date']; ?>">
-                                    </div>
-                                    <div class="column">
-                                        <label for="km5">Km</label>
-                                        <input type="number" class='input' name='km5' placeholder="<?= $f['km']; ?>" value="">
-                                    </div>
+
+                            <p class='textTitleInput'>La première immatriculation</p>
+                            <div class='row'>
+                                <div class="column date">
+                                    <label for="firstdate">Date</label>
+                                    <input type="date" class='input' name='firstdate' value="<?= $car['firstDate']; ?>">
                                 </div>
-                            <?php }; ?>
+                                <div class="column">
+                                    <label for="firstkm">Km</label>
+                                    <input type="number" class='input' name='firstkm' placeholder="<?= $car['firstKm']; ?>" value="">
+                                </div>
+                            </div>
+                        <?php }; ?>
                         </div>
                     </li>
                 </div>
                 <li class="submit">
                     <div class="column">
+                        <input type="hidden" name="ok" value="ok">
                         <button type="submit" class="button">Confirmez les données</button>
                     </div>
                 </li>

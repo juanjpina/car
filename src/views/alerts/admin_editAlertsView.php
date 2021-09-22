@@ -19,13 +19,21 @@
                         <th>Date</th>
                         <th>KM</th>
                     </tr>
-                    <?php foreach ($alerts as $alert) { ?>
-                        <tr>
-                            <td><?= $alert['timingkm']; ?></td>
-                            <td><?= date("d-m-Y", strtotime($alert['timingdate'])) ?></td>
-                            <td><?= date("d-m-Y", strtotime($alert['controldate'])) ?></td>
-                            <td><?= $alert['oilchangeskm']; ?></td>
-                        </tr>
+                    <?php foreach ($getControl as $control) { ?>
+                        <?php foreach ($alerts as $alert) { ?>
+                            <?php foreach ($getOil as $oil) { ?>
+                                <?php foreach ($getTimingKm as $km) { ?>
+                                    <?php foreach ($getTimingDate as $date) { ?>
+                                        <tr>
+                                            <td><?= $km['km']; ?></td>
+                                            <td><?= date("d-m-Y", strtotime($date['dates'])) ?></td>
+                                            <td><?= date("d-m-Y", strtotime($control['datetechnical'])) ?></td>
+                                            <td><?= $oil['oil']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
                     <?php } ?>
                 </table>
             </li>
