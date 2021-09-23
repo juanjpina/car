@@ -9,39 +9,39 @@
 
     <div class="column">
         <form action="" method="post">
-            <ul>
-                <?php foreach ($setting as $set) { ?>
-                    <li class="liStatis column">
-                        <p>La courroie de distribution</p>
-                        <div class="row">
-                            <div class="column right">
-                                <label for="dateTiming">Années</label>
-                                <input type="number" class="input" name="dateTiming" value="<?= $set['timingbeltDate'] ?>">
-                            </div>
-                            <div class="column">
-                                <label for="kmTiming">Km</label>
-                                <input type="number" class='input' name="kmTiming" value="<?= $set['timingbeltKm'] ?>">
-                            </div>
+
+            <?php foreach ($setting as $set) { ?>
+                <div class="liStatis column">
+                    <p>La courroie de distribution</p>
+                    <div class="row">
+                        <div class="column right">
+                            <label for="dateTiming">Années</label>
+                            <input type="number" class="input" name="dateTiming" value="<?= $set['timingbeltDate'] ?>">
                         </div>
-                    </li>
-                    <li class="liStatis">
                         <div class="column">
-                            <div class="column">
-                                <p>La vidange</p>
-                            </div>
-                            <div class="column">
-                                <label for="kmOil">Km</label>
-                                <input class="input" type="number" name="kmOil" value="<?= $set['oilchanges'] ?>">
-                            </div>
+                            <label for="kmTiming">Km</label>
+                            <input type="number" class='input' name="kmTiming" value="<?= $set['timingbeltKm'] ?>">
                         </div>
-                    </li>
-                    <li class="liStatis ">
-                        <div class="column ">
-                            <button class='button buttonStatis' type="submit">Confirmer</button>
+                    </div>
+                </div>
+                <div class="liStatis">
+                    <div class="column">
+                        <div class="column">
+                            <p>La vidange</p>
                         </div>
-                    </li>
-                <?php } ?>
-            </ul>
+                        <div class="column">
+                            <label for="kmOil">Km</label>
+                            <input class="input" type="number" name="kmOil" value="<?= $set['oilchanges'] ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="liStatis ">
+                    <div class="column ">
+                        <button class='button buttonStatis' type="submit">Confirmer</button>
+                    </div>
+                </div>
+            <?php } ?>
+
         </form>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-$trademark = getCar($db); //db car
+// $trademark = getCar($db); //db car
 $typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
 $id_car = getSessionCar($db, $router);
 

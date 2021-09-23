@@ -127,6 +127,7 @@ function getControl(PDO $db)
 };
 $getControl = getControl($db);
 
+
 /**
  * this function returns the mileage of the next oil change.
  * @param PDO
@@ -138,7 +139,7 @@ function getOil(PDO $db)
         $data = [
             'id_car' => $_SESSION['car']['id_car'],
         ];
-        $sql = 'SELECT invoil.km+setting.oilchanges as oil FROM `invoil`,`setting` WHERE invoil.id_car= :id_car ORDER by date DESC limit 1';
+        $sql = 'SELECT invoil.km+setting.oilchanges as oil FROM invoil,setting WHERE invoil.id_car= :id_car ORDER by date DESC limit 1';
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -165,7 +166,7 @@ function getTimingKm(PDO $db)
         $data = [
             'id_car' => $_SESSION['car']['id_car']
         ];
-        $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM `invtiming`,`setting` WHERE invtiming.id_car= :id_car ORDER by date DESC limit 1
+        $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM invtiming, setting WHERE invtiming.id_car= :id_car ORDER by date DESC limit 1
 ';
 
         $request = $db->prepare($sql);

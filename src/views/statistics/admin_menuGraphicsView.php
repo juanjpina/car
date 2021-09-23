@@ -3,27 +3,26 @@
     <h1 class='title'>Statistique</h1>
     <h3>Sélectionnez deux années différentes pour accéder aux graphiques comparatifs</h3>
     <form action="" method="post">
-        <ul>
-            <li>
-                <div class="column">
-                    <label for="startYear">De l'année</label>
-                    <input type="number" name="startYear" class="input">
-                </div>
-            </li>
-            <li>
-                <div class="column">
-                    <label for="endYear">À l'année</label>
-                    <input type="number" name="endYear" class="input">
-                </div>
-            </li>
+        <div>
+            <div class="column">
+                <label for="startYear">De l'année</label>
+                <input type="number" name="startYear" class="input">
+            </div>
+        </div>
+        <div>
+            <div class="column">
+                <label for="endYear">À l'année</label>
+                <input type="number" name="endYear" class="input">
+            </div>
+        </div>
 
-            <li>
-                <div class="column">
-                    <input type='hidden' name="ok" value="ok">
-                    <button class='button' type="submit">Sauvegarder</button>
-                </div>
-            </li>
-        </ul>
+        <div>
+            <div class="column">
+                <input type='hidden' name="ok" value="ok">
+                <button class='button' type="submit">Sauvegarder</button>
+            </div>
+        </div>
+
     </form>
 </div>
 

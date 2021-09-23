@@ -29,25 +29,24 @@ if (!isset($_SESSION['car']['id_car'])) {
         $data = array(
             ':id_car' => $id_car
         );
-        $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car) ORDER by date DESC LIMIT 1';
+        $sql = 'SELECT date, km FROM invtiming where (id_car = :id_car) ORDER by date DESC LIMIT 1';
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        // if ($result) {
-        return $result;
-        // }
-        // } else {
-        //     $data = array(
-        //         ':id_car' => $id_car
-        //     );
-        //     $sql = 'SELECT date, km FROM timingbelt where (id_car = :id_car)';
-        //     $request = $db->prepare($sql);
-        //     $request->execute($data);
-        //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        //     if ($result) {
-        //         return $result;
-        //     }
+        if ($result) {
+            return $result;
+        } else {
+            $var = array(
+                [
 
+                    'date' => '2021-01-01',
+                    'km' => '0',
+
+
+                ]
+            );
+            return $var;
+        }
     }
     $timing = dbTiming($db, $id_car);
     /**
@@ -123,24 +122,19 @@ if (!isset($_SESSION['car']['id_car'])) {
             $data = array(
                 ':id_car' => $id_car
             );
-            $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER BY date DESC LIMIT 1 ';
+            $sql = 'SELECT date, km FROM invtechnical where (id_car = :id_car) ORDER BY date DESC LIMIT 1 ';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             if ($result) {
                 return $result;
+            } else {
+
+                return ([
+                    'date' => '2021-01-01',
+                    'km' => '0'
+                ]);
             }
-            // } else {
-            //     $data = array(
-            //         ':id_car' => $id_car
-            //     );
-            //     $sql = 'SELECT date, km FROM technicalcontrol where (id_car = :id_car) ORDER by date DESC LIMIT 1';
-            //     $request = $db->prepare($sql);
-            //     $request->execute($data);
-            //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            //     if ($result) {
-            //         return $result;
-            //     }
         }
     }
     $technical = dbTechnical($db, $id_car);
@@ -156,24 +150,18 @@ if (!isset($_SESSION['car']['id_car'])) {
             $data = array(
                 ':id_car' => $id_car
             );
-            $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car) ORDER by date DESC LIMIT 1';
+            $sql = 'SELECT date, km FROM invoil where (id_car = :id_car) ORDER by date DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             if ($result) {
                 return $result;
+            } else {
+                return ([
+                    'date' => '2021-01-01',
+                    'km' => '0'
+                ]);
             }
-            // } else {
-            //     $data = array(
-            //         ':id_car' => $id_car
-            //     );
-            //     $sql = 'SELECT date, km FROM oilchanges where (id_car = :id_car)';
-            //     $request = $db->prepare($sql);
-            //     $request->execute($data);
-            //     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            //     if ($result) {
-            //         return $result;
-            //     }
         }
     }
     $oil = dbOil($db, $id_car);

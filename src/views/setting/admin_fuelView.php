@@ -5,29 +5,29 @@
         <h6>Vous devriez segnaler le kilometrage à partir se queda grabado para contabilizr en consumo.</h6>
     </div>
     <div class="column">
-        <ul>
-            <form action="" method="post">
 
-                <li>
-                    <div class="column">
+        <form action="" method="post">
 
-                        <label for='km'>KM</label>
-                        <?php foreach ($fuel as $ful) { ?>
-                            <input type="number" name='km' value="" placeholder="<?= $ful['km'] ?>">
-                        <?php } ?>
-                    </div>
-                </li>
 
-                <li>
-                    <div>
+            <div class="column">
 
-                        <button class="button" type="submit">Sauvegarder</button>
+                <label for='km'>KM</label>
+                <?php foreach ($fuel as $ful) { ?>
+                    <input type="number" name='km' value="" placeholder="<?= $ful['km'] ?>">
+                <?php } ?>
+            </div>
 
-                    </div>
 
-                </li>
-            </form>
-        </ul>
+
+            <div>
+
+                <button class="button" type="submit">Sauvegarder</button>
+
+            </div>
+
+
+        </form>
+
 
     </div>
 

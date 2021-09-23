@@ -170,7 +170,7 @@ $id_car = getSessionCar($db, $router);
 function getCars(PDO $db, $id_car)
 {
     if (!empty($id_car)) {
-        dump($id_car);
+        // dump($id_car);
         $data = array(
             ':id_car' => $id_car
         );
@@ -182,13 +182,13 @@ function getCars(PDO $db, $id_car)
     }
 };
 $getCars = getCars($db, $id_car);
-dump($getCars);
+// dump($getCars);
 
 function updateCar(PDO $db, AltoRouter $router, $id_car)
 {
 
     if (!empty($_POST['ok'])) {
-        dump($_POST['ok']);
+        // dump($_POST['ok']);
         if (!empty($_POST['buydate'])) {
 
             $data = [
@@ -198,7 +198,8 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
             $sql = 'UPDATE car SET buyDate=:buyDate WHERE id_car=:id_car';
             $request = $db->prepare($sql);
             $result = $request->execute($data);
-        } else if (!empty($_POST['buykm'])) {
+        }
+        if (!empty($_POST['buykm'])) {
             // $email = $_SESSION['auth']['email'];
             // $id_user = $_SESSION['auth']['id_user'];
             // $_SESSION['auth'] = [
@@ -214,7 +215,8 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
             $sql = 'UPDATE car SET buykm=:buykm WHERE id_car=:id_car';
             $request = $db->prepare($sql);
             $result = $request->execute($data);
-        } else if (!empty($_POST['firstdate'])) {
+        }
+        if (!empty($_POST['firstdate'])) {
             $data = [
                 'id_car' => $id_car,
                 'firstdate'  => $_POST['firstdate'],
@@ -222,7 +224,8 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
             $sql = 'UPDATE car SET firstDate=:firstdate WHERE id_car=:id_car';
             $request = $db->prepare($sql);
             $result = $request->execute($data);
-        } else if (!empty($_POST['firstkm'])) {
+        }
+        if (!empty($_POST['firstkm'])) {
             $data = [
                 'id_car' => $id_car,
                 'firstkm'  => $_POST['firstkm'],
@@ -231,7 +234,10 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
             $request = $db->prepare($sql);
             $result = $request->execute($data);
         }
+        header('Location: ' . $router->generate('addinvoicecar'));
     }
+    // header('Refresh:' . 0.2);
+    // die();
 }
 
 updateCar($db,  $router, $id_car);

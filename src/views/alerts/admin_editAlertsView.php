@@ -4,9 +4,9 @@
         <h1 class='title'>Rappel</h1>
         <h6>Voici les dates d'entretien du véhicule pour les prochaines modifications</h6>
     </div>
-    <ul class='column'>
-        <?php if (!empty($alerts)) { ?>
-            <li>
+    <div class='column'>
+        <?php if (!empty($getControl)) { ?>
+            <div>
                 <table>
                     <tr>
                         <th colspan="2">Courroie de distribution</th>
@@ -20,25 +20,25 @@
                         <th>KM</th>
                     </tr>
                     <?php foreach ($getControl as $control) { ?>
-                        <?php foreach ($alerts as $alert) { ?>
-                            <?php foreach ($getOil as $oil) { ?>
-                                <?php foreach ($getTimingKm as $km) { ?>
-                                    <?php foreach ($getTimingDate as $date) { ?>
-                                        <tr>
-                                            <td><?= $km['km']; ?></td>
-                                            <td><?= date("d-m-Y", strtotime($date['dates'])) ?></td>
-                                            <td><?= date("d-m-Y", strtotime($control['datetechnical'])) ?></td>
-                                            <td><?= $oil['oil']; ?></td>
-                                        </tr>
-                                    <?php } ?>
+
+                        <?php foreach ($getOil as $oil) { ?>
+                            <?php foreach ($getTimingKm as $km) { ?>
+                                <?php foreach ($getTimingDate as $date) { ?>
+                                    <tr>
+                                        <td><?= $km['km']; ?></td>
+                                        <td><?= date("d-m-Y", strtotime($date['dates'])) ?></td>
+                                        <td><?= date("d-m-Y", strtotime($control['datetechnical'])) ?></td>
+                                        <td><?= $oil['oil']; ?></td>
+                                    </tr>
                                 <?php } ?>
                             <?php } ?>
+
                         <?php } ?>
                     <?php } ?>
                 </table>
-            </li>
+            </div>
         <?php } ?>
-    </ul>
+    </div>
 </div>
 
 
