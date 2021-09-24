@@ -1,22 +1,9 @@
 <?php get_header('statistics add', 'admin'); ?>
 
 <div class="statistics column">
-    <!-- <div class="contained column"> -->
     <h1 class='title'>Statistique</h1>
     <h6>Sélectionnez une période pour accéder aux données des frais</h6>
     <form action="" method="post">
-
-        <!-- <li>
-                <div class="column">
-                    <h3>Véhicule</h3>
-                    <select name="car" class='select'>
-                        <?php foreach ($cars as $car) { ?>
-                            <option value="<?= $car['id_car'] ?>"><?= $car['trademark'] ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-            </li> -->
-        <div>
             <div class="column">
                 <div class="column period">
                     <h3>Périodes</h3>
@@ -31,7 +18,6 @@
                     </select>
                 </div>
             </div>
-        </div>
         <div>
             <div class="column">
                 <input type='hidden' name="ok" value="ok">
@@ -40,6 +26,5 @@
         </div>
 
     </form>
-    <!-- </div> -->
 </div>
 <?php get_footer('admin'); ?>

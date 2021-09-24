@@ -1,5 +1,4 @@
 @import "color";
-
 .maintenance {
     background-color: $color-button-header;
     border-radius: 28px;
@@ -8,7 +7,7 @@
     margin-top: 200px;
     // margin-right: 7%;
     // margin-left: 7%;
-    // padding: 40px 0;
+    padding-bottom: 20px;
     width: 66%;
     @include shadow;
     .inputSpace {

@@ -11,19 +11,25 @@
     // padding: 40px 0;
     width: 59%;
     @include shadow;
-    .inputSpace {
-        margin-right: 20px;
+    @media only screen and(max-width:768px) {
+        .column {
+            .column {
+                .column {
+                    .row {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            }
+        }
     }
-    li {
-        margin: 25px 0;
+    .inputSpace {
+        // margin-right: 20px;
+    }
+    div {
+        margin: 10px 0;
     }
     .date {
-        margin-right: 20px;
-    }
-    .textTitleInput {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        text-align: center;
-        font-weight: bold;
+        margin: 0px 10px;
     }
 }

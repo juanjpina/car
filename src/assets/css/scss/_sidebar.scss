@@ -1,135 +1,156 @@
-.deleteInvoice {
-    width: 100%;
-    height: 250px;
-    border-radius: 28px;
-    background-color: $color-alert;
-    margin-top: 200px;
-}
-
-.conta {
-    justify-content: center;
-    width: 54%;
-    height: 100%;
-    margin-right: 19%;
-}
-
-.sidebarCompte {
-    margin-left: 7%;
-    padding-top: 200px;
-    width: 20%;
-    li {
-        margin-top: 10px;
-        .b-alert {
-            @include shadow;
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            flex-wrap: wrap;
-            color: $color-texto;
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            background-color: $color-alert;
-            img {
-                margin-left: 10px;
-            }
-            p {
-                margin-left: 15px;
-                text-align: left;
-            }
-            &:hover {
-                background-color: $color-alert;
-                opacity: 0.5;
-                transition: all 600ms ease;
-            }
-            &:active {
-                background-color: $color-history;
-                color: $color-history;
-                opacity: 1;
-            }
-        }
-    }
-}
-
-.sidebarAdmin {
-    margin-left: 7%;
-    margin-top: 120px;
-    width: 100%;
-    float: left;
-    // align-items: left;
-    ul {
+    .deleteInvoice {
         width: 100%;
-    }
-    li {
-        .column {
-            @media only screen and (max-width: 768px) {
-                .column {
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-wrap: wrap;
-                }
-            }
-        }
-
-        // display: block;
-        margin-top: 20px;
-        width: 100%;
-        .border {
-            @include shadow;
-            // display: flex;
-            // flex-direction: column;
-            justify-content: stretch; // align-items: center;
-            // flex-wrap: wrap;
-            color: $color-texto;
-            border-radius: 15px;
-            padding: 20px;
-            width: 100%;
-            img {
-                margin-bottom: 5px;
-            }
-            &:hover {
-                background-color: $color-alert;
-                opacity: 0.5;
-                transition: all 600ms ease;
-            }
-            &:active {
-                background-color: $color-history;
-                color: $color-history;
-                opacity: 1;
-            }
-
-            @media only screen and (max-width: 768px) {
-                width: 100%;
-                height: 70px;
-                padding: 10px 0px 0px 0px;
-                margin-top: 0px;
-
-                img {
-                    width: 25px;
-                    height: 25px;
-                }
-
-                p {
-                    font-size: 0.8em;
-                }
-                // justify-conte    nt: center;
-            }
-        }
-    }
-    .b-alert {
+        height: 250px;
+        border-radius: 28px;
         background-color: $color-alert;
+        margin-top: 200px;
     }
-    .b-invoice {
-        background-color: $color-invoice;
+    
+    .conta {
+        justify-content: center;
+        width: 54%;
+        height: 100%;
+        margin-right: 19%;
     }
-    .b-statistic {
-        background-color: $color-statistic;
+    
+    .sidebarCompte {
+        margin-left: 7%;
+        padding-top: 200px;
+        width: 100%;
+        float: left;
+        @media only screen and(max-width: 873px) {
+            width: 100%;
+            margin-left: 1%;
+        }
+        @media only screen and(max-width: 1400px) {}
+        li {
+            margin-top: 10px;
+            .b-alert {
+                align-items: center;
+                background-color: $color-alert;
+                border-radius: 15px;
+                color: $color-texto;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: start;
+                padding: 20px;
+                width: 100%;
+                @include shadow;
+                @media only screen and(max-width: 873px) {
+                    flex-direction: column;
+                    flex-direction: wrap;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    padding: 5px;
+                    height: 75px;
+                    width: 75px;
+                }
+                img {
+                    margin-left: 10px;
+                    @media only screen and(max-width: 873px) {
+                        height: 15px;
+                        width: 15px;
+                        margin-left: 0px;
+                    }
+                }
+                p {
+                    margin-left: 15px;
+                    text-align: left;
+                    @media only screen and(max-width: 873px) {
+                        font-size: 0.6em;
+                        margin-left: 0px;
+                        text-align: center;
+                    }
+                }
+                &:hover {
+                    background-color: $color-alert;
+                    opacity: 0.5;
+                    transition: all 600ms ease;
+                }
+                &:active {
+                    background-color: $color-history;
+                    color: $color-history;
+                    opacity: 1;
+                }
+            }
+        }
     }
-    .b-history {
-        background-color: $color-history;
+    
+    .sidebarAdmin {
+        margin-left: 7%;
+        margin-top: 120px;
+        width: 100%;
+        float: left;
+        // align-items: left;
+        ul {
+            width: 100%;
+        }
+        li {
+            .column {
+                @media only screen and (max-width: 768px) {
+                    .column {
+                        justify-content: center;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+            // display: block;
+            margin-top: 20px;
+            width: 100%;
+            .border {
+                @include shadow;
+                // display: flex;
+                // flex-direction: column;
+                justify-content: stretch; // align-items: center;
+                // flex-wrap: wrap;
+                color: $color-texto;
+                border-radius: 15px;
+                padding: 20px;
+                width: 100%;
+                img {
+                    margin-bottom: 5px;
+                }
+                &:hover {
+                    background-color: $color-alert;
+                    opacity: 0.5;
+                    transition: all 600ms ease;
+                }
+                &:active {
+                    background-color: $color-history;
+                    color: $color-history;
+                    opacity: 1;
+                }
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    height: 70px;
+                    padding: 10px 0px 0px 0px;
+                    margin-top: 0px;
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                    p {
+                        font-size: 0.8em;
+                    }
+                    // justify-conte    nt: center;
+                }
+            }
+        }
+        .b-alert {
+            background-color: $color-alert;
+        }
+        .b-invoice {
+            background-color: $color-invoice;
+        }
+        .b-statistic {
+            background-color: $color-statistic;
+        }
+        .b-history {
+            background-color: $color-history;
+        }
+        .b-setting {
+            background-color: $color-button-header;
+        }
     }
-    .b-setting {
-        background-color: $color-button-header;
-    }
-}

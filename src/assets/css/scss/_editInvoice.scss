@@ -9,7 +9,19 @@
     // padding: 50px 0;
     width: 66%;
     @include shadow;
-
+    .column {
+        div {
+            margin-bottom: 10px;
+        }
+    }
+    .tabReponsive {
+        @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+        }
+        @media only screen and (max-width:1400px) {
+            overflow-x: auto;
+        }
+    }
     li {
         margin: 40px 0;
     }

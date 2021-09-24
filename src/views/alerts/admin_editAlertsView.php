@@ -6,7 +6,8 @@
     </div>
     <div class='column'>
         <?php if (!empty($getControl)) { ?>
-            <div>
+            <div class='tbl'>
+
                 <table>
                     <tr>
                         <th colspan="2">Courroie de distribution</th>
@@ -20,7 +21,7 @@
                         <th>KM</th>
                     </tr>
                     <?php foreach ($getControl as $control) { ?>
-
+                        
                         <?php foreach ($getOil as $oil) { ?>
                             <?php foreach ($getTimingKm as $km) { ?>
                                 <?php foreach ($getTimingDate as $date) { ?>
@@ -30,16 +31,17 @@
                                         <td><?= date("d-m-Y", strtotime($control['datetechnical'])) ?></td>
                                         <td><?= $oil['oil']; ?></td>
                                     </tr>
+                                    <?php } ?>
+                                    <?php } ?>
+                                    
+                                    <?php } ?>
+                                    <?php } ?>
+                                </table>
+                            </div>
+                                
                                 <?php } ?>
-                            <?php } ?>
-
-                        <?php } ?>
-                    <?php } ?>
-                </table>
-            </div>
-        <?php } ?>
-    </div>
-</div>
-
-
-<?php get_footer('admin'); ?>
+                            </div>
+                        </div>
+                        
+                        
+                        <?php get_footer('admin'); ?>

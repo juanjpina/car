@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda voiture</title>
+    <meta name="description" content="Agenda voiture">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" src/assets/css/main.css">
+    <style>
+        .card-box {
+            width: 150px;
+            height: 200px;
+            position: relative;
+            perspective: 1000px;
+            margin-right: 2em;
+        }
+
+        @media only screen and (max-width:768px) {
+            .card-box {
+                width: 100px;
+                height: 150px;
+                margin-right: 1em;
+            }
+
+            img {
+                width: 100px;
+                height: 150px;
+            }
+        }
+
+        .card-box:hover .card {
+            transform: rotateY(180deg);
+        }
+
+        img {
+            border-radius: 15px;
+        }
+
+        .card {
+            transform-style: preserve-3d;
+            transition: all 1s linear;
+        }
+
+        .front {
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .front.back {
+            transform: rotateY(180deg);
+        }
+
+        .containerMain {
+            margin-top: 10em;
+        }
+
+        */
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <div class="row">
+                <div class="logo">
+                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+                </div>
+                <div class="navegation">
+                    <ul class="nave">
+                        <li class="li_button">
+                            <a href="<?= $router->generate('login') ?>" id="as">
+                                <div class="button_admin">
+                                    <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                    <p>Se connecter</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="form-signin">
+        <?= alertDisplay(); ?>

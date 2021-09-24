@@ -7,10 +7,14 @@
     margin-left: 7%;
     width: 59%;
     @include shadow;
+    @media only screen and(max-width: 873px) {
+        width: 60%;
+        margin-left: 0%;
+    }
     .form {
         margin-top: 20px;
     }
-    li {
+    div {
         padding-bottom: 10px;
     }
 }

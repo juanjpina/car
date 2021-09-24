@@ -1,9 +1,9 @@
 .menuInvoice {
-    // @include row;
     margin-top: 400px;
-    // margin-left: 100px;
     width: 66%;
-
+    @media only screen and (max-width: 768px) {
+        margin-top: 200px;
+    }
     .row {
         justify-content: space-evenly;
         align-items: center;
@@ -18,6 +18,12 @@
         justify-content: center;
         border-radius: 15px;
         @include shadow;
+        @media only screen and (max-width: 768px) {
+            height: 70px;
+            width: 70px;
+            margin-bottom: 5px;
+        }
+
         &:hover {
             background-color: $color-alert;
             opacity: 0.5;
@@ -30,11 +36,15 @@
         }
     }
     p {
-        text-align: center;
-        // text-transform: uppercase;
         color: $color-texto;
+        // text-transform: uppercase;
+        margin-top: 15px;
         line-height: 1.2;
         letter-spacing: 1.2px;
-        margin-top: 15px;
+        text-align: center;
+        @media only screen and(max-width:768px) {
+            margin-top: 0;
+            font-size: 0.6em;
+        }
     }
 }

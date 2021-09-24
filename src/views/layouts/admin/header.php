@@ -45,7 +45,7 @@
 										} else {
 											echo '';
 										}; ?></p>
-						</p>
+						
 					</div>
 				</div>
 			</div>

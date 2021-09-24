@@ -1,0 +1,135 @@
+.deleteInvoice {
+    width: 100%;
+    height: 250px;
+    border-radius: 28px;
+    background-color: $color-alert;
+    margin-top: 200px;
+}
+
+.conta {
+    justify-content: center;
+    width: 54%;
+    height: 100%;
+    margin-right: 19%;
+}
+
+.sidebarCompte {
+    margin-left: 7%;
+    padding-top: 200px;
+    width: 20%;
+    li {
+        margin-top: 10px;
+        .b-alert {
+            @include shadow;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            flex-wrap: wrap;
+            color: $color-texto;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            background-color: $color-alert;
+            img {
+                margin-left: 10px;
+            }
+            p {
+                margin-left: 15px;
+                text-align: left;
+            }
+            &:hover {
+                background-color: $color-alert;
+                opacity: 0.5;
+                transition: all 600ms ease;
+            }
+            &:active {
+                background-color: $color-history;
+                color: $color-history;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.sidebarAdmin {
+    margin-left: 7%;
+    margin-top: 120px;
+    width: 100%;
+    float: left;
+    // align-items: left;
+    ul {
+        width: 100%;
+    }
+    li {
+        .column {
+            @media only screen and (max-width: 768px) {
+                .column {
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
+        // display: block;
+        margin-top: 20px;
+        width: 100%;
+        .border {
+            @include shadow;
+            // display: flex;
+            // flex-direction: column;
+            justify-content: stretch; // align-items: center;
+            // flex-wrap: wrap;
+            color: $color-texto;
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            img {
+                margin-bottom: 5px;
+            }
+            &:hover {
+                background-color: $color-alert;
+                opacity: 0.5;
+                transition: all 600ms ease;
+            }
+            &:active {
+                background-color: $color-history;
+                color: $color-history;
+                opacity: 1;
+            }
+
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+                height: 70px;
+                padding: 10px 0px 0px 0px;
+                margin-top: 0px;
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                p {
+                    font-size: 0.8em;
+                }
+                // justify-conte    nt: center;
+            }
+        }
+    }
+    .b-alert {
+        background-color: $color-alert;
+    }
+    .b-invoice {
+        background-color: $color-invoice;
+    }
+    .b-statistic {
+        background-color: $color-statistic;
+    }
+    .b-history {
+        background-color: $color-history;
+    }
+    .b-setting {
+        background-color: $color-button-header;
+    }
+}

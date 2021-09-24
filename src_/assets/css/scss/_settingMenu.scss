@@ -1,0 +1,41 @@
+.menuSetting {
+    // background-color: $color-button-header;
+    border-radius: 28px;
+    margin-top: 400px;
+    width: 66%;
+    // @include shadow;
+
+    li {
+        margin: 0 25px;
+        .b-alert {
+            align-items: center;
+            background-color: $color-button-header;
+            border-radius: 15px;
+            color: $color-texto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 120px;
+            justify-content: space-evenly;
+            width: 120px;
+            @include shadow;
+            img {
+                // margin-left: 10px;
+            }
+            p {
+                // margin-left: 15px;
+                text-align: center;
+            }
+            &:hover {
+                background-color: $color-alert;
+                opacity: 0.5;
+                transition: all 600ms ease;
+            }
+            &:active {
+                background-color: $color-history;
+                color: $color-history;
+                opacity: 1;
+            }
+        }
+    }
+}

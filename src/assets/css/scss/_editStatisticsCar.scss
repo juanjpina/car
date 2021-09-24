@@ -5,32 +5,28 @@
     color: $color-texto;
     height: 100%;
     margin-top: 200px;
-    // margin-right: 0px;
-    // margin-left: 100px;
     width: 66%;
+    padding-bottom: 20px;
     @include shadow;
-
+    .liStatis {
+        @media only screen and(max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    }
     .button {
         @include shadow;
         &:hover {
-            // opacity: 0.8;
             color: $color-history;
         }
     }
-    .title {
-        // margin-top: 30px;
+    .column {
+        .right {
+            margin: 0 px 30px;
+        }
     }
-    .liStatis {
-        // margin-top: 20px;
-        // margin-bottom: 20px;
-    }
-    .buttonStatis {
-        // margin-top: 50px;
-    }
-    .right {
-        margin-right: 20px;
-    }
-    li {
-        margin: 40px;
+    div {
+        margin-bottom: 10px;
     }
 }

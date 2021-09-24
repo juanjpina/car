@@ -1,7 +1,7 @@
 @import "color";
 .header {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: $color-header;
     position: fixed;
     box-shadow: 2px 5px 15px -2px $color-shadow;
@@ -12,8 +12,8 @@
         @media only screen and (max-width: 768px) {
             img {
                 width: 100px;
-                height: 50px;
-                margin-top: 30px;
+                height: 75px;
+                margin-top: 22px;
             }
         }
     }
@@ -23,10 +23,9 @@
     .row {
         align-items: start;
         @media only screen and (max-width: 768px) {
-            align-items: stretch;
-            justify-content: start;
+            // align-items: stretch;
+            // justify-content: start;
         }
-
         .admin {
             background-color: black;
         }
@@ -35,21 +34,17 @@
             padding-right: 50px;
             @media only screen and (max-width: 768px) {
                 // margin-top: 0px;
-                padding-right: 0px;
-                margin-top: 0px;
-                margin-left: 50px;
-                width: 50%;
+                // padding-right: 0px;
+                // margin-top: 0px;
+                // margin-left: 50px;
+                // width: 50%;
             }
-
             .nave {
                 @media only screen and (max-width: 768px) {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: start;
-                    align-items: center;
-                    flex-wrap: wrap;
+                    li {
+                        margin-right: 2%;
+                    }
                 }
-
                 .li_button {
                     @media only screen and (max-width: 768px) {
                         // margin-left: 50px;
@@ -79,7 +74,6 @@
                             width: 12px;
                             height: 15px;
                         }
-
                         p {
                             font-size: 10px;
                             margin-left: 8px;
@@ -87,7 +81,6 @@
                         height: 20px;
                         justify-content: start;
                         width: 110px;
-
                         // justify-content: center;
                     }
                 }
@@ -96,17 +89,16 @@
     }
     .bonjour {
         // padding-bottom: 3px;
-        width: 100%;
+        padding-top: 3px;
+        // width: 100%;
         p {
             width: 100%;
             text-align: left;
             padding-left: 0px;
             color: $color-texto;
-            padding-top: 15px;
             @media only screen and (max-width: 768px) {
-                padding-top: 2px;
                 font-size: 7px;
-                padding-left: 39px;
+                // padding-left: 39px;
             }
         }
     }

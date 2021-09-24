@@ -22,13 +22,13 @@
         @media only screen and (max-width:768px) {
             .card-box {
                 width: 100px;
-                height: 150px;
+                height: 133px;
                 margin-right: 1em;
             }
 
             img {
                 width: 100px;
-                height: 150px;
+                height: 133px;
             }
         }
 
@@ -67,7 +67,7 @@
         <nav>
             <div class="row">
                 <div class="logo">
-                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="170" height="128" alt=""></a>
                 </div>
                 <div class="navegation">
                     <ul class="nave">

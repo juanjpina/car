@@ -1,11 +1,24 @@
 .menuSetting {
-    // background-color: $color-button-header;
     border-radius: 28px;
     margin-top: 400px;
     width: 66%;
-    // @include shadow;
-
-    li {
+    @media only screen and (max-width: 768px) {
+        margin-top: 150px;
+        width: 47%;
+    }
+    @media only screen and (max-width: 1400px) {
+        // margin-top: 200px;
+    }
+    .row {
+        @media only screen and (max-width: 768px) {}
+    }
+    div {
+        @media only screen and (max-width: 768px) {
+            margin: 5px 5px;
+        }
+        @media only screen and (max-width: 1400px) {
+            margin: 5px 5px;
+        }
         margin: 0 25px;
         .b-alert {
             align-items: center;

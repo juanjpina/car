@@ -3,13 +3,10 @@
 <div class="menu-login column">
 	<div class="login">
 		<form action="" method="post">
-
-
 			<div class="mail column">
 				<label for='login'>Votre e-mail</label>
 				<?php $error = checkField('login', 'Votre email est vide.'); ?>
 				<input type="email" class="input email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
-
 				<p class="message"> <?= $error['message']; ?> </p>
 			</div>
 
@@ -32,8 +29,6 @@
 					<p class="parrafo-mot">Mot de passe oublié?</p>
 				</a>
 			</div>
-
-
 		</form>
 	</div>
 	<div class="column new">

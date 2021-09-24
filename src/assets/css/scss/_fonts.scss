@@ -10,7 +10,16 @@
 
 .title {
     font-family: "montserratExtra";
-    text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 1.1em 0em;
+    text-transform: uppercase;
+    @media only screen and (max-width: 768px) {
+        text-align: center;
+    }
+}
+
+h6 {
+    @media only screen and (max-width: 768px) {
+        text-align: center;
+    }
 }
