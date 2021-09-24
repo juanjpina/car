@@ -1129,6 +1129,12 @@ body {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media only screen and (max-width: 768px) {
+  .addInvoice .column .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .addInvoice li {
   margin: 40px 0;
 }
@@ -1205,18 +1211,13 @@ body {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media only screen and (max-width: 768px) {
+  .editInvoice .column {
+    overflow-x: auto;
+  }
+}
 .editInvoice .column div {
   margin-bottom: 10px;
-}
-@media only screen and (max-width: 768px) {
-  .editInvoice .tabReponsive {
-    overflow-x: auto;
-  }
-}
-@media only screen and (max-width: 1400px) {
-  .editInvoice .tabReponsive {
-    overflow-x: auto;
-  }
 }
 .editInvoice li {
   margin: 40px 0;
