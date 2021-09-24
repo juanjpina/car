@@ -991,11 +991,18 @@ body {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media only screen and (max-width: 768px) {
+  .history .column {
+    margin: 10px 0px;
+  }
+}
 .history div {
   padding: 10px 20px;
 }
-.history .data {
-  width: 100%;
+@media only screen and (max-width: 768px) {
+  .history div {
+    padding: 5px 0px;
+  }
 }
 .history .row {
   justify-content: center;
@@ -1318,7 +1325,7 @@ body {
   }
 }
 .menuSetting div {
-  margin: 0 25px;
+  margin: 0 10px;
 }
 @media only screen and (max-width: 768px) {
   .menuSetting div {

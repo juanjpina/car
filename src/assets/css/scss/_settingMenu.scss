@@ -10,7 +10,8 @@
         // margin-top: 200px;
     }
     .row {
-        @media only screen and (max-width: 768px) {}
+        @media only screen and (max-width: 768px) {
+        }
     }
     div {
         @media only screen and (max-width: 768px) {
@@ -19,7 +20,7 @@
         @media only screen and (max-width: 1400px) {
             margin: 5px 5px;
         }
-        margin: 0 25px;
+        margin: 0 10px;
         .b-alert {
             align-items: center;
             background-color: $color-button-header;

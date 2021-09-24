@@ -1,4 +1,4 @@
-<?php get_header('history add', 'admin');?>
+<?php get_header('history add', 'admin'); ?>
 <div class="history">
     <div class="column ">
         <h1 class='title'>Historique des frais</h1>
@@ -11,14 +11,14 @@
             <div class="column">
                 <h6>Frais</h6>
                 <select name="invoice" class='select'>
-                         <?php foreach ($invoice as $invo) {?>
-                                <option value="<?=$invo['invoice']?>"><?=$invo['type']?></option>
-                            <?php }?>
+                    <?php foreach ($invoice as $invo) { ?>
+                        <option value="<?= $invo['invoice'] ?>"><?= $invo['type'] ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
-            <div class='data'>
-                <div class="row">
+
+            <div class="row">
                 <div class="column space">
                     <h6>Périodes</h6>
                     <select name="period" class='select'>
@@ -29,24 +29,24 @@
                     </select>
                 </div>
                 <div class="column space">
-                            <label for="dateEnd">De la date</label>
-                            <input type="date" class='input se' name="dateEnd">
+                    <label for="dateEnd">De la date</label>
+                    <input type="date" class='input se' name="dateEnd">
                 </div>
                 <div class="column space">
-                            <label for="dateStart">À la Date</label>
-                            <input type="date" class='input se ' name="dateStart">
+                    <label for="dateStart">À la Date</label>
+                    <input type="date" class='input se ' name="dateStart">
                 </div> <!-- funcin con mensaje echo -->
-                
-                <div class="column">
-                    <input type='hidden' name="ok" value="ok">
-                    <button class='button' type="submit">Sauvegarder</button>
-                </div>
-            </div>
-       
 
-        </div>
+            </div>
+
+            <div class="column">
+                <input type='hidden' name="ok" value="ok">
+                <button class='button' type="submit">Sauvegarder</button>
+            </div>
+
+
     </form>
 
 </div>
 
-<?php get_footer('admin');?>
+<?php get_footer('admin'); ?>
