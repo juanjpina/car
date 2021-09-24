@@ -1,15 +1,9 @@
 <?php get_header('listed graphics', 'admin'); ?>
 
 <div class='listedGraphics'>
-    <div class='container column'>
-
+    <div class='column'>
         <h1 class="title">Résultat de la comparaison</h1>
     </div>
-
-    <!-- <div class="yearEnd">
-        <span>Année <?= $startY ?></span>
-        <span>Année <?= $endY ?></span>
-    </div> -->
     <div class="row">
 
         <div class='start'>
@@ -34,7 +28,7 @@
                     var options = {
                         title: 'Année<?= $startY ?>',
                         pieHole: 0.4,
-                        backgroundColor: '#bf9926'
+                        // backgroundColor: '#bf9926'
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
                     chart.draw(data, options);
@@ -65,7 +59,7 @@
                     var options = {
                         title: 'Année<?= $endY ?>',
                         pieHole: 0.4,
-                        backgroundColor: '#bf9926'
+                        // backgroundColor: '#bf9926'
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
                     chart.draw(data, options);
@@ -73,9 +67,6 @@
             </script>
             <div id="donutchart2" style="width: 500px; height: 300px;"></div>
         </div>
-
     </div>
-
-
 </div>
 <?php get_footer('admin') ?>

@@ -638,12 +638,12 @@ body {
   margin: 30px 0px;
 }
 @media only screen and (max-width: 768px) {
-  .alerts .tbl {
+  .alerts .column .tbl {
     overflow-x: auto;
   }
 }
 @media only screen and (max-width: 1400px) {
-  .alerts .tbl {
+  .alerts .column .tbl {
     overflow-x: auto;
   }
 }
@@ -843,13 +843,9 @@ body {
 }
 
 .listedGraphics {
-  background-color: #bf9926;
-  border-radius: 28px;
   height: 100%;
   margin-top: 200px;
   width: 66%;
-  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .listedGraphics .row .start {
   margin-bottom: 30px;
