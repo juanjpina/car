@@ -21,6 +21,8 @@
 				</div>
 				<div class="navegation">
 					<ul class="nave">
+
+
 						<li class="li_button">
 							<a href="<?= $router->generate('editUser') ?>" id="as">
 								<div class="button_admin">
@@ -29,6 +31,9 @@
 								</div>
 							</a>
 						</li>
+
+
+
 						<li class="li_button">
 							<a href="<?= $router->generate('logout') ?>">
 								<div class="button_admin">
@@ -37,6 +42,7 @@
 								</div>
 							</a>
 						</li>
+
 					</ul>
 					<div class="bonjour">
 						<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
@@ -45,7 +51,7 @@
 										} else {
 											echo '';
 										}; ?></p>
-						
+
 					</div>
 				</div>
 			</div>

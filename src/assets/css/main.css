@@ -224,6 +224,11 @@ body {
   padding-right: 50px;
 }
 @media only screen and (max-width: 768px) {
+  .header .row .navegation {
+    margin-top: 0px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .header .row .navegation .nave li {
     margin-right: 2%;
   }
@@ -295,6 +300,16 @@ body {
   display: flex;
   /* justify-content: flex-end; */
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .header .navegation ul {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 .header .li_button a {
   display: block;
