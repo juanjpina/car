@@ -1,15 +1,11 @@
 <?php get_header('edit statistics', 'admin'); ?>
 <div class="userStatistics">
-
     <div class="column">
         <h1 class='title'>Prévision des modifications</h1>
         <h6>Choisissez une année ou kilométrage pour la prochaine modification</h6>
     </div>
-
-
     <div class="column">
         <form action="" method="post">
-
             <?php foreach ($setting as $set) { ?>
                 <div class="liStatis column">
                     <p>La courroie de distribution</p>
@@ -26,8 +22,7 @@
                 </div>
                 <div class="liStatis">
                     <div class="column">
-                        
-                            <p>La vidange</p>
+                        <p>La vidange</p>
                         <div class="column">
                             <label for="kmOil">Km</label>
                             <input class="input" type="number" name="kmOil" value="<?= $set['oilchanges'] ?>">

@@ -1,7 +1,6 @@
 <?php get_header('history listed', 'admin'); ?>
 <div class="listedHistory">
     <div class="contained">
-
         <div class="column">
             <h1 class="title">Liste Facture <?= $typeInvoice[0]['type'] ?></h1>
             <div class='table'>
@@ -23,7 +22,6 @@
                         </tr>
                     <?php } ?>
                     <tr>
-
                         <th colspan="2">Montant total</th>
                         <td><?= $totalPeriod[0]['SUM(total)']; ?></td>
                     </tr>

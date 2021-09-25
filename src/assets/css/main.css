@@ -612,12 +612,15 @@ body {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  padding: 50px 0;
+  padding: 50px 0px;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 @media only screen and (max-width: 768px) {
+  .alerts {
+    padding: 10px 5px;
+  }
   .alerts h6 {
     text-align: center;
     padding: 0px 20px;
@@ -653,12 +656,13 @@ body {
   margin: 30px 0px;
 }
 @media only screen and (max-width: 768px) {
-  .alerts .column .tbl {
+  .alerts .column {
     overflow-x: auto;
+    margin: 10px 0px;
   }
 }
 @media only screen and (max-width: 1400px) {
-  .alerts .column .tbl {
+  .alerts .column {
     overflow-x: auto;
   }
 }
@@ -722,6 +726,7 @@ body {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
+  padding: 0px 2px;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -767,6 +772,9 @@ body {
   margin-top: 400px;
   width: 66%;
 }
+.menuStatistics .row {
+  justify-content: space-around;
+}
 @media only screen and (max-width: 768px) {
   .menuStatistics {
     margin-top: 200px;
@@ -774,7 +782,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .menuStatistics .container a {
-    margin: 2%;
+    margin: 1%;
   }
 }
 .menuStatistics .container .period,
@@ -824,11 +832,12 @@ body {
 }
 
 .totalStatistics {
-  width: 66%;
+  background-color: #bf9926;
+  border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  border-radius: 28px;
-  background-color: #bf9926;
+  padding: 0px 2px;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -963,10 +972,10 @@ body {
 .fuelStatistics {
   background-color: #bf9926;
   border-radius: 28px;
-  margin-top: 200px;
-  padding-bottom: 30px;
-  width: 66%;
   height: 100%;
+  margin-top: 200px;
+  padding: 0px 1px 30px 1px;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1122,6 +1131,9 @@ body {
   .userStatistics .liStatis .row {
     flex-direction: column;
   }
+  .userStatistics .liStatis p {
+    text-align: center;
+  }
 }
 .userStatistics .button {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -1226,6 +1238,7 @@ body {
   height: 100%;
   margin-top: 200px;
   width: 66%;
+  padding: 0px 2px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1297,12 +1310,18 @@ body {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
+  padding: 0px 2px;
   width: 66%;
 }
 .listedHistory .contained {
   height: 100%;
   margin-bottom: 1.5em;
   width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .listedHistory .contained {
+    overflow-x: auto;
+  }
 }
 .listedHistory .contained .table {
   height: 100%;
@@ -1323,7 +1342,7 @@ body {
   width: 66%;
 }
 .select-car div {
-  margin: 40px 0px;
+  margin: 25px 0px;
 }
 .select-car .select {
   width: 100%;
@@ -1365,6 +1384,27 @@ body {
   width: 120px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media only screen and (max-width: 768px) {
+  .menuSetting div .b-alert {
+    height: 70px;
+    width: 70px;
+  }
+  .menuSetting div .b-alert .img30 {
+    height: 20px;
+    width: 20px;
+  }
+  .menuSetting div .b-alert .img50 {
+    height: 23px;
+    width: 31px;
+  }
+  .menuSetting div .b-alert .img40 {
+    height: 25px;
+    width: 25px;
+  }
+  .menuSetting div .b-alert p {
+    font-size: 0.6em;
+  }
 }
 .menuSetting div .b-alert p {
   text-align: center;
