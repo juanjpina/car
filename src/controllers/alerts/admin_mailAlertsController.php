@@ -9,7 +9,7 @@ $headers .= "From: rdvoiture <red@rev.com>\r\n";
 /**
  * send an email to warn of the expiration of timming-belt (1 month)
  */
-$sql = "SELECT user.email, user.nickname, alert.*, car.trademark ,timingdate FROM alert, user, car WHERE alert.id_car=car.id_car AND car.id_user=user.id_user AND DATE_SUB( curdate(), INTERVAL 1 MONTH ) = timingdate ORDER BY timingdate ASC ";
+$sql = "SELECT user.email, user.nickname, car.trademark ,invtiming.date FROM invtiming, user, car WHERE  DATE_SUB( curdate(), INTERVAL 1 MONTH ) = invtiming.date AND invtiming.id_car = car.id_car AND car.id_user = user.id_user ";
 $request = $db->prepare($sql);
 $request->execute();
 $reponseA = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -29,7 +29,7 @@ if ($reponseA) {
 /**
  * send an email to warn of the expiration of technical control
  */
-$sql = "SELECT user.email, user.nickname, alert.*, car.trademark ,timingdate FROM alert, user, car WHERE alert.id_car=car.id_car AND car.id_user=user.id_user AND DATE_SUB( curdate(), INTERVAL 1 MONTH ) = controldate ORDER BY controldate ASC ";
+$sql = "SELECT user.email, car.trademark,user.nickname ,invtechnical.date FROM invtechnical, user, car WHERE  DATE_SUB( curdate(), INTERVAL 1 MONTH ) = invtechnical.date AND invtechnical.id_car = car.id_car AND car.id_user = user.id_user";
 $request = $db->prepare($sql);
 $request->execute();
 $reponseB = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +39,7 @@ if ($reponseB) {
         $sunjet = 'Contrôle technique';
         // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        // dump($mail);
+        dump($mail);
     }
 }
 
@@ -98,6 +98,6 @@ if ($reponseD) {
         $sunjet = 'Vidange';
         // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mail);
+        // dump($mail);
     }
 }
