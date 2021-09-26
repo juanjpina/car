@@ -66,10 +66,10 @@
     <header class="header">
         <nav>
             <div class="row">
-                <div class="logo">
-                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="170" height="128" alt=""></a>
+                <div class="logo column">
+                    <a href="#"><img class="logos" src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
                 </div>
-                <div class="navegation">
+                <div class="navegation column ">
                     <ul class="nave">
                         <li class="li_button">
                             <a href="<?= $router->generate('login') ?>" id="as">
