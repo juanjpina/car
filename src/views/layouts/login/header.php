@@ -16,7 +16,7 @@
 	<header class="header">
 		<nav>
 			<div class="logo">
-				<a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+				<a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
 			</div>
 		</nav>
 	</header>

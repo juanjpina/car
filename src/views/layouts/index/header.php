@@ -55,6 +55,7 @@
         }
 
         .containerMain {
+            padding: 0px 20px;
             margin-top: 10em;
         }
 

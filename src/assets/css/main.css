@@ -212,9 +212,6 @@ body {
     width: 150px;
   }
 }
-.header .row .navegation .nave .li_button a {
-  text-decoration: none;
-}
 .header .row .navegation .nave .li_button a .button_admin {
   align-items: center;
   background-color: #083540;
@@ -252,15 +249,18 @@ body {
   padding-left: 0px;
   color: #f2f2f2;
 }
+
 .menu-login {
+  align-items: center;
   height: 100%;
-  width: 100%;
+  justify-content: space-around;
   margin-top: 130px;
   max-width: 992px;
+  width: 100%;
 }
 @media only screen and (max-width: 768px) {
   .menu-login {
-    margin-top: 125px;
+    margin: 150px 20px 0px 40px;
   }
 }
 .menu-login .login {
@@ -301,6 +301,12 @@ body {
 .menu-login .newLogin form {
   padding: 40px 100px;
   width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .menu-login .login form,
+.menu-login .newLogin form {
+    padding: 40px 50px;
+  }
 }
 .menu-login .login .parrafo-compte,
 .menu-login .newLogin .parrafo-compte {

@@ -25,9 +25,6 @@
             .nave {
                 .li_button {
                     a {
-                        // width: 200px;
-                        // margin-right: 20px;
-                        text-decoration: none;
                         .button_admin {
                             align-items: center;
                             background-color: $color-button-header;
@@ -55,16 +52,7 @@
                                 }
                             }
                         }
-                        .button_admin img {
-                            // margin-left: 20px;
-                        }
                     }
-                }
-                .li_button a {
-                    // display: block;
-                    // width: 200px;
-                    // margin-right: 20px;
-                    // text-decoration: none;
                 }
             }
         } //row
@@ -75,10 +63,6 @@
                 text-align: left;
                 padding-left: 0px;
                 color: $color-texto;
-                @media only screen and (max-width: 768px) {
-                    // font-size: 7px;
-                    // padding-left: 39px;
-                }
             }
         }
     }
