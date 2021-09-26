@@ -264,6 +264,7 @@ footer nav ul {
 footer li {
   margin-left: auto;
   margin-right: auto;
+  font-size: 0.7em;
 }
 footer li div p {
   text-align: center;
@@ -1418,16 +1419,27 @@ footer li div p {
 .pswforget {
   background-color: #d9bd30;
   border-radius: 28px;
-  margin: 200px 250px 0 250px;
+  margin: 200px 500px 0 500px;
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.pswforget .container {
-  padding: 50px 0px;
+.pswforget .container form div {
+  margin: 20px 0px;
 }
-.pswforget .container li {
-  margin-bottom: 40px;
+.pswforget .container div {
+  margin: 20px 0px;
+}
+@media screen and (max-width: 768px) {
+  .pswforget .container {
+    padding: 50px 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .pswforget .container p {
+    font-size: 0.7em;
+    text-align: center;
+  }
 }
 
 .form-signin {
@@ -1564,7 +1576,9 @@ footer li div p {
 }
 
 .white {
-  width: 100%;
+  width: 66%;
+  height: 100%;
+  background-color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

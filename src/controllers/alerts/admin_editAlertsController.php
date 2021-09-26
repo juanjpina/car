@@ -118,9 +118,19 @@ function getControl(PDO $db)
         if ($result) {
             return $result;
         } else {
-            $varDate = array(array());
-            $varDate[0]["datetechnical"] = "2000-01-01";
-            return $varDate;
+            $data = [
+                'id_car' => $_SESSION['car']['id_car'],
+            ];
+            $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+            // $varDate = array(array());
+            // $varDate[0]["datetechnical"] = "2000-01-01";
+            return $result;
             // return array("datetechnical" => "0000-00-00");
         }
     };
@@ -146,9 +156,16 @@ function getOil(PDO $db)
         if ($result) {
             return $result;
         } else {
-            $varOil = array(array());
-            $varOil[0]["oil"] = "0";
-            return $varOil;
+            $data = [
+                'id_car' => $_SESSION['car']['id_car'],
+            ];
+            $sql = 'SELECT car.buyKm+setting.oilchanges as oil FROM car,setting WHERE car.id_car= :id_car limit 1';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            // $varOil = array(array());
+            // $varOil[0]["oil"] = "0";
+            return $result;
             // return array("oil" => "0");
         }
     }
@@ -175,9 +192,17 @@ function getTimingKm(PDO $db)
         if ($result) {
             return $result;
         } else {
-            $varKm = array(array());
-            $varKm[0]["km"] = "0";
-            return $varKm;
+            $data = [
+                'id_car' => $_SESSION['car']['id_car']
+            ];
+            $sql = 'SELECT car.buykm+setting.timingbeltKm as km FROM car, setting WHERE car.id_car= :id_car limit 1
+';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            // $varKm = array(array());
+            // $varKm[0]["km"] = "0";
+            return $result;
             // return array("km" => "0");
         }
     }
@@ -203,9 +228,17 @@ function getTimingDate(PDO $db)
         if ($result) {
             return $result;
         } else {
-            $varDate = array(array());
-            $varDate[0]["dates"] = "2000-01-01";
-            return $varDate;
+            $data = [
+                'id_car' => $_SESSION['car']['id_car']
+            ];
+            $sql = 'SELECT DATE_ADD(buyDate, INTERVAL setting.timingbeltDate year) as dates FROM car, setting WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1
+';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            // $varDate = array(array());
+            // $varDate[0]["dates"] = "2000-01-01";
+            return $result;
         }
     }
 };

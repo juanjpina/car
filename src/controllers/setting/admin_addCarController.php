@@ -55,12 +55,12 @@ if (!empty($_POST['trademark'])) {
     // $request = $db->prepare($sql);
     // $result = $request->execute($data);
 
-    $data = [
-        ':id_car' => (int)$id_car
-    ];
-    $sql = 'INSERT INTO alert (id_car, timingkm, timingdate, controldate,oilchangeskm) VALUES (:id_car, 0 , now(),  now(),0)';
-    $request = $db->prepare($sql);
-    $result = $request->execute($data);
+    // $data = [
+    //     ':id_car' => (int)$id_car
+    // ];
+    // $sql = 'INSERT INTO alert (id_car, timingkm, timingdate, controldate,oilchangeskm) VALUES (:id_car, 0 , now(),  now(),0)';
+    // $request = $db->prepare($sql);
+    // $result = $request->execute($data);
 
     $data = [
         ':id_car' => (int)$id_car

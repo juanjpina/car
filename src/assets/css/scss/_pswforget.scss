@@ -2,16 +2,30 @@
     background-color: $color-alert;
     border-radius: 28px;
     // margin-top: 200px;
-    margin: 200px 250px 0 250px;
+    margin: 200px 500px 0 500px;
     width: 100%;
     @include shadow;
     .container {
-        padding: 50px 0px;
-        // margin-right: auto;
-        // margin-left: auto;
+        form {
+            div {
+                margin: 20px 0px;
+            }
+        }
+        div {
+            margin: 20px 0px;
+        }
 
-        li {
-            margin-bottom: 40px;
+        // padding: 50px 0px;
+
+        @media screen and (max-width: 768px) {
+            padding: 50px 20px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            p {
+                font-size: 0.7em;
+                text-align: center;
+            }
         }
     }
 }

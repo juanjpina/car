@@ -1,5 +1,9 @@
 <?php get_header('white pages', 'admin'); ?>
-<div class="white"></div>
+<div class="white">
+
+    <!-- <input type="hidden" name="ok"> -->
+
+</div>
 
 
 

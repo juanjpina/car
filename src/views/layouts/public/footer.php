@@ -1,12 +1,7 @@
 </main>
 </body>
-
-
-
-
 <footer>
 	<nav>
-
 		<ul>
 			<li>
 				<div>
@@ -22,9 +17,7 @@
 				<div></div>
 			</li>
 		</ul>
-
 	</nav>
 </footer>
-
 
 </html>

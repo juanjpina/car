@@ -26,9 +26,9 @@ if (!isset($_SESSION['car']['id_car'])) {
      */
     function dbTiming(PDO $db, $id_car)
     {
-        $data = array(
+        $data = [
             ':id_car' => $id_car
-        );
+        ];
         $sql = 'SELECT date, km FROM invtiming where (id_car = :id_car) ORDER by date DESC LIMIT 1';
         $request = $db->prepare($sql);
         $request->execute($data);
@@ -36,16 +36,15 @@ if (!isset($_SESSION['car']['id_car'])) {
         if ($result) {
             return $result;
         } else {
-            $var = array(
-                [
-
-                    'date' => '2021-01-01',
-                    'km' => '0',
-
-
-                ]
-            );
-            return $var;
+            $data = [
+                ':id_car' => $id_car
+            ];
+            $sql = 'SELECT buyDate as date, buykm as km  FROM car where (id_car = :id_car)';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+            dump($result);
         }
     }
     $timing = dbTiming($db, $id_car);
@@ -129,11 +128,11 @@ if (!isset($_SESSION['car']['id_car'])) {
             if ($result) {
                 return $result;
             } else {
-
-                return ([
-                    'date' => '2021-01-01',
-                    'km' => '0'
-                ]);
+                $sql = 'SELECT buyDate as date, buykm as km FROM car where (id_car = :id_car) ';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
             }
         }
     }
