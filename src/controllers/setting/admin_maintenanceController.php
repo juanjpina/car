@@ -1,24 +1,8 @@
 <?php
 
-/**
- * Get of user car of the data base
- */
+$id_car = getSessionCar($db, $router);
 
-// $data = array(
-//     ':id_user' => $_SESSION['auth']['id_user']
-// );
-// // dump($data);
-// $sql = 'SELECT id_car FROM car where id_user = :id_user';
-// $request = $db->prepare($sql);
-// $request->execute($data);
-// $result = $request->fetchAll(PDO::FETCH_ASSOC);
-
-if (!isset($_SESSION['car']['id_car'])) {
-    header('Location: ' . $router->generate('addnewcar'));
-} else {
-    $id_car = $_SESSION['car']['id_car'];
-
-    $types = getSelect($db, 'type_data');
+if (!isset($id_car)) {
 
 
     /**
