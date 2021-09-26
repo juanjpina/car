@@ -203,6 +203,9 @@ body {
 .header a {
   text-decoration: none;
 }
+.header .row {
+  margin-right: 7%;
+}
 .header .row .logo {
   padding-left: 7.18%;
 }
