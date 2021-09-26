@@ -322,6 +322,12 @@ body {
 .menu-login .newLogin button {
   display: block;
 }
+@media screen and (max-width: 768px) {
+  .menu-login .login .submit,
+.menu-login .newLogin .submit {
+    width: 140px;
+  }
+}
 .menu-login .login .submit:active,
 .menu-login .newLogin .submit:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
@@ -333,6 +339,13 @@ body {
   opacity: 0.8;
   transition: all 600ms ease;
 }
+@media screen and (max-width: 768px) {
+  .menu-login .login p,
+.menu-login .newLogin p {
+    font-size: 0.8em;
+    text-align: center;
+  }
+}
 
 .menu-login .message {
   padding-top: 2px;
@@ -343,41 +356,57 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 200px;
 }
 .accueil .texto {
+  background-color: #bf9926;
+  border: 2px;
+  border-color: transparent;
+  border-radius: 28px;
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
-  width: 600px;
-  border-radius: 28px;
-  margin-top: 200px;
-  height: 200px;
-  border-color: transparent;
-  border: 2px;
-  background-color: #bf9926;
+  height: 100%;
+  padding: 10px;
+  width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .accueil .texto {
+    width: 80%;
+  }
 }
 .accueil .texto p {
   padding-top: 10px;
   padding-left: 10px;
   color: #000;
+  line-height: 25px;
 }
-.accueil .texto a {
-  color: #f2f2f2;
+@media screen and (max-width: 768px) {
+  .accueil .texto p {
+    font-size: 0.9em;
+  }
 }
 .accueil .continuer {
-  margin-left: auto;
-  display: flex;
-  background-color: #083540;
-  /* display: inline-block; */
-  /* float: right; */
-  height: 40px;
-  border-radius: 15px;
-  width: 50%;
-  /* text-align: center; */
   align-items: center;
-  justify-content: center;
-  margin-right: 30px;
+  background-color: #083540;
+  border-radius: 15px;
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+  display: flex;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  height: 40px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 30px;
+  padding: 5px;
+  width: 50%;
+}
+.accueil .continuer a {
+  color: #f2f2f2;
+}
+@media screen and (max-width: 768px) {
+  .accueil .continuer a {
+    text-align: center;
+    font-size: 0.8em;
+  }
 }
 
 .deleteInvoice {
@@ -1433,6 +1462,86 @@ body {
   margin-bottom: 5px;
   text-align: center;
   font-weight: bold;
+}
+
+.headerAdmin {
+  width: 100%;
+  height: 120px;
+  background-color: #d94625;
+  position: fixed;
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  text-decoration: none;
+}
+.headerAdmin a {
+  text-decoration: none;
+}
+@media only screen and (max-width: 768px) {
+  .headerAdmin .row .logos img {
+    height: 81px;
+    width: 150px;
+  }
+  .headerAdmin .row .logo {
+    padding-left: 7.18%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .headerAdmin .row .navegation .nave {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .headerAdmin .row .navegation .nave li {
+    margin: 5px 0px;
+  }
+}
+.headerAdmin .row .navegation .nave .li_button a .button_admin {
+  align-items: center;
+  background-color: #083540;
+  border-color: transparent;
+  border-radius: 15px;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1em;
+  height: 40px;
+  justify-content: space-evenly;
+  margin-right: 28px;
+  width: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .headerAdmin .row .navegation .nave .li_button a .button_admin {
+    height: 35px;
+    width: 125px;
+  }
+  .headerAdmin .row .navegation .nave .li_button a .button_admin img {
+    height: 25px;
+    width: 25px;
+  }
+  .headerAdmin .row .navegation .nave .li_button a .button_admin .disconnection {
+    height: 21px;
+    width: 15px;
+  }
+  .headerAdmin .row .navegation .nave .li_button a .button_admin p {
+    font-size: 0.7em;
+  }
+}
+.headerAdmin .row .bonjour {
+  padding-top: 3px;
+}
+.headerAdmin .row .bonjour p {
+  width: 100%;
+  text-align: left;
+  padding-left: 0px;
+  color: #f2f2f2;
+}
+@media screen and (max-width: 768px) {
+  .headerAdmin .row .bonjour p {
+    font-size: 0.6em;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

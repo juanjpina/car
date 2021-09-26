@@ -13,16 +13,14 @@
 </head>
 
 <body>
-	<header class="header">
+	<header class="headerAdmin">
 		<nav>
 			<div class="row">
-				<div class="logo">
-					<a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
+				<div class="logos">
+					<a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
 				</div>
 				<div class="navegation">
-					<ul class="nave">
-
-
+					<ul class="nave row">
 						<li class="li_button">
 							<a href="<?= $router->generate('editUser') ?>" id="as">
 								<div class="button_admin">
@@ -31,9 +29,6 @@
 								</div>
 							</a>
 						</li>
-
-
-
 						<li class="li_button">
 							<a href="<?= $router->generate('logout') ?>">
 								<div class="button_admin">
@@ -42,7 +37,6 @@
 								</div>
 							</a>
 						</li>
-
 					</ul>
 					<div class="bonjour">
 						<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
@@ -51,7 +45,6 @@
 										} else {
 											echo '';
 										}; ?></p>
-
 					</div>
 				</div>
 			</div>

@@ -62,8 +62,17 @@
             display: block;
         }
         .submit {
+            @media screen and (max-width: 768px) {
+                width: 140px;
+            }
             @include activeBlue;
             @include hoverBlue;
+        }
+        p {
+            @media screen and (max-width: 768px) {
+                font-size: 0.8em;
+                text-align: center;
+            }
         }
     }
 }

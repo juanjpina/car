@@ -1,6 +1,6 @@
 <?php
 
-AddUser($db, $router);
+searchEmail($db, $router);
 function searchEmail(PDO $db, AltoRouter $router)
 {
     if (!empty($_POST['email'])) {
@@ -25,9 +25,8 @@ function addUser(PDO $db, AltoRouter $router)
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
-
         if (strcmp($pass, $cpass) !== 0) {
-            header('Location: /newLoginView.php');
+            return 'Les mots de pass sont different';
         } else {
             if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
                 $sql = 'INSERT INTO user (email, password, nickname, id_car) VALUES (:email, :password, :nickname, :id_car)';

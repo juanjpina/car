@@ -13,44 +13,44 @@
 </head>
 
 <body>
-<header class="header">
-		<nav>
-			<div class="row">
-				<div class="logo">
-					<a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="150" alt=""></a>
-				</div>
-				<div class="navegation">
-					<ul class="nave">
-						<li class="li_button">
-							<a href="<?= $router->generate('editUser') ?>" id="as">
-								<div class="button_admin">
-									<img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
-									<p>Mon compte</p>
-								</div>
-							</a>
-						</li>
-						<li class="li_button">
-							<a href="<?= $router->generate('logout') ?>">
-								<div class="button_admin">
-									<img class="disconnection" src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
-									<p>Déconnexion</p>
-								</div>
-							</a>
-						</li>
-					</ul>
-					<div class="bonjour">
-						<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
-						<p class="par"> <?php if (isset($_SESSION['car']['trademark'])) {
-											echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
-										} else {
-											echo '';
-										}; ?></p>
-						
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
+    <header class="header">
+        <nav>
+            <div class="row">
+                <div class="logo">
+                    <a href="#"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
+                </div>
+                <div class="navegation">
+                    <ul class="nave">
+                        <li class="li_button">
+                            <a href="<?= $router->generate('editUser') ?>" id="as">
+                                <div class="button_admin">
+                                    <img src="/proyectocar/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                    <p>Mon compte</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="li_button">
+                            <a href="<?= $router->generate('logout') ?>">
+                                <div class="button_admin">
+                                    <img class="disconnection" src="/proyectocar/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
+                                    <p>Déconnexion</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="bonjour">
+                        <p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
+                        <p class="par"> <?php if (isset($_SESSION['car']['trademark'])) {
+                                            echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
+                                        } else {
+                                            echo '';
+                                        }; ?></p>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main>
         <nav>
             <div class="sidebarCompte">

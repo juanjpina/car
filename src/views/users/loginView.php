@@ -1,5 +1,4 @@
 <?php get_header('Se connecter', 'login') ?>
-
 <div class="menu-login column">
 	<div class="login">
 		<form action="" method="post">
@@ -9,21 +8,15 @@
 				<input type="email" class="input email<?= $error['class']; ?>" id="email" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
 				<p class="message"> <?= $error['message']; ?> </p>
 			</div>
-
-
 			<div class="div-password column">
 				<?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
 				<label for='login'>Mot de passe</label>
 				<input type="password" class=" input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value='Mot de passe'>
 				<?= $error['message']; ?>
 			</div>
-
-
 			<div class="column">
 				<button class="button submit" type="submit">Se connecter</button>
 			</div>
-
-
 			<div class="column">
 				<a href="<?= $router->generate('pswforget'); ?>">
 					<p class="parrafo-mot">Mot de passe oublié?</p>
