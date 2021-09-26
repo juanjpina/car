@@ -253,6 +253,22 @@ body {
   color: #f2f2f2;
 }
 
+footer {
+  margin: 10% 0%;
+  padding: 0 10%;
+}
+footer nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+footer li {
+  margin-left: auto;
+  margin-right: auto;
+}
+footer li div p {
+  text-align: center;
+}
+
 .menu-login {
   align-items: center;
   height: 100%;
