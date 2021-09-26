@@ -6,7 +6,7 @@ if (!empty($_POST['cars-ok'])) {
         'id_car' => $car,
         'trademark' => $listCar[0]['trademark'],
     ];
-    header('Location: ' . $router->generate('white'));
+    header('Location: ' . $router->generate('editalerts'));
     die();
 } else {
 };

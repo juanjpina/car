@@ -86,6 +86,6 @@ if (!empty($_POST['trademark'])) {
         'id_car' => (int)$result[0]['id_car'],
         'trademark' => $result[0]['trademark'],
     ];
-    header('Location: ' . $router->generate('white'));
+    header('Location: ' . $router->generate('editalerts'));
     die();
 }

@@ -1,5 +1,5 @@
 <?php get_header('white pages', 'admin'); ?>
-
+<div class="white"></div>
 
 
 
