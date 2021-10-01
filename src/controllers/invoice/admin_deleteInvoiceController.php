@@ -10,11 +10,7 @@ function delete(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
 
-            // alert('La catégorie a bien été supprimé.');
-            // header('Location: ' . $router->generate('whiteadmin'));
-            header('Location: ' . $router->generate('whiteadmin'));
-            // $router->generate('whiteadmin');
-            // die;
+            header('Location: ' . $router->generate('execution'));
         }
     }
 }

@@ -19,7 +19,6 @@ function invoiceUpdate(PDO $db)
           WHERE id= :id";
         $request = $db->prepare($sql);
         $result = $request->execute($data);
-        // echo '<script> alert("ok") </script>';
     }
 }
 invoiceUpdate($db);

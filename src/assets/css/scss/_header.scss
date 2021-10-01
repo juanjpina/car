@@ -7,13 +7,16 @@
     box-shadow: 2px 5px 15px -2px $color-shadow;
     filter: drop-shadow(2px 5px 15px -2px $color-shadow);
     text-decoration: none;
-
+    nav {
+        padding: 0% 3%;
+    }
     a {
         text-decoration: none;
     }
     .row {
-        margin-right: 7%;
-        .logo {
+        padding: 0% 3%;
+
+        .logos {
             padding-left: 7.18%;
             @media only screen and (max-width: 768px) {
                 .logos {

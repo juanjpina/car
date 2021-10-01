@@ -3,7 +3,7 @@
     <div class='container'>
         <div class="column">
 
-            <h1 class='title'>Resulta par moi de l'année<?= $_GET['year'] ?></h1>
+            <h1 class='title'>Resulta par moi de l'année <?= $_GET['year'] ?></h1>
         </div>
         <div class="column">
             <table>
@@ -24,10 +24,10 @@
                 <tr>
                     <?php foreach ($totales as $total) { ?>
                         <td><?= $total ?></td>
-                        <?php } ?>
+                    <?php } ?>
                 </tr>
             </table>
-        </div>    
+        </div>
     </div>
 </div>
 <?php get_footer('admin') ?>

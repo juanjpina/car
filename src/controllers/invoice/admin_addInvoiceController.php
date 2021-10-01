@@ -1,5 +1,5 @@
 <?php
-// $trademark = getTrademark($db);
+
 $invoice = getSelect($db, 'type_invoice');
 $id_car = getSessionCar($db, $router);
 if (
@@ -23,17 +23,12 @@ if (
             break;
         case 3:
             $res = insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
-            // maintenanceUpdate($db, 'technicalcontrol', $date, $km, $id_car);
-            //invtechnicalcontrol
             break;
         case 4:
             insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment);
-            // maintenanceUpdate($db, 'timingbelt', $date, $km, $id_car);
-            //invtiming
             break;
         case 5:
             insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment);
-            // maintenanceUpdate($db, 'oilchanges', $date, $km, $id_car);
 
             //invoil
             break;

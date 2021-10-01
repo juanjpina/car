@@ -26,9 +26,9 @@
                         ['Contrôle techinical', <?= $invtechnicalStart ?>],
                     ]);
                     var options = {
-                        title: 'Année<?= $startY ?>',
+                        title: 'Année <?= $startY ?>',
                         pieHole: 0.4,
-                        // backgroundColor: '#bf9926'
+
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
                     chart.draw(data, options);
@@ -57,9 +57,9 @@
                         ['Contrôle techinical', <?= $invtechnicalEnd ?>],
                     ]);
                     var options = {
-                        title: 'Année<?= $endY ?>',
+                        title: 'Année <?= $endY ?>',
                         pieHole: 0.4,
-                        // backgroundColor: '#bf9926'
+
                     };
                     var chart = new google.visualization.PieChart(document.getElementById('donutchart2'));
                     chart.draw(data, options);

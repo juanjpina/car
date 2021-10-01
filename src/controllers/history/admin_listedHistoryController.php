@@ -22,7 +22,6 @@ $typeInvoice = getInvoiceTitel($db, $_GET['invoice'], 'type_invoice');
  */
 function get(PDO $db, $database)
 {
-    // $database = $_GET['invoice'];
     $data = [
         'dateStart' => $_GET['dateStart'],
         'dateEnd' => $_GET['dateEnd'],
@@ -46,7 +45,6 @@ function get(PDO $db, $database)
  */
 function getPeriod(PDO $db, $database)
 {
-    // $database = $_GET['invoice'];
     $period = $_GET['period'];
     $data = [
         'id_car' => $_GET['id']
@@ -66,7 +64,6 @@ ORDER BY date ASC";
  */
 function getTotalPeriod(PDO $db, $database)
 {
-    // $database = $_GET['invoice'];
     $period = $_GET['period'];
     $data = [
         'id_car' => $_GET['id']
@@ -86,7 +83,6 @@ ORDER BY date ASC";
  */
 function getTotalDate(PDO $db, $database)
 {
-    // $database = $_GET['invoice'];
     $data = [
         'dateStart' => $_GET['dateStart'],
         'dateEnd' => $_GET['dateEnd'],

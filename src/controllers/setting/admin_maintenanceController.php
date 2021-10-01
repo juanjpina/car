@@ -2,7 +2,7 @@
 
 $id_car = getSessionCar($db, $router);
 
-if (!isset($id_car)) {
+if (!empty($id_car)) {
 
 
     /**
@@ -32,68 +32,6 @@ if (!isset($id_car)) {
         }
     }
     $timing = dbTiming($db, $id_car);
-    /**
-     * Get buy car of the data base
-     */
-    // function dbBuy(PDO $db, $id_car)
-    // {
-    //     if (!empty($id_car)) {
-    //         $data = array(
-    //             ':id_car' => $id_car
-    //         );
-    //         $sql = 'SELECT date, km FROM buy where (id_car = :id_car)';
-    //         $request = $db->prepare($sql);
-    //         $request->execute($data);
-    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    //         if ($result) {
-    //             return $result;
-    //         }
-    //     } else {
-    //         $data = array(
-    //             ':id_car' => $id_car
-    //         );
-    //         $sql = 'SELECT date, km FROM buy where (id_car = :id_car)';
-    //         $request = $db->prepare($sql);
-    //         $request->execute($data);
-    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    //         if ($result) {
-    //             return $result;
-    //         }
-    //     }
-    // }
-    // $buy = dbBuy($db, $id_car);
-
-    // dump('buy', $buy);
-    /**
-     * Get firts registration of the base data
-     */
-    // function dbFirst(PDO $db, $id_car)
-    // {
-    //     if (!empty($id_car)) {
-    //         $data = array(
-    //             ':id_car' => $id_car
-    //         );
-    //         $sql = 'SELECT date, km FROM firstregistration where (id_car = :id_car)';
-    //         $request = $db->prepare($sql);
-    //         $request->execute($data);
-    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    //         if ($result) {
-    //             return $result;
-    //         }
-    //     } else {
-    //         $data = array(
-    //             ':id_car' => $id_car
-    //         );
-    //         $sql = 'SELECT date, km FROM firstregistration where (id_car = :id_car)';
-    //         $request = $db->prepare($sql);
-    //         $request->execute($data);
-    //         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    //         if ($result) {
-    //             return $result;
-    //         }
-    //     }
-    // }
-    // $first = dbFirst($db, $id_car);
 
 
     /**
@@ -121,7 +59,6 @@ if (!isset($id_car)) {
         }
     }
     $technical = dbTechnical($db, $id_car);
-    // dump($technical);
 
 
     /**
@@ -148,27 +85,4 @@ if (!isset($id_car)) {
         }
     }
     $oil = dbOil($db, $id_car);
-
-
-    //     function insert_xx(PDO $db, $date, $km, $dataBase, $id_car)
-    //     {
-    //         $data = [
-    //             ':date'  => $date,
-    //             ':km' =>  (int)$km,
-    //             ':id_car' => (int)$id_car
-    //         ];
-    //         $sql = "UPDATE $dataBase SET date= :date, km= :km WHERE id_car= :id_car";
-    //         $request = $db->prepare($sql);
-    //         $result = $request->execute($data);
-    //         // echo '<script> alert("ok") </script>';
-    //     } //fin
-    //     if (!empty($_POST['date2']) && !empty($_POST['km2'])) {
-    //         insert_xx($db, $_POST['date2'], $_POST['km2'], 'oilchanges', $id_car);
-    //     }
-    //     if (!empty($_POST['date3']) && !empty($_POST['km3'])) {
-    //         insert_xx($db, $_POST['date3'], $_POST['km3'], 'timingbelt', $id_car);
-    //     }
-    //     if (!empty($_POST['date4']) && !empty($_POST['km4'])) {
-    //         insert_xx($db, $_POST['date4'], $_POST['km4'], 'technicalcontrol', $id_car);
-    //     }
 }

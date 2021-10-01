@@ -1,6 +1,4 @@
 <?php get_header('Alerts add', 'admin'); ?>
-
-
 <div class="alerts">
     <div class="contained">
 

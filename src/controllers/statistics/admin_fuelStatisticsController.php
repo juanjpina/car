@@ -12,7 +12,6 @@ if (!empty($id_car)) {
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    // dump($result);
 
     $kmStart = (int)$result[0]['km'];
     $kmTotal = (int)$result[0]['totalkm'];

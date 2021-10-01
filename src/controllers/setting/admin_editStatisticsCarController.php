@@ -4,6 +4,8 @@ $id_car = getSessionCar($db, $router);
 if (!empty($id_car)) {
 
 
+    $setting = dbSelect($db, $id_car, "setting");
+
     /**
      * in:$_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car
      * 
@@ -22,7 +24,6 @@ if (!empty($id_car)) {
           WHERE id_car= :id_car";
         $request = $db->prepare($sql);
         $result = $request->execute($data);
-        // echo '<script> alert("ok") </script>';
     } //fin
     if (!empty($_POST['dateTiming']) && !empty($_POST['kmTiming']) && !empty($_POST['kmOil'])) {
         dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car);

@@ -1,5 +1,4 @@
 <?php
-// $fuel = getSelect($db, 'fuel');
 
 if (!empty(getSessionCar($db, $router))) {
 

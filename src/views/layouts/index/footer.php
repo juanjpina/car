@@ -7,14 +7,11 @@
                 <div>
                     <p>
                         Copyright ©2021
+                    </p>
                 </div>
-                </p>
             </li>
             <li>
                 <div><a href="mailto:hege@example.com">hege@example.com</a></div>
-            </li>
-            <li>
-                <div></div>
             </li>
         </ul>
     </nav>

@@ -18,7 +18,7 @@ function login(PDO $db, AltoRouter $router)
 					'email' => $result->email,
 					'id_user'	=> $result->id_user,
 				];
-				header('Location: ' . $router->generate('selectcar'));
+				header('Location: ' . $router->generate('white'));
 				die();
 			}
 		}

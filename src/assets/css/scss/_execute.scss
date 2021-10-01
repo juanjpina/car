@@ -1,0 +1,15 @@
+.execute {
+    background-color: $color-alert;
+    border-radius: 28px;
+    // margin-top: 200px;
+    width: 100%;
+    margin-right: 100px;
+
+    // background-color: white;
+
+    @include shadow;
+    .banner {
+        color: $color-texto;
+        padding: 50px;
+    }
+}

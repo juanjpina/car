@@ -54,10 +54,8 @@
                                                                 'db' => $_POST['typeInvoice']
                                                             ]
                                                         ); ?>"><img src="/proyectocar/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
-                            <!-- </tr> -->
                         <?php } else { ?>
-                            <!-- <td class='icon'><a href="#"></a></td> -->
-                            <!-- <td class='icon'><a href="#"></a></td> -->
+
                         <?php  }; ?>
                     </tr>
                 <?php }; ?>

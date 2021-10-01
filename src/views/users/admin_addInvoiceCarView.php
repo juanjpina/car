@@ -40,7 +40,7 @@
             <div class="submit">
                 <div class="column">
                     <input type="hidden" name="ok" value="ok">
-                    <button type="submit" class="button">Confirmez les données</button>
+                    <button type="submit" class="button">Confirmez</button>
                 </div>
             </div>
         </form>

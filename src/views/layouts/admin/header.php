@@ -90,7 +90,7 @@
 						<a href="<?= $router->generate('settingmenu'); ?>">
 							<div class="column b-setting border">
 								<img src="/proyectocar/car/src/assets/images/history2.png" width="50" height="50" alt="">
-								<p>setting</p>
+								<p>Réglage</p>
 							</div>
 						</a>
 					</li>

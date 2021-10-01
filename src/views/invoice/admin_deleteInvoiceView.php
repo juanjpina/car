@@ -2,15 +2,15 @@
 <div class='conta column'>
     <div class="deleteInvoice">
         <form action="" method="post">
-            <ul class='column'>
-                <li>
-                    <label form='delete'>Êtes vous certain de vouloir supprimer définitivement ce facture ?</label>
+            <div class='column'>
+                <div>
+                    <label form='delete'>Êtes vous certain de vouloir supprimer définitivement ce frais?</label>
                     <input type="hidden" name="delete" value="ok">
-                </li>
-                <li>
+                </div>
+                <div>
                     <button class='button' type="submit">Je suis d' accord</button>
-                </li>
-            </ul>
+                </div>
+            </div>
         </form>
     </div>
 </div>

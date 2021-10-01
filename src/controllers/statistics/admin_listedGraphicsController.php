@@ -29,7 +29,6 @@ function total(PDO $db, $startYear, $totales, $invoice)
     $as = 0;
 
     for ($j = 1; $j <= 7; $j++) {
-        // for ($i = 1; $i <= 7; $i++) {
         $data = [
             'id_car' => $_GET['car'],
             'startYear' => $startYear
@@ -39,10 +38,9 @@ function total(PDO $db, $startYear, $totales, $invoice)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        // $as += (int)$result[0]['total'];
         $totales[$j] = (int)$result[0]['total'];
     }
-    // }
+
     return $totales;
 }
 
@@ -57,20 +55,19 @@ if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'
 
     $value = 100;
 
-    $invtollEnd = $endYear[1]; // ($value * $endYear[1]) / $totalEndYear;
-    $invfuelEnd = $endYear[2]; // ($value * $endYear[2]) / $totalEndYear;
-    $invoilEnd = $endYear[3]; // ($value * $endYear[3]) / $totalEndYear;
-    $invtimingEnd = $endYear[4]; // ($value * $endYear[4]) / $totalEndYear;
-    $invinsuranceEnd = $endYear[5]; // ($value * $endYear[5]) / $totalEndYear;
-    $invpneuEnd = $endYear[6]; //($value * $endYear[6]) / $totalEndYear;
-    $invtechnicalEnd = $endYear[7]; // ($value * $endYear[7]) / $totalEndYear;
+    $invtollEnd = $endYear[1];
+    $invfuelEnd = $endYear[2];;
+    $invoilEnd = $endYear[3];;
+    $invtimingEnd = $endYear[4];;
+    $invinsuranceEnd = $endYear[5];
+    $invpneuEnd = $endYear[6];
+    $invtechnicalEnd = $endYear[7];
 
-    $invtollStart =  $startYear[1];  //          (($value * $startYear[1]) / $totalStartYear);
-    $invfuelStart = $startYear[2]; //($value * $startYear[2]) / $totalStartYear;
-    $invoilStart = $startYear[3]; //($value * $startYear[3]) / $totalStartYear;
-    $invtimingStart = $startYear[4]; //($value * $startYear[4]) / $totalStartYear;
-    $invinsuranceStart = $startYear[5]; //($value * $startYear[5]) / $totalStartYear;
-    $invpneuStart = $startYear[6]; // ($value * $startYear[6]) / $totalStartYear;
-    $invtechnicalStart = $startYear[7]; //($value * $startYear[7]) / $totalStartYear;
+    $invtollStart =  $startYear[1];
+    $invfuelStart = $startYear[2];
+    $invoilStart = $startYear[3];
+    $invtimingStart = $startYear[4];
+    $invinsuranceStart = $startYear[5];
+    $invpneuStart = $startYear[6];
+    $invtechnicalStart = $startYear[7];
 }
-// dump($invtechnicalEnd);

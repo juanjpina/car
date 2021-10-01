@@ -22,7 +22,6 @@ function getListed(AltoRouter $router, $id_car)
                     'id' => $id_car
                 );
                 return  header('Location: ' . $router->generate('listedhistory', $data));
-                // return  $router->generate('listedhistory', $data);
             } else {
                 header('Refresh:' . 0.2);
                 die();
@@ -35,7 +34,6 @@ function getListed(AltoRouter $router, $id_car)
                 'dateEnd' => '0',
                 'id' => $id_car
             );
-            // return  $router->generate('listedhistory', $data);
             return  header('Location: ' . $router->generate('listedhistory', $data));
         }
     } else {

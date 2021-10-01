@@ -35,7 +35,7 @@
                 <div class="column space">
                     <label for="dateStart">À la Date</label>
                     <input type="date" class='input se ' name="dateStart">
-                </div> <!-- funcin con mensaje echo -->
+                </div>
 
             </div>
 
