@@ -1,4 +1,16 @@
-<?php $cars = getCar($db);
+<?php
+
+
+/**
+ * returns a list of cars
+ */
+$cars = getCar($db);
+
+
+/**
+ *creates a car session with the new car selection
+ * 
+ */
 if (!empty($_POST['cars-ok'])) {
     $car = $_POST['car'];
     $listCar = getCarId($db, $car, 'car');
@@ -9,4 +21,6 @@ if (!empty($_POST['cars-ok'])) {
     header('Location: ' . $router->generate('editalerts'));
     die();
 } else {
+    header('Location: ' . $router->generate('executionError'));
+    die();
 };

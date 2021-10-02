@@ -32,6 +32,5 @@ invoiceUpdate($db, $router);
  * filled with a select
  */
 if (!empty($_GET['id']) && !empty($_GET['db'])) {
-
     $getInvoice = getInvoice($db, $_GET['id'], $_GET['db']);
 }

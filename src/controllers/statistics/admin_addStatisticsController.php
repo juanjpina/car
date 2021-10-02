@@ -1,9 +1,11 @@
 <?php
 
-$cars = getCar($db);
+// $cars = getCar($db);
+$id_car = getSessionCar($db, $router);
 $invoices = getSelect($db, 'type_invoice');
 
-$id_car = getSessionCar($db, $router);
+
+
 /**
  * get listed invoice
  * @param 

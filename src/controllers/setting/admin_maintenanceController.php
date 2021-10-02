@@ -8,7 +8,7 @@ if (!empty($id_car)) {
     /**
      * Get timing-belt of the data base
      */
-    function dbTiming(PDO $db, $id_car)
+    function dbTiming(PDO $db, $id_car, AltoRouter $router)
     {
         $data = [
             ':id_car' => $id_car
@@ -27,17 +27,21 @@ if (!empty($id_car)) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
             dump($result);
         }
     }
-    $timing = dbTiming($db, $id_car);
+    $timing = dbTiming($db, $id_car, $router);
 
 
     /**
      * Get technical control of the base data
      */
-    function dbTechnical(PDO $db, $id_car)
+    function dbTechnical(PDO $db, $id_car, AltoRouter $router)
     {
         if (!empty($id_car)) {
             $data = array(
@@ -54,11 +58,15 @@ if (!empty($id_car)) {
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $result = $request->fetchAll(PDO::FETCH_ASSOC);
-                return $result;
+                if ($result) {
+                    return $result;
+                } else {
+                    header('Location: ' . $router->generate('executionError'));
+                }
             }
         }
     }
-    $technical = dbTechnical($db, $id_car);
+    $technical = dbTechnical($db, $id_car, $router);
 
 
     /**
