@@ -4,38 +4,57 @@ $invoice = getSelect($db, 'type_invoice');
 
 
 /**
- * get listed invoice
+ * collects the form data and sends it to list
  * @param 
- * @return array data base
+ * @return array link post
  */
 function getListed(AltoRouter $router, $id_car)
 {
+    $test = false;
     if (!empty($_POST['ok'])) {
         $string = strcmp($_POST['period'], '0');
         if ($string == 0) {
 
             if (!empty($_POST['dateStart']) && (!empty($_POST['dateEnd']))) {
-                $data = array(
-                    'invoice' => $_POST['invoice'],
-                    'period' => '0',
-                    'dateStart' => $_POST['dateStart'],
-                    'dateEnd' => $_POST['dateEnd'],
-                    'id' => $id_car
-                );
-                return  header('Location: ' . $router->generate('listedhistory', $data));
+                if (validateDate($_POST['dateEnd'], $format = 'Y-m-d')) {
+                    if (validateDate($_POST['dateStart'], $format = 'Y-m-d')) {
+                        $test = true;
+                    }
+                }
+
+                if ($test) {
+                    $data = array(
+                        'invoice' => $_POST['invoice'],
+                        'period' => '0',
+                        'dateStart' => $_POST['dateStart'],
+                        'dateEnd' => $_POST['dateEnd'],
+                        'id' => $id_car
+                    );
+                    return  header('Location: ' . $router->generate('listedhistory', $data));
+                } else {
+                    header('Location: ' . $router->generate('executionError'));
+                }
             } else {
                 header('Refresh:' . 0.2);
                 die();
             }
         } else {
-            $data = array(
-                'invoice' => $_POST['invoice'],
-                'period' => $_POST['period'],
-                'dateStart' => '0',
-                'dateEnd' => '0',
-                'id' => $id_car
-            );
-            return  header('Location: ' . $router->generate('listedhistory', $data));
+            if (in_range($_POST['period'], $value1 = 0, $value2 = 12)) {
+                // dump(2);    
+                $test = true;
+            }
+            if ($test) {
+                $data = array(
+                    'invoice' => $_POST['invoice'],
+                    'period' => $_POST['period'],
+                    'dateStart' => '0',
+                    'dateEnd' => '0',
+                    'id' => $id_car
+                );
+                return  header('Location: ' . $router->generate('listedhistory', $data));
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     } else {
         $data = array(

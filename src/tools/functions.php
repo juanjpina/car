@@ -1,5 +1,44 @@
 <?php
 
+
+/**
+ * function that checks if the date has a correct format
+ */
+function validateDate($date, $format = 'Y-m-d H:i:s')
+{
+	$d = DateTime::createFromFormat($format, $date);
+	return $d && $d->format($format) == $date;
+}
+
+
+/**
+ * check if it is number and if the number is between two values
+ */
+function in_range($number = 0, $value1 = 0, $value2 = 0)
+{
+	if (!is_numeric($number) or !is_numeric($value1) or !is_numeric($value2)) return false;
+	if ($value1 > $value2) {
+		$min = $value2;
+		$max = $value1;
+	} else {
+		$min = $value1;
+		$max = $value2;
+	}
+	if ($number <= $max and $number >= $min) return true;
+	return false;
+};
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * @param id-user
  * 
@@ -77,16 +116,20 @@ function getInvoice(PDO $db, $id, $database)
  * @param id, data base
  * @return array data base
  */
-function getCarId(PDO $db, $id, $database)
+function getCarId(PDO $db, $id, $database, AltoRouter $router)
 {
-	$data = array(
-		':id_car' => $id
-	);
-	$sql = "SELECT * FROM $database where id_car = :id_car";
-	$request = $db->prepare($sql);
-	$request->execute($data);
-	$result = $request->fetchAll(PDO::FETCH_ASSOC);
-	return $result;
+	try {
+		$data = array(
+			':id_car' => $id
+		);
+		$sql = "SELECT * FROM $database where id_car = :id_car";
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	} catch (PDOException $e) {
+		header('Location: ' . $router->generate('executionError'));
+	}
 }
 
 
@@ -210,6 +253,7 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 	$result = $request->execute($data);
 	if ($result) {
 		header('Location: ' . $router->generate('execution'));
+		die();
 	}
 };
 

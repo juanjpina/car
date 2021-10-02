@@ -5,22 +5,33 @@
  */
 function invoiceUpdate(PDO $db, AltoRouter $router)
 {
+    $test = false;
     if (!empty($_POST['date']) && !empty($_POST['total']) && !empty($_POST['km'])) {
-
-        $dataBase = $_GET['db'];
-        $data = [
-            ':id' => $_GET['id'],
-            ':date'  => $_POST['date'],
-            ':km' =>  (int)$_POST['km'],
-            ':total' =>  (int)$_POST['total'],
-            ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
-        ];
-        $sql = "UPDATE $dataBase SET date= :date, km= :km, total = :total, comment = :comment 
-          WHERE id= :id";
-        $request = $db->prepare($sql);
-        $result = $request->execute($data);
-        if ($result) {
-            header('Location: ' . $router->generate('execution'));
+        if (is_numeric($_POST['km'])) {
+            if (is_numeric($_POST['total'])) {
+                if (validateDate($_POST['date'], $format = 'Y-m-d')) {
+                    $test = true;
+                }
+            }
+        }
+        if ($test) {
+            $dataBase = $_GET['db'];
+            $data = [
+                ':id' => $_GET['id'],
+                ':date'  => $_POST['date'],
+                ':km' =>  (int)$_POST['km'],
+                ':total' =>  (int)$_POST['total'],
+                ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
+            ];
+            $sql = "UPDATE $dataBase SET date= :date, km= :km, total= :total, comment= :comment WHERE id= :id";
+            $request = $db->prepare($sql);
+            $result = $request->execute($data);
+            // dump($result);
+            if ($result) {
+                header('Location: ' . $router->generate('execution'));
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         } else {
             header('Location: ' . $router->generate('executionError'));
         }

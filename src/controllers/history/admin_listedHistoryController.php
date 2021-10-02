@@ -1,12 +1,14 @@
 <?php
 setlocale(LC_TIME, "spanish");
+$test = false;
+
 $string = strcmp($_GET['period'], '0');
 if ($string == 0) {
     $invoice = get($db, $_GET['invoice'], $router);
     $totalPeriod = getTotalDate($db, $_GET['invoice'], $router);
 } else {
     $invoice = getPeriod($db, $_GET['invoice'], $router);
-    $totalPeriod = getTotalPeriod($db, $_GET['invoice']);
+    $totalPeriod = getTotalPeriod($db, $_GET['invoice'], $router);
 }
 
 /**
@@ -22,18 +24,23 @@ $typeInvoice = getInvoiceTitel($db, $_GET['invoice'], 'type_invoice');
  */
 function get(PDO $db, $database, AltoRouter $router)
 {
-    $data = [
-        'dateStart' => $_GET['dateStart'],
-        'dateEnd' => $_GET['dateEnd'],
-        'id_car' => $_GET['id']
-    ];
-    $sql = "SELECT * FROM $database WHERE id_car = :id_car AND date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
-    $request = $db->prepare($sql);
-    $request->execute($data);
-    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    if ($result) {
-        return $result;
-    } else {
+    try {
+
+        $data = [
+            'dateStart' => $_GET['dateStart'],
+            'dateEnd' => $_GET['dateEnd'],
+            'id_car' => $_GET['id']
+        ];
+        $sql = "SELECT * FROM $database WHERE id_car = :id_car AND date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            header('Location: ' . $router->generate('executionError'));
+        }
+    } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
     }
 };
@@ -49,18 +56,23 @@ function get(PDO $db, $database, AltoRouter $router)
  */
 function getPeriod(PDO $db, $database, $router)
 {
-    $period = $_GET['period'];
-    $data = [
-        'id_car' => $_GET['id']
-    ];
-    $sql = "SELECT * FROM $database WHERE id_car= :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
+    try {
+
+        $period = $_GET['period'];
+        $data = [
+            'id_car' => $_GET['id']
+        ];
+        $sql = "SELECT * FROM $database WHERE id_car= :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
 ORDER BY date ASC";
-    $request = $db->prepare($sql);
-    $request->execute($data);
-    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    if ($result) {
-        return $result;
-    } else {
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            header('Location: ' . $router->generate('executionError'));
+        }
+    } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
     }
 };
@@ -72,19 +84,23 @@ ORDER BY date ASC";
  */
 function getTotalPeriod(PDO $db, $database, AltoRouter $router)
 {
-    $period = $_GET['period'];
-    $data = [
-        'id_car' => $_GET['id']
-    ];
+    try {
+        $period = $_GET['period'];
+        $data = [
+            'id_car' => $_GET['id']
+        ];
 
-    $sql = "SELECT SUM(total) FROM $database WHERE id_car = :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
+        $sql = "SELECT SUM(total) FROM $database WHERE id_car = :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
 ORDER BY date ASC";
-    $request = $db->prepare($sql);
-    $request->execute($data);
-    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    if ($result) {
-        return $result;
-    } else {
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            header('Location: ' . $router->generate('executionError'));
+        }
+    } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
     }
 }
@@ -95,18 +111,22 @@ ORDER BY date ASC";
  */
 function getTotalDate(PDO $db, $database, AltoRouter $router)
 {
-    $data = [
-        'dateStart' => $_GET['dateStart'],
-        'dateEnd' => $_GET['dateEnd'],
-        'id_car' => $_GET['id']
-    ];
-    $sql = "SELECT SUM(total) FROM $database WHERE id_car=:id_car AND date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
-    $request = $db->prepare($sql);
-    $request->execute($data);
-    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    if ($result) {
-        return $result;
-    } else {
+    try {
+        $data = [
+            'dateStart' => $_GET['dateStart'],
+            'dateEnd' => $_GET['dateEnd'],
+            'id_car' => $_GET['id']
+        ];
+        $sql = "SELECT SUM(total) FROM $database WHERE id_car=:id_car AND date BETWEEN :dateEnd AND :dateStart ORDER BY date DESC";
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result;
+        } else {
+            header('Location: ' . $router->generate('executionError'));
+        }
+    } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
     }
 }
