@@ -30,13 +30,18 @@ function getListe(AltoRouter $router, $id_car)
                 die();
             }
         } else {
-            $data = array(
-                'period' => $_POST['period'],
-                'dateStart' => '0',
-                'dateEnd' => '0',
-                'id' => $id_car
-            );
-            return  header('Location: ' . $router->generate('listedstatistics', $data));
+            if (is_numeric($_POST['period'])) {
+
+                $data = array(
+                    'period' => $_POST['period'],
+                    'dateStart' => '0',
+                    'dateEnd' => '0',
+                    'id' => $id_car
+                );
+                return  header('Location: ' . $router->generate('listedstatistics', $data));
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     } else {
         $data = array(

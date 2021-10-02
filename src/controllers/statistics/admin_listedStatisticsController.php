@@ -1,31 +1,32 @@
 <?php
 
+
+/**
+ * compares the value of select. and if there is an operational period enters the if.
+ */
 $string = strcmp($_GET['period'], '0');
-if ($string == 0) {
-} else {
-    $invtoll = getTotalPeriodCar($db, 'invtoll');
-    $invfuel = getTotalPeriodCar($db, 'invfuel');
-    $invinsurance =  getTotalPeriodCar($db, 'invinsurance');
-    $invoil =  getTotalPeriodCar($db, 'invoil');
-    $invpneu = getTotalPeriodCar($db, 'invpneu');
-    $invtechnical = getTotalPeriodCar($db, 'invtechnical');
-    $invtiming =  getTotalPeriodCar($db, 'invtiming');
+
+
+
+if ($string != 0) {
+    $invtoll = getTotalPeriodCar($db, 'invtoll', $router);
+    $invfuel = getTotalPeriodCar($db, 'invfuel', $router);
+    $invinsurance =  getTotalPeriodCar($db, 'invinsurance', $router);
+    $invoil =  getTotalPeriodCar($db, 'invoil', $router);
+    $invpneu = getTotalPeriodCar($db, 'invpneu', $router);
+    $invtechnical = getTotalPeriodCar($db, 'invtechnical', $router);
+    $invtiming =  getTotalPeriodCar($db, 'invtiming', $router);
 }
-
-
 
 $total =  (int)$invtoll[0]['SUM(total)'] + (int) $invfuel[0]['SUM(total)'] + (int) $invinsurance[0]['SUM(total)'] + (int) $invoil[0]['SUM(total)'] + (int) $invpneu[0]['SUM(total)'] + (int) $invtechnical[0]['SUM(total)'] +
     (int)$invtiming[0]['SUM(total)'];
-
-
-
 
 
 /**
  * sum the total of the table by periods
  * @return array 
  */
-function getTotalPeriodCar(PDO $db, $database)
+function getTotalPeriodCar(PDO $db, $database, AltoRouter $router)
 {
     // $database = $_GET['invoice'];
     $period = $_GET['period'];
@@ -38,21 +39,19 @@ ORDER BY date ASC";
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 }
-
-
-
-
-
-
 
 
 /**
  * sum the total of the table by periods
  * @return array 
  */
-function getTotalPeriod(PDO $db, $database)
+function getTotalPeriod(PDO $db, $database, AltoRouter $router)
 {
     // $database = $_GET['invoice'];
     $period = $_GET['period'];
@@ -63,5 +62,9 @@ ORDER BY date ASC";
     $request = $db->prepare($sql);
     $request->execute();
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 }
