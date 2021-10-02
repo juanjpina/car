@@ -12,6 +12,8 @@ function delete(PDO $db, AltoRouter $router)
             } catch (PDOException $e) {
                 header('Location: ' . $router->generate('executionError'));
             }
+
+            header('Location: ' . $router->generate('execution'));
         }
     }
 }

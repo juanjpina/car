@@ -29,8 +29,10 @@ if (!empty($id_car)) {
             header('Location: ' . $router->generate('executionError'));
         }
     } //fin
-    if (!empty($_POST['dateTiming']) && !empty($_POST['kmTiming']) && !empty($_POST['kmOil'])) {
-        dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car, $router);
-        // header("Refresh: 0.2");
-    }
+
+}
+
+if (!empty($_POST['dateTiming']) && !empty($_POST['kmTiming']) && !empty($_POST['kmOil'])) {
+    dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car, $router);
+    // header("Refresh: 0.2");
 }

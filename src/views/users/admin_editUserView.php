@@ -24,9 +24,10 @@
             </div>
             <div>
                 <div class="column form">
+                    <?php $verification = messagePassword('password'); ?>
                     <label for="password">Mot de passe</label>
                     <input type="password" class="input password" name="password" value="">
-
+                    <?= $verification; ?>
                 </div>
             </div>
             <div>
