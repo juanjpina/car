@@ -15,29 +15,29 @@ if (
 
     switch ((int)$invoice) {
         case 1:
-            insertInvoice($db, 'invtoll', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtoll', $id_car, $date, $km, $total, $comment, $router);
             break;
         case 2:
             //ibvfuel
-            insertInvoice($db, 'invfuel', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invfuel', $id_car, $date, $km, $total, $comment, $router);
             break;
         case 3:
-            $res = insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtechnical', $id_car, $date, $km, $total, $comment, $router);
             break;
         case 4:
-            insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invtiming', $id_car, $date, $km, $total, $comment, $router);
             break;
         case 5:
-            insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invoil', $id_car, $date, $km, $total, $comment, $router);
 
             //invoil
             break;
         case 6:
-            insertInvoice($db, 'invinsurance', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invinsurance', $id_car, $date, $km, $total, $comment, $router);
             //invinsurance
             break;
         case 7:
-            insertInvoice($db, 'invpneu', $id_car, $date, $km, $total, $comment);
+            insertInvoice($db, 'invpneu', $id_car, $date, $km, $total, $comment, $router);
             //invpneu
             break;
         default;

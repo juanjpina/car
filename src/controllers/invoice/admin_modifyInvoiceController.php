@@ -3,7 +3,7 @@
 /**
  * update form a data base
  */
-function invoiceUpdate(PDO $db)
+function invoiceUpdate(PDO $db, AltoRouter $router)
 {
     if (!empty($_POST['date']) && !empty($_POST['total']) && !empty($_POST['km'])) {
 
@@ -13,15 +13,18 @@ function invoiceUpdate(PDO $db)
             ':date'  => $_POST['date'],
             ':km' =>  (int)$_POST['km'],
             ':total' =>  (int)$_POST['total'],
-            ':comment' => !empty($_POST['COMMENT']) ? $_POST['COMMENT'] : ' ',
+            ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
         ];
         $sql = "UPDATE $dataBase SET date= :date, km= :km, total = :total, comment = :comment 
           WHERE id= :id";
         $request = $db->prepare($sql);
         $result = $request->execute($data);
+        if ($result) {
+            header('Location: ' . $router->generate('execution'));
+        }
     }
 }
-invoiceUpdate($db);
+invoiceUpdate($db, $router);
 
 /**
  * filled with a select

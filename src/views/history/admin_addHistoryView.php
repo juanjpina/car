@@ -4,7 +4,6 @@
         <h1 class='title'>Historique des frais</h1>
         <h6>Selon le type de frais sélectionnez une période ou date pour accéder aux données</h6>
     </div>
-
     <form action="" method="post">
         <div class="column">
 
@@ -16,8 +15,6 @@
                     <?php } ?>
                 </select>
             </div>
-
-
             <div class="row">
                 <div class="column space">
                     <h6>Périodes</h6>
@@ -36,17 +33,11 @@
                     <label for="dateStart">À la Date</label>
                     <input type="date" class='input se ' name="dateStart">
                 </div>
-
             </div>
-
             <div class="column">
                 <input type='hidden' name="ok" value="ok">
                 <button class='button' type="submit">Sauvegarder</button>
             </div>
-
-
     </form>
-
 </div>
-
 <?php get_footer('admin'); ?>

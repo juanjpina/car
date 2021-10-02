@@ -1,15 +1,19 @@
 .execute {
-    background-color: $color-alert;
-    border-radius: 28px;
     // margin-top: 200px;
     width: 100%;
-    margin-right: 100px;
+    margin-right: 600px;
 
     // background-color: white;
 
-    @include shadow;
     .banner {
+        background-color: $color-alert;
+        border-radius: 28px;
         color: $color-texto;
         padding: 50px;
+        width: 50%;
+        @include shadow;
+        h6 {
+            text-align: center;
+        }
     }
 }

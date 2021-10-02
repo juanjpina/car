@@ -175,13 +175,15 @@ function dbSelect(PDO $db, $id_car, $database)
 
 
 /**
- * @param data base
+ * returns a table
+ * 
+ * @param table
  * 
  * @return array data base.
  */
-function getSelect(PDO $db, $database)
+function getSelect(PDO $db, $table)
 {
-	$sql      = "SELECT * FROM $database";
+	$sql      = "SELECT * FROM $table";
 	$request = $db->prepare($sql);
 	$request->execute();
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -194,7 +196,7 @@ function getSelect(PDO $db, $database)
  * 
  * @return add database
  */
-function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment)
+function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment, AltoRouter $router)
 {
 	$data = [
 		':id_car' => (int)$id_car,
@@ -206,6 +208,9 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 	$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
 	$request = $db->prepare($sql);
 	$result = $request->execute($data);
+	if ($result) {
+		header('Location: ' . $router->generate('execution'));
+	}
 };
 
 

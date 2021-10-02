@@ -1601,16 +1601,20 @@ footer li div a {
 }
 
 .execute {
+  width: 100%;
+  margin-right: 600px;
+}
+.execute .banner {
   background-color: #d9bd30;
   border-radius: 28px;
-  width: 100%;
-  margin-right: 100px;
+  color: #f2f2f2;
+  padding: 50px;
+  width: 50%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.execute .banner {
-  color: #f2f2f2;
-  padding: 50px;
+.execute .banner h6 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

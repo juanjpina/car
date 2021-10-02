@@ -1,11 +1,17 @@
 <?php
-$typeInvoice = getSelect($db, 'type_invoice'); //select db invoice
+
 $id_car = getSessionCar($db, $router);
 
+
 /**
- * me da la lista de factuas de un tipo de factura
+ * returns the name of the expenses
  */
-function selectInvoice(PDO $db, $database, $id_car)
+$typeInvoice = getSelect($db, 'type_invoice');
+
+/**
+ * return the list of expenses
+ */
+function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 {
     if (!empty($_POST['submit'])) {
         if (!empty($id_car) && !empty($_POST['typeInvoice'])) {
@@ -20,27 +26,28 @@ function selectInvoice(PDO $db, $database, $id_car)
                 return $result;
             }
         } else {
-            return
-                array(
-                    [
-                        'id' => '0',
-                        'date' => '',
-                        'km' => '',
-                        'total' => '',
-                        'comment' => ''
-                    ]
-                );
+            header('Location: ' . $router->generate('executionError'));
+            // return
+            //     array(
+            //         [
+            //             'id' => '0',
+            //             'date' => '',
+            //             'km' => '',
+            //             'total' => '',
+            //             'comment' => ''
+            //         ]
+            //     );
         }
     }
 };
 
 
 
+
 if (!empty($_POST['typeInvoice'])) {
 
-    $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car);
+    $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car, $router);
 } else {
-
     $selectInvoice
         = array(
             [

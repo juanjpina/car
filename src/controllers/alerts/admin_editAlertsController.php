@@ -12,7 +12,7 @@ $id_car = getSessionCar($db, $router);
  * @return array
  * 
  */
-function getControl(PDO $db)
+function getControl(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
 
@@ -33,14 +33,15 @@ function getControl(PDO $db)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-            return $result;
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     };
 };
-$getControl = getControl($db);
+$getControl = getControl($db, $router);
 
 
 /**
@@ -48,7 +49,7 @@ $getControl = getControl($db);
  * @param PDO
  * @return array
  */
-function getOil(PDO $db)
+function getOil(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
         $data = [
@@ -68,18 +69,22 @@ function getOil(PDO $db)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     }
 };
-$getOil = getOil($db);
+$getOil = getOil($db, $router);
 
 /**
  * this function returns the mileage of the next distribution belt change
  * @param PDO
  * @return array
  */
-function getTimingKm(PDO $db)
+function getTimingKm(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
         $data = [
@@ -102,18 +107,22 @@ function getTimingKm(PDO $db)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     }
 };
-$getTimingKm = getTimingKm($db);
+$getTimingKm = getTimingKm($db, $router);
 
 /**
  *this function returns the date of the next distribution belt change
  *@param PDO
  *@return array 
  */
-function getTimingDate(PDO $db)
+function getTimingDate(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
         $data = [
@@ -135,8 +144,12 @@ function getTimingDate(PDO $db)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: ' . $router->generate('executionError'));
+            }
         }
     }
 };
-$getTimingDate = getTimingDate($db);
+$getTimingDate = getTimingDate($db, $router);

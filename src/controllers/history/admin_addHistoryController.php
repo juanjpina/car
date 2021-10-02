@@ -1,7 +1,9 @@
 <?php
-$invoice = getSelect($db, 'type_invoice');
-$cars = getCar($db);
 $id_car = getSessionCar($db, $router);
+$invoice = getSelect($db, 'type_invoice');
+// $cars = getCar($db);
+
+
 /**
  * get listed invoice
  * @param 
