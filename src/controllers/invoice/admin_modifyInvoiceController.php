@@ -21,6 +21,8 @@ function invoiceUpdate(PDO $db, AltoRouter $router)
         $result = $request->execute($data);
         if ($result) {
             header('Location: ' . $router->generate('execution'));
+        } else {
+            header('Location: ' . $router->generate('executionError'));
         }
     }
 }

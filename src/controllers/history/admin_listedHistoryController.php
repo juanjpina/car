@@ -2,10 +2,10 @@
 setlocale(LC_TIME, "spanish");
 $string = strcmp($_GET['period'], '0');
 if ($string == 0) {
-    $invoice = get($db, $_GET['invoice']);
-    $totalPeriod = getTotalDate($db, $_GET['invoice']);
+    $invoice = get($db, $_GET['invoice'], $router);
+    $totalPeriod = getTotalDate($db, $_GET['invoice'], $router);
 } else {
-    $invoice = getPeriod($db, $_GET['invoice']);
+    $invoice = getPeriod($db, $_GET['invoice'], $router);
     $totalPeriod = getTotalPeriod($db, $_GET['invoice']);
 }
 
@@ -20,7 +20,7 @@ $typeInvoice = getInvoiceTitel($db, $_GET['invoice'], 'type_invoice');
  * @param PDO
  * @return array data base from between date 
  */
-function get(PDO $db, $database)
+function get(PDO $db, $database, AltoRouter $router)
 {
     $data = [
         'dateStart' => $_GET['dateStart'],
@@ -31,7 +31,11 @@ function get(PDO $db, $database)
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 };
 
 
@@ -43,7 +47,7 @@ function get(PDO $db, $database)
  * 
  * @return array data base from period
  */
-function getPeriod(PDO $db, $database)
+function getPeriod(PDO $db, $database, $router)
 {
     $period = $_GET['period'];
     $data = [
@@ -54,7 +58,11 @@ ORDER BY date ASC";
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 };
 
 
@@ -62,7 +70,7 @@ ORDER BY date ASC";
  * sum the total of the table by periods
  * @return array 
  */
-function getTotalPeriod(PDO $db, $database)
+function getTotalPeriod(PDO $db, $database, AltoRouter $router)
 {
     $period = $_GET['period'];
     $data = [
@@ -74,14 +82,18 @@ ORDER BY date ASC";
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 }
 
 /**
  * sum the total of the table by dates
  * @return array 
  */
-function getTotalDate(PDO $db, $database)
+function getTotalDate(PDO $db, $database, AltoRouter $router)
 {
     $data = [
         'dateStart' => $_GET['dateStart'],
@@ -92,5 +104,9 @@ function getTotalDate(PDO $db, $database)
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
+    if ($result) {
+        return $result;
+    } else {
+        header('Location: ' . $router->generate('executionError'));
+    }
 }

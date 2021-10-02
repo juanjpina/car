@@ -45,7 +45,6 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 
 
 if (!empty($_POST['typeInvoice'])) {
-
     $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car, $router);
 } else {
     $selectInvoice
