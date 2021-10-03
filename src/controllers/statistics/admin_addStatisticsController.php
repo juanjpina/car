@@ -40,7 +40,7 @@ function getListe(AltoRouter $router, $id_car)
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                // header('Location: ' . $router->generate('executionError'));
             }
         }
     } else {

@@ -113,6 +113,8 @@ function getInvoice(PDO $db, $id, $database)
 }
 
 /**
+ * 
+ * returns the data from the car table
  * @param id, data base
  * @return array data base
  */
@@ -120,9 +122,10 @@ function getCarId(PDO $db, $id, $database, AltoRouter $router)
 {
 	try {
 		$data = array(
-			':id_car' => $id
+			':id_car' => $id,
+			':id_user' => $_SESSION['auth']['id_user']
 		);
-		$sql = "SELECT * FROM $database where id_car = :id_car";
+		$sql = "SELECT * FROM $database where id_car = :id_car AND id_user=:id_user";
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -235,25 +238,27 @@ function getSelect(PDO $db, $table)
 
 
 /**
+ * insert data into the expenditure table
+ * 
  * @param database, id_car, $date, $km, $total, $comment
  * 
  * @return add database
  */
 function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment, AltoRouter $router)
 {
-	$data = [
-		':id_car' => (int)$id_car,
-		':date' => $date,
-		':km' => (int)$km,
-		':total' => (int)$total,
-		':comment' => $comment
-	];
-	$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
-	$request = $db->prepare($sql);
-	$result = $request->execute($data);
-	if ($result) {
+	try {
+		$data = [
+			':id_car' => (int)$id_car,
+			':date' => $date,
+			':km' => (int)$km,
+			':total' => (int)$total,
+			':comment' => $comment
+		];
+		$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
+		$request = $db->prepare($sql);
+		$result = $request->execute($data);
+	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('execution'));
-		die();
 	}
 };
 

@@ -33,6 +33,6 @@ if (!empty($id_car)) {
             $resultCost = round($resultKm / $totalCost, 2);
         };
     } else {
-        header('Location: ' . $router->generate('executionError'));
+        // header('Location: ' . $router->generate('executionError'));
     }
 };

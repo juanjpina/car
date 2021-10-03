@@ -7,8 +7,6 @@ if (!empty(getSessionCar($db, $router))) {
 
         $id_car = $_SESSION['car']['id_car'];
         try {
-
-
             $data = [
                 ':id_car' => $id_car,
                 ':km' => (int)$_POST['km'],

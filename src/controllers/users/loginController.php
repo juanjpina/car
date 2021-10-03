@@ -22,9 +22,9 @@ function login(PDO $db, AltoRouter $router)
 				die();
 			}
 		}
-		if (empty($_SESSION['auth'])) {
-			alert('Merci de compléter les informations');
-		}
+		// if (empty($_SESSION['auth'])) {
+		// 	alert('Merci de compléter les informations');
+		// }
 	}
 }
 

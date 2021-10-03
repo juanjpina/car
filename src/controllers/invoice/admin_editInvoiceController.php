@@ -15,18 +15,27 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 {
     if (!empty($_POST['submit'])) {
         if (!empty($id_car) && !empty($_POST['typeInvoice'])) {
-            $data = array(
-                'id_car' => (int)$id_car,
-            );
-            $sql = "SELECT * FROM $database WHERE id_car= :id_car";
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
+            try {
+                $data = array(
+                    'id_car' => (int)$id_car,
+                );
+                $sql = "SELECT * FROM $database WHERE id_car= :id_car";
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                $request->closeCursor();
+                if ($result) {
+                    return $result;
+                } else {
+                    // header('Location: ' . $router->generate('executionError'));
+                }
+            } catch (Exception $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
             }
-        } else {
-            header('Location: ' . $router->generate('executionError'));
+
+
+            // } else {
             // return
             //     array(
             //         [
@@ -37,10 +46,10 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
             //             'comment' => ''
             //         ]
             //     );
+            // }
         }
     }
-};
-
+}
 
 
 
@@ -57,4 +66,4 @@ if (!empty($_POST['typeInvoice'])) {
                 'comment' => ''
             ]
         );
-}
+};

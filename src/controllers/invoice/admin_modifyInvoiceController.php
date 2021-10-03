@@ -15,21 +15,24 @@ function invoiceUpdate(PDO $db, AltoRouter $router)
             }
         }
         if ($test) {
-            $dataBase = $_GET['db'];
-            $data = [
-                ':id' => $_GET['id'],
-                ':date'  => $_POST['date'],
-                ':km' =>  (int)$_POST['km'],
-                ':total' =>  (int)$_POST['total'],
-                ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
-            ];
-            $sql = "UPDATE $dataBase SET date= :date, km= :km, total= :total, comment= :comment WHERE id= :id";
-            $request = $db->prepare($sql);
-            $result = $request->execute($data);
-            // dump($result);
-            if ($result) {
-                header('Location: ' . $router->generate('execution'));
-            } else {
+            try {
+                $dataBase = $_GET['db'];
+                $data = [
+                    ':id' => $_GET['id'],
+                    ':date'  => $_POST['date'],
+                    ':km' =>  (int)$_POST['km'],
+                    ':total' =>  (int)$_POST['total'],
+                    ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
+                ];
+                $sql = "UPDATE $dataBase SET date= :date, km= :km, total= :total, comment= :comment WHERE id= :id";
+                $request = $db->prepare($sql);
+                $result = $request->execute($data);
+                if ($result) {
+                    header('Location: ' . $router->generate('execution'));
+                } else {
+                    header('Location: ' . $router->generate('executionError'));
+                }
+            } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
             }
         } else {

@@ -13,24 +13,18 @@ $cars = getCar($db);
  */
 if (!empty($_POST['cars-ok'])) {
     $car = $_POST['car'];
-    if (is_numeric(($car))) {
 
 
 
-        $listCar = getCarId($db, $car, 'car', $router);
+
+    $listCar = getCarId($db, $car, 'car', $router);
 
 
 
-        $_SESSION['car'] = [
-            'id_car' => $car,
-            'trademark' => $listCar[0]['trademark'],
-        ];
-        header('Location: ' . $router->generate('editalerts'));
-        die();
-    } else {
-        header('Location: ' . $router->generate('executionError'));
-    }
-} else {
-    header('Location: ' . $router->generate('executionError'));
+    $_SESSION['car'] = [
+        'id_car' => $car,
+        'trademark' => $listCar[0]['trademark'],
+    ];
+    header('Location: ' . $router->generate('editalerts'));
     die();
 };

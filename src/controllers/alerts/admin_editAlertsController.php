@@ -16,6 +16,9 @@ function getControl(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
 
+
+
+
         $data = [
             'id_car' => $_SESSION['car']['id_car'],
         ];
@@ -72,7 +75,7 @@ function getOil(PDO $db, AltoRouter $router)
             if ($result) {
                 return $result;
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                // header('Location: ' . $router->generate('executionError'));
             }
         }
     }
@@ -110,7 +113,7 @@ function getTimingKm(PDO $db, AltoRouter $router)
             if ($result) {
                 return $result;
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                // header('Location: ' . $router->generate('executionError'));
             }
         }
     }
@@ -147,7 +150,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
             if ($result) {
                 return $result;
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                // header('Location: ' . $router->generate('executionError'));
             }
         }
     }

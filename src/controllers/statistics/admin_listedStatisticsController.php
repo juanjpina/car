@@ -42,7 +42,7 @@ ORDER BY date ASC";
     if ($result) {
         return $result;
     } else {
-        header('Location: ' . $router->generate('executionError'));
+        // header('Location: ' . $router->generate('executionError'));
     }
 }
 

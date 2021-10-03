@@ -13,7 +13,6 @@ if (!empty($id_car)) {
     function dbUpdate(PDO $db, $dateTiming, $kmTiming, $kmOil, $dataBase, $id_car, AltoRouter $router)
     {
         try {
-
             $data = [
                 ':timingbeltDate'  => (int)$dateTiming,
                 ':timingbeltKm' =>  (int)$kmTiming,
