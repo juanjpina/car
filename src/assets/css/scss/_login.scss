@@ -3,11 +3,12 @@
     height: 100%;
     justify-content: space-around;
     margin-top: 220px;
-    max-width: 992px;
+    // max-width: 992px;
     width: 100%;
     @media only screen and (max-width: 768px) {
-        // width: 70%;
-        margin: 150px 20px 0px 40px;
+        width: 100%;
+        margin-top: 150px;
+        // margin: 150px 0px 0px 40px;
     }
     .login {
         // margin: 0px 20px 0px 40px;
@@ -35,6 +36,9 @@
     }
     .login,
     .newLogin {
+        label {
+            text-align: center;
+        }
         div {
             margin-bottom: 30px;
         }

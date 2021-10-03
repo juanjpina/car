@@ -9,19 +9,29 @@
     text-decoration: none;
     nav {
         padding: 0% 3%;
+        @media screen and (max-width: 768px) {
+            padding: 2% 0% 0% 0%;
+        }
     }
     a {
         text-decoration: none;
     }
     .row {
         padding: 0% 3%;
-
-        .logos {
+        @media screen and (max-width: 768px) {
+            padding: 4% 0% 0% 0%;
+            div {
+                padding-right: 2%;
+            }
+        }
+        .logo {
             padding-left: 7.18%;
             @media only screen and (max-width: 768px) {
-                .logos {
-                    height: 81px;
-                    width: 150px;
+                padding-left: 2%;
+                // padding-top: 5%;
+                img {
+                    height: 75px;
+                    width: 140px;
                 }
             }
         }

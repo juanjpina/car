@@ -207,19 +207,35 @@ body {
 .header nav {
   padding: 0% 3%;
 }
+@media screen and (max-width: 768px) {
+  .header nav {
+    padding: 2% 0% 0% 0%;
+  }
+}
 .header a {
   text-decoration: none;
 }
 .header .row {
   padding: 0% 3%;
 }
-.header .row .logos {
+@media screen and (max-width: 768px) {
+  .header .row {
+    padding: 4% 0% 0% 0%;
+  }
+  .header .row div {
+    padding-right: 2%;
+  }
+}
+.header .row .logo {
   padding-left: 7.18%;
 }
 @media only screen and (max-width: 768px) {
-  .header .row .logos .logos {
-    height: 81px;
-    width: 150px;
+  .header .row .logo {
+    padding-left: 2%;
+  }
+  .header .row .logo img {
+    height: 75px;
+    width: 140px;
   }
 }
 .header .row .navegation .nave .li_button a .button_admin {
@@ -286,12 +302,12 @@ footer li div a {
   height: 100%;
   justify-content: space-around;
   margin-top: 220px;
-  max-width: 992px;
   width: 100%;
 }
 @media only screen and (max-width: 768px) {
   .menu-login {
-    margin: 150px 20px 0px 40px;
+    width: 100%;
+    margin-top: 150px;
   }
 }
 .menu-login .login {
@@ -323,6 +339,10 @@ footer li div a {
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.menu-login .login label,
+.menu-login .newLogin label {
+  text-align: center;
 }
 .menu-login .login div,
 .menu-login .newLogin div {
@@ -1499,6 +1519,11 @@ section .menuSetting div .b-alert:active {
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media screen and (max-width: 768px) {
+  .pswforget {
+    margin: 150px 0px 0px 0px;
+  }
 }
 .pswforget .container form div {
   margin: 20px 0px;

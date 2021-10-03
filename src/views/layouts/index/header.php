@@ -21,8 +21,8 @@
 
         @media only screen and (max-width:768px) {
             .card-box {
-                width: 100px;
-                height: 133px;
+                width: 90px;
+                height: 150px;
                 margin-right: 1em;
             }
 
