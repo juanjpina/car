@@ -24,8 +24,10 @@ if (!empty($id_car)) {
             $request = $db->prepare($sql);
             $request->execute($data);
             header('Location: ' . $router->generate('execution'));
+            die();
         } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));
+            die();
         }
     } //fin
 

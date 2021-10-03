@@ -25,35 +25,49 @@ function addUser(PDO $db, AltoRouter $router)
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
-        if (strcmp($pass, $cpass) !== 0) {
-            return 'Les mots de pass sont different';
-        } else {
-            if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
-                $sql = 'INSERT INTO user (email, password, nickname, id_car) VALUES (:email, :password, :nickname, :id_car)';
-                $data = [
-                    ':email'     => $_POST['email'],
-                    ':password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
-                    ':nickname'  => $_POST['pseudo'],
-                    ':id_car'  => 0
-                ];
-                $request = $db->prepare($sql);
-                $request->execute($data);
-                if (isset($request)) {
-                    $data      = ['email' => $_POST['email']];
-                    $sql      = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
-                    $request = $db->prepare($sql);
-                    $request->execute($data);
-                    $result = $request->fetch(PDO::FETCH_ASSOC);
-                    $id_user = $result['id_user'];
-                    $_SESSION['auth'] = [
-                        'nickname' => $_POST['pseudo'],
-                        'email' => $_POST['email'],
-                        'id_user'    => $id_user,
-                    ];
-                    header('Location: ' . $router->generate('reception'));
-                    die();
-                };
-            }
-        }
-    }
-}
+
+
+        if (password($pass)) {
+            dump(1);
+            if (strcmp($pass, $cpass) == 0) {
+                dump(2);
+
+
+                if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
+                    try {
+                        $data = [
+                            ':email'     => $_POST['email'],
+                            ':password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                            ':nickname'  => $_POST['pseudo'],
+                            ':id_car'  => 0,
+                            ':date' => date('Y-m-d H:i:s')
+                        ];
+                        $sql = 'INSERT INTO user (email, password, nickname, id_car, date) VALUES (:email, :password, :nickname, :id_car, date=:date)';
+                        $request = $db->prepare($sql);
+                        $request->execute($data);
+
+                        if (!empty($request)) {
+                            $data      = ['email' => $_POST['email']];
+                            $sql      = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
+                            $request = $db->prepare($sql);
+                            $request->execute($data);
+                            $result = $request->fetch(PDO::FETCH_ASSOC);
+                            $id_user = $result['id_user'];
+                            $_SESSION['auth'] = [
+                                'nickname' => $_POST['pseudo'],
+                                'email' => $_POST['email'],
+                                'id_user'    => $id_user,
+                            ];
+                            header('Location: ' . $router->generate('reception'));
+                            die();
+                        };
+                    } catch (Exception $e) {
+                        header('Location: ' . $router->generate('home'));
+                        die();
+                    }
+                } //if ema
+            } //conf
+
+        } //pass
+    } //if
+}//funcion

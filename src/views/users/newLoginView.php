@@ -19,10 +19,13 @@
                 <p class="message"> <?= $mail['message']; ?> </p>
             </div>
             <div class="div column">
+                <?php $verification = messagePassword('password'); ?>
                 <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
                 <label for="password">Votre mot de passe</label>
                 <input type="password" class="input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value="">
                 <p> <?= $error['message']; ?></p>
+                <p><?= $verification; ?></p>
+
             </div>
             <div class="div column">
                 <?php $password = addUser($db, $router); ?>

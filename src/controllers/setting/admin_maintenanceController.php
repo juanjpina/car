@@ -10,29 +10,34 @@ if (!empty($id_car)) {
      */
     function dbTiming(PDO $db, $id_car, AltoRouter $router)
     {
-        $data = [
-            ':id_car' => $id_car
-        ];
-        $sql = 'SELECT date, km FROM invtiming where (id_car = :id_car) ORDER by date DESC LIMIT 1';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        if ($result) {
-            return $result;
-        } else {
+        try {
             $data = [
                 ':id_car' => $id_car
             ];
-            $sql = 'SELECT buyDate as date, buykm as km  FROM car where (id_car = :id_car)';
+            $sql = 'SELECT date, km FROM invtiming where (id_car = :id_car) ORDER by date DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             if ($result) {
                 return $result;
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                $data = [
+                    ':id_car' => $id_car
+                ];
+                $sql = 'SELECT buyDate as date, buykm as km  FROM car where (id_car = :id_car)';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                if ($result) {
+                    return $result;
+                } else {
+                    header('Location: ' . $router->generate('executionError'));
+                    die();
+                }
             }
-            dump($result);
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+            die();
         }
     }
     $timing = dbTiming($db, $id_car, $router);
@@ -44,25 +49,31 @@ if (!empty($id_car)) {
     function dbTechnical(PDO $db, $id_car, AltoRouter $router)
     {
         if (!empty($id_car)) {
-            $data = array(
-                ':id_car' => $id_car
-            );
-            $sql = 'SELECT date, km FROM invtechnical where (id_car = :id_car) ORDER BY date DESC LIMIT 1 ';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
-            } else {
-                $sql = 'SELECT buyDate as date, buykm as km FROM car where (id_car = :id_car) ';
+            try {
+                $data = array(
+                    ':id_car' => $id_car
+                );
+                $sql = 'SELECT date, km FROM invtechnical where (id_car = :id_car) ORDER BY date DESC LIMIT 1 ';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $result = $request->fetchAll(PDO::FETCH_ASSOC);
                 if ($result) {
                     return $result;
                 } else {
-                    // header('Location: ' . $router->generate('executionError'));
+                    $sql = 'SELECT buyDate as date, buykm as km FROM car where (id_car = :id_car) ';
+                    $request = $db->prepare($sql);
+                    $request->execute($data);
+                    $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                    if ($result) {
+                        return $result;
+                    } else {
+                        header('Location: ' . $router->generate('executionError'));
+                        die();
+                    }
                 }
+            } catch (Exception $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
             }
         }
     }
@@ -72,25 +83,30 @@ if (!empty($id_car)) {
     /**
      * Get oil changes of the data base
      */
-    function dbOil(PDO $db, $id_car)
+    function dbOil(PDO $db, $id_car, AltoRouter $router)
     {
         if (!empty($id_car)) {
-            $data = array(
-                ':id_car' => $id_car
-            );
-            $sql = 'SELECT date, km FROM invoil where (id_car = :id_car) ORDER by date DESC LIMIT 1';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                return $result;
-            } else {
-                return ([
-                    'date' => '2021-01-01',
-                    'km' => '0'
-                ]);
+            try {
+                $data = array(
+                    ':id_car' => $id_car
+                );
+                $sql = 'SELECT date, km FROM invoil where (id_car = :id_car) ORDER by date DESC LIMIT 1';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                if ($result) {
+                    return $result;
+                } else {
+                    return ([
+                        'date' => '2021-01-01',
+                        'km' => '0'
+                    ]);
+                }
+            } catch (Exception $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
             }
         }
     }
-    $oil = dbOil($db, $id_car);
+    $oil = dbOil($db, $id_car, $router);
 }
