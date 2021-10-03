@@ -8,8 +8,9 @@
     width: 59%;
     @include shadow;
     @media only screen and(max-width: 873px) {
-        width: 60%;
+        width: 100%;
         margin-left: 0%;
+        margin-right: 3%;
     }
     .form {
         margin-top: 20px;

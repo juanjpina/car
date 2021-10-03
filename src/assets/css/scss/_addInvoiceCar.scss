@@ -12,6 +12,9 @@
     width: 59%;
     @include shadow;
     @media only screen and(max-width:768px) {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 2%;
         .column {
             .column {
                 .column {

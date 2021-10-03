@@ -17,11 +17,9 @@
             padding-left: 2%;
             .logos {
                 img {
-                    height: 81px;
-                    width: 150px;
+                    height: 75px;
+                    width: 140px;
                 }
-            }
-            .logos {
             }
         }
         .navegation {
@@ -33,7 +31,7 @@
                 @media only screen and (max-width: 768px) {
                     @include column;
                     li {
-                        margin: 5px 0px;
+                        margin: 10px 0px;
                     }
                 }
                 .li_button {
@@ -72,19 +70,26 @@
                     }
                 }
             }
-        } //row
-        .bonjour {
-            padding-top: 3px;
-            p {
-                color: $color-texto;
-                font-size: 0.8em;
-                text-align: left;
-                padding-left: 40px;
-                width: 100%;
+            .bonjour {
+                padding-top: 3px;
                 @media screen and (max-width: 768px) {
-                    font-size: 0.6em;
+                    padding-right: 1px;
+                }
+                .par {
+                    color: $color-texto;
+                    font-size: 0.8em;
+                    text-align: left;
+                    padding-left: 30px;
+                    width: 100%;
+                    @media screen and (max-width: 768px) {
+                        font-size: 0.6em;
+                        padding-right: 2px;
+                        // .par {
+                        //     padding-left: 0px;
+                        // }
+                    }
                 }
             }
-        }
+        } //row
     }
 }

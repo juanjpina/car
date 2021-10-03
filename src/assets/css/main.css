@@ -1049,6 +1049,11 @@ section .alerts li {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 @media only screen and (max-width: 768px) {
+  .invoiceCar {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 2%;
+  }
   .invoiceCar .column .column .column .row {
     flex-direction: column;
     align-items: center;
@@ -1091,8 +1096,9 @@ section .alerts li {
 }
 @media only screen and (max-width: 873px) {
   .user {
-    width: 60%;
+    width: 100%;
     margin-left: 0%;
+    margin-right: 3%;
   }
 }
 .user .form {
@@ -1159,6 +1165,11 @@ section .alerts li {
 }
 .userStatistics div {
   margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .userStatistics {
+    width: 100%;
+  }
 }
 
 .addInvoice {
@@ -1475,6 +1486,11 @@ section .menuSetting div .b-alert:active {
 .fuel div {
   margin: 40px 0;
 }
+@media screen and (max-width: 768px) {
+  .fuel {
+    width: 100%;
+  }
+}
 
 .pswforget {
   background-color: #d9bd30;
@@ -1581,8 +1597,8 @@ section .menuSetting div .b-alert:active {
     padding-left: 2%;
   }
   .headerAdmin .row .logos img {
-    height: 81px;
-    width: 150px;
+    height: 75px;
+    width: 140px;
   }
 }
 .headerAdmin .row .navegation .nave li {
@@ -1597,7 +1613,7 @@ section .menuSetting div .b-alert:active {
     flex-wrap: wrap;
   }
   .headerAdmin .row .navegation .nave li {
-    margin: 5px 0px;
+    margin: 10px 0px;
   }
 }
 .headerAdmin .row .navegation .nave .li_button a .button_admin {
@@ -1631,19 +1647,25 @@ section .menuSetting div .b-alert:active {
     font-size: 0.7em;
   }
 }
-.headerAdmin .row .bonjour {
+.headerAdmin .row .navegation .bonjour {
   padding-top: 3px;
 }
-.headerAdmin .row .bonjour p {
+@media screen and (max-width: 768px) {
+  .headerAdmin .row .navegation .bonjour {
+    padding-right: 1px;
+  }
+}
+.headerAdmin .row .navegation .bonjour .par {
   color: #f2f2f2;
   font-size: 0.8em;
   text-align: left;
-  padding-left: 40px;
+  padding-left: 30px;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .headerAdmin .row .bonjour p {
+  .headerAdmin .row .navegation .bonjour .par {
     font-size: 0.6em;
+    padding-right: 2px;
   }
 }
 
