@@ -1,31 +1,26 @@
 <?php get_header('menu totales', 'admin') ?>
-<div class="menu-statisticsGraph">
-    <div class="column">
-        <h1 class='title'>Statistique</h1>
-        <h6>Sélectionnez deux années différentes pour accéder aux graphiques comparatifs</h6>
-    </div>
-    <form action="" method="post">
+<section>
+    <div class="menu-statisticsGraph">
         <div class="column">
-            <div class="column">
-                <label for="startYear">De l'année</label>
-                <input type="number" name="startYear" class="input">
-            </div>
-        
-        
-            <div class="column">
-                <label for="endYear">À l'année</label>
-                <input type="number" name="endYear" class="input">
-            </div>
-        
-
-        
-            <div class="column">
-                <input type='hidden' name="ok" value="ok">
-                <button class='button' type="submit">Sauvegarder</button>
-            </div>
+            <h1 class='title'>Statistique</h1>
+            <h6>Sélectionnez deux années différentes pour accéder aux graphiques comparatifs</h6>
         </div>
-
-    </form>
-</div>
-
+        <form action="" method="post">
+            <div class="column">
+                <div class="column">
+                    <label for="startYear">De l'année</label>
+                    <input type="number" name="startYear" class="input">
+                </div>
+                <div class="column">
+                    <label for="endYear">À l'année</label>
+                    <input type="number" name="endYear" class="input">
+                </div>
+                <div class="column">
+                    <input type='hidden' name="ok" value="ok">
+                    <button class='button' type="submit">Sauvegarder</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 <?php get_footer('admin') ?>

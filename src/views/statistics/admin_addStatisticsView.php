@@ -1,9 +1,9 @@
 <?php get_header('statistics add', 'admin'); ?>
-
-<div class="statistics column">
-    <h1 class='title'>Statistique</h1>
-    <h6>Sélectionnez une période pour accéder aux données des frais</h6>
-    <form action="" method="post">
+<section>
+    <div class="statistics column">
+        <h1 class='title'>Statistique</h1>
+        <h6>Sélectionnez une période pour accéder aux données des frais</h6>
+        <form action="" method="post">
             <div class="column">
                 <div class="column period">
                     <h3>Périodes</h3>
@@ -18,13 +18,14 @@
                     </select>
                 </div>
             </div>
-        <div>
-            <div class="column">
-                <input type='hidden' name="ok" value="ok">
-                <button class='button' type="submit">Sauvegarder</button>
+            <div>
+                <div class="column">
+                    <input type='hidden' name="ok" value="ok">
+                    <button class='button' type="submit">Sauvegarder</button>
+                </div>
             </div>
-        </div>
 
-    </form>
-</div>
+        </form>
+    </div>
+</section>
 <?php get_footer('admin'); ?>

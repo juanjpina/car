@@ -1,8 +1,7 @@
 <?php
 
 if (!empty(getSessionCar($db, $router))) {
-
-    $fuel = getCarId($db, $_SESSION['car']['id_car'], 'fuel', $router);
+    $fuel =  getFuel($db, $_SESSION['car']['id_car'],  $router);
     if (!empty($_SESSION['car']['id_car']) && !empty($_POST['km'])) {
 
         $id_car = $_SESSION['car']['id_car'];

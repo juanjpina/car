@@ -98,8 +98,25 @@ function in_range($number = 0, $value1 = 0, $value2 = 0)
 };
 
 
-
-
+/**
+ * returns from fuel table data with car id
+ */
+function getFuel(PDO $db, $id, AltoRouter $router)
+{
+	try {
+		$data = [
+			':id_car' => $id
+		];
+		$sql = "SELECT km FROM fuel WHERE id_car = :id_car";
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		return $result;
+	} catch (Exception $e) {
+		header('Location: ' . $router->generate('executionError'));
+		die();
+	}
+}
 
 
 
@@ -109,6 +126,8 @@ function in_range($number = 0, $value1 = 0, $value2 = 0)
 
 
 /**
+ * 
+ * 
  * @param id-user
  * 
  * @return get id_car
@@ -326,8 +345,11 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 		$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);
-	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('execution'));
+		die();
+	} catch (PDOException $e) {
+		header('Location: ' . $router->generate('executionError'));
+		die();
 	}
 };
 

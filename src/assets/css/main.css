@@ -16,6 +16,11 @@ input {
   }
 }
 
+section {
+  width: 66%;
+  height: 100%;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -188,7 +193,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-family: "montserrat", sans-serif;
-  height: 100%;
 }
 
 .header {
@@ -596,7 +600,7 @@ footer li div a {
   background-color: #083540;
 }
 
-.alerts {
+section .alerts {
   background-color: #d9bd30;
   border-radius: 28px;
   height: 100%;
@@ -607,33 +611,33 @@ footer li div a {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 @media only screen and (max-width: 768px) {
-  .alerts {
+  section .alerts {
     padding: 10px 5px;
   }
-  .alerts h6 {
+  section .alerts h6 {
     text-align: center;
     padding: 0px 20px;
   }
 }
-.alerts .button:active {
+section .alerts .button:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
   box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
-.alerts .button:hover {
+section .alerts .button:hover {
   background-color: #18a8cc;
   opacity: 0.8;
   transition: all 600ms ease;
 }
-.alerts th {
+section .alerts th {
   width: 200px;
   padding-bottom: 5px;
   text-align: center;
 }
-.alerts td {
+section .alerts td {
   text-align: center;
   padding: 2px;
 }
-.alerts .select {
+section .alerts .select {
   width: 50%;
   height: 30px;
   font-family: "montserrat";
@@ -641,18 +645,13 @@ footer li div a {
   margin-top: 5px;
   text-align: center;
 }
-.alerts li {
+section .alerts li {
   margin: 30px 0px;
 }
 @media only screen and (max-width: 768px) {
-  .alerts .column {
+  section .alerts .column {
     overflow-x: auto;
     margin: 10px 0px;
-  }
-}
-@media only screen and (max-width: 1400px) {
-  .alerts .column {
-    overflow-x: auto;
   }
 }
 
@@ -716,7 +715,7 @@ footer li div a {
   height: 100%;
   margin-top: 200px;
   padding: 0px 2px;
-  width: 66%;
+  width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -826,7 +825,7 @@ footer li div a {
   height: 100%;
   margin-top: 200px;
   padding: 0px 2px;
-  width: 66%;
+  width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1342,31 +1341,29 @@ footer li div a {
 .select-car .select {
   width: 100%;
 }
-.menuSetting {
+section .menuSetting {
   border-radius: 28px;
   margin-top: 400px;
   width: 66%;
 }
 @media only screen and (max-width: 768px) {
-  .menuSetting {
+  section .menuSetting {
     margin-top: 150px;
     width: 47%;
   }
 }
-.menuSetting div {
-  margin: 0 10px;
+section .menuSetting .row {
+  justify-content: space-around;
+}
+section .menuSetting div {
+  margin: 0 0px;
 }
 @media only screen and (max-width: 768px) {
-  .menuSetting div {
+  section .menuSetting div {
     margin: 5px 5px;
   }
 }
-@media only screen and (max-width: 1400px) {
-  .menuSetting div {
-    margin: 5px 5px;
-  }
-}
-.menuSetting div .b-alert {
+section .menuSetting div .b-alert {
   align-items: center;
   background-color: #083540;
   border-radius: 15px;
@@ -1381,35 +1378,35 @@ footer li div a {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 @media only screen and (max-width: 768px) {
-  .menuSetting div .b-alert {
+  section .menuSetting div .b-alert {
     height: 70px;
     width: 70px;
   }
-  .menuSetting div .b-alert .img30 {
+  section .menuSetting div .b-alert .img30 {
     height: 20px;
     width: 20px;
   }
-  .menuSetting div .b-alert .img50 {
+  section .menuSetting div .b-alert .img50 {
     height: 23px;
     width: 31px;
   }
-  .menuSetting div .b-alert .img40 {
+  section .menuSetting div .b-alert .img40 {
     height: 25px;
     width: 25px;
   }
-  .menuSetting div .b-alert p {
+  section .menuSetting div .b-alert p {
     font-size: 0.6em;
   }
 }
-.menuSetting div .b-alert p {
+section .menuSetting div .b-alert p {
   text-align: center;
 }
-.menuSetting div .b-alert:hover {
+section .menuSetting div .b-alert:hover {
   background-color: #d9bd30;
   opacity: 0.5;
   transition: all 600ms ease;
 }
-.menuSetting div .b-alert:active {
+section .menuSetting div .b-alert:active {
   background-color: #d94625;
   color: #d94625;
   opacity: 1;
@@ -1601,8 +1598,8 @@ footer li div a {
 }
 
 .execute {
+  margin-top: 200px;
   width: 100%;
-  margin-right: 600px;
 }
 .execute .banner {
   background-color: #d9bd30;

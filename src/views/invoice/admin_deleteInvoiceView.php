@@ -1,17 +1,19 @@
 <?php get_header('deleteInvoice', 'admin') ?>
-<div class='conta column'>
-    <div class="deleteInvoice">
-        <form action="" method="post">
-            <div class='column'>
-                <div>
-                    <label form='delete'>Êtes vous certain de vouloir supprimer définitivement ce frais?</label>
-                    <input type="hidden" name="delete" value="ok">
+<section>
+    <div class='conta column'>
+        <div class="deleteInvoice">
+            <form action="" method="post">
+                <div class='column'>
+                    <div>
+                        <label form='delete'>Êtes vous certain de vouloir supprimer définitivement ce frais?</label>
+                        <input type="hidden" name="delete" value="ok">
+                    </div>
+                    <div>
+                        <button class='button' type="submit">Je suis d' accord</button>
+                    </div>
                 </div>
-                <div>
-                    <button class='button' type="submit">Je suis d' accord</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</section>
 <?php get_footer('admin'); ?>

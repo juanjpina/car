@@ -54,9 +54,10 @@ if (!empty($_POST['trademark'])) {
         $result = $request->execute($data);
 
         $data = [
-            ':id_car' => (int)$id_car
+            ':id_car' => (int)$id_car,
+            ':date' => date('Y-m-d H:i:s')
         ];
-        $sql = 'INSERT INTO fuel (id_car, km, date) VALUES (:id_car, 0, date)';
+        $sql = 'INSERT INTO fuel (id_car, km, date) VALUES (:id_car, 0, :date)';
         $request = $db->prepare($sql);
         $result = $request->execute($data);
 

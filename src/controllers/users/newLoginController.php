@@ -28,9 +28,9 @@ function addUser(PDO $db, AltoRouter $router)
 
 
         if (password($pass)) {
-            dump(1);
+            // dump(1);
             if (strcmp($pass, $cpass) == 0) {
-                dump(2);
+                // dump(2);
 
 
                 if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {

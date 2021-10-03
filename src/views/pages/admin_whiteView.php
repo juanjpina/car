@@ -1,6 +1,8 @@
 <?php get_header('white pages', 'admin'); ?>
-<div class="white">
+<section>
+    <div class="white">
 
 
-</div>
+    </div>
+</section>
 <?php get_footer('admin'); ?>

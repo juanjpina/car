@@ -1,24 +1,26 @@
 <?php get_header('invoice menu', 'admin'); ?>
-<div class='menuInvoice'>
-    <ul>
-        <div class='row'>
-            <li>
-                <a href="<?= $router->generate('addInvoice'); ?>">
-                    <div class='column boton'>
-                        <img src="/proyectocar/car/src/assets/images/facture3.png" width="30" height="30" alt="">
-                        <p>Ajouter les frais</p>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="<?= $router->generate('editInvoice'); ?>">
-                    <div class='column boton'>
-                        <img src="/proyectocar/car/src/assets/images/edit.png" width="30" height="30" alt="">
-                        <p>Modifier ou annuler les frais</p>
-                    </div>
-                </a>
-            </li>
-        </div>
-    </ul>
-</div>
+<section>
+    <div class='menuInvoice'>
+        <ul>
+            <div class='row'>
+                <li>
+                    <a href="<?= $router->generate('addInvoice'); ?>">
+                        <div class='column boton'>
+                            <img src="/proyectocar/car/src/assets/images/facture3.png" width="30" height="30" alt="">
+                            <p>Ajouter les frais</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= $router->generate('editInvoice'); ?>">
+                        <div class='column boton'>
+                            <img src="/proyectocar/car/src/assets/images/edit.png" width="30" height="30" alt="">
+                            <p>Modifier ou annuler les frais</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</section>
 <?php get_footer('admin'); ?>

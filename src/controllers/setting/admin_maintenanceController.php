@@ -97,10 +97,28 @@ if (!empty($id_car)) {
                 if ($result) {
                     return $result;
                 } else {
-                    return ([
-                        'date' => '2021-01-01',
-                        'km' => '0'
-                    ]);
+                    $sql = 'SELECT buyDate as date, buykm as km FROM car where (id_car = :id_car) ';
+                    $request = $db->prepare($sql);
+                    $request->execute($data);
+                    $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                    if ($result) {
+                        return $result;
+                    } else {
+                        header('Location: ' . $router->generate('executionError'));
+                        die();
+                    }
+
+
+
+
+
+
+
+
+                    // return ([
+                    //     'date' => '2021-01-01',
+                    //     'km' => '0'
+                    // ]);
                 }
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
