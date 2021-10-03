@@ -28,7 +28,7 @@
                         <?php $verification = messagePassword('password'); ?>
                         <label for="password">Mot de passe</label>
                         <input type="password" class="input password" name="password" value="">
-                        <?= $verification; ?>
+                        <p class="message"><?= $verification; ?></p>
 
                     </div>
                 </div>

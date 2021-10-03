@@ -51,6 +51,7 @@
     }
     @media only screen and(max-width: 768px) {
         margin-top: 200px;
+        width: 100%;
     }
     .container {
         @media only screen and(max-width: 768px) {
@@ -254,6 +255,9 @@
     padding: 0px 1px 30px 1px;
     width: 66%;
     @include shadow;
+    @media screen and(max-width:768px) {
+        width: 100%;
+    }
     .table {
         @media only screen and (max-width: 768px) {
             overflow-x: auto;
@@ -284,5 +288,8 @@
     @include shadow;
     div {
         margin: 10px 0px;
+    }
+    @media screen and(max-width:768px) {
+        width: 100%;
     }
 }

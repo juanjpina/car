@@ -613,6 +613,7 @@ section .alerts {
 @media only screen and (max-width: 768px) {
   section .alerts {
     padding: 10px 5px;
+    width: 100%;
   }
   section .alerts h6 {
     text-align: center;
@@ -766,6 +767,7 @@ section .alerts li {
 @media only screen and (max-width: 768px) {
   .menuStatistics {
     margin-top: 200px;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -967,6 +969,11 @@ section .alerts li {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media screen and (max-width: 768px) {
+  .fuelStatistics {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .fuelStatistics .table {
     overflow-x: auto;
@@ -993,6 +1000,11 @@ section .alerts li {
 .menu-statisticsGraph div {
   margin: 10px 0px;
 }
+@media screen and (max-width: 768px) {
+  .menu-statisticsGraph {
+    width: 100%;
+  }
+}
 
 .history {
   background-color: #d94625;
@@ -1018,6 +1030,11 @@ section .alerts li {
 }
 .history .row {
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .history {
+    width: 100%;
+  }
 }
 
 .invoiceCar {
@@ -1055,6 +1072,13 @@ section .alerts li {
 .addCar div {
   margin: 40px 0;
 }
+@media screen and (max-width: 768px) {
+  .addCar {
+    width: 100%;
+    padding: 3px;
+  }
+}
+
 .user {
   background-color: #d9bd30;
   border-radius: 28px;
@@ -1147,6 +1171,11 @@ section .alerts li {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media screen and (max-width: 768px) {
+  .addInvoice {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .addInvoice .column .row {
     flex-direction: column;
@@ -1168,6 +1197,7 @@ section .alerts li {
 @media only screen and (max-width: 768px) {
   .menuInvoice {
     margin-top: 200px;
+    width: 100%;
   }
 }
 .menuInvoice .row {
@@ -1230,6 +1260,11 @@ section .alerts li {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media screen and (max-width: 768px) {
+  .editInvoice {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .editInvoice .column {
     overflow-x: auto;
@@ -1280,6 +1315,11 @@ section .alerts li {
   height: 100%;
   justify-content: space-around;
 }
+@media screen and (max-width: 768px) {
+  .conta {
+    width: 100%;
+  }
+}
 
 .modifiInvoici {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -1297,6 +1337,11 @@ section .alerts li {
 }
 .modifiInvoici li {
   margin: 30px 0px;
+}
+@media screen and (max-width: 768px) {
+  .modifiInvoici {
+    width: 100%;
+  }
 }
 
 .listedHistory {
@@ -1326,6 +1371,11 @@ section .alerts li {
   height: 0px;
   padding: 10px 15px;
 }
+@media screen and (max-width: 768px) {
+  .listedHistory {
+    width: 100%;
+  }
+}
 
 .select-car {
   background-color: #083540;
@@ -1349,7 +1399,7 @@ section .menuSetting {
 @media only screen and (max-width: 768px) {
   section .menuSetting {
     margin-top: 150px;
-    width: 47%;
+    width: 100%;
   }
 }
 section .menuSetting .row {
@@ -1504,6 +1554,12 @@ section .menuSetting div .b-alert:active {
   text-align: center;
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .maintenance {
+    width: 100%;
+    padding: 2px;
+  }
+}
 
 .headerAdmin {
   width: 100%;
@@ -1612,6 +1668,13 @@ section .menuSetting div .b-alert:active {
 }
 .execute .banner h6 {
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .execute .banner {
+    padding: 50px 2px;
+    width: 80%;
+    margin-right: 30%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

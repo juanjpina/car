@@ -118,42 +118,42 @@ $result = searchEmail($db);
 
 
 
-function password($pass)
-{
-    // $value = true;
+// function password($pass)
+// {
+//     // $value = true;
 
-    if (strlen($pass) < 8) {
-        // $error_clave = "La clave debe tener al menos 8 caracteres";
-        // return "La clave debe tener al menos 8 caracteres";
-        // $value = false;
-        return false;
-    }
-    if (strlen($pass) > 16) {
-        // $error_clave = "La clave no puede tener más de 16 caracteres";
-        // return "La clave no puede tener más de 16 caracteres";
-        // $value = false;
-        return false;
-    }
-    if (preg_match('@[a-z]@', $pass) == 0) {
-        // $error_clave = "La clave debe tener al menos una letra minúscula";
-        // $value = false;
-        return false;
-        // return "La clave debe tener al menos una letra minúscula";
-    }
-    if (preg_match('@[A-Z]@', $pass) == 0) {
-        // $error_clave = "La clave debe tener al menos una letra mayúscula";
-        // $value = false;
-        return false;
-        // return "La clave debe tener al menos una letra mayúscula";
-    }
-    if (preg_match('@[0-9]@', $pass) == 0) {
-        // return "La clave debe tener al menos un caracter numérico";
-        // $error_clave = "La clave debe tener al menos un caracter numérico";
-        // $value = false;
-        return false;
-    }
-    return true;
-}
+//     if (strlen($pass) < 8) {
+//         // $error_clave = "La clave debe tener al menos 8 caracteres";
+//         // return "La clave debe tener al menos 8 caracteres";
+//         // $value = false;
+//         return false;
+//     }
+//     if (strlen($pass) > 16) {
+//         // $error_clave = "La clave no puede tener más de 16 caracteres";
+//         // return "La clave no puede tener más de 16 caracteres";
+//         // $value = false;
+//         return false;
+//     }
+//     if (preg_match('@[a-z]@', $pass) == 0) {
+//         // $error_clave = "La clave debe tener al menos una letra minúscula";
+//         // $value = false;
+//         return false;
+//         // return "La clave debe tener al menos una letra minúscula";
+//     }
+//     if (preg_match('@[A-Z]@', $pass) == 0) {
+//         // $error_clave = "La clave debe tener al menos una letra mayúscula";
+//         // $value = false;
+//         return false;
+//         // return "La clave debe tener al menos una letra mayúscula";
+//     }
+//     if (preg_match('@[0-9]@', $pass) == 0) {
+//         // return "La clave debe tener al menos un caracter numérico";
+//         // $error_clave = "La clave debe tener al menos un caracter numérico";
+//         // $value = false;
+//         return false;
+//     }
+//     return true;
+// }
 
 // if ($pass) {
 //     $error_encontrado = "";
@@ -165,35 +165,35 @@ function password($pass)
 // }
 
 
-function messagePassword($pass)
-{
-    if (!empty($_POST[$pass]) && isset($_POST[$pass])) {
-        $pass = $_POST[$pass];
+// function messagePassword($pass)
+// {
+//     if (!empty($_POST[$pass]) && isset($_POST[$pass])) {
+//         $pass = $_POST[$pass];
 
-        if (strlen($pass) < 8) {
-            $error_clave = "La clave debe tener al menos 6 caracteres";
-            return "La clave debe tener al menos 6 caracteres";
-            // return false;
-        }
-        if (strlen($pass) > 16) {
-            $error_clave = "La clave no puede tener más de 16 caracteres";
-            return "La clave no puede tener más de 16 caracteres";
-            // return false;
-        }
-        if (preg_match('@[a-z]@', $pass) == 0) {
-            $error_clave = "La clave debe tener al menos una letra minúscula";
-            // return false;
-            return "La clave debe tener al menos una letra minúscula";
-        }
-        if (preg_match('@[A-Z]@', $pass) == 0) {
-            $error_clave = "La clave debe tener al menos una letra mayúscula";
-            // return false;
-            return "La clave debe tener al menos una letra mayúscula";
-        }
-        if (preg_match('@[0-9]@', $pass) == 0) {
-            return "La clave debe tener al menos un caracter numérico";
-            $error_clave = "La clave debe tener al menos un caracter numérico";
-            // return false;
-        }
-    }
-}
+//         if (strlen($pass) < 8) {
+//             $error_clave = "La clave debe tener al menos 6 caracteres";
+//             return "La clave debe tener al menos 6 caracteres";
+//             // return false;
+//         }
+//         if (strlen($pass) > 16) {
+//             $error_clave = "La clave no puede tener más de 16 caracteres";
+//             return "La clave no puede tener más de 16 caracteres";
+//             // return false;
+//         }
+//         if (preg_match('@[a-z]@', $pass) == 0) {
+//             $error_clave = "La clave debe tener al menos una letra minúscula";
+//             // return false;
+//             return "La clave debe tener al menos una letra minúscula";
+//         }
+//         if (preg_match('@[A-Z]@', $pass) == 0) {
+//             $error_clave = "La clave debe tener al menos una letra mayúscula";
+//             // return false;
+//             return "La clave debe tener al menos una letra mayúscula";
+//         }
+//         if (preg_match('@[0-9]@', $pass) == 0) {
+//             return "La clave debe tener al menos un caracter numérico";
+//             $error_clave = "La clave debe tener al menos un caracter numérico";
+//             // return false;
+//         }
+//     }
+// }

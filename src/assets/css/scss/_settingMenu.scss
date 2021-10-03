@@ -5,9 +5,8 @@ section {
         width: 66%;
         @media only screen and (max-width: 768px) {
             margin-top: 150px;
-            width: 47%;
+            width: 100%;
         }
-
         .row {
             justify-content: space-around;
             @media only screen and (max-width: 768px) {
@@ -17,7 +16,6 @@ section {
             @media only screen and (max-width: 768px) {
                 margin: 5px 5px;
             }
-
             margin: 0 0px;
             .b-alert {
                 align-items: center;
