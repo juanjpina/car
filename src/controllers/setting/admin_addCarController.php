@@ -21,6 +21,7 @@ if (!empty($_POST['trademark'])) {
         $sql = 'INSERT INTO car (id_user, trademark, buyDate, buyKm, firstDate, firstKm ) VALUES (:id_user, :trademark, :buyDate, :buyKm, :firstDate, :firstKm)';
         $request1 = $db->prepare($sql);
         $result1 = $request1->execute($data);
+        $request1->closeCursor();
 
 
 
@@ -35,6 +36,7 @@ if (!empty($_POST['trademark'])) {
         $request2 = $db->prepare($sql);
         $request2->execute($data);
         $result2 = $request2->fetchAll(PDO::FETCH_ASSOC);
+        $request2->closeCursor();
         for ($i = count($result2) - 1; $i < count($result2); $i++) {
             $id_car = $result2[$i]['id_car'];
         }
@@ -52,6 +54,7 @@ if (!empty($_POST['trademark'])) {
         $sql = 'INSERT INTO setting (id_car, oilchanges, timingbeltDate, timingbeltKm) VALUES (:id_car, 15000 , 4,  80000)';
         $request = $db->prepare($sql);
         $result = $request->execute($data);
+        $request->closeCursor();
 
         $data = [
             ':id_car' => (int)$id_car,

@@ -13,6 +13,7 @@ function searchEmail(PDO $db)
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    $request->closeCursor();
 
     return $result;
 }
@@ -53,6 +54,7 @@ function editUser(PDO $db, AltoRouter $router)
                     $sql = 'UPDATE user SET password=:password WHERE id_user=:id_user';
                     $request = $db->prepare($sql);
                     $result = $request->execute($data);
+                    $request->closeCursor();
                     if ($result) {
                         header('Location: ' . $router->generate('execution'));
                         die();
@@ -76,6 +78,7 @@ function editUser(PDO $db, AltoRouter $router)
             $sql = 'UPDATE user SET nickname=:nickname WHERE id_user=:id_user';
             $request = $db->prepare($sql);
             $result = $request->execute($data);
+            $request->closeCursor();
             if ($result) {
                 header('Location: ' . $router->generate('execution'));
             }
@@ -87,6 +90,7 @@ function editUser(PDO $db, AltoRouter $router)
             $sql = 'UPDATE user SET email=:email WHERE id_user=:id_user';
             $request = $db->prepare($sql);
             $result = $request->execute($data);
+            $request->closeCursor();
             if ($result) {
                 header('Location: ' . $router->generate('execution'));
             }

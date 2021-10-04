@@ -4,6 +4,7 @@ $router->map('GET|POST', '/reception', 'pages/admin_reception', 'reception');
 $router->map('GET', '/white', 'pages/admin_white', 'white');
 $router->map('GET', '/execution', 'pages/admin_executionOK', 'execution');
 $router->map('GET', '/executionError', 'pages/admin_executionError', 'executionError');
+$router->map('GET', '/whiteHome', 'pages/admin_whiteHome', 'whiteHome');
 
 
 //$router->map('GET', '/admin', 'pages/admin_addFra', 'addfra');

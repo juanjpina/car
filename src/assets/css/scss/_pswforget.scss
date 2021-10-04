@@ -2,11 +2,11 @@
     background-color: $color-alert;
     border-radius: 28px;
     // margin-top: 200px;
-    margin: 200px 500px 0 500px;
+    margin: 200px 0px 0px 0px;
     width: 100%;
     @include shadow;
     @media screen and (max-width: 768px) {
-        margin: 150px 0px 0px 0px;
+        // margin: 150px 0px 0px 0px;
     }
     .container {
         form {

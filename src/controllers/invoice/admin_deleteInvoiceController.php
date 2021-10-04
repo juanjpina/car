@@ -9,6 +9,7 @@ function delete(PDO $db, AltoRouter $router)
                 $sql = "DELETE FROM $database WHERE id = :id";
                 $request = $db->prepare($sql);
                 $request->execute($data);
+                $request->closeCursor();
             } catch (PDOException $e) {
                 header('Location: ' . $router->generate('executionError'));
             }

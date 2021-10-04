@@ -111,18 +111,15 @@ function getFuel(PDO $db, $id, AltoRouter $router)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
 		return $result;
 	} catch (Exception $e) {
 		header('Location: ' . $router->generate('executionError'));
 		die();
+	} finally {
+		$sql = null;
 	}
 }
-
-
-
-
-
-
 
 
 /**
@@ -142,6 +139,7 @@ function getCar(PDO $db)
 	$request = $db->prepare($sql);
 	$request->execute($data);
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
 	return $result;
 }
 
@@ -178,6 +176,7 @@ function getUser(PDO $db, $id_user)
 	$request = $db->prepare($sql);
 	$request->execute($data);
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
 	return $result;
 }
 
@@ -197,6 +196,7 @@ function getInvoice(PDO $db, $id, $database)
 	$request = $db->prepare($sql);
 	$request->execute($data);
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
 	return $result;
 }
 
@@ -217,9 +217,12 @@ function getCarId(PDO $db, $id, $database, AltoRouter $router)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
 		return $result;
 	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('executionError'));
+	} finally {
+		$sql = null;
 	}
 }
 
@@ -237,6 +240,7 @@ function getInvoiceTitel(PDO $db, $invoice, $database)
 	$request = $db->prepare($sql);
 	$request->execute($data);
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
 	return $result;
 }
 
@@ -256,7 +260,7 @@ function getTrademark(PDO $db)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
-		// dump('trad', $result);
+		$request->closeCursor(); // dump('trad', $result);
 		return $result;
 	} else {
 		// dump($_SESSION['auth']['id_user']);
@@ -267,6 +271,7 @@ function getTrademark(PDO $db)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
 		// dump('trad', $result);
 		return $result;
 	}
@@ -289,6 +294,7 @@ function dbSelect(PDO $db, $id_car, $database)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
 		if ($result) {
 			return $result;
 		}
@@ -300,6 +306,7 @@ function dbSelect(PDO $db, $id_car, $database)
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
 		// dump('timi', $result);
 		if ($result) {
 			return $result;
@@ -345,6 +352,7 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 		$sql = "INSERT INTO $database (id_car, date, km, total, comment ) VALUES (:id_car, :date, :km, :total, :comment)";
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);
+		$request->closeCursor();
 		header('Location: ' . $router->generate('execution'));
 		die();
 	} catch (PDOException $e) {
@@ -367,6 +375,7 @@ function maintenanceUpdate(PDO $db, $invoice, $date, $km, $id_car)
 	$sql = "INSERT INTO $invoice (id_car, date, km) VALUES (:id_car, :date, :km) ";
 	$request = $db->prepare($sql);
 	$result = $request->execute($data);
+	$request->closeCursor();
 }
 
 /**
@@ -378,6 +387,7 @@ function getLastCar(PDO $db)
 	$request = $db->prepare($sql);
 	$request->execute();
 	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
 	return $result;
 }
 

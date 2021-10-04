@@ -14,6 +14,7 @@ if (!empty(getSessionCar($db, $router))) {
             $sql = "UPDATE fuel SET  km = :km, date= :date WHERE id_car = :id_car";
             $request = $db->prepare($sql);
             $request->execute($data);
+            $request->closeCursor();
             header('Location: ' . $router->generate('execution'));
             die();
         } catch (PDOException $e) {

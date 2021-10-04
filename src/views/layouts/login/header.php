@@ -16,9 +16,8 @@
 	<header class="header">
 		<nav>
 			<div class="logo">
-				<a href=""><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
+				<a href="<?= $router->generate('home'); ?>"><img src="/proyectocar/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
 			</div>
 		</nav>
 	</header>
 	<main class="form-signin">
-		<?= alertDisplay(); ?>

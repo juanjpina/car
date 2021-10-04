@@ -16,6 +16,7 @@ if (!empty($id_car)) {
     $request = $db->prepare($sql);
     $request->execute($data);
     $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    $request->closeCursor();
     if ($result) {
 
 

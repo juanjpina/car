@@ -18,6 +18,7 @@ function getCars(PDO $db, $id_car, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
             return $result;
         } catch (Exception $e) {
             header('Location:' . $router->generate('executionError'));
@@ -43,6 +44,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $sql = 'UPDATE car SET buyDate=:buyDate WHERE id_car=:id_car';
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                $request->closeCursor();
             }
             if (!empty($_POST['buykm'])) {
                 $data = [
@@ -52,6 +54,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $sql = 'UPDATE car SET buykm=:buykm WHERE id_car=:id_car';
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                $request->closeCursor();
             }
             if (!empty($_POST['firstdate'])) {
                 $data = [
@@ -61,6 +64,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $sql = 'UPDATE car SET firstDate=:firstdate WHERE id_car=:id_car';
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                $request->closeCursor();
             }
             if (!empty($_POST['firstkm'])) {
                 $data = [
@@ -70,6 +74,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $sql = 'UPDATE car SET firstKm=:firstkm WHERE id_car=:id_car';
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                $request->closeCursor();
             }
             header('Location: ' . $router->generate('execution'));
         } catch (Exception $e) {
@@ -95,4 +100,5 @@ function insert_xx(PDO $db, $date, $km, $dataBase, $id_car)
     $sql = "UPDATE car SET buyDate= :buyDate, buyKm= :buykm, firstDate= :firstDate, firstKm= :firstKm WHERE id_car= :id_car";
     $request = $db->prepare($sql);
     $result = $request->execute($data);
+    $request->closeCursor();
 }

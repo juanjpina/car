@@ -12,7 +12,7 @@
                     <button class="button" type="submit">Sauvegarder</button>
                 </div>
             </form>
-            <p>Vous avez reçu un e-mail avec la nouvelle mot de passe.</p>
+            <p><?= $value; ?></p>
             <div>
                 <a href="<?= $router->generate('login'); ?>">
                     <div class="button">

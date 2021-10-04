@@ -38,6 +38,7 @@ function total(PDO $db, $startYear, $totales, $invoice)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         $totales[$j] = (int)$result[0]['total'];
     }
 

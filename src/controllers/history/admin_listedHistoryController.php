@@ -35,6 +35,7 @@ function get(PDO $db, $database, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -67,6 +68,7 @@ ORDER BY date ASC";
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -95,6 +97,7 @@ ORDER BY date ASC";
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -121,6 +124,7 @@ function getTotalDate(PDO $db, $database, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {

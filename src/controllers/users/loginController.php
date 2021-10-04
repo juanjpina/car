@@ -12,6 +12,7 @@ function login(PDO $db, AltoRouter $router)
 			$request = $db->prepare($sql);
 			$request->execute($data);
 			$result = $request->fetch();
+			$request->closeCursor();
 			if ($result && password_verify($_POST['password'], $result->password)) {
 				$_SESSION['auth'] = [
 					'nickname' => $result->nickname,

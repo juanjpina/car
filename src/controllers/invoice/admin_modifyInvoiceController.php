@@ -27,6 +27,7 @@ function invoiceUpdate(PDO $db, AltoRouter $router)
                 $sql = "UPDATE $dataBase SET date= :date, km= :km, total= :total, comment= :comment WHERE id= :id";
                 $request = $db->prepare($sql);
                 $result = $request->execute($data);
+                $request->closeCursor();
                 if ($result) {
                     header('Location: ' . $router->generate('execution'));
                 } else {

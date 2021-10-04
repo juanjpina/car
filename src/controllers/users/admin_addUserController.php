@@ -10,6 +10,7 @@ function addUser(PDO $db)
 		];
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);
+		$request->closeCursor();
 	}
 }
 addUser($db);

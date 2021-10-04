@@ -46,6 +46,7 @@ function total(PDO $db, $totales, $invoice)
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             $as += (int)$result[0]['total'];
             $totales[$i] += (int)$result[0]['total'];
+            $request->closeCursor();
         }
     }
     return $totales;

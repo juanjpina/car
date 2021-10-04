@@ -23,18 +23,18 @@
                                 </div>
                         </div>
                         <div class='column'>
-                            <h6>La première immatriculation</h6ass=>
-                                <div class='row'>
-                                    <div class="column date">
-                                        <label for="firstdate">Date</label>
-                                        <input type="date" class='input' name='firstdate' value="<?= $car['firstDate']; ?>">
-                                    </div>
-                                    <div class="column">
-                                        <label for="firstkm">Km</label>
-                                        <input type="number" class='input' name='firstkm' placeholder="<?= $car['firstKm']; ?>" value="">
-                                    </div>
+                            <h6>La première immatriculation</h6>
+                            <div class='row'>
+                                <div class="column date">
+                                    <label for="firstdate">Date</label>
+                                    <input type="date" class='input' name='firstdate' value="<?= $car['firstDate']; ?>">
                                 </div>
-                            <?php }; ?>
+                                <div class="column">
+                                    <label for="firstkm">Km</label>
+                                    <input type="number" class='input' name='firstkm' placeholder="<?= $car['firstKm']; ?>" value="">
+                                </div>
+                            </div>
+                        <?php }; ?>
                         </div>
                     </div>
                 </div>

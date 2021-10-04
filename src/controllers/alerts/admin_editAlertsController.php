@@ -26,6 +26,7 @@ function getControl(PDO $db, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -36,6 +37,7 @@ function getControl(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
             if ($result) {
                 return $result;
             } else {
@@ -62,6 +64,7 @@ function getOil(PDO $db, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -72,6 +75,7 @@ function getOil(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
             if ($result) {
                 return $result;
             } else {
@@ -99,6 +103,7 @@ function getTimingKm(PDO $db, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -110,6 +115,7 @@ function getTimingKm(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
             if ($result) {
                 return $result;
             } else {
@@ -136,6 +142,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($result) {
             return $result;
         } else {
@@ -147,6 +154,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
             if ($result) {
                 return $result;
             } else {

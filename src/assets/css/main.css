@@ -290,11 +290,11 @@ footer li {
   font-size: 0.7em;
 }
 footer li div p {
-  color: #f2f2f2;
+  color: #f6f6f6;
   text-align: center;
 }
 footer li div a {
-  color: #f2f2f2;
+  color: #f6f6f6;
 }
 
 .menu-login {
@@ -1422,6 +1422,12 @@ section .alerts li {
 .select-car .select {
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .select-car {
+    width: 100%;
+  }
+}
+
 section .menuSetting {
   border-radius: 28px;
   margin-top: 400px;
@@ -1515,15 +1521,10 @@ section .menuSetting div .b-alert:active {
 .pswforget {
   background-color: #d9bd30;
   border-radius: 28px;
-  margin: 200px 500px 0 500px;
+  margin: 200px 0px 0px 0px;
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
-}
-@media screen and (max-width: 768px) {
-  .pswforget {
-    margin: 150px 0px 0px 0px;
-  }
 }
 .pswforget .container form div {
   margin: 20px 0px;

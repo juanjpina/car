@@ -11,6 +11,7 @@ function searchEmail(PDO $db, AltoRouter $router)
         $request = $db->prepare($sql);
         $request->execute($data);
         $data = $request->fetch(PDO::FETCH_ASSOC);
+        $request->closeCursor();
         if ($data['email'] == $_POST['email']) {
             return "Votre email il existe déjà !!";
         } else {
@@ -45,6 +46,7 @@ function addUser(PDO $db, AltoRouter $router)
                         $sql = 'INSERT INTO user (email, password, nickname, id_car, date) VALUES (:email, :password, :nickname, :id_car, date=:date)';
                         $request = $db->prepare($sql);
                         $request->execute($data);
+                        $request->closeCursor();
 
                         if (!empty($request)) {
                             $data      = ['email' => $_POST['email']];
@@ -52,6 +54,7 @@ function addUser(PDO $db, AltoRouter $router)
                             $request = $db->prepare($sql);
                             $request->execute($data);
                             $result = $request->fetch(PDO::FETCH_ASSOC);
+                            $request->closeCursor();
                             $id_user = $result['id_user'];
                             $_SESSION['auth'] = [
                                 'nickname' => $_POST['pseudo'],

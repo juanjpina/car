@@ -19,7 +19,7 @@ if ($reponseA) {
     foreach ($reponseA as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Courroie de distribution';
-        // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+        $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
         // dump($mail);
     }
@@ -37,7 +37,7 @@ if ($reponseB) {
     foreach ($reponseB as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Contrôle technique';
-        // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+        $mail = mail($mail['email'], $sunject, $text_mail, $headers);
         $mail = $mail['email'] . $sunjet . $text_mail . $headers;
         // dump($mail);
     }
@@ -73,7 +73,7 @@ foreach ($car as $c) {
         foreach ($reponseC as $mail) {
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez change la courrioe de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Courroie de distribution';
-            // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+            $mail = mail($mail['email'], $sunject, $text_mail, $headers);
             $mail = $mail['email'] . $sunjet . $text_mail . $headers;
             dump($mail);
         }
@@ -107,7 +107,7 @@ foreach ($car as $c) {
         foreach ($reponseD as $mail) {
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Vidange';
-            // $mail = mail($mail['email'], $sunject, $text_mail, $headers);
+            $mail = mail($mail['email'], $sunject, $text_mail, $headers);
             $mail = $mail['email'] . $sunjet . $text_mail . $headers;
             dump($mail);
         }
