@@ -5,6 +5,45 @@
     height: 100%;
     margin-top: 200px;
     padding: 0px 2px;
+    width: 66%;
+
+    // padding: 50px 0;
+    @include shadow;
+    .column {
+        margin-bottom: 20px;
+        @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+        }
+        @media only screen and (max-width: 1400px) {
+            overflow-x: auto;
+        }
+    }
+    div {
+        margin: 10px 0px;
+    }
+    table {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    td,
+    th {
+        text-align: center;
+        padding-left: 20px;
+    }
+    th {
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+.listedstatistics {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    margin-top: 200px;
+    padding: 0px 2px;
     width: 100%;
 
     // padding: 50px 0;
@@ -97,7 +136,8 @@
     border-radius: 28px;
     height: 100%;
     margin-top: 200px;
-    padding: 0px 2px;
+    padding: 0px 1px 2px 1px;
+
     width: 100%;
     @include shadow;
     .container {

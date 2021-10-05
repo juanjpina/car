@@ -743,7 +743,7 @@ section .alerts li {
   height: 100%;
   margin-top: 200px;
   padding: 0px 2px;
-  width: 100%;
+  width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -777,6 +777,49 @@ section .alerts li {
   padding-bottom: 10px;
 }
 .statistics h1 {
+  margin-bottom: 20px;
+}
+
+.listedstatistics {
+  background-color: #bf9926;
+  border-radius: 28px;
+  height: 100%;
+  margin-top: 200px;
+  padding: 0px 2px;
+  width: 100%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.listedstatistics .column {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .listedstatistics .column {
+    overflow-x: auto;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .listedstatistics .column {
+    overflow-x: auto;
+  }
+}
+.listedstatistics div {
+  margin: 10px 0px;
+}
+.listedstatistics table {
+  width: 100%;
+  margin: 10px 0px;
+}
+.listedstatistics td,
+.listedstatistics th {
+  text-align: center;
+  padding-left: 20px;
+}
+.listedstatistics th {
+  vertical-align: bottom;
+  padding-bottom: 10px;
+}
+.listedstatistics h1 {
   margin-bottom: 20px;
 }
 
@@ -853,7 +896,7 @@ section .alerts li {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  padding: 0px 2px;
+  padding: 0px 1px 2px 1px;
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;

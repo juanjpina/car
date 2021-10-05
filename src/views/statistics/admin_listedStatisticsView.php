@@ -1,6 +1,6 @@
 <?php get_header('statistics add', 'admin'); ?>
 <section>
-    <div class="statistics">
+    <div class="listedstatistics">
         <!-- <div class="contained"> -->
         <div class="column">
             <h1 class='title'>Liste Statistique</h1>
