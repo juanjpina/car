@@ -41,7 +41,7 @@
                 <div class="submit">
                     <div class="column">
                         <input type="hidden" name="ok" value="ok">
-                        <button type="submit" class="button">Confirmez</button>
+                        <button type="submit" class="button">Sauvegarder</button>
                     </div>
                 </div>
             </form>

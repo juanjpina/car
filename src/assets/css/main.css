@@ -348,6 +348,13 @@ footer li div a {
 .menu-login .newLogin div {
   margin-bottom: 30px;
 }
+.menu-login .login div .textPassword,
+.menu-login .newLogin div .textPassword {
+  font-size: 0.6em;
+  margin-top: 3px;
+  text-align: center;
+  width: 50%;
+}
 .menu-login .login form,
 .menu-login .newLogin form {
   padding: 40px 100px;
@@ -779,7 +786,7 @@ section .alerts li {
 
 .menuStatistics {
   margin-top: 400px;
-  width: 66%;
+  width: 100%;
 }
 .menuStatistics .row {
   justify-content: space-around;
@@ -1124,6 +1131,17 @@ section .alerts li {
 .user .form {
   margin-top: 20px;
 }
+.user .form .textPassword {
+  font-size: 0.6em;
+  margin-top: 3px;
+  text-align: center;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .user .form {
+    text-align: center;
+  }
+}
 .user div {
   padding-bottom: 10px;
 }
@@ -1223,7 +1241,7 @@ section .alerts li {
 
 .menuInvoice {
   margin-top: 400px;
-  width: 66%;
+  width: 100%;
 }
 @media only screen and (max-width: 768px) {
   .menuInvoice {
@@ -1431,7 +1449,7 @@ section .alerts li {
 section .menuSetting {
   border-radius: 28px;
   margin-top: 400px;
-  width: 66%;
+  width: 100%;
 }
 @media only screen and (max-width: 768px) {
   section .menuSetting {
@@ -1443,7 +1461,7 @@ section .menuSetting .row {
   justify-content: space-around;
 }
 section .menuSetting div {
-  margin: 0 0px;
+  margin: 0px 10px 3px 0px;
 }
 @media only screen and (max-width: 768px) {
   section .menuSetting div {
@@ -1716,6 +1734,7 @@ section .menuSetting div .b-alert:active {
 }
 .execute .banner h6 {
   text-align: center;
+  margin-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
   .execute .banner {

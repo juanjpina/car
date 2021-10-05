@@ -59,17 +59,20 @@ function passwordNew(PDO $db, AltoRouter $router)
             /**
              * send an email with the password
              */
+            // dump($reponse[0]['id_user']);
             $newReponse = getUser($db, $reponse[0]['id_user']);
             if ($newReponse) {
-                dump($newReponse);
+                dump('re', $newReponse);
                 foreach ($newReponse as $mail) {
                     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $password .  ' .Bien cordialement.';
                     $sunjet = 'Mot de passe';
-                    $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
-                    $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-                    dump($mail);
+                    // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
+                    $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+                    dump($mails);
+                    // dump($mail['email']);
                 }
             }
+            return "Vous avez reçu un email avec un nouveau mot de passe.";
         } else {
             return "L'adress email n'existe pas";
         }

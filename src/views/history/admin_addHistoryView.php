@@ -22,8 +22,8 @@
                         <select name="period" class='select'>
                             <option value="0">Périodes</option>
                             <option value="3">Trois dernier mois</option>
-                            <option value="6">six dernier mois</option>
-                            <option value="12">C'est dernier année</option>
+                            <option value="6">Six dernier mois</option>
+                            <option value="12">Cette dernière année</option>
                         </select>
                     </div>
                     <div class="column space">

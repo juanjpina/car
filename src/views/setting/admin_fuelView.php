@@ -3,7 +3,7 @@
     <div class='fuel'>
         <div class="column">
             <h1 class="title">Carburant</h1>
-            <h6>Vous devriez segnaler le kilometrage à partir se queda grabado para contabilizr en consumo.</h6>
+            <h6>Signalez le kilometrage à partir duquel vous voulez commencer le suivi.</h6>
         </div>
         <div class="column">
             <form action="" method="post">

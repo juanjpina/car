@@ -3,7 +3,7 @@
     <div class="userStatistics">
         <div class="column">
             <h1 class='title'>Prévision des modifications</h1>
-            <h6>Choisissez une année ou kilométrage pour la prochaine modification</h6>
+            <h6>Choisissez le nombre d'années ou kilométrage pour la prochaine modification</h6>
         </div>
         <div class="column">
             <form action="" method="post">

@@ -12,7 +12,7 @@
             <a href="<?= $router->generate('menutotalstatistics'); ?>">
                 <div class='total'>
                     <p class=''>
-                        Totales
+                        Sommes
                     </p>
                 </div>
             </a>

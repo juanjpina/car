@@ -28,6 +28,7 @@
                         <?php $verification = messagePassword('password'); ?>
                         <label for="password">Mot de passe</label>
                         <input type="password" class="input password" name="password" value="">
+                        <p class='textPassword'>La mot de passe doit contenir une majuscule et plus de 8 caractères</p>
                         <p class="message"><?= $verification; ?></p>
 
                     </div>
@@ -47,7 +48,7 @@
                 <div>
                     <div class="column">
                         <input type="hidden" value="ok" name="ok">
-                        <button class="button" type="submit">Confirmer</button>
+                        <button class="button" type="submit">Sauvegarder</button>
                     </div>
                 </div>
 
