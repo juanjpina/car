@@ -59,6 +59,13 @@ function egalPass(string $pass, string $cpass): array
 	return $resul;
 }
 
+
+/**
+ * @param text
+ *check if the email has the correct format 
+ * @return array
+ */
+
 function checkEmail(string $email): array
 {
 	$resul = ['message' => ''];

@@ -1,39 +1,52 @@
 <?php
 
+/**
+ * check if the email exists in the database
+ * @param string (post e-mail)
+ * @return string
+ */
 searchEmail($db, $router);
 function searchEmail(PDO $db, AltoRouter $router)
 {
     if (!empty($_POST['email'])) {
-        $data = array(
-            ':email' => $_POST['email']
-        );
-        $sql = 'SELECT email FROM user where email= :email ';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $data = $request->fetch(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        if ($data['email'] == $_POST['email']) {
-            return "Votre email il existe déjà !!";
-        } else {
-            addUser($db, $router);
+
+        try {
+            $data = array(
+                ':email' => $_POST['email']
+            );
+            $sql = 'SELECT email FROM user where email= :email ';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $data = $request->fetch(PDO::FETCH_ASSOC);
+            $request->closeCursor();
+            if ($data['email'] == $_POST['email']) {
+                return "Votre email il existe déjà !!";
+            } else {
+                addUser($db, $router);
+            }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
         }
-        $request->closeCursor();
     }
 }
 
+
+/**
+ * checks if passwords are the same
+ * checks if passwords are correct
+ * insert the new user into the database
+ * creates a new user session
+ * @param password, confirmerPassword, email, psuedo
+ * 
+ */
 function addUser(PDO $db, AltoRouter $router)
 {
     if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
-
-
         if (password($pass)) {
-            // dump(1);
             if (strcmp($pass, $cpass) == 0) {
-                // dump(2);
-
-
                 if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
                     try {
                         $data = [
@@ -68,9 +81,8 @@ function addUser(PDO $db, AltoRouter $router)
                         header('Location: ' . $router->generate('home'));
                         die();
                     }
-                } //if ema
-            } //conf
-
-        } //pass
-    } //if
-}//funcion
+                }
+            }
+        }
+    }
+}

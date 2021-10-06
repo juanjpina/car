@@ -28,7 +28,7 @@
                         <?php $verification = messagePassword('password'); ?>
                         <label for="password">Mot de passe</label>
                         <input type="password" class="input password" name="password" value="">
-                        <p class='textPassword'>La mot de passe doit contenir une majuscule et plus de 8 caractères</p>
+                        <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
                         <p class="message"><?= $verification; ?></p>
 
                     </div>

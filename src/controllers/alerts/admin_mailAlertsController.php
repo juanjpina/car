@@ -3,26 +3,27 @@ $text_mail = '';
 $recipient = 'utilisateur';
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
-$headers .= "From: rdvoiture <red@rev.com>\r\n";
+$headers .= "From: rdvoiture <juanjpina@gmail.com>\r\n";
 
 
 /**
  * send an email to warn of the expiration of timming-belt (1 month)
  */
-$sql = "SELECT user.email, user.nickname, car.trademark ,invtiming.date FROM invtiming, user, car WHERE  DATE_SUB( curdate(), INTERVAL 1 MONTH ) = invtiming.date AND invtiming.id_car = car.id_car AND car.id_user = user.id_user ";
+$sql = "SELECT user.email, user.nickname, car.trademark , invtiming.date FROM invtiming, user, car, setting WHERE  curdate()= DATE_ADD( invtiming.date, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)
+ AND invtiming.id_car = car.id_car AND car.id_user = user.id_user AND setting.id_car = car.id_car";
 $request = $db->prepare($sql);
 $request->execute();
 $reponseA = $request->fetchAll(PDO::FETCH_ASSOC);
 
-// dump($reponseA);
+dump($reponseA);
 
 if ($reponseA) {
     foreach ($reponseA as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Courroie de distribution';
-        $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
+        // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mail);
+        dump($mails);
     }
 }
 
@@ -30,7 +31,7 @@ if ($reponseA) {
 /**
  * send an email to warn of the expiration of technical control
  */
-$sql = "SELECT user.email, car.trademark,user.nickname ,invtechnical.date FROM invtechnical, user, car WHERE  DATE_SUB( curdate(), INTERVAL 1 MONTH ) = invtechnical.date AND invtechnical.id_car = car.id_car AND car.id_user = user.id_user";
+$sql = "SELECT user.email, car.trademark,user.nickname ,invtechnical.date FROM invtechnical, user, car WHERE  curdate() = DATE_ADD(invtechnical.date, INTERVAL 47 MONTH) AND invtechnical.id_car = car.id_car AND car.id_user = user.id_user";
 $request = $db->prepare($sql);
 $request->execute();
 $reponseB = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -38,9 +39,9 @@ if ($reponseB) {
     foreach ($reponseB as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Contrôle technique';
-        $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
-        $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-        // dump($mail);
+        // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
+        $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+        dump($mails);
     }
 }
 
@@ -62,7 +63,7 @@ foreach ($car as $c) {
     $request = $db->prepare($sql);
     $request->execute($data);
     $reponseC = $request->fetchAll(PDO::FETCH_ASSOC);
-    dump($reponseC);
+    // dump($reponseC);
     if ($reponseC[0]['km'] != null) {
         $data = [
             ':id_car' => $c['id_car'],
@@ -74,9 +75,9 @@ foreach ($car as $c) {
         foreach ($reponseC as $mail) {
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez change la courrioe de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Courroie de distribution';
-            $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
-            $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-            dump($mail);
+            // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
+            $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+            // dump($mails);
         }
     }
 
@@ -95,7 +96,7 @@ foreach ($car as $c) {
     $request = $db->prepare($sql);
     $request->execute($data);
     $reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
-    dump($reponseD);
+    // dump($reponseD);
     if ($reponseD[0]['km'] != null) {
         $data = [
             ':id_car' => $c['id_car'],
@@ -108,9 +109,9 @@ foreach ($car as $c) {
         foreach ($reponseD as $mail) {
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Vidange';
-            $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
-            $mail = $mail['email'] . $sunjet . $text_mail . $headers;
-            dump($mail);
+            // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
+            $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+            // dump($mails);
         }
     }
 }

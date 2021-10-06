@@ -24,7 +24,7 @@
                     <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
                     <label for="password">Votre mot de passe</label>
                     <input type="password" class="input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value="">
-                    <p class='textPassword'>La mot de passe doit contenir une majuscule et plus de 8 caractères</p>
+                    <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
                     <p> <?= $error['message']; ?></p>
                     <p><?= $verification; ?></p>
 

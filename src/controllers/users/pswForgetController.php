@@ -1,9 +1,10 @@
 <?php
 
 /**
- * check if the email exists
- */
-
+ * check if the email exists
+ * @param boolean
+ * @return string
+ */
 function passwordNew(PDO $db, AltoRouter $router)
 {
 
@@ -21,6 +22,8 @@ function passwordNew(PDO $db, AltoRouter $router)
         } catch (Exception $e) {
             header('Location: ' . $router->generate('home'));
             die();
+        } finally {
+            $sql = null;
         }
 
 
@@ -46,20 +49,27 @@ function passwordNew(PDO $db, AltoRouter $router)
             /**
              * change the password in the database
              */
-            $sql = "UPDATE user SET password= :password WHERE id_user = :id_user";
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $request->closeCursor();
+            try {
+                $sql = "UPDATE user SET password= :password WHERE id_user = :id_user";
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $request->closeCursor();
 
-            $text_mail = '';
-            $recipient = 'utilisateur';
-            $headers = "MIME-Version: 1.0\r\n";
-            $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
-            $headers .= "From: rdvoiture <red@rev.com>\r\n";
+                $text_mail = '';
+                $recipient = 'utilisateur';
+                $headers = "MIME-Version: 1.0\r\n";
+                $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
+                $headers .= "From: rdvoiture <juanjpina@gmail.com>\r\n";
+            } catch (Exception $e) {
+                header('Location: ' . $router->generate('home'));
+                die();
+            } finally {
+                $sql = null;
+            }
             /**
              * send an email with the password
              */
-            // dump($reponse[0]['id_user']);
+
             $newReponse = getUser($db, $reponse[0]['id_user']);
             if ($newReponse) {
                 dump('re', $newReponse);

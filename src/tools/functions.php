@@ -1,70 +1,58 @@
 <?php
+
+
+/**
+ * verifies the count if it meets the proposed conditions
+ * 
+ * @param string(password)
+ * @return string
+ */
 function messagePassword($pass)
 {
 	if (!empty($_POST[$pass]) && isset($_POST[$pass])) {
 		$pass = $_POST[$pass];
 
 		if (strlen($pass) < 8) {
-			$error_clave = "La clave debe tener al menos 6 caracteres";
-			return "La clave debe tener al menos 6 caracteres";
-			// return false;
+			return "Le mot de passe doit avoir au moins 8 caractères";
 		}
 		if (strlen($pass) > 16) {
-			$error_clave = "La clave no puede tener más de 16 caracteres";
-			return "La clave no puede tener más de 16 caracteres";
-			// return false;
+			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
 		}
 		if (preg_match('@[a-z]@', $pass) == 0) {
-			$error_clave = "La clave debe tener al menos una letra minúscula";
-			// return false;
-			return "La clave debe tener al menos una letra minúscula";
+			return "Le mot de passe doit avoir au moins une minuscule";
 		}
 		if (preg_match('@[A-Z]@', $pass) == 0) {
-			$error_clave = "La clave debe tener al menos una letra mayúscula";
-			// return false;
-			return "La clave debe tener al menos una letra mayúscula";
+			return "Le mot de passe doit avoir au moins une majuscule";
 		}
 		if (preg_match('@[0-9]@', $pass) == 0) {
-			return "La clave debe tener al menos un caracter numérico";
-			$error_clave = "La clave debe tener al menos un caracter numérico";
-			// return false;
+			return "Le mot de passe doit avoir au moins un caractère numérique";
 		}
 	}
 }
 
 
+/**
+ * verifies the count if it meets the proposed conditions
+ * 
+ * @param string (password)
+ * @return boolean
+ */
 function password($pass)
 {
-	// $value = true;
 
 	if (strlen($pass) < 8) {
-		// $error_clave = "La clave debe tener al menos 8 caracteres";
-		// return "La clave debe tener al menos 8 caracteres";
-		// $value = false;
 		return false;
 	}
 	if (strlen($pass) > 16) {
-		// $error_clave = "La clave no puede tener más de 16 caracteres";
-		// return "La clave no puede tener más de 16 caracteres";
-		// $value = false;
 		return false;
 	}
 	if (preg_match('@[a-z]@', $pass) == 0) {
-		// $error_clave = "La clave debe tener al menos una letra minúscula";
-		// $value = false;
 		return false;
-		// return "La clave debe tener al menos una letra minúscula";
 	}
 	if (preg_match('@[A-Z]@', $pass) == 0) {
-		// $error_clave = "La clave debe tener al menos una letra mayúscula";
-		// $value = false;
 		return false;
-		// return "La clave debe tener al menos una letra mayúscula";
 	}
 	if (preg_match('@[0-9]@', $pass) == 0) {
-		// return "La clave debe tener al menos un caracter numérico";
-		// $error_clave = "La clave debe tener al menos un caracter numérico";
-		// $value = false;
 		return false;
 	}
 	return true;
@@ -123,24 +111,30 @@ function getFuel(PDO $db, $id, AltoRouter $router)
 
 
 /**
- * 
- * 
- * @param id-user
- * 
- * @return get id_car
- * 
- */
-function getCar(PDO $db)
+ *search the database with the user id
+ * @param string (id-user)
+ * @return array
+ *
+ */
+
+function getCar(PDO $db, AltoRouter $router)
 {
-	$data = array(
-		':id_user' => $_SESSION['auth']['id_user']
-	);
-	$sql = 'SELECT * FROM car where id_user = :id_user ';
-	$request = $db->prepare($sql);
-	$request->execute($data);
-	$result = $request->fetchAll(PDO::FETCH_ASSOC);
-	$request->closeCursor();
-	return $result;
+	try {
+		$data = array(
+			':id_user' => $_SESSION['auth']['id_user']
+		);
+		$sql = 'SELECT * FROM car where id_user = :id_user ';
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
+		return $result;
+	} catch (Exception $e) {
+		header('Location: ' . $router->generate('executionErrorr'));
+		die();
+	} finally {
+		$sql = null;
+	}
 }
 
 /**
@@ -151,7 +145,7 @@ function getSessionCar(PDO $db, AltoRouter $router)
 {
 	if (!empty($_SESSION['car']['id_car'])) {
 		$value = (int)$_SESSION['car']['id_car'];
-	} else if (getCar($db)) {
+	} else if (getCar($db, $router)) {
 		header('Location: ' . $router->generate('selectcar'));
 		die();
 	} else {
@@ -358,6 +352,8 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('executionError'));
 		die();
+	} finally {
+		$sql = null;
 	}
 };
 
@@ -378,6 +374,7 @@ function maintenanceUpdate(PDO $db, $invoice, $date, $km, $id_car)
 	$request->closeCursor();
 }
 
+
 /**
  * returns the last car in the data base.
  */
@@ -390,30 +387,6 @@ function getLastCar(PDO $db)
 	$request->closeCursor();
 	return $result;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function checkAdmin(AltoRouter $router, string $path)
@@ -448,77 +421,26 @@ function get_footer(string $layout = 'public')
  * @param bool $time format datetime
  * @return string $date new format
  */
-function dateFormat(string $date, bool $time = false): string
-{
-	$format = ($time) ? ' - %Hh%Mmin' : '';
+// function dateFormat(string $date, bool $time = false): string
+// {
+// 	$format = ($time) ? ' - %Hh%Mmin' : '';
 
-	setlocale(LC_ALL, 'fr_FR.utf8', 'fra');
-	$date = strftime('%A %e %B %Y' . $format, strtotime($date));
-	$date = utf8_encode($date);
+// 	setlocale(LC_ALL, 'fr_FR.utf8', 'fra');
+// 	$date = strftime('%A %e %B %Y' . $format, strtotime($date));
+// 	$date = utf8_encode($date);
 
-	return $date;
-}
+// 	return $date;
+// }
 
 
 
 /**
  * Check if id in url exit in db movies
  */
-function noAccess(AltoRouter $router, $check): void
-{
-	if (!$check) {
-		header('Location: ' . $router->generate('homeAdmin'));
-		die;
-	}
-}
-
-
-// function getMovieById(PDO $db, int $id)
+// function noAccess(AltoRouter $router, $check): void
 // {
-// 	$data = ['id' => $id];
-// 	$sql = 'SELECT title FROM movies WHERE id = :id';
-// 	$request = $db->prepare($sql);
-// 	$request->execute($data);
-// 	return $request->fetch();
-// }
-
-
-// function formatBytes($size, $precision = 2)
-// {
-// 	$base     = log($size, 1024);
-// 	$suffixes = ['', 'Ko', 'Mo', 'Go', 'To'];
-
-// 	return round(pow(1024, $base - floor($base)), $precision) . ' ' . $suffixes[floor($base)];
-// }
-
-// function getCateById(PDO $db, int $id)
-// {
-// 	$data = ['id' => $id];
-// 	$sql = 'SELECT categorie FROM categories WHERE id = :id';
-// 	$request = $db->prepare($sql);
-// 	$request->execute($data);
-// 	return $request->fetch();
-// }
-
-/**
- * busca en la tabla de types y devuelve el resultado de las columnas en base al id_user.
- */
-// function searchDb(PDO $db, $table, $id_user)
-// {
-
-	// $data = ['$id_user' => $_SESSION['auth']['id_user']];
-	// $sql = 'SELECT id_car FROM user WHERE id_user = :id_user';
-	// $request = $db->prepare($sql);
-	// $request->execute($data);
-
-	// 	$data=>id_car
-
-
-	// // $data = ['$id' => $id];
-	// $sql = 'SELECT * FROM $table WHERE id_car = :id';
-	// $request = $db->prepare($sql);
-	// $request->execute($data);
-	// return $request->fetch();
-
-
+// 	if (!$check) {
+// 		header('Location: ' . $router->generate('homeAdmin'));
+// 		die;
+// 	}
 // }
