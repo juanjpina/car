@@ -9,39 +9,82 @@ $headers .= "From: rdvoiture <juanjpina@gmail.com>\r\n";
 /**
  * send an email to warn of the expiration of timming-belt (1 month)
  */
-$sql = "SELECT user.email, user.nickname, car.trademark , invtiming.date FROM invtiming, user, car, setting WHERE  curdate()= DATE_ADD( invtiming.date, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)
+
+//******* Data base invtiming
+try {
+    $sql = "SELECT user.email, user.nickname, car.trademark , invtiming.date FROM invtiming, user, car, setting WHERE  curdate()= DATE_ADD( invtiming.date, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)
  AND invtiming.id_car = car.id_car AND car.id_user = user.id_user AND setting.id_car = car.id_car";
-$request = $db->prepare($sql);
-$request->execute();
-$reponseA = $request->fetchAll(PDO::FETCH_ASSOC);
+    $request = $db->prepare($sql);
+    $request->execute();
+    $reponseTiming = $request->fetchAll(PDO::FETCH_ASSOC);
 
-dump($reponseA);
+    //******* Data base car
+    $sql = "SELECT user.email, user.nickname, car.trademark, car.buyDate FROM setting, car, user WHERE  car.id_user = user.id_user AND setting.id_car = car.id_car AND curdate()= DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)";
+    $request = $db->prepare($sql);
+    $request->execute();
+    $reponseCar = $request->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+} finally {
+    $sql = null;
+}
 
-if ($reponseA) {
-    foreach ($reponseA as $mail) {
+if (!empty($reponseTiming)) {
+    emailTiming($reponseTiming, $headers);
+    dump(1);
+} else {
+    emailTiming($reponseCar, $headers);
+    dump(2);
+}
+
+
+function emailTiming($reponse, $headers)
+{
+    foreach ($reponse as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Courroie de distribution';
         // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mails);
+        dump('c', $mails);
     }
 }
-
+/***************************************************************************************************************************** */
 
 /**
  * send an email to warn of the expiration of technical control
  */
-$sql = "SELECT user.email, car.trademark,user.nickname ,invtechnical.date FROM invtechnical, user, car WHERE  curdate() = DATE_ADD(invtechnical.date, INTERVAL 47 MONTH) AND invtechnical.id_car = car.id_car AND car.id_user = user.id_user";
-$request = $db->prepare($sql);
-$request->execute();
-$reponseB = $request->fetchAll(PDO::FETCH_ASSOC);
-if ($reponseB) {
-    foreach ($reponseB as $mail) {
+/***** date base car first Date */
+try {
+    $sql = "SELECT user.email, car.trademark, user.nickname ,car.firstDate FROM user, car WHERE curdate() = DATE_ADD(car.firstDate, INTERVAL 47 MONTH) AND car.id_user = user.id_user";
+    $request = $db->prepare($sql);
+    $request->execute();
+    $reponseCar = $request->fetchAll(PDO::FETCH_ASSOC);
+
+
+    /****** data base invtechnical date  */
+
+    $sql = "SELECT user.email, car.trademark,user.nickname ,invtechnical.date FROM invtechnical, user, car WHERE  curdate() = DATE_ADD(invtechnical.date, INTERVAL 23 MONTH) AND invtechnical.id_car = car.id_car AND car.id_user = user.id_user";
+    $request = $db->prepare($sql);
+    $request->execute();
+    $reponseTechnical = $request->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+} finally {
+    $sql = null;
+}
+
+if (!empty($reponseCar)) {
+    emailTechical($reponseCar, $headers);
+} else {
+    emailTechical($reponseTechnical, $headers);
+}
+
+function emailTechical($emails, $headers)
+{
+    foreach ($emails as $mail) {
         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
         $sunjet = 'Contrôle technique';
         // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-        dump($mails);
+        dump('t', $mails);
     }
 }
 
