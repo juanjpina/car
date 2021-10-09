@@ -1579,7 +1579,7 @@ section .menuSetting div .b-alert:active {
   }
 }
 
-.pswforget {
+section .pswforget {
   background-color: #d9bd30;
   border-radius: 28px;
   margin: 200px 0px 0px 0px;
@@ -1587,19 +1587,22 @@ section .menuSetting div .b-alert:active {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.pswforget .container form div {
-  margin: 20px 0px;
-}
-.pswforget .container div {
-  margin: 20px 0px;
-}
 @media screen and (max-width: 768px) {
-  .pswforget .container {
-    padding: 50px 20px;
+  section .pswforget {
+    margin: 150px 0px 0px 0px;
   }
 }
+section .pswforget form div {
+  margin: 20px 0px;
+}
+section .pswforget div {
+  margin: 20px 0px;
+}
 @media only screen and (max-width: 768px) {
-  .pswforget .container p {
+  section .pswforget {
+    padding: 50px 10px;
+  }
+  section .pswforget p {
     font-size: 0.7em;
     text-align: center;
   }
