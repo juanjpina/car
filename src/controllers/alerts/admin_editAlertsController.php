@@ -15,34 +15,31 @@ $id_car = getSessionCar($db, $router);
 function getControl(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
-
-
-
-
-        $data = [
-            'id_car' => $_SESSION['car']['id_car'],
-        ];
-        $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        if ($result) {
-            return $result;
-        } else {
+        try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
+            $sql = "SELECT (DATE_ADD(MAX(invtechnical.date), INTERVAL 2 year)) as datetechnical FROM car, invtechnical WHERE car.id_car= :id_car AND curdate() <= DATE_ADD((invtechnical.date), INTERVAL 2 year)";
+            // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $resultTechnical = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
-            if ($result) {
-                return $result;
+            if (isset($resultTechnical) && $resultTechnical[0]['datetechnical'] != null && !empty($resultTechnical)) {
+                return $resultTechnical;
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                $sql = "SELECT DATE_ADD(car.firstdate, INTERVAL 4 year) as datetechnical FROM car WHERE curdate() <= DATE_ADD(car.firstdate, INTERVAL 4 year) AND car.id_car = :id_car";
+                // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $resultCar = $request->fetchAll(PDO::FETCH_ASSOC);
+                $request->closeCursor();
+                return $resultCar;
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     };
 };
@@ -57,34 +54,37 @@ $getControl = getControl($db, $router);
 function getOil(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
-        $data = [
-            'id_car' => $_SESSION['car']['id_car'],
-        ];
-        $sql = 'SELECT invoil.km+setting.oilchanges as oil FROM invoil,setting WHERE invoil.id_car= :id_car ORDER by date DESC limit 1';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        if ($result) {
-            return $result;
-        } else {
+        try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = 'SELECT car.buyKm+setting.oilchanges as oil FROM car,setting WHERE car.id_car= :id_car limit 1';
+            $sql = 'SELECT max(invoil.km)+setting.oilchanges as oil FROM invoil,setting WHERE invoil.id_car= :id_car ORDER by oil DESC limit 1';
             $request = $db->prepare($sql);
             $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $resultOil = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
-            if ($result) {
-                return $result;
+            if (isset($resultOil) && $resultOil[0]['oil'] != null && !empty($resultOil)) {
+                return $resultOil;
             } else {
-                // header('Location: ' . $router->generate('executionError'));
+                $data = [
+                    'id_car' => $_SESSION['car']['id_car'],
+                ];
+                $sql = 'SELECT car.buykm+setting.oilchanges as oil FROM car,setting WHERE car.id_car=:id_car limit 1';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                $request->closeCursor();
+                return $result;
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     }
 };
 $getOil = getOil($db, $router);
+
 
 /**
  * this function returns the mileage of the next distribution belt change
@@ -94,37 +94,38 @@ $getOil = getOil($db, $router);
 function getTimingKm(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
-        $data = [
-            'id_car' => $_SESSION['car']['id_car']
-        ];
-        $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM invtiming, setting WHERE invtiming.id_car= :id_car ORDER by date DESC limit 1
-';
-
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        if ($result) {
-            return $result;
-        } else {
+        try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car']
             ];
-            $sql = 'SELECT car.buykm+setting.timingbeltKm as km FROM car, setting WHERE car.id_car= :id_car limit 1
+            $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM invtiming, setting WHERE invtiming.id_car= :id_car ORDER by km DESC limit 1
 ';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
-            if ($result) {
+            if (isset($result) && !empty($result)) {
+                // dump('r1', $result);
                 return $result;
             } else {
-                // header('Location: ' . $router->generate('executionError'));
+                $sql = 'SELECT car.buykm+setting.timingbeltKm as km FROM car, setting WHERE car.id_car= :id_car limit 1
+            ';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $result = $request->fetchAll(PDO::FETCH_ASSOC);
+                $request->closeCursor();
+                // dump('r2', $result);
+                return $result;
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     }
 };
 $getTimingKm = getTimingKm($db, $router);
+
 
 /**
  *this function returns the date of the next distribution belt change
@@ -134,32 +135,41 @@ $getTimingKm = getTimingKm($db, $router);
 function getTimingDate(PDO $db, AltoRouter $router)
 {
     if (!empty($_SESSION['car']['id_car'])) {
-        $data = [
-            'id_car' => $_SESSION['car']['id_car']
-        ];
-        $sql = 'SELECT DATE_ADD(date, INTERVAL setting.timingbeltDate year) as dates FROM invtiming, setting WHERE invtiming.id_car = :id_car ORDER BY date DESC LIMIT 1
-';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        if ($result) {
-            return $result;
-        } else {
+        try {
             $data = [
-                'id_car' => $_SESSION['car']['id_car']
+                'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = 'SELECT DATE_ADD(buyDate, INTERVAL setting.timingbeltDate year) as dates FROM car, setting WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1
-';
+            $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
+            AND invtiming.id_car = :id_car AND setting.id_car = :id_car ORDER BY date DESC LIMIT 1";
+            // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
-            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $resultTiming = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
-            if ($result) {
-                return $result;
+            if (isset($resultTiming) && !empty($resultTiming) && $resultTiming[0]['dates'] != null) {
+                return $resultTiming;
             } else {
-                // header('Location: ' . $router->generate('executionError'));
+                $sql = "SELECT (DATE_ADD( (car.firstdate), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM car, setting WHERE curdate() >= DATE_ADD( car.firstdate, INTERVAL (setting.timingbeltDate) YEAR)
+                AND car.id_car = :id_car AND setting.id_car = :id_car";
+                // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
+                $request = $db->prepare($sql);
+                $request->execute($data);
+                $resultCar = $request->fetchAll(PDO::FETCH_ASSOC);
+                $request->closeCursor();
+                if (isset($resultCar) && !empty($resultCarg) && $resultCar[0]['dates'] != null) {
+                    // dump('as2', $resultCar);
+                    return $resultCar;
+                } else {
+                    $data = [
+                        ['dates' => date('Y-m-d')]
+                    ];
+                    return $data;
+                }
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     }
 };

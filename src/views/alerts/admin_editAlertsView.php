@@ -6,7 +6,7 @@
             <h6>Voici les dates d'entretien du véhicule pour les prochaines modifications</h6>
         </div>
         <div class="column">
-            <?php if (!empty($getControl)) { ?>
+            <?php if (isset($getControl)) { ?>
                 <div class="tbl">
                     <table>
                         <tr>
