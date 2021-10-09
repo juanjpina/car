@@ -1,6 +1,6 @@
 <?php
 
-if (isset(getSessionCar($db, $router))) {
+if (!empty(getSessionCar($db, $router))) {
     $fuel =  getFuel($db, $_SESSION['car']['id_car'],  $router);
     if (isset($_SESSION['car']['id_car']) && isset($_POST['km'])) {
 

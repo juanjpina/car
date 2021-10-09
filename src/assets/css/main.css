@@ -939,7 +939,7 @@ section .alerts li {
 .listedGraphics {
   height: 100%;
   margin-top: 200px;
-  width: 66%;
+  width: 100%;
 }
 .listedGraphics .row .start {
   margin-bottom: 30px;
