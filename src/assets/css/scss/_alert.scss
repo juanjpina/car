@@ -27,7 +27,8 @@ section {
         }
         td {
             text-align: center;
-            padding: 2px;
+            padding: 0px;
+            margin: 0px 2px;
         }
         .select {
             @include select;
@@ -38,7 +39,10 @@ section {
         .column {
             @media only screen and (max-width: 768px) {
                 overflow-x: auto;
-                margin: 10px 0px;
+                margin: 10px 3px;
+                td {
+                    font-size: 0.6em;
+                }
             }
         }
     }

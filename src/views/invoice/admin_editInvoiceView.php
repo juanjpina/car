@@ -36,7 +36,7 @@
                     </thead>
                     <?php foreach ($selectInvoice as $invoice) { ?>
                         <tr>
-                            <td><?= date("d-m-Y", strtotime($invoice['date'])); ?></td>
+                            <td class='date'><?= date("d-m-Y", strtotime($invoice['date'])); ?></td>
                             <td><?= $invoice['km']; ?></td>
                             <td><?= $invoice['total']; ?></td>
                             <td><?= $invoice['comment']; ?></td>

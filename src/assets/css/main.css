@@ -664,7 +664,8 @@ section .alerts th {
 }
 section .alerts td {
   text-align: center;
-  padding: 2px;
+  padding: 0px;
+  margin: 0px 2px;
 }
 section .alerts .select {
   width: 50%;
@@ -680,7 +681,10 @@ section .alerts li {
 @media only screen and (max-width: 768px) {
   section .alerts .column {
     overflow-x: auto;
-    margin: 10px 0px;
+    margin: 10px 3px;
+  }
+  section .alerts .column td {
+    font-size: 0.6em;
   }
 }
 
@@ -1372,8 +1376,8 @@ section .alerts li {
 .editInvoice .column div {
   margin-bottom: 10px;
 }
-.editInvoice li {
-  margin: 40px 0;
+.editInvoice div {
+  margin: 20px 0;
 }
 .editInvoice .table {
   margin-top: 50px;
@@ -1385,6 +1389,12 @@ section .alerts li {
   padding: 10px 15px;
   text-align: center;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .editInvoice td,
+.editInvoice th {
+    font-size: 0.9em;
+  }
 }
 .editInvoice .icon {
   width: 20px;
@@ -1682,6 +1692,7 @@ section .pswforget div {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   text-decoration: none;
+  z-index: 999;
 }
 .headerAdmin a {
   text-decoration: none;
@@ -1792,7 +1803,7 @@ section .pswforget div {
 @media screen and (max-width: 768px) {
   .execute .banner {
     padding: 50px 2px;
-    width: 80%;
+    width: 100%;
     margin-right: 30%;
   }
 }

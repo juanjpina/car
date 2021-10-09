@@ -19,8 +19,8 @@
         }
     }
 
-    li {
-        margin: 40px 0;
+    div {
+        margin: 20px 0;
     }
     .table {
         margin-top: 50px;
@@ -32,6 +32,9 @@
         padding: 10px 15px;
         text-align: center;
         text-transform: uppercase;
+        @media screen and (max-width: 768px) {
+            font-size: 0.9em;
+        }
     }
     .icon {
         width: 20px;

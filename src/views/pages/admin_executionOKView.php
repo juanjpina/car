@@ -1,7 +1,7 @@
 <?php get_header('execute ok', 'admin'); ?>
-<section class="column">
+<section>
     <div class="execute column ">
-        <div class="banner">
+        <div class="banner column">
             <h6>Le processus a été exécuté correctement</h6>
             <a href="<?= $router->generate('whiteHome'); ?>">
                 <div class="button">
