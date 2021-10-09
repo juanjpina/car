@@ -1,3 +1,78 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "montserratExtra";
+  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "montserrat", sans-serif;
+}
+
 a {
   text-decoration: none;
 }
@@ -102,73 +177,12 @@ table td {
   text-align: center;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-@font-face {
-  font-family: "montserrat";
-  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "montserratExtra";
-  src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
-}
 .title {
   font-family: "montserratExtra";
   letter-spacing: 0.1em;
   padding: 1.1em 0em;
   text-transform: uppercase;
+  text-align: center;
 }
 @media only screen and (max-width: 768px) {
   .title {
@@ -176,24 +190,15 @@ table {
   }
 }
 
+h6 {
+  text-align: center;
+  margin-bottom: 5px;
+}
 @media only screen and (max-width: 768px) {
   h6 {
     text-align: center;
     margin-bottom: 5px;
   }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 16px;
-  width: 100%;
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "montserrat", sans-serif;
 }
 
 .header {
@@ -633,7 +638,7 @@ section .alerts {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  padding: 50px 0px;
+  padding: 10px 0px;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -642,10 +647,6 @@ section .alerts {
   section .alerts {
     padding: 10px 5px;
     width: 100%;
-  }
-  section .alerts h6 {
-    text-align: center;
-    padding: 0px 20px;
   }
 }
 section .alerts .button:active {
@@ -675,8 +676,8 @@ section .alerts .select {
   margin-top: 5px;
   text-align: center;
 }
-section .alerts li {
-  margin: 30px 0px;
+section .alerts div {
+  margin: 10px 0px;
 }
 @media only screen and (max-width: 768px) {
   section .alerts .column {
@@ -1207,25 +1208,6 @@ section .alerts li {
   font-family: "montserratExtra";
   src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
 }
-.title {
-  font-family: "montserratExtra";
-  letter-spacing: 0.1em;
-  padding: 1.1em 0em;
-  text-transform: uppercase;
-}
-@media only screen and (max-width: 768px) {
-  .title {
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  h6 {
-    text-align: center;
-    margin-bottom: 5px;
-  }
-}
-
 .userStatistics {
   background-color: #083540;
   border-radius: 28px;
@@ -1359,7 +1341,7 @@ section .alerts li {
   height: 100%;
   margin-top: 200px;
   width: 66%;
-  padding: 0px 2px;
+  padding: 5px 2px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1600,7 +1582,7 @@ section .pswforget {
   background-color: #d9bd30;
   border-radius: 28px;
   margin: 200px 0px 0px 0px;
-  width: 100%;
+  width: 55%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }

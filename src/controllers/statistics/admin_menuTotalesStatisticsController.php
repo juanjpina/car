@@ -14,6 +14,6 @@ if (isset($_POST['ok'])) {
         );
         return  header('Location: ' . $router->generate('totalstatistics', $data));
     } else {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     }
 }

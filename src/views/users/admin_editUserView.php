@@ -11,14 +11,14 @@
                     <div class="column">
                         <label for="nickname">Pseudo</label>
                         <?php foreach ($result as $x) { ?>
-                            <input class='input' type="text" name="nickname" value="" placeholder="<?= $x['nickname'] ?>">
+                            <input class='input' type="text" name="nickname" value="<?= $x['nickname'] ?>">
                     </div>
                 </div>
                 <div>
                     <div class="column">
                         <?php $mail = checkEmail('email'); ?>
                         <label for="email">Votre email</label>
-                        <input type="email" name="email" value="" placeholder="<?= $x['email'] ?>">
+                        <input type="email" name="email" value="<?= $x['email'] ?>">
                         <p class="message"> <?= $mail['message']; ?> </p>
                     <?php } ?>
                     </div>

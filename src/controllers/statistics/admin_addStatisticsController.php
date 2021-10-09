@@ -26,7 +26,8 @@ function getListe(AltoRouter $router, $id_car)
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
             } else {
-                header('Refresh:' . 0.2);
+                header('Location: ' . $router->generate('executionError'));
+                // header('Refresh:' . 0.2);
                 die();
             }
         } else {
@@ -40,16 +41,18 @@ function getListe(AltoRouter $router, $id_car)
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
             } else {
-                // header('Location: ' . $router->generate('executionError'));
+                header('Location: ' . $router->generate('executionError'));
             }
         }
     } else {
-        $data = array(
-            'period' => '5',
-            'dateStart' => '5',
-            'dateEnd' => '5',
-            'id' => '5'
-        );
+        $data = [
+            [
+                'period' => '5',
+                'dateStart' => '5',
+                'dateEnd' => '5',
+                'id' => '5'
+            ]
+        ];
     }
     return $data;
 }

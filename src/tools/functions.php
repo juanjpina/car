@@ -9,7 +9,7 @@
  */
 function messagePassword($pass)
 {
-	if (!empty($_POST[$pass]) && isset($_POST[$pass])) {
+	if (isset($_POST[$pass])) {
 		$pass = $_POST[$pass];
 
 		if (strlen($pass) < 8) {
