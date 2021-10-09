@@ -25,6 +25,7 @@ $router->map('GET', '/whiteHome', 'pages/admin_whiteHome', 'whiteHome');
 
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
 $router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar', 'addinvoicecar');
+$router->map('GET|POST', '/admin/users/editpassword', 'users/admin_editPassword', 'editpassword');
 
 //*************     invoice *****************/
 $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');

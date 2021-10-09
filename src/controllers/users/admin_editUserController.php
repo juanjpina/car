@@ -26,9 +26,10 @@ function editUser(PDO $db, AltoRouter $router)
 {
     if (isset($_POST['ok'])) {
 
-        if (isset($_POST['password']) && isset($_POST['confirmerPassword'])) {
+        if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
             $pass = $_POST['password'];
             $cpass = $_POST['confirmerPassword'];
+            // dump(1);
             if (password($pass)) {
                 if (strcmp($pass, $cpass) == 0) {
                     try {

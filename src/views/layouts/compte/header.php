@@ -74,7 +74,15 @@
                         <a href="<?= $router->generate('editUser'); ?>">
                             <div class="b-alert">
                                 <img src="/car/src/assets/images/man.png" width="30" height="30" alt="">
-                                <p>Pseudo, Mot de passe</p>
+                                <p>Pseudo</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= $router->generate('editpassword'); ?>">
+                            <div class="b-alert">
+                                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="">
+                                <p>Mot de passe</p>
                             </div>
                         </a>
                     </li>
