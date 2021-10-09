@@ -45,7 +45,7 @@ function total(PDO $db, $startYear, $totales, $invoice)
     return $totales;
 }
 
-if (!empty($_GET['car']) && !empty($_GET['endYear']) && !empty($_GET['startYear'])) {
+if (isset($_GET['car']) && isset($_GET['endYear']) && isset($_GET['startYear'])) {
 
     $endYear = total($db, $_GET['endYear'], $totales, $invoice);
     $startYear = total($db, $_GET['startYear'], $totales, $invoice);

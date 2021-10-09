@@ -9,7 +9,7 @@ $id_car = getSessionCar($db, $router);
  */
 function getCars(PDO $db, $id_car, AltoRouter $router)
 {
-    if (!empty($id_car)) {
+    if (isset($id_car)) {
         try {
             $data = array(
                 ':id_car' => $id_car
@@ -22,6 +22,8 @@ function getCars(PDO $db, $id_car, AltoRouter $router)
             return $result;
         } catch (Exception $e) {
             header('Location:' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     }
 };
@@ -33,9 +35,9 @@ $getCars = getCars($db, $id_car, $router);
  */
 function updateCar(PDO $db, AltoRouter $router, $id_car)
 {
-    if (!empty($_POST['ok'])) {
+    if (isset($_POST['ok'])) {
         try {
-            if (!empty($_POST['buydate'])) {
+            if (isset($_POST['buydate'])) {
 
                 $data = [
                     'id_car' => $id_car,
@@ -46,7 +48,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $result = $request->execute($data);
                 $request->closeCursor();
             }
-            if (!empty($_POST['buykm'])) {
+            if (isset($_POST['buykm'])) {
                 $data = [
                     'id_car' => $id_car,
                     'buykm'  => $_POST['buykm'],
@@ -56,7 +58,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $result = $request->execute($data);
                 $request->closeCursor();
             }
-            if (!empty($_POST['firstdate'])) {
+            if (isset($_POST['firstdate'])) {
                 $data = [
                     'id_car' => $id_car,
                     'firstdate'  => $_POST['firstdate'],
@@ -66,7 +68,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $result = $request->execute($data);
                 $request->closeCursor();
             }
-            if (!empty($_POST['firstkm'])) {
+            if (isset($_POST['firstkm'])) {
                 $data = [
                     'id_car' => $id_car,
                     'firstkm'  => $_POST['firstkm'],
@@ -79,6 +81,8 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
             header('Location: ' . $router->generate('execution'));
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
+        } finally {
+            $sql = null;
         }
     }
 }

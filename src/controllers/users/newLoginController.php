@@ -8,7 +8,7 @@
 searchEmail($db, $router);
 function searchEmail(PDO $db, AltoRouter $router)
 {
-    if (!empty($_POST['email'])) {
+    if (isset($_POST['email'])) {
 
         try {
             $data = array(
@@ -27,6 +27,8 @@ function searchEmail(PDO $db, AltoRouter $router)
         } catch (Exception $e) {
             header('Location: ' . $router->generate('home'));
             die();
+        } finally {
+            $sql = null;
         }
     }
 }
@@ -42,12 +44,12 @@ function searchEmail(PDO $db, AltoRouter $router)
  */
 function addUser(PDO $db, AltoRouter $router)
 {
-    if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
+    if (isset($_POST['password']) && isset($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];
         if (password($pass)) {
             if (strcmp($pass, $cpass) == 0) {
-                if (!empty($_POST['email']) && !empty($_POST['pseudo'])) {
+                if (isset($_POST['email']) && isset($_POST['pseudo'])) {
                     try {
                         $data = [
                             ':email'     => $_POST['email'],
@@ -80,6 +82,8 @@ function addUser(PDO $db, AltoRouter $router)
                     } catch (Exception $e) {
                         header('Location: ' . $router->generate('home'));
                         die();
+                    } finally {
+                        $sql = null;
                     }
                 }
             }

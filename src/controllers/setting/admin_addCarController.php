@@ -3,7 +3,7 @@
 /**
  * a new car is created in the database
  */
-if (!empty($_POST['trademark'])) {
+if (isset($_POST['trademark'])) {
 
 
     $data = [
@@ -79,5 +79,7 @@ if (!empty($_POST['trademark'])) {
     } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));
         die();
+    } finally {
+        $sql = null;
     }
 }

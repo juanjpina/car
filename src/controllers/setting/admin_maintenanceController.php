@@ -2,7 +2,7 @@
 
 $id_car = getSessionCar($db, $router);
 
-if (!empty($id_car)) {
+if (isset($id_car)) {
 
 
     /**
@@ -40,6 +40,8 @@ if (!empty($id_car)) {
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
+        } finally {
+            $sql = null;
         }
     }
     $timing = dbTiming($db, $id_car, $router);
@@ -50,7 +52,7 @@ if (!empty($id_car)) {
      */
     function dbTechnical(PDO $db, $id_car, AltoRouter $router)
     {
-        if (!empty($id_car)) {
+        if (isset($id_car)) {
             try {
                 $data = array(
                     ':id_car' => $id_car
@@ -78,6 +80,8 @@ if (!empty($id_car)) {
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
+            } finally {
+                $sql = null;
             }
         }
     }
@@ -89,7 +93,7 @@ if (!empty($id_car)) {
      */
     function dbOil(PDO $db, $id_car, AltoRouter $router)
     {
-        if (!empty($id_car)) {
+        if (isset($id_car)) {
             try {
                 $data = array(
                     ':id_car' => $id_car
@@ -129,6 +133,8 @@ if (!empty($id_car)) {
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
+            } finally {
+                $sql = null;
             }
         }
     }

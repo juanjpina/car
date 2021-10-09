@@ -4,8 +4,8 @@ $invoice = getSelect($db, 'type_invoice');
 $id_car = getSessionCar($db, $router);
 $test = false;
 if (
-    !empty($id_car) && !empty($_POST['invoice'])
-    && !empty($_POST['date'])  && !empty($_POST['total'])
+    isset($id_car) && isset($_POST['invoice'])
+    && isset($_POST['date'])  && isset($_POST['total'])
 ) {
 
     if (in_range($_POST['invoice'], $value1 = 1, $value2 = 7)) {
@@ -59,6 +59,7 @@ if (
         };
     } else {
         header('Location: ' . $router->generate('executionError'));
+        die();
     }
     // header('Refresh:' . 0.2);
 }; //else fin

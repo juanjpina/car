@@ -11,7 +11,7 @@ $cars = getCar($db, $router);
  *creates a car session with the new car selection
  * 
  */
-if (!empty($_POST['cars-ok'])) {
+if (isset($_POST['cars-ok'])) {
     $car = $_POST['car'];
     $listCar = getCarId($db, $car, 'car', $router);
     $_SESSION['car'] = [

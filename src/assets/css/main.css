@@ -1091,7 +1091,7 @@ section .alerts li {
   border-radius: 28px;
   height: 100%;
   margin-top: 200px;
-  width: 66%;
+  width: 76%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }

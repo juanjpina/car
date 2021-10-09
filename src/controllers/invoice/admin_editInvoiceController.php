@@ -13,8 +13,8 @@ $typeInvoice = getSelect($db, 'type_invoice');
  */
 function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 {
-    if (!empty($_POST['submit'])) {
-        if (!empty($id_car) && !empty($_POST['typeInvoice'])) {
+    if (isset($_POST['submit'])) {
+        if (isset($id_car) && isset($_POST['typeInvoice'])) {
             try {
                 $data = array(
                     'id_car' => (int)$id_car,
@@ -32,6 +32,8 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
+            } finally {
+                $sql = null;
             }
 
 
@@ -53,7 +55,7 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 
 
 
-if (!empty($_POST['typeInvoice'])) {
+if (isset($_POST['typeInvoice'])) {
     $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car, $router);
 } else {
     $selectInvoice

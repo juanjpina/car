@@ -13,11 +13,11 @@ $invoices = getSelect($db, 'type_invoice');
  */
 function getListe(AltoRouter $router, $id_car)
 {
-    if (!empty($_POST['ok'])) {
+    if (isset($_POST['ok'])) {
         $string = strcmp($_POST['period'], '0');
         if ($string == 0) {
 
-            if (!empty($_POST['dateStart']) && (!empty($_POST['dateEnd']))) {
+            if (isset($_POST['dateStart']) && (isset($_POST['dateEnd']))) {
                 $data = array(
                     'period' => '0',
                     'dateStart' => $_POST['dateStart'],

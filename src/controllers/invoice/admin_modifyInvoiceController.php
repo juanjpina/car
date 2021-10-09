@@ -6,7 +6,7 @@
 function invoiceUpdate(PDO $db, AltoRouter $router)
 {
     $test = false;
-    if (!empty($_POST['date']) && !empty($_POST['total']) && !empty($_POST['km'])) {
+    if (isset($_POST['date']) && isset($_POST['total']) && isset($_POST['km'])) {
         if (is_numeric($_POST['km'])) {
             if (is_numeric($_POST['total'])) {
                 if (validateDate($_POST['date'], $format = 'Y-m-d')) {
@@ -35,6 +35,9 @@ function invoiceUpdate(PDO $db, AltoRouter $router)
                 }
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
+                die();
+            } finally {
+                $sql = null;
             }
         } else {
             header('Location: ' . $router->generate('executionError'));
@@ -46,6 +49,6 @@ invoiceUpdate($db, $router);
 /**
  * filled with a select
  */
-if (!empty($_GET['id']) && !empty($_GET['db'])) {
+if (isset($_GET['id']) && isset($_GET['db'])) {
     $getInvoice = getInvoice($db, $_GET['id'], $_GET['db']);
 }

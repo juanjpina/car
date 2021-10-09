@@ -5,7 +5,7 @@ $id_car = getSessionCar($db, $router);
 /**
  * retrieves the information from the form and sends it
  */
-if (!empty($_POST['ok'])) {
+if (isset($_POST['ok'])) {
     if (is_numeric($_POST['endYear']) && is_numeric($_POST['startYear'])) {
         $data = array(
             'endYear' => $_POST['endYear'],

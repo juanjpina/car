@@ -2,7 +2,7 @@
 
 function addUser(PDO $db)
 {
-	if (!empty($_POST['email'])) {
+	if (isset($_POST['email'])) {
 		$sql = 'INSERT INTO user (email, password) VALUES (:email, :password)';
 		$data = [
 			'email' 	=> $_POST['email'],

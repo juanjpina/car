@@ -8,7 +8,7 @@
 function passwordNew(PDO $db, AltoRouter $router)
 {
 
-    if (!empty($_POST['mail']) && isset($_POST['mail'])) {
+    if (isset($_POST['mail']) && isset($_POST['mail'])) {
         try {
 
             $data = [

@@ -38,6 +38,7 @@ function getControl(PDO $db, AltoRouter $router)
             }
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
+            die();
         } finally {
             $sql = null;
         }
@@ -78,6 +79,7 @@ function getOil(PDO $db, AltoRouter $router)
             }
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
+            die();
         } finally {
             $sql = null;
         }
@@ -119,6 +121,7 @@ function getTimingKm(PDO $db, AltoRouter $router)
             }
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
+            die();
         } finally {
             $sql = null;
         }
@@ -168,6 +171,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
             }
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
+            die();
         } finally {
             $sql = null;
         }

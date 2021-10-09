@@ -24,9 +24,9 @@ function searchEmail(PDO $db)
  */
 function editUser(PDO $db, AltoRouter $router)
 {
-    if (!empty($_POST['ok'])) {
+    if (isset($_POST['ok'])) {
         // try {
-        if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
+        if (isset($_POST['password']) && isset($_POST['confirmerPassword'])) {
             $pass = $_POST['password'];
             $cpass = $_POST['confirmerPassword'];
 
@@ -82,7 +82,7 @@ function editUser(PDO $db, AltoRouter $router)
             if ($result) {
                 header('Location: ' . $router->generate('execution'));
             }
-        } else if (!empty($_POST['email'])) {
+        } else if (isset($_POST['email'])) {
             $data = [
                 'id_user' => $_SESSION['auth']['id_user'],
                 'email'  => $_POST['email'],

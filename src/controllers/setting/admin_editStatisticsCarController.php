@@ -1,7 +1,7 @@
 <?php
 
 $id_car = getSessionCar($db, $router);
-if (!empty($id_car)) {
+if (isset($id_car)) {
     $setting = dbSelect($db, $id_car, "setting");
 
     /**
@@ -29,12 +29,14 @@ if (!empty($id_car)) {
         } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
+        } finally {
+            $sql = null;
         }
     } //fin
 
 }
 
-if (!empty($_POST['dateTiming']) && !empty($_POST['kmTiming']) && !empty($_POST['kmOil'])) {
+if (isset($_POST['dateTiming']) && isset($_POST['kmTiming']) && isset($_POST['kmOil'])) {
     dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car, $router);
     // header("Refresh: 0.2");
 }

@@ -6,7 +6,7 @@ function login(PDO $db, AltoRouter $router)
 {
 	if (isset($_POST['login'])) {
 		honeyPot($router);
-		if (!empty($_POST['login']) || !empty($_POST['password'])) {
+		if (isset($_POST['login']) || isset($_POST['password'])) {
 			$data 	 = ['email' => $_POST['login']];
 			$sql 	 = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
 			$request = $db->prepare($sql);
@@ -32,7 +32,7 @@ function login(PDO $db, AltoRouter $router)
 
 function redirectAdmin(AltoRouter $router)
 {
-	if (!empty($_SESSION['auth'])) {
+	if (isset($_SESSION['auth'])) {
 		header('Location: ' . $router->generate('reception'));
 		die();
 	}
@@ -41,7 +41,7 @@ function redirectAdmin(AltoRouter $router)
 
 function honeyPot(AltoRouter $router)
 {
-	if (!empty($_POST['auth'])) {
+	if (isset($_POST['auth'])) {
 		dump('Vous êtes connecté', 'success');
 		header('Location: ' . $router->generate('login'));
 		die;

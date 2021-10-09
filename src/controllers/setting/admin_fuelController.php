@@ -1,8 +1,8 @@
 <?php
 
-if (!empty(getSessionCar($db, $router))) {
+if (isset(getSessionCar($db, $router))) {
     $fuel =  getFuel($db, $_SESSION['car']['id_car'],  $router);
-    if (!empty($_SESSION['car']['id_car']) && !empty($_POST['km'])) {
+    if (isset($_SESSION['car']['id_car']) && isset($_POST['km'])) {
 
         $id_car = $_SESSION['car']['id_car'];
         try {
@@ -20,6 +20,8 @@ if (!empty(getSessionCar($db, $router))) {
         } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
+        } finally {
+            $sql = null;
         }
         // header('Refresh:' . 0.2);
     };

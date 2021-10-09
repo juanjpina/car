@@ -11,11 +11,11 @@ $invoice = getSelect($db, 'type_invoice');
 function getListed(AltoRouter $router, $id_car)
 {
     $test = false;
-    if (!empty($_POST['ok'])) {
+    if (isset($_POST['ok'])) {
         $string = strcmp($_POST['period'], '0');
         if ($string == 0) {
 
-            if (!empty($_POST['dateStart']) && (!empty($_POST['dateEnd']))) {
+            if (isset($_POST['dateStart']) && (isset($_POST['dateEnd']))) {
                 if (validateDate($_POST['dateEnd'], $format = 'Y-m-d')) {
                     if (validateDate($_POST['dateStart'], $format = 'Y-m-d')) {
                         $test = true;
@@ -34,14 +34,15 @@ function getListed(AltoRouter $router, $id_car)
                 } else {
                     header('Location: ' . $router->generate('executionError'));
                 }
-            } else {
-                header('Refresh:' . 0.2);
-                die();
             }
+            // else {
+            //     header('Refresh:' . 0.2);
+            //     die();
+            // }
         } else {
             if (in_range($_POST['period'], $value1 = 0, $value2 = 12)) {
-                // dump(2);    
                 $test = true;
+                // dump('p');
             }
             if ($test) {
                 $data = array(
@@ -54,6 +55,7 @@ function getListed(AltoRouter $router, $id_car)
                 return  header('Location: ' . $router->generate('listedhistory', $data));
             } else {
                 header('Location: ' . $router->generate('executionError'));
+                die();
             }
         }
     } else {

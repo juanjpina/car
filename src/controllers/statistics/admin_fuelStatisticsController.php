@@ -6,7 +6,7 @@ $id_car = getSessionCar($db, $router);
 /**
  * calculates the fuel costs
  */
-if (!empty($id_car)) {
+if (isset($id_car)) {
     $data = [
         ':id_car' => $_SESSION['car']['id_car'],
     ];

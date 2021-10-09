@@ -1,8 +1,8 @@
 <?php
 setlocale(LC_TIME, "spanish");
 $test = false;
-
 $string = strcmp($_GET['period'], '0');
+// dump($string);
 if ($string == 0) {
     $invoice = get($db, $_GET['invoice'], $router);
     $totalPeriod = getTotalDate($db, $_GET['invoice'], $router);
@@ -25,7 +25,6 @@ $typeInvoice = getInvoiceTitel($db, $_GET['invoice'], 'type_invoice');
 function get(PDO $db, $database, AltoRouter $router)
 {
     try {
-
         $data = [
             'dateStart' => $_GET['dateStart'],
             'dateEnd' => $_GET['dateEnd'],
@@ -39,13 +38,22 @@ function get(PDO $db, $database, AltoRouter $router)
         if ($result) {
             return $result;
         } else {
-            header('Location: ' . $router->generate('executionError'));
+            $values = [
+                [
+                    'date' => '11-11-1111',
+                    'km' => '0',
+                    'total' => '0',
+                    'comment' => '0'
+                ]
+            ];
+            return $values;
         }
-    } catch (PDOException $e) {
+    } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));
+    } finally {
+        $sql = null;
     }
 };
-
 
 
 /**
@@ -58,7 +66,6 @@ function get(PDO $db, $database, AltoRouter $router)
 function getPeriod(PDO $db, $database, $router)
 {
     try {
-
         $period = $_GET['period'];
         $data = [
             'id_car' => $_GET['id']
@@ -72,10 +79,20 @@ ORDER BY date ASC";
         if ($result) {
             return $result;
         } else {
-            header('Location: ' . $router->generate('executionError'));
+            $values = [
+                [
+                    'date' => '11-11-1111',
+                    'km' => '0',
+                    'total' => '0',
+                    'comment' => '0'
+                ]
+            ];
+            return $values;
         }
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
+    } finally {
+        $sql = null;
     }
 };
 
@@ -101,10 +118,16 @@ ORDER BY date ASC";
         if ($result) {
             return $result;
         } else {
-            header('Location: ' . $router->generate('executionError'));
+            $values = [
+                'SUM(total)' => '0'
+            ];
+            return $values;
         }
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
+        die();
+    } finally {
+        $sql = null;
     }
 }
 
@@ -128,9 +151,15 @@ function getTotalDate(PDO $db, $database, AltoRouter $router)
         if ($result) {
             return $result;
         } else {
-            header('Location: ' . $router->generate('executionError'));
+            $values = [
+                'SUM(total)' => '0'
+            ];
+            return $values;
         }
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
+        die();
+    } finally {
+        $sql = null;
     }
 }
