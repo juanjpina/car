@@ -14,7 +14,7 @@ $id_car = getSessionCar($db, $router);
  */
 function getControl(PDO $db, AltoRouter $router)
 {
-    if (!empty($_SESSION['car']['id_car'])) {
+    if (isset($_SESSION['car']['id_car'])) {
         try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
@@ -53,7 +53,7 @@ $getControl = getControl($db, $router);
  */
 function getOil(PDO $db, AltoRouter $router)
 {
-    if (!empty($_SESSION['car']['id_car'])) {
+    if (isset($_SESSION['car']['id_car'])) {
         try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
@@ -93,7 +93,7 @@ $getOil = getOil($db, $router);
  */
 function getTimingKm(PDO $db, AltoRouter $router)
 {
-    if (!empty($_SESSION['car']['id_car'])) {
+    if (isset($_SESSION['car']['id_car'])) {
         try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car']
@@ -134,7 +134,7 @@ $getTimingKm = getTimingKm($db, $router);
  */
 function getTimingDate(PDO $db, AltoRouter $router)
 {
-    if (!empty($_SESSION['car']['id_car'])) {
+    if (isset($_SESSION['car']['id_car'])) {
         try {
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],

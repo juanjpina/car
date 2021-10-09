@@ -1,6 +1,6 @@
 <?php
 
-$cars =  getCar($db);
+$cars =  getCar($db, $router);
 
 //enviar a totales
 

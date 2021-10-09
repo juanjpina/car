@@ -179,6 +179,7 @@ table {
 @media only screen and (max-width: 768px) {
   h6 {
     text-align: center;
+    margin-bottom: 5px;
   }
 }
 
@@ -747,6 +748,11 @@ section .alerts li {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media screen and (max-width: 768px) {
+  .statistics {
+    width: 100%;
+  }
+}
 .statistics .column {
   margin-bottom: 20px;
 }
@@ -1212,6 +1218,7 @@ section .alerts li {
 @media only screen and (max-width: 768px) {
   h6 {
     text-align: center;
+    margin-bottom: 5px;
   }
 }
 
@@ -1687,8 +1694,8 @@ section .pswforget div {
     padding-left: 2%;
   }
   .headerAdmin .row .logos img {
-    height: 75px;
-    width: 140px;
+    height: 64px;
+    width: 119px;
   }
 }
 .headerAdmin .row .navegation .nave li {
