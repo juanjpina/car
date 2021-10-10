@@ -7,9 +7,10 @@ try {
 	$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 	$db->exec('SET CHARACTER SET utf8');
 	if (DEBUG) :
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+		// $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING, PDO::ERRMODE_EXCEPTION);
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	endif;
-} catch (Exception $e) {
+} catch (PDOException $e) {
 	if (DEBUG) :
 		$message = utf8_encode($e->getMessage());
 		echo $message;

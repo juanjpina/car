@@ -7,25 +7,32 @@ function login(PDO $db, AltoRouter $router)
 	if (isset($_POST['login'])) {
 		honeyPot($router);
 		if (isset($_POST['login']) || isset($_POST['password'])) {
-			$data 	 = ['email' => $_POST['login']];
-			$sql 	 = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
-			$request = $db->prepare($sql);
-			$request->execute($data);
-			$result = $request->fetch();
-			$request->closeCursor();
-			if ($result && password_verify($_POST['password'], $result->password)) {
-				$_SESSION['auth'] = [
-					'nickname' => $result->nickname,
-					'email' => $result->email,
-					'id_user'	=> $result->id_user,
-				];
-				header('Location: ' . $router->generate('white'));
+			try {
+				$data 	 = ['email' => $_POST['login']];
+				$sql 	 = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
+				$request = $db->prepare($sql);
+				$request->execute($data);
+				$result = $request->fetch();
+				$request->closeCursor();
+				if ($result && password_verify($_POST['password'], $result->password)) {
+					$_SESSION['auth'] = [
+						'nickname' => $result->nickname,
+						'email' => $result->email,
+						'id_user'	=> $result->id_user,
+					];
+					header('Location: ' . $router->generate('white'));
+					die();
+				}
+			} catch (Exception $e) {
+				header('Location: ' . $router->generate('executionError'));
 				die();
+			} catch (PDOException $e) {
+				header('Location: ' . $router->generate('executionError'));
+				die();
+			} finally {
+				$sql = null;
 			}
 		}
-		// if (empty($_SESSION['auth'])) {
-		// 	alert('Merci de compléter les informations');
-		// }
 	}
 }
 

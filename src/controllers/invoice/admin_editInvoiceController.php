@@ -32,6 +32,9 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
+            } catch (PDOException $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
             } finally {
                 $sql = null;
             }

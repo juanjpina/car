@@ -50,6 +50,9 @@ function get(PDO $db, $database, AltoRouter $router)
         }
     } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
     } finally {
         $sql = null;
     }
@@ -91,6 +94,9 @@ ORDER BY date ASC";
         }
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
     } finally {
         $sql = null;
     }
@@ -126,6 +132,9 @@ ORDER BY date ASC";
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
         die();
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
     } finally {
         $sql = null;
     }
@@ -156,6 +165,9 @@ function getTotalDate(PDO $db, $database, AltoRouter $router)
             ];
             return $values;
         }
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
         die();

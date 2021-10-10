@@ -63,7 +63,10 @@ function getOil(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $resultOil = $request->fetchAll(PDO::FETCH_ASSOC);
+
             $request->closeCursor();
+
+
             if (isset($resultOil) && $resultOil[0]['oil'] != null && !empty($resultOil)) {
                 return $resultOil;
             } else {
@@ -77,6 +80,9 @@ function getOil(PDO $db, AltoRouter $router)
                 $request->closeCursor();
                 return $result;
             }
+        } catch (PDOException $e) {
+            header('Location: ' . $router->generate('executionError'));
+            die();
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
@@ -120,6 +126,9 @@ function getTimingKm(PDO $db, AltoRouter $router)
                 return $result;
             }
         } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+            die();
+        } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
         } finally {
@@ -170,6 +179,9 @@ function getTimingDate(PDO $db, AltoRouter $router)
                 }
             }
         } catch (Exception $e) {
+            header('Location: ' . $router->generate('executionError'));
+            die();
+        } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
         } finally {

@@ -33,17 +33,26 @@ function getTotalPeriodCar(PDO $db, $database, AltoRouter $router)
     $data = [
         'id_car' => $_GET['id']
     ];
-
-    $sql = "SELECT SUM(total) FROM $database WHERE id_car = :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
+    try {
+        $sql = "SELECT SUM(total) FROM $database WHERE id_car = :id_car AND date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
 ORDER BY date ASC";
-    $request = $db->prepare($sql);
-    $request->execute($data);
-    $result = $request->fetchAll(PDO::FETCH_ASSOC);
-    $request->closeCursor();
-    if ($result) {
-        return $result;
-    } else {
-        // header('Location: ' . $router->generate('executionError'));
+        $request = $db->prepare($sql);
+        $request->execute($data);
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        $request->closeCursor();
+        if ($result) {
+            return $result;
+        } else {
+            // header('Location: ' . $router->generate('executionError'));
+        }
+    } catch (Exception $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
+    } finally {
+        $sql = null;
     }
 }
 
@@ -69,6 +78,9 @@ AND id_car=:id_car ORDER BY date ASC";
         $request->closeCursor();
         return $result;
     } catch (Exception $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
+    } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
         die();
     } finally {

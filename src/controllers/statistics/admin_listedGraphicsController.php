@@ -24,31 +24,41 @@ $invoice = [
 /**
  * sumA TOTALES POR MES Y Ano
  */
-function total(PDO $db, $startYear, $totales, $invoice)
+function total(PDO $db, $startYear, $totales, $invoice, Altorouter $router)
 {
     $as = 0;
+    try {
 
-    for ($j = 1; $j <= 7; $j++) {
-        $data = [
-            'id_car' => $_GET['car'],
-            'startYear' => $startYear
-        ];
-        $sql = "SELECT sum(total) as total FROM $invoice[$j] WHERE id_car = :id_car
+
+        for ($j = 1; $j <= 7; $j++) {
+            $data = [
+                'id_car' => $_GET['car'],
+                'startYear' => $startYear
+            ];
+            $sql = "SELECT sum(total) as total FROM $invoice[$j] WHERE id_car = :id_car
     and year(date)= :startYear";
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        $totales[$j] = (int)$result[0]['total'];
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $result = $request->fetchAll(PDO::FETCH_ASSOC);
+            $request->closeCursor();
+            $totales[$j] = (int)$result[0]['total'];
+        }
+    } catch (Exception $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
+    } catch (PDOException $e) {
+        header('Location: ' . $router->generate('executionError'));
+        die();
+    } finally {
+        $sql = null;
     }
-
     return $totales;
 }
 
 if (isset($_GET['car']) && isset($_GET['endYear']) && isset($_GET['startYear'])) {
 
-    $endYear = total($db, $_GET['endYear'], $totales, $invoice);
-    $startYear = total($db, $_GET['startYear'], $totales, $invoice);
+    $endYear = total($db, $_GET['endYear'], $totales, $invoice, $router);
+    $startYear = total($db, $_GET['startYear'], $totales, $invoice, $router);
     $totalEndYear = (array_sum($endYear));
     $totalStartYear = (array_sum($endYear));
     $endY = $_GET['endYear'];

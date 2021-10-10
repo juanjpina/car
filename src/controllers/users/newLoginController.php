@@ -82,6 +82,9 @@ function addUser(PDO $db, AltoRouter $router)
                     } catch (Exception $e) {
                         header('Location: ' . $router->generate('home'));
                         die();
+                    } catch (PDOException $e) {
+                        header('Location: ' . $router->generate('home'));
+                        die();
                     } finally {
                         $sql = null;
                     }

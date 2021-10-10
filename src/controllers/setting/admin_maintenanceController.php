@@ -40,6 +40,9 @@ if (isset($id_car)) {
         } catch (Exception $e) {
             header('Location: ' . $router->generate('executionError'));
             die();
+        } catch (PDOException $e) {
+            header('Location: ' . $router->generate('executionError'));
+            die();
         } finally {
             $sql = null;
         }
@@ -78,6 +81,9 @@ if (isset($id_car)) {
                     }
                 }
             } catch (Exception $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
+            } catch (PDOException $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
             } finally {
@@ -131,6 +137,9 @@ if (isset($id_car)) {
                     // ]);
                 }
             } catch (Exception $e) {
+                header('Location: ' . $router->generate('executionError'));
+                die();
+            } catch (PDOException $e) {
                 header('Location: ' . $router->generate('executionError'));
                 die();
             } finally {

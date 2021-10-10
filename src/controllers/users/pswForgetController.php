@@ -22,6 +22,9 @@ function passwordNew(PDO $db, AltoRouter $router)
         } catch (Exception $e) {
             header('Location: ' . $router->generate('home'));
             die();
+        } catch (PDOException $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
         } finally {
             $sql = null;
         }
@@ -61,6 +64,9 @@ function passwordNew(PDO $db, AltoRouter $router)
                 $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
                 $headers .= "From: rdvoiture <juanjpina@gmail.com>\r\n";
             } catch (Exception $e) {
+                header('Location: ' . $router->generate('home'));
+                die();
+            } catch (PDOException $e) {
                 header('Location: ' . $router->generate('home'));
                 die();
             } finally {
