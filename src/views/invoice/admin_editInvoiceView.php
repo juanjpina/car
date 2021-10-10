@@ -21,6 +21,7 @@
                     <button type="submit" class="button">Sauvegarder</button>
                 </div>
             </form>
+
             <?php if ($selectInvoice[0]['date'] != '') { ?>
                 <div class="column">
                     <h6>Liste des Factures</h6>

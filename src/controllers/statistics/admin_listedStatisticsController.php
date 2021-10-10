@@ -56,12 +56,15 @@ function getTotalPeriod(PDO $db, $database, AltoRouter $router)
 {
     // $database = $_GET['invoice'];
     $period = $_GET['period'];
+    $data = [
+        'id_car' => $_GET['id']
+    ];
 
     try {
         $sql = "SELECT SUM(total) FROM $database WHERE date BETWEEN  DATE_SUB( curdate(), INTERVAL $period MONTH ) AND curdate()
-ORDER BY date ASC";
+AND id_car=:id_car ORDER BY date ASC";
         $request = $db->prepare($sql);
-        $request->execute();
+        $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
         $request->closeCursor();
         return $result;

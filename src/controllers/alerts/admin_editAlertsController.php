@@ -59,7 +59,7 @@ function getOil(PDO $db, AltoRouter $router)
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = 'SELECT max(invoil.km)+setting.oilchanges as oil FROM invoil,setting WHERE invoil.id_car= :id_car ORDER by oil DESC limit 1';
+            $sql = 'SELECT max(invoil.km)+setting.oilchanges as oil FROM invoil,setting WHERE invoil.id_car= :id_car AND setting.id_car = invoil.id_car ORDER by oil DESC limit 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $resultOil = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -70,7 +70,7 @@ function getOil(PDO $db, AltoRouter $router)
                 $data = [
                     'id_car' => $_SESSION['car']['id_car'],
                 ];
-                $sql = 'SELECT car.buykm+setting.oilchanges as oil FROM car,setting WHERE car.id_car=:id_car limit 1';
+                $sql = 'SELECT car.buykm+setting.oilchanges as oil FROM car,setting WHERE car.id_car=:id_car AND setting.id_car = car.id_car limit 1';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $result = $request->fetchAll(PDO::FETCH_ASSOC);

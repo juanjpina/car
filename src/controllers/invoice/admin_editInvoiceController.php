@@ -58,14 +58,15 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
 if (isset($_POST['typeInvoice'])) {
     $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car, $router);
 } else {
-    $selectInvoice
-        = array(
-            [
-                'id' => '',
-                'date' => '',
-                'km' => '',
-                'total' => '',
-                'comment' => ''
-            ]
-        );
+    $selectInvoice = [
+        [
+            'id' => '',
+            'date' => '',
+            'km' => '',
+            'total' => '',
+            'comment' => ''
+        ]
+    ];
 };
+
+//  <?php if ($selectInvoice[0]['date'] != '') { 

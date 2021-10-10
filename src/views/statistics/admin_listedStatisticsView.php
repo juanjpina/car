@@ -1,7 +1,6 @@
 <?php get_header('statistics add', 'admin'); ?>
 <section>
     <div class="listedstatistics">
-        <!-- <div class="contained"> -->
         <div class="column">
             <h1 class='title'>Liste Statistique</h1>
             <h6>Resultat de <?= $_GET['period'] ?> mois</h6>
@@ -30,7 +29,6 @@
                 </tr>
             </table>
         </div>
-        <!-- </div> -->
     </div>
 </section>
 <?php get_footer('admin'); ?>

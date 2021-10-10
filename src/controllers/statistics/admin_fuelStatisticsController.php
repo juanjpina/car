@@ -11,7 +11,7 @@ if (isset($id_car)) {
         ':id_car' => $_SESSION['car']['id_car'],
     ];
 
-    $sql = "SELECT fuel.km, MAX(invfuel.km) AS totalkm, SUM(invfuel.total) AS totalcost FROM fuel, invfuel WHERE invfuel.id_car= :id_car AND fuel.km<=invfuel.km;";
+    $sql = "SELECT fuel.km, MAX(invfuel.km) AS totalkm, SUM(invfuel.total) AS totalcost FROM fuel, invfuel WHERE invfuel.id_car= :id_car AND fuel.id_car= :id_car AND fuel.km<=invfuel.km";
 
     $request = $db->prepare($sql);
     $request->execute($data);
