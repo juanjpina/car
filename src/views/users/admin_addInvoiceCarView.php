@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="column">
                                         <label for="buykm">Km</label>
-                                        <input type="number" class='input' name='buykm' placeholder='<?= $car['buykm']; ?>' value="">
+                                        <input type="number" class='input' name='buykm' value="<?= $car['buykm']; ?>">
                                     </div>
                                 </div>
                         </div>
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="column">
                                     <label for="firstkm">Km</label>
-                                    <input type="number" class='input' name='firstkm' placeholder="<?= $car['firstKm']; ?>" value="">
+                                    <input type="number" class='input' name='firstkm' value="<?= $car['firstKm']; ?>">
                                 </div>
                             </div>
                         <?php }; ?>
