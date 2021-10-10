@@ -1,8 +1,10 @@
 <?php get_header('Add New Car', 'admin'); ?>
 <section>
     <div class="addCar column">
-        <h1 class="title">Ajouter un nouveau véhicule</h1>
-        <h6>Ajoutez une identification pour votre véhicule</h6>
+        <div class="column">
+            <h1 class="title">Ajouter un nouveau véhicule</h1>
+            <h6>Ajoutez une identification pour votre véhicule</h6>
+        </div>
         <form action="" method="post">
             <div class="column">
                 <?php $error = checkField('trademark', 'Votre marque est vide.'); ?>

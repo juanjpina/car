@@ -7,9 +7,10 @@
     width: 66%;
     @include shadow;
     div {
-        margin: 40px 0;
+        margin: 20px 0;
     }
     @media screen and (max-width: 768px) {
         width: 100%;
+        padding: 3px;
     }
 }

@@ -317,10 +317,10 @@ footer li div a {
   }
 }
 .menu-login .login {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .menu-login .login div {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 .menu-login .new {
   width: 100%;
@@ -369,7 +369,7 @@ footer li div a {
 @media only screen and (max-width: 768px) {
   .menu-login .login form,
 .menu-login .newLogin form {
-    padding: 40px 50px;
+    padding: 20px 40px;
   }
 }
 .menu-login .login .parrafo-compte,
@@ -561,10 +561,10 @@ footer li div a {
 }
 
 .sidebarAdmin {
+  float: left;
   margin-left: 7%;
   margin-top: 140px;
   width: 100%;
-  float: left;
 }
 .sidebarAdmin ul {
   width: 100%;
@@ -575,17 +575,17 @@ footer li div a {
 }
 @media only screen and (max-width: 768px) {
   .sidebarAdmin li .column .column {
-    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 .sidebarAdmin li .border {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
-  justify-content: stretch;
-  color: #f2f2f2;
   border-radius: 15px;
+  color: #f2f2f2;
+  justify-content: stretch;
   padding: 20px;
   width: 100%;
 }
@@ -606,7 +606,7 @@ footer li div a {
   .sidebarAdmin li .border {
     width: 100%;
     height: 70px;
-    padding: 10px 0px 0px 0px;
+    padding: 10px 1px 0px 1px;
     margin-top: 0px;
   }
   .sidebarAdmin li .border img {
@@ -1125,15 +1125,17 @@ section .alerts div {
   height: 100%;
   margin-top: 200px;
   margin-left: 7%;
+  padding: 2px;
+  padding-bottom: 5px;
   width: 59%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 @media only screen and (max-width: 768px) {
   .invoiceCar {
-    width: 100%;
     margin-left: 0%;
     margin-right: 2%;
+    width: 100%;
   }
   .invoiceCar .column .column .column .row {
     flex-direction: column;
@@ -1156,7 +1158,7 @@ section .alerts div {
   width: 66%;
 }
 .addCar div {
-  margin: 40px 0;
+  margin: 20px 0;
 }
 @media screen and (max-width: 768px) {
   .addCar {
@@ -1216,7 +1218,7 @@ section .alerts div {
   height: 100%;
   margin-top: 200px;
   width: 66%;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1239,7 +1241,7 @@ section .alerts div {
   margin: 0 px 30px;
 }
 .userStatistics div {
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 @media screen and (max-width: 768px) {
   .userStatistics {
@@ -1253,6 +1255,7 @@ section .alerts div {
   height: 100%;
   padding-bottom: 30px;
   margin-top: 200px;
+  padding: 0px 2px;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -1478,7 +1481,7 @@ section .alerts div {
   width: 66%;
 }
 .select-car div {
-  margin: 25px 0px;
+  margin: 20px 0px;
 }
 .select-car .select {
   width: 100%;
@@ -1486,6 +1489,7 @@ section .alerts div {
 @media screen and (max-width: 768px) {
   .select-car {
     width: 100%;
+    padding: 3px;
   }
 }
 
@@ -1571,11 +1575,12 @@ section .menuSetting div .b-alert:active {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
 .fuel div {
-  margin: 40px 0;
+  margin: 20px 0;
 }
 @media screen and (max-width: 768px) {
   .fuel {
     width: 100%;
+    padding: 3px;
   }
 }
 
@@ -1590,6 +1595,7 @@ section .pswforget {
 @media screen and (max-width: 768px) {
   section .pswforget {
     margin: 150px 0px 0px 0px;
+    width: 100%;
   }
 }
 section .pswforget form div {
@@ -1600,7 +1606,10 @@ section .pswforget div {
 }
 @media only screen and (max-width: 768px) {
   section .pswforget {
-    padding: 50px 10px;
+    padding: 10px 10px;
+  }
+  section .pswforget div {
+    margin: 10px 0px;
   }
   section .pswforget p {
     font-size: 0.7em;
@@ -1648,8 +1657,8 @@ section .pswforget div {
 .maintenance .inputSpace {
   margin-right: 20px;
 }
-.maintenance li {
-  margin: 25px 0;
+.maintenance div {
+  margin: 5px 0;
 }
 .maintenance .date {
   margin-right: 20px;

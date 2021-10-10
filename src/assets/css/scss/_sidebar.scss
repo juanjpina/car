@@ -79,11 +79,10 @@
 }
 
 .sidebarAdmin {
+    float: left;
     margin-left: 7%;
     margin-top: 140px;
     width: 100%;
-    float: left;
-    // align-items: left;
     ul {
         width: 100%;
     }
@@ -91,23 +90,19 @@
         .column {
             @media only screen and (max-width: 768px) {
                 .column {
-                    justify-content: center;
                     align-items: flex-start;
                     flex-wrap: wrap;
+                    justify-content: center;
                 }
             }
         }
-        // display: block;
         margin-top: 20px;
         width: 100%;
         .border {
             @include shadow;
-            // display: flex;
-            // flex-direction: column;
-            justify-content: stretch; // align-items: center;
-            // flex-wrap: wrap;
-            color: $color-texto;
             border-radius: 15px;
+            color: $color-texto;
+            justify-content: stretch;
             padding: 20px;
             width: 100%;
             img {
@@ -126,7 +121,7 @@
             @media only screen and (max-width: 768px) {
                 width: 100%;
                 height: 70px;
-                padding: 10px 0px 0px 0px;
+                padding: 10px 1px 0px 1px;
                 margin-top: 0px;
                 img {
                     width: 25px;
@@ -135,7 +130,6 @@
                 p {
                     font-size: 0.8em;
                 }
-                // justify-conte    nt: center;
             }
         }
     }
