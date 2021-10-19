@@ -9,24 +9,24 @@ function alert(string $message, string $type = 'danger')
 }
 
 
-function alertDisplay()
-{
-	if (!empty($_SESSION['alert'])) {
-		$content = '<div class="alert alert-' . $_SESSION['alert']['type'] . ' alert-dismissible fade show" role="alert">';
-		$content .= $_SESSION['alert']['message'];
-		$content .= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
-		$content .= '</div>';
+// function alertDisplay()
+// {
+// 	if (!empty($_SESSION['alert'])) {
+// 		$content = '<div class="alert alert-' . $_SESSION['alert']['type'] . ' alert-dismissible fade show" role="alert">';
+// 		$content .= $_SESSION['alert']['message'];
+// 		$content .= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+// 		$content .= '</div>';
 
-		unset($_SESSION['alert']);
+// 		unset($_SESSION['alert']);
 
-		return $content;
-	}
-}
+// 		return $content;
+// 	}
+// }
 
 /**
  * On vérifie si en champ du formoulaire est vide. 
- * @param email, message.
- * @return message. 
+ * @param String
+ * @return Array. 
  */
 function checkField(string $fieldName, string $message): array
 {
@@ -40,7 +40,11 @@ function checkField(string $fieldName, string $message): array
 	return $error;
 }
 
-
+/**
+ * checks if passwords are the same
+ * @param string
+ * @return array
+ */
 function egalPass(string $pass, string $cpass): array
 {
 	$resul = ['message' => ''];
@@ -61,11 +65,10 @@ function egalPass(string $pass, string $cpass): array
 
 
 /**
- * @param text
+ * @param String
  *check if the email has the correct format 
  * @return array
  */
-
 function checkEmail(string $email): array
 {
 	$resul = ['message' => ''];

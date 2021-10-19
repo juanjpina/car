@@ -1,7 +1,6 @@
 <?php get_header('pawforget', 'login'); ?>
 <section class="column">
     <div class="pswforget column">
-        <!-- <div class="container column"> -->
         <form action="" method="post">
             <div class="column">
                 <label for="mail">e-mail</label>
@@ -21,6 +20,5 @@
             </a>
         </div>
     </div>
-    <!-- </div> -->
 </section>
 <? get_footer('login'); ?>

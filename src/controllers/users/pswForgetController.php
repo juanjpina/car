@@ -2,15 +2,13 @@
 
 /**
  * check if the email exists
- * @param boolean
- * @return string
+ * @param String
+ * @return string 
  */
 function passwordNew(PDO $db, AltoRouter $router)
 {
-
     if (isset($_POST['mail']) && isset($_POST['mail'])) {
         try {
-
             $data = [
                 ':email' => $_POST['mail'],
             ];
@@ -57,7 +55,6 @@ function passwordNew(PDO $db, AltoRouter $router)
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $request->closeCursor();
-
                 $text_mail = '';
                 $recipient = 'utilisateur';
                 $headers = "MIME-Version: 1.0\r\n";
@@ -85,7 +82,6 @@ function passwordNew(PDO $db, AltoRouter $router)
                     // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
                     $mails = $mail['email'] . $sunjet . $text_mail . $headers;
                     dump($mails);
-                    // dump($mail['email']);
                 }
             }
             return "Vous avez reçu un email avec un nouveau mot de passe.";

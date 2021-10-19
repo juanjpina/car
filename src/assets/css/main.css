@@ -1800,4 +1800,16 @@ section .pswforget div {
   }
 }
 
+.page404 {
+  width: 100%;
+  height: 100vh;
+  background-color: #d9bd30;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */

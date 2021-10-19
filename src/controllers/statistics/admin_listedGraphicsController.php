@@ -22,14 +22,14 @@ $invoice = [
 
 
 /**
- * sumA TOTALES POR MES Y Ano
+ * sum of totals per month and year
+ * @param string
+ * @return array
  */
 function total(PDO $db, $startYear, $totales, $invoice, Altorouter $router)
 {
     $as = 0;
     try {
-
-
         for ($j = 1; $j <= 7; $j++) {
             $data = [
                 'id_car' => $_GET['car'],

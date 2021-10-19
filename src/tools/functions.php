@@ -2,8 +2,7 @@
 
 
 /**
- * verifies the count if it meets the proposed conditions
- * 
+ * verifies the count if it meets the proposed conditions * 
  * @param string(password)
  * @return string
  */
@@ -33,7 +32,6 @@ function messagePassword($pass)
 
 /**
  * verifies the count if it meets the proposed conditions
- * 
  * @param string (password)
  * @return boolean
  */
@@ -116,7 +114,6 @@ function getFuel(PDO $db, $id, AltoRouter $router)
  * @return array
  *
  */
-
 function getCar(PDO $db, AltoRouter $router)
 {
 	try {
@@ -130,6 +127,9 @@ function getCar(PDO $db, AltoRouter $router)
 		$request->closeCursor();
 		return $result;
 	} catch (Exception $e) {
+		header('Location: ' . $router->generate('executionErrorr'));
+		die();
+	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('executionErrorr'));
 		die();
 	} finally {
@@ -156,7 +156,6 @@ function getSessionCar(PDO $db, AltoRouter $router)
 };
 
 
-
 /**
  * @param id_user
  * @return array 
@@ -175,8 +174,6 @@ function getUser(PDO $db, $id_user)
 }
 
 
-
-
 /**
  * @param id, data base
  * @return array data base
@@ -193,6 +190,7 @@ function getInvoice(PDO $db, $id, $database)
 	$request->closeCursor();
 	return $result;
 }
+
 
 /**
  * 
@@ -330,7 +328,6 @@ function getSelect(PDO $db, $table)
  * insert data into the expenditure table
  * 
  * @param database, id_car, $date, $km, $total, $comment
- * 
  * @return add database
  */
 function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment, AltoRouter $router)
@@ -412,35 +409,3 @@ function get_footer(string $layout = 'public')
 {
 	require_once ROOT . '/views/layouts/' . $layout . '/footer.php';
 }
-
-
-/**
- * Convert date
- * 
- * @param string $date to convert
- * @param bool $time format datetime
- * @return string $date new format
- */
-// function dateFormat(string $date, bool $time = false): string
-// {
-// 	$format = ($time) ? ' - %Hh%Mmin' : '';
-
-// 	setlocale(LC_ALL, 'fr_FR.utf8', 'fra');
-// 	$date = strftime('%A %e %B %Y' . $format, strtotime($date));
-// 	$date = utf8_encode($date);
-
-// 	return $date;
-// }
-
-
-
-/**
- * Check if id in url exit in db movies
- */
-// function noAccess(AltoRouter $router, $check): void
-// {
-// 	if (!$check) {
-// 		header('Location: ' . $router->generate('homeAdmin'));
-// 		die;
-// 	}
-// }
