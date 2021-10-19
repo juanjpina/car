@@ -5,7 +5,7 @@
 			<li>
 				<div>
 					<p>
-						Copyright ©2021
+						&copy; Copyright <?= date('Y'); ?>
 					</p>
 				</div>
 			</li>

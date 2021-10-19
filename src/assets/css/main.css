@@ -1812,4 +1812,10 @@ section .pswforget div {
   text-align: center;
 }
 
+.mention p {
+  font-size: 1em;
+  text-align: center;
+  padding: 20px;
+}
+
 /*# sourceMappingURL=main.css.map */

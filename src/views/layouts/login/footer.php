@@ -5,14 +5,14 @@
 				<li>
 					<div>
 						<p>
-							Copyright ©2021
+							&copy; Copyright <?= date('Y'); ?>
 						</p>
 					</div>
 				</li>
 				<li>
 					<div>
 						<p>
-							<a href="<?= $router->generate('mention') ?>">mention légale</a>
+							<a href="http://localhost/car/mention">mention légale</a>
 						</p>
 					</div>
 				</li>
