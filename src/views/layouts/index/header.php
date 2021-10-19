@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agenda voiture</title>
-    <meta name="description" content="Agenda voiture">
+    <link rel="shortcut icon" href="/car/src/assets/images/favicon.png">
+    <meta name="description" content="C’est une application web où nous serons en mesure de gérer l’entretien de notre voiture, les dépenses de base, les consommations de carburant, rappels des différents entretien de la voiture, recevoir des e-mails avec les prochaines opérations à réaliser à la voiture.
+">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
@@ -68,14 +70,14 @@
         <nav>
             <div class="row">
                 <div class="logo column">
-                    <a href="#"><img class="logos" src="/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
+                    <a href="#"><img class="logos" src="/car/src/assets/images/logo.png" width="200" height="108" alt="logo"></a>
                 </div>
                 <div class="navegation column ">
                     <ul class="nave">
                         <li class="li_button">
                             <a href="<?= $router->generate('login') ?>" id="as">
                                 <div class="button_admin">
-                                    <img src="/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                    <img src="/car/src/assets/images/man.png" width="35" height="35" alt="se connecter">
                                     <p>Se connecter</p>
                                 </div>
                             </a>
@@ -86,4 +88,4 @@
         </nav>
     </header>
     <main class="form-signin">
-        <!-- <?= alertDisplay(); ?> -->
+        <?= alertDisplay(); ?>

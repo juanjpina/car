@@ -1,5 +1,4 @@
 </main>
-</body>
 <footer>
 	<nav>
 		<ul>
@@ -11,10 +10,18 @@
 				</div>
 			</li>
 			<li>
+				<div>
+					<p>
+						mention légale
+					</p>
+				</div>
+			</li>
+			<li>
 				<div><a href="mailto:hege@example.com">hege@example.com</a></div>
 			</li>
 		</ul>
 	</nav>
 </footer>
+</body>
 
 </html>

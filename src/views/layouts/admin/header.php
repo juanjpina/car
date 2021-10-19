@@ -5,7 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Agenda voiture</title>
-	<meta name="description" content="Agenda voiture">
+	<link rel="shortcut icon" href="/car/src/assets/images/favicon.png">
+	<meta name="description" content="C’est une application web où nous serons en mesure de gérer l’entretien de notre voiture, les dépenses de base, les consommations de carburant, rappels des différents entretien de la voiture, recevoir des e-mails avec les prochaines opérations à réaliser à la voiture.
+">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
@@ -17,14 +19,14 @@
 		<nav>
 			<div class="row">
 				<div class="logos">
-					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/logo.png" width="200" height="108" alt=""></a>
+					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/logo.png" width="200" height="108" alt="logo"></a>
 				</div>
 				<div class="navegation">
 					<ul class="nave row">
 						<li class="li_button">
 							<a href="<?= $router->generate('editUser') ?>" id="as">
 								<div class="button_admin">
-									<img src="/car/src/assets/images/man.png" width="35" height="35" alt="">
+									<img src="/car/src/assets/images/man.png" width="35" height="35" alt="mon compte">
 									<p>Mon compte</p>
 								</div>
 							</a>
@@ -32,7 +34,7 @@
 						<li class="li_button">
 							<a href="<?= $router->generate('logout') ?>">
 								<div class="button_admin">
-									<img class="disconnection" src="/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
+									<img class="disconnection" src="/car/src/assets/images/disconnection.png" width="25" height="35" alt="Desconexion">
 									<p>Déconnexion</p>
 								</div>
 							</a>
@@ -57,7 +59,7 @@
 					<li>
 						<a href="<?= $router->generate('editalerts'); ?>">
 							<div class="column b-alert border">
-								<img src="/car/src/assets/images/alerts.png" width="50" height="50" alt="">
+								<img src="/car/src/assets/images/alerts.png" width="50" height="50" alt="rappel">
 								<p>Rappel</p>
 							</div>
 						</a>
@@ -65,7 +67,7 @@
 					<li>
 						<a href="<?= $router->generate('menustatistics'); ?>">
 							<div class="column b-statistic border">
-								<img src="/car/src/assets/images/statistic.png" width="50" height="50" alt="">
+								<img src="/car/src/assets/images/statistic.png" width="50" height="50" alt="statistique">
 								<p>Statistique</p>
 							</div>
 						</a>
@@ -73,7 +75,7 @@
 					<li>
 						<a href="<?= $router->generate('addInvoiceMenu'); ?>">
 							<div class="column b-invoice border">
-								<img src="/car/src/assets/images/facture3.png" width="50" height="50" alt="">
+								<img src="/car/src/assets/images/facture3.png" width="50" height="50" alt="frais">
 								<p>Frais</p>
 							</div>
 						</a>
@@ -81,7 +83,7 @@
 					<li>
 						<a href="<?= $router->generate('addhistory'); ?>">
 							<div class="column b-history border">
-								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="">
+								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="historique">
 								<p>Historique</p>
 							</div>
 						</a>
@@ -89,12 +91,12 @@
 					<li>
 						<a href="<?= $router->generate('settingmenu'); ?>">
 							<div class="column b-setting border">
-								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="">
+								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="réglage">
 								<p>Réglage</p>
 							</div>
 						</a>
 					</li>
 				</ul>
 			</div>
-			<!-- <?= alertDisplay(); ?> -->
+			<?= alertDisplay(); ?>
 		</nav>

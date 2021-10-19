@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agenda Voiture</title>
-    <meta name="description" content="Agenda voiture">
+    <link rel="shortcut icon" href="/car/src/assets/images/favicon.png">
+    <meta name="description" content="C’est une application web où nous serons en mesure de gérer l’entretien de notre voiture, les dépenses de base, les consommations de carburant, rappels des différents entretien de la voiture, recevoir des e-mails avec les prochaines opérations à réaliser à la voiture.
+">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
@@ -24,7 +26,7 @@
                         <li class="li_button">
                             <a href="<?= $router->generate('editUser') ?>" id="as">
                                 <div class="button_admin">
-                                    <img src="/car/src/assets/images/man.png" width="35" height="35" alt="">
+                                    <img src="/car/src/assets/images/man.png" width="35" height="35" alt="mon compte">
                                     <p>Mon compte</p>
                                 </div>
                             </a>
@@ -32,7 +34,7 @@
                         <li class="li_button">
                             <a href="<?= $router->generate('logout') ?>">
                                 <div class="button_admin">
-                                    <img class="disconnection" src="/car/src/assets/images/disconnection.png" width="25" height="35" alt="">
+                                    <img class="disconnection" src="/car/src/assets/images/disconnection.png" width="25" height="35" alt="Déconnexion">
                                     <p>Déconnexion</p>
                                 </div>
                             </a>
@@ -57,7 +59,7 @@
                     <li>
                         <a href="<?= $router->generate('white'); ?>">
                             <div class="b-alert">
-                                <img src="/car/src/assets/images/car.png" width="30" height="30" alt="">
+                                <img src="/car/src/assets/images/car.png" width="30" height="30" alt="Accueil">
                                 <p>Accueil</p>
                             </div>
                         </a>
@@ -65,7 +67,7 @@
                     <li>
                         <a href="<?= $router->generate('addinvoicecar'); ?>">
                             <div class="b-alert">
-                                <img src="/car/src/assets/images/car.png" width="30" height="30" alt="">
+                                <img src="/car/src/assets/images/car.png" width="30" height="30" alt="information du véhicule">
                                 <p>Information du véhicule</p>
                             </div>
                         </a>
@@ -73,7 +75,7 @@
                     <li>
                         <a href="<?= $router->generate('editUser'); ?>">
                             <div class="b-alert">
-                                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="">
+                                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="pseudo">
                                 <p>Pseudo</p>
                             </div>
                         </a>
@@ -81,7 +83,7 @@
                     <li>
                         <a href="<?= $router->generate('editpassword'); ?>">
                             <div class="b-alert">
-                                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="">
+                                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="mot de passe">
                                 <p>Mot de passe</p>
                             </div>
                         </a>

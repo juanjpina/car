@@ -9,19 +9,19 @@ function alert(string $message, string $type = 'danger')
 }
 
 
-// function alertDisplay()
-// {
-// 	if (!empty($_SESSION['alert'])) {
-// 		$content = '<div class="alert alert-' . $_SESSION['alert']['type'] . ' alert-dismissible fade show" role="alert">';
-// 		$content .= $_SESSION['alert']['message'];
-// 		$content .= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
-// 		$content .= '</div>';
+function alertDisplay()
+{
+	if (!empty($_SESSION['alert'])) {
+		$content = '<div class="alert alert-' . $_SESSION['alert']['type'] . ' alert-dismissible fade show" role="alert">';
+		$content .= $_SESSION['alert']['message'];
+		$content .= '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+		$content .= '</div>';
 
-// 		unset($_SESSION['alert']);
+		unset($_SESSION['alert']);
 
-// 		return $content;
-// 	}
-// }
+		return $content;
+	}
+}
 
 /**
  * On vérifie si en champ du formoulaire est vide. 
