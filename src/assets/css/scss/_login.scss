@@ -20,7 +20,6 @@
             background-color: rgba(217, 189, 48);
             border-radius: 28px;
             @include shadow;
-
             &:hover {
                 background-color: rgba(217, 189, 48, 0.5);
                 transition: all 600ms ease;
@@ -37,22 +36,37 @@
             text-align: center;
         }
         div {
-            margin-bottom: 30px;
+            height: 120px;
+            // margin-bottom: 30px;
             .textPassword {
-                font-size: 0.6em;
-                margin-top: 3px;
+                font-size: 0.8em;
+                // margin-top: 2px;
                 text-align: center;
-                width: 50%;
+                width: 80%;
             }
         }
         background-color: $color-alert;
         border-radius: 28px;
         @include shadow;
-        @media only screen and (max-width: 768px) {
-        }
+        @media only screen and (max-width: 768px) {}
         form {
-            padding: 40px 100px;
-            width: 100%;
+            .conf-password {
+                margin-top: 3%;
+            }
+            .mail {
+                // margin-top: 20px;
+            }
+            .pseudo {
+                // margin: 5% 0%;
+                height: 100px;
+                margin-bottom: 50px;
+            }
+            margin:0 25px;
+            // padding: 40px 50px;
+            width: 65%;
+            .div-button {
+                margin-top: 85px;
+            }
             @media only screen and (max-width: 768px) {
                 padding: 20px 40px;
             }
@@ -85,6 +99,8 @@
 }
 
 .menu-login .message {
-    padding-top: 2px;
+    padding-top: 0px;
     font-weight: bold;
+    font-size: 0.9em;
+    color: red;
 }

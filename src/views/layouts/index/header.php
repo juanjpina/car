@@ -70,7 +70,7 @@
         <nav>
             <div class="row">
                 <div class="logo column">
-                    <a href="#"><img class="logos" src="/car/src/assets/images/logo.png" width="200" height="108" alt="logo"></a>
+                    <a href="#"><img class="logos" src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
                 </div>
                 <div class="navegation column ">
                     <ul class="nave">

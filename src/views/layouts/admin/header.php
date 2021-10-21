@@ -19,7 +19,7 @@
 		<nav>
 			<div class="row">
 				<div class="logos">
-					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/logo.png" width="200" height="108" alt="logo"></a>
+					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
 				</div>
 				<div class="navegation">
 					<ul class="nave row">

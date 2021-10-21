@@ -283,7 +283,7 @@ h6 {
 }
 
 footer {
-  margin: 10% 0%;
+  margin: 2% 0%;
   padding: 0 10%;
 }
 footer nav ul {
@@ -293,7 +293,7 @@ footer nav ul {
 footer li {
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.7em;
+  font-size: 1em;
 }
 footer li div p {
   color: #7f7d7f;
@@ -352,19 +352,31 @@ footer li div a {
 }
 .menu-login .login div,
 .menu-login .newLogin div {
-  margin-bottom: 30px;
+  height: 120px;
 }
 .menu-login .login div .textPassword,
 .menu-login .newLogin div .textPassword {
-  font-size: 0.6em;
-  margin-top: 3px;
+  font-size: 0.8em;
   text-align: center;
-  width: 50%;
+  width: 80%;
 }
 .menu-login .login form,
 .menu-login .newLogin form {
-  padding: 40px 100px;
-  width: 100%;
+  margin: 0 25px;
+  width: 65%;
+}
+.menu-login .login form .conf-password,
+.menu-login .newLogin form .conf-password {
+  margin-top: 3%;
+}
+.menu-login .login form .pseudo,
+.menu-login .newLogin form .pseudo {
+  height: 100px;
+  margin-bottom: 50px;
+}
+.menu-login .login form .div-button,
+.menu-login .newLogin form .div-button {
+  margin-top: 85px;
 }
 @media only screen and (max-width: 768px) {
   .menu-login .login form,
@@ -412,8 +424,10 @@ footer li div a {
 }
 
 .menu-login .message {
-  padding-top: 2px;
+  padding-top: 0px;
   font-weight: bold;
+  font-size: 0.9em;
+  color: red;
 }
 
 .accueil {
