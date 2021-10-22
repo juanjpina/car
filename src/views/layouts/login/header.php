@@ -18,7 +18,9 @@
 	<header class="header">
 		<nav>
 			<div class="logo">
-				<a href="<?= $router->generate('home'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
+					<a href="<?= $router->generate('home'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>
+					<p>Agenda voiture</p>
+				
 			</div>
 		</nav>
 	</header>

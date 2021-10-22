@@ -70,7 +70,8 @@
         <nav>
             <div class="row">
                 <div class="logo column">
-                    <a href="#"><img class="logos" src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
+                    <a href="#"><img class="logos" src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>
+                    <p>Agenda voiture</p>
                 </div>
                 <div class="navegation column ">
                     <ul class="nave">

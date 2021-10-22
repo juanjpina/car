@@ -6,7 +6,7 @@ function login(PDO $db, AltoRouter $router)
 {
 	if (isset($_POST['login'])) {
 		honeyPot($router);
-		if (isset($_POST['login']) || isset($_POST['password'])) {
+		if (!empty($_POST['login']) && isset($_POST['login']) || !empty($_POST['password']) && isset($_POST['password'])) {
 			try {
 				$data 	 = ['email' => $_POST['login']];
 				$sql 	 = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';
@@ -14,6 +14,7 @@ function login(PDO $db, AltoRouter $router)
 				$request->execute($data);
 				$result = $request->fetch();
 				$request->closeCursor();
+
 				if ($result && password_verify($_POST['password'], $result->password)) {
 					$_SESSION['auth'] = [
 						'nickname' => $result->nickname,
@@ -22,6 +23,10 @@ function login(PDO $db, AltoRouter $router)
 					];
 					header('Location: ' . $router->generate('white'));
 					die();
+				} else {
+					if (!empty($_POST['login']) &&  !empty($_POST['password'])) {
+						return "L'e-mail ou le mot de passe sont incorrect";
+					}
 				}
 			} catch (Exception $e) {
 				header('Location: ' . $router->generate('executionError'));

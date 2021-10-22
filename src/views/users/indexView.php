@@ -16,10 +16,10 @@
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/text_statistics.png" width="150" height="200px">
-                        </div>
-                        <div class="front back">
                             <img src="/car/src/assets/images/statistics_index.png" width="150px" height="200px" alt="">
+                            </div>
+                            <div class="front back">
+                                <img src="/car/src/assets/images/text_statistics.png" width="150" height="200px">
                         </div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/text_invoice.png" width="150" height="200px">
+                            <img src="/car/src/assets/images/invoice_index.png" width="150px" height="200px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/invoice_index.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/text_invoice.png" width="150" height="200px">
                         </div>
                     </div>
                 </div>

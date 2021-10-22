@@ -203,12 +203,30 @@ h6 {
 
 .header {
   width: 100%;
-  height: 120px;
+  height: 140px;
   background-color: #d94625;
   position: fixed;
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   text-decoration: none;
+}
+.header .logo {
+  display: inline-block;
+  margin-top: 1%;
+  padding-left: 7.18%;
+}
+.header .logo p {
+  color: white;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .header .logo {
+    padding-left: 2%;
+  }
+  .header .logo img {
+    height: 75px;
+    width: 140px;
+  }
 }
 .header nav {
   padding: 0% 3%;
@@ -230,18 +248,6 @@ h6 {
   }
   .header .row div {
     padding-right: 2%;
-  }
-}
-.header .row .logo {
-  padding-left: 7.18%;
-}
-@media only screen and (max-width: 768px) {
-  .header .row .logo {
-    padding-left: 2%;
-  }
-  .header .row .logo img {
-    height: 75px;
-    width: 140px;
   }
 }
 .header .row .navegation .nave .li_button a .button_admin {
@@ -283,7 +289,7 @@ h6 {
 }
 
 footer {
-  margin: 2% 0%;
+  margin: 5% 0 1% 0;
   padding: 0 10%;
 }
 footer nav ul {
@@ -316,13 +322,8 @@ footer li div a {
     margin-top: 150px;
   }
 }
-.menu-login .login {
-  margin-bottom: 20px;
-}
-.menu-login .login div {
-  margin-bottom: 0px;
-}
 .menu-login .new {
+  margin-top: 5%;
   width: 100%;
 }
 .menu-login .new .compte {
@@ -339,92 +340,146 @@ footer li div a {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
-.menu-login .login,
 .menu-login .newLogin {
   background-color: #d9bd30;
   border-radius: 28px;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.menu-login .login label,
 .menu-login .newLogin label {
   text-align: center;
 }
-.menu-login .login div,
 .menu-login .newLogin div {
-  height: 120px;
+  height: 100px;
 }
-.menu-login .login div .textPassword,
 .menu-login .newLogin div .textPassword {
   font-size: 0.8em;
   text-align: center;
   width: 80%;
 }
-.menu-login .login form,
 .menu-login .newLogin form {
   margin: 0 25px;
   width: 65%;
 }
-.menu-login .login form .conf-password,
 .menu-login .newLogin form .conf-password {
   margin-top: 3%;
 }
-.menu-login .login form .pseudo,
 .menu-login .newLogin form .pseudo {
   height: 100px;
   margin-bottom: 50px;
 }
-.menu-login .login form .div-button,
 .menu-login .newLogin form .div-button {
   margin-top: 85px;
 }
 @media only screen and (max-width: 768px) {
-  .menu-login .login form,
-.menu-login .newLogin form {
+  .menu-login .newLogin form {
     padding: 20px 40px;
   }
 }
-.menu-login .login .parrafo-compte,
 .menu-login .newLogin .parrafo-compte {
   margin-bottom: 5px;
 }
-.menu-login .login .parrafo-mot,
 .menu-login .newLogin .parrafo-mot {
   margin-top: 1px;
   text-align: right;
   color: black;
 }
-.menu-login .login button,
 .menu-login .newLogin button {
   display: block;
 }
 @media screen and (max-width: 768px) {
-  .menu-login .login .submit,
-.menu-login .newLogin .submit {
+  .menu-login .newLogin .submit {
     width: 140px;
   }
 }
-.menu-login .login .submit:active,
 .menu-login .newLogin .submit:active {
   filter: drop-shadow(2px 5px 15px -2px #18a8cc);
   box-shadow: #b4b2ba 0px 22px 70px 4px;
 }
-.menu-login .login .submit:hover,
 .menu-login .newLogin .submit:hover {
   background-color: #18a8cc;
   opacity: 0.8;
   transition: all 600ms ease;
 }
 @media screen and (max-width: 768px) {
-  .menu-login .login p,
-.menu-login .newLogin p {
+  .menu-login .newLogin p {
+    font-size: 0.8em;
+    text-align: center;
+  }
+}
+.menu-login .login {
+  background-color: #d9bd30;
+  border-radius: 28px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  width: 50%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+.menu-login .login div {
+  height: 80px;
+  width: 60%;
+}
+.menu-login .login div label {
+  text-align: center;
+}
+.menu-login .login div .textPassword {
+  font-size: 0.8em;
+  text-align: center;
+  width: 30%;
+}
+.menu-login .login form {
+  width: 100%;
+}
+.menu-login .login form .conf-password {
+  margin-top: 3%;
+}
+.menu-login .login form .pseudo {
+  height: 100px;
+  margin-bottom: 50px;
+}
+.menu-login .login form .div-button {
+  margin-top: 85px;
+}
+@media only screen and (max-width: 768px) {
+  .menu-login .login form {
+    padding: 20px 40px;
+  }
+}
+.menu-login .login .parrafo-compte {
+  margin-bottom: 5px;
+}
+.menu-login .login .parrafo-mot {
+  margin-top: 1px;
+  text-align: right;
+  color: black;
+}
+.menu-login .login button {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .menu-login .login .submit {
+    width: 140px;
+  }
+}
+.menu-login .login .submit:active {
+  filter: drop-shadow(2px 5px 15px -2px #18a8cc);
+  box-shadow: #b4b2ba 0px 22px 70px 4px;
+}
+.menu-login .login .submit:hover {
+  background-color: #18a8cc;
+  opacity: 0.8;
+  transition: all 600ms ease;
+}
+@media screen and (max-width: 768px) {
+  .menu-login .login p {
     font-size: 0.8em;
     text-align: center;
   }
 }
 
 .menu-login .message {
-  padding-top: 0px;
+  text-align: center;
   font-weight: bold;
   font-size: 0.9em;
   color: red;
