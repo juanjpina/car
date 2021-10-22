@@ -9,44 +9,44 @@
 
 // $mail = $_POST['mail'];
 // if (isset($_POST['email']) && !empty($_POST['email'])) {
-    // echo 'test';
-    
-    function searchEmail(PDO $db, AltoRouter $router)
-    { 
-        dump($_POST);
-            if(!empty($_POST)){
-                $mail = $_POST['mail'];
-                echo $mail;
-            
-            try {
-                $data = array(
-                    ':email' => $mail
-                );
-                $sql = 'SELECT email FROM user WHERE email LIKE $mail';
-                $request = $db->prepare($sql);
-                $request->execute($data);
-                $response = $request->fetch(PDO::FETCH_ASSOC);
-                $request->closeCursor();
-                // dump($response);
-                if ($response['email'] == $_POST['email']) {
-                    
-                    // return "Votre email il existe déjà !!";
-                } else {
-                    addUser($db, $router);
-                }
-            } catch (Exception $e) {
-                header('Location: ' . $router->generate('home'));
-                die();
-            } finally {
-                $sql = null;
+// echo 'test';
+
+function searchEmail(PDO $db, AltoRouter $router)
+{
+    // dump($_POST);
+    if (!empty($_POST)) {
+        $mail = $_POST['mail'];
+        echo $mail;
+
+        try {
+            $data = array(
+                ':email' => $mail
+            );
+            $sql = 'SELECT email FROM user WHERE email LIKE $mail';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $response = $request->fetch(PDO::FETCH_ASSOC);
+            $request->closeCursor();
+            // dump($response);
+            if ($response['email'] == $_POST['email']) {
+
+                // return "Votre email il existe déjà !!";
+            } else {
+                addUser($db, $router);
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
+        } finally {
+            $sql = null;
         }
     }
-    searchEmail($db, $router);
-    
-    // }
-    /**
-     * checks if passwords are the same
+}
+searchEmail($db, $router);
+
+// }
+/**
+ * checks if passwords are the same
  * checks if passwords are correct
  * insert the new user into the database
  * creates a new user session
@@ -73,7 +73,7 @@ function addUser(PDO $db, AltoRouter $router)
                         $request = $db->prepare($sql);
                         $request->execute($data);
                         $request->closeCursor();
-                        
+
                         if (!empty($request)) {
                             $data      = ['email' => $_POST['email']];
                             $sql      = 'SELECT id_user, email, password, nickname FROM user WHERE email = :email';

@@ -10,13 +10,13 @@
                     <p class="message"> <?= $error['message']; ?> </p>
                 </div>
                 <div class="mail column">
-                    
+
                     <?php $error = checkField('email', 'Votre e-mail est vide.'); ?>
                     <?php $mail = checkEmail('email'); ?>
                     <label for="email">Votre e-mail</label>
                     <input type="email" class=" input email<?= $error['class']; ?>" id="email" placeholder="Adresse e-mail" name="email" value="">
                     <p class="message"> <?= $error['message']; ?> </p>
-                   
+
                     <p class="message"> <?= $mail['message']; ?> </p>
                 </div>
                 <div class="column">
@@ -32,7 +32,7 @@
                 <div class="conf-password column">
                     <?php $password = addUser($db, $router); ?>
                     <p class="parrafo-compte">Confirmez votre mot de passe</p>
-                    <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.');?>
+                    <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.'); ?>
                     <?php $resul = egalPass('password', 'confirmerPassword') ?>
                     <input type="password" class="input password<?= $error['class']; ?>" id="confirmerPassword" placeholder="Confirmer le mot de passe" name="confirmerPassword" value="">
                     <p class="message"> <?= $error['message']; ?></p>
@@ -47,5 +47,5 @@
         </div>
     </div>
 </section>
-<script src='src/assets/js/mysql.js'></script>
+<script src='src/assets/js/mysql.mjs' type='module'></script>
 <?php get_footer('login'); ?>
