@@ -1483,8 +1483,11 @@ section .alerts div {
   margin-right: 3%;
 }
 .conta .response-button .yes {
-  display: inline-block;
   background-color: red;
+}
+.conta .response-button .yes:hover {
+  opacity: 0.8;
+  background-color: #7d0808;
 }
 .conta div {
   margin: 20px 0px;

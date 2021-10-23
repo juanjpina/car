@@ -10,7 +10,7 @@
                     </div>
                     <div class="row response-button">
                         <a class='button' href="<?= $router->generate('whiteHome'); ?>">NON</a>
-                        <button class='button yes' type="submit">OUI</button>
+                        <a href="#"><button class='button yes' type="submit">OUI</button></a>
                     </div>
 
                 </div>
