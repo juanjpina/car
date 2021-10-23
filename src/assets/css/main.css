@@ -1294,6 +1294,14 @@ section .alerts div {
     margin-left: 0%;
     margin-right: 3%;
   }
+  .user h1 {
+    text-align: center;
+    padding: 4% 2%;
+  }
+  .user label {
+    text-align: center;
+    padding: 0 2%;
+  }
 }
 .user .form {
   margin-top: 20px;
@@ -1363,9 +1371,9 @@ section .alerts div {
   background-color: #8c641b;
   border-radius: 28px;
   height: 100%;
-  padding-bottom: 30px;
   margin-top: 200px;
   padding: 0px 2px;
+  padding-bottom: 30px;
   width: 66%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -1522,6 +1530,11 @@ section .alerts div {
 .conta .response-button .button {
   width: 150px;
   margin-right: 3%;
+}
+@media screen and (max-width: 768px) {
+  .conta .response-button .button {
+    margin: 2% 0;
+  }
 }
 .conta .response-button .yes {
   background-color: red;
