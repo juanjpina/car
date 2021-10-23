@@ -8,9 +8,11 @@
                         <label form='delete'>Êtes vous certain de vouloir supprimer définitivement ce frais?</label>
                         <input type="hidden" name="delete" value="ok">
                     </div>
-                    <div>
-                        <button class='button' type="submit">Je suis d' accord</button>
+                    <div class="row response-button">
+                        <a class='button' href="<?= $router->generate('whiteHome'); ?>">NON</a>
+                        <button class='button yes' type="submit">OUI</button>
                     </div>
+
                 </div>
             </form>
         </div>

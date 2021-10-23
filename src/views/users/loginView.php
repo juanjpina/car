@@ -20,12 +20,12 @@
 					<p class="message"> <?= $message; ?> </p>
 				</div>
 				<div class="column">
+					<button class="button" type="submit">Se connecter</button>
+				</div>
+				<div class="column">
 					<a href="<?= $router->generate('pswforget'); ?>">
 						<p class="parrafo-mot">Mot de passe oublié?</p>
 					</a>
-				</div>
-				<div class="column">
-					<button class="button" type="submit">Se connecter</button>
 				</div>
 			</form>
 		</div>

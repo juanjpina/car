@@ -5,7 +5,7 @@ login($db, $router);
 function login(PDO $db, AltoRouter $router)
 {
 	if (isset($_POST['login'])) {
-		honeyPot($router);
+		// honeyPot($router);
 		if (!empty($_POST['login']) && isset($_POST['login']) || !empty($_POST['password']) && isset($_POST['password'])) {
 			try {
 				$data 	 = ['email' => $_POST['login']];
@@ -45,7 +45,7 @@ function login(PDO $db, AltoRouter $router)
 function redirectAdmin(AltoRouter $router)
 {
 	if (isset($_SESSION['auth'])) {
-		header('Location: ' . $router->generate('reception'));
+		header('Location: ' . $router->generate('whiteHome'));
 		die();
 	}
 }

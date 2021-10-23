@@ -1474,6 +1474,18 @@ section .alerts div {
     text-align: center;
   }
 }
+.conta .response-button {
+  width: 70%;
+  padding-top: 10%;
+}
+.conta .response-button .button {
+  width: 150px;
+  margin-right: 3%;
+}
+.conta .response-button .yes {
+  display: inline-block;
+  background-color: red;
+}
 .conta div {
   margin: 20px 0px;
   height: 100%;

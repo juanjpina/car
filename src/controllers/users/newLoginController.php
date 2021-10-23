@@ -7,8 +7,7 @@
  */
 function searchEmail(PDO $db, AltoRouter $router)
 {
-    if (isset($_POST['email']) && !empty($_POST['email'])) {
-
+    if (!empty($_POST['email']) && isset($_POST['email'])) {
         try {
             $data = array(
                 ':email' => $_POST['email']
@@ -17,13 +16,9 @@ function searchEmail(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $response = $request->fetch(PDO::FETCH_ASSOC);
-            // dump($response['email']);
             $request->closeCursor();
-            // dump(strcmp($response['email'], $_POST['email']));
             if (strcmp($response['email'], $_POST['email']) === 0) {
-                // if ($response['email'] === $_POST['email']) {
                 return "L'email existe déjà !!";
-                // die();
             } else {
                 addUser($db, $router);
             }
@@ -51,6 +46,7 @@ searchEmail($db, $router);
  */
 function addUser(PDO $db, AltoRouter $router)
 {
+
     if (isset($_POST['password']) && isset($_POST['confirmerPassword'])) {
         $pass = $_POST['password'];
         $cpass = $_POST['confirmerPassword'];

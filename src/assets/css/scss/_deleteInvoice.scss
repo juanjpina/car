@@ -16,6 +16,19 @@
             }
         }
     }
+    .response-button {
+        width: 70%;
+        padding-top: 10%;
+        .button {
+            width: 150px;
+            margin-right: 3%;
+        }
+        .yes {
+            display: inline-block;
+            background-color: red;
+        }
+    }
+
     div {
         margin: 20px 0px;
         height: 100%;
