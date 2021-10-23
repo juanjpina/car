@@ -2,7 +2,7 @@
 
 
 if ($_POST) {
-    echo $_POST['mail'];
+    echo "ok";
 }
 
 
@@ -34,4 +34,4 @@ function searchEmail(PDO $db, AltoRouter $router)
         }
     }
 }
-searchEmail($db, $router);
+// searchEmail($db, $router);

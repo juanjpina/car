@@ -12,15 +12,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href=" src/assets/css/main.css">
+
 </head>
 
 <body>
 	<header class="header">
 		<nav>
 			<div class="logo">
-					<a href="<?= $router->generate('home'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>
-					<p>Agenda voiture</p>
-				
+				<a href="<?= $router->generate('home'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>
+				<p>Agenda voiture</p>
+
 			</div>
 		</nav>
 	</header>
