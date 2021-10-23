@@ -296,10 +296,24 @@ footer nav ul {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  footer nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
 footer li {
   margin-left: auto;
   margin-right: auto;
   font-size: 1em;
+}
+@media screen and (max-width: 768px) {
+  footer li {
+    margin: 2% auto;
+  }
 }
 footer li div p {
   color: #7f7d7f;
@@ -347,6 +361,14 @@ footer li div a {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media only screen and (max-width: 768px) {
+  .menu-login .newLogin {
+    width: 100%;
+  }
+}
+.menu-login .newLogin .column {
+  flex-wrap: nowrap;
+}
 .menu-login .newLogin label {
   text-align: center;
 }
@@ -365,6 +387,8 @@ footer li div a {
 @media only screen and (max-width: 768px) {
   .menu-login .newLogin form {
     padding: 20px 40px;
+    width: 100%;
+    margin: 0;
   }
 }
 .menu-login .newLogin form .conf-password {
@@ -378,6 +402,7 @@ footer li div a {
 }
 .menu-login .newLogin .parrafo-compte {
   margin-bottom: 5px;
+  text-align: center;
 }
 .menu-login .newLogin .parrafo-mot {
   margin-top: 1px;
@@ -416,9 +441,19 @@ footer li div a {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+@media screen and (max-width: 768px) {
+  .menu-login .login {
+    width: 100%;
+  }
+}
 .menu-login .login div {
   height: 80px;
   width: 60%;
+}
+@media screen and (max-width: 768px) {
+  .menu-login .login div {
+    width: 100%;
+  }
 }
 .menu-login .login div label {
   text-align: center;
@@ -453,13 +488,19 @@ footer li div a {
   margin-top: 1px;
   text-align: right;
   color: black;
+  text-align: center;
 }
 .menu-login .login button {
   display: block;
 }
+@media screen and (max-width: 1115px) {
+  .menu-login .login button {
+    width: 80%;
+  }
+}
 @media screen and (max-width: 768px) {
   .menu-login .login .submit {
-    width: 140px;
+    width: 130px;
   }
 }
 .menu-login .login .submit:active {
