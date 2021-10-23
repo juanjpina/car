@@ -46,5 +46,22 @@
         </div>
     </div>
 </section>
-<script src='src/assets/js/mysql.mjs' type='module'></script>
+<script type="text/javascript">
+    let emails = document.getElementById('email')
+
+    emails.addEventListener("keyup", () => {
+        // let mail = emails.value;
+        // console.log(emails.value);
+    })
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "./send.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send('mail=' + emails.value);
+    xhr.onreadystatechange = function() {
+
+        // console.log(xhr.responseText);
+
+    }
+</script>
+<!-- <script src='/src/assets/js/mysql.js' type='module'></script> -->
 <?php get_footer('login'); ?>
