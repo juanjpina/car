@@ -343,6 +343,7 @@ footer li div a {
 .menu-login .newLogin {
   background-color: #d9bd30;
   border-radius: 28px;
+  width: 50%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -355,26 +356,25 @@ footer li div a {
 .menu-login .newLogin div .textPassword {
   font-size: 0.8em;
   text-align: center;
-  width: 80%;
+  width: 60%;
 }
 .menu-login .newLogin form {
   margin: 0 25px;
   width: 65%;
 }
-.menu-login .newLogin form .conf-password {
-  margin-top: 3%;
-}
-.menu-login .newLogin form .pseudo {
-  height: 100px;
-  margin-bottom: 50px;
-}
-.menu-login .newLogin form .div-button {
-  margin-top: 85px;
-}
 @media only screen and (max-width: 768px) {
   .menu-login .newLogin form {
     padding: 20px 40px;
   }
+}
+.menu-login .newLogin form .conf-password {
+  margin-top: 3%;
+}
+.menu-login .newLogin form .pseudo {
+  margin-bottom: 30px;
+}
+.menu-login .newLogin form .div-button {
+  margin-top: 50px;
 }
 .menu-login .newLogin .parrafo-compte {
   margin-bottom: 5px;

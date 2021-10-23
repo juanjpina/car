@@ -27,6 +27,12 @@
         }
     }
     .newLogin {
+        background-color: $color-alert;
+        border-radius: 28px;
+        width: 50%;
+        @include shadow;
+        @media only screen and (max-width: 768px) {
+        }
         label {
             text-align: center;
         }
@@ -37,34 +43,23 @@
                 font-size: 0.8em;
                 // margin-top: 2px;
                 text-align: center;
-                width: 80%;
+                width: 60%;
             }
         }
-        background-color: $color-alert;
-        border-radius: 28px;
-        @include shadow;
-        @media only screen and (max-width: 768px) {
-        }
         form {
+            margin: 0 25px;
+            width: 65%;
+            @media only screen and (max-width: 768px) {
+                padding: 20px 40px;
+            }
             .conf-password {
                 margin-top: 3%;
             }
-            .mail {
-                // margin-top: 20px;
-            }
             .pseudo {
-                // margin: 5% 0%;
-                height: 100px;
-                margin-bottom: 50px;
+                margin-bottom: 30px;
             }
-            margin: 0 25px;
-            // padding: 40px 50px;
-            width: 65%;
             .div-button {
-                margin-top: 85px;
-            }
-            @media only screen and (max-width: 768px) {
-                padding: 20px 40px;
+                margin-top: 50px;
             }
         }
         .parrafo-compte {

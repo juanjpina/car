@@ -5,36 +5,32 @@
  * @param string (post e-mail)
  * @return string
  */
-
-
-// $mail = $_POST['mail'];
-// if (isset($_POST['email']) && !empty($_POST['email'])) {
-// echo 'test';
-
 function searchEmail(PDO $db, AltoRouter $router)
 {
-    // dump($_POST);
-    if (!empty($_POST)) {
-        $mail = $_POST['mail'];
-        echo $mail;
+    if (isset($_POST['email']) && !empty($_POST['email'])) {
 
         try {
             $data = array(
-                ':email' => $mail
+                ':email' => $_POST['email']
             );
-            $sql = 'SELECT email FROM user WHERE email LIKE $mail';
+            $sql = 'SELECT email FROM user WHERE email LIKE :email LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $response = $request->fetch(PDO::FETCH_ASSOC);
+            // dump($response['email']);
             $request->closeCursor();
-            // dump($response);
-            if ($response['email'] == $_POST['email']) {
-
-                // return "Votre email il existe déjà !!";
+            // dump(strcmp($response['email'], $_POST['email']));
+            if (strcmp($response['email'], $_POST['email']) === 0) {
+                // if ($response['email'] === $_POST['email']) {
+                return "L'email existe déjà !!";
+                // die();
             } else {
                 addUser($db, $router);
             }
         } catch (Exception $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
+        } catch (PDOException $e) {
             header('Location: ' . $router->generate('home'));
             die();
         } finally {
@@ -60,7 +56,7 @@ function addUser(PDO $db, AltoRouter $router)
         $cpass = $_POST['confirmerPassword'];
         if (password($pass)) {
             if (strcmp($pass, $cpass) == 0) {
-                if (isset($_POST['email']) && isset($_POST['pseudo'])) {
+                if (!empty($_POST['pseudo']) && isset($_POST['pseudo'])) {
                     try {
                         $data = [
                             ':email'     => $_POST['email'],

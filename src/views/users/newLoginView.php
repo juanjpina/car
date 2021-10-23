@@ -10,13 +10,13 @@
                     <p class="message"> <?= $error['message']; ?> </p>
                 </div>
                 <div class="mail column">
-
+                    <?php $message = searchEmail($db, $router); ?>
                     <?php $error = checkField('email', 'Votre e-mail est vide.'); ?>
                     <?php $mail = checkEmail('email'); ?>
                     <label for="email">Votre e-mail</label>
                     <input type="email" class=" input email<?= $error['class']; ?>" id="email" placeholder="Adresse e-mail" name="email" value="">
                     <p class="message"> <?= $error['message']; ?> </p>
-
+                    <p class="message"> <?= $message; ?> </p>
                     <p class="message"> <?= $mail['message']; ?> </p>
                 </div>
                 <div class="column">
@@ -24,7 +24,7 @@
                     <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
                     <label for="password">Votre mot de passe</label>
                     <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
-                    <input type="password" class="input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value="">
+                    <input type="password" id="password" placeholder="" name="password" value="">
                     <p class="message"> <?= $error['message']; ?></p>
                     <p class="message"><?= $verification; ?></p>
 
