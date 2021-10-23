@@ -1618,16 +1618,36 @@ section .alerts div {
   margin-top: 200px;
   width: 66%;
 }
-.select-car div {
-  margin: 20px 0px;
-}
-.select-car .select {
-  width: 100%;
-}
 @media screen and (max-width: 768px) {
   .select-car {
     width: 100%;
+  }
+}
+.select-car div {
+  margin: 20px 0px;
+}
+.select-car div p {
+  text-align: center;
+}
+.select-car .row {
+  justify-content: space-around;
+}
+.select-car .row div {
+  margin: 20px 0px;
+}
+.select-car .row .select {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .select-car .row {
+    width: 100%;
     padding: 3px;
+  }
+  .select-car .row div {
+    width: 100%;
+  }
+  .select-car .row div button {
+    font-size: 0.8em;
   }
 }
 

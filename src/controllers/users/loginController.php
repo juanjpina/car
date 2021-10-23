@@ -24,9 +24,16 @@ function login(PDO $db, AltoRouter $router)
 					header('Location: ' . $router->generate('white'));
 					die();
 				} else {
-					if (!empty($_POST['login']) &&  !empty($_POST['password'])) {
-						return "L'e-mail ou le mot de passe sont incorrect";
+					if ($result == false) {
+						return "L'e-mail est incorrect";
 					}
+					if (!password_verify($_POST['password'], $result->password))
+
+						return "Le mot de passe est incorrect";
+
+					// if (!empty($_POST['login']) &&  !empty($_POST['password'])) {
+					// 	return "L'e-mail ou le mot de passe sont incorrect";
+					// }
 				}
 			} catch (Exception $e) {
 				header('Location: ' . $router->generate('executionError'));
