@@ -17,37 +17,44 @@
 <body>
 	<header class="headerAdmin">
 		<nav>
+			<div class="deconection">
+				<ul>
+					<li class="li_button">
+						<a href="<?= $router->generate('logout') ?>">
+							<div class="">
+								<img class="disconnection" src="/car/src/assets/images/deconection.png" width="25" height="25" alt="Déconnexion">
+
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
 			<div class="row">
 				<div class="logos">
 					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
 				</div>
+
 				<div class="navegation">
 					<ul class="nave row">
-						<li class="li_button">
+						<li class="li-user">
 							<a href="<?= $router->generate('editUser') ?>" id="as">
-								<div class="button_admin">
+								<div class="div-img">
 									<img src="/car/src/assets/images/man.png" width="35" height="35" alt="mon compte">
-									<p>Mon compte</p>
+
 								</div>
 							</a>
 						</li>
-						<li class="li_button">
-							<a href="<?= $router->generate('logout') ?>">
-								<div class="button_admin">
-									<img class="disconnection" src="/car/src/assets/images/disconnection.png" width="25" height="35" alt="Desconexion">
-									<p>Déconnexion</p>
-								</div>
-							</a>
+						<li>
+							<div class="bonjour">
+								<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
+								<p class="par"> <?php if (isset($_SESSION['car']['trademark'])) {
+													echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
+												} else {
+													echo '';
+												}; ?></p>
+							</div>
 						</li>
 					</ul>
-					<div class="bonjour">
-						<p class="par"> Bonjour, M. Mme. <?php echo $_SESSION['auth']['nickname']; ?></p>
-						<p class="par"> <?php if (isset($_SESSION['car']['trademark'])) {
-											echo "  Vous avez le véhicule " . $_SESSION['car']['trademark'];
-										} else {
-											echo '';
-										}; ?></p>
-					</div>
 				</div>
 			</div>
 		</nav>
@@ -83,7 +90,7 @@
 					<li>
 						<a href="<?= $router->generate('addhistory'); ?>">
 							<div class="column b-history border">
-								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="historique">
+								<img src="/car/src/assets/images/history.png" width="50" height="50" alt="historique">
 								<p>Historique</p>
 							</div>
 						</a>
@@ -91,8 +98,8 @@
 					<li>
 						<a href="<?= $router->generate('settingmenu'); ?>">
 							<div class="column b-setting border">
-								<img src="/car/src/assets/images/history2.png" width="50" height="50" alt="réglage">
-								<p>Réglage</p>
+								<img src="/car/src/assets/images/carAdmin.png" width="50" height="50" alt="véhicule">
+								<p>Véhicule</p>
 							</div>
 						</a>
 					</li>

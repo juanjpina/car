@@ -17,7 +17,7 @@
 
                     <div>
                         <input type="hidden" name="cars-ok" value='cars-ok'>
-                        <button type='submit' class="button">Sauvergarder</button>
+                        <button type='submit' class="button">Sauvegarder</button>
                     </div>
                 </form>
             </div>

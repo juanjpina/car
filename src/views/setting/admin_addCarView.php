@@ -13,7 +13,7 @@
                 <?= $error['message']; ?>
             </div>
             <div class="column">
-                <button type="submit" class="button">Sauvegarder</button>
+                <button type="submit" class="button">Ajouter</button>
             </div>
         </form>
     </div>

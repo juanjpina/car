@@ -1844,11 +1844,18 @@ section .pswforget div {
   text-decoration: none;
   z-index: 999;
 }
+.headerAdmin .deconection {
+  text-align: right;
+  padding-right: 7.18%;
+  padding-top: 10px;
+}
 .headerAdmin a {
   text-decoration: none;
 }
 .headerAdmin .row {
   padding-left: 7.18%;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 @media only screen and (max-width: 768px) {
   .headerAdmin .row {
@@ -1859,74 +1866,41 @@ section .pswforget div {
     width: 119px;
   }
 }
-.headerAdmin .row .navegation .nave li {
-  margin-top: 3%;
+.headerAdmin .row .li_button {
+  text-align: right;
+}
+.headerAdmin .navegation {
+  padding-top: 1%;
+  padding-right: 7.18%;
+}
+.headerAdmin .navegation .nave .row {
+  justify-content: space-around;
+}
+@media screen and (max-width: 768px) {
+  .headerAdmin .navegation .nave .row {
+    align-items: center;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .headerAdmin .row .navegation .nave {
+  .headerAdmin .navegation .nave {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .headerAdmin .row .navegation .nave li {
-    margin: 10px 0px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
   }
 }
-.headerAdmin .row .navegation .nave .li_button a .button_admin {
-  align-items: center;
-  background-color: #083540;
-  border-color: transparent;
-  border-radius: 15px;
+.headerAdmin .navegation .bonjour {
+  margin-right: 100px;
+  margin-left: 3%;
+  padding-top: 5px;
+  width: 300px;
+}
+.headerAdmin .navegation .bonjour .par {
   color: #f2f2f2;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-size: 1em;
-  height: 40px;
-  justify-content: space-around;
-  width: 200px;
-}
-@media only screen and (max-width: 768px) {
-  .headerAdmin .row .navegation .nave .li_button a .button_admin {
-    height: 35px;
-    width: 125px;
-  }
-  .headerAdmin .row .navegation .nave .li_button a .button_admin img {
-    height: 25px;
-    width: 25px;
-  }
-  .headerAdmin .row .navegation .nave .li_button a .button_admin .disconnection {
-    height: 21px;
-    width: 15px;
-  }
-  .headerAdmin .row .navegation .nave .li_button a .button_admin p {
-    font-size: 0.7em;
-  }
-}
-.headerAdmin .row .navegation .bonjour {
-  padding-top: 3px;
-}
-@media screen and (max-width: 768px) {
-  .headerAdmin .row .navegation .bonjour {
-    padding-right: 1px;
-  }
-}
-.headerAdmin .row .navegation .bonjour .par {
-  color: #f2f2f2;
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-align: left;
-  padding-left: 30px;
-  width: 100%;
 }
-@media screen and (max-width: 768px) {
-  .headerAdmin .row .navegation .bonjour .par {
-    font-size: 0.6em;
-    padding-right: 2px;
-  }
-}
-
 .white {
   width: 66%;
   height: 100%;

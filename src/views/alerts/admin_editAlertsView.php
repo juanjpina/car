@@ -3,7 +3,7 @@
     <div class="alerts">
         <div class="column">
             <h1 class="title">Rappel</h1>
-            <h6>Voici les dates d'entretien du véhicule pour les prochaines modifications</h6>
+            <h6>Voici les dates d'entretien du véhicule <?= ($_SESSION['car']['trademark']) ?> pour les prochaines modifications</h6>
         </div>
         <div class="column">
             <?php if (isset($getControl)) { ?>
