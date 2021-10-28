@@ -24,7 +24,10 @@
                 <p>VÉHICULE Faites un inventaire de tous les véhicules que vous possédez (vous pourrez en rajouter selon vos désir et possessions) et accédez aux données de chacun (frais, réparations, etc.)</p>
 
             </div>
-
+            <div class="row">
+                <img src="/car/src/assets/images/man.png" width="30" height="30" alt="pseudo">
+                <p>Mon compte</p>
+            </div>
 
             <div class="begin">
                 <a href="<?= $router->generate('whiteHome'); ?>">

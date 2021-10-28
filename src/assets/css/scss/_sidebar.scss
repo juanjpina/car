@@ -18,11 +18,13 @@
     padding-top: 200px;
     width: 100%;
     float: left;
+    margin-bottom: 39%;
     @media only screen and(max-width: 873px) {
         width: 100%;
         margin-left: 1%;
     }
-    @media only screen and(max-width: 1400px) {}
+    @media only screen and(max-width: 1400px) {
+    }
     li {
         margin-top: 10px;
         .b-alert {

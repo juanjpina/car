@@ -603,6 +603,7 @@ footer li div a {
   padding-top: 200px;
   width: 100%;
   float: left;
+  margin-bottom: 39%;
 }
 @media only screen and (max-width: 873px) {
   .sidebarCompte {
@@ -1289,8 +1290,8 @@ section .alerts div {
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
-  margin-top: 200px;
-  margin-left: 7%;
+  margin-top: 210px;
+  margin-left: 17%;
   padding: 2px;
   padding-bottom: 5px;
   width: 59%;
@@ -1347,8 +1348,8 @@ section .alerts div {
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
-  margin-top: 200px;
-  margin-left: 7%;
+  margin-top: 210px;
+  margin-left: 17%;
   width: 59%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -2139,6 +2140,11 @@ section .pswforget div {
 }
 .help .banner .row p {
   margin-left: 2%;
+}
+@media screen and (max-width: 768px) {
+  .help .banner .row {
+    margin: 2% 1%;
+  }
 }
 .help .banner .begin {
   margin-top: 5%;

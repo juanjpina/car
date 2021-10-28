@@ -16,8 +16,12 @@
         .row {
             flex-wrap: nowrap;
             margin: 1% 0%;
+
             p {
                 margin-left: 2%;
+            }
+            @media screen and(max-width:768px) {
+                margin: 2% 1%;
             }
         }
         .begin {
