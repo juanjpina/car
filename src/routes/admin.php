@@ -11,6 +11,7 @@ $router->map('GET', '/executionDelete', 'pages/admin_executionDelete', 'executio
 $router->map('GET', '/executionModified', 'pages/admin_executionModified', 'executionModified');
 $router->map('GET', '/executionHistory', 'pages/admin_executionHistory', 'executionHistory');
 $router->map('GET', '/executionHelp', 'pages/admin_help', 'executionHelp');
+$router->map('GET', '/executionPseudo', 'pages/admin_executionPseudo', 'executionPseudo');
 
 
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');

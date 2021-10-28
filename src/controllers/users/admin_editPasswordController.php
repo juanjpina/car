@@ -49,7 +49,7 @@ function editUser(PDO $db, AltoRouter $router)
                         $result = $request->execute($data);
                         $request->closeCursor();
                         if ($result) {
-                            header('Location: ' . $router->generate('execution'));
+                            header('Location: ' . $router->generate('executionPseudo'));
                         }
                     } catch (Exception $e) {
                         header('Location: ' . $router->generate('executionError'));

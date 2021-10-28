@@ -4,14 +4,14 @@
         <div class="column">
             <h1 class="title">Modifier vos données</h1>
         </div>
-        <div class="column ">
+        <div class="column">
             <form action="" method="post">
                 <div>
                     <div class="column form">
                         <?php $verification = messagePassword('password'); ?>
                         <label for="password">Mot de passe</label>
-                        <input type="password" class="input password" name="password" value="">
                         <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
+                        <input type="password" class="input password" name="password" value="">
                         <p class="message"><?= $verification; ?></p>
                     </div>
                 </div>

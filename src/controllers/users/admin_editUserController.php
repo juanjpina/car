@@ -35,36 +35,36 @@ function editUser(PDO $db, AltoRouter $router)
 {
     if (isset($_POST['ok'])) {
 
-        if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
-            $pass = $_POST['password'];
-            $cpass = $_POST['confirmerPassword'];
-            // dump(1);
-            if (password($pass)) {
-                if (strcmp($pass, $cpass) == 0) {
-                    try {
-                        $data = [
-                            'id_user' => $_SESSION['auth']['id_user'],
-                            'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
-                        ];
-                        $sql = 'UPDATE user SET password=:password WHERE id_user=:id_user';
-                        $request = $db->prepare($sql);
-                        $result = $request->execute($data);
-                        $request->closeCursor();
-                        if ($result) {
-                            header('Location: ' . $router->generate('execution'));
-                        }
-                    } catch (Exception $e) {
-                        header('Location: ' . $router->generate('executionError'));
-                        die();
-                    } catch (PDOException $e) {
-                        header('Location: ' . $router->generate('executionError'));
-                        die();
-                    } finally {
-                        $sql = null;
-                    }
-                }
-            }
-        }
+        // if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
+        //     $pass = $_POST['password'];
+        //     $cpass = $_POST['confirmerPassword'];
+        //     // dump(1);
+        //     if (password($pass)) {
+        //         if (strcmp($pass, $cpass) == 0) {
+        //             try {
+        //                 $data = [
+        //                     'id_user' => $_SESSION['auth']['id_user'],
+        //                     'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
+        //                 ];
+        //                 $sql = 'UPDATE user SET password=:password WHERE id_user=:id_user';
+        //                 $request = $db->prepare($sql);
+        //                 $result = $request->execute($data);
+        //                 $request->closeCursor();
+        //                 if ($result) {
+        //                     header('Location: ' . $router->generate('executionPseudo'));
+        //                 }
+        //             } catch (Exception $e) {
+        //                 header('Location: ' . $router->generate('executionError'));
+        //                 die();
+        //             } catch (PDOException $e) {
+        //                 header('Location: ' . $router->generate('executionError'));
+        //                 die();
+        //             } finally {
+        //                 $sql = null;
+        //             }
+        //         }
+        //     }
+        // }
         if (isset($_POST['nickname'])) {
             $email = $_SESSION['auth']['email'];
             $id_user = $_SESSION['auth']['id_user'];
@@ -83,7 +83,7 @@ function editUser(PDO $db, AltoRouter $router)
                 $result = $request->execute($data);
                 $request->closeCursor();
                 if ($result) {
-                    header('Location: ' . $router->generate('execution'));
+                    header('Location: ' . $router->generate('executionPseudo'));
                 }
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
@@ -106,7 +106,7 @@ function editUser(PDO $db, AltoRouter $router)
                 $result = $request->execute($data);
                 $request->closeCursor();
                 if ($result) {
-                    header('Location: ' . $router->generate('execution'));
+                    header('Location: ' . $router->generate('executionPseudo'));
                 }
             } catch (Exception $e) {
                 header('Location: ' . $router->generate('executionError'));
