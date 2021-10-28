@@ -2108,4 +2108,47 @@ section .pswforget div {
   padding: 20px;
 }
 
+.help {
+  width: 100%;
+}
+.help .banner {
+  background-color: #d9bd30;
+  border-radius: 28px;
+  color: #f2f2f2;
+  padding: 30px;
+  width: 100%;
+  margin-top: 240px;
+  margin-left: 11.83%;
+  filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
+  box-shadow: 2px 5px 15px -2px #b4b2ba;
+  margin-left: 0;
+}
+@media screen and (max-width: 768px) {
+  .help .banner {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.help .banner h6 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.help .banner .row {
+  flex-wrap: nowrap;
+  margin: 1% 0%;
+}
+.help .banner .row p {
+  margin-left: 2%;
+}
+.help .banner .begin {
+  margin-top: 5%;
+}
+@media screen and (max-width: 768px) {
+  .help .banner {
+    padding: 50px 2px;
+    width: 100%;
+    margin-right: 30%;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

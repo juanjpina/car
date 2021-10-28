@@ -74,7 +74,7 @@ if (isset($_POST['trademark'])) {
             'id_car' => (int)$result[0]['id_car'],
             'trademark' => $result[0]['trademark'],
         ];
-        header('Location: ' . $router->generate('executionCar'));
+        header('Location: ' . $router->generate('executionHelp'));
         die();
     } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));

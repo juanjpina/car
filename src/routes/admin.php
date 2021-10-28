@@ -10,6 +10,7 @@ $router->map('GET', '/executionInvoice', 'pages/admin_executionInvoice', 'execut
 $router->map('GET', '/executionDelete', 'pages/admin_executionDelete', 'executionDelete');
 $router->map('GET', '/executionModified', 'pages/admin_executionModified', 'executionModified');
 $router->map('GET', '/executionHistory', 'pages/admin_executionHistory', 'executionHistory');
+$router->map('GET', '/executionHelp', 'pages/admin_help', 'executionHelp');
 
 
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
