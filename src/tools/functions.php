@@ -1,6 +1,9 @@
 <?php
 
 
+
+
+
 /**
  * verifies the count if it meets the proposed conditions * 
  * @param string(password)
@@ -310,7 +313,7 @@ function dbSelect(PDO $db, $id_car, $database)
 /**
  * returns a table
  * 
- * @param table
+ * @param string
  * 
  * @return array data base.
  */
@@ -344,7 +347,7 @@ function insertInvoice(PDO $db, $database, $id_car, $date, $km, $total, $comment
 		$request = $db->prepare($sql);
 		$result = $request->execute($data);
 		$request->closeCursor();
-		header('Location: ' . $router->generate('execution'));
+		header('Location: ' . $router->generate('executionInvoice'));
 		die();
 	} catch (PDOException $e) {
 		header('Location: ' . $router->generate('executionError'));

@@ -22,47 +22,51 @@
                 </div>
             </form>
 
-            <?php if ($selectInvoice[0]['date'] != '') { ?>
-                <div class="column">
-                    <h6>Liste des Factures</h6>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Km</th>
-                            <th>Total</th>
-                            <th>Comment</th>
-                        </tr>
-                    </thead>
-                    <?php foreach ($selectInvoice as $invoice) { ?>
-                        <tr>
-                            <td class='date'><?= date("d-m-Y", strtotime($invoice['date'])); ?></td>
-                            <td><?= $invoice['km']; ?></td>
-                            <td><?= $invoice['total']; ?></td>
-                            <td><?= $invoice['comment']; ?></td>
-                            <?php if ($invoice['id'] != '') { ?>
-                                <td class='icon'><a href="<?= $router->generate(
-                                                                'modifyInvoice',
-                                                                [
-                                                                    'id' => $invoice['id'],
-                                                                    'db' => $_POST['typeInvoice']
-                                                                ]
-                                                            ); ?>"><img src="/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
-                                <td class='icon'><a href="<?= $router->generate(
-                                                                'deleteInvoice',
-                                                                [
-                                                                    'id' => $invoice['id'],
-                                                                    'db' => $_POST['typeInvoice']
-                                                                ]
-                                                            ); ?>"><img src="/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
-                            <?php } else { ?>
+            <?php if (isset($selectInvoice) && !empty($selectInvoice)) {
+                if (is_array($selectInvoice)) { ?>
+                    <div class="column">
+                        <h6>Liste des Factures</h6>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Km</th>
+                                <th>Total</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <?php foreach ($selectInvoice as $invoice) { ?>
+                            <tr>
+                                <td class='date'><?= date("d-m-Y", strtotime($invoice['date'])); ?></td>
+                                <td><?= $invoice['km']; ?></td>
+                                <td><?= $invoice['total']; ?></td>
+                                <td><?= $invoice['comment']; ?></td>
+                                <?php if ($invoice['id'] != '') { ?>
+                                    <td class='icon'><a href="<?= $router->generate(
+                                                                    'modifyInvoice',
+                                                                    [
+                                                                        'id' => $invoice['id'],
+                                                                        'db' => $_POST['typeInvoice']
+                                                                    ]
+                                                                ); ?>"><img src="/car/src/assets/images/edit.png" width="15" height="15" alt=""> </a></td>
+                                    <td class='icon'><a href="<?= $router->generate(
+                                                                    'deleteInvoice',
+                                                                    [
+                                                                        'id' => $invoice['id'],
+                                                                        'db' => $_POST['typeInvoice']
+                                                                    ]
+                                                                ); ?>"><img src="/car/src/assets/images/delete.png" width="15" height="15" alt=""> </a></td>
+                                <?php } else { ?>
+                                <?php  }; ?>
+                            </tr>
+                        <?php }; ?>
+                    </table>
+            <?php } else {
+                    echo "<p>Il n'y a pas de donnés pour le véhicule " .  $_SESSION['car']['trademark'] . "</p>";
+                }
+            } ?>
 
-                            <?php  }; ?>
-                        </tr>
-                    <?php }; ?>
-                </table>
-            <?php }; ?>
         </div>
     </div>
 </section>
