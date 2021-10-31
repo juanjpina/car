@@ -6,7 +6,7 @@ section {
         width: 55%;
         @include shadow;
         @media screen and (max-width: 768px) {
-            margin: 150px 0px 0px 0px;
+            margin: 200px 0px 0px 0px;
             width: 100%;
         }
         form {

@@ -1,6 +1,8 @@
 <?php get_header('listed graphics', 'admin'); ?>
 <section>
     <div class='listedGraphics'>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    
         <div class='column'>
             <h1 class="title">Résultat de la comparaison</h1>
         </div>

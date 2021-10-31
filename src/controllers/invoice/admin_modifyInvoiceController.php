@@ -6,7 +6,7 @@
 function invoiceUpdate(PDO $db, AltoRouter $router)
 {
     $test = false;
-    if (isset($_POST['date']) && isset($_POST['total']) && isset($_POST['km'])) {
+    if (!empty($_POST['date']) && !empty($_POST['total']) && !empty($_POST['km'])) {
         if (is_numeric($_POST['km'])) {
             if (is_numeric($_POST['total'])) {
                 if (validateDate($_POST['date'], $format = 'Y-m-d')) {

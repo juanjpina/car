@@ -1,6 +1,7 @@
 <?php get_header('feul', 'admin'); ?>
 <section>
     <div class='fuel'>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
         <div class="column">
             <h1 class="title">Carburant</h1>
             <h6>Signalez le kilometrage à partir duquel vous voulez commencer le suivi.</h6>

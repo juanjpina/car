@@ -22,7 +22,7 @@
                     <li class="li_button">
                         <a href="<?= $router->generate('logout') ?>">
                             <div class="">
-                                <img class="disconnection" src="/car/src/assets/images/deconection.png" width="25" height="25" alt="Déconnexion">
+                                <img class="disconnection" title="Déconnecter" src="/car/src/assets/images/deconection.png" width="25" height="25" alt="Déconnexion">
 
                             </div>
                         </a>
@@ -39,7 +39,7 @@
                         <li class="li-user">
                             <a href="<?= $router->generate('editUser') ?>" id="as">
                                 <div class="div-img">
-                                    <img src="/car/src/assets/images/man.png" width="35" height="35" alt="mon compte">
+                                    <img title="Mon compte" src="/car/src/assets/images/man.png" width="35" height="35" alt="mon compte">
 
                                 </div>
                             </a>
@@ -99,7 +99,7 @@
                         <a href="<?= $router->generate('executionHelp'); ?>">
                             <div class="b-alert">
                                 <img src="/car/src/assets/images/help.png" width="30" height="30" alt="mot de passe">
-                                <p>Aider</p>
+                                <p>Aide</p>
                             </div>
                         </a>
                     </li>

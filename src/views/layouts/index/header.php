@@ -18,14 +18,14 @@
             height: 200px;
             position: relative;
             perspective: 1000px;
-            margin-right: 2em;
+            margin: 0 2em;
         }
 
         @media only screen and (max-width:768px) {
             .card-box {
                 width: 90px;
                 height: 150px;
-                margin-right: 1em;
+                margin:0 1em;
             }
 
             img {
@@ -77,7 +77,8 @@
                     <ul class="nave">
                         <li class="li_button">
                             <a href="<?= $router->generate('login') ?>" id="as">
-                                <div class="button_admin">
+                                <!-- <div class="button_admin"> -->
+                                <div class="buttonA">
                                     <img src="/car/src/assets/images/man.png" width="35" height="35" alt="se connecter">
                                     <p>Se connecter</p>
                                 </div>

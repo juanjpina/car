@@ -22,9 +22,9 @@ emails.addEventListener("keyup", () => {
     xhr.open("POST", "send");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
     xhr.send('mail=' + mail);
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
 
-        if (xhr.response === 'ok') {
+        if (xhr.response !== 'ok') {
             emails.style.border = '4px solid green';
         } else {
             emails.style.border = '4px solid red';
@@ -32,4 +32,9 @@ emails.addEventListener("keyup", () => {
 
     }
 
-})
+});
+
+
+
+
+

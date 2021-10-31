@@ -2,13 +2,12 @@
 
 $id_car = getSessionCar($db, $router);
 if (isset($id_car)) {
+    //recovers the data from the setting table 
     $setting = dbSelect($db, $id_car, "setting");
 
     /**
-     * in:$_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car
-     * 
-     * return: update data base.
-     * 
+     * modifies the data in the setting table
+     * @param string
      */
     function dbUpdate(PDO $db, $dateTiming, $kmTiming, $kmOil, $dataBase, $id_car, AltoRouter $router)
     {
@@ -24,7 +23,7 @@ if (isset($id_car)) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $request->closeCursor();
-            header('Location: ' . $router->generate('execution'));
+            header('Location: ' . $router->generate('executionPseudo'));
             die();
         } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));

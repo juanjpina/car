@@ -34,38 +34,7 @@ function searchEmail(PDO $db, AltoRouter $router)
 function editUser(PDO $db, AltoRouter $router)
 {
     if (isset($_POST['ok'])) {
-
-        // if (!empty($_POST['password']) && !empty($_POST['confirmerPassword'])) {
-        //     $pass = $_POST['password'];
-        //     $cpass = $_POST['confirmerPassword'];
-        //     // dump(1);
-        //     if (password($pass)) {
-        //         if (strcmp($pass, $cpass) == 0) {
-        //             try {
-        //                 $data = [
-        //                     'id_user' => $_SESSION['auth']['id_user'],
-        //                     'password' =>  password_hash($_POST['password'], PASSWORD_DEFAULT)
-        //                 ];
-        //                 $sql = 'UPDATE user SET password=:password WHERE id_user=:id_user';
-        //                 $request = $db->prepare($sql);
-        //                 $result = $request->execute($data);
-        //                 $request->closeCursor();
-        //                 if ($result) {
-        //                     header('Location: ' . $router->generate('executionPseudo'));
-        //                 }
-        //             } catch (Exception $e) {
-        //                 header('Location: ' . $router->generate('executionError'));
-        //                 die();
-        //             } catch (PDOException $e) {
-        //                 header('Location: ' . $router->generate('executionError'));
-        //                 die();
-        //             } finally {
-        //                 $sql = null;
-        //             }
-        //         }
-        //     }
-        // }
-        if (isset($_POST['nickname'])) {
+        if (isset($_POST['nickname']) && !empty($_POST['nickname'])) {
             $email = $_SESSION['auth']['email'];
             $id_user = $_SESSION['auth']['id_user'];
             $_SESSION['auth'] = [
@@ -95,8 +64,28 @@ function editUser(PDO $db, AltoRouter $router)
                 $sql = null;
             }
         }
-        if (isset($_POST['email'])) {
-            try {
+    }
+};
+
+editUser($db, $router);
+$result = searchEmail($db, $router);
+
+function checkModifEmail(PDO $db, AltoRouter $router)
+{
+    if (isset($_POST['email']) && !empty($_POST['email'])) {
+        try {
+            $data = array(
+                ':email' => $_POST['email'],
+            );
+            $sql = 'SELECT email FROM user WHERE email LIKE :email LIMIT 1';
+            $request = $db->prepare($sql);
+            $request->execute($data);
+            $response = $request->fetch(PDO::FETCH_ASSOC);
+            $request->closeCursor();
+
+            if ($response) {
+                return "L'email existe déjà !!";
+            } else {
                 $data = [
                     'id_user' => $_SESSION['auth']['id_user'],
                     'email'  => $_POST['email'],
@@ -107,18 +96,17 @@ function editUser(PDO $db, AltoRouter $router)
                 $request->closeCursor();
                 if ($result) {
                     header('Location: ' . $router->generate('executionPseudo'));
+                } else {
                 }
-            } catch (Exception $e) {
-                header('Location: ' . $router->generate('executionError'));
-                die();
-            } catch (PDOException $e) {
-                header('Location: ' . $router->generate('executionError'));
-                die();
-            } finally {
-                $sql = null;
             }
+        } catch (Exception $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
+        } catch (PDOException $e) {
+            header('Location: ' . $router->generate('home'));
+            die();
+        } finally {
+            $sql = null;
         }
     }
 }
-editUser($db, $router);
-$result = searchEmail($db, $router);

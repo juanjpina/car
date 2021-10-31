@@ -15,7 +15,7 @@ if (!empty(getSessionCar($db, $router))) {
             $request = $db->prepare($sql);
             $request->execute($data);
             $request->closeCursor();
-            header('Location: ' . $router->generate('execution'));
+            header('Location: ' . $router->generate('executionPseudo'));
             die();
         } catch (PDOException $e) {
             header('Location: ' . $router->generate('executionError'));

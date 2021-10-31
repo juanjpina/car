@@ -4,8 +4,7 @@
 /**
  * returns a list of cars
  */
-$cars = getCar($db, $router);
-
+ $cars = getCarSelect($db, $router);
 
 /**
  *creates a car session with the new car selection

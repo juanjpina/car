@@ -5,6 +5,7 @@
     height: 100%;
     width: 66%;
     padding: 5px 2px;
+    padding-bottom: 2.5%;
     @include topDiv;
     @include shadow;
     @media screen and (max-width: 768px) {

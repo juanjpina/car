@@ -3,8 +3,7 @@
 /**
  * a new car is created in the database
  */
-if (isset($_POST['trademark'])) {
-
+if (isset($_POST['trademark']) && !empty($_POST['trademark'])) {
 
     $data = [
         ':id_user' => $_SESSION['auth']['id_user'],
@@ -22,8 +21,6 @@ if (isset($_POST['trademark'])) {
         $request1 = $db->prepare($sql);
         $result1 = $request1->execute($data);
         $request1->closeCursor();
-
-
 
 
         /**
@@ -74,7 +71,7 @@ if (isset($_POST['trademark'])) {
             'id_car' => (int)$result[0]['id_car'],
             'trademark' => $result[0]['trademark'],
         ];
-        header('Location: ' . $router->generate('executionHelp'));
+        header('Location: ' . $router->generate('white'));
         die();
     } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));

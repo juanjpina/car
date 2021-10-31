@@ -26,7 +26,7 @@ function getListe(AltoRouter $router, $id_car)
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                header('Location: ' . $router->generate('executionHistory'));
                 // header('Refresh:' . 0.2);
                 die();
             }
@@ -41,7 +41,7 @@ function getListe(AltoRouter $router, $id_car)
                 );
                 return  header('Location: ' . $router->generate('listedstatistics', $data));
             } else {
-                header('Location: ' . $router->generate('executionError'));
+                header('Location: ' . $router->generate('executionHistory'));
             }
         }
     } else {

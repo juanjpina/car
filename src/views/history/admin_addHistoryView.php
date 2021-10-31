@@ -1,6 +1,7 @@
 <?php get_header('history add', 'admin'); ?>
 <section>
     <div class="history">
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
         <div class="column ">
             <h1 class='title'>Historique des frais</h1>
             <h6>Selon le type de frais sélectionnez une période ou date pour accéder aux données</h6>

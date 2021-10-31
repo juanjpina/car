@@ -163,6 +163,11 @@ main {
   opacity: 0.8;
   transition: all 600ms ease;
 }
+.button:visited {
+  background-color: #18a8cc;
+  opacity: 0.8;
+  transition: all 600ms ease;
+}
 
 table th {
   font-size: 0.8em;
@@ -180,7 +185,7 @@ table td {
 .title {
   font-family: "montserratExtra";
   letter-spacing: 0.1em;
-  padding: 1.1em 0em;
+  padding: 1% 0%;
   text-transform: uppercase;
   text-align: center;
 }
@@ -201,6 +206,19 @@ h6 {
   }
 }
 
+.closed {
+  display: inline-block;
+  padding-top: 2%;
+  padding-right: 2%;
+  text-align: right;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .closed {
+    padding: 5%;
+  }
+}
+
 .header {
   width: 100%;
   height: 140px;
@@ -209,6 +227,7 @@ h6 {
   box-shadow: 2px 5px 15px -2px #b4b2ba;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   text-decoration: none;
+  z-index: 999;
 }
 .header .logo {
   display: inline-block;
@@ -244,10 +263,35 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .header .row {
-    padding: 4% 0% 0% 0%;
+    padding: 0;
   }
   .header .row div {
     padding-right: 2%;
+  }
+}
+.header .row .navegation .nave .li_button a .buttonA {
+  align-items: center;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 1em;
+  justify-content: space-evenly;
+  margin-right: 28px;
+  width: 200px;
+}
+@media only screen and (max-width: 768px) {
+  .header .row .navegation .nave .li_button a .buttonA {
+    height: 35px;
+    width: 125px;
+    margin-right: 0;
+  }
+  .header .row .navegation .nave .li_button a .buttonA img {
+    height: 25px;
+    width: 25px;
+  }
+  .header .row .navegation .nave .li_button a .buttonA p {
+    font-size: 0.7em;
   }
 }
 .header .row .navegation .nave .li_button a .button_admin {
@@ -289,12 +333,15 @@ h6 {
 }
 
 footer {
-  margin: 5% 0 1% 0;
+  margin: 15% 0 1% 0;
   padding: 0 10%;
 }
 footer nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+footer nav ul div {
+  margin: 0 50px;
 }
 @media screen and (max-width: 768px) {
   footer nav ul {
@@ -305,9 +352,17 @@ footer nav ul {
     flex-wrap: wrap;
   }
 }
+footer .law li {
+  margin: 5% 0;
+}
+footer .social {
+  flex-wrap: nowrap;
+}
+footer .social li {
+  width: 100%;
+  margin: 0 9%;
+}
 footer li {
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1em;
 }
 @media screen and (max-width: 768px) {
@@ -670,6 +725,10 @@ footer li div a {
   color: #d94625;
   opacity: 1;
 }
+.sidebarCompte li .b-alert:visited {
+  background-color: #d9bd30;
+  opacity: 0.5;
+}
 
 nav {
   margin-right: 8%;
@@ -758,7 +817,7 @@ section .alerts {
   background-color: #d9bd30;
   border-radius: 28px;
   height: 100%;
-  padding: 10px 0px;
+  padding-bottom: 4%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -876,6 +935,7 @@ section .alerts div {
   border-radius: 28px;
   height: 100%;
   padding: 0px 2px;
+  padding-bottom: 2.5%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -932,6 +992,7 @@ section .alerts div {
   height: 100%;
   margin-top: 200px;
   padding: 0px 2px;
+  padding-bottom: 2.5%;
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -976,6 +1037,7 @@ section .alerts div {
 .menuStatistics {
   margin-top: 370px;
   width: 100%;
+  padding-bottom: 2.5%;
 }
 .menuStatistics .row {
   justify-content: center;
@@ -1049,6 +1111,7 @@ section .alerts div {
   height: 100%;
   margin-top: 200px;
   padding: 0px 1px 2px 1px;
+  padding-bottom: 2.5%;
   width: 100%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -1082,6 +1145,7 @@ section .alerts div {
   height: 100%;
   margin-top: 200px;
   width: 100%;
+  margin-bottom: 2.5%;
 }
 .listedGraphics .row .start {
   margin-bottom: 30px;
@@ -1191,6 +1255,7 @@ section .alerts div {
   border-radius: 28px;
   height: 100%;
   padding: 0px 1px 30px 1px;
+  padding-bottom: 2.5%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1226,6 +1291,7 @@ section .alerts div {
   background-color: #bf9926;
   border-radius: 28px;
   height: 100%;
+  padding-bottom: 2.5%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1251,6 +1317,7 @@ section .alerts div {
   background-color: #d94625;
   border-radius: 28px;
   height: 100%;
+  padding-bottom: 2.5%;
   width: 76%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1293,7 +1360,7 @@ section .alerts div {
   margin-top: 210px;
   margin-left: 17%;
   padding: 2px;
-  padding-bottom: 5px;
+  padding-bottom: 2.5%;
   width: 59%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -1321,6 +1388,7 @@ section .alerts div {
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
+  padding-bottom: 3%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1336,6 +1404,11 @@ section .alerts div {
 .addCar div {
   margin: 20px 0;
 }
+.addCar .column .error {
+  color: red;
+  margin-top: 2px;
+  text-align: center;
+}
 @media screen and (max-width: 768px) {
   .addCar {
     width: 100%;
@@ -1350,6 +1423,7 @@ section .alerts div {
   height: 100%;
   margin-top: 210px;
   margin-left: 17%;
+  padding-bottom: 1%;
   width: 59%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
@@ -1366,26 +1440,26 @@ section .alerts div {
   }
   .user label {
     text-align: center;
-    padding: 0 2%;
+    padding: 0% 2%;
   }
 }
-.user .form {
-  width: 60%;
-  margin-top: 20px;
-}
-.user .form .textPassword {
+.user .textPassword {
   font-size: 0.8em;
   margin-top: 3px;
   text-align: center;
   width: 50%;
+  display: inline-block;
 }
 @media screen and (max-width: 768px) {
-  .user .form {
+  .user {
     text-align: center;
   }
 }
 .user div {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+.user div .button {
+  margin-top: 30px;
 }
 
 @font-face {
@@ -1402,7 +1476,7 @@ section .alerts div {
   color: #f2f2f2;
   height: 100%;
   width: 66%;
-  padding-bottom: 5px;
+  padding-bottom: 3%;
   margin-top: 240px;
   margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -1423,6 +1497,7 @@ section .alerts div {
   }
 }
 .userStatistics .button {
+  margin-top: 7%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
@@ -1430,10 +1505,10 @@ section .alerts div {
   color: #d94625;
 }
 .userStatistics .column .right {
-  margin: 0 px 30px;
+  margin: 0 10px;
 }
 .userStatistics div {
-  margin: 10px 0px;
+  margin: 2% 0;
 }
 @media screen and (max-width: 768px) {
   .userStatistics {
@@ -1446,7 +1521,7 @@ section .alerts div {
   border-radius: 28px;
   height: 100%;
   padding: 0px 2px;
-  padding-bottom: 30px;
+  padding-bottom: 4%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1545,6 +1620,7 @@ section .alerts div {
   height: 100%;
   width: 66%;
   padding: 5px 2px;
+  padding-bottom: 2.5%;
   margin-top: 240px;
   margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
@@ -1688,6 +1764,7 @@ section .alerts div {
   border-radius: 28px;
   height: 100%;
   padding: 0px 2px;
+  padding-bottom: 2.5%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1856,6 +1933,7 @@ section .menuSetting div .b-alert:active {
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
+  padding-bottom: 3%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -1888,7 +1966,7 @@ section .pswforget {
 }
 @media screen and (max-width: 768px) {
   section .pswforget {
-    margin: 150px 0px 0px 0px;
+    margin: 200px 0px 0px 0px;
     width: 100%;
   }
 }
@@ -1942,7 +2020,7 @@ section .pswforget div {
   border-radius: 28px;
   color: #f2f2f2;
   height: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 3%;
   width: 66%;
   margin-top: 240px;
   margin-left: 11.83%;
@@ -2030,10 +2108,10 @@ section .pswforget div {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    margin-left: 50px;
+    margin-left: 22%;
   }
   .headerAdmin .navegation .nave .li-user {
-    margin-right: 40%;
+    margin-right: 69%;
     justify-content: center;
   }
 }
@@ -2041,6 +2119,11 @@ section .pswforget div {
   margin-left: 5%;
   padding-top: 5px;
   width: 300px;
+}
+@media screen and (max-width: 768px) {
+  .headerAdmin .navegation .bonjour {
+    margin-left: 0;
+  }
 }
 .headerAdmin .navegation .bonjour .par {
   color: #f2f2f2;
@@ -2050,6 +2133,7 @@ section .pswforget div {
 @media screen and (max-width: 768px) {
   .headerAdmin .navegation .bonjour .par {
     font-size: 0.8em;
+    padding-bottom: 1%;
   }
 }
 

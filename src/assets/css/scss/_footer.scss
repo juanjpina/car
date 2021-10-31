@@ -1,17 +1,31 @@
 footer {
-    margin: 5% 0 1% 0;
-
+    margin: 15% 0 1% 0;
     padding: 0 10%;
     nav ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        div {
+            margin: 0 50px;
+        }
         @media screen and (max-width: 768px) {
             @include column;
         }
     }
+    .law {
+        li {
+            margin: 5% 0;
+        }
+    }
+    .social {
+        flex-wrap: nowrap;
+        li {
+            width: 100%;
+            margin: 0 9%;
+        }
+    }
     li {
-        margin-left: auto;
-        margin-right: auto;
+        // width: 100%;
+        // margin-bottom: 15%;
         font-size: 1em;
         @media screen and (max-width: 768px) {
             margin: 2% auto;

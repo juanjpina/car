@@ -1,6 +1,8 @@
 <?php get_header('InvoiceCar', 'compte') ?>
 <section>
     <div class="invoiceCar">
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+       
         <div class="column">
             <h1 class='title'>Les premières données du véhicule</h1>
         </div>

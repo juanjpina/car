@@ -58,7 +58,7 @@ if (
             default;
         };
     } else {
-        header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('invoiceError'));
         die();
     }
     // header('Refresh:' . 0.2);

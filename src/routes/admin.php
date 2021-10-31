@@ -12,6 +12,7 @@ $router->map('GET', '/executionModified', 'pages/admin_executionModified', 'exec
 $router->map('GET', '/executionHistory', 'pages/admin_executionHistory', 'executionHistory');
 $router->map('GET', '/executionHelp', 'pages/admin_help', 'executionHelp');
 $router->map('GET', '/executionPseudo', 'pages/admin_executionPseudo', 'executionPseudo');
+$router->map('GET', '/executionInvoiceError', 'pages/admin_executionInvoiceError', 'invoiceError');
 
 
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');

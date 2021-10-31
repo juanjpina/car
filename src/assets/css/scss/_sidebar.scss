@@ -23,8 +23,6 @@
         width: 100%;
         margin-left: 1%;
     }
-    @media only screen and(max-width: 1400px) {
-    }
     li {
         margin-top: 10px;
         .b-alert {
@@ -74,6 +72,11 @@
                 background-color: $color-history;
                 color: $color-history;
                 opacity: 1;
+            }
+            &:visited {
+                background-color: $color-alert;
+                opacity: 0.5;
+                // transition: all 600ms ease;
             }
         }
     }

@@ -5,7 +5,7 @@
     color: $color-texto;
     height: 100%;
     width: 66%;
-    padding-bottom: 5px;
+    padding-bottom: 3%;
     @include topDiv;
     @include shadow;
     .liStatis {
@@ -19,6 +19,7 @@
         }
     }
     .button {
+        margin-top: 7%;
         @include shadow;
         &:hover {
             color: $color-history;
@@ -26,11 +27,11 @@
     }
     .column {
         .right {
-            margin: 0 px 30px;
+            margin: 0 10px;
         }
     }
     div {
-        margin: 10px 0px;
+        margin: 2% 0;
     }
     @media screen and (max-width: 768px) {
         width: 100%;

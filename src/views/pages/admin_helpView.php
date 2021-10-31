@@ -2,7 +2,7 @@
 <section>
     <div class="help column ">
         <div class="banner column">
-            <h1 class="title">Aider</h1>
+            <h1 class="title">Aide</h1>
             <div class="row">
                 <img src="/car/src/assets/images/alerts.png" width="50" height="50" alt="rappel">
                 <p>RAPPEL Ce service vous prévient des réparations à venir, comme la vidange, le changement de la courroie de distribution, ainsi que du control technique à travers un message à votre boîte mail. </p>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="begin">
-                <a href="<?= $router->generate('whiteHome'); ?>">
+                <a href="<?= $router->generate('white'); ?>">
                     <div class="button">
                         <p>Commencez</p>
                     </div>

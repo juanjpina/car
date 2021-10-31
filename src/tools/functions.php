@@ -2,6 +2,20 @@
 
 
 
+/**
+ * @param string
+ * @return string
+ * check the length of the string >10
+ */
+function lengthPseudo($pseudo)
+{
+
+	if (!empty($_POST[$pseudo])) {
+		if (strlen($_POST[$pseudo]) > 10) {
+			return "Le pseudo ne doit pas avoir plus de 10 caractères";
+		}
+	}
+}
 
 
 /**
@@ -112,7 +126,7 @@ function getFuel(PDO $db, $id, AltoRouter $router)
 
 
 /**
- *search the database with the user id
+ *search the database with the user id limit 1
  * @param string (id-user)
  * @return array
  *
@@ -123,7 +137,7 @@ function getCar(PDO $db, AltoRouter $router)
 		$data = array(
 			':id_user' => $_SESSION['auth']['id_user']
 		);
-		$sql = 'SELECT * FROM car where id_user = :id_user ';
+		$sql = 'SELECT * FROM car where id_user = :id_user LIMIT 1';
 		$request = $db->prepare($sql);
 		$request->execute($data);
 		$result = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -140,17 +154,57 @@ function getCar(PDO $db, AltoRouter $router)
 	}
 }
 
+
+/**
+ *search the database with the user id 
+ * @param string (id-user)
+ * @return array
+ *
+ */
+function getCarSelect(PDO $db, AltoRouter $router)
+{
+	try {
+		$data = array(
+			':id_user' => $_SESSION['auth']['id_user']
+		);
+		$sql = 'SELECT * FROM car where id_user = :id_user';
+		$request = $db->prepare($sql);
+		$request->execute($data);
+		$result = $request->fetchAll(PDO::FETCH_ASSOC);
+		$request->closeCursor();
+		return $result;
+	} catch (Exception $e) {
+		header('Location: ' . $router->generate('executionErrorr'));
+		die();
+	} catch (PDOException $e) {
+		header('Location: ' . $router->generate('executionErrorr'));
+		die();
+	} finally {
+		$sql = null;
+	}
+}
+
+
+
+
+
 /**
  * Check if the car session is open, if you do not send to select a car or to create it
  * @return id_car
  */
 function getSessionCar(PDO $db, AltoRouter $router)
 {
+	$car = getCar($db, $router);
 	if (!empty($_SESSION['car']['id_car'])) {
 		$value = (int)$_SESSION['car']['id_car'];
-	} else if (getCar($db, $router)) {
-		header('Location: ' . $router->generate('selectcar'));
-		die();
+	} else if ($car) {
+
+		$value = $car[0]['id_car'];
+		$_SESSION['car'] = [
+			'id_car' => $car[0]['id_car'],
+			'trademark' => $car[0]['trademark'],
+		];
+		header('Location: ' . $router->generate('editalerts'));
 	} else {
 		header('Location: ' . $router->generate('addnewcar'));
 		die();

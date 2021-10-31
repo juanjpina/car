@@ -1,6 +1,7 @@
 <?php get_header('invoice add', 'admin'); ?>
 <section>
     <div class="editInvoice">
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
         <div class="column">
             <h1 class='title'>Modifier ou annuler les frais</h1>
             <h6>Vous pouvez modifier ou annuler les données sauvegardées précédemment</h6>

@@ -1,6 +1,8 @@
 <?php get_header('fuelstatistics', 'admin'); ?>
 <section>
     <div class='fuelStatistics'>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    
         <div class="column">
             <h1 class="title">Carburant</h1>
             <h6>Tableau de frais de carburant du Véhicule <?php echo $_SESSION['car']['trademark']; ?></h6>

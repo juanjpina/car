@@ -1,4 +1,9 @@
 <?php
+
+
+/**
+ * this function erases the elements from the database
+ */
 function delete(PDO $db, AltoRouter $router)
 {
     if (isset($_POST['delete'])) {

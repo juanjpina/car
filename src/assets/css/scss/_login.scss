@@ -41,16 +41,13 @@
         }
         div {
             height: 100px;
-            // margin-bottom: 30px;
+
             .textPassword {
                 font-size: 0.8em;
-                // margin-top: 2px;
+
                 text-align: center;
                 width: 60%;
             }
-            // @media screen and (max-width: 768px) {
-            //     width: 100%;
-            // }
         }
         form {
             margin: 0 25px;
@@ -117,26 +114,19 @@
             }
             .textPassword {
                 font-size: 0.8em;
-                // margin-top: 2px;
                 text-align: center;
                 width: 30%;
             }
         }
         form {
-            // margin: 0 25px;
             width: 100%;
             .conf-password {
                 margin-top: 3%;
             }
-            .mail {
-                // margin-top: 20px;
-            }
             .pseudo {
-                // margin: 5% 0%;
                 height: 100px;
                 margin-bottom: 50px;
             }
-            // padding: 40px 50px;
             .div-button {
                 margin-top: 85px;
             }
@@ -152,7 +142,8 @@
             text-align: right;
             color: black;
             text-align: center;
-            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 768px) {
+            }
         }
         button {
             display: block;
@@ -175,7 +166,6 @@
         }
     }
 }
-
 .menu-login .message {
     text-align: center;
     font-weight: bold;
