@@ -82,22 +82,11 @@ function checkModifEmail(PDO $db, AltoRouter $router)
             $request->execute($data);
             $response = $request->fetch(PDO::FETCH_ASSOC);
             $request->closeCursor();
-
-            if ($response) {
+            // dump($response);
+            if (($response)) {
                 return "L'email existe déjà !!";
             } else {
-                $data = [
-                    'id_user' => $_SESSION['auth']['id_user'],
-                    'email'  => $_POST['email'],
-                ];
-                $sql = 'UPDATE user SET email=:email WHERE id_user=:id_user';
-                $request = $db->prepare($sql);
-                $result = $request->execute($data);
-                $request->closeCursor();
-                if ($result) {
-                    header('Location: ' . $router->generate('executionPseudo'));
-                } else {
-                }
+                emailUpdate($db, $router);
             }
         } catch (Exception $e) {
             header('Location: ' . $router->generate('home'));
@@ -108,5 +97,23 @@ function checkModifEmail(PDO $db, AltoRouter $router)
         } finally {
             $sql = null;
         }
+    }
+}
+
+$check =  checkModifEmail($db, $router);
+function emailUpdate(PDO $db, AltoRouter $router)
+{
+    $data = [
+        'id_user' => $_SESSION['auth']['id_user'],
+        'email'  => $_POST['email'],
+    ];
+    $sql = 'UPDATE user SET email=:email WHERE id_user=:id_user';
+    $request = $db->prepare($sql);
+    $result = $request->execute($data);
+    $request->closeCursor();
+    // dump($result);
+    header('Location: '  . $router->generate('executionPseudo'));
+    exit;
+    if ($result) {
     }
 }

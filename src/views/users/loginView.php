@@ -12,7 +12,7 @@
 				<div class="div-password column">
 					<?php $error = checkField('password', 'Le mot de passe est vide.'); ?>
 					<label for='login'>Mot de passe</label>
-					<input type="password" class=" input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password" value=''>
+					<input type="password" class=" input password<?= $error['class']; ?>" id="password" placeholder="Mot de passe" name="password">
 					<p class="message"><?= $error['message']; ?></p>
 				</div>
 				<?php $message =  login($db, $router); ?>

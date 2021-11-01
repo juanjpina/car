@@ -11,15 +11,19 @@
                     <div class="column">
                         <label for="nickname">Pseudo</label>
                         <?php foreach ($result as $x) { ?>
-                            <input class='input' maxlength="10" type="text" name="nickname" value="<?= $x['nickname'] ?>">
+                            <?php $error = checkField('email', 'Votre pseudo est vide.'); ?>
+                            <input class='input' maxlength="10" type="text" name="nickname" placeholder="<?= $x['nickname'] ?>">
+                            <p class="message"> <?= $error['message']; ?> </p>
                     </div>
                 </div>
                 <div>
                     <div class="column">
-                        <?php $check =  checkModifEmail($db, $router); ?>
+                        <?php $error = checkField('email', 'Votre e-mail est vide.'); ?>
+
                         <?php $mail = checkEmail('email'); ?>
                         <label for="email">Votre email</label>
-                        <input type="email" name="email" value="<?= $x['email'] ?>">
+                        <input type="email" id="mc-email" name="email" placeholder="<?= $x['email'] ?>">
+                        <p class="message"> <?= $error['message']; ?> </p>
                         <p class="message"> <?= $mail['message']; ?> </p>
                         <p class="message"> <?= $check; ?> </p>
 
@@ -36,4 +40,29 @@
         </div>
     </div>
 </section>
+<script src='src/assets/js/monCompte.js' type="text/javascript;version=1.8">
+</script>
+
+<!-- <script>
+    let mcEmail = document.getElementById('mc-email')
+    mcEmail.addEventListener("keyup", () => {
+        let mail = mcEmail.value;
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "send");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
+        xhr.send('mail=' + mail);
+        xhr.onreadystatechange = function() {
+
+            if (xhr.response !== 'ok') {
+                mcEmail.style.border = '4px solid green';
+            } else {
+                mcEmail.style.border = '4px solid red';
+            }
+
+        }
+
+    });
+
+    console.log(45);
+</script> -->
 <?php get_footer('compte'); ?>

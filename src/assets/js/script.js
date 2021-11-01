@@ -2,22 +2,22 @@ const image1 = () => {
     let turnAngle = 180;
     let i1 = document.getElementById("image1");
     i1.setAttribute("style", "transform: rotatey(" + turnAngle + "deg)");
-    turnAngle += 180;
+    turnAngle += 0;
 
     console.log(turnAngle++);
 }
 
 
 const image2 = () => {
-    let turnAngle = 360;
+    let turnAngle = 180;
     let i1 = document.getElementById("image1");
     i1.setAttribute("style", "transform: rotatey(" + turnAngle + "deg)");
-    turnAngle = turnAngle + 180;
+    turnAngle = turnAngle + 20;
     console.log(turnAngle);
 }
 
-setInterval(image1, 6000);
-setInterval(image2, 12000);
+setInterval(image1, 1000);
+// setInterval(image2, 4000);
 // setInterval(() => {
 //     let k=360;
 //     let i6 = document.getElementById("image2");
