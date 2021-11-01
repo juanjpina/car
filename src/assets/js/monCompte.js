@@ -1,5 +1,5 @@
 
-console.log('ok');
+
 
 let mcEmail = document.getElementById('mc-email')
 mcEmail.addEventListener("keyup", () => {
@@ -9,14 +9,11 @@ mcEmail.addEventListener("keyup", () => {
     xhr2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
     xhr2.send('mail=' + mail);
     xhr2.onreadystatechange = function () {
-
         if (xhr2.response !== 'ok') {
             mcEmail.style.border = '4px solid green';
         } else {
             mcEmail.style.border = '4px solid red';
         }
-
     }
-
 });
 

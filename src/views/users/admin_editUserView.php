@@ -42,8 +42,8 @@
 </section>
 <script src='src/assets/js/monCompte.js' type="text/javascript;version=1.8">
 </script>
-
-<!-- <script>
+<!-- 
+<script>
     let mcEmail = document.getElementById('mc-email')
     mcEmail.addEventListener("keyup", () => {
         let mail = mcEmail.value;
