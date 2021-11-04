@@ -1,0 +1,46 @@
+@import "color";
+.editInvoice {
+    background-color: $color-invoice;
+    border-radius: 28px;
+    height: 100%;
+    width: 66%;
+    padding: 5px 2px;
+    padding-bottom: 2.5%;
+    @include topDiv;
+    @include shadow;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+    .column {
+        p {
+            margin: 20px 0;
+            text-align: center;
+        }
+        @media only screen and(max-width: 768px) {
+            overflow-x: auto;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+    }
+    div {
+        margin: 20px 0;
+    }
+    .table {
+        margin-top: 50px;
+    }
+    td,
+    th {
+        width: 120px;
+        height: 0px;
+        padding: 10px 15px;
+        text-align: center;
+        text-transform: uppercase;
+        @media screen and (max-width: 768px) {
+            font-size: 0.9em;
+        }
+    }
+    .icon {
+        width: 20px;
+    }
+}

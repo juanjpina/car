@@ -1,0 +1,38 @@
+@import "color";
+
+.invoiceCar {
+    background-color: $color-alert;
+    border-radius: 28px;
+    color: $color-texto;
+    height: 100%;
+    margin-top: 200px;
+    // margin-right: 7%;
+    margin-left: 7%;
+    // padding: 40px 0;
+    width: 59%;
+    @include shadow;
+    @media only screen and(max-width:768px) {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 2%;
+        .column {
+            .column {
+                .column {
+                    .row {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+    .inputSpace {
+        // margin-right: 20px;
+    }
+    div {
+        margin: 10px 0;
+    }
+    .date {
+        margin: 0px 10px;
+    }
+}

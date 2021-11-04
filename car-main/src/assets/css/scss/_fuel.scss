@@ -1,0 +1,16 @@
+.fuel {
+    background-color: $color-button-header;
+    border-radius: 28px;
+    color: $color-texto;
+    margin-top: 200px;
+    height: 100%;
+    width: 66%;
+    @include shadow;
+    div {
+        margin: 20px 0;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 3px;
+    }
+}

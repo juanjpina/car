@@ -1,0 +1,27 @@
+.conta {
+    width: 66%;
+    height: 100%;
+    margin-right: 7%;
+
+    .deleteInvoice {
+        @include shadow;
+        width: 100%;
+        height: 250px;
+        border-radius: 28px;
+        background-color: $color-invoice;
+        margin-top: 200px;
+        .column {
+            @media screen and(max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+    div {
+        margin: 20px 0px;
+        height: 100%;
+        justify-content: space-around;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}

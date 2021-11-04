@@ -1,0 +1,26 @@
+.history {
+    background-color: $color-history;
+    border-radius: 28px;
+    height: 100%;
+    padding-bottom: 2.5%;
+    width: 76%;
+    @include topDiv;
+    @include shadow;
+    .column {
+        @media only screen and(max-width: 768px) {
+            margin: 10px 0px;
+        }
+    }
+    div {
+        padding: 10px 20px;
+        @media only screen and(max-width: 768px) {
+            padding: 5px 0px;
+        }
+    }
+    .row {
+        justify-content: center;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}

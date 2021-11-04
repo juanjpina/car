@@ -1,0 +1,39 @@
+@import "color";
+.user {
+    background-color: $color-alert;
+    border-radius: 28px;
+    color: $color-texto;
+    height: 100%;
+    margin-top: 200px;
+    margin-left: 7%;
+    width: 59%;
+    @include shadow;
+    @media only screen and(max-width: 873px) {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 3%;
+        h1 {
+            text-align: center;
+            padding: 4% 2%;
+        }
+        label {
+            text-align: center;
+            padding: 0 2%;
+        }
+    }
+    .form {
+        margin-top: 20px;
+        .textPassword {
+            font-size: 0.6em;
+            margin-top: 3px;
+            text-align: center;
+            width: 50%;
+        }
+        @media screen and (max-width: 768px) {
+            text-align: center;
+        }
+    }
+    div {
+        padding-bottom: 10px;
+    }
+}
