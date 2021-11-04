@@ -2,14 +2,17 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     font-size: 16px;
     width: 100%;
     max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: "montserrat", sans-serif;
-    // height: 100%;
+    border: 0;
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+    margin-right: auto;
 }
 
 a {
@@ -31,6 +34,7 @@ input {
 section {
     width: 66%;
     height: 100%;
+    // min-height: 100vh; //firefox
 }
 
 .column {

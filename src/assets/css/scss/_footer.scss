@@ -1,8 +1,9 @@
 footer {
     background-color: #e9ebf0;
-    margin: 15% 0 0 0;
-    padding: 0 10%;
+    margin: 15% 0% 0% 0%;
+    padding: 0% 10%;
     nav {
+        // line-height: 0;
         margin-right: 0;
     }
     nav ul {
@@ -13,6 +14,7 @@ footer {
         }
         @media screen and (max-width: 768px) {
             @include column;
+            flex-wrap: nowrap;
         }
     }
     .law {
@@ -25,6 +27,13 @@ footer {
         li {
             width: 100%;
             margin: 0 9%;
+            padding-top: 10px;
+            @media screen and(max-width: 768px) {
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
         }
     }
     li {

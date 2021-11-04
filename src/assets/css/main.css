@@ -64,13 +64,17 @@ table {
   box-sizing: border-box;
 }
 
+html,
 body {
   font-size: 16px;
   width: 100%;
   max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
   font-family: "montserrat", sans-serif;
+  border: 0;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  margin-right: auto;
 }
 
 a {
@@ -334,8 +338,8 @@ h6 {
 
 footer {
   background-color: #e9ebf0;
-  margin: 15% 0 0 0;
-  padding: 0 10%;
+  margin: 15% 0% 0% 0%;
+  padding: 0% 10%;
 }
 footer nav {
   margin-right: 0;
@@ -354,6 +358,7 @@ footer nav ul div {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 }
 footer .law li {
@@ -365,6 +370,13 @@ footer .social {
 footer .social li {
   width: 100%;
   margin: 0 9%;
+  padding-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  footer .social li img {
+    height: 30px;
+    width: 30px;
+  }
 }
 footer li {
   font-size: 1em;
@@ -2007,7 +2019,7 @@ section .pswforget div {
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .form-signin .wraper {
   display: flex;
