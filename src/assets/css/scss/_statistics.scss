@@ -50,7 +50,7 @@
     padding: 0px 2px;
     padding-bottom: 2.5%;
     width: 100%;
-    // padding: 50px 0;
+    @include topDiv;
     @include shadow;
     .column {
         margin-bottom: 20px;
@@ -148,6 +148,7 @@
     padding: 0px 1px 2px 1px;
     padding-bottom: 2.5%;
     width: 100%;
+    @include topDiv;
     @include shadow;
     .container {
         // display: flex;

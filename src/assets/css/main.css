@@ -844,6 +844,7 @@ section .alerts {
   section .alerts {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -962,6 +963,7 @@ section .alerts div {
   .statistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1010,8 +1012,17 @@ section .alerts div {
   padding: 0px 2px;
   padding-bottom: 2.5%;
   width: 100%;
+  margin-top: 240px;
+  margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media screen and (max-width: 768px) {
+  .listedstatistics {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 261px;
+  }
 }
 .listedstatistics .column {
   margin-bottom: 20px;
@@ -1129,8 +1140,17 @@ section .alerts div {
   padding: 0px 1px 2px 1px;
   padding-bottom: 2.5%;
   width: 100%;
+  margin-top: 240px;
+  margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media screen and (max-width: 768px) {
+  .totalStatistics {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 261px;
+  }
 }
 .totalStatistics .container {
   margin: 30px 0px;
@@ -1282,6 +1302,7 @@ section .alerts div {
   .fuelStatistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1318,6 +1339,7 @@ section .alerts div {
   .menu-statisticsGraph {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .menu-statisticsGraph div {
@@ -1344,6 +1366,7 @@ section .alerts div {
   .history {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1415,6 +1438,7 @@ section .alerts div {
   .addCar {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .addCar div {
@@ -1508,6 +1532,7 @@ section .alerts div {
   .userStatistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1554,6 +1579,7 @@ section .alerts div {
   .addInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1652,6 +1678,7 @@ section .alerts div {
   .editInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1713,6 +1740,7 @@ section .alerts div {
   .conta .deleteInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1767,6 +1795,7 @@ section .alerts div {
   .modifiInvoici {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .modifiInvoici .subModifi {
@@ -1797,6 +1826,7 @@ section .alerts div {
   .listedHistory {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .listedHistory .contained {
@@ -1844,6 +1874,7 @@ section .alerts div {
   .select-car {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1969,6 +2000,7 @@ section .menuSetting div .b-alert:active {
   .fuel {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .fuel div {
@@ -2056,6 +2088,7 @@ section .pswforget div {
   .maintenance {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .maintenance .inputSpace {
@@ -2187,6 +2220,7 @@ section .pswforget div {
   .execute .banner {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .execute .banner h6 {
@@ -2238,6 +2272,7 @@ section .pswforget div {
   .help .banner {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .help .banner h6 {
@@ -2250,7 +2285,7 @@ section .pswforget div {
 }
 .help .banner .row p {
   line-height: 1.2;
-  text-align: justify;
+  text-align: justify-all;
   margin-left: 2%;
 }
 @media screen and (max-width: 768px) {
@@ -2260,6 +2295,10 @@ section .pswforget div {
 }
 .help .banner .row .text {
   text-align: justify;
+}
+.help .banner .end {
+  text-align: left;
+  padding-right: 27%;
 }
 .help .banner .begin {
   margin-top: 5%;

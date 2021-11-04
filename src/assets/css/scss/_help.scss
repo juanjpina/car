@@ -18,7 +18,7 @@
             margin: 1% 0%;
             p {
                 line-height: 1.2;
-                text-align: justify;
+                text-align: justify-all;
                 margin-left: 2%;
             }
             @media screen and(max-width:768px) {
@@ -27,6 +27,10 @@
             .text {
                 text-align: justify;
             }
+        }
+        .end {
+            text-align: left;
+            padding-right: 27%;
         }
         .begin {
             margin-top: 5%;
