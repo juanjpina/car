@@ -70,10 +70,7 @@ body {
   width: 100%;
   max-width: 1920px;
   font-family: "montserrat", sans-serif;
-  border: 0;
-  margin: 0;
   margin-left: auto;
-  padding: 0;
   margin-right: auto;
 }
 
@@ -2131,7 +2128,7 @@ section .pswforget div {
   text-decoration: none;
 }
 .headerAdmin .row {
-  padding: 0 3.18%;
+  padding: 0% 1.18% 0% 6.18%;
   flex-wrap: nowrap;
   align-items: flex-start;
 }
