@@ -64,6 +64,7 @@ table {
   box-sizing: border-box;
 }
 
+html,
 body {
   font-size: 16px;
   width: 100%;
@@ -337,7 +338,7 @@ footer {
   background-color: #e9ebf0;
   font-size: 15px;
   margin: 38% 0% 0% 0%;
-  padding: 0% 10%;
+  padding: 1% 10%;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
@@ -350,10 +351,10 @@ footer nav {
 }
 footer nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 footer nav ul div {
-  margin: 0 50px;
+  margin: 0 40px;
 }
 @media screen and (max-width: 768px) {
   footer nav ul {
@@ -365,16 +366,30 @@ footer nav ul div {
     flex-wrap: nowrap;
   }
 }
+footer .law {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  footer .law {
+    flex-direction: column;
+  }
+}
 footer .law li {
   margin: 5% 0;
+}
+@media screen and (max-width: 768px) {
+  footer .row {
+    justify-content: space-around;
+  }
 }
 footer .social {
   flex-wrap: nowrap;
 }
 footer .social li {
   width: 100%;
-  margin: 0 9%;
+  margin: 0 20%;
   padding-top: 10px;
+  padding: 0 5% px;
 }
 @media screen and (max-width: 768px) {
   footer .social li img {
@@ -2058,11 +2073,16 @@ section .pswforget div {
 }
 
 .form-signin {
-  justify-content: center;
-  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+@media only screen and (max-width: 550px) {
+  .form-signin {
+    margin-left: 3%;
+  }
 }
 .form-signin .wraper {
   display: flex;

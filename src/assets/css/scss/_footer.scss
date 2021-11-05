@@ -2,20 +2,19 @@ footer {
     background-color: #e9ebf0;
     font-size: 15px;
     margin: 38% 0% 0% 0%;
-    padding: 0% 10%;
+    padding: 1% 10%;
     width: 100%;
     @media screen and(max-width: 768px) {
         margin: 100% 0 0 0;
     }
     nav {
-        // line-height: 0;
         margin-right: 0;
     }
     nav ul {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         div {
-            margin: 0 50px;
+            margin: 0 40px;
         }
         @media screen and (max-width: 768px) {
             @include column;
@@ -23,16 +22,26 @@ footer {
         }
     }
     .law {
+        display: flex;
+        @media screen and(max-width: 768px) {
+            flex-direction: column;
+        }
         li {
             margin: 5% 0;
+        }
+    }
+    @media screen and(max-width: 768px) {
+        .row {
+            justify-content: space-around;
         }
     }
     .social {
         flex-wrap: nowrap;
         li {
             width: 100%;
-            margin: 0 9%;
+            margin: 0 20%;
             padding-top: 10px;
+            padding: 0 5%px;
             @media screen and(max-width: 768px) {
                 img {
                     height: 30px;
