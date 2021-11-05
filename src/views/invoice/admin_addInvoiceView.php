@@ -27,21 +27,21 @@
                             </div>
                             <div class="column">
                                 <label for="km">Km</label>
-                                <input type="number" class="input" name="km">
+                                <input type="number" min="0" max="9999999" class="input" name="km">
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="column">
                             <label for="total">Montant frais</label>
-                            <input type="number" class="input" name="total">
+                            <input type="number" min="0" max="9999999" class="input" name="total">
                         </div>
                     </li>
                     <li>
                     <li>
                         <div class="column">
                             <label for="comment">Comment</label>
-                            <input type="text" class="input" name="comment">
+                            <input type="text" maxlength="50" class="input" name="comment">
                         </div>
                     </li>
                     <div class="column buttonSubmit">

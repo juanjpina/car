@@ -1,0 +1,93 @@
+.menu-login {
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    margin-top: 220px;
+    // max-width: 992px;
+    width: 100%;
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        margin-top: 150px;
+        // margin: 150px 0px 0px 40px;
+    }
+    .login {
+        // margin: 0px 20px 0px 40px;
+        div {
+            margin-bottom: 30px;
+        }
+        margin-bottom: 30px;
+    }
+    .new {
+        width: 100%;
+        .compte {
+            background-color: rgba(217, 189, 48);
+            border-radius: 28px;
+            @include shadow;
+
+            &:hover {
+                background-color: rgba(217, 189, 48, 0.5);
+                transition: all 600ms ease;
+            }
+            &:active {
+                filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+                box-shadow: $color-shadow 0px 22px 70px 4px;
+            }
+        }
+    }
+    .login,
+    .newLogin {
+        label {
+            text-align: center;
+        }
+        div {
+            margin-bottom: 30px;
+            .textPassword {
+                font-size: 0.6em;
+                margin-top: 3px;
+                text-align: center;
+                width: 50%;
+            }
+        }
+        background-color: $color-alert;
+        border-radius: 28px;
+        @include shadow;
+        @media only screen and (max-width: 768px) {
+        }
+        form {
+            padding: 40px 100px;
+            width: 100%;
+            @media only screen and (max-width: 768px) {
+                padding: 40px 50px;
+            }
+        }
+        .parrafo-compte {
+            margin-bottom: 5px;
+        }
+        .parrafo-mot {
+            margin-top: 1px;
+            text-align: right;
+            color: black;
+        }
+        button {
+            display: block;
+        }
+        .submit {
+            @media screen and (max-width: 768px) {
+                width: 140px;
+            }
+            @include activeBlue;
+            @include hoverBlue;
+        }
+        p {
+            @media screen and (max-width: 768px) {
+                font-size: 0.8em;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.menu-login .message {
+    padding-top: 2px;
+    font-weight: bold;
+}

@@ -21,4 +21,4 @@
         </div>
     </div>
 </section>
-<? get_footer('login'); ?>
+<?php get_footer('login'); ?>

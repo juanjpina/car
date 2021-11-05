@@ -27,7 +27,7 @@ if (
         $date = $_POST['date'];
         $km = $_POST['km'];
         $total = $_POST['total'];
-        $comment = $_POST['comment'];
+        $comment = htmlspecialchars($_POST['comment'], ENT_QUOTES, "UTF-8"); 
 
         switch ((int)$invoice) {
             case 1:

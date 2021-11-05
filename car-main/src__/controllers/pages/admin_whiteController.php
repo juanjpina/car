@@ -1,0 +1,2 @@
+<?php
+getSessionCar($db, $router);

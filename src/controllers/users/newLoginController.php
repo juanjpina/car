@@ -61,7 +61,7 @@ function addUser(PDO $db, AltoRouter $router)
                                 ':id_car' => 0,
                                 ':date' => date('Y-m-d H:i:s'),
                             ];
-                            $sql = 'INSERT INTO user (email, password, nickname, id_car, date) VALUES (:email, :password, :nickname, :id_car, date=:date)';
+                            $sql = 'INSERT INTO user (email, password, nickname, id_car, date) VALUES (:email, :password, :nickname, :id_car, :date)';
                             $request = $db->prepare($sql);
                             $request->execute($data);
                             $request->closeCursor();

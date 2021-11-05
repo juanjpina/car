@@ -61,13 +61,7 @@ function password($pass)
 	if (strlen($pass) > 16) {
 		return false;
 	}
-	if (preg_match('@[a-z]@', $pass) == 0) {
-		return false;
-	}
-	if (preg_match('@[A-Z]@', $pass) == 0) {
-		return false;
-	}
-	if (preg_match('@[0-9]@', $pass) == 0) {
+	if (preg_match('@[a-zA-Z0-9]@', $pass) == 0) {
 		return false;
 	}
 	return true;
@@ -183,11 +177,6 @@ function getCarSelect(PDO $db, AltoRouter $router)
 		$sql = null;
 	}
 }
-
-
-
-
-
 /**
  * Check if the car session is open, if you do not send to select a car or to create it
  * @return id_car
@@ -211,6 +200,11 @@ function getSessionCar(PDO $db, AltoRouter $router)
 	}
 	return $value;
 };
+
+
+
+
+
 
 
 /**

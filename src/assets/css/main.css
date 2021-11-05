@@ -64,13 +64,14 @@ table {
   box-sizing: border-box;
 }
 
+html,
 body {
   font-size: 16px;
   width: 100%;
   max-width: 1920px;
+  font-family: "montserrat", sans-serif;
   margin-left: auto;
   margin-right: auto;
-  font-family: "montserrat", sans-serif;
 }
 
 a {
@@ -127,6 +128,12 @@ main {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  padding: 0 2%;
+}
+@media screen and (max-width: 768px) {
+  main {
+    justify-content: space-around;
+  }
 }
 
 .trademark {
@@ -232,7 +239,6 @@ h6 {
 .header .logo {
   display: inline-block;
   margin-top: 1%;
-  padding-left: 7.18%;
 }
 .header .logo p {
   color: white;
@@ -248,11 +254,12 @@ h6 {
   }
 }
 .header nav {
+  margin-right: 0;
   padding: 0% 3%;
 }
 @media screen and (max-width: 768px) {
   .header nav {
-    padding: 2% 0% 0% 0%;
+    padding: 2% 6% 0% 0%;
   }
 }
 .header a {
@@ -265,9 +272,6 @@ h6 {
   .header .row {
     padding: 0;
   }
-  .header .row div {
-    padding-right: 2%;
-  }
 }
 .header .row .navegation .nave .li_button a .buttonA {
   align-items: center;
@@ -277,7 +281,6 @@ h6 {
   flex-wrap: wrap;
   font-size: 1em;
   justify-content: space-evenly;
-  margin-right: 28px;
   width: 200px;
 }
 @media only screen and (max-width: 768px) {
@@ -306,7 +309,6 @@ h6 {
   font-size: 1em;
   height: 40px;
   justify-content: space-evenly;
-  margin-right: 28px;
   width: 200px;
 }
 @media only screen and (max-width: 768px) {
@@ -333,15 +335,26 @@ h6 {
 }
 
 footer {
-  margin: 15% 0 1% 0;
-  padding: 0 10%;
+  background-color: #e9ebf0;
+  font-size: 15px;
+  margin: 38% 0% 0% 0%;
+  padding: 1% 10%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    margin: 100% 0 0 0;
+  }
+}
+footer nav {
+  margin-right: 0;
 }
 footer nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 footer nav ul div {
-  margin: 0 50px;
+  margin: 0 40px;
 }
 @media screen and (max-width: 768px) {
   footer nav ul {
@@ -350,17 +363,39 @@ footer nav ul div {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    flex-wrap: nowrap;
+  }
+}
+footer .law {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  footer .law {
+    flex-direction: column;
   }
 }
 footer .law li {
   margin: 5% 0;
+}
+@media screen and (max-width: 768px) {
+  footer .row {
+    justify-content: space-around;
+  }
 }
 footer .social {
   flex-wrap: nowrap;
 }
 footer .social li {
   width: 100%;
-  margin: 0 9%;
+  margin: 0 20%;
+  padding-top: 10px;
+  padding: 0 5% px;
+}
+@media screen and (max-width: 768px) {
+  footer .social li img {
+    height: 30px;
+    width: 30px;
+  }
 }
 footer li {
   font-size: 1em;
@@ -733,6 +768,11 @@ footer li div a {
 nav {
   margin-right: 8%;
 }
+@media screen and (max-width: 768px) {
+  nav {
+    margin-right: 0;
+  }
+}
 nav .sidebarAdmin {
   float: left;
   padding-right: 50px;
@@ -742,8 +782,8 @@ nav .sidebarAdmin {
 @media screen and (max-width: 768px) {
   nav .sidebarAdmin {
     margin-top: 150px;
-    margin-left: 5px;
-    padding-right: 0;
+    margin-left: 0px;
+    padding: 0 1%;
   }
 }
 nav .sidebarAdmin ul {
@@ -828,6 +868,7 @@ section .alerts {
   section .alerts {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -946,6 +987,7 @@ section .alerts div {
   .statistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -994,8 +1036,17 @@ section .alerts div {
   padding: 0px 2px;
   padding-bottom: 2.5%;
   width: 100%;
+  margin-top: 240px;
+  margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media screen and (max-width: 768px) {
+  .listedstatistics {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 261px;
+  }
 }
 .listedstatistics .column {
   margin-bottom: 20px;
@@ -1113,8 +1164,17 @@ section .alerts div {
   padding: 0px 1px 2px 1px;
   padding-bottom: 2.5%;
   width: 100%;
+  margin-top: 240px;
+  margin-left: 11.83%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
+}
+@media screen and (max-width: 768px) {
+  .totalStatistics {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 261px;
+  }
 }
 .totalStatistics .container {
   margin: 30px 0px;
@@ -1266,6 +1326,7 @@ section .alerts div {
   .fuelStatistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1302,6 +1363,7 @@ section .alerts div {
   .menu-statisticsGraph {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .menu-statisticsGraph div {
@@ -1328,6 +1390,7 @@ section .alerts div {
   .history {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1399,6 +1462,7 @@ section .alerts div {
   .addCar {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .addCar div {
@@ -1492,6 +1556,7 @@ section .alerts div {
   .userStatistics {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1538,6 +1603,7 @@ section .alerts div {
   .addInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1636,6 +1702,7 @@ section .alerts div {
   .editInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1697,6 +1764,7 @@ section .alerts div {
   .conta .deleteInvoice {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1751,6 +1819,7 @@ section .alerts div {
   .modifiInvoici {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .modifiInvoici .subModifi {
@@ -1781,6 +1850,7 @@ section .alerts div {
   .listedHistory {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .listedHistory .contained {
@@ -1828,6 +1898,7 @@ section .alerts div {
   .select-car {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1850,6 +1921,9 @@ section .alerts div {
 .select-car .row .select {
   width: 100%;
 }
+.select-car .row .button {
+  padding: 0 5px;
+}
 @media screen and (max-width: 768px) {
   .select-car .row {
     width: 100%;
@@ -1859,7 +1933,9 @@ section .alerts div {
     width: 100%;
   }
   .select-car .row div button {
+    line-height: 1.1;
     font-size: 0.8em;
+    padding: 1px 0;
   }
 }
 
@@ -1950,6 +2026,7 @@ section .menuSetting div .b-alert:active {
   .fuel {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .fuel div {
@@ -1996,11 +2073,16 @@ section .pswforget div {
 }
 
 .form-signin {
-  justify-content: center;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+@media only screen and (max-width: 550px) {
+  .form-signin {
+    margin-left: 3%;
+  }
 }
 .form-signin .wraper {
   display: flex;
@@ -2037,6 +2119,7 @@ section .pswforget div {
   .maintenance {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .maintenance .inputSpace {
@@ -2071,6 +2154,15 @@ section .pswforget div {
   text-decoration: none;
   z-index: 999;
 }
+.headerAdmin nav {
+  margin: 0 7%;
+}
+@media screen and (max-width: 768px) {
+  .headerAdmin nav {
+    margin: 0;
+    margin: 0 2%;
+  }
+}
 .headerAdmin .deconection {
   text-align: right;
   padding-top: 10px;
@@ -2079,13 +2171,13 @@ section .pswforget div {
   text-decoration: none;
 }
 .headerAdmin .row {
-  padding-left: 7.18%;
+  padding: 0% 3.18% 0% 3.18%;
   flex-wrap: nowrap;
   align-items: flex-start;
 }
 @media only screen and (max-width: 768px) {
   .headerAdmin .row {
-    padding-left: 2%;
+    padding-left: 0%;
   }
   .headerAdmin .row .logos img {
     height: 64px;
@@ -2168,6 +2260,7 @@ section .pswforget div {
   .execute .banner {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .execute .banner h6 {
@@ -2219,6 +2312,7 @@ section .pswforget div {
   .help .banner {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 261px;
   }
 }
 .help .banner h6 {
@@ -2230,12 +2324,21 @@ section .pswforget div {
   margin: 1% 0%;
 }
 .help .banner .row p {
+  line-height: 1.2;
+  text-align: justify-all;
   margin-left: 2%;
 }
 @media screen and (max-width: 768px) {
   .help .banner .row {
     margin: 2% 1%;
   }
+}
+.help .banner .row .text {
+  text-align: justify;
+}
+.help .banner .end {
+  text-align: left;
+  padding-right: 27%;
 }
 .help .banner .begin {
   margin-top: 5%;

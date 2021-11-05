@@ -106,23 +106,20 @@ function getTimingKm(PDO $db, AltoRouter $router)
             $data = [
                 'id_car' => $_SESSION['car']['id_car']
             ];
-            $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM invtiming, setting WHERE invtiming.id_car= :id_car ORDER by km DESC limit 1
-';
+            $sql = 'SELECT invtiming.km+setting.timingbeltKm as km FROM invtiming, setting WHERE invtiming.id_car= :id_car AND setting.id_car= :id_car ORDER by km DESC limit 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $result = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
             if (isset($result) && !empty($result)) {
-                // dump('r1', $result);
                 return $result;
             } else {
-                $sql = 'SELECT car.buykm+setting.timingbeltKm as km FROM car, setting WHERE car.id_car= :id_car limit 1
+                $sql = 'SELECT (car.buykm + setting.timingbeltKm) as km FROM car, setting WHERE car.id_car= :id_car AND setting.id_car=:id_car limit 1
             ';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $result = $request->fetchAll(PDO::FETCH_ASSOC);
                 $request->closeCursor();
-                // dump('r2', $result);
                 return $result;
             }
         } catch (Exception $e) {

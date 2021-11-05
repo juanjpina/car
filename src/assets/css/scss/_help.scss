@@ -16,13 +16,21 @@
         .row {
             flex-wrap: nowrap;
             margin: 1% 0%;
-
             p {
+                line-height: 1.2;
+                text-align: justify-all;
                 margin-left: 2%;
             }
             @media screen and(max-width:768px) {
                 margin: 2% 1%;
             }
+            .text {
+                text-align: justify;
+            }
+        }
+        .end {
+            text-align: left;
+            padding-right: 27%;
         }
         .begin {
             margin-top: 5%;
