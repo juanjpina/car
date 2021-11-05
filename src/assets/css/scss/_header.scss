@@ -11,7 +11,7 @@
     .logo {
         display: inline-block;
         margin-top: 1%;
-        padding-left: 7.18%;
+        // padding-left: 7.18%;
         p {
             color: white;
             text-align: center;
@@ -26,9 +26,10 @@
         }
     }
     nav {
+        margin-right: 0;
         padding: 0% 3%;
         @media screen and (max-width: 768px) {
-            padding: 2% 0% 0% 0%;
+            padding: 2% 6% 0% 0%;
         }
     }
     a {
@@ -39,7 +40,7 @@
         @media screen and (max-width: 768px) {
             padding: 0;
             div {
-                padding-right: 2%;
+                // padding-right: 2%;
             }
         }
         //     .logo {
@@ -70,7 +71,7 @@
                             font-size: 1em;
                             // height: 40px;
                             justify-content: space-evenly;
-                            margin-right: 28px;
+                            // margin-right: 28px;
                             width: 200px;
                             @media only screen and (max-width: 768px) {
                                 height: 35px;
@@ -97,7 +98,7 @@
                             font-size: 1em;
                             height: 40px;
                             justify-content: space-evenly;
-                            margin-right: 28px;
+                            // margin-right: 28px;
                             width: 200px;
                             @media only screen and (max-width: 768px) {
                                 height: 35px;

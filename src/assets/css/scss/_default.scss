@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-html,
 body {
     font-size: 16px;
     width: 100%;
@@ -68,7 +67,11 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+    padding: 0 2%;
     // position: relative;
+    @media screen and(max-width: 768px) {
+        justify-content: space-around;
+    }
 }
 
 .trademark {

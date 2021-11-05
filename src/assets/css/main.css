@@ -64,7 +64,6 @@ table {
   box-sizing: border-box;
 }
 
-html,
 body {
   font-size: 16px;
   width: 100%;
@@ -128,6 +127,12 @@ main {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  padding: 0 2%;
+}
+@media screen and (max-width: 768px) {
+  main {
+    justify-content: space-around;
+  }
 }
 
 .trademark {
@@ -233,7 +238,6 @@ h6 {
 .header .logo {
   display: inline-block;
   margin-top: 1%;
-  padding-left: 7.18%;
 }
 .header .logo p {
   color: white;
@@ -249,11 +253,12 @@ h6 {
   }
 }
 .header nav {
+  margin-right: 0;
   padding: 0% 3%;
 }
 @media screen and (max-width: 768px) {
   .header nav {
-    padding: 2% 0% 0% 0%;
+    padding: 2% 6% 0% 0%;
   }
 }
 .header a {
@@ -266,9 +271,6 @@ h6 {
   .header .row {
     padding: 0;
   }
-  .header .row div {
-    padding-right: 2%;
-  }
 }
 .header .row .navegation .nave .li_button a .buttonA {
   align-items: center;
@@ -278,7 +280,6 @@ h6 {
   flex-wrap: wrap;
   font-size: 1em;
   justify-content: space-evenly;
-  margin-right: 28px;
   width: 200px;
 }
 @media only screen and (max-width: 768px) {
@@ -307,7 +308,6 @@ h6 {
   font-size: 1em;
   height: 40px;
   justify-content: space-evenly;
-  margin-right: 28px;
   width: 200px;
 }
 @media only screen and (max-width: 768px) {
@@ -335,8 +335,15 @@ h6 {
 
 footer {
   background-color: #e9ebf0;
-  margin: 15% 0% 0% 0%;
+  font-size: 15px;
+  margin: 38% 0% 0% 0%;
   padding: 0% 10%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    margin: 100% 0 0 0;
+  }
 }
 footer nav {
   margin-right: 0;
@@ -746,6 +753,11 @@ footer li div a {
 nav {
   margin-right: 8%;
 }
+@media screen and (max-width: 768px) {
+  nav {
+    margin-right: 0;
+  }
+}
 nav .sidebarAdmin {
   float: left;
   padding-right: 50px;
@@ -755,8 +767,8 @@ nav .sidebarAdmin {
 @media screen and (max-width: 768px) {
   nav .sidebarAdmin {
     margin-top: 150px;
-    margin-left: 5px;
-    padding-right: 0;
+    margin-left: 0px;
+    padding: 0 1%;
   }
 }
 nav .sidebarAdmin ul {
@@ -1906,7 +1918,9 @@ section .alerts div {
     width: 100%;
   }
   .select-car .row div button {
+    line-height: 1.1;
     font-size: 0.8em;
+    padding: 1px 0;
   }
 }
 
@@ -2120,6 +2134,15 @@ section .pswforget div {
   text-decoration: none;
   z-index: 999;
 }
+.headerAdmin nav {
+  margin: 0 7%;
+}
+@media screen and (max-width: 768px) {
+  .headerAdmin nav {
+    margin: 0;
+    margin: 0 2%;
+  }
+}
 .headerAdmin .deconection {
   text-align: right;
   padding-top: 10px;
@@ -2128,13 +2151,13 @@ section .pswforget div {
   text-decoration: none;
 }
 .headerAdmin .row {
-  padding: 0% 1.18% 0% 6.18%;
+  padding: 0% 3.18% 0% 3.18%;
   flex-wrap: nowrap;
   align-items: flex-start;
 }
 @media only screen and (max-width: 768px) {
   .headerAdmin .row {
-    padding-left: 3%;
+    padding-left: 0%;
   }
   .headerAdmin .row .logos img {
     height: 64px;

@@ -84,6 +84,9 @@
 
 nav {
     margin-right: 8%;
+    @media screen and(max-width: 768px) {
+        margin-right: 0;
+    }
     .sidebarAdmin {
         float: left;
         padding-right: 50px;
@@ -91,8 +94,8 @@ nav {
         width: 100%;
         @media screen and (max-width: 768px) {
             margin-top: 150px;
-            margin-left: 5px;
-            padding-right: 0;
+            margin-left: 0px;
+            padding: 0 1%;
         }
         ul {
             width: 100%;

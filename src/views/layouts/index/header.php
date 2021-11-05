@@ -67,7 +67,7 @@
 
 <body>
     <header class="header">
-        <nav>
+        <nav class="index" >
             <div class="row">
                 <div class="logo column">
                     <a href="#"><img class="logos" src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>
