@@ -18,6 +18,9 @@ $router->map('GET', '/executionInvoiceError', 'pages/admin_executionInvoiceError
 $router->map('GET|POST', '/admin/users/edit', 'users/admin_editUser', 'editUser');
 $router->map('GET|POST', '/admin/users/addinvocecar', 'users/admin_addInvoiceCar', 'addinvoicecar');
 $router->map('GET|POST', '/admin/users/editpassword', 'users/admin_editPassword', 'editpassword');
+$router->map('GET|POST', '/admin/users/sendadmin', 'users/sendAdmin', 'sendAdmin');
+
+
 
 //*************     invoice *****************/
 $router->map('GET|POST', '/admin/invoice/invoiceedit', 'invoice/admin_editInvoice', 'editInvoice');

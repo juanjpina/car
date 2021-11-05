@@ -2047,6 +2047,15 @@ section .pswforget {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+section .pswforget label {
+  margin-top: 2%;
+}
+section .pswforget p {
+  margin-top: 1%;
+}
+section .pswforget input {
+  width: 60%;
+}
 @media screen and (max-width: 768px) {
   section .pswforget {
     margin: 200px 0px 0px 0px;
