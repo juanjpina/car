@@ -2,13 +2,13 @@
 
 
 if ($_POST) {
-    echo searchEmail($db, $router);
+    echo searchEmails($db, $router);
 }
 /**
  * this function checks if the email exists in the database
  * @return string
  */
-function searchEmail(PDO $db, AltoRouter $router)
+function searchEmails(PDO $db, AltoRouter $router)
 {
     try {
         $data = array(
