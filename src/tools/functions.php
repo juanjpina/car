@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * @param string
  * @return string
@@ -66,6 +64,7 @@ function password($pass)
 	}
 	return true;
 }
+
 
 /**
  * function that checks if the date has a correct format
@@ -177,6 +176,8 @@ function getCarSelect(PDO $db, AltoRouter $router)
 		$sql = null;
 	}
 }
+
+
 /**
  * Check if the car session is open, if you do not send to select a car or to create it
  * @return id_car
@@ -200,11 +201,6 @@ function getSessionCar(PDO $db, AltoRouter $router)
 	}
 	return $value;
 };
-
-
-
-
-
 
 
 /**
@@ -323,7 +319,6 @@ function getTrademark(PDO $db)
 
 /**
  * @param: id_car / data base.
- * 
  * @return: array data base, 
  * 
  */
@@ -361,8 +356,7 @@ function dbSelect(PDO $db, $id_car, $database)
 /**
  * returns a table
  * 
- * @param string
- * 
+ * @param string 
  * @return array data base.
  */
 function getSelect(PDO $db, $table)

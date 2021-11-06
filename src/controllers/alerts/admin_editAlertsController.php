@@ -148,7 +148,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
+            $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL 4 YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
             AND invtiming.id_car = :id_car AND setting.id_car = :id_car ORDER BY date DESC LIMIT 1";
             // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
             $request = $db->prepare($sql);
@@ -158,14 +158,14 @@ function getTimingDate(PDO $db, AltoRouter $router)
             if (isset($resultTiming) && !empty($resultTiming) && $resultTiming[0]['dates'] != null) {
                 return $resultTiming;
             } else {
-                $sql = "SELECT (DATE_ADD( (car.firstdate), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM car, setting WHERE curdate() >= DATE_ADD( car.firstdate, INTERVAL (setting.timingbeltDate) YEAR)
+                $sql = "SELECT (DATE_ADD( (car.firstdate), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM car, setting WHERE curdate() <= DATE_ADD( car.firstdate, INTERVAL (setting.timingbeltDate) YEAR)
                 AND car.id_car = :id_car AND setting.id_car = :id_car";
                 // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $resultCar = $request->fetchAll(PDO::FETCH_ASSOC);
                 $request->closeCursor();
-                if (isset($resultCar) && !empty($resultCarg) && $resultCar[0]['dates'] != null) {
+                if (isset($resultCar) && !empty($resultCar) && $resultCar[0]['dates'] != null) {
                     // dump('as2', $resultCar);
                     return $resultCar;
                 } else {

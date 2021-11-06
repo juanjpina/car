@@ -21,7 +21,7 @@
                     <p class="message"> <?= $message; ?> </p>
                     <p class="message"> <?= $mail['message']; ?> </p>
                 </div>
-                <div class="column">
+                <div class="password column">
                     <?php $verification = messagePassword('password'); ?>
                     <?php $error = checkField('password', 'Votre mot de passe est vide.'); ?>
                     <label for="password">Mot de passe*</label>

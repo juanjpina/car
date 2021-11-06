@@ -1,7 +1,7 @@
 <?php get_header('Alerts edit', 'admin'); ?>
 <section>
     <div class="alerts">
-            <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
         <div class="column">
             <h1 class="title">Rappel</h1>
             <h6>Voici les dates d'entretien du véhicule <?= ($_SESSION['car']['trademark']) ?> pour les prochaines modifications</h6>
@@ -21,10 +21,10 @@
                             <th>Date</th>
                             <th>KM</th>
                         </tr>
-                        <?php foreach ($getControl as $control) { ?>
-                            <?php foreach ($getOil as $oil) { ?>
-                                <?php foreach ($getTimingKm as $km) { ?>
-                                    <?php foreach ($getTimingDate as $date) { ?>
+                        <?php foreach ($getTimingKm as $km) { ?>
+                            <?php foreach ($getTimingDate as $date) { ?>
+                                <?php foreach ($getControl as $control) { ?>
+                                    <?php foreach ($getOil as $oil) { ?>
                                         <tr>
                                             <td><?= $km['km']; ?></td>
                                             <td><?= date("d-m-Y", strtotime($date['dates'])) ?></td>

@@ -462,6 +462,14 @@ footer li div a {
 .menu-login .newLogin label {
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .menu-login .newLogin .mail {
+    margin-bottom: 10%;
+  }
+  .menu-login .newLogin .password {
+    margin-bottom: 28%;
+  }
+}
 .menu-login .newLogin div {
   height: 100px;
 }

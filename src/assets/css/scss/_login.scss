@@ -39,6 +39,15 @@
         label {
             text-align: center;
         }
+        @media screen and(max-width:768px) {
+            .mail {
+                margin-bottom: 10%;
+            }
+            .password {
+                margin-bottom: 28%;
+            }
+        }
+
         div {
             height: 100px;
 
