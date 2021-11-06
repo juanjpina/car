@@ -27,7 +27,11 @@ function messagePassword($pass)
 		$pass = $_POST[$pass];
 
 		if (strlen($pass) < 8) {
-			return "Le mot de passe doit avoir au moins 8 caractères";
+			$error = [
+				'message' => "Le mot de passe doit avoir au moins 8 caractères",
+
+			];
+			return $error;
 		}
 		if (strlen($pass) > 16) {
 			return "Le mot de passe ne doit pas avoir plus de 16 caractères";

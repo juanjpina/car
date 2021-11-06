@@ -246,7 +246,7 @@ h6 {
 }
 @media only screen and (max-width: 768px) {
   .header .logo {
-    padding-left: 2%;
+    padding-left: 5%;
   }
   .header .logo img {
     height: 75px;
@@ -451,7 +451,21 @@ footer li div a {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
+.menu-login .newLogin .as {
+  hyphens: manual;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-break: anywhere;
+}
 @media only screen and (max-width: 768px) {
+  .menu-login .newLogin {
+    width: 100%;
+  }
+  .menu-login .newLogin .as {
+    width: 151px;
+  }
+}
+@media screen and (min-width: 768px) {
   .menu-login .newLogin {
     width: 100%;
   }
@@ -462,12 +476,20 @@ footer li div a {
 .menu-login .newLogin label {
   text-align: center;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .menu-login .newLogin .mail {
-    margin-bottom: 10%;
+    margin-bottom: 40%;
   }
   .menu-login .newLogin .password {
-    margin-bottom: 28%;
+    margin-bottom: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-login .newLogin .mail {
+    margin-bottom: 15%;
+  }
+  .menu-login .newLogin .password {
+    margin-bottom: 15%;
   }
 }
 .menu-login .newLogin div {
@@ -488,9 +510,9 @@ footer li div a {
     width: 100%;
     margin: 0;
   }
-}
-.menu-login .newLogin form .conf-password {
-  margin-top: 3%;
+  .menu-login .newLogin form .conf-password {
+    margin-top: 0;
+  }
 }
 .menu-login .newLogin form .pseudo {
   margin-bottom: 30px;

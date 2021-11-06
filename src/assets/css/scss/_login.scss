@@ -8,6 +8,7 @@
         width: 100%;
         margin-top: 150px;
     }
+
     .new {
         margin-top: 5%;
         width: 100%;
@@ -30,21 +31,58 @@
         border-radius: 28px;
         width: 50%;
         @include shadow;
+        .as {
+            hyphens: manual;
+            word-break: normal;
+            overflow-wrap: break-word;
+            line-break: anywhere;
+        }
         @media only screen and (max-width: 768px) {
             width: 100%;
+            .as {
+                // hyphens: manual;
+                // word-break: normal;
+                // overflow-wrap: break-word;
+                width: 151px;
+                // line-break: anywhere;
+                // text-overflow: clip;
+                // width: 40%;
+            }
         }
+
+        @media screen and (min-width: 768px) {
+            width: 100%;
+            .as {
+                // hyphens: manual;
+                // word-break: normal;
+                // overflow-wrap: break-word;
+                // width: 151px;
+                // line-break: anywhere;
+                // text-overflow: clip;
+                // width: 40%;
+            }
+        }
+
         .column {
             flex-wrap: nowrap;
         }
         label {
             text-align: center;
         }
-        @media screen and(max-width:768px) {
+        @media screen and(max-width:600px) {
             .mail {
-                margin-bottom: 10%;
+                margin-bottom: 40%;
             }
             .password {
-                margin-bottom: 28%;
+                margin-bottom: 40%;
+            }
+        }
+        @media screen and(min-width:768px) {
+            .mail {
+                margin-bottom: 15%;
+            }
+            .password {
+                margin-bottom: 15%;
             }
         }
 
@@ -65,9 +103,9 @@
                 padding: 20px 40px;
                 width: 100%;
                 margin: 0;
-            }
-            .conf-password {
-                margin-top: 3%;
+                .conf-password {
+                    margin-top: 0;
+                }
             }
             .pseudo {
                 margin-bottom: 30px;
