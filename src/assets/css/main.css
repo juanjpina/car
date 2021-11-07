@@ -447,25 +447,12 @@ footer li div a {
 .menu-login .newLogin {
   background-color: #d9bd30;
   border-radius: 28px;
+  padding: 3% 0;
   width: 50%;
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
 }
-.menu-login .newLogin .as {
-  hyphens: manual;
-  word-break: normal;
-  overflow-wrap: break-word;
-  line-break: anywhere;
-}
 @media only screen and (max-width: 768px) {
-  .menu-login .newLogin {
-    width: 100%;
-  }
-  .menu-login .newLogin .as {
-    width: 151px;
-  }
-}
-@media screen and (min-width: 768px) {
   .menu-login .newLogin {
     width: 100%;
   }
@@ -473,23 +460,42 @@ footer li div a {
 .menu-login .newLogin .column {
   flex-wrap: nowrap;
 }
+.menu-login .newLogin .column .as {
+  overflow-wrap: break-word;
+  hyphens: manual;
+  width: 80%;
+}
 .menu-login .newLogin label {
   text-align: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 780px) and (max-width: 1024px) {
   .menu-login .newLogin .mail {
-    margin-bottom: 40%;
+    margin-bottom: 20%;
   }
   .menu-login .newLogin .password {
-    margin-bottom: 40%;
+    margin-bottom: 20%;
+  }
+  .menu-login .newLogin .column .as {
+    width: 70%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 780px) {
   .menu-login .newLogin .mail {
-    margin-bottom: 15%;
+    margin-bottom: 10%;
   }
   .menu-login .newLogin .password {
-    margin-bottom: 15%;
+    margin-bottom: 10%;
+  }
+  .menu-login .newLogin .column .as {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-login .newLogin .mail {
+    margin-bottom: 60%;
+  }
+  .menu-login .newLogin .password {
+    margin-bottom: 60%;
   }
 }
 .menu-login .newLogin div {
@@ -644,6 +650,7 @@ footer li div a {
   font-weight: bold;
   font-size: 0.9em;
   color: red;
+  margin: 1% 0;
 }
 
 .accueil {

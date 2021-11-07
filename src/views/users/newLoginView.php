@@ -27,8 +27,11 @@
                     <label for="password">Mot de passe*</label>
                     <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
                     <input type="password" maxlength="16" id="password" placeholder="mot de passe" name="password">
+
                     <p class="message"><?= $error['message']; ?></p>
                     <p class="message as"><?= $verification['message']; ?></p>
+
+
                 </div>
                 <div class="conf-password column">
                     <p class="parrafo-compte">Confirmez la mot de passe*</p>

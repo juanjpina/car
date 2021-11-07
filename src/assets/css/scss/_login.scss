@@ -29,60 +29,59 @@
     .newLogin {
         background-color: $color-alert;
         border-radius: 28px;
+        padding: 3% 0;
         width: 50%;
         @include shadow;
-        .as {
-            hyphens: manual;
-            word-break: normal;
-            overflow-wrap: break-word;
-            line-break: anywhere;
-        }
         @media only screen and (max-width: 768px) {
             width: 100%;
-            .as {
-                // hyphens: manual;
-                // word-break: normal;
-                // overflow-wrap: break-word;
-                width: 151px;
-                // line-break: anywhere;
-                // text-overflow: clip;
-                // width: 40%;
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            width: 100%;
-            .as {
-                // hyphens: manual;
-                // word-break: normal;
-                // overflow-wrap: break-word;
-                // width: 151px;
-                // line-break: anywhere;
-                // text-overflow: clip;
-                // width: 40%;
-            }
         }
 
         .column {
             flex-wrap: nowrap;
+            .as {
+                overflow-wrap: break-word;
+                // white-space: pre-wrap;
+                hyphens: manual;
+                // word-wrap: normal;
+                // line-break: loose;
+                width: 80%;
+            }
         }
         label {
             text-align: center;
         }
-        @media screen and(max-width:600px) {
+        @media screen and (min-width: 780px) and(max-width:1024px) {
             .mail {
-                margin-bottom: 40%;
+                margin-bottom: 20%;
             }
             .password {
-                margin-bottom: 40%;
+                margin-bottom: 20%;
+            }
+            .column {
+                .as {
+                    width: 70%;
+                }
             }
         }
-        @media screen and(min-width:768px) {
+        @media screen and(min-width:480px) and (max-width: 780px) {
             .mail {
-                margin-bottom: 15%;
+                margin-bottom: 10%;
             }
             .password {
-                margin-bottom: 15%;
+                margin-bottom: 10%;
+            }
+            .column {
+                .as {
+                    width: 90%;
+                }
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .mail {
+                margin-bottom: 60%;
+            }
+            .password {
+                margin-bottom: 60%;
             }
         }
 
@@ -91,7 +90,6 @@
 
             .textPassword {
                 font-size: 0.8em;
-
                 text-align: center;
                 width: 60%;
             }
@@ -218,4 +216,5 @@
     font-weight: bold;
     font-size: 0.9em;
     color: red;
+    margin: 1% 0;
 }
