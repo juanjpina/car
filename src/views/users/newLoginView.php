@@ -29,7 +29,7 @@
                     <input type="password" maxlength="16" id="password" placeholder="mot de passe" name="password">
 
                     <p class="message"><?= $error['message']; ?></p>
-                    <p class="message as"><?= $verification['message']; ?></p>
+                    <p class="message as"><?= $verification; ?></p>
 
 
                 </div>
