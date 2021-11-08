@@ -8,6 +8,7 @@
         width: 100%;
         margin-top: 150px;
     }
+
     .new {
         margin-top: 5%;
         width: 100%;
@@ -28,23 +29,67 @@
     .newLogin {
         background-color: $color-alert;
         border-radius: 28px;
+        padding: 3% 0;
         width: 50%;
         @include shadow;
         @media only screen and (max-width: 768px) {
             width: 100%;
         }
+
         .column {
             flex-wrap: nowrap;
+            .as {
+                overflow-wrap: break-word;
+                // white-space: pre-wrap;
+                hyphens: manual;
+                // word-wrap: normal;
+                // line-break: loose;
+                width: 80%;
+            }
         }
         label {
             text-align: center;
         }
+        @media screen and (min-width: 780px) and(max-width:1024px) {
+            .mail {
+                margin-bottom: 20%;
+            }
+            .password {
+                margin-bottom: 20%;
+            }
+            .column {
+                .as {
+                    width: 70%;
+                }
+            }
+        }
+        @media screen and(min-width:480px) and (max-width: 780px) {
+            .mail {
+                margin-bottom: 10%;
+            }
+            .password {
+                margin-bottom: 10%;
+            }
+            .column {
+                .as {
+                    width: 90%;
+                }
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .mail {
+                margin-bottom: 60%;
+            }
+            .password {
+                margin-bottom: 60%;
+            }
+        }
+
         div {
             height: 100px;
 
             .textPassword {
                 font-size: 0.8em;
-
                 text-align: center;
                 width: 60%;
             }
@@ -56,9 +101,9 @@
                 padding: 20px 40px;
                 width: 100%;
                 margin: 0;
-            }
-            .conf-password {
-                margin-top: 3%;
+                .conf-password {
+                    margin-top: 0;
+                }
             }
             .pseudo {
                 margin-bottom: 30px;
@@ -171,4 +216,5 @@
     font-weight: bold;
     font-size: 0.9em;
     color: red;
+    margin: 1% 0;
 }

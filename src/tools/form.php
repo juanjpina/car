@@ -75,7 +75,7 @@ function checkEmail(string $email): array
 	if (!empty($_POST[$email]) && isset($_POST[$email])) {
 		if (!filter_var($_POST[$email], FILTER_VALIDATE_EMAIL)) {
 
-			$resul = ['message' => 'Merci de renseigner une adresse email valide.'];
+			$resul = ['message' => "Format de l'email incorrect."];
 		}
 	}
 	return $resul;

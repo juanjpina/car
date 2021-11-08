@@ -10,9 +10,9 @@
                 <div>
                     <div class="column">
                         <label for="nickname">Pseudo</label>
-                        <?php foreach ($result as $x) { ?>
+                        <?php foreach ($result as $res) { ?>
                             <?php $error = checkField('email', 'Votre pseudo est vide.'); ?>
-                            <input class='input' maxlength="10" type="text" name="nickname" placeholder="<?= $x['nickname'] ?>">
+                            <input class='input' maxlength="10" type="text" name="nickname" placeholder="<?= $res['nickname'] ?>">
                             <p class="message"> <?= $error['message']; ?> </p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
 
                         <?php $mail = checkEmail('email'); ?>
                         <label for="email">Votre email</label>
-                        <input type="email" id="mc-email" name="email" placeholder="<?= $x['email'] ?>">
+                        <input type="email" id="mcEmail" name="email" placeholder="<?= $res['email'] ?>">
                         <p class="message"> <?= $error['message']; ?> </p>
                         <p class="message"> <?= $mail['message']; ?> </p>
                         <p class="message"> <?= $check; ?> </p>
@@ -40,29 +40,24 @@
         </div>
     </div>
 </section>
-<script src='src/assets/js/monCompte.js' type="text/javascript;version=1.8">
-</script>
-<!-- 
-<script>
-    let mcEmail = document.getElementById('mc-email')
+<script src='/car/src/assets/js/monCompte.js'></script>
+<!-- <script>
+    let mcEmail = document.getElementById('mcEmail')
     mcEmail.addEventListener("keyup", () => {
         let mail = mcEmail.value;
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "send");
+        xhr.open("POST", "<?= $router->generate('sendAdmin') ?>");
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
         xhr.send('mail=' + mail);
         xhr.onreadystatechange = function() {
-
-            if (xhr.response !== 'ok') {
+            // console.log(xhr.responseText);
+            if (xhr.responseText !== 'ok') {
                 mcEmail.style.border = '4px solid green';
             } else {
                 mcEmail.style.border = '4px solid red';
             }
-
         }
-
     });
-
-    console.log(45);
 </script> -->
+
 <?php get_footer('compte'); ?>

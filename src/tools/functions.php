@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * @param string
  * @return string
@@ -29,7 +27,11 @@ function messagePassword($pass)
 		$pass = $_POST[$pass];
 
 		if (strlen($pass) < 8) {
-			return "Le mot de passe doit avoir au moins 8 caractères";
+			$error = [
+				'message' => "Le mot de passe doit avoir au moins 8 caractères",
+
+			];
+			return $error;
 		}
 		if (strlen($pass) > 16) {
 			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
@@ -66,6 +68,7 @@ function password($pass)
 	}
 	return true;
 }
+
 
 /**
  * function that checks if the date has a correct format
@@ -177,6 +180,8 @@ function getCarSelect(PDO $db, AltoRouter $router)
 		$sql = null;
 	}
 }
+
+
 /**
  * Check if the car session is open, if you do not send to select a car or to create it
  * @return id_car
@@ -200,11 +205,6 @@ function getSessionCar(PDO $db, AltoRouter $router)
 	}
 	return $value;
 };
-
-
-
-
-
 
 
 /**
@@ -323,7 +323,6 @@ function getTrademark(PDO $db)
 
 /**
  * @param: id_car / data base.
- * 
  * @return: array data base, 
  * 
  */
@@ -361,8 +360,7 @@ function dbSelect(PDO $db, $id_car, $database)
 /**
  * returns a table
  * 
- * @param string
- * 
+ * @param string 
  * @return array data base.
  */
 function getSelect(PDO $db, $table)

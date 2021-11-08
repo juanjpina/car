@@ -8,7 +8,7 @@
                 </li>
                 <li>
                     <a href="https://www.twitter.com"><img src="/car/src/assets/images/twitter.png" width="40" height="40"></a>
-                    
+
                 </li>
             </div>
             <div class="law">
@@ -34,5 +34,6 @@
     </nav>
 </footer>
 </body>
+
 
 </html>

@@ -5,6 +5,15 @@ section {
         margin: 200px 0px 0px 0px;
         width: 55%;
         @include shadow;
+        label {
+            margin-top: 2%;
+        }
+        p {
+            margin-top: 1%;
+        }
+        input {
+            width: 60%;
+        }
         @media screen and (max-width: 768px) {
             margin: 200px 0px 0px 0px;
             width: 100%;

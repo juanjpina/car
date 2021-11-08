@@ -1,0 +1,26 @@
+section {
+    margin-right: 30%;
+    margin-left: 30%;
+    .pswforget {
+        background-color: $color-alert;
+        border-radius: 28px;
+        margin: 200px 0px 0px 0px;
+        width: 100%;
+        @include shadow;
+        form {
+            div {
+                margin: 20px 0px;
+            }
+        }
+        div {
+            margin: 20px 0px;
+        }
+        @media only screen and (max-width: 768px) {
+            padding: 50px 20px;
+            p {
+                font-size: 0.7em;
+                text-align: center;
+            }
+        }
+    }
+}
