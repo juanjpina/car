@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * check if the email exists
  * @param String
@@ -75,7 +77,7 @@ function passwordNew(PDO $db, AltoRouter $router)
 
             $newReponse = getUser($db, $reponse[0]['id_user']);
             if ($newReponse) {
-                dump('re', $newReponse);
+                // dump('re', $newReponse);
                 foreach ($newReponse as $mail) {
                     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $password .  ' .Bien cordialement.';
                     $sunjet = 'Mot de passe';
@@ -90,4 +92,6 @@ function passwordNew(PDO $db, AltoRouter $router)
         }
     }
 }
+
+
 $value = passwordNew($db, $router);

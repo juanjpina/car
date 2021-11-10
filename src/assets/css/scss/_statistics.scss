@@ -188,6 +188,9 @@
     margin-top: 200px;
     width: 100%;
     margin-bottom: 2.5%;
+    .title {
+        color: black;
+    }
     .row {
         .start {
             margin-bottom: 30px;
@@ -199,6 +202,27 @@
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+        }
+        @media screen and(max-width:1580px) {
+            .start {
+                width: 50%;
+            }
+            .end {
+                width: 50%;
+            }
+        }
+        @media screen and(max-width:768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .start {
+                width: 100%;
+            }
+            .end {
+                width: 100%;
+            }
         }
     }
     .container {
@@ -257,8 +281,6 @@
         justify-content: space-around;
         align-items: flex-end;
         margin: 100px 0;
-        // flex-wrap: wrap;
-        // width: 100%;
         li {
             display: flex;
             align-items: center;

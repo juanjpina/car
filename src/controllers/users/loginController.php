@@ -1,5 +1,6 @@
 <?php
 redirectAdmin($router);
+
 login($db, $router);
 
 function login(PDO $db, AltoRouter $router)

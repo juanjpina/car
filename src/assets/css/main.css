@@ -72,6 +72,7 @@ body {
   font-family: "montserrat", sans-serif;
   margin-left: auto;
   margin-right: auto;
+  color: #f2f2f2;
 }
 
 a {
@@ -216,13 +217,14 @@ h6 {
 .closed {
   display: inline-block;
   padding-top: 2%;
-  padding-right: 2%;
+  margin-left: 93%;
   text-align: right;
-  width: 100%;
+  width: 25px;
 }
 @media screen and (max-width: 768px) {
   .closed {
-    padding: 5%;
+    margin-top: 2%;
+    margin-left: 85%;
   }
 }
 
@@ -287,7 +289,7 @@ h6 {
   .header .row .navegation .nave .li_button a .buttonA {
     height: 35px;
     width: 125px;
-    margin-right: 0;
+    margin-right: 11px;
   }
   .header .row .navegation .nave .li_button a .buttonA img {
     height: 25px;
@@ -344,6 +346,11 @@ footer {
 @media screen and (max-width: 768px) {
   footer {
     margin: 100% 0 0 0;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  footer {
+    margin-top: 65%;
   }
 }
 footer nav {
@@ -950,7 +957,7 @@ section .alerts div {
     margin: 10px 3px;
   }
   section .alerts .column td {
-    font-size: 0.6em;
+    font-size: 0.7em;
   }
 }
 
@@ -1244,6 +1251,9 @@ section .alerts div {
   width: 100%;
   margin-bottom: 2.5%;
 }
+.listedGraphics .title {
+  color: black;
+}
 .listedGraphics .row .start {
   margin-bottom: 30px;
 }
@@ -1254,6 +1264,29 @@ section .alerts div {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+@media screen and (max-width: 1580px) {
+  .listedGraphics .row .start {
+    width: 50%;
+  }
+  .listedGraphics .row .end {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .listedGraphics .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .listedGraphics .row .start {
+    width: 100%;
+  }
+  .listedGraphics .row .end {
+    width: 100%;
+  }
 }
 .listedGraphics .container {
   width: 100%;
@@ -2088,6 +2121,7 @@ section .pswforget label {
   margin-top: 2%;
 }
 section .pswforget p {
+  text-align: center;
   margin-top: 1%;
 }
 section .pswforget input {
@@ -2113,7 +2147,7 @@ section .pswforget div {
     margin: 10px 0px;
   }
   section .pswforget p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: center;
   }
 }
@@ -2127,7 +2161,7 @@ section .pswforget div {
 }
 @media only screen and (max-width: 550px) {
   .form-signin {
-    margin-left: 3%;
+    margin-left: 0;
   }
 }
 .form-signin .wraper {

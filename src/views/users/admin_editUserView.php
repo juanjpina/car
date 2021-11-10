@@ -40,8 +40,8 @@
         </div>
     </div>
 </section>
-<!-- <script src='src/assets/js/monCompte.js'></script> -->
-<script>
+<script src='/car/src/assets/js/monCompte.js'></script>
+<!-- <script>
     let mcEmail = document.getElementById('mcEmail')
     mcEmail.addEventListener("keyup", () => {
         let mail = mcEmail.value;
@@ -58,6 +58,6 @@
             }
         }
     });
-</script>
+</script> -->
 
 <?php get_footer('compte'); ?>
