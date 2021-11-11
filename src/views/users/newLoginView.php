@@ -5,7 +5,6 @@
             <form action="" method="post" name="NLform">
                 <div class="pseudo column">
                     <?php $pseudo = lengthPseudo('pseudo'); ?>
-
                     <label for="pseudo">Pseudo*</label>
                     <input type="text" maxlength="10" class=" input" id="NLpseudo" placeholder="Pseudo - maximum 10 caractères " name="pseudo" value="">
                     <p class="message" id="pseudoMessage"></p>
@@ -25,7 +24,7 @@
                 </div>
                 <div class="password column">
                     <label for="password">Mot de passe*</label>
-                    <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
+                    <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule, une minuscule, un numéro, un caractère spéciaux et plus de 8 caractères</p>
                     <input type="password" maxlength="16" id="NLpassword" placeholder="mot de passe" name="password">
                     <p class="message" id="passwordMessage"></p>
                 </div>

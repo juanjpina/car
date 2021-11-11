@@ -7,7 +7,6 @@
  */
 function lengthPseudo($pseudo)
 {
-
 	if (!empty($_POST[$pseudo])) {
 		if (strlen($_POST[$pseudo]) > 10) {
 			return "Le pseudo ne doit pas avoir plus de 10 caractères";
@@ -16,42 +15,42 @@ function lengthPseudo($pseudo)
 }
 
 
-/**
- * verifies the count if it meets the proposed conditions * 
- * @param string(password)
- * @return string
- */
-function messagePassword($pass)
-{
-	if (!empty($_POST[$pass])) {
-		dump('45');
-		// dump($_POST[$pass]);
-		// $pass = $_POST[$pass];
-		// if ($pass != null) {
-		// 	dump($pass);
-		// } else {
-		// 	dump('as');
-		// }
+// /**
+//  * verifies the count if it meets the proposed conditions * 
+//  * @param string(password)
+//  * @return string
+//  */
+// function messagePassword($pass)
+// {
+// 	if (!empty($_POST[$pass])) {
+// 		dump('45');
+// 		// dump($_POST[$pass]);
+// 		// $pass = $_POST[$pass];
+// 		// if ($pass != null) {
+// 		// 	dump($pass);
+// 		// } else {
+// 		// 	dump('as');
+// 		// }
 
-		if (strlen($pass) < 8) {
-			return "Le mot de passe doit avoir au moins 8 caractères";
-		}
-		if (strlen($pass) > 16) {
-			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
-		}
-		if (preg_match('@[a-z]@', $pass) == 0) {
-			return "Le mot de passe doit avoir au moins une minuscule";
-		}
-		if (preg_match('@[A-Z]@', $pass) == 0) {
-			return "Le mot de passe doit avoir au moins une majuscule";
-		}
-		if (preg_match('@[0-9]@', $pass) == 0) {
-			return "Le mot de passe doit avoir au moins un caractère numérique";
-		}
-	}
-	// $_POST[$pass] = null;
-	// dump($_POST[$pass]);
-}
+// 		if (strlen($pass) < 8) {
+// 			return "Le mot de passe doit avoir au moins 8 caractères";
+// 		}
+// 		if (strlen($pass) > 16) {
+// 			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
+// 		}
+// 		if (preg_match('@[a-z]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins une minuscule";
+// 		}
+// 		if (preg_match('@[A-Z]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins une majuscule";
+// 		}
+// 		if (preg_match('@[0-9]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins un caractère numérique";
+// 		}
+// 	}
+// 	// $_POST[$pass] = null;
+// 	// dump($_POST[$pass]);
+// }
 
 
 /**

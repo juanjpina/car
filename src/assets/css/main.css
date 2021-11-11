@@ -433,6 +433,13 @@ footer li div a {
     margin-top: 150px;
   }
 }
+.menu-login .message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: red;
+  margin: 1% 0;
+}
 .menu-login .new {
   margin-top: 5%;
   width: 100%;
@@ -499,10 +506,15 @@ footer li div a {
 }
 @media screen and (max-width: 480px) {
   .menu-login .newLogin .mail {
-    margin-bottom: 60%;
+    margin-bottom: 56%;
   }
   .menu-login .newLogin .password {
-    margin-bottom: 60%;
+    margin-bottom: 55%;
+  }
+  .menu-login .newLogin .password .message {
+    overflow-wrap: break-word;
+    hyphens: manual;
+    width: 100%;
   }
 }
 .menu-login .newLogin div {
@@ -511,7 +523,7 @@ footer li div a {
 .menu-login .newLogin div .textPassword {
   font-size: 0.8em;
   text-align: center;
-  width: 60%;
+  width: 80%;
 }
 .menu-login .newLogin form {
   margin: 0 25px;
@@ -650,14 +662,6 @@ footer li div a {
     font-size: 0.8em;
     text-align: center;
   }
-}
-
-.menu-login .message {
-  text-align: center;
-  font-weight: bold;
-  font-size: 0.9em;
-  color: red;
-  margin: 1% 0;
 }
 
 .accueil {
