@@ -24,24 +24,14 @@
                     <p class="message"> <?= $mail['message']; ?> </p>
                 </div>
                 <div class="password column">
-                    <!-- <?php $verification = messagePassword('password'); ?> -->
-
                     <label for="password">Mot de passe*</label>
                     <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
                     <input type="password" maxlength="16" id="NLpassword" placeholder="mot de passe" name="password">
                     <p class="message" id="passwordMessage"></p>
-
-
-                    <!-- <p class="message as"><?= $verification; ?></p> -->
-
-
                 </div>
                 <div class="conf-password column">
                     <p class="parrafo-compte">Confirmez le mot de passe*</p>
-
-                    <?php $resul = egalPass('password', 'confirmerPassword') ?>
                     <input type="password" maxlength="16" id="NLconfirmPassword" placeholder="Confirmer la mot de passe" name="confirmerPassword">
-
                     <p class="message" id="confirmPasswordMessage"></p>
                 </div>
                 <div class="column div-button">

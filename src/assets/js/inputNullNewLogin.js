@@ -111,6 +111,13 @@ let checkConfirmPassword = (e) => {
 };
 NLconfirmPassword.addEventListener("keyup", () => {
     confirmPasswordMessage.innerHTML = ""
+    if (NLform.NLconfirmPassword.value == NLform.NLpassword.value) {
+        NLconfirmPassword.style.border = '4px solid green';
+    } else {
+        NLconfirmPassword.style.border = '4px solid red';
+
+    }
+
 });
 
 
