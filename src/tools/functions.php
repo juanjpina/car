@@ -15,6 +15,18 @@ function lengthPseudo($pseudo)
 }
 
 
+/**
+ * session verification
+ */
+function redirectAdmin(AltoRouter $router)
+{
+	if (isset($_SESSION['auth'])) {
+		header('Location: ' . $router->generate('whiteHome'));
+		die();
+	}
+}
+
+
 // /**
 //  * verifies the count if it meets the proposed conditions * 
 //  * @param string(password)

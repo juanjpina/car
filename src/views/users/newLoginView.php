@@ -8,16 +8,13 @@
                     <label for="pseudo">Pseudo*</label>
                     <input type="text" maxlength="10" class=" input" id="NLpseudo" placeholder="Pseudo - maximum 10 caractères " name="pseudo" value="">
                     <p class="message" id="pseudoMessage"></p>
-
                     <p class="message"> <?= $pseudo; ?> </p>
                 </div>
                 <div class="mail column">
                     <?php $message = searchEmail($db, $router); ?>
-
                     <?php $mail = checkEmail('email'); ?>
                     <label for="email">Adresse e-mail*</label>
                     <input type="email" class="input email" id="NLemail" placeholder="Adresse e-mail" name="email" value="">
-
                     <p class="message" id="emailMessage"></p>
                     <p class="message"> <?= $message; ?> </p>
                     <p class="message"> <?= $mail['message']; ?> </p>

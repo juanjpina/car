@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * session verification
+ */
+redirectAdmin($router);
 
 
 /**
@@ -35,17 +39,65 @@ function passwordNew(PDO $db, AltoRouter $router)
          */
         if ($reponse) {
 
-            $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-            $password = "";
+            /* Randomly generate a password
+    *
+    * @param $length $count $character
+    * @return string
+    */
 
-            for ($i = 0; $i < 8; $i++) {
+            // public static function randomPassword($length, $count, $characters)
+            // {
+            $length = 8;
+            $count = 1;
+            $characters = "lower_case,upper_case,numbers,special_symbols";
+            // $length - the length of the generated password
+            // $count - number of passwords to be generated
+            // $characters - types of characters to be used in the password
 
-                $password .= substr($str, rand(0, 62), 1);
+            // Define variables used within the function
+            $symbols = array();
+            $used_symbols = '';
+            $pass = '';
+
+            // An array of different character types
+            $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
+            $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $symbols["numbers"] = '1234567890';
+            $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
+
+            // Get characters types to be used for the passsword
+            $characters = explode(",", $characters);
+            foreach ($characters as $value) {
+                // Build a string with all characters
+                $used_symbols .= $symbols[$value];
             }
-            dump($password);
+            // strlen starts from 0 so to get number of characters deduct 1
+            $symbols_length = strlen($used_symbols) - 1;
+
+            for ($p = 0; $p < $count; $p++) {
+                $pass = '';
+                for ($i = 0; $i < $length; $i++) {
+                    // Get a random character from the string with all characters
+                    $n = rand(0, $symbols_length);
+                    // Add the character to the password string
+                    $pass .= $used_symbols[$n];
+                }
+            }
+            // dump($pass);
+            // return the generated password
+            // return $pass;
+            // }
+            // $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+            // $password = "";
+
+            // for ($i = 0; $i < 8; $i++) {
+
+            //     $password .= substr($str, rand(0, 62), 1);
+            // }
+            // dump($password);
 
             $data = [
-                ':password' => password_hash($password, PASSWORD_DEFAULT),
+                ':password' => password_hash($pass, PASSWORD_DEFAULT),
                 ':id_user' => $reponse[0]['id_user'],
             ];
 
@@ -79,7 +131,7 @@ function passwordNew(PDO $db, AltoRouter $router)
             if ($newReponse) {
                 // dump('re', $newReponse);
                 foreach ($newReponse as $mail) {
-                    $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $password .  ' .Bien cordialement.';
+                    $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $pass .  ' .Bien cordialement.';
                     $sunjet = 'Mot de passe';
                     // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
                     $mails = $mail['email'] . $sunjet . $text_mail . $headers;

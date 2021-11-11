@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * session verification
+ */
+redirectAdmin($router);
+
+
+/**
  * check if the email exists in the database
  * @param string (post e-mail)
  * @return string

@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * session verification
+ */
 redirectAdmin($router);
 
 login($db, $router);
@@ -49,16 +53,16 @@ function login(PDO $db, AltoRouter $router)
 	}
 }
 
-/**
- * session verification
- */
-function redirectAdmin(AltoRouter $router)
-{
-	if (isset($_SESSION['auth'])) {
-		header('Location: ' . $router->generate('whiteHome'));
-		die();
-	}
-}
+// /**
+//  * session verification
+//  */
+// function redirectAdmin(AltoRouter $router)
+// {
+// 	if (isset($_SESSION['auth'])) {
+// 		header('Location: ' . $router->generate('whiteHome'));
+// 		die();
+// 	}
+// }
 
 
 // function honeyPot(AltoRouter $router)
