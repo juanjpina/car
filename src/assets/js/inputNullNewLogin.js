@@ -7,10 +7,10 @@ document.NLform.NLpseudo.focus();
 let NLpseudo = document.getElementById("NLpseudo");
 let pseudoMessage = document.getElementById("pseudoMessage");
 let NLemail = document.getElementById('NLemail')
-// let emailMessage = document.getElementById("emailMessage");
-// let messagePassword = document.getElementById("messagePassword");
 let NLpassword = document.getElementById("NLpassword");
 let passwordMessage = document.getElementById("passwordMessage");
+let NLconfirmPassword = document.getElementById("NLconfirmPassword");
+let confirmPasswordMessage = document.getElementById("confirmPasswordMessage");
 
 /** pseudo **********************************************/
 let checkPseudo = (e) => {
@@ -19,7 +19,6 @@ let checkPseudo = (e) => {
         e.preventDefault();
     }
 };
-
 NLpseudo.addEventListener('keyup', () => {
     pseudoMessage.innerHTML = ""
 })
@@ -32,13 +31,16 @@ let checkMail = (e) => {
         e.preventDefault();
     }
 }
-// let emailLogin = document.getElementById('emailLogin');
-// NLemail.addEventListener('keydown', () => {
-//     emailMessage.innerHTML = ""
-// })
-
+// inner.html='' -> checkMail.js 
 
 /** password **********************************************/
+const expressions = {
+    handicap: /[a - z]/,
+    capital: /[A-Z]/,
+    sign: /[*]/
+}
+
+
 let checkPassword = (e) => {
     if (NLform.NLpassword.value == 0) {
         passwordMessage.innerHTML = "Le mot de passe est vide"
@@ -47,53 +49,69 @@ let checkPassword = (e) => {
 };
 NLpassword.addEventListener("keyup", () => {
     passwordMessage.innerHTML = ""
+
+    // console.log(NLpassword.value);
+    // if (NLpassword.value.search(/[a-z]/i) < 0) {
+    // }
+    if (NLpassword.value.match(/^(?=.* [a-z])$/)) {
+        console.log('as');
+
+    }
+    const handicap = new RegExp("[a-z]");
+    if (!handicap.test(NLpassword.value)) {
+        NLpassword.style.border = '4px solid red';
+        // passwordMessage.innerHTML = "Il manque une minuscule"
+    } else {
+        NLpassword.style.border = '4px solid green';
+    }
+    const capital = new RegExp("[A-Z]")
+    if (!capital.test(NLpassword.value)) {
+        NLpassword.style.border = '4px solid red';
+        // passwordMessage.innerHTML = "Il manque une majuscule"
+    } else {
+        NLpassword.style.border = '4px solid green';
+    }
+    const number = new RegExp("[0-9]")
+    if (!number.test(NLpassword.value)) {
+        NLpassword.style.border = '4px solid red';
+        // passwordMessage.innerHTML = "il manque un numéro"
+    } else {
+        NLpassword.style.border = '4px solid green';
+
+    }
+    if (NLpassword.value.length < 8 || NLpassword.value.length > 16) {
+        console.log(NLpassword.value.length);
+        NLpassword.style.border = '4px solid red';
+    } else {
+        NLpassword.style.border = '4px solid green';
+    }
+
+
+
+
 });
 
+
 /** confirmPassword  *************************************/
-
-
-
-
+let checkConfirmPassword = (e) => {
+    if (NLform.NLconfirmPassword.value == 0) {
+        confirmPasswordMessage.innerHTML = "Le mot de passe est vide"
+        e.preventDefault();
+    }
+};
+NLconfirmPassword.addEventListener("keyup", () => {
+    confirmPasswordMessage.innerHTML = ""
+});
 
 
 let check = (e) => {
     checkMail(e);
     checkPassword(e);
+    checkConfirmPassword(e);
     checkPseudo(e);
-
 }
 
 NLform.addEventListener("submit", check);
-
-
-// let passwordLogin = document.getElementById('passwordLogin')
-// passwordLogin.addEventListener('keyup', () => {
-//     messagePassword.innerHTML = ""
-
-// })
-
-
-
-NLemail.addEventListener("keyup", () => {
-    let mail = NLemail.value;
-    emailMessage.innerHTML = ""
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "send");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
-    xhr.send('mail=' + mail);
-    xhr.onreadystatechange = function () {
-        // console.log(xhr.responseText);
-
-        if (xhr.responseText !== 'ok') {
-            NLemail.style.border = '4px solid green';
-        } else {
-            NLemail.style.border = '4px solid red';
-        }
-
-    }
-
-});
-
 
 
 
