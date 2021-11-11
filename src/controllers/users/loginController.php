@@ -3,6 +3,11 @@ redirectAdmin($router);
 
 login($db, $router);
 
+/**
+ * user authorization to enter the application
+ * 
+ *@return string 
+ */
 function login(PDO $db, AltoRouter $router)
 {
 	if (isset($_POST['login'])) {
@@ -44,7 +49,9 @@ function login(PDO $db, AltoRouter $router)
 	}
 }
 
-
+/**
+ * session verification
+ */
 function redirectAdmin(AltoRouter $router)
 {
 	if (isset($_SESSION['auth'])) {
@@ -54,11 +61,11 @@ function redirectAdmin(AltoRouter $router)
 }
 
 
-function honeyPot(AltoRouter $router)
-{
-	if (isset($_POST['auth'])) {
-		dump('Vous êtes connecté', 'success');
-		header('Location: ' . $router->generate('login'));
-		die;
-	}
-}
+// function honeyPot(AltoRouter $router)
+// {
+// 	if (isset($_POST['auth'])) {
+// 		dump('Vous êtes connecté', 'success');
+// 		header('Location: ' . $router->generate('login'));
+// 		die;
+// 	}
+// }
