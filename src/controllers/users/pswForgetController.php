@@ -39,62 +39,50 @@ function passwordNew(PDO $db, AltoRouter $router)
          */
         if ($reponse) {
 
-            /* Randomly generate a password
-    *
-    * @param $length $count $character
-    * @return string
-    */
+            // $length = 8;
+            // $count = 1;
+            // $characters = "lower_case,upper_case,numbers,special_symbols";
+            // // $length - the length of the generated password
+            // // $count - number of passwords to be generated
+            // // $characters - types of characters to be used in the password
 
-            // public static function randomPassword($length, $count, $characters)
-            // {
-            $length = 8;
-            $count = 1;
-            $characters = "lower_case,upper_case,numbers,special_symbols";
-            // $length - the length of the generated password
-            // $count - number of passwords to be generated
-            // $characters - types of characters to be used in the password
+            // // Define variables used within the function
+            // $symbols = array();
+            // $used_symbols = '';
+            // $pass = '';
 
-            // Define variables used within the function
-            $symbols = array();
-            $used_symbols = '';
-            $pass = '';
+            // // An array of different character types
+            // $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
+            // $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            // $symbols["numbers"] = '1234567890';
+            // $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
 
-            // An array of different character types
-            $symbols["lower_case"] = 'abcdefghijklmnopqrstuvwxyz';
-            $symbols["upper_case"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $symbols["numbers"] = '1234567890';
-            $symbols["special_symbols"] = '!?~@#-_+<>[]{}';
-
-            // Get characters types to be used for the passsword
-            $characters = explode(",", $characters);
-            foreach ($characters as $value) {
-                // Build a string with all characters
-                $used_symbols .= $symbols[$value];
-            }
-            // strlen starts from 0 so to get number of characters deduct 1
-            $symbols_length = strlen($used_symbols) - 1;
-
-            for ($p = 0; $p < $count; $p++) {
-                $pass = '';
-                for ($i = 0; $i < $length; $i++) {
-                    // Get a random character from the string with all characters
-                    $n = rand(0, $symbols_length);
-                    // Add the character to the password string
-                    $pass .= $used_symbols[$n];
-                }
-            }
-            // dump($pass);
-            // return the generated password
-            // return $pass;
+            // // Get characters types to be used for the passsword
+            // $characters = explode(",", $characters);
+            // foreach ($characters as $value) {
+            //     // Build a string with all characters
+            //     $used_symbols .= $symbols[$value];
             // }
-            // $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-            // $password = "";
+            // // strlen starts from 0 so to get number of characters deduct 1
+            // $symbols_length = strlen($used_symbols) - 1;
 
-            // for ($i = 0; $i < 8; $i++) {
-
-            //     $password .= substr($str, rand(0, 62), 1);
+            // for ($p = 0; $p < $count; $p++) {
+            //     $pass = '';
+            //     for ($i = 0; $i < $length; $i++) {
+            //         // Get a random character from the string with all characters
+            //         $n = rand(0, $symbols_length);
+            //         // Add the character to the password string
+            //         $pass .= $used_symbols[$n];
+            //     }
             // }
-            // dump($password);
+            $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,\-./:;<=>?@[\]^_`{|}~";
+            $pass = "";
+
+            for ($i = 0; $i < 10; $i++) {
+
+                $pass .= substr($str, rand(0, 94), 1);
+            }
+            dump($pass);
 
             $data = [
                 ':password' => password_hash($pass, PASSWORD_DEFAULT),
@@ -143,7 +131,31 @@ function passwordNew(PDO $db, AltoRouter $router)
             return "L'adress email n'existe pas";
         }
     }
-}
+};
 
 
 $value = passwordNew($db, $router);
+
+// if ($_SERVER['SERVER_NAME'] == 'localhost') {
+// Create the Transport
+$transport = (new Swift_SmtpTransport('smtp.mailtrap.io', 25))
+    ->setUsername('977cb15ffca4bc')
+    ->setPassword('b9f6e16b8f78c');
+// } else {
+// $transport = new Swift_SendmailTransport('/usr/sbin/sendmail -bs');
+// $transport =( Swift_MailTransport::newInstance();
+// };
+
+
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
+
+// Create a message
+$message = (new Swift_Message('Wonderful Subject'))
+    ->setFrom(['juanjpina@gmail.com' => 'John'])
+    ->setTo(['mail@contac.com'])
+    ->setBody('Here is the message itself');
+
+// Send the message
+$result = $mailer->send($message);
+dump($result);
