@@ -24,7 +24,7 @@
                     <p class="message"> <?= $mail['message']; ?> </p>
                 </div>
                 <div class="password column">
-                    <?php $verification = messagePassword('password'); ?>
+                    <!-- <?php $verification = messagePassword('password'); ?> -->
 
                     <label for="password">Mot de passe*</label>
                     <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule et plus de 8 caractères</p>
@@ -32,7 +32,7 @@
                     <p class="message" id="passwordMessage"></p>
 
 
-                    <p class="message as"><?= $verification; ?></p>
+                    <!-- <p class="message as"><?= $verification; ?></p> -->
 
 
                 </div>

@@ -34,58 +34,68 @@ let checkMail = (e) => {
 // inner.html='' -> checkMail.js 
 
 /** password **********************************************/
-const expressions = {
-    handicap: /[a - z]/,
-    capital: /[A-Z]/,
-    sign: /[*]/
-}
-
-
 let checkPassword = (e) => {
     if (NLform.NLpassword.value == 0) {
         passwordMessage.innerHTML = "Le mot de passe est vide"
         e.preventDefault();
     }
 };
+let validateHandicap = false;
+let validateCapital = false;
+let validateNumber = false;
+let validateSpecial = false;
+let validateLength = false;
+let messageValue = "";
 NLpassword.addEventListener("keyup", () => {
     passwordMessage.innerHTML = ""
 
-    // console.log(NLpassword.value);
-    // if (NLpassword.value.search(/[a-z]/i) < 0) {
-    // }
-    if (NLpassword.value.match(/^(?=.* [a-z])$/)) {
-        console.log('as');
-
-    }
     const handicap = new RegExp("[a-z]");
-    if (!handicap.test(NLpassword.value)) {
-        NLpassword.style.border = '4px solid red';
+    if (handicap.test(NLpassword.value)) {
+
+        validateHandicap = true;
         // passwordMessage.innerHTML = "Il manque une minuscule"
-    } else {
-        NLpassword.style.border = '4px solid green';
+    }
+    else {
+        validateHandicap = false;
+        messageValue = "Il manque une minuscule"
     }
     const capital = new RegExp("[A-Z]")
-    if (!capital.test(NLpassword.value)) {
-        NLpassword.style.border = '4px solid red';
-        // passwordMessage.innerHTML = "Il manque une majuscule"
-    } else {
-        NLpassword.style.border = '4px solid green';
+    if (capital.test(NLpassword.value)) {
+        validateCapital = true;
+    }
+    else {
+        validateCapital = false;
+        messageValue = "Il manque une majuscule"
     }
     const number = new RegExp("[0-9]")
-    if (!number.test(NLpassword.value)) {
-        NLpassword.style.border = '4px solid red';
-        // passwordMessage.innerHTML = "il manque un numéro"
-    } else {
-        NLpassword.style.border = '4px solid green';
-
+    if (number.test(NLpassword.value)) {
+        validateNumber = true;
     }
-    if (NLpassword.value.length < 8 || NLpassword.value.length > 16) {
-        console.log(NLpassword.value.length);
-        NLpassword.style.border = '4px solid red';
-    } else {
-        NLpassword.style.border = '4px solid green';
+    else {
+        validateNumber = false;
+        messageValue = "Il manque un numéro"
+    };
+    const special = new RegExp("[/!@#\$%\^\&*\)\(+=._-]")
+    if (special.test(NLpassword.value)) {
+        validateSpecial = true;
+    }
+    else {
+        validateSpecial = false;
+        messageValue = "Il manque un caractère spéciaux"
+    };
+    if (NLpassword.value.length > 8) {
+        validateLength = true;
+    }
+    else {
+        messageValue = "Il doit avoir au moins 8 caractères"
     }
 
+    if (validateHandicap && validateCapital && validateNumber && validateSpecial && validateLength) {
+        NLpassword.style.border = '4px solid green';
+    } else {
+        NLpassword.style.border = '4px solid red';
+        passwordMessage.innerHTML = messageValue;
+    }
 
 
 

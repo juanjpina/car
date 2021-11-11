@@ -23,8 +23,15 @@ function lengthPseudo($pseudo)
  */
 function messagePassword($pass)
 {
-	if (isset($_POST[$pass])) {
-		$pass = $_POST[$pass];
+	if (!empty($_POST[$pass])) {
+		dump('45');
+		// dump($_POST[$pass]);
+		// $pass = $_POST[$pass];
+		// if ($pass != null) {
+		// 	dump($pass);
+		// } else {
+		// 	dump('as');
+		// }
 
 		if (strlen($pass) < 8) {
 			return "Le mot de passe doit avoir au moins 8 caractères";
@@ -42,6 +49,8 @@ function messagePassword($pass)
 			return "Le mot de passe doit avoir au moins un caractère numérique";
 		}
 	}
+	// $_POST[$pass] = null;
+	// dump($_POST[$pass]);
 }
 
 
