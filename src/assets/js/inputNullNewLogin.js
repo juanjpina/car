@@ -40,6 +40,10 @@ let checkPassword = (e) => {
         e.preventDefault();
     }
 };
+
+
+
+/**  CHECK PASSWORD  ************************************/
 let validateHandicap = false;
 let validateCapital = false;
 let validateNumber = false;
@@ -48,7 +52,6 @@ let validateLength = false;
 let messageValue = "";
 NLpassword.addEventListener("keyup", () => {
     passwordMessage.innerHTML = ""
-
     const handicap = new RegExp("[a-z]");
     if (handicap.test(NLpassword.value)) {
 
@@ -89,16 +92,12 @@ NLpassword.addEventListener("keyup", () => {
     else {
         messageValue = "Il doit avoir au moins 8 caractères"
     }
-
     if (validateHandicap && validateCapital && validateNumber && validateSpecial && validateLength) {
         NLpassword.style.border = '4px solid green';
     } else {
         NLpassword.style.border = '4px solid red';
         passwordMessage.innerHTML = messageValue;
     }
-
-
-
 });
 
 

@@ -64,8 +64,6 @@ if (isset($_GET['car']) && isset($_GET['endYear']) && isset($_GET['startYear']))
     $endY = $_GET['endYear'];
     $startY = $_GET['startYear'];
 
-    $value = 100;
-
     $invtollEnd = $endYear[1];
     $invfuelEnd = $endYear[2];;
     $invoilEnd = $endYear[3];;

@@ -4,7 +4,7 @@
  * session verification
  */
 redirectAdmin($router);
-
+// dump(0);
 
 /**
  * check if the email exists
@@ -13,7 +13,7 @@ redirectAdmin($router);
  */
 function passwordNew(PDO $db, AltoRouter $router)
 {
-    if (isset($_POST['mail']) && isset($_POST['mail'])) {
+    if (!empty($_POST['mail']) && isset($_POST['mail'])) {
         try {
             $data = [
                 ':email' => $_POST['mail'],
@@ -117,13 +117,11 @@ function passwordNew(PDO $db, AltoRouter $router)
 
             $newReponse = getUser($db, $reponse[0]['id_user']);
             if ($newReponse) {
-                // dump('re', $newReponse);
+                dump('re', $newReponse);
                 foreach ($newReponse as $mail) {
                     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $pass .  ' .Bien cordialement.';
                     $sunjet = 'Mot de passe';
-                    // $mail = mail($mail['email'], $sunjet, $text_mail, $headers);
                     $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-                    dump($mails);
                 }
             }
             return "Vous avez reçu un email avec un nouveau mot de passe.";
@@ -136,26 +134,26 @@ function passwordNew(PDO $db, AltoRouter $router)
 
 $value = passwordNew($db, $router);
 
-// if ($_SERVER['SERVER_NAME'] == 'localhost') {
-// Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.mailtrap.io', 25))
-    ->setUsername('977cb15ffca4bc')
-    ->setPassword('b9f6e16b8f78c');
-// } else {
-// $transport = new Swift_SendmailTransport('/usr/sbin/sendmail -bs');
-// $transport =( Swift_MailTransport::newInstance();
-// };
+// // if ($_SERVER['SERVER_NAME'] == 'localhost') {
+// // Create the Transport
+// $transport = (new Swift_SmtpTransport('smtp.mailtrap.io', 25))
+//     ->setUsername('977cb15ffca4bc')
+//     ->setPassword('b9f6e16b8f78c');
+// // } else {
+// // $transport = new Swift_SendmailTransport('/usr/sbin/sendmail -bs');
+// // $transport =( Swift_MailTransport::newInstance();
+// // };
 
 
-// Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
+// // Create the Mailer using your created Transport
+// $mailer = new Swift_Mailer($transport);
 
-// Create a message
-$message = (new Swift_Message('Wonderful Subject'))
-    ->setFrom(['juanjpina@gmail.com' => 'John'])
-    ->setTo(['mail@contac.com'])
-    ->setBody('Here is the message itself');
+// // Create a message
+// $message = (new Swift_Message('Wonderful Subject'))
+//     ->setFrom(['juanjpina@gmail.com' => 'John'])
+//     ->setTo(['mail@contac.com'])
+//     ->setBody('Here is the message itself');
 
-// Send the message
-$result = $mailer->send($message);
-dump($result);
+// // Send the message
+// $result = $mailer->send($message);
+// dump($result);

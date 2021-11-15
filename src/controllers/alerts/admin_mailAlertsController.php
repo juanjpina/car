@@ -3,7 +3,7 @@ $text_mail = '';
 $recipient = 'utilisateur';
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
-$headers .= "From: rdvoiture <aaa@gmail.com>\r\n";
+$headers .= "From: Agenda voiture <juanjpina@gmail.com>\r\n";
 
 
 /**
@@ -40,8 +40,8 @@ try {
 function emailTiming($reponse, $headers)
 {
     foreach ($reponse as $mail) {
-        $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
-        $sunjet = 'Courroie de distribution';
+        $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous averti que dans un mois vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+        $sunjet = 'Alerte : Courroie de distribution';
         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
         dump('c', $mails);
     }
@@ -80,8 +80,8 @@ try {
 function emailTechical($emails, $headers)
 {
     foreach ($emails as $mail) {
-        $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans un mois vous devriez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
-        $sunjet = 'Contrôle technique';
+        $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous averti que dans un mois vous devrez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+        $sunjet = 'Alerte: Contrôle technique';
         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
     }
 }
@@ -111,8 +111,8 @@ foreach ($car as $c) {
             $request->execute($data);
             $reponseC = $request->fetchAll(PDO::FETCH_ASSOC);
             foreach ($reponseC as $mail) {
-                $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez change la courrioe de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
-                $sunjet = 'Courroie de distribution';
+                $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+                $sunjet = 'Alerte : Courroie de distribution';
                 $mails = $mail['email'] . $sunjet . $text_mail . $headers;
             }
         }
@@ -148,7 +148,7 @@ foreach ($car as $c) {
             $request->execute($data);
             $reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
             foreach ($reponseD as $mail) {
-                $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je voudrais vous prevenir que dans 1000 km vous devriez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
+                $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
                 $sunjet = 'Vidange';
                 $mails = $mail['email'] . $sunjet . $text_mail . $headers;
             }

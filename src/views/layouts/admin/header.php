@@ -33,7 +33,6 @@
 				<div class="logos">
 					<a href="<?= $router->generate('whiteHome'); ?>"><img src="/car/src/assets/images/car2.png" width="200" height="90" alt="logo"></a>
 				</div>
-
 				<div class="navegation">
 					<ul class="nave row">
 						<li class="li-user">
