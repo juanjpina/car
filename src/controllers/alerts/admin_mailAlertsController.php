@@ -217,11 +217,11 @@ foreach ($car as $carId) {
 
             //************ Data base car
             // $sql = "SELECT user.email, user.nickname, car.id_user, car.trademark, car.buyDate FROM setting, car, user WHERE (setting.id_car = car.id_car) AND (user.id_user=car.id_user) AND curdate() = DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)";
-            $sql = "SELECT invtiming.id_car, invtiming.date FROM invtiming, setting, car  WHERE curdate()=DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH) AND invtiming.id_car=:id_car AND setting.id_car= :id_car";
-
+            // $sql = "SELECT invtiming.id_car FROM invtiming, setting, car  WHERE curdate()=DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH) AND invtiming.id_car=:id_car AND setting.id_car= :id_car";
+            $sql = "SELECT car.id_car FROM invtiming, setting, car  WHERE curdate()=DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH) AND car.id_car=:id_car AND setting.id_car= :id_car";
             $request = $db->prepare($sql);
             $request->execute($dataTiming);
-            $request->closeCursor();
+
             $reponseCar = $request->fetchAll(PDO::FETCH_ASSOC);
             $request->closeCursor();
             // dump('2', $reponseCar);
