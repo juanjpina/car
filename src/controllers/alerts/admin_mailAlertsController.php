@@ -123,7 +123,6 @@ foreach ($car as $c) {
         $request->execute($dataKm);
         $reponseC = $request->fetchAll(PDO::FETCH_ASSOC);
         $request->closeCursor();
-        // dump($reponseC);
         if (($reponseC)[0]['km'] != null) {
             $data = [
                 ':id_car' => $c['id_car'],
@@ -137,7 +136,7 @@ foreach ($car as $c) {
                 $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
                 $sunjet = 'Alerte : Courroie de distribution';
                 $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-                dump($mail);
+                // dump($mail);
             }
         }
     } catch (Exception $e) {
@@ -155,7 +154,13 @@ foreach ($car as $c) {
      */
     $km = 1000;
     try {
-        $sql = "SELECT max(km) as km FROM invfuel WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km)  FROM invoil, setting WHERE setting.id_car=:id_car AND invfuel.id_car=:id_car) UNION SELECT max(km) as km FROM invtechnical WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car= :id_car ) UNION SELECT max(km) as km FROM invinsurance WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car) UNION SELECT max(km) as km FROM invoil WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car) UNION SELECT max(km) as km FROM invpneu WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car) UNION SELECT max(km) as km FROM invtiming WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car) UNION SELECT max(km) as km FROM invtoll WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car) ORDER BY km DESC LIMIT 1";
+        $sql = "SELECT max(km) as km FROM invfuel WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km)  FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invtechnical WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car= :id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invinsurance WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invoil WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invpneu WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invtiming WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invtoll WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) ORDER BY km DESC LIMIT 1";
 
         $data = [
             ':id_car' => $c['id_car'],
@@ -163,7 +168,8 @@ foreach ($car as $c) {
         $request = $db->prepare($sql);
         $request->execute($data);
         $reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
+        // $request->closeCursor();
+        dump($reponseD);
         if ($reponseD[0]['km'] != null) {
             $data = [
                 ':id_car' => $c['id_car'],
@@ -177,6 +183,7 @@ foreach ($car as $c) {
                 $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
                 $sunjet = 'Vidange';
                 $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+                dump($mail);
             }
         }
     } catch (Exception $e) {
