@@ -1,7 +1,7 @@
 <?php get_header('edit statistics', 'admin'); ?>
 <section>
     <div class="userStatistics">
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class='title'>Prévision des modifications</h1>
             <h6>Choisissez le nombre d'années ou kilométrage pour la prochaine modification</h6>

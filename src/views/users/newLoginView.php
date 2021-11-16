@@ -21,7 +21,7 @@
                 </div>
                 <div class="password column">
                     <label for="password">Mot de passe*</label>
-                    <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule, une minuscule, un numéro, un caractère spéciaux et plus de 8 caractères</p>
+                    <p class='textPassword'>Le mot de passe doit contenir au moins une majuscule, une minuscule, un numéro, un caractère spécial et plus de 10 caractères et moins de 16 caractères</p>
                     <input type="password" maxlength="16" id="NLpassword" placeholder="mot de passe" name="password">
                     <p class="message" id="passwordMessage"></p>
                 </div>

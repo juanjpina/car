@@ -1,7 +1,7 @@
 <?php get_header('total statistics', 'admin') ?>
 <section>
     <div class='totalStatistics'>
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
     
         <div class='container'>
             <div class="column">

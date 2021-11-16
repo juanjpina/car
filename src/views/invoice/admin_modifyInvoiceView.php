@@ -1,7 +1,7 @@
 <?php get_header('modify Invoice', 'admin') ?>
 <section>
     <div class='modifiInvoici'>
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class='subModifi column'>
             <h1 class='title'>Modifier les factures</h1>
             <form action="" method="post">

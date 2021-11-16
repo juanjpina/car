@@ -1,7 +1,7 @@
 <?php get_header('edit data user', 'compte'); ?>
 <section>
     <div class="user">
-        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class="title">Modifier vos données</h1>
         </div>

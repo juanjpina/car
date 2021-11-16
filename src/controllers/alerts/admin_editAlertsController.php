@@ -19,7 +19,7 @@ function getControl(PDO $db, AltoRouter $router)
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = "SELECT (DATE_ADD(MAX(invtechnical.date), INTERVAL 2 year)) as datetechnical FROM car, invtechnical WHERE car.id_car= :id_car AND curdate() <= DATE_ADD((invtechnical.date), INTERVAL 2 year)";
+            $sql = "SELECT (DATE_ADD(MAX(invtechnical.date), INTERVAL 2 year)) as datetechnical FROM car, invtechnical WHERE invtechnical.id_car= :id_car AND curdate() <= DATE_ADD((invtechnical.date), INTERVAL 2 year)";
             // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
@@ -63,10 +63,7 @@ function getOil(PDO $db, AltoRouter $router)
             $request = $db->prepare($sql);
             $request->execute($data);
             $resultOil = $request->fetchAll(PDO::FETCH_ASSOC);
-
             $request->closeCursor();
-
-
             if (isset($resultOil) && $resultOil[0]['oil'] != null && !empty($resultOil)) {
                 return $resultOil;
             } else {

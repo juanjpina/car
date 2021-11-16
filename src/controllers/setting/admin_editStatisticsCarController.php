@@ -40,5 +40,5 @@ if (isset($id_car)) {
 
 if (isset($_POST['dateTiming']) && isset($_POST['kmTiming']) && isset($_POST['kmOil'])) {
     dbUpdate($db, $_POST['dateTiming'], $_POST['kmTiming'], $_POST['kmOil'], 'setting', $id_car, $router);
-    // header("Refresh: 0.2");
+
 }

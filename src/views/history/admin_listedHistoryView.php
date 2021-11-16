@@ -1,7 +1,7 @@
 <?php get_header('history listed', 'admin'); ?>
 <section>
     <div class="listedHistory">
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="contained">
             <div class="column">
                 <h1 class="title">Liste des frais de <?= $typeInvoice[0]['type'] ?></h1>

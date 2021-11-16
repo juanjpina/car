@@ -1,7 +1,7 @@
 <?php get_header('statistics add', 'admin'); ?>
 <section>
     <div class="statistics column">
-        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
        
         <h1 class='title'>Statistique</h1>
         <h6>Sélectionnez une période pour accéder aux données du véhicule <?php echo $_SESSION['car']['trademark']; ?></h6>

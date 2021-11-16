@@ -1,7 +1,7 @@
 <?php get_header('listed graphics', 'admin'); ?>
 <section>
     <div class='listedGraphics'>
-        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Ferme"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class='column'>
             <h1 class="title">Résultat de la comparaison</h1>
         </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="alert">
                 <?php } else {
-                echo "<p>Il n'y pas de données pour le véhicule " . $_SESSION['car']['trademark'] . "</p>";
+                echo "<p style= color:black >Il n'y pas de données pour le véhicule " . $_SESSION['car']['trademark'] . "</p>";
             } ?>
                 </div>
         </div>

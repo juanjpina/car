@@ -9,14 +9,12 @@
         margin-top: 150px;
     }
     .message {
-        // display: inline-block;
         text-align: center;
         font-weight: bold;
         font-size: 0.9em;
         color: red;
         margin: 1% 0;
     }
-
     .new {
         margin-top: 5%;
         width: 100%;
@@ -43,15 +41,11 @@
         @media only screen and (max-width: 768px) {
             width: 100%;
         }
-
         .column {
             flex-wrap: nowrap;
             .as {
                 overflow-wrap: break-word;
-                // white-space: pre-wrap;
                 hyphens: manual;
-                // word-wrap: normal;
-                // line-break: loose;
                 width: 80%;
             }
         }
@@ -97,10 +91,8 @@
                 }
             }
         }
-
         div {
             height: 100px;
-
             .textPassword {
                 font-size: 0.8em;
                 text-align: center;
@@ -200,8 +192,7 @@
             text-align: right;
             color: black;
             text-align: center;
-            @media screen and (max-width: 768px) {
-            }
+            @media screen and (max-width: 768px) {}
         }
         button {
             display: block;
@@ -224,6 +215,7 @@
         }
     }
 }
+
 // .menu-login .message {
 //     display: inline-block;
 //     text-align: center;

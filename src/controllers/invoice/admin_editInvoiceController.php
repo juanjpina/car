@@ -2,7 +2,6 @@
 
 $id_car = getSessionCar($db, $router);
 
-
 /**
  * returns the name of the expenses
  */
@@ -38,36 +37,11 @@ function selectInvoice(PDO $db, $database, $id_car, AltoRouter $router)
             } finally {
                 $sql = null;
             }
-
-
-            // } else {
-            // return
-            //     array(
-            //         [
-            //             'id' => '0',
-            //             'date' => '',
-            //             'km' => '',
-            //             'total' => '',
-            //             'comment' => ''
-            //         ]
-            //     );
-            // }
         }
     }
 }
 
 
-
 if (isset($_POST['typeInvoice']) && !empty($_POST['typeInvoice'])) {
     $selectInvoice = selectInvoice($db, $_POST['typeInvoice'], $id_car, $router);
-} else {
-    // $selectInvoice = [
-    //     [
-    //         'id' => '',
-    //         'date' => '',
-    //         'km' => '',
-    //         'total' => '',
-    //         'comment' => ''
-    //     ]
-    // ];
-};
+} 

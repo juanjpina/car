@@ -63,6 +63,5 @@ if (
     } else {
         header('Location: ' . $router->generate('invoiceError'));
         die();
-    }
-    // header('Refresh:' . 0.2);
-}; //else fin
+    } 
+}; 
