@@ -1,0 +1,43 @@
+.conta {
+    width: 66%;
+    height: 100%;
+    .deleteInvoice {
+        @include topDiv;
+        @include shadow;
+        width: 100%;
+        height: 250px;
+        border-radius: 28px;
+        background-color: $color-invoice;
+        .column {
+            @media screen and(max-width: 768px) {
+                text-align: center;
+            }
+        }
+    }
+    .response-button {
+        width: 70%;
+        padding-top: 10%;
+        .button {
+            width: 150px;
+            margin-right: 3%;
+            @media screen and (max-width: 768px) {
+                margin: 2% 0;
+            }
+        }
+        .yes {
+            background-color: red;
+            &:hover {
+                opacity: 0.8;
+                background-color: #7d0808;
+            }
+        }
+    }
+    div {
+        margin: 20px 0px;
+        height: 100%;
+        justify-content: space-around;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}

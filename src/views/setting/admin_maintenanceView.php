@@ -1,7 +1,7 @@
 <?php get_header('InvoiceCar', 'admin') ?>
 <section>
     <div class="maintenance">
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class='title'>Le dernier entretien de votre véhicule</h1>
             <h6>Voici les dernières modifications du véhicule</h6>
@@ -38,7 +38,7 @@
             </div>
         <?php } ?>
         <div class='column'>
-            <p class='textTitleInput'>Contrôle techinique</p>
+            <p class='textTitleInput'>Contrôle technique</p>
             <?php foreach ($technical as $te) { ?>
                 <div class='row'>
                     <div class="column inputSpace">

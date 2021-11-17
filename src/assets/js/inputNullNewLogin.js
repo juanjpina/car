@@ -26,12 +26,12 @@ NLpseudo.addEventListener('keyup', () => {
 
 /** email *************************************************/
 let checkMail = (e) => {
-        if (NLform.NLemail.value == 0) {
-            emailMessage.innerHTML = "L'e-mail est vide"
-            e.preventDefault();
-        }
+    if (NLform.NLemail.value == 0) {
+        emailMessage.innerHTML = "L'e-mail est vide"
+        e.preventDefault();
     }
-    // inner.html='' -> checkMail.js 
+}
+// inner.html='' -> checkMail.js 
 
 /** password **********************************************/
 let checkPassword = (e) => {
@@ -72,7 +72,7 @@ NLpassword.addEventListener("keyup", () => {
         validateNumber = true;
     } else {
         validateNumber = false;
-        messageValue = "Il manque un numéro"
+        messageValue = "Il manque un nombre"
     };
     const special = new RegExp("[/!@#\$%\^\&*\)\(+=._-]")
     if (special.test(NLpassword.value)) {

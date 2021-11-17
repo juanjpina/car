@@ -1,7 +1,7 @@
 <?php get_header('white', 'admin'); ?>
 <section>
     <div class='select-car'>
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class="title">Sélectionnez votre véhicule</h1>
         </div>
@@ -19,7 +19,7 @@
 
                     <div>
                         <input type="hidden" name="cars-ok" value='cars-ok'>
-                        <button type='submit' class="button">Seleccionez un véhicule</button>
+                        <button type='submit' class="button">Seleccionnez un véhicule</button>
                     </div>
                 </form>
             </div>
