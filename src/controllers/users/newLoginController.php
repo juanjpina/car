@@ -24,7 +24,7 @@ function searchEmail(PDO $db, AltoRouter $router)
             $response = $request->fetch(PDO::FETCH_ASSOC);
             $request->closeCursor();
             if ($response) {
-                return "L'email existe déjà !!";
+                return "L'e-mail existe déjà !!";
             } else {
                 addUser($db, $router);
             }

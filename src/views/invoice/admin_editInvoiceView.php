@@ -10,7 +10,7 @@
 
             <form action="" method="post">
                 <div class="column">
-                    <h6>Facture</h6>
+                    <h6>Frais</h6>
                     <select name="typeInvoice" class="select">
                         <?php foreach ($typeInvoice as $invo) { ?>
                             <option value="<?= $invo['invoice']; ?>"><?= $invo['type']; ?> </option>

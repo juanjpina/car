@@ -75,7 +75,7 @@ function passwordNew(PDO $db, AltoRouter $router)
             //         $pass .= $used_symbols[$n];
             //     }
             // }
-            $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,\-./:;<=>?@[\]^_`{|}~";
+            $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890\()=/!@#$%*-+";
             $pass = "";
 
             for ($i = 0; $i < 9; $i++) {
