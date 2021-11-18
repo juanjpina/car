@@ -15,13 +15,10 @@ if (isset($_POST['trademark']) && !empty($_POST['trademark'])) {
     ];
 
     try {
-
-
         $sql = 'INSERT INTO car (id_user, trademark, buyDate, buyKm, firstDate, firstKm ) VALUES (:id_user, :trademark, :buyDate, :buyKm, :firstDate, :firstKm)';
         $request1 = $db->prepare($sql);
         $result1 = $request1->execute($data);
         $request1->closeCursor();
-
 
         /**
          * retourne l’identifiant de la nouvelle voiture créée de la table
@@ -37,13 +34,6 @@ if (isset($_POST['trademark']) && !empty($_POST['trademark'])) {
         for ($i = count($result2) - 1; $i < count($result2); $i++) {
             $id_car = $result2[$i]['id_car'];
         }
-
-
-        // $data = [
-        //     ':id_car' => (int)$id_car,
-        //     ':date' => date('Y-m-d H:i:s'),
-        //     ':km' => 0
-        // ];
 
         $data = [
             ':id_car' => (int)$id_car
@@ -71,7 +61,7 @@ if (isset($_POST['trademark']) && !empty($_POST['trademark'])) {
             'id_car' => (int)$result[0]['id_car'],
             'trademark' => $result[0]['trademark'],
         ];
-        header('Location: ' . $router->generate('white'));
+        header('Location: ' . $router->generate('executionCar'));
         die();
     } catch (Exception $e) {
         header('Location: ' . $router->generate('executionError'));

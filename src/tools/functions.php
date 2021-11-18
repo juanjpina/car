@@ -73,13 +73,16 @@ function redirectAdmin(AltoRouter $router)
 function password($pass)
 {
 
-	if (strlen($pass) < 10) {
+	if (strlen($pass) < 9) {
 		return false;
 	}
 	if (strlen($pass) > 16) {
 		return false;
 	}
-	if (preg_match('@[a-zA-Z0-9[/!@#\$%\^\&*\)\(+=._-]]@', $pass) == 0) {
+	if (preg_match('@[a-zA-Z0-9]@', $pass) == 0) {
+		return false;
+	}
+	if (preg_match('@[!"#$%&*-+()]@', $pass) == 0) {
 		return false;
 	}
 	return true;

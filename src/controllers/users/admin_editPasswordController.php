@@ -3,28 +3,28 @@
 /**
  * retrieves user information
  */
-function searchEmail(PDO $db, AltoRouter $router)
-{
-    try {
-        $data = [
-            'id_user' => $_SESSION['auth']['id_user']
-        ];
-        $sql = 'SELECT nickname, email FROM user where id_user= :id_user';
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        return $result;
-    } catch (Exception $e) {
-        header('Location: ' . $router->generate('executionError'));
-        die();
-    } catch (PDOException $e) {
-        header('Location: ' . $router->generate('executionError'));
-        die();
-    } finally {
-        $sql = null;
-    }
-}
+// function searchEmail(PDO $db, AltoRouter $router)
+// {
+//     try {
+//         $data = [
+//             'id_user' => $_SESSION['auth']['id_user']
+//         ];
+//         $sql = 'SELECT nickname, email FROM user where id_user= :id_user';
+//         $request = $db->prepare($sql);
+//         $request->execute($data);
+//         $result = $request->fetchAll(PDO::FETCH_ASSOC);
+//         $request->closeCursor();
+//         return $result;
+//     } catch (Exception $e) {
+//         header('Location: ' . $router->generate('executionError'));
+//         die();
+//     } catch (PDOException $e) {
+//         header('Location: ' . $router->generate('executionError'));
+//         die();
+//     } finally {
+//         $sql = null;
+//     }
+// }
 
 
 /**

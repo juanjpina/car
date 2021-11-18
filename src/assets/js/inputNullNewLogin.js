@@ -1,7 +1,6 @@
 /**
- * verification of empty fields in new login
+ * verification of empty fields in new user - login
  */
-
 
 document.NLform.NLpseudo.focus();
 let NLpseudo = document.getElementById("NLpseudo");
@@ -31,7 +30,6 @@ let checkMail = (e) => {
         e.preventDefault();
     }
 }
-// inner.html='' -> checkMail.js 
 
 /** password **********************************************/
 let checkPassword = (e) => {

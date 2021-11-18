@@ -1,3 +1,7 @@
+/**
+ * moves the icons - login
+ */
+
 let i1 = document.getElementById("image1");
 
 let turnAngle = 180;
