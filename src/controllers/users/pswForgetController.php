@@ -78,7 +78,7 @@ function passwordNew(PDO $db, AltoRouter $router)
             $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!#$%&'()*+,\-./:;<=>?@[\]^_`{|}~";
             $pass = "";
 
-            for ($i = 0; $i < 10; $i++) {
+            for ($i = 0; $i < 9; $i++) {
 
                 $pass .= substr($str, rand(0, 94), 1);
             }

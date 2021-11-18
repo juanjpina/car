@@ -26,15 +26,11 @@ if (isset($id_car)) {
     }
 
     if ($result) {
-
-
-
         $kmStart = (int)$result[0]['km'];
         $kmTotal = (int)$result[0]['totalkm'];
         $totalCost = (int)$result[0]['totalcost'];
 
         if ($kmStart === 0 || $kmTotal === 0 || $totalCost === 0) {
-
             $resultKm = 0;
             $resultCost = 0;
         } else {

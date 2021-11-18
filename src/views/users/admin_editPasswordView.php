@@ -17,12 +17,8 @@
                 </div>
                 <div>
                     <div class="column">
-                        <!-- <?php $resul = egalPass('password', 'confirmerPassword') ?> -->
-                        <!-- <?php $error = checkField('confirmerPassword', 'Votre mot de passe est vide.'); ?> -->
                         <label for="password">Confirmez votre mot de passe</label>
-                        <input id="mcConfPass" type="password" maxlength="16" class="input password<?= $error['class']; ?>" name="confirmerPassword" value="">
-                        <!-- <p class="message"><?= $error['message']; ?> </p> -->
-                        <!-- <p class="message"><?= $resul['message']; ?></p> -->
+                        <input id="mcConfPass" type="password" maxlength="16" class="input password>" name="confirmerPassword" value="">
                     </div>
                 </div>
                 <div>

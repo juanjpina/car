@@ -123,14 +123,6 @@ if (isset($id_car)) {
                         header('Location: ' . $router->generate('executionError'));
                         die();
                     }
-
-
-
-
-
-
-
-
                     // return ([
                     //     'date' => '2021-01-01',
                     //     'km' => '0'

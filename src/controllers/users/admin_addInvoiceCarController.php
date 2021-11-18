@@ -59,7 +59,7 @@ function updateCar(PDO $db, AltoRouter $router, $id_car)
                 $sql = 'UPDATE car SET buykm=:buykm WHERE id_car=:id_car';
                 $request = $db->prepare($sql);
                 $request->execute($data);
-                // $request->closeCursor();
+                $request->closeCursor();
             }
             if (isset($_POST['firstdate'])) {
                 $data = [

@@ -8,7 +8,7 @@
 function lengthPseudo($pseudo)
 {
 	if (!empty($_POST[$pseudo])) {
-		if (strlen($_POST[$pseudo]) > 10) {
+		if (strlen($_POST[$pseudo]) > 9) {
 			return "Le pseudo ne doit pas avoir plus de 10 caractères";
 		}
 	}
@@ -82,7 +82,7 @@ function password($pass)
 	if (preg_match('@[a-zA-Z0-9]@', $pass) == 0) {
 		return false;
 	}
-	if (preg_match('@[!"#$%&*-+()]@', $pass) == 0) {
+	if (preg_match('@[/\\(\\)\\=\\/\\!\\@\\#\\$\\%\\*\\-\\+\\/]@', $pass) == 0) {
 		return false;
 	}
 	return true;

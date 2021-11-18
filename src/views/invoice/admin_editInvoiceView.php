@@ -1,7 +1,7 @@
 <?php get_header('invoice add', 'admin'); ?>
 <section>
     <div class="editInvoice">
-    <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
+        <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class='title'>Modifier ou annuler les frais</h1>
             <h6>Vous pouvez modifier ou annuler les données sauvegardées précédemment</h6>
@@ -26,7 +26,7 @@
             <?php if (isset($selectInvoice) && !empty($selectInvoice)) {
                 if (is_array($selectInvoice)) { ?>
                     <div class="column">
-                        <h6>Liste des Factures</h6>
+                        <h6>Liste des frais</h6>
                     </div>
                     <table>
                         <thead>
@@ -34,7 +34,7 @@
                                 <th>Date</th>
                                 <th>Km</th>
                                 <th>Total</th>
-                                <th>Comment</th>
+                                <th>Commentaires</th>
                             </tr>
                         </thead>
                         <?php foreach ($selectInvoice as $invoice) { ?>

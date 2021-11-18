@@ -3,7 +3,7 @@
     <div class='modifiInvoici'>
         <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class='subModifi column'>
-            <h1 class='title'>Modifier les factures</h1>
+            <h1 class='title'>Modifier les frais</h1>
             <form action="" method="post">
                 <?php foreach ($getInvoice as $get) { ?>
                     <ul>

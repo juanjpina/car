@@ -37,7 +37,7 @@ mcPass.addEventListener("keyup", () => {
         validateNumber = false;
         messageValue = "Il manque un nombre"
     };
-    const special = new RegExp("[/!@#\$%\^\&*\)\(+=._-]")
+    const special = new RegExp("[\()=/!@#$%*-+]")
     if (special.test(mcPass.value)) {
         validateSpecial = true;
     } else {

@@ -72,14 +72,14 @@ NLpassword.addEventListener("keyup", () => {
         validateNumber = false;
         messageValue = "Il manque un nombre"
     };
-    const special = new RegExp("[/!@#\$%\^\&*\)\(+=._-]")
+    const special = new RegExp("[\()=/!@#$%*-+]")
     if (special.test(NLpassword.value)) {
         validateSpecial = true;
     } else {
         validateSpecial = false;
         messageValue = "Il manque un caractère spéciaux"
     };
-    if (NLpassword.value.length > 10) {
+    if (NLpassword.value.length > 9) {
         validateLength = true;
     } else {
         messageValue = "Il doit contenir au moins 10 caractères"

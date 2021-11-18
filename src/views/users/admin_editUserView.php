@@ -21,7 +21,7 @@
                         <?php $error = checkField('email', 'Votre e-mail est vide.'); ?>
 
                         <?php $mail = checkEmail('email'); ?>
-                        <label for="email">Votre email</label>
+                        <label for="email">Votre e-mail</label>
                         <input type="email" id="mcEmail" name="email" placeholder="<?= $res['email'] ?>">
                         <p class="message"> <?= $error['message']; ?> </p>
                         <p class="message"> <?= $mail['message']; ?> </p>

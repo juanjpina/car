@@ -23,9 +23,9 @@
                         function drawChart() {
                             var data = google.visualization.arrayToDataTable([
                                 ['Task', 'Hours per Day'],
-                                ['Peaje', <?= $invtollStart ?>],
+                                ['Péage', <?= $invtollStart ?>],
                                 ['Carburant', <?= $invfuelStart ?>],
-                                ['Vidance', <?= $invoilStart ?>],
+                                ['Vidange', <?= $invoilStart ?>],
                                 ['Courroie de distribution', <?= $invtimingStart ?>],
                                 ['Assurance', <?= $invinsuranceStart ?>],
                                 ['Pneu', <?= $invpneuStart ?>],
@@ -52,9 +52,9 @@
                         function drawChart() {
                             var data = google.visualization.arrayToDataTable([
                                 ['Task', 'Hours per Day'],
-                                ['Peaje', <?= $invtollEnd ?>],
+                                ['Péage', <?= $invtollEnd ?>],
                                 ['Carburant', <?= $invfuelEnd ?>],
-                                ['Vidance', <?= $invoilEnd ?>],
+                                ['Vidange', <?= $invoilEnd ?>],
                                 ['Courroie de distribution', <?= $invtimingEnd ?>],
                                 ['Assurance', <?= $invinsuranceEnd ?>],
                                 ['Pneu', <?= $invpneuEnd ?>],
