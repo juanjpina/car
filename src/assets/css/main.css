@@ -495,10 +495,10 @@ footer li div a {
 }
 @media screen and (min-width: 480px) and (max-width: 780px) {
   .menu-login .newLogin .mail {
-    margin-bottom: 10%;
+    margin-bottom: 15%;
   }
   .menu-login .newLogin .password {
-    margin-bottom: 10%;
+    margin-bottom: 15%;
   }
   .menu-login .newLogin .column .as {
     width: 90%;
@@ -1602,6 +1602,12 @@ section .alerts div {
   font-size: 0.9em;
   color: red;
 }
+@media screen and (max-width: 768px) {
+  .user div .message {
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+}
 .user div .button {
   margin-top: 30px;
 }
@@ -2419,6 +2425,9 @@ section .pswforget div {
 @media screen and (max-width: 768px) {
   .help .banner .row {
     margin: 2% 1%;
+  }
+  .help .banner .row p {
+    font-size: 0.7em;
   }
 }
 .help .banner .row .text {

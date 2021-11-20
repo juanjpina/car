@@ -84,7 +84,7 @@ NLpassword.addEventListener("keyup", () => {
     } else {
         messageValue = "Il doit contenir au moins 10 caractères"
     }
-    if (NLpassword.value.length < 16) {
+    if (NLpassword.value.length < 17) {
         validateMax = true;
     } else {
         messageValue = "Il doit contenir au maximum 16 caractères"

@@ -1,0 +1,41 @@
+section {
+    .pswforget {
+        background-color: $color-alert;
+        border-radius: 28px;
+        margin: 200px 0px 0px 0px;
+        width: 55%;
+        @include shadow;
+        label {
+            margin-top: 2%;
+        }
+        p {
+            text-align: center;
+            margin-top: 1%;
+        }
+        input {
+            width: 60%;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 200px 0px 0px 0px;
+            width: 100%;
+        }
+        form {
+            div {
+                margin: 20px 0px;
+            }
+        }
+        div {
+            margin: 20px 0px;
+        }
+        @media only screen and (max-width: 768px) {
+            padding: 10px 10px;
+            div {
+                margin: 10px 0px;
+            }
+            p {
+                font-size: 0.8em;
+                text-align: center;
+            }
+        }
+    }
+}

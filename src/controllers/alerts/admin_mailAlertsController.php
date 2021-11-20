@@ -6,49 +6,6 @@ $headers .= "Content_type: text/html charset=iso-8859-1\r\n";
 $headers .= "From: Agenda voiture <juanjpina@gmail.com>\r\n";
 
 
-/**
- * send an email to warn of the expiration of timming-belt (1 month)
- */
-
-//******* Data base invtiming
-// try {
-//     $sql = "SELECT user.email, user.nickname, car.trademark , invtiming.date FROM invtiming, user, car, setting WHERE  curdate()= DATE_ADD( MAX(invtiming.date), INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)
-//  AND invtiming.id_car = car.id_car AND car.id_user = user.id_user AND setting.id_car = car.id_car";
-//     $request = $db->prepare($sql);
-//     $request->execute();
-//     $request->closeCursor();
-//     $reponseTiming = $request->fetchAll(PDO::FETCH_ASSOC);
-
-//     if (!empty($reponseTiming)) {
-//         emailTiming($reponseTiming, $headers);
-//     } else {
-
-//         //******* Data base car
-//         $sql = "SELECT user.email, user.nickname, car.trademark, car.buyDate FROM setting, car, user WHERE  car.id_user = user.id_user AND setting.id_car = car.id_car AND curdate()= DATE_ADD( car.buyDate, INTERVAL (((setting.timingbeltDate-1)*12)+11) MONTH)";
-//         $request = $db->prepare($sql);
-//         $request->execute();
-//         $request->closeCursor();
-//         $reponseCar = $request->fetchAll(PDO::FETCH_ASSOC);
-//         emailTiming($reponseCar, $headers);
-//     }
-// } catch (Exception $e) {
-//     header('Location: ' . $router->generate('executionError'));
-// } catch (PDOException $e) {
-//     header('Location: ' . $router->generate('executionError'));
-// } finally {
-//     $sql = null;
-// }
-
-// function emailTiming($reponse, $headers)
-// {
-//     foreach ($reponse as $mail) {
-//         $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous averti que dans un mois vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
-//         $sunjet = 'Alerte : Courroie de distribution';
-//         $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-//         dump('courroie', $mails);
-//     }
-// }
-/***************************************************************************************************************************** */
 
 /**
  * send an email to warn of the expiration of technical control
@@ -79,9 +36,9 @@ foreach ($car as $technical) {
             emailTechical($reponseTechnical, $headers);
         }
     } catch (Exception $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } catch (PDOException $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } finally {
         $sql = null;
     }
@@ -94,7 +51,7 @@ function emailTechical($emails, $headers)
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous averti que dans un mois vous devrez passer le contrôle technique de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Alerte: Contrôle technique';
             $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-            // dump($mails);
+            dump($text_mail);
         }
     }
 }
@@ -109,7 +66,7 @@ foreach ($car as $c) {
     $km = 1000;
     try {
         $sql = "SELECT max(km) as km FROM invfuel WHERE invfuel.id_car=:id_car AND km >=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km)  FROM invtiming, setting WHERE setting.id_car=:id_car AND invtiming.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invtechnical WHERE invtechnical.id_car=:id_car AND km>=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km) FROM invtiming, setting WHERE setting.id_car=:id_car AND invtiming.id_car= :id_car) UNION 
+        SELECT max(km) as km FROM invtechnical WHERE invtechnical.id_car=:id_car AND km<=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km) FROM invtiming, setting WHERE setting.id_car=:id_car AND invtiming.id_car= :id_car) UNION 
         SELECT max(km) as km FROM invinsurance WHERE invinsurance.id_car=:id_car AND km>=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km) FROM invtiming, setting WHERE setting.id_car=:id_car AND invtiming.id_car=:id_car) UNION 
         SELECT max(km) as km FROM invoil WHERE invoil.id_car=:id_car AND km>=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km) FROM invtiming,setting WHERE setting.id_car=:id_car AND invtiming.id_car=:id_car) UNION 
         SELECT max(km) as km FROM invpneu WHERE invpneu.id_car=:id_car AND km>=(SELECT (setting.timingbeltKm+max(invtiming.km)-$km) FROM invtiming,setting WHERE setting.id_car=:id_car AND invtiming.id_car=:id_car) UNION 
@@ -135,8 +92,8 @@ foreach ($car as $c) {
             foreach ($reponseC as $mail) {
                 $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
                 $sunjet = 'Alerte : Courroie de distribution';
-                $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-                // dump($mail);
+                // $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+                dump($text_mail);
             }
         }
     } catch (Exception $e) {
@@ -155,12 +112,13 @@ foreach ($car as $c) {
     $km = 1000;
     try {
         $sql = "SELECT max(km) as km FROM invfuel WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km)  FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invtechnical WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car= :id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invinsurance WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invoil WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invpneu WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invtiming WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
-        SELECT max(km) as km FROM invtoll WHERE id_car=:id_car AND km>=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) ORDER BY km DESC LIMIT 1";
+        SELECT max(km) as km FROM invtechnical WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car= :id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invinsurance WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invoil WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invpneu WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invtiming WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) UNION 
+        SELECT max(km) as km FROM invtoll WHERE id_car=:id_car AND km >=(SELECT (setting.oilchanges+max(invoil.km)-$km) FROM invoil, setting WHERE setting.id_car=:id_car AND invoil.id_car=:id_car) ORDER BY km DESC LIMIT 1";
+
 
         $data = [
             ':id_car' => $c['id_car'],
@@ -168,8 +126,9 @@ foreach ($car as $c) {
         $request = $db->prepare($sql);
         $request->execute($data);
         $reponseD = $request->fetchAll(PDO::FETCH_ASSOC);
-        // $request->closeCursor();
-        dump($reponseD);
+        $request->closeCursor();
+
+        // dump($reponseD);
         if ($reponseD[0]['km'] != null) {
             $data = [
                 ':id_car' => $c['id_car'],
@@ -182,8 +141,8 @@ foreach ($car as $c) {
             foreach ($reponseD as $mail) {
                 $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous alerte que dans 1000 km vous devrez faire la vidange à votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
                 $sunjet = 'Vidange';
-                $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-                dump($mail);
+                // $mails = $mail['email'] . $sunjet . $text_mail . $headers;
+                dump('vidange km', $text_mail);
             }
         }
     } catch (Exception $e) {
@@ -222,7 +181,7 @@ foreach ($car as $carId) {
         $request = $db->prepare($sql);
         $request->execute($dataTiming);
         $reponseTiming = $request->fetchAll(PDO::FETCH_ASSOC);
-        // $request->closeCursor();
+        $request->closeCursor();
 
         if (!empty(($reponseTiming))) {
             // dump('1', $reponseTiming);
@@ -244,16 +203,16 @@ foreach ($car as $carId) {
             }
         }
     } catch (Exception $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } catch (PDOException $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } finally {
         $sql = null;
     }
 }
 
 
-function emailTiming(PDO $db, $reponse, $headers)
+function emailTiming(PDO $db, $reponse, $headers, AltoRouter $router)
 {
     try {
         $dataUser = [
@@ -269,12 +228,12 @@ function emailTiming(PDO $db, $reponse, $headers)
             $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' je vous averti que dans un mois vous devrez changer la courroie de distribution de votre véhicule ' . $mail['trademark'] . ' Bien cordialement.';
             $sunjet = 'Alerte : Courroie de distribution';
             $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-            // dump('courroie', $mails);
+            dump('curroie', $text_mail);
         }
     } catch (Exception $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } catch (PDOException $e) {
-        // header('Location: ' . $router->generate('executionError'));
+        header('Location: ' . $router->generate('executionError'));
     } finally {
         $sql = null;
     }

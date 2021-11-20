@@ -27,44 +27,6 @@ function redirectAdmin(AltoRouter $router)
 }
 
 
-// /**
-//  * verifies the count if it meets the proposed conditions * 
-//  * @param string(password)
-//  * @return string
-//  */
-// function messagePassword($pass)
-// {
-// 	if (!empty($_POST[$pass])) {
-// 		dump('45');
-// 		// dump($_POST[$pass]);
-// 		// $pass = $_POST[$pass];
-// 		// if ($pass != null) {
-// 		// 	dump($pass);
-// 		// } else {
-// 		// 	dump('as');
-// 		// }
-
-// 		if (strlen($pass) < 8) {
-// 			return "Le mot de passe doit avoir au moins 8 caractères";
-// 		}
-// 		if (strlen($pass) > 16) {
-// 			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
-// 		}
-// 		if (preg_match('@[a-z]@', $pass) == 0) {
-// 			return "Le mot de passe doit avoir au moins une minuscule";
-// 		}
-// 		if (preg_match('@[A-Z]@', $pass) == 0) {
-// 			return "Le mot de passe doit avoir au moins une majuscule";
-// 		}
-// 		if (preg_match('@[0-9]@', $pass) == 0) {
-// 			return "Le mot de passe doit avoir au moins un caractère numérique";
-// 		}
-// 	}
-// 	// $_POST[$pass] = null;
-// 	// dump($_POST[$pass]);
-// }
-
-
 /**
  * verifies the count if it meets the proposed conditions
  * @param string (password)
@@ -76,7 +38,7 @@ function password($pass)
 	if (strlen($pass) < 9) {
 		return false;
 	}
-	if (strlen($pass) > 16) {
+	if (strlen($pass) > 17) {
 		return false;
 	}
 	if (preg_match('@[a-zA-Z0-9]@', $pass) == 0) {
@@ -477,3 +439,41 @@ function get_footer(string $layout = 'public')
 {
 	require_once ROOT . '/views/layouts/' . $layout . '/footer.php';
 }
+
+
+// /**
+//  * verifies the count if it meets the proposed conditions * 
+//  * @param string(password)
+//  * @return string
+//  */
+// function messagePassword($pass)
+// {
+// 	if (!empty($_POST[$pass])) {
+// 		dump('45');
+// 		// dump($_POST[$pass]);
+// 		// $pass = $_POST[$pass];
+// 		// if ($pass != null) {
+// 		// 	dump($pass);
+// 		// } else {
+// 		// 	dump('as');
+// 		// }
+
+// 		if (strlen($pass) < 8) {
+// 			return "Le mot de passe doit avoir au moins 8 caractères";
+// 		}
+// 		if (strlen($pass) > 16) {
+// 			return "Le mot de passe ne doit pas avoir plus de 16 caractères";
+// 		}
+// 		if (preg_match('@[a-z]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins une minuscule";
+// 		}
+// 		if (preg_match('@[A-Z]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins une majuscule";
+// 		}
+// 		if (preg_match('@[0-9]@', $pass) == 0) {
+// 			return "Le mot de passe doit avoir au moins un caractère numérique";
+// 		}
+// 	}
+// 	// $_POST[$pass] = null;
+// 	// dump($_POST[$pass]);
+// }

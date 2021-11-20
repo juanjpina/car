@@ -49,7 +49,7 @@ mcPass.addEventListener("keyup", () => {
     } else {
         messageValue = "Il doit contenir au moins 10 caractères"
     }
-    if (mcPass.value.length < 16) {
+    if (mcPass.value.length < 17) {
         validateMax = true;
     } else {
         messageValue = "Il doit contenir au maximum 16 caractères"

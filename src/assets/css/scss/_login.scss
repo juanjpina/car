@@ -67,10 +67,10 @@
         }
         @media screen and(min-width:480px) and (max-width: 780px) {
             .mail {
-                margin-bottom: 10%;
+                margin-bottom: 15%;
             }
             .password {
-                margin-bottom: 10%;
+                margin-bottom: 15%;
             }
             .column {
                 .as {
@@ -192,7 +192,8 @@
             text-align: right;
             color: black;
             text-align: center;
-            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 768px) {
+            }
         }
         button {
             display: block;

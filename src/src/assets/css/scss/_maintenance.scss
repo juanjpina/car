@@ -1,0 +1,30 @@
+@import "color";
+.maintenance {
+    background-color: $color-button-header;
+    border-radius: 28px;
+    color: $color-texto;
+    height: 100%;
+    padding-bottom: 3%;
+    width: 66%;
+    @include topDiv;
+    @include shadow;
+    .inputSpace {
+        margin-right: 20px;
+    }
+    div {
+        margin: 5px 0;
+    }
+    .date {
+        margin-right: 20px;
+    }
+    .textTitleInput {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: bold;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 2px;
+    }
+}
