@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agenda Voiture</title>
-    <link rel="shortcut icon" href="/car/src/assets/images/favicon.png">
+    <link rel="shortcut icon" href="/car/src/assets/images/favicon2.png">
     <meta name="description" content="C’est une application web où nous serons en mesure de gérer l’entretien de notre voiture, les dépenses de base, les consommations de carburant, rappels des différents entretien de la voiture, recevoir des e-mails avec les prochaines opérations à réaliser à la voiture.
 ">
     <link rel="preconnect" href="https://fonts.googleapis.com">

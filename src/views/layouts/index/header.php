@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agenda voiture</title>
-    <link rel="shortcut icon" href="/car/src/assets/images/favicon.png">
+    <link rel="shortcut icon" href="/car/src/assets/images/favicon2.png">
     <meta name="description" content="C’est une application web où nous serons en mesure de gérer l’entretien de notre voiture, les dépenses de base, les consommations de carburant, rappels des différents entretien de la voiture, recevoir des e-mails avec les prochaines opérations à réaliser à la voiture.
 ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
             .card-box {
                 width: 90px;
                 height: 150px;
-                margin:0 1em;
+                margin: 0 1em;
             }
 
             img {
@@ -67,7 +67,7 @@
 
 <body>
     <header class="header">
-        <nav class="index" >
+        <nav class="index">
             <div class="row">
                 <div class="logo column">
                     <a href="#"><img class="logos" src="/car/src/assets/images/car2.png" width="200" height="90" alt="Agenda voiture"></a>

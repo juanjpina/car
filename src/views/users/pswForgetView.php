@@ -15,7 +15,7 @@
                 <button class="button" type="submit">Envoyer</button>
             </div>
         </form>
-        <!-- <p><?= $value; ?></p> -->
+        <p><?= $value; ?></p>
         <div>
             <a href="<?= $router->generate('login'); ?>">
                 <div class="button">

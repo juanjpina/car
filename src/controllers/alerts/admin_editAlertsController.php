@@ -145,7 +145,7 @@ function getTimingDate(PDO $db, AltoRouter $router)
             $data = [
                 'id_car' => $_SESSION['car']['id_car'],
             ];
-            $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL 4 YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
+            $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL setting.timingbeltDate YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
             AND invtiming.id_car = :id_car AND setting.id_car = :id_car ORDER BY date DESC LIMIT 1";
             // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
             $request = $db->prepare($sql);
