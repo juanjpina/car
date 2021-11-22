@@ -3,9 +3,9 @@
     <div class="wraper">
         <div class="containerMain">
             <div class="container">
-                <div class="card-box" >
+                <div class="card-box">
                     <div class="card" id="image1">
-                        <div class="front" >
+                        <div class="front">
                             <img src="/car/src/assets/images/index_alert.png" width="150px" height="200px" alt="">
                         </div>
                         <div class="front back" id='image2'>
@@ -17,9 +17,9 @@
                     <div class="card">
                         <div class="front">
                             <img src="/car/src/assets/images/statistics_index.png" width="150px" height="200px" alt="">
-                            </div>
-                            <div class="front back">
-                                <img src="/car/src/assets/images/text_statistics.png" width="150px" height="200px">
+                        </div>
+                        <div class="front back">
+                            <img src="/car/src/assets/images/text_statistics.png" width="150px" height="200px">
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-box" >
+                <div class="card-box">
                     <div class="card" id="image6">
                         <div class="front">
                             <img src="/car/src/assets/images/frais.png" width="150px" height="200px" alt="">

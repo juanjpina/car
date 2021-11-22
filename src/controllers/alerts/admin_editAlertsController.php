@@ -20,7 +20,6 @@ function getControl(PDO $db, AltoRouter $router)
                 'id_car' => $_SESSION['car']['id_car'],
             ];
             $sql = "SELECT (DATE_ADD(MAX(invtechnical.date), INTERVAL 2 year)) as datetechnical FROM car, invtechnical WHERE invtechnical.id_car= :id_car AND curdate() <= DATE_ADD((invtechnical.date), INTERVAL 2 year)";
-            // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $resultTechnical = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -29,7 +28,6 @@ function getControl(PDO $db, AltoRouter $router)
                 return $resultTechnical;
             } else {
                 $sql = "SELECT DATE_ADD(car.firstdate, INTERVAL 4 year) as datetechnical FROM car WHERE curdate() <= DATE_ADD(car.firstdate, INTERVAL 4 year) AND car.id_car = :id_car";
-                // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $resultCar = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -147,7 +145,6 @@ function getTimingDate(PDO $db, AltoRouter $router)
             ];
             $sql = "SELECT (DATE_ADD( MAX(invtiming.date), INTERVAL setting.timingbeltDate YEAR)) as dates FROM invtiming, car, setting WHERE curdate() <= DATE_ADD( invtiming.date, INTERVAL (setting.timingbeltDate) YEAR)
             AND invtiming.id_car = :id_car AND setting.id_car = :id_car ORDER BY date DESC LIMIT 1";
-            // $sql = 'SELECT DATE_ADD(date, INTERVAL 4 year) as datetechnical FROM invtechnical WHERE invtechnical.id_car = :id_car ORDER BY date DESC LIMIT 1';
             $request = $db->prepare($sql);
             $request->execute($data);
             $resultTiming = $request->fetchAll(PDO::FETCH_ASSOC);
@@ -157,7 +154,6 @@ function getTimingDate(PDO $db, AltoRouter $router)
             } else {
                 $sql = "SELECT (DATE_ADD( (car.firstdate), INTERVAL (setting.timingbeltDate) YEAR)) as dates FROM car, setting WHERE curdate() <= DATE_ADD( car.firstdate, INTERVAL (setting.timingbeltDate) YEAR)
                 AND car.id_car = :id_car AND setting.id_car = :id_car";
-                // $sql = 'SELECT DATE_ADD(buyDate, INTERVAL 4 year) as datetechnical FROM car WHERE car.id_car = :id_car ORDER BY buyDate DESC LIMIT 1';
                 $request = $db->prepare($sql);
                 $request->execute($data);
                 $resultCar = $request->fetchAll(PDO::FETCH_ASSOC);
