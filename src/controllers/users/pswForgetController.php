@@ -45,7 +45,7 @@ function passwordNew(PDO $db, AltoRouter $router)
 
             for ($i = 0; $i < 10; $i++) {
 
-                $pass .= substr($str, rand(0,75), 1);
+                $pass .= substr($str, rand(0, 75), 1);
             }
             //dump($pass);
 
@@ -76,10 +76,10 @@ function passwordNew(PDO $db, AltoRouter $router)
             } finally {
                 $sql = null;
             }
+
             /**
              * send an email with the password
              */
-
             $newReponse = getUser($db, $reponse[0]['id_user']);
             if ($newReponse) {
                 //dump('re', $newReponse);
@@ -101,5 +101,5 @@ $value = passwordNew($db, $router);
 ?>
 
 <script>
-console.log('<?= $pass?>');
-    </script>
+    console.log('<?= $pass ?>');
+</script>
