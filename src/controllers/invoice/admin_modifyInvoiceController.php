@@ -22,7 +22,7 @@ function invoiceUpdate(PDO $db, AltoRouter $router)
                     ':date'  => $_POST['date'],
                     ':km' =>  (int)$_POST['km'],
                     ':total' =>  (int)$_POST['total'],
-                    ':comment' => !empty($_POST['comment']) ? $_POST['comment'] : ' ',
+                    ':comment' => !empty(htmlspecialchars($_POST['comment'], ENT_QUOTES, "UTF-8")) ? htmlspecialchars($_POST['comment'], ENT_QUOTES, "UTF-8") : ' ',
                 ];
                 $sql = "UPDATE $dataBase SET date= :date, km= :km, total= :total, comment= :comment WHERE id= :id";
                 $request = $db->prepare($sql);
