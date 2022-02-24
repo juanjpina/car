@@ -1,35 +1,38 @@
 <?php get_header('home', 'index'); ?>
 <section>
     <div class="wraper">
+        <div class="text">
+            <p>Bienvenue à agenda voiture. Ici vous pourrez gérer vos véhicules. Vous pouvez ajouter ou supprimer des véhicules de votre liste comme vous le souhaitez. Pour que vous compreniez mieux, vous pourrez visualiser les dernières interventions réalisées sur votre (ou vos si vous en possédez plusieurs) véhicule, mais aussi celles qui sont à venir. Mais pas seulement, vous pourrez aussi observer vos dépenses annuelles et les comparer aux années précédentes. Il suffira de remplir régulièrement les informations nécessaires, telles que les frais d’entretien, les factures, le kilométrage, etc.</p>
+        </div>
         <div class="containerMain">
             <div class="container">
                 <div class="card-box">
                     <div class="card" id="image1">
                         <div class="front">
-                            <img src="/car/src/assets/images/index_alert.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/index_alert.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back" id='image2'>
-                            <img src="/car/src/assets/images/text_alerts.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_alerts.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/statistics_index.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/statistics_index.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/text_statistics.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_statistics.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/history_index.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/history_index.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/text_history.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_history.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
@@ -38,34 +41,37 @@
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/invoice_index.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/invoice_index.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/text_invoice.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_invoice.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
                 <div class="card-box">
                     <div class="card">
                         <div class="front">
-                            <img src="/car/src/assets/images/index_car.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/index_car.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/text_car.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_car.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
                 <div class="card-box">
                     <div class="card" id="image6">
                         <div class="front">
-                            <img src="/car/src/assets/images/frais.png" width="150px" height="200px" alt="">
+                            <img src="/car/src/assets/images/frais.png" width="100px" height="133px" alt="">
                         </div>
                         <div class="front back">
-                            <img src="/car/src/assets/images/text_value.png" width="150px" height="200px">
+                            <img src="/car/src/assets/images/text_value.png" width="100px" height="133px">
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+            <img src="src/assets/images/invoice.png" height="249px" width="284px" alt="">
         </div>
     </div>
 </section>

@@ -61,48 +61,124 @@
 	<main>
 		<nav>
 			<div class="sidebarAdmin">
-				<ul class="list">
+				<ul>
+					<p>Rappel</p>
 					<li>
 						<a href="<?= $router->generate('editalerts'); ?>">
 							<div class="column b-alert border">
-								<img src="/car/src/assets/images/alerts.png" width="50" height="50" alt="rappel">
-								<p>Rappel</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="<?= $router->generate('menustatistics'); ?>">
-							<div class="column b-statistic border">
-								<img src="/car/src/assets/images/statistic.png" width="50" height="50" alt="statistique">
-								<p>Statistique</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="<?= $router->generate('addInvoiceMenu'); ?>">
-							<div class="column b-invoice border">
-								<img src="/car/src/assets/images/facture3.png" width="50" height="50" alt="frais">
-								<p>Frais</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="<?= $router->generate('addhistory'); ?>">
-							<div class="column b-history border">
-								<img src="/car/src/assets/images/history.png" width="50" height="50" alt="historique">
-								<p>Historique</p>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="<?= $router->generate('settingmenu'); ?>">
-							<div class="column b-setting border">
-								<img src="/car/src/assets/images/carAdmin.png" width="50" height="50" alt="véhicule">
-								<p>Véhicule</p>
+								<img src="/car/src/assets/images/alerts.png" width="25" height="25" alt="rappel" title="Rappel	">
 							</div>
 						</a>
 					</li>
 				</ul>
+				<ul>
+					<p>Statistique</p>
+					<li>
+						<a href="<?= $router->generate('addstatistics'); ?>">
+							<div class="column b-statistic border">
+								<img src="/car/src/assets/images/calendar.png" width="25" height="25" alt="periodes" title="Périodes">
+							</div>
+						</a>
+
+					</li>
+					<li>
+						<a href="<?= $router->generate('menugraphics'); ?>">
+							<div class="column b-statistic border">
+								<img src="/car/src/assets/images/statistic.png" width="25" height="25" alt="graphiques" title="Graphiques">
+							</div>
+						</a>
+
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="<?= $router->generate('menutotalstatistics'); ?>">
+							<div class="column b-statistic border">
+								<img src="/car/src/assets/images/sums.png" width="25" height="25" alt="sommes" title="Sommes">
+							</div>
+						</a>
+
+					</li>
+					<li>
+						<a href="<?= $router->generate('fuelstatistics'); ?>">
+							<div class="column b-statistic border">
+								<img src="/car/src/assets/images/fuel.png" width="25" height="25" alt="fuel" title="Carburant">
+							</div>
+						</a>
+
+					</li>
+				</ul>
+				<ul>
+					<p>Frais</p>
+					<li>
+						<a href="<?= $router->generate('addInvoice'); ?>">
+							<div class="column b-invoice border">
+								<img src="/car/src/assets/images/facture3.png" width="25" height="25" alt="ajouter" title="Ajouter">
+							</div>
+						</a>
+					</li>
+					<li>
+
+						<a href="<?= $router->generate('editInvoice'); ?>">
+							<div class="column b-invoice border">
+								<img src="/car/src/assets/images/edit.png" width="25" height="25" alt="modifier" title="Modifier">
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+
+					<p>Historique</p>
+					<li>
+						<a href="<?= $router->generate('addhistory'); ?>">
+							<div class="column b-history border">
+								<img src="/car/src/assets/images/history.png" width="25" height="25" alt="historique" title="Historique">
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<p>Véhicule</p>
+					<li>
+						<a href="<?= $router->generate('addnewcar'); ?>">
+							<div class="column b-setting border">
+								<img src="/car/src/assets/images/newCar.png" width="25" height="25" alt="ajouter" title="Ajouter">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="<?= $router->generate('maintenance'); ?>">
+							<div class="column b-setting border">
+								<img src="/car/src/assets/images/motor2.png" width="25" height="25" alt="entretien" title="Entretien">
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="<?= $router->generate('editstacar'); ?>">
+							<div class="column b-setting border">
+								<img src="/car/src/assets/images/statistic.png" width="25" height="25" alt="parameteres" title="Paramètres">
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="<?= $router->generate('selectcar'); ?>">
+							<div class="column b-setting border">
+								<img src="/car/src/assets/images/car.png" width="25" height="25" alt="selectionner" title="Sélectionner">
+							</div>
+						</a>
+					</li>
+					<ul class="submenu">
+						<li>
+							<a href="<?= $router->generate('fuel'); ?>">
+								<div class="column b-setting border">
+									<img src="/car/src/assets/images/fuel.png" width="25" height="25" alt="carburant" title="Carburant">
+								</div>
+							</a>
+						</li>
+					</ul>
+
 			</div>
 			<?= alertDisplay(); ?>
 		</nav>

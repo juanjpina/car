@@ -824,7 +824,7 @@ nav {
 nav .sidebarAdmin {
   float: left;
   padding-right: 50px;
-  margin-top: 220px;
+  margin-top: 180px;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
@@ -834,54 +834,61 @@ nav .sidebarAdmin {
     padding: 0 1%;
   }
 }
-nav .sidebarAdmin ul {
-  width: 100%;
+nav .sidebarAdmin .submenu {
+  padding-top: 10px;
 }
-nav .sidebarAdmin li {
-  margin-top: 20px;
-  width: 100%;
+nav .sidebarAdmin ul {
+  margin-bottom: 15px;
+}
+nav .sidebarAdmin ul p {
+  color: black;
+  padding-bottom: 2px;
+}
+nav .sidebarAdmin ul li {
+  display: inline-block;
 }
 @media only screen and (max-width: 768px) {
-  nav .sidebarAdmin li .column .column {
+  nav .sidebarAdmin ul li .column .column {
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: center;
   }
 }
-nav .sidebarAdmin li .border {
+nav .sidebarAdmin ul li .border {
   filter: drop-shadow(2px 5px 15px -2px #b4b2ba);
   box-shadow: 2px 5px 15px -2px #b4b2ba;
-  border-radius: 15px;
+  border-radius: 7px;
   color: #f2f2f2;
   justify-content: stretch;
-  padding: 20px;
-  width: 100%;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
 }
-nav .sidebarAdmin li .border img {
+nav .sidebarAdmin ul li .border img {
   margin-bottom: 5px;
 }
-nav .sidebarAdmin li .border:hover {
+nav .sidebarAdmin ul li .border:hover {
   background-color: #d9bd30;
   opacity: 0.5;
   transition: all 600ms ease;
 }
-nav .sidebarAdmin li .border:active {
+nav .sidebarAdmin ul li .border:active {
   background-color: #d94625;
   color: #d94625;
   opacity: 1;
 }
 @media only screen and (max-width: 768px) {
-  nav .sidebarAdmin li .border {
+  nav .sidebarAdmin ul li .border {
     width: 100%;
     height: 70px;
     padding: 10px 1px 0px 1px;
     margin-top: 0px;
   }
-  nav .sidebarAdmin li .border img {
+  nav .sidebarAdmin ul li .border img {
     width: 25px;
     height: 25px;
   }
-  nav .sidebarAdmin li .border p {
+  nav .sidebarAdmin ul li .border p {
     font-size: 0.8em;
   }
 }
@@ -2179,18 +2186,26 @@ section .pswforget div {
   }
 }
 .form-signin .wraper {
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.form-signin .wraper .text {
+  padding: 0 20%;
+}
+.form-signin .wraper .text p {
+  color: black;
+  text-align: justify;
+  line-height: 1.3em;
+}
 .form-signin .wraper .containerMain {
-  margin-top: 10em;
+  margin-top: 6em;
 }
 .form-signin .wraper .containerMain .container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 1.2em;
 }
 
 .header .conextion {

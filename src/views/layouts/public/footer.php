@@ -12,7 +12,7 @@
 			<li>
 				<div>
 					<p>
-						mention légale
+						Mention légale
 					</p>
 				</div>
 			</li>

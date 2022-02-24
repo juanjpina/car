@@ -14,11 +14,11 @@
     <link rel="stylesheet" href=" src/assets/css/main.css">
     <style>
         .card-box {
-            width: 150px;
-            height: 200px;
+            width: 100px;
+            height: 133px;
             position: relative;
             perspective: 1000px;
-            margin: 0 2em;
+            margin: 0.2em 2em;
         }
 
         @media only screen and (max-width:768px) {

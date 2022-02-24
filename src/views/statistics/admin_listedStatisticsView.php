@@ -10,7 +10,7 @@
         <div class='column'>
             <table>
                 <tr>
-                    <th>Peaje</th>
+                    <th>Péage</th>
                     <th>Carburant</th>
                     <th>Assurance</th>
                     <th>Vidange</th>

@@ -90,59 +90,69 @@ nav {
     .sidebarAdmin {
         float: left;
         padding-right: 50px;
-        margin-top: 220px;
+        margin-top: 180px;
         width: 100%;
+
         @media screen and (max-width: 768px) {
             margin-top: 150px;
             margin-left: 0px;
             padding: 0 1%;
         }
-        ul {
-            width: 100%;
+        .submenu {
+            padding-top: 10px;
         }
-        li {
-            .column {
-                @media only screen and (max-width: 768px) {
-                    .column {
-                        align-items: flex-start;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                    }
-                }
+        ul {
+            p {
+                color: black;
+                padding-bottom: 2px;
             }
-            margin-top: 20px;
-            width: 100%;
-            .border {
-                @include shadow;
-                border-radius: 15px;
-                color: $color-texto;
-                justify-content: stretch;
-                padding: 20px;
-                width: 100%;
-                img {
-                    margin-bottom: 5px;
-                }
-                &:hover {
-                    background-color: $color-alert;
-                    opacity: 0.5;
-                    transition: all 600ms ease;
-                }
-                &:active {
-                    background-color: $color-history;
-                    color: $color-history;
-                    opacity: 1;
-                }
-                @media only screen and (max-width: 768px) {
-                    width: 100%;
-                    height: 70px;
-                    padding: 10px 1px 0px 1px;
-                    margin-top: 0px;
-                    img {
-                        width: 25px;
-                        height: 25px;
+            margin-bottom: 15px;
+            li {
+                display: inline-block;
+                .column {
+                    @media only screen and (max-width: 768px) {
+                        .column {
+                            align-items: flex-start;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                        }
                     }
-                    p {
-                        font-size: 0.8em;
+                }
+                // margin-top: 0px;
+                // width: ;
+                .border {
+                    @include shadow;
+                    border-radius: 7px;
+                    color: $color-texto;
+                    justify-content: stretch;
+                    padding: 7px;
+                    width: 40px;
+                    height: 40px;
+                    img {
+                        margin-bottom: 5px;
+                    }
+                    &:hover {
+                        background-color: $color-alert;
+                        opacity: 0.5;
+                        transition: all 600ms ease;
+                    }
+                    &:active {
+                        background-color: $color-history;
+                        color: $color-history;
+                        opacity: 1;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        width: 100%;
+                        height: 70px;
+                        padding: 10px 1px 0px 1px;
+                        margin-top: 0px;
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                        p {
+                            font-size: 0.8em;
+                        }
                     }
                 }
             }
