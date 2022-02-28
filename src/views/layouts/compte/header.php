@@ -97,9 +97,17 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?= $router->generate('favorite'); ?>">
+                            <div class="b-alert">
+                                <img src="/car/src/assets/images/preCar.png" width="30" height="30" alt="voiture preferee">
+                                <p>Ma voiture préférée</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?= $router->generate('executionHelp'); ?>">
                             <div class="b-alert">
-                                <img src="/car/src/assets/images/help.png" width="30" height="30" alt="mot de passe">
+                                <img src="/car/src/assets/images/help.png" width="30" height="30" alt="aide">
                                 <p>Aide</p>
                             </div>
                         </a>

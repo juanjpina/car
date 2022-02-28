@@ -51,3 +51,4 @@ $router->map('GET|POST', '/admin/setting/maintenance', 'setting/admin_maintenanc
 $router->map('GET|POST', '/admin/setting/editsta', 'setting/admin_editStatisticsCar', 'editstacar');
 $router->map('GET|POST', '/admin/setting/selectcar', 'setting/admin_selectCar', 'selectcar');
 $router->map('GET|POST', '/admin/setting/fuel', 'setting/admin_fuel', 'fuel');
+$router->map('GET|POST', '/admin/users/favorite', 'users/admin_favoriteCar', 'favorite');
