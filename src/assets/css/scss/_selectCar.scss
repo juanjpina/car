@@ -16,6 +16,11 @@
         }
     }
     .row {
+        .favorite {
+            p {
+                margin-bottom: 35px;
+            }
+        }
         justify-content: space-around;
         div {
             margin: 20px 0px;

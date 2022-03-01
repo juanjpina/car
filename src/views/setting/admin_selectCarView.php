@@ -23,8 +23,14 @@
                     </div>
                 </form>
             </div>
-            <div>
-                <p>La voiture préférée</p>
+            <div class='favorite'>
+
+                <div>
+
+                    <p>La voiture préférée</p>
+                    <p><?php echo $trademark; ?></p>
+
+                </div>
             </div>
         </div>
     </div>
