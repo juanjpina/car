@@ -4,6 +4,7 @@
         <a class="closed" href="<?= $router->generate('white') ?>"><img src="/car/src/assets/images/closed.png" width="25" height="25" title="Fermer" alt="Fermer"></a>
         <div class="column">
             <h1 class="title">Ma voiture préféree</h1>
+            <h2><?php echo $trademark; ?></h2>
         </div>
         <div class="column ">
             <form action="" method="post">

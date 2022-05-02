@@ -70,9 +70,6 @@
                 </div>
             </div>
         </div>
-        <div>
-            <img src="src/assets/images/invoice.png" height="249px" width="284px" alt="">
-        </div>
     </div>
 </section>
 <script type='text/javascript' src="src/assets/js/script.js"></script>

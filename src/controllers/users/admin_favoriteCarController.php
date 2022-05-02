@@ -118,3 +118,8 @@ function newSesion(PDO $db, AltoRouter $router)
         'trademark' => $datas[0]['trademark'],
     ];
 }
+
+/**
+ * voiture favorite.
+ */
+$trademark =  (returnFavorite($db));

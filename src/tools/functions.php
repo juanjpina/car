@@ -441,6 +441,42 @@ function get_footer(string $layout = 'public')
 }
 
 
+
+
+
+/**
+ * returns the favorite car 
+ */
+function returnFavorite(PDO $db)
+{
+	$data = [
+		':id' => $_SESSION['auth']['id_user'],
+	];
+
+	$sql = "select trademark from car where id_car= (select id_car from favorite where id_user= :id)";
+	$request = $db->prepare($sql);
+	$request->execute($data);
+	$result = $request->fetchAll(PDO::FETCH_ASSOC);
+	$request->closeCursor();
+	$value = $result[0]['trademark'];
+	empty($value) ? $value = '' : $value = "'" . $value . "'";
+	return $value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // /**
 //  * verifies the count if it meets the proposed conditions * 
 //  * @param string(password)

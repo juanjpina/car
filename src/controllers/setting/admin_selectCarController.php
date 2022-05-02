@@ -28,6 +28,7 @@ if (isset($_POST['cars-ok'])) {
  */
 function favoriteSelect(PDO $db, AltoRouter $router)
 {
+    $result = [];
     try {
         $data = array(
             ':id_user' => $_SESSION['auth']['id_user']
@@ -37,33 +38,14 @@ function favoriteSelect(PDO $db, AltoRouter $router)
         $request->execute($data);
         $result = $request->fetchAll(PDO::FETCH_ASSOC);
         $request->closeCursor();
-        return $result[0]['id_car'];
-    } catch (PDOException $e) {
-        header('Location: ' . $router->generate('executionError'));
-    } finally {
-        $sql = null;
-    }
-}
+        // dump($result);
+        if (empty($result)) {
+            $result[0]['id_car']['null'];
+        } else {
+            $result[0]['id_car'];
+        }
 
-
-/**
- * rerutn name car.
- * 
- * @param id_car
- * @return trademark car
- */
-function nameCar(PDO $db, AltoRouter $router, $id_car)
-{
-    try {
-        $data = array(
-            ':id_car' => $id_car
-        );
-        $sql = "SELECT trademark FROM car where id_car=:id_car";
-        $request = $db->prepare($sql);
-        $request->execute($data);
-        $result = $request->fetchAll(PDO::FETCH_ASSOC);
-        $request->closeCursor();
-        return $result[0]['trademark'];
+        return $result;
     } catch (PDOException $e) {
         header('Location: ' . $router->generate('executionError'));
     } finally {
@@ -73,4 +55,8 @@ function nameCar(PDO $db, AltoRouter $router, $id_car)
 
 
 $id_car = favoriteSelect($db, $router);
-$trademark = nameCar($db, $router, $id_car);
+
+/**
+ * voiture favorite.
+ */
+$trademark =  (returnFavorite($db));
