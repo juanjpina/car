@@ -4,7 +4,7 @@
 		<div class="login column">
 			<form action="" method="post" class="column" name="form">
 				<div class="mail column" id="loginDivMail">
-					<h1>-------TEST PAGE-------</h1>
+					<h1>------- TEST PAGE -------</h1>
 					<label for='login'>Votre e-mail*</label>
 					<input type="email" class="input" id="emailLogin" placeholder="Adresse email" name="login" value="<?= valueField('login'); ?>">
 					<p class="message" id="messageEmail"></p>
