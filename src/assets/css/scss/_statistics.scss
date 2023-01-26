@@ -1,0 +1,369 @@
+@import "color";
+.statistics {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    // margin-top: 200px;
+    padding: 0px 2px;
+    padding-bottom: 2.5%;
+    width: 66%;
+    @include topDiv;
+    @media screen and(max-width: 768px) {
+        width: 100%;
+    }
+    @include shadow;
+    .column {
+        margin-bottom: 20px;
+        @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+        }
+        @media only screen and (max-width: 1400px) {
+            overflow-x: auto;
+        }
+    }
+    div {
+        margin: 10px 0px;
+    }
+    table {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    td,
+    th {
+        text-align: center;
+        padding-left: 20px;
+    }
+    th {
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+.listedstatistics {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    margin-top: 200px;
+    padding: 0px 2px;
+    padding-bottom: 2.5%;
+    width: 100%;
+    @include topDiv;
+    @include shadow;
+    .column {
+        margin-bottom: 20px;
+        @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+        }
+        @media only screen and (max-width: 1400px) {
+            overflow-x: auto;
+        }
+    }
+    div {
+        margin: 10px 0px;
+    }
+    table {
+        width: 100%;
+        margin: 10px 0px;
+    }
+    td,
+    th {
+        text-align: center;
+        padding-left: 20px;
+    }
+    th {
+        vertical-align: bottom;
+        padding-bottom: 10px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+.date {
+    margin: 0 15px 0 15px;
+}
+
+.menuStatistics {
+    margin-top: 370px;
+    width: 100%;
+    padding-bottom: 2.5%;
+    .row {
+        justify-content: center;
+        a {
+            margin-right: 20px;
+        }
+    }
+    @media only screen and(max-width: 768px) {
+        margin-top: 260px;
+        width: 100%;
+    }
+    .container {
+        margin-right: 8%;
+        @media only screen and(max-width: 768px) {
+            a {
+                margin: 1%;
+            }
+        }
+        .period,
+        .total,
+        .graphic {
+            align-items: center;
+            background-color: $color-statistic;
+            border-radius: 20%;
+            display: flex;
+            height: 120px;
+            justify-content: center;
+            width: 120px;
+            @include shadow;
+            @media only screen and(max-width: 768px) {
+                height: 70px;
+                width: 70px;
+            }
+            &:active {
+                filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+                box-shadow: $color-shadow 0px 22px 70px 4px;
+            }
+            &:hover {
+                opacity: 0.7;
+            }
+            p {
+                @media only screen and (max-width: 768px) {
+                    font-size: 0.6em;
+                }
+                color: $color-texto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.totalStatistics {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    margin-top: 200px;
+    padding: 0px 1px 2px 1px;
+    padding-bottom: 2.5%;
+    width: 100%;
+    @include topDiv;
+    @include shadow;
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // width: 100%;
+        margin: 30px 0px;
+        .column {
+            // margin: 30px 0px;
+            @media only screen and (max-width: 768px) {
+                overflow-x: auto;
+            }
+            @media only screen and (max-width: 1400px) {
+                overflow-x: auto;
+            }
+        }
+        table {
+            width: 90%;
+            margin-top: 50px;
+            @media only screen and (max-width: 768px) {}
+        }
+        th {
+            font-size: 0.8em;
+            padding: 0px 5px 10px 5px;
+            // text-align: center;
+            // text-decoration: underline 1.5px;
+        }
+        td {
+            font-size: 16px;
+            // text-align: center;
+        }
+    }
+}
+
+.listedGraphics {
+    height: 100%;
+    margin-top: 200px;
+    width: 100%;
+    margin-bottom: 2.5%;
+    .title {
+        color: black;
+    }
+    .row {
+        .start {
+            margin-bottom: 30px;
+        }
+        .end {
+            margin-bottom: 30px;
+        }
+        p {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media screen and(max-width:1580px) {
+            .start {
+                width: 50%;
+            }
+            .end {
+                width: 50%;
+            }
+        }
+        @media screen and(max-width:768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .start {
+                width: 100%;
+            }
+            .end {
+                width: 100%;
+            }
+        }
+    }
+    .container {
+        width: 100%;
+        .title {
+            margin-top: 20px;
+        }
+        .graph {
+            width: 100%;
+            justify-content: space-around;
+            align-items: baseline;
+            .graphic {
+                border-left: 1px solid black;
+                border-bottom: 1px solid black;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-end;
+                // flex-wrap: wrap;
+                // width: 100%;
+                margin-top: 150px;
+                .invtoll {
+                    background-color: #fc2323;
+                }
+                .invfuel {
+                    background-color: #6bf7ff;
+                }
+                .invoil {
+                    background-color: #fc4517;
+                }
+                .invtiming {
+                    background-color: #46ff7b;
+                }
+                .invinsurance {
+                    background-color: #4f0afc;
+                }
+                .invpneu {
+                    background-color: #fced30;
+                }
+                .invtechnical {
+                    background-color: #fc6b0a;
+                }
+            }
+        }
+    }
+    .yearEnd {
+        color: $color-texto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 20px 0;
+    }
+    .list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin: 100px 0;
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 7px;
+        }
+        p {
+            color: $color-texto;
+            margin-right: 10px;
+        }
+        span {
+            width: 15px;
+            height: 15px;
+            border-radius: 15%;
+            margin-right: 5px;
+        }
+        .invtoll {
+            background-color: #fc2323;
+        }
+        .invfuel {
+            background-color: #6bf7ff;
+        }
+        .invoil {
+            background-color: #fc4517;
+        }
+        .invtiming {
+            background-color: #46ff7b;
+        }
+        .invinsurance {
+            background-color: #4f0afc;
+        }
+        .invpneu {
+            background-color: #fced30;
+        }
+        .invtechnical {
+            background-color: #fc6b0a;
+        }
+    }
+}
+
+.fuelStatistics {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    padding: 0px 1px 30px 1px;
+    padding-bottom: 2.5%;
+    width: 66%;
+    @include topDiv;
+    @include shadow;
+    @media screen and(max-width: 768px) {
+        width: 100%;
+    }
+    .table {
+        @media only screen and (max-width: 768px) {
+            overflow-x: auto;
+        }
+        @media only screen and (max-width: 1400px) {
+            overflow-x: auto;
+        }
+        table {
+            // width: 50%;
+            tr {
+                // width: 30%;
+            }
+            th {
+                padding: 0.5em 0.5em;
+                // width: 10%;
+            }
+        }
+    }
+}
+
+.menu-statisticsGraph {
+    background-color: $color-statistic;
+    border-radius: 28px;
+    height: 100%;
+    padding-bottom: 2.5%;
+    width: 66%;
+    @include topDiv;
+    @include shadow;
+    div {
+        margin: 10px 0px;
+    }
+    @media screen and(max-width:768px) {
+        width: 100%;
+    }
+}

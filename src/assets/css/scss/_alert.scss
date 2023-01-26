@@ -1,0 +1,45 @@
+@import "color";
+section {
+    .alerts {
+        background-color: $color-alert;
+        border-radius: 28px;
+        height: 100%;
+        padding-bottom: 4%;
+        width: 66%;
+        @include topDiv;
+        @include shadow;
+        @media only screen and (max-width: 768px) {
+            padding: 10px 5px;
+            width: 100%;
+        }
+        .button {
+            @include activeBlue;
+            @include hoverBlue;
+        }
+        th {
+            width: 200px;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        td {
+            text-align: center;
+            padding: 0px;
+            margin: 0px 2px;
+        }
+        .select {
+            @include select;
+        }
+        div {
+            margin: 10px 0px;
+        }
+        .column {
+            @media only screen and (max-width: 768px) {
+                overflow-x: auto;
+                margin: 10px 3px;
+                td {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}

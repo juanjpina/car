@@ -1,0 +1,24 @@
+.execute {
+    width: 100%;
+    .banner {
+        background-color: $color-alert;
+        border-radius: 28px;
+        color: $color-texto;
+        padding: 50px;
+        width: 50%;
+        @include topDiv;
+        @include shadow;
+        margin-left: 0;
+        h6 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    @media screen and(max-width:768px) {
+        .banner {
+            padding: 50px 2px;
+            width: 100%;
+            margin-right: 30%;
+        }
+    }
+}

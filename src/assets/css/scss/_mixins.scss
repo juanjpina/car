@@ -1,0 +1,70 @@
+@mixin column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin shadow {
+    filter: drop-shadow(2px 5px 15px -2px $color-shadow);
+    box-shadow: 2px 5px 15px -2px $color-shadow;
+}
+
+@mixin select {
+    width: 50%;
+    height: 30px;
+    font-family: 'montserrat';
+    border-radius: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+@mixin activeBlue {
+    &:active {
+        filter: drop-shadow(2px 5px 15px -2px #18a8cc);
+        box-shadow: $color-shadow 0px 22px 70px 4px;
+    }
+}
+
+@mixin hoverBlue {
+    &:hover {
+        background-color: #18a8cc;
+        opacity: 0.8;
+        transition: all 600ms ease;
+    }
+}
+
+@mixin activeSidebar {
+    &:active {
+        background-color: $color-history;
+        color: $color-history;
+        opacity: 1;
+    }
+}
+
+@mixin hoverSidebar {
+    &:hover {
+        background-color: $color-alert;
+        opacity: 0.5;
+        transition: all 600ms ease;
+    }
+}
+
+@mixin topDiv {
+    margin-top: 240px;
+    margin-left: 11.83%;
+    @media screen and (max-width: 768px) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 261px;
+    }
+}

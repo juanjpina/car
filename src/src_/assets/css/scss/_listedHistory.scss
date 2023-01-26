@@ -1,0 +1,38 @@
+.listedHistory {
+    background-color: $color-history;
+    border-radius: 28px;
+    height: 100%;
+    padding: 0px 2px;
+    padding-bottom: 2.5%;
+    width: 66%;
+    @include topDiv;
+    @include shadow;
+    .contained {
+        // margin: 20px 0px;
+        height: 100%;
+        margin-bottom: 2%;
+        padding-bottom: 2%;
+        width: 100%;
+        @media only screen and(max-width: 768px) {
+            overflow-x: auto;
+            padding-bottom: 5%;
+        }
+        .table {
+            height: 100%;
+            p {
+                text-align: center;
+            }
+        }
+        td,
+        th {
+            width: 120px;
+            height: 0px;
+            padding: 10px 15px;
+            // text-align: center;
+            // text-transform: uppercase;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,59 @@
+@import "color";
+.car {
+    width: 60%;
+    height: 450px;
+}
+
+.car .contained {
+    background-color: $color-alert;
+    width: 60%;
+    height: 450px;
+    margin-top: 0;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.car .contained {
+    height: 700px;
+}
+
+.as {
+    width: 100%;
+}
+
+.data {
+    height: 150px;
+}
+
+.confirmation {
+    height: 60px;
+}
+
+.confirmation .conf {
+    background-color: $color-button-header;
+    width: 100%;
+    height: 35px;
+    color: $color-texto;
+    border-radius: 15px;
+    padding: 0 18px;
+    justify-content: center;
+}
+
+.conf p {
+    letter-spacing: 1pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+// .contained input {
+//     border-radius: 15px;
+//     height: 40px;
+// }
+
+.km {
+    margin: 0 15px 0 15px;
+}

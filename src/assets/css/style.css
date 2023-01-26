@@ -1,0 +1,286 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/***************** HEADER *********************/
+
+.header {
+    /* display: flex; */
+    width: 100%;
+    height: 100px;
+    background-color: #d94625;
+    max-width: 1920px;
+    /* position: fixed; */
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
+}
+
+.logo {
+    margin-left: 7.29%;
+}
+
+
+/********** login ***** newLogin ************************/
+
+.menu-login,
+.login,
+.submit,
+.nsubmit,
+.compte {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.login,
+.compte {
+    background-color: #bf9926;
+    height: 450px;
+    width: 574px;
+    border-radius: 28px;
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
+}
+
+.menu-login .new {
+    height: 550px;
+}
+
+.pseudo {
+    margin-bottom: 20px;
+}
+
+.mail {
+    margin-top: 0px;
+}
+
+.div-password {
+    padding-top: 50px;
+}
+
+.submit {
+    padding-top: 20px;
+}
+
+.nsubmit {
+    margin-top: 0px
+}
+
+.compte {
+    height: 106px;
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+.email,
+.password {
+    width: 300px;
+    height: 46px;
+    border-radius: 15px;
+    border-color: transparent;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.div {
+    margin-top: 30px;
+}
+
+.nsubmit {
+    margin-top: 50px;
+}
+
+.parrafo-compte {
+    margin-bottom: 5px;
+}
+
+.pa {
+    margin-bottom: 29px;
+}
+
+.parrafo-mot {
+    margin-top: 1px;
+    text-align: right;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button,
+.button_admin {
+    width: 240px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #083540;
+    border-color: transparent;
+    color: #f2f2f2;
+}
+
+.button_admin {
+    /* display: flex; */
+    width: 200px;
+    height: 40px;
+    font-size: 1em;
+    /* align-items: center; */
+}
+
+.button_admin a {
+    color: #f2f2f2;
+    padding-left: 10px;
+}
+
+.button_admin img {
+    margin-left: 20px;
+}
+
+.li_button {
+    display: flex;
+    justify-content: right;
+}
+
+.button p,
+.creercompte p {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-weight: bold;
+    color: #f2f2f2;
+}
+
+.menu-login .message {
+    padding-top: 2px;
+    font-weight: bold;
+}
+
+
+/**********************nav admin***********/
+
+.admin {
+    display: flex;
+    flex: auto;
+    /* align-items: center; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-content: center; */
+    /* justify-content: space-around; */
+    /* align-items: flex-start; */
+}
+
+.navegation {
+    /* flex: auto; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.navegation ul {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+}
+
+.li_button {
+    display: flex;
+    /* justify-content: center; */
+    flex: auto;
+    /* margin-right: 10px; */
+    align-items: center;
+}
+
+.accueil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accueil .texto {
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
+    width: 600px;
+    border-radius: 28px;
+    margin-top: 200px;
+    height: 200px;
+    border-color: transparent;
+    border: 2px;
+    background-color: #bf9926;
+}
+
+.accueil .texto p {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #000;
+}
+
+.accueil .texto a {
+    color: #f2f2f2;
+}
+
+.accueil .continuer {
+    margin-left: auto;
+    display: flex;
+    background-color: #083540;
+    /* display: inline-block; */
+    /* float: right; */
+    height: 40px;
+    border-radius: 15px;
+    width: 50%;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
+}
+
+
+/*********** sidebar ************************/
+
+main {
+    display: flex;
+    flex-flow: row;
+}
+
+.sidebar {
+    width: 40%;
+    display: flex;
+}
+
+.sidebar .row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 123px;
+    height: 115px;
+    border-radius: 15px;
+    font-size: 1erm;
+    box-shadow: 2px 5px 15px -2px #B4B2BA;
+    filter: drop-shadow(2px 5px 15px -2px #B4B2BA);
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-weight: bold;
+}
+
+.alert {
+    background-color: #d9bd30;
+}
+
+.invoice {
+    background-color: var(--main-color-invoice);
+}
+
+.statistic {
+    background-color: #bf9926;
+}
+
+.history {
+    background-color: #d94625;
+}
