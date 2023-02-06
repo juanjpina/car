@@ -2399,9 +2399,19 @@ section .pswforget div {
   text-align: center;
 }
 
+.mention {
+  padding: 5% 15%;
+  color: black;
+  line-height: 25px;
+}
+.mention ul li {
+  list-style-type: circle;
+  margin-left: 4%;
+}
 .mention p {
+  color: #353535;
   font-size: 1em;
-  text-align: center;
+  text-align: left;
   padding: 20px;
 }
 
