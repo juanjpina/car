@@ -64,7 +64,7 @@ function passwordNew(PDO $db, AltoRouter $router)
                 $request->closeCursor();
                 $text_mail = '';
                 $recipient = 'utilisateur';
-            $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content_type: text/html; charset=UTF-8" . "\r\n";
                 $headers .= "From: rdvoiture <info@car.juanjpina.com>\r\n";
             } catch (Exception $e) {
@@ -85,10 +85,10 @@ function passwordNew(PDO $db, AltoRouter $router)
             if ($newReponse) {
                 //dump('re', $newReponse);
                 foreach ($newReponse as $mail) {
-                    $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $pass .'.' .  'Bien cordialement.' ;
+                    $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $pass . '.' .  'Bien cordialement.';
                     $sunjet = 'Mot de passe';
                     $mails = $mail['email'] . $sunjet . $text_mail . $headers;
-                     $text = '';
+                    $text = '';
 ?>
                     <!DOCTYPE html>
                     <html lang="en">
@@ -98,7 +98,7 @@ function passwordNew(PDO $db, AltoRouter $router)
                     </head>
 
                     <body>
-                        <h1> Bonjour, M. Mme. <?php echo $mails ?> , Voice le nouvelle mot de passe <?php echo $pass; ?>. <br /> Bien cordialement <br /> </h1>
+                        <h1> Bonjour, M. Mme. <?php echo $mails ?> , Voice le nouvelle mot de passe <?php echo $pass; ?></h1> </br> Bien cordialement. </br>
                     </body>
                     </head>';
 <?php
