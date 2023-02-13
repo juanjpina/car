@@ -30,6 +30,12 @@
                     <input type="password" maxlength="16" id="NLconfirmPassword" placeholder="Confirmer la mot de passe" name="confirmerPassword">
                     <p class="message" id="confirmPasswordMessage"></p>
                 </div>
+                <div class="conf-politic">
+                    <div>
+                        <label><input type="checkbox" id="cbox1" name="policity" value="validate">J'accept les termes</label>
+                        <p class="message" id="checkboxVerify"></p>
+                    </div>
+                </div>
                 <div class="column div-button">
                     <button class="button submit" type="submit" name='submit'>
                         <p>Je m'inscris</p>

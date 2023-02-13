@@ -10,6 +10,7 @@ let NLpassword = document.getElementById("NLpassword");
 let passwordMessage = document.getElementById("passwordMessage");
 let NLconfirmPassword = document.getElementById("NLconfirmPassword");
 let confirmPasswordMessage = document.getElementById("confirmPasswordMessage");
+let checkBoxMessage = document.getElementById('checkboxVerify');
 
 /** pseudo **********************************************/
 let checkPseudo = (e) => {
@@ -38,6 +39,15 @@ let checkPassword = (e) => {
         e.preventDefault();
     }
 };
+/**checkbox */
+
+let checkBoxVerify = (e) => {
+    if (!NLform.cbox1.checked) {
+        checkBoxMessage.innerHTML = "Marquez les termes";
+        e.preventDefault();
+    }
+}
+
 
 
 
@@ -123,6 +133,8 @@ let check = (e) => {
     checkPassword(e);
     checkConfirmPassword(e);
     checkPseudo(e);
+    checkBoxVerify(e);
+
 }
 
 NLform.addEventListener("submit", check);

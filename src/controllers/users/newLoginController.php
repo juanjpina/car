@@ -3,7 +3,29 @@
 /**
  * session verification
  */
-redirectAdmin($router);
+// redirectAdmin($router);
+
+// verifyValidate($db, $router);
+
+searchEmail($db, $router);
+
+/**
+ * check if checkbox is validate
+ * 
+ */
+function verifyValidate(PDO $db, AltoRouter $router): void
+{
+    if (isset($_POST['policity'])) {
+        if (strcmp($_POST['policity'], 'validate') === 0) {
+            dump('el');
+        } else {
+            header('Location: ' . $router->generate('newlogin'));
+        }
+    }
+}
+
+// dump(verifyValidate());
+// dump(verifyValidate());
 
 
 /**
@@ -13,33 +35,40 @@ redirectAdmin($router);
  */
 function searchEmail(PDO $db, AltoRouter $router)
 {
-    if (!empty($_POST['email']) && isset($_POST['email'])) {
-        try {
-            $data = array(
-                ':email' => $_POST['email'],
-            );
-            $sql = 'SELECT email FROM user WHERE email LIKE :email LIMIT 1';
-            $request = $db->prepare($sql);
-            $request->execute($data);
-            $response = $request->fetch(PDO::FETCH_ASSOC);
-            $request->closeCursor();
-            if ($response) {
-                return "L'e-mail existe déjà !!";
-            } else {
-                addUser($db, $router);
+    if (isset($_POST['policity'])) {
+        if (strcmp($_POST['policity'], 'validate') === 0) {
+
+
+
+            if (!empty($_POST['email']) && isset($_POST['email'])) {
+
+                try {
+                    $data = array(
+                        ':email' => $_POST['email'],
+                    );
+                    $sql = 'SELECT email FROM user WHERE email LIKE :email LIMIT 1';
+                    $request = $db->prepare($sql);
+                    $request->execute($data);
+                    $response = $request->fetch(PDO::FETCH_ASSOC);
+                    $request->closeCursor();
+                    if ($response) {
+                        return "L'e-mail existe déjà !!";
+                    } else {
+                        addUser($db, $router);
+                    }
+                } catch (Exception $e) {
+                    header('Location: ' . $router->generate('home'));
+                    die();
+                } catch (PDOException $e) {
+                    header('Location: ' . $router->generate('home'));
+                    die();
+                } finally {
+                    $sql = null;
+                }
             }
-        } catch (Exception $e) {
-            header('Location: ' . $router->generate('home'));
-            die();
-        } catch (PDOException $e) {
-            header('Location: ' . $router->generate('home'));
-            die();
-        } finally {
-            $sql = null;
         }
     }
 }
-searchEmail($db, $router);
 
 
 /**
