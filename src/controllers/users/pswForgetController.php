@@ -47,7 +47,6 @@ function passwordNew(PDO $db, AltoRouter $router)
 
                 $pass .= substr($str, rand(0, 75), 1);
             }
-            //dump($pass);
 
             $data = [
                 ':password' => password_hash($pass, PASSWORD_DEFAULT),
@@ -81,16 +80,15 @@ function passwordNew(PDO $db, AltoRouter $router)
              * send an email with the password
              */
             $newReponse = getUser($db, $reponse[0]['id_user']);
-            // dump($newReponse);
             if ($newReponse) {
-                //dump('re', $newReponse);
+
                 foreach ($newReponse as $mail) {
                     $text_mail = 'Bonjour, M. Mme. ' . $mail['nickname'] . ' voici le nouvelle mot de passe ' . $pass . '.' .  'Bien cordialement.';
                     $sunjet = 'Mot de passe';
                     $mails = $mail['email'] . $sunjet . $text_mail . $headers;
                     $text = '';
 ?>
-                    <!DOCTYPE html>
+                    <!-- <!DOCTYPE html>
                     <html lang="en">
 
                     <head>
@@ -100,11 +98,11 @@ function passwordNew(PDO $db, AltoRouter $router)
                     <body>
                         <h1> Bonjour, M. Mme. <?php echo $mails ?> , Voice le nouvelle mot de passe <?php echo $pass; ?></h1> </br> Bien cordialement. </br>
                     </body>
-                    </head>';
+                    </head>'; -->
 <?php
 
 
-                    // dump($text);
+
                     mail($mail['email'], $sunjet, $text_mail, $headers);
                 }
             }

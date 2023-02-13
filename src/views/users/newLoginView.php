@@ -45,6 +45,6 @@
         </div>
     </div>
 </section>
-<script src='src/assets/js/checkMail.js' type='module'></script>
+<!-- <script src='src/assets/js/checkMail.js' type='module'></script> -->
 <script src='src/assets/js/inputNullNewLogin.js' type='module'></script>
 <?php get_footer('login'); ?>

@@ -122,10 +122,10 @@ function getCar(PDO $db, AltoRouter $router)
 		$request->closeCursor();
 		return $result;
 	} catch (Exception $e) {
-		header('Location: ' . $router->generate('executionErrorr'));
+		header('Location: ' . $router->generate('executionError'));
 		die();
 	} catch (PDOException $e) {
-		header('Location: ' . $router->generate('executionErrorr'));
+		header('Location: ' . $router->generate('executionError'));
 		die();
 	} finally {
 		$sql = null;
@@ -152,10 +152,10 @@ function getCarSelect(PDO $db, AltoRouter $router)
 		$request->closeCursor();
 		return $result;
 	} catch (Exception $e) {
-		header('Location: ' . $router->generate('executionErrorr'));
+		header('Location: ' . $router->generate('executionError'));
 		die();
 	} catch (PDOException $e) {
-		header('Location: ' . $router->generate('executionErrorr'));
+		header('Location: ' . $router->generate('executionError'));
 		die();
 	} finally {
 		$sql = null;
